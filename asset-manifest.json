@@ -1,0 +1,36 @@
+{
+  "profile": ["assets/profile/razu-portrait.jpg"],
+  "cv": ["documents/Md. Razu Ahmed CV.pdf"],
+  "publications": {
+    "fastica": ["assets/publications/fastica/figure-1-workflow.png", "assets/publications/fastica/figure-2.png", "assets/publications/fastica/figure-3.png", "assets/publications/fastica/figure-4.png", "assets/publications/fastica/figure-5.png", "assets/publications/fastica/figure-6.png", "assets/publications/fastica/figure-7.png", "assets/publications/fastica/figure-8.png", "assets/publications/fastica/figure-9.png"],
+    "ckd": ["assets/publications/ckd/feature-importance.png", "assets/publications/ckd/methodology-workflow.png"],
+    "data-in-brief": ["assets/publications/data-in-brief/figure-1-platter.png", "assets/publications/data-in-brief/figure-4-split.png", "assets/publications/data-in-brief/figure-5-annotations.png", "assets/publications/data-in-brief/figure-6-directory.png", "assets/publications/data-in-brief/figure-7-workflow.png"],
+    "ai-employment": ["assets/publications/ai-employment/figure-1-methodology.png", "assets/publications/ai-employment/figure-3-correspondence-analysis.png", "assets/publications/ai-employment/figure-6-strongest-variables.png"]
+  },
+  "manuscripts": {
+    "dr-grading": ["assets/manuscripts/dr-grading/workflow.png", "assets/manuscripts/dr-grading/test-comparison.png", "assets/manuscripts/dr-grading/prototype.png"],
+    "hcv": ["assets/manuscripts/hcv/methodology.png"],
+    "dengue-forecasting": ["assets/manuscripts/dengue-forecasting/workflow.png"],
+    "beyond-burden": ["assets/manuscripts/beyond-burden/workflow.png"],
+    "cafeteria-billing": ["assets/manuscripts/cafeteria-billing/workflow.png", "assets/manuscripts/cafeteria-billing/platter-montage.png"],
+    "sentiment": ["assets/manuscripts/sentiment/workflow.png"],
+    "academic-performance": ["assets/manuscripts/academic-performance/forest-plot.png", "assets/manuscripts/academic-performance/threshold-forest.png", "assets/manuscripts/academic-performance/cgpa-distribution.png"]
+  },
+  "conferenceGallery": [
+    "assets/gallery/efast-2026-oral.jpg",
+    "assets/gallery/icasds-2025-poster.jpg",
+    "assets/gallery/jsr-award-icasds-2025.jpg",
+    "assets/gallery/icrast-2025-oral.jpg"
+  ],
+  "events": ["assets/events/global-nuclear-energy-2024.jpg"],
+  "recognition": ["assets/recognition/"],
+  "logos": ["assets/logos/"],
+  "collaborators": ["assets/collaborators/"],
+  "privacyExclusions": [
+    "Confidential BDHS cesarean manuscript and figures",
+    "Reviewer reports and editorial correspondence",
+    "Manuscript IDs and submission-system screenshots",
+    "Phone numbers",
+    "Obaidul Islam portfolio/GitHub material that could reveal confidential research"
+  ]
+}
