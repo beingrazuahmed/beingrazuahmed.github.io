@@ -1,0 +1,12 @@
+{
+  "name": "Md. Razu Ahmed — Academic & Research Portfolio",
+  "short_name": "MRA Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fbff",
+  "theme_color": "#0ea5e9",
+  "description": "Academic and research portfolio of Md. Razu Ahmed.",
+  "icons": [
+    {"src":"favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
