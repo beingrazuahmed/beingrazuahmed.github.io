@@ -1,219 +1,91 @@
 <!doctype html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Academic and research portfolio of Md. Razu Ahmed — Statistician, Data Scientist, Researcher and Peer Reviewer." />
-  <meta name="theme-color" content="#0ea5e9" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Academic and research portfolio of Md. Razu Ahmed — Statistician, Data Scientist, Researcher and Peer Reviewer working in machine learning, explainable AI, public health and biomedical data science.">
+  <meta name="theme-color" content="#0ea5e9">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Md. Razu Ahmed | Academic & Research Portfolio">
+  <meta property="og:description" content="Rigorous, explainable and reproducible data-driven research across machine learning, public health and biomedical data science.">
+  <meta property="og:url" content="https://beingrazuahmed.github.io/">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://beingrazuahmed.github.io/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
   <title>Md. Razu Ahmed | Academic & Research Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="enhancements.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="enhancements.css">
+  <style>
+    .utility-links{display:flex;gap:8px;flex-wrap:wrap}.utility-links a{font-size:13px;font-weight:800;padding:8px 11px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+    .compact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.compact-card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:22px}.compact-card p{color:var(--muted);font-size:15px}.compact-card small{color:var(--primary-2);font-weight:750}.updates-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.update-mini{border-left:3px solid var(--primary);padding:10px 0 10px 16px}.update-mini p{margin:4px 0;color:var(--muted);font-size:14px}.dash-cta{display:flex;justify-content:space-between;gap:24px;align-items:center;background:linear-gradient(135deg,var(--surface),var(--surface-2));border:1px solid var(--line);border-radius:24px;padding:28px;margin-top:28px}.dash-cta h3{font:800 28px/1.2 Manrope,sans-serif;margin:0 0 8px}.dash-cta p{margin:0;color:var(--muted)}
+    @media(max-width:900px){.compact-grid{grid-template-columns:1fr 1fr}.updates-grid{grid-template-columns:1fr}.dash-cta{align-items:flex-start;flex-direction:column}}
+    @media(max-width:560px){.compact-grid{grid-template-columns:1fr}}
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Md. Razu Ahmed","url":"https://beingrazuahmed.github.io/","jobTitle":["Statistician","Data Scientist","Researcher","Peer Reviewer"],"sameAs":["https://orcid.org/0009-0001-8646-1881","https://scholar.google.com/citations?user=70z0eXEAAAAJ","https://www.researchgate.net/profile/Md-Razu-Ahmed-3","https://www.linkedin.com/in/beingrazuahmed/","https://github.com/beingrazuahmed"]}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-
   <header class="site-header" id="top">
     <div class="container nav-wrap">
-      <a class="brand" href="#top" aria-label="Md. Razu Ahmed home">
-        <span class="brand-mark">MRA</span>
-        <span class="brand-text"><strong>Md. Razu Ahmed</strong><small>Academic Research Portfolio</small></span>
-      </a>
-      <nav class="desktop-nav" aria-label="Primary navigation">
-        <a href="#profile">Profile</a>
-        <a href="#publications">Research</a>
-        <a href="#conferences">Conferences</a>
-        <a href="#recognition">Recognition</a>
-        <a href="#network">Network</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#ask-razu">Ask Razu AI</a>
-      </nav>
-      <div class="header-actions">
-        <a class="nav-cv" href="cv.html">CV</a>
-        <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">◐</button>
-        <button class="icon-btn mobile-only" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
-      </div>
+      <a class="brand" href="#top" aria-label="Md. Razu Ahmed home"><span class="brand-mark">MRA</span><span class="brand-text"><strong>Md. Razu Ahmed</strong><small>Academic Research Portfolio</small></span></a>
+      <nav class="desktop-nav" aria-label="Primary navigation"><a href="#profile">Profile</a><a href="#publications">Research</a><a href="#conferences">Conferences</a><a href="#recognition">Recognition</a><a href="#network">Network</a><a href="#gallery">Gallery</a></nav>
+      <div class="header-actions"><a class="nav-cv" href="search.html">Search</a><a class="nav-cv" href="dashboard.html">Dashboard</a><a class="nav-cv" href="cv.html">CV</a><button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">◐</button><button class="icon-btn mobile-only" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button></div>
     </div>
-    <div class="mobile-nav" id="mobileNav" hidden>
-      <a href="#profile">Profile</a><a href="#publications">Research</a><a href="#conferences">Conferences</a><a href="#recognition">Recognition</a><a href="#network">Network</a><a href="#gallery">Gallery</a><a href="#ask-razu">Ask Razu AI</a><a href="cv.html">CV</a><a href="#contact">Contact</a>
-    </div>
+    <div class="mobile-nav" id="mobileNav" hidden><a href="#profile">Profile</a><a href="#publications">Research</a><a href="#conferences">Conferences</a><a href="#recognition">Recognition</a><a href="#network">Network</a><a href="#gallery">Gallery</a><a href="#ask-razu">Ask Razu AI</a><a href="search.html">Global Search</a><a href="dashboard.html">Dashboard</a><a href="cv.html">CV</a><a href="#contact">Contact</a></div>
   </header>
 
   <main id="main">
     <section class="hero section-shell">
       <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <span class="eyebrow">Statistician · Data Scientist · Researcher · Peer Reviewer</span>
-          <h1>Md. Razu Ahmed</h1>
-          <p class="hero-focus">Machine Learning · Explainable AI · Public Health & Biomedical Data Science</p>
-          <p class="hero-intro" id="heroIntro"></p>
-          <p class="hero-principle" id="heroPrinciple"></p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#publications">Explore Research</a>
-            <a class="btn secondary" href="#ask-razu">Ask Razu AI</a>
-            <a class="btn ghost" href="cv.html">View CV</a>
-            <a class="btn ghost" href="mailto:razuahmed038@gmail.com">Collaborate</a>
-          </div>
-          <div class="availability"><span class="status-dot"></span><span id="availabilityText"></span></div>
-        </div>
-
-        <aside class="hero-panel reveal delay-1">
-          <div class="portrait-shell">
-            <img src="assets/profile/razu-portrait.jpg" alt="Professional portrait of Md. Razu Ahmed" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'" />
-            <div class="portrait-fallback" style="display:none">MRA</div>
-          </div>
-          <div class="hero-panel-card">
-            <span>Current affiliation</span>
-            <strong>Deep Statistical Learning and Research (DSLR) Lab</strong>
-            <small>Department of Statistics and Data Science · PUST</small>
-          </div>
-          <div class="profile-mini-links" id="heroProfileLinks"></div>
-        </aside>
+        <div class="hero-copy reveal"><span class="eyebrow">Statistician · Data Scientist · Researcher · Peer Reviewer</span><h1>Md. Razu Ahmed</h1><p class="hero-focus">Machine Learning · Explainable AI · Public Health & Biomedical Data Science</p><p class="hero-intro" id="heroIntro"></p><p class="hero-principle" id="heroPrinciple"></p><div class="hero-actions"><a class="btn primary" href="#publications">Explore Research</a><a class="btn secondary" href="#ask-razu">Ask Razu AI</a><a class="btn ghost" href="dashboard.html">Research Dashboard</a><a class="btn ghost" href="cv.html">View CV</a><a class="btn ghost" href="mailto:razuahmed038@gmail.com">Collaborate</a></div><div class="availability"><span class="status-dot"></span><span id="availabilityText"></span></div></div>
+        <aside class="hero-panel reveal delay-1"><div class="portrait-shell"><img src="assets/profile/razu-portrait.jpg" alt="Professional portrait of Md. Razu Ahmed" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="portrait-fallback" style="display:none">MRA</div></div><div class="hero-panel-card"><span>Current affiliation</span><strong>Deep Statistical Learning and Research (DSLR) Lab</strong><small>Department of Statistics and Data Science · PUST</small></div><div class="profile-mini-links" id="heroProfileLinks"></div></aside>
       </div>
     </section>
 
-    <section class="metrics-strip" aria-label="Research profile metrics"><div class="container metrics-grid" id="metricsGrid"></div></section>
+    <section class="metrics-strip"><div class="container metrics-grid" id="metricsGrid"></div></section>
 
-    <section class="section-shell" id="profile">
-      <div class="container two-col">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Research identity</span>
-          <h2>Rigorous methods. Interpretable models. Real-world relevance.</h2>
-          <p>I work across statistical methodology, machine learning, deep learning, explainable AI and interdisciplinary data science, with a strong emphasis on reproducibility, leakage-aware validation and scientific communication.</p>
-        </div>
-        <div class="profile-card reveal delay-1">
-          <h3>Research interests</h3>
-          <div class="interest-group"><strong>Methods</strong><div class="tag-cloud" id="methodTags"></div></div>
-          <div class="interest-group"><strong>Application areas</strong><div class="tag-cloud" id="applicationTags"></div></div>
-        </div>
-      </div>
-    </section>
+    <section class="section-shell" id="profile"><div class="container two-col"><div class="section-heading reveal"><span class="eyebrow">Research identity</span><h2>Rigorous methods. Interpretable models. Real-world relevance.</h2><p>I work across statistical methodology, machine learning, deep learning, explainable AI and interdisciplinary data science, with a strong emphasis on reproducibility, leakage-aware validation and scientific communication.</p><div class="utility-links"><a href="search.html">Search full portfolio</a><a href="dashboard.html">Open dashboard</a><a href="privacy.html">Copyright & reuse</a></div></div><div class="profile-card reveal delay-1"><h3>Research interests</h3><div class="interest-group"><strong>Methods</strong><div class="tag-cloud" id="methodTags"></div></div><div class="interest-group"><strong>Application areas</strong><div class="tag-cloud" id="applicationTags"></div></div></div></div></section>
 
-    <section class="section-shell tinted" id="research">
-      <div class="container">
-        <div class="section-heading centered reveal">
-          <span class="eyebrow">Research portfolio</span><h2>Research themes</h2>
-          <p>A multidisciplinary research programme spanning biomedical prediction, medical imaging, infectious-disease forecasting, NLP, food computing, signal processing and statistical learning.</p>
-        </div>
-        <div class="research-grid">
-          <article class="theme-card reveal"><span class="theme-icon">◫</span><h3>Biomedical & Public Health AI</h3><p>Disease prediction, missing-data reconstruction, health-system analysis, epidemiological forecasting and decision-focused modelling.</p></article>
-          <article class="theme-card reveal delay-1"><span class="theme-icon">◎</span><h3>Medical Imaging & Computer Vision</h3><p>Retinal fundus grading, deep-handcrafted feature fusion, explainability, object detection and visual decision support.</p></article>
-          <article class="theme-card reveal delay-2"><span class="theme-icon">⌁</span><h3>Forecasting & Decision Science</h3><p>Temporally locked forecasting, district-informed surveillance, operational readiness and resource-prioritization evaluation.</p></article>
-          <article class="theme-card reveal"><span class="theme-icon">⌘</span><h3>NLP & Sentiment Analysis</h3><p>Cross-domain sentiment classification using lightweight recurrent networks and weighted probability fusion.</p></article>
-          <article class="theme-card reveal delay-1"><span class="theme-icon">▦</span><h3>Food Computing</h3><p>Annotated food-image datasets, real-time food detection, cafeteria billing, segmentation and intelligent food-service research.</p></article>
-          <article class="theme-card reveal delay-2"><span class="theme-icon">≈</span><h3>Signal & Multivariate Analysis</h3><p>FastICA, dimensionality reduction, blind source separation and multivariate statistical modelling.</p></article>
-        </div>
-      </div>
-    </section>
+    <section class="section-shell tinted" id="research"><div class="container"><div class="section-heading centered reveal"><span class="eyebrow">Portfolio compass</span><h2>Research themes</h2><p>Biomedical prediction, medical imaging, infectious-disease forecasting, NLP, food computing, signal processing and statistical learning.</p></div><div class="research-grid"><article class="theme-card reveal"><span class="theme-icon">◫</span><h3>Biomedical & Public Health AI</h3><p>Disease prediction, missing-data reconstruction, health-system analysis, epidemiological forecasting and decision-focused modelling.</p></article><article class="theme-card reveal delay-1"><span class="theme-icon">◎</span><h3>Medical Imaging & Computer Vision</h3><p>Retinal fundus grading, deep-handcrafted feature fusion, explainability, object detection and visual decision support.</p></article><article class="theme-card reveal delay-2"><span class="theme-icon">⌁</span><h3>Forecasting & Decision Science</h3><p>Temporally locked forecasting, district-informed surveillance, operational readiness and resource-prioritization evaluation.</p></article><article class="theme-card reveal"><span class="theme-icon">⌘</span><h3>NLP & Sentiment Analysis</h3><p>Cross-domain sentiment classification using lightweight recurrent networks and weighted probability fusion.</p></article><article class="theme-card reveal delay-1"><span class="theme-icon">▦</span><h3>Food Computing</h3><p>Annotated food-image datasets, real-time food detection, cafeteria billing, segmentation and intelligent food-service research.</p></article><article class="theme-card reveal delay-2"><span class="theme-icon">≈</span><h3>Signal & Multivariate Analysis</h3><p>FastICA, dimensionality reduction, blind source separation and multivariate statistical modelling.</p></article></div></div></section>
 
-    <section class="section-shell" id="publications">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Research outputs</span><h2>Publications & active manuscripts</h2>
-          <p>Search and filter publicly shareable research outputs by status, journal, method or topic. Confidential research is intentionally excluded from the public portfolio.</p>
-        </div>
-        <div class="toolbar reveal">
-          <div class="search-wrap"><input id="researchSearch" type="search" placeholder="Search title, journal, method or topic…" aria-label="Search research outputs" /></div>
-          <div class="filter-group"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="published">Published</button><button class="filter" data-filter="accepted">Accepted</button><button class="filter" data-filter="under-review">Under review</button></div>
-        </div>
-        <div class="output-grid" id="outputGrid"></div>
-      </div>
-    </section>
+    <section class="section-shell" id="publications"><div class="container"><div class="section-heading reveal"><span class="eyebrow">Research outputs</span><h2>Publications & active manuscripts</h2><p>Search and filter publicly shareable outputs. Confidential research is intentionally excluded from the public repository.</p></div><div class="toolbar reveal"><div class="search-wrap"><input id="researchSearch" type="search" placeholder="Search title, journal, method or topic…" aria-label="Search research outputs"></div><div class="filter-group"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="published">Published</button><button class="filter" data-filter="accepted">Accepted</button><button class="filter" data-filter="under-review">Under review</button></div></div><div class="output-grid" id="outputGrid"></div></div></section>
 
-    <section class="section-shell tinted" id="conferences">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Conference record</span><h2>Conference publications & presentations</h2>
-          <p><strong>8 published conference contributions</strong> · 3 presentations delivered (2 oral, 1 poster) · Journal of Statistical Research Award.</p>
-        </div>
-        <div class="conference-stack" id="conferenceList"></div>
-      </div>
-    </section>
+    <section class="section-shell tinted" id="conferences"><div class="container"><div class="section-heading reveal"><span class="eyebrow">Conference record</span><h2>Conference publications & presentations</h2><p><strong>8 published conference contributions</strong> · 3 presentations delivered (2 oral, 1 poster) · Journal of Statistical Research Award.</p></div><div class="conference-stack" id="conferenceList"></div></div></section>
 
-    <section class="section-shell" id="experience">
-      <div class="container">
-        <div class="section-heading reveal"><span class="eyebrow">Academic journey</span><h2>Education & research experience</h2></div>
-        <div class="timeline-layout">
-          <div class="timeline-card reveal"><h3>Research Experience</h3><div class="timeline-item"><span class="timeline-date">May 2023 – Present</span><strong>Research Assistant</strong><p>Deep Statistical Learning and Research (DSLR) Lab, Department of Statistics and Data Science, PUST.</p></div><div class="timeline-item"><span class="timeline-date">Apr 2026 – Jul 2026</span><strong>Research Assistant</strong><p>International Research Collaboration Bangladesh (IRCB).</p></div><div class="timeline-item"><span class="timeline-date">Ongoing</span><strong>Research Mentorship & Collaborative Support</strong><p>Guidance in topic formulation, study design, data preparation, analysis, reproducible workflows and manuscript development.</p></div></div>
-          <div class="timeline-card reveal delay-1"><h3>Education</h3><div id="educationList"></div></div>
-        </div>
-      </div>
-    </section>
+    <section class="section-shell" id="experience"><div class="container"><div class="section-heading reveal"><span class="eyebrow">Academic journey</span><h2>Education & research experience</h2></div><div class="timeline-layout"><div class="timeline-card reveal"><h3>Research Experience</h3><div class="timeline-item"><span class="timeline-date">May 2023 – Present</span><strong>Research Assistant</strong><p>Deep Statistical Learning and Research (DSLR) Lab, Department of Statistics and Data Science, PUST.</p></div><div class="timeline-item"><span class="timeline-date">Apr 2026 – Jul 2026</span><strong>Research Assistant</strong><p>International Research Collaboration Bangladesh (IRCB).</p></div><div class="timeline-item"><span class="timeline-date">Ongoing</span><strong>Research Mentorship & Collaborative Support</strong><p>Guidance in topic formulation, study design, data preparation, analysis, reproducible workflows and manuscript development.</p></div></div><div class="timeline-card reveal delay-1"><h3>Education</h3><div id="educationList"></div></div></div></div></section>
 
-    <section class="section-shell tinted" id="recognition">
-      <div class="container">
-        <div class="section-heading reveal"><span class="eyebrow">Recognition & development</span><h2>Awards, certificates & professional development</h2><p>Verified recognition and structured learning across research methods, ethics, peer review, technical training and applied data science.</p></div>
-        <div class="recognition-grid"><div><h3 class="subsection-title">Honors & Awards</h3><div id="awardsGrid" class="award-grid"></div></div><div><h3 class="subsection-title">Training & Certifications</h3><div id="trainingList" class="training-list"></div></div></div>
-      </div>
-    </section>
+    <section class="section-shell tinted" id="recognition"><div class="container"><div class="section-heading reveal"><span class="eyebrow">Recognition & development</span><h2>Awards, certificates & professional development</h2><p>Verified recognition and structured learning across research methods, ethics, peer review, technical training and applied data science.</p></div><div class="recognition-grid"><div><h3 class="subsection-title">Honors & Awards</h3><div id="awardsGrid" class="award-grid"></div></div><div><h3 class="subsection-title">Training & Certifications</h3><div id="trainingList" class="training-list"></div></div></div></div></section>
 
-    <section class="section-shell" id="network">
-      <div class="container">
-        <div class="section-heading centered reveal"><span class="eyebrow">Academic guidance & research network</span><h2>Mentors, advisors, collaborators & mentees</h2><p>A verified public-safe view of the people who shape, support and extend my research journey.</p></div>
-        <div class="network-grid network-three">
-          <div class="network-card reveal"><h3>Senior academic guidance</h3><div class="people-list" id="guidanceList"></div></div>
-          <div class="network-card reveal delay-1"><h3>Key research collaborators</h3><div class="people-list" id="collaboratorList"></div></div>
-          <div class="network-card reveal delay-2"><h3>Junior research network</h3><div class="people-list" id="juniorList"></div></div>
-        </div>
-      </div>
-    </section>
+    <section class="section-shell" id="network"><div class="container"><div class="section-heading centered reveal"><span class="eyebrow">Academic guidance & research network</span><h2>Mentors, advisors, collaborators & mentees</h2><p>A verified public-safe view of the people who shape, support and extend my research journey.</p></div><div class="network-grid network-three"><div class="network-card reveal"><h3>Senior academic guidance</h3><div class="people-list" id="guidanceList"></div></div><div class="network-card reveal delay-1"><h3>Key research collaborators</h3><div class="people-list" id="collaboratorList"></div></div><div class="network-card reveal delay-2"><h3>Junior research network</h3><div class="people-list" id="juniorList"></div></div></div></div></section>
 
-    <section class="section-shell tinted" id="impact">
-      <div class="container">
-        <div class="section-heading reveal"><span class="eyebrow">Scholarly service</span><h2>Peer review & academic contribution</h2><p>Completed invited reviews across multidisciplinary and AI-focused journals, with certificate-based reviewer recognition where available.</p></div>
-        <div class="service-grid" id="serviceGrid"></div>
-        <div class="impact-note reveal"><strong>32 completed invited peer reviews</strong><span>Verified through September 2026.</span></div>
-      </div>
-    </section>
+    <section class="section-shell tinted" id="impact"><div class="container"><div class="section-heading reveal"><span class="eyebrow">Scholarly service</span><h2>Peer review & academic contribution</h2><p>Completed invited reviews across multidisciplinary and AI-focused journals, with certificate-based reviewer recognition where available.</p></div><div class="service-grid" id="serviceGrid"></div><div class="impact-note reveal"><strong>32 completed invited peer reviews</strong><span>Verified through September 2026.</span></div><div class="dash-cta"><div><h3>Research & impact dashboard</h3><p>Explore source-labelled scholarly metrics, latest updates, ongoing research, research evolution and technical skills.</p></div><a class="btn primary" href="dashboard.html">Open Dashboard</a></div></div></section>
 
-    <section class="section-shell" id="engagement">
-      <div class="container">
-        <div class="section-heading reveal"><span class="eyebrow">Academic & scientific engagement</span><h2>Beyond publications</h2><p>Scientific outreach, innovation activities, student competitions and broader academic participation.</p></div>
-        <div class="engagement-grid" id="engagementGrid"></div>
-      </div>
-    </section>
+    <section class="section-shell" id="ongoing"><div class="container"><div class="section-heading reveal"><span class="eyebrow">Current directions</span><h2>Ongoing & in preparation</h2><p>Planning-stage work is deliberately described at a high level; titles, exact models and target journals may change.</p></div><div class="compact-grid" id="ongoingGrid"></div></div></section>
 
-    <section class="section-shell tinted" id="gallery">
-      <div class="container">
-        <div class="section-heading reveal"><span class="eyebrow">Visual archive</span><h2>Gallery & evidence</h2><p>A curated gallery of conference presentations, awards, training, scholarly service and academic engagement. Images are displayed only where verified originals are available.</p></div>
-        <div class="gallery-toolbar" id="galleryFilters"></div>
-        <div class="gallery-grid" id="galleryGrid"></div>
-      </div>
-    </section>
+    <section class="section-shell tinted" id="updates"><div class="container"><div class="section-heading reveal"><span class="eyebrow">Latest activity</span><h2>Recent updates</h2><p>Selected publication, dataset, conference and portfolio milestones.</p></div><div class="updates-grid" id="latestUpdates"></div></div></section>
 
-    <section class="section-shell" id="ask-razu">
-      <div class="container ask-grid">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Research intelligence</span><h2>Ask Razu AI</h2>
-          <p>An evidence-grounded guide to the public information in this portfolio. Ask about publications, conference work, methods, datasets, education, certificates, research themes, collaborators or scholarly service.</p>
-          <div class="prompt-chips" id="promptChips"><button>What are Razu’s main research areas?</button><button>Show first-author publications</button><button>Tell me about conference presentations</button><button>What certificates does he have?</button><button>Show peer-review experience</button></div>
-        </div>
-        <div class="ask-card reveal delay-1"><div class="ask-header"><div><span class="ai-dot"></span><strong>Ask Razu AI</strong></div><small>Verified public portfolio data only</small></div><div class="ask-log" id="askLog" aria-live="polite"><div class="message assistant"><p>Hi, I’m Ask Razu AI. I can help you explore Md. Razu Ahmed’s verified public research profile, conference record, training, collaborations and scholarly service. I do not reveal confidential manuscripts, private editorial information or non-public data.</p></div></div><form class="ask-form" id="askForm"><input id="askInput" autocomplete="off" placeholder="Ask about research, conferences, methods, certificates…" /><button class="btn primary" type="submit">Ask</button></form></div>
-      </div>
-    </section>
+    <section class="section-shell" id="engagement"><div class="container"><div class="section-heading reveal"><span class="eyebrow">Academic & scientific engagement</span><h2>Beyond publications</h2><p>Scientific outreach, innovation activities, student competitions and broader academic participation.</p></div><div class="engagement-grid" id="engagementGrid"></div></div></section>
 
-    <section class="section-shell tinted" id="profiles">
-      <div class="container"><div class="section-heading reveal"><span class="eyebrow">Academic presence</span><h2>Profiles & scholarly links</h2><p>Verified academic, professional and research-community profiles.</p></div><div class="profiles-grid" id="profilesGrid"></div></div>
-    </section>
+    <section class="section-shell tinted" id="gallery"><div class="container"><div class="section-heading reveal"><span class="eyebrow">Visual archive</span><h2>Gallery & evidence</h2><p>A curated gallery of conference presentations, awards, training, scholarly service and academic engagement. Images appear only when verified originals are present.</p></div><div class="gallery-toolbar" id="galleryFilters"></div><div class="gallery-grid" id="galleryGrid"></div></div></section>
 
-    <section class="section-shell contact-section" id="contact">
-      <div class="container contact-card reveal">
-        <div><span class="eyebrow">Collaboration</span><h2>Interested in working together?</h2><p>Open to selected collaborations in data science, public health, biomedical research, machine learning, explainable AI and interdisciplinary quantitative research.</p></div>
-        <div class="contact-actions"><a class="btn primary" href="mailto:razuahmed038@gmail.com">Email me</a><a class="btn secondary" href="https://www.linkedin.com/in/beingrazuahmed/" target="_blank" rel="noopener">LinkedIn</a></div>
-      </div>
-    </section>
+    <section class="section-shell" id="ask-razu"><div class="container ask-grid"><div class="section-heading reveal"><span class="eyebrow">Research intelligence</span><h2>Ask Razu AI</h2><p>An evidence-grounded guide to public information in this portfolio. Ask about publications, conference work, methods, datasets, education, certificates, collaborators or scholarly service.</p><div class="prompt-chips" id="promptChips"><button>What are Razu’s main research areas?</button><button>Show first-author publications</button><button>Tell me about conference presentations</button><button>What certificates does he have?</button><button>Show peer-review experience</button></div></div><div class="ask-card reveal delay-1"><div class="ask-header"><div><span class="ai-dot"></span><strong>Ask Razu AI</strong></div><small>Verified public portfolio data only</small></div><div class="ask-log" id="askLog" aria-live="polite"><div class="message assistant"><p>Hi, I’m Ask Razu AI. I can help you explore Md. Razu Ahmed’s verified public research profile. I do not reveal confidential manuscripts, private editorial information or non-public data.</p></div></div><form class="ask-form" id="askForm"><input id="askInput" autocomplete="off" placeholder="Ask about research, conferences, methods, certificates…"><button class="btn primary" type="submit">Ask</button></form></div></div></section>
+
+    <section class="section-shell tinted" id="profiles"><div class="container"><div class="section-heading reveal"><span class="eyebrow">Academic presence</span><h2>Profiles & scholarly links</h2><p>Verified academic, professional and research-community profiles.</p></div><div class="profiles-grid" id="profilesGrid"></div></div></section>
+
+    <section class="section-shell contact-section" id="contact"><div class="container contact-card reveal"><div><span class="eyebrow">Collaboration</span><h2>Interested in working together?</h2><p>Open to selected collaborations in data science, public health, biomedical research, machine learning, explainable AI and interdisciplinary quantitative research.</p></div><div class="contact-actions"><a class="btn primary" href="mailto:razuahmed038@gmail.com">Email me</a><a class="btn secondary" href="https://www.linkedin.com/in/beingrazuahmed/" target="_blank" rel="noopener">LinkedIn</a></div></div></section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid"><div><strong>Md. Razu Ahmed</strong><p>Advancing rigorous, explainable and reproducible data-driven research.</p></div><div class="footer-links"><a href="#top">Back to top</a><a href="cv.html">CV</a><a href="mailto:razuahmed038@gmail.com">Email</a><a href="https://github.com/beingrazuahmed" target="_blank" rel="noopener">GitHub</a></div></div>
-    <div class="container footer-bottom"><span>© 2026 Md. Razu Ahmed. All rights reserved.</span><span>Built for clarity, accessibility, evidence and reproducibility.</span></div>
-  </footer>
-
-  <div class="lightbox" id="lightbox" hidden><button class="lightbox-close" id="lightboxClose" aria-label="Close image">×</button><img id="lightboxImage" alt="" /><div id="lightboxCaption"></div></div>
+  <footer class="site-footer"><div class="container footer-grid"><div><strong>Md. Razu Ahmed</strong><p>Advancing rigorous, explainable and reproducible data-driven research.</p></div><div class="footer-links"><a href="search.html">Search</a><a href="dashboard.html">Dashboard</a><a href="cv.html">CV</a><a href="privacy.html">Copyright & Reuse</a><a href="mailto:razuahmed038@gmail.com">Email</a><a href="https://github.com/beingrazuahmed" target="_blank" rel="noopener">GitHub</a></div></div><div class="container footer-bottom"><span>© 2026 Md. Razu Ahmed. All rights reserved.</span><span>Public portfolio · Privacy-safe by design</span></div></footer>
 
   <script src="data.js"></script>
+  <script src="extra-data.js"></script>
   <script src="script.js"></script>
+  <script>
+    (()=>{const E=window.PORTFOLIO_EXTRA;if(!E)return;const og=document.getElementById('ongoingGrid');if(og)og.innerHTML=E.ongoing.map(x=>`<article class="compact-card reveal visible"><small>${x.status} · ${x.domain}</small><h3>${x.title}</h3><p>${x.methods}</p><p>${x.note}</p></article>`).join('');const lu=document.getElementById('latestUpdates');if(lu)lu.innerHTML=E.latestUpdates.slice(0,6).map(x=>`<article class="update-mini"><small>${x.date} · ${x.type}</small><strong>${x.title}</strong><p>${x.detail}</p></article>`).join('');})();
+  </script>
 </body>
 </html>
