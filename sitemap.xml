@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://beingrazuahmed.github.io/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://beingrazuahmed.github.io/dashboard.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://beingrazuahmed.github.io/search.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://beingrazuahmed.github.io/cv.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://beingrazuahmed.github.io/privacy.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://beingrazuahmed.github.io/</loc></url>
+  <url><loc>https://beingrazuahmed.github.io/profile.html</loc></url>
+  <url><loc>https://beingrazuahmed.github.io/research.html</loc></url>
+  <url><loc>https://beingrazuahmed.github.io/publications.html</loc></url>
+  <url><loc>https://beingrazuahmed.github.io/projects.html</loc></url>
+  <url><loc>https://beingrazuahmed.github.io/academic.html</loc></url>
+  <url><loc>https://beingrazuahmed.github.io/experience.html</loc></url>
+  <url><loc>https://beingrazuahmed.github.io/conferences.html</loc></url>
+  <url><loc>https://beingrazuahmed.github.io/recognition.html</loc></url>
+  <url><loc>https://beingrazuahmed.github.io/network.html</loc></url>
+  <url><loc>https://beingrazuahmed.github.io/resources.html</loc></url>
+  <url><loc>https://beingrazuahmed.github.io/gallery.html</loc></url>
+  <url><loc>https://beingrazuahmed.github.io/dashboard.html</loc></url>
+  <url><loc>https://beingrazuahmed.github.io/ask-razu.html</loc></url>
+  <url><loc>https://beingrazuahmed.github.io/search.html</loc></url>
+  <url><loc>https://beingrazuahmed.github.io/cv.html</loc></url>
+  <url><loc>https://beingrazuahmed.github.io/contact.html</loc></url>
+  <url><loc>https://beingrazuahmed.github.io/privacy.html</loc></url>
+  <url><loc>https://beingrazuahmed.github.io/copyright.html</loc></url>
 </urlset>
