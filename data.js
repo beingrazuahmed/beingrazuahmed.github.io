@@ -249,7 +249,7 @@ window.PORTFOLIO_DATA = {
   profiles: [
     { label: "Google Scholar", url: "https://scholar.google.com/citations?hl=en&user=70z0eXEAAAAJ", type: "academic" },
     { label: "ORCID", url: "https://orcid.org/0009-0001-8646-1881", type: "academic" },
-    { label: "Scopus", url: "https://www.scopus.com/inward/authorDetails.url?authorID=60265043700", type: "academic" },
+    { label: "Scopus", url: "https://www.scopus.com/authid/detail.uri?authorId=60265043700", type: "academic" },
     { label: "Web of Science", url: "https://www.webofscience.com/wos/author/record/PFQ-8088-2025", type: "academic" },
     { label: "ResearchGate", url: "https://www.researchgate.net/profile/Md-Razu-Ahmed-3", type: "academic" },
     { label: "Semantic Scholar", url: "https://www.semanticscholar.org/author/Md.-Razu-Ahmed/2309296098", type: "academic" },
