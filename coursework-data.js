@@ -158,8 +158,18 @@ window.COURSEWORK_DATA = {
 
   instructorLinks: [
     {
-      instructor: "Dr. Md. Shamim Reza",
+      instructor: "Prof. Dr. Md. Shamim Reza",
       role: "Academic Teacher · Project Supervisor",
+      position: "Professor",
+      department: "Department of Statistics and Data Science",
+      institution: "Pabna University of Science and Technology (PUST), Pabna, Bangladesh",
+      leadership: [
+        "Dean, Faculty of Science",
+        "Director, Institutional Quality Assurance Cell (IQAC)"
+      ],
+      credentials: [
+        "PhD, Peking University, China"
+      ],
       courses: [
         "Sampling Techniques - I",
         "Theory of Estimation",
@@ -172,8 +182,19 @@ window.COURSEWORK_DATA = {
       ]
     },
     {
-      instructor: "Dr. Sabba Ruhi",
-      role: "Academic Teacher · Chairman, Department of Statistics and Data Science",
+      instructor: "Prof. Dr. Sabba Ruhi",
+      role: "Academic Teacher · Departmental Leadership",
+      position: "Professor",
+      department: "Department of Statistics and Data Science",
+      institution: "Pabna University of Science and Technology (PUST), Pabna, Bangladesh",
+      leadership: [
+        "Chairman, Department of Statistics and Data Science"
+      ],
+      credentials: [
+        "B.Sc. (Hons.) in Statistics, University of Rajshahi",
+        "M.Sc. in Statistics, University of Rajshahi",
+        "PhD, University of Rajshahi"
+      ],
       courses: [
         "Probability Distribution",
         "Regression Analysis",
@@ -184,13 +205,28 @@ window.COURSEWORK_DATA = {
     {
       instructor: "Dr. Md. Menhazul Abedin",
       role: "Academic Guest Teacher",
+      position: "Associate Professor",
+      credentials: [
+        "PhD, Hokkaido University, Hokkaido, Japan",
+        "M.Sc. (Thesis) in Statistics, University of Rajshahi",
+        "B.Sc. (Hons.) in Statistics, University of Rajshahi"
+      ],
       courses: [
         "Advanced Multivariate Analysis"
       ]
     },
     {
-      instructor: "Dr. Md. Aminul Hoque",
+      instructor: "Prof. Dr. Md. Aminul Hoque",
       role: "Academic Guest Teacher",
+      position: "Professor",
+      department: "Department of Statistics and Data Science",
+      institution: "University of Rajshahi, Rajshahi-6205, Bangladesh",
+      credentials: [
+        "M.Sc. (Rajshahi)",
+        "PhD, Keio University, Japan",
+        "Postdoctoral training, University of Malaya, Malaysia",
+        "Postdoctoral training, Niigata University, Japan"
+      ],
       courses: [
         "Genomics and Bioinformatics",
         "Advanced Statistical Genetics and Bioinformatics"
