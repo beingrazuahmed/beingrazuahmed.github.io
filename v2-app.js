@@ -246,7 +246,33 @@
         ${c.citation?`<details class="citation-details"><summary>View bibliographic citation</summary><p>${esc(c.citation)}</p></details>`:''}
       </div>
 
-      ${f.article?`<div class="journal-progression"><span class="section-kicker">Journal progression</span><p><strong>${esc(f.article)}</strong></p></div>`:''}
+      ${f.article?`<div class="journal-progression journal-progression-rich">
+        <div class="journal-progression-head">
+          <div>
+            <div class="section-kicker">Journal progression</div>
+            <h4>${esc(f.article.title||'')}</h4>
+            <p class="journal-name"><strong>${esc(f.article.journal||'')}</strong></p>
+          </div>
+          <span class="badge journal-status">${esc(f.article.status||'')}</span>
+        </div>
+        <div class="journal-meta-strip">
+          ${f.article.acceptedDate?`<span><strong>Accepted</strong>${esc(f.article.acceptedDate)}</span>`:''}
+          ${f.article.forthcoming?`<span><strong>Forthcoming</strong>${esc(f.article.forthcoming)}</span>`:''}
+          ${f.article.issn?`<span><strong>ISSN</strong>${esc(f.article.issn)}</span>`:''}
+          ${f.article.abbreviatedJournal?`<span><strong>Abbrev.</strong>${esc(f.article.abbreviatedJournal)}</span>`:''}
+        </div>
+        <div class="journal-links">${(f.article.links||[]).map(x=>ext(x.url,x.label)).join(' · ')}</div>
+        <details class="journal-details">
+          <summary>Publication record & journal profile</summary>
+          ${f.article.citation?`<div class="journal-detail-block"><span class="detail-label">Reference</span><p>${esc(f.article.citation)}</p></div>`:''}
+          ${f.article.publisher?`<div class="journal-detail-block"><span class="detail-label">Publisher</span><p>${esc(f.article.publisher)}</p></div>`:''}
+          ${f.article.publicationModel?`<div class="journal-detail-block"><span class="detail-label">Journal model</span><p>${esc(f.article.publicationModel)}</p></div>`:''}
+          ${f.article.journalSince?`<div class="journal-detail-block"><span class="detail-label">Journal history</span><p>${esc(f.article.journalSince)}. ${esc(f.article.hosting||'')}</p></div>`:''}
+          ${f.article.license?`<div class="journal-detail-block"><span class="detail-label">License</span><p>${esc(f.article.license)}</p></div>`:''}
+          ${(f.article.indexing||[]).length?`<div class="journal-detail-block"><span class="detail-label">Indexing & discovery</span><div class="journal-indexing">${(f.article.indexing||[]).map(x=>`<span>${esc(x)}</span>`).join('')}</div></div>`:''}
+          ${f.article.contact?.office?`<div class="journal-detail-block"><span class="detail-label">Official journal address</span><p>${esc(f.article.contact.office)}${f.article.contact.email?` · ${ext('mailto:'+f.article.contact.email,f.article.contact.email)}`:''}</p></div>`:''}
+        </details>
+      </div>`:''}
     </article>`;
   }
 
@@ -279,10 +305,19 @@
   }
 
   function instructorCard(i){
-    return `<article class="card instructor-card">
-      <div class="instructor-mark" aria-hidden="true">${esc((i.instructor||'?').split(' ').filter(Boolean).slice(-1)[0]?.charAt(0)||'?')}</div>
-      <h3>${esc(i.instructor||'')}</h3>
-      <div class="tiny">${esc(i.role||'')}</div>
+    return `<article class="card instructor-card instructor-profile-card">
+      <div class="instructor-mark" aria-hidden="true">${uiIcon('graduation')}</div>
+      <div class="instructor-profile-head">
+        <div>
+          <h3>${esc(i.instructor||'')}</h3>
+          <div class="instructor-position">${esc(i.position||'')}</div>
+          <div class="tiny instructor-role">${esc(i.role||'')}</div>
+        </div>
+      </div>
+      ${i.department||i.institution?`<div class="instructor-affiliation">${i.department?`<strong>${esc(i.department)}</strong>`:''}${i.institution?`<span>${esc(i.institution)}</span>`:''}</div>`:''}
+      ${(i.leadership||[]).length?`<div class="instructor-leadership">${(i.leadership||[]).map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:''}
+      ${(i.credentials||[]).length?`<details class="instructor-credentials"><summary>Academic credentials</summary><ul>${(i.credentials||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></details>`:''}
+      <div class="instructor-course-label">Selected instructor-course links</div>
       <div class="instructor-courses">${(i.courses||[]).map(c=>`<span class="tag">${esc(c)}</span>`).join('')}</div>
     </article>`;
   }
@@ -355,7 +390,7 @@
     </div></section>
 
     <section class="section"><div class="container">
-      ${sectionHead('Teaching network','Selected instructor-course links','Selected academic teachers and guest teachers linked to major courses in the B.Sc. and M.S. curriculum.')}
+      ${sectionHead('Teaching network','Selected instructor-course links','Academic teachers and guest teachers connected to major B.Sc. and M.S. coursework, presented with their academic roles, leadership appointments and qualifications.')}
       <div class="grid grid-2 teaching-network">${(D.instructorLinks||[]).map(instructorCard).join('')}</div>
     </div></section>
 
