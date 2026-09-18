@@ -701,3 +701,230 @@
   .portrait-accent-orb-a{width:38px;height:38px;left:1%;bottom:20%}
   .portrait-accent-orb-b{width:21px;height:21px;right:6%;top:17%}
 }
+
+
+/* === MRA V2 Academic Architecture === */
+.education-grid{align-items:stretch}
+.education-card{
+  position:relative;
+  min-height:230px;
+  display:flex;
+  flex-direction:column;
+  gap:9px;
+}
+.education-card .badge{width:max-content}
+.education-card h3{font-size:1.3rem;margin-top:4px}
+.education-card p{margin:0;color:var(--muted)}
+.education-card p strong{color:var(--text)}
+.education-moi{
+  margin-top:auto!important;
+  padding-top:12px;
+  border-top:1px solid var(--line);
+  font-size:13px;
+  font-weight:780;
+  color:var(--accent)!important;
+}
+.academic-credit-grid{margin-bottom:34px}
+.academic-credit-grid .metric{
+  min-height:136px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.academic-credit-grid .metric small{display:block;margin-top:7px}
+.curriculum-map-head{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:24px;
+  margin:38px 0 20px;
+}
+.curriculum-map-head h3{font-size:clamp(1.9rem,3vw,2.7rem)}
+.curriculum-search{width:min(440px,100%)}
+.curriculum-domain-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+.curriculum-domain{
+  position:relative;
+  overflow:hidden;
+  min-height:250px;
+}
+.curriculum-domain[hidden]{display:none!important}
+.curriculum-domain::before{
+  content:"";
+  position:absolute;
+  inset:0 auto 0 0;
+  width:4px;
+  background:linear-gradient(180deg,var(--accent),var(--accent-2));
+  opacity:.85;
+}
+.curriculum-domain-head{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:14px;
+  align-items:start;
+}
+.curriculum-domain-head h3{margin:0 0 8px}
+.curriculum-domain-head p{margin:0;color:var(--muted)}
+.domain-index{
+  display:grid;
+  place-items:center;
+  width:42px;height:42px;
+  border-radius:14px;
+  background:color-mix(in srgb,var(--accent) 10%,var(--surface-2));
+  border:1px solid color-mix(in srgb,var(--accent) 22%,var(--line));
+  color:var(--accent);
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.04em;
+}
+.curriculum-domain-meta{
+  margin:16px 0 12px 56px;
+  color:var(--muted);
+  font-size:13px;
+  font-weight:760;
+}
+.curriculum-domain details{
+  margin-left:56px;
+  border-top:1px solid var(--line);
+  padding-top:12px;
+}
+.curriculum-domain summary{
+  cursor:pointer;
+  color:var(--accent);
+  font-size:13px;
+  font-weight:850;
+  list-style:none;
+}
+.curriculum-domain summary::-webkit-details-marker{display:none}
+.curriculum-domain summary::after{
+  content:" +";
+  font-weight:900;
+}
+.curriculum-domain details[open] summary::after{content:" −"}
+.curriculum-domain-body{margin-top:14px}
+.curriculum-subgroup+.curriculum-subgroup{margin-top:18px}
+.curriculum-subgroup>strong{
+  display:block;
+  margin-bottom:9px;
+  font-size:13px;
+  color:var(--text);
+}
+.curriculum-components{
+  display:grid;
+  gap:10px;
+}
+.curriculum-component{
+  padding:12px 13px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:color-mix(in srgb,var(--surface-2) 68%,transparent);
+}
+.curriculum-component strong{display:block}
+.curriculum-component span{
+  display:inline-block;
+  margin-top:3px;
+  color:var(--accent);
+  font-size:12px;
+  font-weight:850;
+}
+.curriculum-component p{margin:5px 0 0;color:var(--muted);font-size:13px}
+.academic-project-card{
+  min-height:300px;
+  display:flex;
+  flex-direction:column;
+}
+.academic-project-card h3{
+  font-size:1.45rem;
+  line-height:1.25;
+  margin-top:10px;
+}
+.project-course{margin-top:8px;color:var(--accent)}
+.academic-project-card p:last-child{
+  margin-top:auto;
+  padding-top:14px;
+  border-top:1px solid var(--line);
+}
+.field-survey-card{padding:28px}
+.field-survey-card h3{
+  font-size:clamp(1.5rem,2.3vw,2rem);
+  max-width:1100px;
+  margin-top:12px;
+}
+.field-survey-facts{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+  margin:22px 0;
+}
+.field-survey-facts>div{
+  min-height:105px;
+  padding:14px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:color-mix(in srgb,var(--surface-2) 64%,transparent);
+}
+.field-survey-facts strong{display:block;color:var(--text);line-height:1.35}
+.field-survey-facts span{display:block;margin-top:7px;color:var(--muted);font-size:12px;font-weight:760}
+.progression-3{grid-template-columns:repeat(3,1fr);margin-top:22px}
+.field-survey-outcomes{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin-top:20px;
+}
+.field-survey-outcomes p{
+  margin:0;
+  padding:13px 14px;
+  border-radius:14px;
+  background:color-mix(in srgb,var(--accent) 6%,var(--surface));
+  border:1px solid color-mix(in srgb,var(--accent) 16%,var(--line));
+  color:var(--muted);
+}
+.teaching-network{align-items:stretch}
+.instructor-card{
+  min-height:250px;
+  position:relative;
+  padding-left:82px;
+}
+.instructor-mark{
+  position:absolute;
+  left:22px;top:22px;
+  width:44px;height:44px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  background:linear-gradient(145deg,var(--accent),var(--accent-2));
+  color:#fff;
+  font-weight:900;
+  box-shadow:0 10px 24px var(--glow);
+}
+.instructor-card h3{margin:2px 0 5px}
+.instructor-card .tiny{margin-bottom:16px}
+.instructor-courses{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+}
+.instructor-courses .tag{
+  background:color-mix(in srgb,var(--surface-2) 80%,transparent);
+}
+@media (max-width:1080px){
+  .education-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .curriculum-domain-grid{grid-template-columns:1fr}
+  .field-survey-facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  .education-grid{grid-template-columns:1fr}
+  .curriculum-map-head{display:block}
+  .curriculum-search{margin-top:16px;width:100%}
+  .curriculum-domain-head{grid-template-columns:1fr}
+  .domain-index{width:38px;height:38px}
+  .curriculum-domain-meta,.curriculum-domain details{margin-left:0}
+  .field-survey-facts{grid-template-columns:1fr}
+  .progression-3{grid-template-columns:1fr}
+  .field-survey-outcomes{grid-template-columns:1fr}
+  .instructor-card{padding-left:22px;padding-top:82px}
+  .instructor-mark{top:20px}
+}
