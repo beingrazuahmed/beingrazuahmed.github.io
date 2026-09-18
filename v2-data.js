@@ -53,15 +53,15 @@
     },
     {
       id: 'aminul-hoque', name: 'Dr. Md. Aminul Hoque', group: 'Academic Guidance & Advisors',
-      roles: ['Senior Academic Guidance'],
+      roles: ['Academic Guest Teacher', 'Senior Academic Guidance'],
       affiliation: 'Academic network',
-      description: 'Senior academic guidance within the broader statistics and data-science research network.',
+      description: 'Academic guest teacher linked to genomics, bioinformatics and advanced statistical genetics coursework.',
       shared: [], portrait: 'assets/collaborators/aminul-hoque.jpg', links: []
     },
     {
-      id: 'menhazul-abedin', name: 'Md. Menhazul Abedin', group: 'Academic Guidance & Advisors',
-      roles: ['Senior Academic Guidance'], affiliation: 'Academic network',
-      description: 'Senior academic contact contributing to the wider research and professional-development environment.',
+      id: 'menhazul-abedin', name: 'Dr. Md. Menhazul Abedin', group: 'Academic Guidance & Advisors',
+      roles: ['Academic Guest Teacher', 'Senior Academic Guidance'], affiliation: 'Academic network',
+      description: 'Academic guest teacher linked to advanced multivariate analysis and the wider statistics research environment.',
       shared: [], portrait: 'assets/collaborators/menhazul-abedin.jpg', links: []
     },
     {
@@ -186,16 +186,43 @@
     study: 'Measuring Attitudes towards AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology',
     supervisor: 'Dr. Md. Shamim Reza',
     team: ['Md. Razu Ahmed', 'Md. Abdur Rakib', 'Abu Bakar Shiddik', 'Dr. Md. Shamim Reza'],
-    collection: '15 July – 26 August 2025',
-    population: '4,795',
+    population: 'Target population: 4,795',
     sample: '370 participants',
     variables: '33 variables · 8 socio-demographic + 25 attitudinal',
     design: 'Proportionate stratified sampling · 5-point Likert instrument',
-    dataset: { label: 'Mendeley Data', url: 'https://doi.org/10.17632/s7vk3vt2sj.1' },
     conference: 'ICRAST 2025 · Oral Presentation · p. 120',
     article: 'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh · Accepted / Forthcoming',
-    progression: ['B.Sc. Statistical Field Survey', 'Public research dataset', 'ICRAST 2025 oral presentation', 'Accepted journal article']
+    progression: ['B.Sc. Statistical Field Survey', 'ICRAST 2025 oral presentation', 'Accepted journal article']
   };
+
+  const education = [
+    {
+      degree: 'M.S. in Statistics',
+      institution: 'Pabna University of Science and Technology (PUST)',
+      year: 'Exam Year 2022 · Examination held 2025',
+      detail: 'CGPA 3.49/4.00 · Ranked 5th in the project-based (non-thesis) track',
+      moi: 'Medium of Instruction (MOI): English'
+    },
+    {
+      degree: 'B.Sc. (Hons.) in Statistics',
+      institution: 'Pabna University of Science and Technology (PUST)',
+      year: 'Exam Year 2021 · Examination held 2024',
+      detail: 'CGPA 2.87/4.00',
+      moi: 'Medium of Instruction (MOI): English'
+    },
+    {
+      degree: 'Higher Secondary Certificate (HSC)',
+      institution: 'Rajshahi College',
+      year: '2016',
+      detail: 'Science · GPA 4.83/5.00'
+    },
+    {
+      degree: 'Secondary School Certificate (SSC)',
+      institution: 'Mashkatadighi Multilateral (Technical) High School, Rajshahi',
+      year: '2014',
+      detail: 'Science · GPA 5.00/5.00'
+    }
+  ];
 
   const languages = [
     { name: 'Bangla (Bengali)', level: 'Native proficiency', note: 'Primary language for everyday, community and field communication.' },
@@ -297,7 +324,9 @@
     conferences: base.conferences || [],
     awards: base.awards || [],
     training: base.training || [],
-    education: base.education || [],
+    education,
+    academicProjects: coursework.projects || [],
+    instructorLinks: coursework.instructorLinks || [],
     experience: base.experience || [],
     service: base.service || [],
     engagements: base.engagements || [],
