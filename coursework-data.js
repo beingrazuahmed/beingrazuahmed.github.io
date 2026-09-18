@@ -41,15 +41,12 @@ window.COURSEWORK_DATA = {
         "Econometrics",
         "Research Methodology",
         "Epidemiology and Categorical Data Analysis",
-        "Data Mining",
-        "Machine Learning",
         "Actuarial Statistics",
         "Advanced Multivariate Analysis",
         "Advanced Time Series Analysis",
         "Advanced Statistical Inference",
         "Genomics and Bioinformatics",
         "Advanced Statistical Genetics and Bioinformatics",
-        "Deep Learning for Computer Vision",
         "Environmental Statistics",
         "Reliability and Survival Analysis"
       ]
@@ -92,6 +89,19 @@ window.COURSEWORK_DATA = {
       ]
     },
     {
+      id: "artificial-intelligence-data-science",
+      name: "Artificial Intelligence & Data Science",
+      description: "Programming, data mining, machine learning, deep learning and statistical data-analysis coursework supporting modern data-driven research.",
+      courses: [
+        "Programming with Python and R",
+        "Data Mining",
+        "Machine Learning",
+        "Deep Learning for Computer Vision",
+        "Statistical Data Analysis - I",
+        "Statistical Data Analysis - II"
+      ]
+    },
+    {
       id: "supporting-quantitative",
       name: "Supporting Quantitative Coursework",
       description: "Mathematical, computational and methodological foundations supporting advanced statistical work.",
@@ -101,8 +111,7 @@ window.COURSEWORK_DATA = {
         "Advanced Calculus and Differential Equation",
         "Numerical Analysis and Simulation",
         "Real Analysis and Complex Variable",
-        "Programming with C",
-        "Programming with Python and R"
+        "Programming with C"
       ]
     },
     {
@@ -119,7 +128,7 @@ window.COURSEWORK_DATA = {
       name: "Research, Fieldwork & Assessment",
       description: "Statistical field survey, supervised B.Sc./M.S. projects, viva voce and research-oriented academic assessment.",
       items: [
-        { title: "Statistical Field Survey", credits: 2, detail: "B.Sc. field-based research component" },
+        { title: "Statistical Field Survey", credits: 2, detail: "STAT-4110 · B.Sc. field-based research component" },
         { title: "Statistical Project — B.Sc.", credits: 3, detail: "Supervised undergraduate statistical research project" },
         { title: "Project — M.S.", credits: 4, detail: "Supervised postgraduate project-based research" },
         { title: "Viva Voce — B.Sc.", credits: 16, detail: "Programme-level oral academic assessment across eight semesters" },
