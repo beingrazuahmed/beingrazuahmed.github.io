@@ -577,6 +577,20 @@
       <div class="grid curriculum-domain-grid" id="curriculumGrid">${domains.map(curriculumDomainCard).join('')}</div>
     </div></section>
 
+    <section class="section academic-achievement-section"><div class="container">
+      ${sectionHead('Academic achievement','A+ in fieldwork & supervised research','The three formal research-intensive academic components were each completed with an A+ grade.')}
+      <div class="academic-grade-showcase">
+        <article class="academic-grade-showcase-card academic-motion-card" data-academic-tilt data-tilt-strength="4">
+          <span class="academic-grade-emblem">A+</span>
+          <div><strong>Statistical Field Survey</strong><span>${esc(D.fieldSurvey?.courseCode||'STAT-4110')} · ${esc(D.fieldSurvey?.credits||2)} credits</span></div>
+        </article>
+        ${(D.academicProjects||[]).map(p=>`<article class="academic-grade-showcase-card academic-motion-card" data-academic-tilt data-tilt-strength="4">
+          <span class="academic-grade-emblem">${esc(p.grade||'A+')}</span>
+          <div><strong>${esc((p.course||'').includes('4210')?'B.Sc. Statistical Project':'M.S. Project')}</strong><span>${esc(p.course||'')} · ${esc(p.credits||'')} credits</span></div>
+        </article>`).join('')}
+      </div>
+    </div></section>
+
     <section class="section"><div class="container">
       ${sectionHead('Supervised research','B.Sc. and M.S. academic projects','Two project-based research components connecting formal coursework to peer-reviewed and applied research outputs.')}
       <div class="academic-project-grid">${(D.academicProjects||[]).map(academicProjectCard).join('')}</div>
