@@ -226,7 +226,7 @@ window.COURSEWORK_DATA = {
       role: "Academic Teacher · Project Supervisor",
       position: "Professor",
       department: "Department of Statistics and Data Science",
-      institution: "Pabna University of Science and Technology (PUST), Pabna, Bangladesh",
+      institution: "Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh",
       leadership: [
         "Dean, Faculty of Science",
         "Director, Institutional Quality Assurance Cell (IQAC)"
@@ -250,7 +250,7 @@ window.COURSEWORK_DATA = {
       role: "Academic Teacher · Departmental Leadership",
       position: "Professor",
       department: "Department of Statistics and Data Science",
-      institution: "Pabna University of Science and Technology (PUST), Pabna, Bangladesh",
+      institution: "Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh",
       leadership: [
         "Chairman, Department of Statistics and Data Science"
       ],
@@ -270,6 +270,8 @@ window.COURSEWORK_DATA = {
       instructor: "Dr. Md. Menhazul Abedin",
       role: "Academic Guest Teacher",
       position: "Associate Professor",
+      department: "Statistics Discipline",
+      institution: "Kabi Jibanananda Das Academic Building (3rd Academic Building), Room No. 3160, Khulna University, Khulna-9208, Bangladesh",
       credentials: [
         "PhD, Hokkaido University, Hokkaido, Japan",
         "M.Sc. (Thesis) in Statistics, University of Rajshahi",
