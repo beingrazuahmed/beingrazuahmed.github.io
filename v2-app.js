@@ -154,23 +154,48 @@
   function outputCard(p){ const id=(p.id||'').toLowerCase(); const linkObj=D.publicationLinks?.[id]||p.links||{}; return `<article class="card output-card"><div class="meta"><span class="badge">${esc(p.status||p.bucket||'Research')}</span>${p.role?`<span class="badge">${esc(p.role)}</span>`:''}</div><h3>${esc(p.title||'Untitled')}</h3><p>${esc(p.journal||p.venue||p.summary||p.description||'')}</p><div class="link-row">${links(linkObj)}</div></article>`; }
   function personCard(x){return `<article class="card person-card">${safeImg(x.portrait,x.name,'avatar')}<h3>${esc(x.name)}</h3><div class="meta">${(x.roles||[]).map(r=>`<span class="badge">${esc(r)}</span>`).join('')}</div><p><strong>${esc(x.affiliation||'')}</strong></p><p>${esc(x.description||'')}</p><div class="link-row">${(x.links||[]).map(l=>ext(l.url,l.label)).join(' · ')}</div></article>`;}
   function fieldSurveyCard(){
-    const f=D.fieldSurvey||{};
+    const f=D.fieldSurvey||{}, c=f.conference||{};
     return `<article class="card field-survey-card">
-      <div class="meta"><span class="badge">${esc(f.degree||'')}</span><span class="badge">${esc(f.credits||'')} credits</span></div>
+      <div class="meta">
+        <span class="badge">${esc(f.courseCode||'')}</span>
+        <span class="badge">${esc(f.degree||'')}</span>
+        <span class="badge">${esc(f.credits||'')} credits</span>
+      </div>
       <h3>${esc(f.study||f.title||'')}</h3>
-      <p><strong>Supervisor:</strong> ${esc(f.supervisor||'')}</p>
-      <p><strong>Research team:</strong> ${esc((f.team||[]).join(' · '))}</p>
+      <div class="field-survey-topline">
+        <p><strong>Supervisor:</strong> ${esc(f.supervisor||'')}</p>
+        <p><strong>Research team:</strong> ${esc((f.team||[]).join(' · '))}</p>
+      </div>
+
       <div class="field-survey-facts">
         <div><strong>${esc(f.population||'')}</strong><span>Study frame</span></div>
         <div><strong>${esc(f.sample||'')}</strong><span>Analytical sample</span></div>
         <div><strong>${esc(f.variables||'')}</strong><span>Study variables</span></div>
-        <div><strong>${esc(f.design||'')}</strong><span>Design</span></div>
+        <div><strong>${esc(f.design||'')}</strong><span>Design & data collection</span></div>
       </div>
+
+      ${f.workflowAsset?`<figure class="field-survey-workflow">
+        <div class="workflow-frame">
+          <img src="${esc(f.workflowAsset)}" alt="Workflow of the statistical field survey on attitudes toward AI and the job market">
+        </div>
+        <figcaption>${esc(f.workflowCaption||'Field-survey methodology workflow.')}</figcaption>
+      </figure>`:''}
+
       <div class="progression progression-3">${(f.progression||[]).map(x=>`<div class="step">${esc(x)}</div>`).join('')}</div>
-      <div class="field-survey-outcomes">
-        ${f.conference?`<p><strong>Conference outcome:</strong> ${esc(f.conference)}</p>`:''}
-        ${f.article?`<p><strong>Journal outcome:</strong> ${esc(f.article)}</p>`:''}
+
+      <div class="conference-evidence-card">
+        <div class="conference-evidence-head">
+          <div><div class="section-kicker">Conference presentation</div><h4>${esc(c.fullName||c.shortName||'')}</h4></div>
+          <span class="badge">${esc(c.presentation||'')}</span>
+        </div>
+        <p><strong>${esc(c.host||'')}</strong><br>${esc(c.date||'')}</p>
+        <div class="conference-evidence-meta">
+          <span>${esc(c.source||'')}</span><span>${esc(c.page||'')}</span><span>${esc(c.role||'')}</span>
+        </div>
+        ${c.citation?`<details class="citation-details"><summary>View bibliographic citation</summary><p>${esc(c.citation)}</p></details>`:''}
       </div>
+
+      ${f.article?`<div class="journal-progression"><span class="section-kicker">Journal progression</span><p><strong>${esc(f.article)}</strong></p></div>`:''}
     </article>`;
   }
 
@@ -246,7 +271,7 @@
         <article class="card metric"><strong>${esc(cw.summary?.vivaCredits ?? 20)}</strong><span>Viva-voce credits</span><small>B.Sc. 16 + M.S. 4</small></article>
       </div>
       <div class="curriculum-map-head">
-        <div><div class="section-kicker">Curriculum map</div><h3>Five academic domains</h3></div>
+        <div><div class="section-kicker">Curriculum map</div><h3>Six academic domains</h3></div>
         <div class="search-wrap curriculum-search"><input class="search-input" id="courseSearch" placeholder="Search a course, method or domain…"></div>
       </div>
       <div class="grid curriculum-domain-grid" id="curriculumGrid">${domains.map(curriculumDomainCard).join('')}</div>
