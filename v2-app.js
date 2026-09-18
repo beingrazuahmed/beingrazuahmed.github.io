@@ -121,7 +121,7 @@
   }
 
   function languageCard(l){
-    return `<article class="card language-card language-card-${esc(l.id||'generic')} academic-motion-card" data-academic-tilt data-tilt-strength="3.2">
+    return `<article class="card language-card language-card-${esc(l.id||'generic')}">
       <div class="language-card-head">
         <div class="language-icon">${uiIcon(l.icon||'language')}</div>
         <div>
@@ -147,7 +147,7 @@
     const logo=e.logo? `<img class="education-logo-img" src="${esc(e.logo)}" alt="${esc(e.institution||e.degree)} logo" loading="lazy" decoding="async">` : `<span class="education-logo-fallback">${uiIcon(e.icon||'school')}</span>`;
     return `<article class="education-timeline-item">
       <span class="education-timeline-dot" aria-hidden="true"></span>
-      <div class="card education-card academic-motion-card" data-academic-tilt data-tilt-strength="2.8">
+      <div class="card education-card">
         <div class="education-logo-wrap">${logo}</div>
         <div class="education-card-main">
           <div class="education-card-heading">
@@ -165,7 +165,7 @@
   }
 
   function academicMetric(icon,value,label,detail){
-    return `<article class="card metric academic-metric-card academic-motion-card" data-academic-tilt data-tilt-strength="4"><div class="academic-metric-icon">${uiIcon(icon)}</div><strong>${esc(value)}</strong><span>${esc(label)}</span><small>${esc(detail)}</small></article>`;
+    return `<article class="card metric academic-metric-card"><div class="academic-metric-icon">${uiIcon(icon)}</div><strong>${esc(value)}</strong><span>${esc(label)}</span><small>${esc(detail)}</small></article>`;
   }
 
   function techBrandIcon(item){
@@ -177,7 +177,7 @@
   }
 
   function technicalSkillCard(x){
-    return `<article class="card technical-skill-card academic-motion-card ${x.featured?'technical-skill-featured':''}" data-academic-tilt data-tilt-strength="${x.featured?'1.6':'2.8'}">
+    return `<article class="card technical-skill-card ${x.featured?'technical-skill-featured':''}">
       <div class="technical-skill-head">
         <span class="technical-skill-icon">${uiIcon(x.icon||'analysis')}</span>
         <div>
@@ -197,7 +197,7 @@
   }
 
   function toolGroupCard(g){
-    return `<article class="card tool-group tool-group-modern academic-motion-card" data-academic-tilt data-tilt-strength="2.5">
+    return `<article class="card tool-group tool-group-modern">
       <div class="tool-group-head"><span class="tool-group-icon">${uiIcon(g.icon||'analysis')}</span><h3>${esc(g.group)}</h3></div>
       <div class="tool-items-modern">${(g.items||[]).map(i=>`<div class="tool-item-modern">${techBrandIcon(i)}<div><strong>${esc(i.name)}</strong><p>${esc(i.detail)}</p>${i.url?`<a class="tool-profile-link" href="${esc(i.url)}" target="_blank" rel="noopener noreferrer">View profile ↗</a>`:''}</div></div>`).join('')}</div>
     </article>`;
@@ -235,7 +235,7 @@
         <p>Version snapshots are reported by project because software stacks differ across analyses. This avoids implying that one fixed environment was used for every study.</p>
       </div>
       <div class="compute-environment-list">
-        ${items.map((x,i)=>`<details class="compute-environment-card academic-motion-card" data-academic-tilt data-tilt-strength="1.5" ${i===0?'open':''}>
+        ${items.map((x,i)=>`<details class="compute-environment-card" ${i===0?'open':''}>
           <summary>
             <div><strong>${esc(x.title||'Research environment')}</strong><span>${esc(x.context||'')}</span></div>
             <span class="compute-toggle">+</span>
@@ -412,7 +412,7 @@
   function personCard(x){return `<article class="card person-card">${safeImg(x.portrait,x.name,'avatar')}<h3>${esc(x.name)}</h3><div class="meta">${(x.roles||[]).map(r=>`<span class="badge">${esc(r)}</span>`).join('')}</div><p><strong>${esc(x.affiliation||'')}</strong></p><p>${esc(x.description||'')}</p><div class="link-row">${(x.links||[]).map(l=>ext(l.url,l.label)).join(' · ')}</div></article>`;}
   function fieldSurveyCard(){
     const f=D.fieldSurvey||{}, c=f.conference||{};
-    return `<article class="card field-survey-card academic-motion-card" data-academic-tilt data-tilt-strength="1.35">
+    return `<article class="card field-survey-card">
       <div class="meta">
         <span class="badge">${esc(f.courseCode||'')}</span>
         <span class="badge">${esc(f.degree||'')}</span>
@@ -498,7 +498,7 @@
       : items.length
         ? `<div class="curriculum-components">${items.map(x=>`<div class="curriculum-component"><strong>${esc(x.title)}</strong><span>${esc(x.credits)} credits</span><p>${esc(x.detail||'')}</p></div>`).join('')}</div>`
         : tags(courses);
-    return `<article class="card curriculum-domain academic-motion-card" data-academic-tilt data-tilt-strength="2.3" data-search="${esc((g.name+' '+g.description+' '+courses.join(' ')+' '+groups.map(x=>(x.courses||[]).join(' ')).join(' ')+' '+items.map(x=>x.title).join(' ')).toLowerCase())}">
+    return `<article class="card curriculum-domain" data-search="${esc((g.name+' '+g.description+' '+courses.join(' ')+' '+groups.map(x=>(x.courses||[]).join(' ')).join(' ')+' '+items.map(x=>x.title).join(' ')).toLowerCase())}">
       <div class="curriculum-domain-head"><span class="domain-index">${esc(String((D.coursework?.categories||[]).indexOf(g)+1).padStart(2,'0'))}</span><div><h3>${esc(g.name||'Academic domain')}</h3><p>${esc(g.description||'')}</p></div></div>
       <div class="curriculum-domain-meta">${esc(meta)}</div>
       <details><summary>View coursework & components</summary><div class="curriculum-domain-body">${body}</div></details>
@@ -506,7 +506,7 @@
   }
 
   function academicProjectCard(p){
-    return `<article class="card academic-project-card academic-project-rich academic-motion-card" data-academic-tilt data-tilt-strength="1.25">
+    return `<article class="card academic-project-card academic-project-rich">
       <div class="academic-project-head">
         <div>
           <div class="meta"><span class="badge">${esc(p.level||'')}</span><span class="badge">${esc(p.credits||'')} credits</span>${p.type?`<span class="badge">${esc(p.type)}</span>`:''}${p.grade?`<span class="academic-grade-pill"><span class="grade-star" aria-hidden="true">★</span><strong>${esc(p.grade)}</strong><small>${esc(p.gradeLabel||'Grade')}</small></span>`:''}</div>
@@ -557,7 +557,7 @@
   }
 
   function instructorCard(i){
-    return `<article class="card instructor-card instructor-profile-card academic-motion-card" data-academic-tilt data-tilt-strength="2.2">
+    return `<article class="card instructor-card instructor-profile-card">
       <div class="instructor-portrait-wrap">
         ${i.portrait?`<img class="instructor-portrait" src="${esc(i.portrait)}" alt="${esc(i.instructor||'Instructor')} portrait" loading="lazy" decoding="async">`:''}
         <span class="instructor-portrait-fallback" aria-hidden="true">${uiIcon('graduation')}</span>
@@ -637,11 +637,11 @@
     <section class="section academic-achievement-section"><div class="container">
       ${sectionHead('Academic achievement','A+ in fieldwork & supervised research','The three formal research-intensive academic components were each completed with an A+ grade.')}
       <div class="academic-grade-showcase">
-        <article class="card academic-grade-showcase-card academic-motion-card" data-academic-tilt data-tilt-strength="4">
+        <article class="card academic-grade-showcase-card">
           <span class="academic-grade-emblem">A+</span>
           <div><strong>Statistical Field Survey</strong><span>${esc(D.fieldSurvey?.courseCode||'STAT-4110')} · ${esc(D.fieldSurvey?.credits||2)} credits</span></div>
         </article>
-        ${(D.academicProjects||[]).map(p=>`<article class="card academic-grade-showcase-card academic-motion-card" data-academic-tilt data-tilt-strength="4">
+        ${(D.academicProjects||[]).map(p=>`<article class="card academic-grade-showcase-card">
           <span class="academic-grade-emblem">${esc(p.grade||'A+')}</span>
           <div><strong>${esc((p.course||'').includes('4210')?'B.Sc. Statistical Project':'M.S. Project')}</strong><span>${esc(p.course||'')} · ${esc(p.credits||'')} credits</span></div>
         </article>`).join('')}
