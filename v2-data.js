@@ -238,9 +238,53 @@
   ];
 
   const languages = [
-    { name: 'Bangla (Bengali)', level: 'Native proficiency', note: 'Primary language for everyday, community and field communication.' },
-    { name: 'English', level: 'Professional working proficiency', note: 'Medium of Instruction (MOI): English for both B.Sc. (Hons.) in Statistics and M.S. in Statistics; used for lectures, examinations, research, manuscript preparation, conferences, peer review and scholarly correspondence.' }
+    {
+      id: 'bangla',
+      name: 'Bangla',
+      nativeName: 'বাংলা',
+      level: 'Native proficiency',
+      badge: 'Native / Mother Tongue',
+      icon: 'language',
+      note: 'Primary language for everyday, community, field and interpersonal communication in Bangladesh.',
+      evidence: [
+        'Native spoken and written communication across formal and everyday contexts',
+        'Field and participant-facing communication in Bangladesh-based survey and public-health research',
+        'Comfortable explaining statistical and research concepts in Bangla when communicating with students and local audiences'
+      ]
+    },
+    {
+      id: 'english',
+      name: 'English',
+      nativeName: '',
+      level: 'Professional working proficiency',
+      badge: 'Medium of Instruction: B.Sc. + M.S.',
+      icon: 'graduation',
+      note: 'English is the Medium of Instruction (MOI) for both the B.Sc. (Hons.) in Statistics and M.S. in Statistics at Pabna University of Science and Technology.',
+      evidence: [
+        'Used throughout degree-level lectures, examinations, laboratory/applied coursework and supervised research projects',
+        'Primary language for manuscript preparation, scholarly correspondence and research documentation',
+        'Used for conference presentations, peer-review activity and communication within multidisciplinary research collaborations'
+      ]
+    }
   ];
+
+  const languageProfile = {
+    statement: 'My academic communication profile combines native Bangla proficiency with professional working proficiency in English. English served as the Medium of Instruction (MOI) across both my B.Sc. (Hons.) and M.S. degrees in Statistics, while Bangla remains central to local, field and community-facing communication.',
+    moi: {
+      title: 'Medium of Instruction (MOI)',
+      summary: 'English for both B.Sc. (Hons.) in Statistics and M.S. in Statistics at Pabna University of Science and Technology (PUST).',
+      degrees: [
+        { label: 'B.Sc. (Hons.) in Statistics', value: 'English MOI' },
+        { label: 'M.S. in Statistics', value: 'English MOI' }
+      ]
+    },
+    evidence: [
+      { icon: 'publication', title: 'Research Writing', detail: 'Peer-reviewed journal articles, active manuscripts, technical documentation and scholarly correspondence prepared in English.' },
+      { icon: 'conference', title: 'Conference Communication', detail: 'Oral and poster research dissemination across national academic conferences, including presenting-author roles.' },
+      { icon: 'review', title: 'Peer Review', detail: '32 completed invited peer reviews across international journals, requiring sustained critical reading and written scholarly feedback in English.' },
+      { icon: 'field', title: 'Field & Local Communication', detail: 'Bangla supports participant-facing, community and local academic communication in Bangladesh-based research contexts.' }
+    ]
+  };
 
   const strengths = [
     { title: 'Rapid Learner', detail: 'Adapts quickly to unfamiliar methods, software, datasets and research domains.' },
@@ -351,6 +395,7 @@
     coursework,
     fieldSurvey,
     languages,
+    languageProfile,
     strengths,
     engagement,
     personalInterests: interests,
