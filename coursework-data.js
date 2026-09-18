@@ -139,20 +139,84 @@ window.COURSEWORK_DATA = {
 
   projects: [
     {
-      level: "B.Sc. (Hons.) in Statistics",
+      level: "Bachelor of Science (B.Sc. Hons.) in Statistics",
       course: "STAT-4210 · Statistical Project",
       credits: 3,
+      type: "B.Sc. supervised research project",
       title: "Sophisticated Audio Source Separation: A Statistical Exploration of Clarity and Precision with FastICA",
-      supervisor: "Dr. Md. Shamim Reza",
-      outcome: "Developed into a peer-reviewed journal article in Engineering Reports."
+      supervisor: "Prof. Dr. Md. Shamim Reza",
+      focus: "Statistical signal processing · blind source separation · dimensionality reduction",
+      summary: "This project evaluates audio source separation using Fast Independent Component Analysis (FastICA) in a fully specified and reproducible workflow, with Principal Component Analysis (PCA) and Non-negative Matrix Factorization (NMF) as comparative baselines. Three conversational recordings collected at the Department of Statistics, Pabna University of Science and Technology were canonicalized to 48 kHz WAV, mixed through a fixed 3×3 row-normalized Gaussian matrix, and evaluated using BSS Eval after best-permutation and scale alignment. FastICA substantially outperformed both baselines in SDR and SIR while preserving very high SAR.",
+      methods: [
+        "FastICA",
+        "Principal Component Analysis (PCA)",
+        "Non-negative Matrix Factorization (NMF)",
+        "Blind source separation",
+        "Audio preprocessing",
+        "BSS Eval",
+        "Waveform & spectrogram analysis",
+        "Descriptive, higher-order & entropy statistics"
+      ],
+      metrics: [
+        { label: "FastICA SDR", value: "53.51 ± 0.07 dB" },
+        { label: "FastICA SIR", value: "53.52 ± 0.07 dB" },
+        { label: "FastICA SAR", value: "79.58 ± 0.00 dB" }
+      ],
+      benchmark: "PCA: SDR 2.79 ± 0.00 dB · SIR 2.79 ± 0.00 dB · SAR 80.64 ± 0.00 dB. NMF: SDR −2.26 ± 0.00 dB · SIR 0.41 ± 0.00 dB · SAR 4.80 ± 0.00 dB.",
+      keywords: [
+        "Audio source separation",
+        "Fast Independent Component Analysis (FastICA)",
+        "Principal Component Analysis (PCA)",
+        "Non-negative Matrix Factorization (NMF)",
+        "Signal-to-Distortion Ratio (SDR)",
+        "Signal-to-Interference Ratio (SIR)",
+        "Signal-to-Artifact Ratio (SAR)"
+      ],
+      figure: "assets/academic/projects/bsc-fastica-pipeline.png",
+      figureAlt: "End-to-end audio source separation workflow comparing FastICA, PCA and NMF",
+      figureCaption: "End-to-end pipeline for audio source separation with FastICA and two baselines (PCA and NMF).",
+      outcome: "Developed into a peer-reviewed journal article in Engineering Reports.",
+      outputLabel: "Published article",
+      outputUrl: "https://doi.org/10.1002/eng2.70575"
     },
     {
-      level: "M.S. in Statistics",
+      level: "Master of Science (M.S.) in Statistics",
       course: "M.STAT-5110 · Project",
       credits: 4,
+      type: "M.S. supervised research project",
       title: "A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images",
-      supervisor: "Dr. Md. Shamim Reza",
-      outcome: "Developed into an explainable diabetic-retinopathy grading research framework and web-based research prototype."
+      supervisor: "Prof. Dr. Md. Shamim Reza",
+      focus: "Medical image analysis · deep learning · handcrafted feature fusion · explainable AI",
+      summary: "This project proposes a stage-wise deep-handcrafted feature fusion framework for automated five-class diabetic retinopathy grading from retinal fundus images. A leak-safe cross-source benchmark was created by harmonizing APTOS 2019 and IDRiD while preserving the official IDRiD test split. The validation-driven five-stage workflow compared frozen deep embeddings, handcrafted descriptors, feature fusion, fine-tuning, and fusion with fine-tuned embeddings under a consistent evaluation protocol. The selected Stage-5 model combines fine-tuned DenseNet121 embeddings with SIFT-BoVW and XGBoost and was integrated into an explainable screening-oriented web prototype.",
+      methods: [
+        "DenseNet121",
+        "SIFT-BoVW",
+        "XGBoost",
+        "Deep-handcrafted feature fusion",
+        "Transfer learning",
+        "Leakage-aware cross-source validation",
+        "1,000 bootstrap resamples",
+        "Grad-CAM++",
+        "Five-class DR grading"
+      ],
+      metrics: [
+        { label: "Test Accuracy", value: "78.71% ± 1.65%" },
+        { label: "Macro-F1", value: "64.13% ± 2.55%" },
+        { label: "Cohen’s κ", value: "67.88% ± 2.30%" },
+        { label: "OvR AUC", value: "94.80% ± 0.59%" }
+      ],
+      benchmark: "The final Stage-5 fusion model achieved the strongest held-out Accuracy, Cohen’s kappa and OvR AUC among the evaluated models while remaining competitive in Macro-F1.",
+      keywords: [
+        "Diabetic retinopathy",
+        "Retinal fundus images",
+        "Deep learning",
+        "Handcrafted features",
+        "Feature fusion"
+      ],
+      figure: "assets/academic/projects/ms-dr-screening-prototype.png",
+      figureAlt: "Web-based diabetic retinopathy screening prototype with five-class prediction and Grad-CAM++",
+      figureCaption: "Web-based DR screening prototype illustrating image upload, five-class prediction (Grades 0–4), Grad-CAM++ visualization, and class-wise probability outputs.",
+      outcome: "Developed into an explainable diabetic-retinopathy grading framework and web-based research prototype."
     }
   ],
 
