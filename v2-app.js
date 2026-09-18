@@ -143,7 +143,7 @@
   }
 
   function educationCard(e){
-    const logo=e.logo? `<img class="education-logo-img" src="${esc(e.logo)}" alt="${esc(e.institution||e.degree)} logo" onerror="this.outerHTML='<span class=\'education-logo-fallback\'>${uiIcon(e.icon||'school').replace(/'/g,"&#39;")}</span>'">` : `<span class="education-logo-fallback">${uiIcon(e.icon||'school')}</span>`;
+    const logo=e.logo? `<img class="education-logo-img" src="${esc(e.logo)}" alt="${esc(e.institution||e.degree)} logo" loading="lazy" decoding="async">` : `<span class="education-logo-fallback">${uiIcon(e.icon||'school')}</span>`;
     return `<article class="education-timeline-item">
       <span class="education-timeline-dot" aria-hidden="true"></span>
       <div class="card education-card">
@@ -172,7 +172,7 @@
     const fallback=esc((item.short||item.name||'?').split(/\s+/).map(x=>x[0]).join('').slice(0,3).toUpperCase());
     if(!slug) return `<span class="tech-logo-fallback">${fallback}</span>`;
     const url=`https://cdn.simpleicons.org/${encodeURIComponent(slug)}`;
-    return `<span class="tech-logo"><img src="${url}" alt="" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=\'tech-logo-fallback\'>${fallback}</span>'"></span>`;
+    return `<span class="tech-logo"><img src="${url}" alt="" loading="lazy" decoding="async" data-tech-fallback="${fallback}"></span>`;
   }
 
   function toolGroupCard(g){
@@ -503,6 +503,14 @@
     $('#searchBtn')?.addEventListener('click',()=>location.href='search.html');
     document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();location.href='search.html'} if(e.key==='/'){if(!/INPUT|TEXTAREA/.test(document.activeElement.tagName)){e.preventDefault();location.href='search.html'}} if(e.key.toLowerCase()==='h'&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName))location.href='index.html'; if(e.key.toLowerCase()==='t'&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName))$('#settings').toggleAttribute('hidden'); if(e.key==='Escape'){ $('#settings')?.setAttribute('hidden','');$('#mobilePanel')?.setAttribute('hidden',''); }});
     const search=$('#pubSearch'), grid=$('#pubGrid'); if(search&&grid){const cards=[...grid.children]; let filter='all'; const run=()=>{const q=search.value.toLowerCase();cards.forEach((c,i)=>{const o=(D.outputs||[])[i]||{};const okQ=!q||c.textContent.toLowerCase().includes(q); const bucket=o.bucket||''; const okF=filter==='all'||bucket===filter; c.hidden=!(okQ&&okF)});}; search.addEventListener('input',run); $$('#pubFilters .filter').forEach(b=>b.addEventListener('click',()=>{$$('#pubFilters .filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');filter=b.dataset.filter;run()}));}
+    $('.education-logo-img').forEach(img=>img.addEventListener('error',()=>{
+      const wrap=img.closest('.education-logo-wrap');
+      if(wrap){wrap.innerHTML='<span class="education-logo-fallback">EDU</span>';}
+    },{once:true}));
+    $('img[data-tech-fallback]').forEach(img=>img.addEventListener('error',()=>{
+      const wrap=img.closest('.tech-logo');
+      if(wrap){const span=document.createElement('span');span.className='tech-logo-fallback';span.textContent=img.dataset.techFallback||'APP';wrap.replaceWith(span);}
+    },{once:true}));
     const courseSearch=$('#courseSearch'), curriculumGrid=$('#curriculumGrid');
     if(courseSearch&&curriculumGrid){
       const domains=[...curriculumGrid.querySelectorAll('.curriculum-domain')];
