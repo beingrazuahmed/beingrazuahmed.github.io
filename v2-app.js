@@ -315,8 +315,10 @@
         <div class="workflow-frame workflow-frame-light">
           <img src="${esc(f.workflowAsset)}" alt="Workflow of the statistical field survey on attitudes toward AI and the job market">
         </div>
-        <figcaption>${esc(f.workflowCaption||'Field-survey methodology workflow.')}</figcaption>
+        <figcaption><strong>Workflow.</strong> ${esc(f.workflowCaption||'Field-survey methodology workflow.')}</figcaption>
       </figure>`:''}
+
+      ${(f.keywords||[]).length?`<div class="field-survey-keywords"><div class="project-block-label">Keywords</div><div class="project-tags">${(f.keywords||[]).map(x=>`<span>${esc(x)}</span>`).join('')}</div></div>`:''}
 
       <div class="progression progression-3">${(f.progression||[]).map(x=>`<div class="step">${esc(x)}</div>`).join('')}</div>
 
@@ -381,12 +383,38 @@
   }
 
   function academicProjectCard(p){
-    return `<article class="card academic-project-card">
-      <div class="meta"><span class="badge">${esc(p.level||'')}</span><span class="badge">${esc(p.credits||'')} credits</span></div>
-      <div class="tiny project-course">${esc(p.course||'')}</div>
-      <h3>${esc(p.title||'')}</h3>
-      <p><strong>Supervisor:</strong> ${esc(p.supervisor||'')}</p>
-      <p>${esc(p.outcome||'')}</p>
+    return `<article class="card academic-project-card academic-project-rich">
+      <div class="academic-project-head">
+        <div>
+          <div class="meta"><span class="badge">${esc(p.level||'')}</span><span class="badge">${esc(p.credits||'')} credits</span>${p.type?`<span class="badge">${esc(p.type)}</span>`:''}</div>
+          <div class="tiny project-course">${esc(p.course||'')}</div>
+          <h3>${esc(p.title||'')}</h3>
+        </div>
+      </div>
+
+      ${p.focus?`<p class="project-focus"><strong>Research focus:</strong> ${esc(p.focus)}</p>`:''}
+      <p class="project-summary">${esc(p.summary||p.outcome||'')}</p>
+
+      ${(p.metrics||[]).length?`<div class="project-metrics">${(p.metrics||[]).map(m=>`<div><strong>${esc(m.value||'')}</strong><span>${esc(m.label||'')}</span></div>`).join('')}</div>`:''}
+
+      ${p.benchmark?`<div class="project-benchmark"><strong>Comparative result</strong><p>${esc(p.benchmark)}</p></div>`:''}
+
+      ${(p.methods||[]).length?`<div class="project-block"><div class="project-block-label">Methods & techniques</div><div class="project-tags">${(p.methods||[]).map(x=>`<span>${esc(x)}</span>`).join('')}</div></div>`:''}
+
+      ${p.figure?`<figure class="project-figure research-figure-card">
+        <div class="research-figure-frame">
+          <img class="project-figure-img" src="${esc(p.figure)}" alt="${esc(p.figureAlt||p.figureCaption||p.title||'Academic project figure')}" loading="lazy" decoding="async">
+        </div>
+        <figcaption><strong>Figure.</strong> ${esc(p.figureCaption||'Academic project figure.')}</figcaption>
+      </figure>`:''}
+
+      ${(p.keywords||[]).length?`<div class="project-block project-keywords"><div class="project-block-label">Keywords</div><div class="project-tags">${(p.keywords||[]).map(x=>`<span>${esc(x)}</span>`).join('')}</div></div>`:''}
+
+      <div class="project-footer">
+        <p><strong>Supervisor:</strong> ${esc(p.supervisor||'')}</p>
+        <p><strong>Outcome:</strong> ${esc(p.outcome||'')}</p>
+        ${p.outputUrl?`<a class="btn small" href="${esc(p.outputUrl)}" target="_blank" rel="noopener noreferrer">${esc(p.outputLabel||'View related output')}</a>`:''}
+      </div>
     </article>`;
   }
 
@@ -536,6 +564,10 @@
     document.querySelectorAll('img[data-tech-fallback]').forEach(img=>img.addEventListener('error',()=>{
       const wrap=img.closest('.tech-logo');
       if(wrap){const span=document.createElement('span');span.className='tech-logo-fallback';span.textContent=img.dataset.techFallback||'APP';wrap.replaceWith(span);}
+    },{once:true}));
+    document.querySelectorAll('.project-figure-img').forEach(img=>img.addEventListener('error',()=>{
+      const figure=img.closest('.project-figure');
+      if(figure){figure.hidden=true;}
     },{once:true}));
     const courseSearch=$('#courseSearch'), curriculumGrid=$('#curriculumGrid');
     if(courseSearch&&curriculumGrid){
