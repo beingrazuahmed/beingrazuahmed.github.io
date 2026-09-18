@@ -109,6 +109,12 @@
       project:'<path d="M4 5h6l2 2h8v12H4zM8 12h8m-8 4h5"/>',
       viva:'<path d="M5 6h14v9H9l-4 4V6Zm4 4h6"/>',
       credits:'<path d="M4 6h16M4 12h16M4 18h16M7 4v4m5 2v4m5 2v4"/>',
+      analysis:'<path d="M4 19V9m5 10V5m5 14v-7m5 7V3M2 21h20"/>',
+      code:'<path d="m8 9-4 3 4 3m8-6 4 3-4 3m-5 3 2-12"/>',
+      web:'<path d="M3 5h18v14H3zM3 9h18m-14 6 2-2 2 2 3-3 3 3"/>',
+      terminal:'<path d="M4 5h16v14H4zM7 9l3 3-3 3m5 0h4"/>',
+      branch:'<path d="M6 4v10a4 4 0 0 0 4 4h4M6 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm12 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm0-12a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm0 0c0 5-2 6-6 6"/>',
+      workspace:'<path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/>',
       check:'<path d="m5 12 4 4L19 6"/>'
     };
     return `<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">${paths[name]||paths.check}</svg>`;
@@ -137,23 +143,55 @@
   }
 
   function educationCard(e){
-    return `<article class="card education-card">
-      <div class="education-card-top">
-        <div class="education-icon">${uiIcon(e.icon||'graduation')}</div>
-        <div class="badge">${esc(e.period||e.year||'')}</div>
-      </div>
-      <h3>${esc(e.degree||e.title||'')}</h3>
-      <div class="education-detail-list">
-        <div class="education-detail-row">${uiIcon('school')}<div><span>Institution</span><strong>${esc(e.institution||e.place||'')}</strong></div></div>
-        <div class="education-detail-row">${uiIcon('credits')}<div><span>Academic record</span><strong>${esc(e.detail||e.description||e.cgpa||'')}</strong></div></div>
-        ${e.board?`<div class="education-detail-row">${uiIcon('board')}<div><span>Education Board</span><strong>${esc(e.board)}</strong></div></div>`:''}
-        ${e.moi?`<div class="education-detail-row education-moi-row">${uiIcon('language')}<div><span>Medium of Instruction</span><strong>${esc(e.moi.replace('Medium of Instruction (MOI): ','')||e.moi)}</strong></div></div>`:''}
+    const logo=e.logo? `<img class="education-logo-img" src="${esc(e.logo)}" alt="${esc(e.institution||e.degree)} logo" onerror="this.outerHTML='<span class=\'education-logo-fallback\'>${uiIcon(e.icon||'school').replace(/'/g,"&#39;")}</span>'">` : `<span class="education-logo-fallback">${uiIcon(e.icon||'school')}</span>`;
+    return `<article class="education-timeline-item">
+      <span class="education-timeline-dot" aria-hidden="true"></span>
+      <div class="card education-card">
+        <div class="education-logo-wrap">${logo}</div>
+        <div class="education-card-main">
+          <div class="education-card-heading">
+            <div><h3>${esc(e.degree||e.title||'')}</h3><p class="education-institution">${esc(e.institution||e.place||'')}</p></div>
+            <div class="badge education-year">${uiIcon('calendar')}<span>${esc(e.period||e.year||'')}</span></div>
+          </div>
+          <div class="education-detail-list education-detail-list-inline">
+            <div class="education-detail-row">${uiIcon('credits')}<div><span>Academic record</span><strong>${esc(e.detail||e.description||e.cgpa||'')}</strong></div></div>
+            ${e.board?`<div class="education-detail-row">${uiIcon('board')}<div><span>Education Board</span><strong>${esc(e.board)}</strong></div></div>`:''}
+            ${e.moi?`<div class="education-detail-row education-moi-row">${uiIcon('language')}<div><span>Medium of Instruction (MOI)</span><strong>${esc(e.moi.replace('Medium of Instruction (MOI): ','')||e.moi)}</strong></div></div>`:''}
+          </div>
+        </div>
       </div>
     </article>`;
   }
 
   function academicMetric(icon,value,label,detail){
     return `<article class="card metric academic-metric-card"><div class="academic-metric-icon">${uiIcon(icon)}</div><strong>${esc(value)}</strong><span>${esc(label)}</span><small>${esc(detail)}</small></article>`;
+  }
+
+  function techBrandIcon(item){
+    const slug=(item.brand||'').trim();
+    const fallback=esc((item.short||item.name||'?').split(/\s+/).map(x=>x[0]).join('').slice(0,3).toUpperCase());
+    if(!slug) return `<span class="tech-logo-fallback">${fallback}</span>`;
+    const url=`https://cdn.simpleicons.org/${encodeURIComponent(slug)}`;
+    return `<span class="tech-logo"><img src="${url}" alt="" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=\'tech-logo-fallback\'>${fallback}</span>'"></span>`;
+  }
+
+  function toolGroupCard(g){
+    return `<article class="card tool-group tool-group-modern">
+      <div class="tool-group-head"><span class="tool-group-icon">${uiIcon(g.icon||'analysis')}</span><h3>${esc(g.group)}</h3></div>
+      <div class="tool-items-modern">${(g.items||[]).map(i=>`<div class="tool-item-modern">${techBrandIcon(i)}<div><strong>${esc(i.name)}</strong><p>${esc(i.detail)}</p></div></div>`).join('')}</div>
+    </article>`;
+  }
+
+  function techMarquee(){
+    const items=(D.tools||[]).flatMap(g=>g.items||[]);
+    if(!items.length) return '';
+    const track=[...items,...items];
+    return `<div class="tech-marquee-wrap" aria-label="Technologies and software I work with">
+      <div class="tech-marquee-title"><span class="section-kicker">Research technology stack</span><h3>Technologies & software I work with</h3><p>Statistical computing, reproducible research, programming, prototyping and collaborative research tools.</p></div>
+      <div class="tech-marquee" tabindex="0">
+        <div class="tech-marquee-track">${track.map((i,idx)=>`<div class="tech-marquee-item" ${idx>=items.length?'aria-hidden="true"':''}>${techBrandIcon(i)}<span>${esc(i.short||i.name)}</span></div>`).join('')}</div>
+      </div>
+    </div>`;
   }
 
   function languagePanel(compact=false){
@@ -388,7 +426,7 @@
     return `${pageHero('Academic','Education, curriculum, fieldwork, supervised projects and research training.')}
     <section class="section"><div class="container">
       ${sectionHead('Academic journey','Education','Formal education from secondary science training through postgraduate statistics.')}
-      <div class="grid grid-4 education-grid">${(D.education||[]).map(educationCard).join('')}</div>
+      <div class="education-timeline">${(D.education||[]).map(educationCard).join('')}</div>
     </div></section>
 
     <section class="section alt"><div class="container">
@@ -429,8 +467,9 @@
     </div></section>
 
     <section class="section"><div class="container">
-      ${sectionHead('Skills & software','Evidence-linked research toolkit')}
-      <div class="grid grid-3">${(D.tools||[]).map(g=>`<article class="card tool-group"><h3>${esc(g.group)}</h3>${(g.items||[]).map(i=>`<div class="tool-item"><strong>${esc(i.name)}</strong><p>${esc(i.detail)}</p></div>`).join('')}</article>`).join('')}</div>
+      ${sectionHead('Skills & software','Evidence-linked research toolkit','Tools are grouped by how they support statistical analysis, reproducible research, programming, prototyping and collaboration.')}
+      <div class="grid grid-3 tool-grid-modern">${(D.tools||[]).map(toolGroupCard).join('')}</div>
+      ${techMarquee()}
     </div></section>`;
   }
 
