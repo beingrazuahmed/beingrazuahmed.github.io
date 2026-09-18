@@ -2002,3 +2002,20 @@
   .tech-marquee::before,.tech-marquee::after{width:34px}
   .tech-marquee-item{min-width:132px}
 }
+
+
+/* === Education Logo Asset Refinement === */
+.education-logo-img[src*="rajshahi-college-logo"]{
+  border-radius:50%;
+  max-width:74px;
+  max-height:74px;
+}
+.education-logo-img[src*="mashkatadighi-high-school-logo"]{
+  border-radius:12px;
+  max-width:76px;
+  max-height:76px;
+}
+.education-logo-img[src*="pust-logo"]{
+  max-width:76px;
+  max-height:82px;
+}
