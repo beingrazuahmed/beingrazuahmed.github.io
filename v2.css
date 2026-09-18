@@ -2490,3 +2490,58 @@
   .project-metrics{grid-template-columns:1fr}
   .research-figure-frame{border-radius:15px;padding:10px}
 }
+
+
+/* === Instructor Portrait Upgrade === */
+.instructor-profile-card{
+  position:relative;
+  padding-left:112px;
+}
+.instructor-portrait-wrap{
+  position:absolute;
+  top:24px;
+  left:24px;
+  width:68px;
+  height:68px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  border:3px solid var(--surface);
+  outline:1px solid color-mix(in srgb,var(--accent) 18%,var(--line));
+  background:color-mix(in srgb,var(--accent) 8%,var(--surface-2));
+  box-shadow:0 10px 28px rgba(26,68,102,.10);
+}
+.instructor-portrait{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  background:#fff;
+  z-index:2;
+}
+.instructor-portrait-fallback{
+  display:grid;
+  place-items:center;
+  width:100%;
+  height:100%;
+  color:var(--accent);
+}
+.instructor-portrait-fallback .ui-icon{
+  width:24px;
+  height:24px;
+}
+@media (max-width:760px){
+  .instructor-profile-card{
+    padding-left:20px;
+    padding-top:108px;
+  }
+  .instructor-portrait-wrap{
+    top:22px;
+    left:20px;
+    width:66px;
+    height:66px;
+  }
+}
