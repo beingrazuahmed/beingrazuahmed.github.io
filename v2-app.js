@@ -18,9 +18,44 @@
     const el = $('#site-header'); if(!el) return;
     el.innerHTML = `<div class="topbar"><div class="container nav-shell">
       <a class="brand" href="index.html"><span class="monogram">MRA</span><span>Md. Razu Ahmed</span></a>
-      <nav class="nav" aria-label="Primary">${nav.map(([k,l,h])=>`<a href="${h}" ${page===k?'aria-current="page"':''}>${l}</a>`).join('')}</nav>
+      <div class="nav-scroll-zone">
+        <button class="nav-scroll-btn left" id="navScrollLeft" type="button" aria-label="Scroll navigation left">‹</button>
+        <nav class="nav" id="primaryNav" aria-label="Primary">${nav.map(([k,l,h])=>`<a href="${h}" ${page===k?'aria-current="page"':''}>${l}</a>`).join('')}</nav>
+        <button class="nav-scroll-btn right" id="navScrollRight" type="button" aria-label="Scroll navigation right">›</button>
+      </div>
       <div class="nav-actions"><a class="btn ghost desktop-only" href="ask-razu.html">Ask Razu AI</a><button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button><button class="icon-btn" id="settingsBtn" aria-label="Appearance settings">◐</button><button class="icon-btn menu-btn" id="menuBtn" aria-label="Menu">☰</button></div>
     </div></div><nav class="mobile-panel" id="mobilePanel" hidden>${nav.map(([k,l,h])=>`<a href="${h}">${l}</a>`).join('')}<a href="ask-razu.html">Ask Razu AI</a><a href="cv.html">CV</a></nav>`;
+
+    const navEl = $('#primaryNav');
+    const leftBtn = $('#navScrollLeft');
+    const rightBtn = $('#navScrollRight');
+    if(navEl && leftBtn && rightBtn){
+      const step = () => Math.max(260, Math.round(navEl.clientWidth * 0.65));
+      const updateNavControls = () => {
+        const maxScroll = Math.max(0, navEl.scrollWidth - navEl.clientWidth);
+        const overflowing = maxScroll > 4;
+        leftBtn.classList.toggle('is-hidden', !overflowing || navEl.scrollLeft <= 4);
+        rightBtn.classList.toggle('is-hidden', !overflowing || navEl.scrollLeft >= maxScroll - 4);
+        leftBtn.disabled = !overflowing || navEl.scrollLeft <= 4;
+        rightBtn.disabled = !overflowing || navEl.scrollLeft >= maxScroll - 4;
+      };
+      leftBtn.addEventListener('click', () => navEl.scrollBy({left:-step(), behavior:'smooth'}));
+      rightBtn.addEventListener('click', () => navEl.scrollBy({left:step(), behavior:'smooth'}));
+      navEl.addEventListener('scroll', updateNavControls, {passive:true});
+      navEl.addEventListener('wheel', (e) => {
+        if(navEl.scrollWidth <= navEl.clientWidth) return;
+        if(Math.abs(e.deltaY) > Math.abs(e.deltaX)){
+          e.preventDefault();
+          navEl.scrollLeft += e.deltaY;
+        }
+      }, {passive:false});
+      window.addEventListener('resize', updateNavControls, {passive:true});
+      const active = navEl.querySelector('[aria-current="page"]');
+      requestAnimationFrame(() => {
+        if(active) active.scrollIntoView({behavior:'auto', inline:'center', block:'nearest'});
+        updateNavControls();
+      });
+    }
   }
 
   function settings(){
