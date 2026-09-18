@@ -8,7 +8,7 @@
   const page = document.body.dataset.page || 'home';
 
   const nav = [
-    ['home','Home','index.html'],['profile','Profile','profile.html'],['research','Research','research.html'],
+    ['home','Home','index.html'],['profile','Profile','profile.html'],['languages','Languages','languages.html'],['research','Research','research.html'],
     ['publications','Publications','publications.html'],['projects','Projects','projects.html'],['academic','Academic','academic.html'],
     ['experience','Experience','experience.html'],['conferences','Conferences','conferences.html'],['recognition','Recognition','recognition.html'],
     ['network','Network & Impact','network.html'],['resources','Resources','resources.html'],['gallery','Gallery','gallery.html'],['dashboard','Dashboard','dashboard.html']
@@ -81,7 +81,7 @@
 
   function footer(){
     const el=$('#site-footer'); if(!el) return;
-    el.innerHTML=`<footer class="footer"><div class="container footer-grid"><div><div class="brand"><span class="monogram">MRA</span><span>Md. Razu Ahmed</span></div><p>${esc(D.brand?.tagline||'')}</p><p class="tiny">Public portfolio · Privacy-safe by design · Last updated ${esc(D.lastUpdated||'')}</p></div><div><strong>Navigate</strong><p><a href="search.html">Search</a><br><a href="dashboard.html">Dashboard</a><br><a href="cv.html">CV</a><br><a href="copyright.html">Copyright & Reuse</a></p></div><div><strong>Connect</strong><p><a href="mailto:razuahmed038@gmail.com">Email</a><br><a href="https://github.com/beingrazuahmed" target="_blank" rel="noopener">GitHub</a><br><a href="contact.html">Collaborate</a></p></div></div><div class="container tiny">© 2026 Md. Razu Ahmed. All rights reserved.</div></footer>`;
+    el.innerHTML=`<footer class="footer"><div class="container footer-grid"><div><div class="brand"><span class="monogram">MRA</span><span>Md. Razu Ahmed</span></div><p>${esc(D.brand?.tagline||'')}</p><p class="tiny">Public portfolio · Privacy-safe by design · Last updated ${esc(D.lastUpdated||'')}</p></div><div><strong>Navigate</strong><p><a href="search.html">Search</a><br><a href="languages.html">Languages & MOI</a><br><a href="dashboard.html">Dashboard</a><br><a href="cv.html">CV</a><br><a href="copyright.html">Copyright & Reuse</a></p></div><div><strong>Connect</strong><p><a href="mailto:razuahmed038@gmail.com">Email</a><br><a href="https://github.com/beingrazuahmed" target="_blank" rel="noopener">GitHub</a><br><a href="contact.html">Collaborate</a></p></div></div><div class="container tiny">© 2026 Md. Razu Ahmed. All rights reserved.</div></footer>`;
   }
 
   function clock(){
@@ -93,6 +93,57 @@
   const sectionHead=(k,t,c='')=>`<div class="section-head"><div><div class="section-kicker">${esc(k)}</div><h2>${esc(t)}</h2></div>${c?`<p class="section-copy">${esc(c)}</p>`:''}</div>`;
   const safeImg=(src,alt,cls='portrait')=>`<img class="${cls}" src="${esc(src)}" alt="${esc(alt)}" onerror="this.outerHTML='<div class=\'${cls} portrait-placeholder\'>Verified portrait will appear when the original asset is available.</div>'">`;
   const links=(obj={})=>['primary','discovery','social'].flatMap(k=>obj[k]||[]).map(x=>ext(x.url,x.label)).join(' · ');
+
+  function uiIcon(name){
+    const paths={
+      language:'<path d="M4 5h10M9 3v2m-4 4c1.5 3 3.6 5.2 6.5 6.8M13 9c-1.5 3.1-3.6 5.4-6.6 7M15 20l3-8 3 8m-5-3h4"/>',
+      graduation:'<path d="m2 10 10-5 10 5-10 5L2 10Zm4 2.5V17c2.8 2.2 8.2 2.2 11 0v-4.5M22 10v6"/>',
+      publication:'<path d="M5 4h10a2 2 0 0 1 2 2v14H7a2 2 0 0 1-2-2V4Zm4 4h4m-4 4h5m-5 4h3"/>',
+      conference:'<path d="M4 20V8h16v12M8 8V4h8v4M8 12h8M8 16h3m2 0h3"/>',
+      review:'<path d="M5 3h10l4 4v14H5V3Zm10 0v5h5M8 12l2 2 4-4m-6 8h8"/>',
+      field:'<path d="M3 18c4-4 8-4 12 0m-12-6c4-4 8-4 12 0M17 5h4v4h-4zM5 5h4v4H5z"/>',
+      check:'<path d="m5 12 4 4L19 6"/>'
+    };
+    return `<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">${paths[name]||paths.check}</svg>`;
+  }
+
+  function languageCard(l){
+    return `<article class="card language-card language-card-${esc(l.id||'generic')}">
+      <div class="language-card-head">
+        <div class="language-icon">${uiIcon(l.icon||'language')}</div>
+        <div>
+          <h3>${esc(l.name||'')}${l.nativeName?` <span class="native-script">${esc(l.nativeName)}</span>`:''}</h3>
+          <div class="language-badge">${uiIcon(l.id==='english'?'graduation':'check')}<span>${esc(l.badge||l.level||'')}</span></div>
+        </div>
+      </div>
+      <p class="language-note">${esc(l.note||'')}</p>
+      <div class="language-evidence-title">${uiIcon('check')}<span>Competencies & evidence</span></div>
+      <ul class="language-evidence-list">${(l.evidence||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+    </article>`;
+  }
+
+  function languageEvidenceCard(x){
+    return `<article class="card language-evidence-card">
+      <div class="language-icon small">${uiIcon(x.icon||'check')}</div>
+      <div><h3>${esc(x.title||'')}</h3><p>${esc(x.detail||'')}</p></div>
+    </article>`;
+  }
+
+  function languagePanel(compact=false){
+    const lp=D.languageProfile||{};
+    return `<div class="language-suite ${compact?'compact':''}">
+      <div class="language-statement-card">
+        <div class="language-statement-icon">${uiIcon('graduation')}</div>
+        <div><div class="section-kicker">Academic communication profile</div><h3>Languages & scholarly communication</h3><p>${esc(lp.statement||'')}</p></div>
+      </div>
+      <div class="grid grid-2 language-grid">${(D.languages||[]).map(languageCard).join('')}</div>
+      <div class="moi-panel">
+        <div class="moi-main"><div class="moi-icon">${uiIcon('graduation')}</div><div><div class="section-kicker">Medium of Instruction (MOI)</div><h3>${esc(lp.moi?.title||'Medium of Instruction')}</h3><p>${esc(lp.moi?.summary||'')}</p></div></div>
+        <div class="moi-degrees">${(lp.moi?.degrees||[]).map(x=>`<div class="moi-degree"><span>${esc(x.label)}</span><strong>${esc(x.value)}</strong></div>`).join('')}</div>
+      </div>
+      ${compact?'':`<div class="grid grid-2 language-evidence-grid">${(lp.evidence||[]).map(languageEvidenceCard).join('')}</div>`}
+    </div>`;
+  }
 
   function home(){
     const p=D.profile||{};
@@ -238,9 +289,25 @@
 
   function profile(){return `${pageHero('Profile','Academic identity, communication, working style and engagement.')}
     <section class="section"><div class="container">${sectionHead('Research profile','Academic identity')}<div class="grid grid-2"><article class="card quote-card"><h3>${esc(D.brand?.headline)}</h3><p>${esc(D.profile?.intro||D.research?.identity||'')}</p></article><article class="card"><h3>Research principles</h3>${tags((D.research?.principles||[]).map(x=>x.title))}</article></div></div></section>
-    <section class="section alt"><div class="container">${sectionHead('Academic communication','Languages & Medium of Instruction (MOI)')}<div class="grid grid-2">${(D.languages||[]).map(l=>`<article class="card"><h3>${esc(l.name)}</h3><strong>${esc(l.level)}</strong><p>${esc(l.note)}</p></article>`).join('')}</div></div></section>
+    <section class="section alt"><div class="container">${sectionHead('Academic communication','Languages & Medium of Instruction (MOI)','Native Bangla proficiency, English-medium university education and evidence-based scholarly communication.')} ${languagePanel(true)}<div class="language-cta"><a class="btn primary" href="languages.html">Explore Language & MOI Profile</a></div></div></section>
     <section class="section"><div class="container">${sectionHead('Professional strengths','Evidence-aligned working style')}<div class="grid grid-3">${(D.strengths||[]).map(s=>`<article class="card"><h3>${esc(s.title)}</h3><p>${esc(s.detail)}</p></article>`).join('')}</div></div></section>
     <section class="section alt"><div class="container">${sectionHead('Beyond research','Personal interests & engagement')}<div class="grid grid-2"><article class="card"><h3>Personal interests</h3>${tags(D.personalInterests)}</article><article class="card"><h3>Memberships & extra-curricular engagement</h3><ul>${(D.engagement||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></article></div></div></section>`;}
+
+  function languages(){const lp=D.languageProfile||{};return `${pageHero('Languages & Academic Communication','Native Bangla proficiency, English-medium university education, and evidence-backed scholarly communication across research, conferences and peer review.')}
+    <section class="section language-page-intro"><div class="container">
+      ${sectionHead('Communication profile','Academic language identity','A research-focused presentation of language proficiency and academic communication, without overstating formal certification.')}
+      ${languagePanel(false)}
+    </div></section>
+    <section class="section alt"><div class="container">
+      ${sectionHead('Communication in practice','How language supports the research workflow','English anchors formal academic work; Bangla supports local, field and community-facing communication.')}
+      <div class="language-practice-strip">
+        <div><span class="practice-icon">${uiIcon('publication')}</span><strong>Research writing</strong><p>Journal manuscripts, technical documentation and scholarly correspondence.</p></div>
+        <div><span class="practice-icon">${uiIcon('conference')}</span><strong>Research dissemination</strong><p>Oral/poster presentations and multidisciplinary academic communication.</p></div>
+        <div><span class="practice-icon">${uiIcon('review')}</span><strong>Peer review</strong><p>Critical reading and written reviewer feedback across 32 completed invited reviews.</p></div>
+        <div><span class="practice-icon">${uiIcon('field')}</span><strong>Field communication</strong><p>Bangla for participant-facing and local academic communication in Bangladesh.</p></div>
+      </div>
+      <div class="language-links"><a class="btn primary" href="academic.html">Academic Record</a><a class="btn" href="conferences.html">Conference Record</a><a class="btn" href="publications.html">Research Outputs</a></div>
+    </div></section>`;}
 
   function research(){return `${pageHero('Research','Rigorous, interpretable and reproducible data-driven research.')}
     <section class="section"><div class="container">${sectionHead('Research statement','Methodological foundation')}<article class="card quote-card"><p>${esc(D.research?.statement||'')}</p></article></div></section>
@@ -293,8 +360,9 @@
     </div></section>
 
     <section class="section alt"><div class="container">
-      ${sectionHead('Languages','Academic communication & Medium of Instruction (MOI)')}
-      <div class="grid grid-2">${(D.languages||[]).map(l=>`<article class="card"><h3>${esc(l.name)}</h3><strong>${esc(l.level)}</strong><p>${esc(l.note)}</p></article>`).join('')}</div>
+      ${sectionHead('Languages','Academic communication & Medium of Instruction (MOI)','A concise academic-language record linked to the full language and scholarly-communication profile.')}
+      ${languagePanel(true)}
+      <div class="language-cta"><a class="btn" href="languages.html">View Full Language Profile</a></div>
     </div></section>
 
     <section class="section"><div class="container">
@@ -363,6 +431,6 @@
     clock();
   }
 
-  function render(){header();settings();footer(); const main=$('#page-content'); if(!main)return; const map={home,profile,research,publications,projects,academic,experience,conferences,recognition,network,resources,gallery,dashboard,'ask-razu':askRazu,contact,copyright:copyrightPage}; main.innerHTML=(map[page]||home)(); initInteractive();}
+  function render(){header();settings();footer(); const main=$('#page-content'); if(!main)return; const map={home,profile,languages,research,publications,projects,academic,experience,conferences,recognition,network,resources,gallery,dashboard,'ask-razu':askRazu,contact,copyright:copyrightPage}; main.innerHTML=(map[page]||home)(); initInteractive();}
   render();
 })();
