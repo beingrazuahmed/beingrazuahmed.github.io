@@ -9,7 +9,7 @@ window.PORTFOLIO_DATA = {
     portfolio: "https://beingrazuahmed.github.io/",
     affiliation: "Deep Statistical Learning and Research (DSLR) Lab, Department of Statistics and Data Science, Pabna University of Science and Technology (PUST)",
     availability: "Selectively open to research collaboration, interdisciplinary projects, PhD opportunities, and academic partnerships.",
-    image: "assets/profile/razu-portrait.jpg"
+    image: "assets/profile/razu-portrait.JPG"
   },
 
   metrics: [
