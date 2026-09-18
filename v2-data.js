@@ -181,18 +181,31 @@
 
   const fieldSurvey = {
     title: 'Statistical Field Survey',
+    courseCode: 'STAT-4110',
     degree: 'B.Sc. (Hons.) in Statistics',
     credits: 2,
-    study: 'Measuring Attitudes towards AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology',
+    study: 'Measuring Attitudes toward AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology',
     supervisor: 'Dr. Md. Shamim Reza',
     team: ['Md. Razu Ahmed', 'Md. Abdur Rakib', 'Abu Bakar Shiddik', 'Dr. Md. Shamim Reza'],
     population: 'Target population: 4,795',
     sample: '370 participants',
     variables: '33 variables · 8 socio-demographic + 25 attitudinal',
-    design: 'Proportionate stratified sampling · 5-point Likert instrument',
-    conference: 'ICRAST 2025 · Oral Presentation · p. 120',
+    design: 'Proportionate stratified random sampling · questionnaire survey and interviews · 5-point Likert instrument',
+    workflowAsset: 'assets/academic/field-survey/ai-job-market-field-survey-workflow.png',
+    workflowCaption: 'Workflow of the B.Sc. statistical field survey on perceptions of AI and the job market at Pabna University of Science and Technology.',
+    conference: {
+      shortName: '2nd ICRAST 2025',
+      fullName: '2nd International Conference on Recent Advances in Science and Technology 2025 (ICRAST 2025)',
+      host: 'Faculty of Science, University of Rajshahi, Rajshahi, Bangladesh',
+      date: '14–15 November 2025',
+      source: 'Book of Abstracts',
+      page: 'p. 120',
+      presentation: 'Oral',
+      role: 'Presenting Author',
+      citation: 'Ahmed, M. R., Rakib, M. A., Shiddik, A. B., & Reza, M. S. (2025). Measuring Attitudes toward AI’s Impact on the Job Market in Bangladesh: A study at Pabna University of Science and Technology (p. 120).'
+    },
     article: 'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh · Accepted / Forthcoming',
-    progression: ['B.Sc. Statistical Field Survey', 'ICRAST 2025 oral presentation', 'Accepted journal article']
+    progression: ['B.Sc. Statistical Field Survey', '2nd ICRAST 2025 oral presentation', 'Accepted journal article']
   };
 
   const education = [
