@@ -954,9 +954,10 @@
 .workflow-frame{
   position:relative;
   overflow:hidden;
-  border:1px solid color-mix(in srgb,var(--accent) 18%,var(--line));
+  border:1px solid color-mix(in srgb,var(--accent) 14%,#d9e2ea);
   border-radius:22px;
-  background:#0a0a0a;
+  background:#fff;
+  padding:clamp(14px,2vw,24px);
   box-shadow:0 18px 44px rgba(28,68,99,.10);
 }
 .workflow-frame::after{
@@ -964,13 +965,14 @@
   position:absolute;
   inset:0;
   pointer-events:none;
-  background:linear-gradient(135deg,rgba(255,255,255,.05),transparent 34%,transparent 72%,color-mix(in srgb,var(--accent) 7%,transparent));
+  background:linear-gradient(135deg,rgba(255,255,255,.18),transparent 36%,transparent 76%,rgba(74,151,199,.035));
 }
 .workflow-frame img{
   display:block;
   width:100%;
   height:auto;
   object-fit:contain;
+  background:#fff;
 }
 .field-survey-workflow figcaption{
   margin-top:10px;
@@ -1561,4 +1563,146 @@
   .journal-status{margin-top:10px}
   .journal-meta-strip{grid-template-columns:1fr}
   .instructor-profile-card{padding-left:22px;padding-top:82px}
+}
+
+
+/* === Academic Visual Metadata Upgrade === */
+.workflow-titlebar{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:12px;
+  padding:0 2px;
+}
+.workflow-titlebar strong{
+  display:block;
+  margin-top:2px;
+  font-size:1.05rem;
+}
+.workflow-title-icon{
+  display:grid;
+  place-items:center;
+  width:42px;
+  height:42px;
+  border-radius:14px;
+  color:var(--accent);
+  background:color-mix(in srgb,var(--accent) 8%,var(--surface));
+  border:1px solid color-mix(in srgb,var(--accent) 18%,var(--line));
+}
+.workflow-title-icon .ui-icon{width:19px;height:19px}
+
+.education-card{
+  min-height:300px;
+  display:flex;
+  flex-direction:column;
+  gap:0;
+}
+.education-card-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  margin-bottom:16px;
+}
+.education-icon{
+  display:grid;
+  place-items:center;
+  width:46px;
+  height:46px;
+  border-radius:15px;
+  color:var(--accent);
+  background:color-mix(in srgb,var(--accent) 9%,var(--surface-2));
+  border:1px solid color-mix(in srgb,var(--accent) 20%,var(--line));
+  box-shadow:0 8px 22px color-mix(in srgb,var(--accent) 6%,transparent);
+}
+.education-icon .ui-icon{width:21px;height:21px}
+.education-card h3{
+  margin:0 0 14px;
+  font-size:1.28rem;
+  line-height:1.3;
+}
+.education-detail-list{
+  display:grid;
+  gap:10px;
+  margin-top:auto;
+}
+.education-detail-row{
+  display:grid;
+  grid-template-columns:20px 1fr;
+  gap:10px;
+  align-items:start;
+  padding-top:10px;
+  border-top:1px solid var(--line);
+}
+.education-detail-row .ui-icon{
+  width:17px;
+  height:17px;
+  margin-top:2px;
+  color:var(--accent);
+}
+.education-detail-row span{
+  display:block;
+  margin-bottom:2px;
+  color:var(--muted);
+  font-size:10.5px;
+  font-weight:850;
+  letter-spacing:.055em;
+  text-transform:uppercase;
+}
+.education-detail-row strong{
+  display:block;
+  color:var(--text);
+  font-size:12.5px;
+  line-height:1.5;
+  font-weight:760;
+}
+.education-moi-row{
+  margin-top:1px;
+  padding:10px 11px 0;
+  border-top-color:color-mix(in srgb,var(--accent) 24%,var(--line));
+  background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--accent) 4%,transparent));
+  border-radius:0 0 12px 12px;
+}
+
+.academic-metric-card{
+  position:relative;
+  min-height:156px!important;
+  align-items:flex-start!important;
+  justify-content:flex-start!important;
+}
+.academic-metric-icon{
+  display:grid;
+  place-items:center;
+  width:38px;
+  height:38px;
+  margin-bottom:11px;
+  border-radius:12px;
+  color:var(--accent);
+  background:color-mix(in srgb,var(--accent) 8%,var(--surface-2));
+  border:1px solid color-mix(in srgb,var(--accent) 18%,var(--line));
+}
+.academic-metric-icon .ui-icon{width:18px;height:18px}
+.academic-metric-card>strong{margin-bottom:5px}
+.academic-metric-card>span{line-height:1.25}
+.academic-metric-card>small{margin-top:7px}
+
+.moi-degree>div{
+  display:grid;
+  gap:2px;
+}
+.moi-degree small{
+  color:var(--muted);
+  font-size:10.5px;
+  font-weight:760;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+
+:root[data-mode="dark"] .workflow-frame,
+:root[data-mode="dark"] .workflow-frame img{
+  background:#fff;
+}
+@media (max-width:760px){
+  .education-card{min-height:auto}
+  .workflow-titlebar{align-items:flex-start}
 }
