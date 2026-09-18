@@ -156,7 +156,7 @@
       { name: 'Minitab', short: 'Minitab', brand: '', detail: 'Regression, experimental-design coursework, statistical quality-control methods and exploratory analysis.' }
     ]},
     { group: 'Programming & Statistical Computing', icon: 'code', items: [
-      { name: 'Python', short: 'Python', brand: 'python', detail: 'Primary computational research language for preprocessing, statistical learning, machine learning, deep learning, XAI, forecasting, visualization and reproducible pipelines.' },
+      { name: 'Python', short: 'Python', brand: 'python', detail: 'Primary computational research language across statistical analysis, machine learning, deep learning, XAI, forecasting, signal processing, geospatial analysis and reproducible pipelines.' },
       { name: 'R', short: 'R', brand: 'rproject', detail: 'Statistical computing, visualization, regression, multivariate methods, time-series, survival analysis and reproducible research.' },
       { name: 'C', short: 'C', brand: 'c', detail: 'Foundational programming, algorithmic thinking, numerical problem solving and undergraduate computational coursework.' }
     ]},
@@ -167,9 +167,12 @@
       { name: 'Streamlit', short: 'Streamlit', brand: 'streamlit', detail: 'Interactive data-science and machine-learning web apps, research demos and rapid prototype interfaces; reinforced through the Coursera Project Network course “Build a Data Science Web App with Streamlit and Python” completed on 18 May 2023.' }
     ]},
     { group: 'Research Computing & Development Environments', icon: 'terminal', items: [
-      { name: 'Jupyter Notebook', short: 'Jupyter', brand: 'jupyter', detail: 'Interactive statistical analysis, ML experimentation, EDA, visualization and documented reproducible workflows.' },
+      { name: 'Jupyter Notebook', short: 'Jupyter', brand: 'jupyter', detail: 'Interactive statistical analysis, ML experimentation, exploratory analysis, visualization and documented reproducible workflows.' },
       { name: 'Visual Studio Code', short: 'VS Code', brand: 'visualstudiocode', detail: 'Development environment for Python, R, web work, scripting, Git workflows and research project organization.' },
-      { name: 'Kaggle', short: 'Kaggle', brand: 'kaggle', detail: 'Cloud notebooks and data-science environment for dataset exploration, model experimentation and reproducible ML workflows.' }
+      { name: 'Anaconda', short: 'Anaconda', brand: 'anaconda', detail: 'Python environment and package management for isolated analytical and research workflows.' },
+      { name: 'Kaggle', short: 'Kaggle', brand: 'kaggle', detail: 'Cloud notebooks and data-science environment for dataset exploration, model experimentation and reproducible ML workflows.' },
+      { name: 'Windows 10 / Windows 11', short: 'Windows', brand: 'windows11', detail: 'Windows 11 is the primary documented operating system across recent canonical analyses; Windows 10 is also part of general desktop computing experience.' },
+      { name: 'NVIDIA CUDA / cuDNN', short: 'CUDA / cuDNN', brand: 'nvidia', detail: 'GPU-accelerated deep-learning workflows, including documented CUDA and cuDNN configurations on RTX and Tesla-class NVIDIA GPUs.' }
     ]},
     { group: 'Version Control & Reproducibility', icon: 'branch', items: [
       { name: 'Git', short: 'Git', brand: 'git', detail: 'Version control for code, analysis scripts, experimental revisions and reproducible research workflows.' },
@@ -180,20 +183,73 @@
       { name: 'NumPy', short: 'NumPy', brand: 'numpy', detail: 'Numerical arrays, vectorized computation and scientific data processing.' },
       { name: 'SciPy', short: 'SciPy', brand: 'scipy', detail: 'Scientific computing, statistical routines and numerical methods.' },
       { name: 'scikit-learn', short: 'scikit-learn', brand: 'scikitlearn', detail: 'Machine-learning pipelines, preprocessing, model selection, validation and evaluation.' },
-      { name: 'Statsmodels', short: 'Statsmodels', brand: '', detail: 'Statistical modelling, regression, inference and diagnostic analysis in Python.' },
+      { name: 'Statsmodels', short: 'Statsmodels', brand: '', detail: 'Statistical modelling, regression, ordinal models, inference and diagnostic analysis in Python.' },
+      { name: 'PyReadStat', short: 'PyReadStat', brand: '', detail: 'Reading and writing statistical-data formats in reproducible Python data-management workflows.' },
+      { name: 'Pingouin', short: 'Pingouin', brand: '', detail: 'Statistical testing and compact analytical workflows in Python.' },
       { name: 'XGBoost', short: 'XGBoost', brand: 'xgboost', detail: 'Gradient-boosted classification and regression in predictive modelling workflows.' },
+      { name: 'LightGBM', short: 'LightGBM', brand: '', detail: 'Gradient-boosted decision-tree modelling used in large-scale forecasting and predictive analytics.' },
+      { name: 'CatBoost', short: 'CatBoost', brand: '', detail: 'Gradient-boosting models used in comparative machine-learning workflows.' },
       { name: 'SHAP', short: 'SHAP', brand: '', detail: 'Feature-attribution analysis and explainable-AI interpretation.' },
+      { name: 'PyTorch', short: 'PyTorch', brand: 'pytorch', detail: 'Deep-learning model development, transfer learning, GPU training and experimentation.' },
+      { name: 'torchvision', short: 'torchvision', brand: 'pytorch', detail: 'Computer-vision model architectures, transforms and image-learning utilities used with PyTorch.' },
       { name: 'TensorFlow / Keras', short: 'TensorFlow / Keras', brand: 'tensorflow', detail: 'Deep-learning model development, training and transfer-learning workflows.' },
       { name: 'OpenCV', short: 'OpenCV', brand: 'opencv', detail: 'Image preprocessing, transformation and computer-vision workflows.' },
+      { name: 'Ultralytics', short: 'Ultralytics', brand: 'ultralytics', detail: 'YOLO-based object-detection and computer-vision experimentation.' },
       { name: 'Matplotlib', short: 'Matplotlib', brand: '', detail: 'Scientific visualization and publication-oriented plotting.' },
       { name: 'Seaborn', short: 'Seaborn', brand: '', detail: 'Statistical visualization for exploratory and comparative analysis.' },
-      { name: 'Librosa', short: 'Librosa', brand: '', detail: 'Audio preprocessing and feature-based signal analysis.' },
-      { name: 'GeoPandas', short: 'GeoPandas', brand: 'geopandas', detail: 'Geospatial tabular data handling and spatial research workflows.' }
+      { name: 'Librosa', short: 'Librosa', brand: '', detail: 'Audio preprocessing, spectral analysis and feature-based signal processing.' },
+      { name: 'mir_eval', short: 'mir_eval', brand: '', detail: 'Music-information-retrieval evaluation utilities used for source-separation metrics.' },
+      { name: 'GeoPandas', short: 'GeoPandas', brand: 'geopandas', detail: 'Geospatial tabular data handling, mapping and spatial research workflows.' }
     ]},
     { group: 'Productivity & Collaboration', icon: 'workspace', items: [
       { name: 'Microsoft Office', short: 'Microsoft Office', brand: 'microsoft365', detail: 'Microsoft Word for manuscripts and technical documents; Excel for tabular work and research data handling; PowerPoint for conference, teaching and research presentations.' },
       { name: 'Google Workspace', short: 'Google Workspace', brand: 'google', detail: 'Docs, Sheets, Slides, Drive and Forms for collaborative research, survey workflows and team documentation.' }
     ]}
+  ];
+
+  const computationalEnvironments = [
+    {
+      title: 'Audio source separation / FastICA',
+      context: 'Published reproducible signal-processing workflow',
+      system: 'Windows 11 · build 10.0.26200 · Python 3.12.3 · NVIDIA GeForce RTX 4090',
+      stack: ['NumPy 2.0.0', 'scikit-learn 1.7.2', 'librosa 0.11.0', 'mir_eval 0.8.2', 'PyTorch 2.5.1', 'CUDA device cuda:0']
+    },
+    {
+      title: 'Diabetic-retinopathy grading',
+      context: 'Deep learning, feature fusion and explainable computer vision',
+      system: 'Windows 11 · Intel Core i9-13900K · 64 GB RAM · NVIDIA RTX 4090 24 GB · Python 3.12.3',
+      stack: ['PyTorch 2.5.1', 'torchvision 0.20.1', 'CUDA 12.1', 'cuDNN 9.1', 'scikit-learn 1.7.2', 'XGBoost 2.1.3', 'OpenCV 4.12.0']
+    },
+    {
+      title: 'Survey, statistical and geospatial ML analyses',
+      context: 'Statistical modelling, explainability and geospatial analytical workflows',
+      system: 'Windows 11 · Python 3.13.9 · Jupyter Notebook',
+      stack: ['pandas 2.3.3', 'NumPy 2.3.5', 'PyReadStat 1.3.3', 'SciPy 1.17.1', 'statsmodels 0.14.5', 'Pingouin 0.6.1', 'GeoPandas 1.1.3', 'Matplotlib 3.10.6', 'Seaborn 0.13.2', 'scikit-learn 1.8.0', 'XGBoost 3.2.0', 'LightGBM 4.6.0', 'CatBoost 1.2.10', 'SHAP 0.48.0']
+    },
+    {
+      title: 'Nationwide dengue forecasting',
+      context: 'Canonical district-informed forecasting analyses',
+      system: 'Windows 11 · AMD Ryzen 7 7735HS · 8 GB RAM · NVIDIA RTX 4050 Laptop GPU · Python 3.11.15',
+      stack: ['NumPy 2.4.6', 'pandas 3.0.2', 'SciPy 1.17.1', 'scikit-learn 1.9.0', 'LightGBM 4.7.0', 'statsmodels 0.14.6', 'SHAP 0.51.0', 'Matplotlib 3.10.9', 'Seaborn 0.13.2', 'GeoPandas 1.1.3', 'Deterministic seed 42 where applicable']
+    },
+    {
+      title: 'GPU object-detection workflow',
+      context: 'Deep-learning experimentation for cafeteria food detection',
+      system: 'NVIDIA Tesla T4 · 14,912 MiB VRAM · Intel Xeon · 13–16 GB RAM · Python 3.12.13',
+      stack: ['PyTorch 2.10.0+cu128', 'CUDA 12.8', 'Ultralytics 8.4.152']
+    },
+    {
+      title: 'Classical tabular ML workflow',
+      context: 'Python-based predictive modelling and visualization',
+      system: 'Windows 11 · Python 3.12.4',
+      stack: ['NumPy 2.0.2', 'pandas 2.3.3', 'scikit-learn 1.8.0', 'XGBoost 3.2.0', 'Matplotlib 3.10.0']
+    },
+    {
+      title: 'Ordinal statistical modelling',
+      context: 'Python implementation for ordinal regression analyses',
+      system: 'Python 3.13.5',
+      stack: ['pandas 2.2.3', 'statsmodels 0.14.6', 'NumPy 2.3.5', 'SciPy 1.17.0']
+    }
   ];
 
   const technicalSkills = [
@@ -332,7 +388,8 @@
         { name: 'DeepSeek', short: 'DeepSeek', brand: 'deepseek' },
         { name: 'Grok', short: 'Grok', brand: '' },
         { name: 'Perplexity', short: 'Perplexity', brand: 'perplexity' },
-        { name: 'NotebookLM', short: 'NotebookLM', brand: '' }
+        { name: 'NotebookLM', short: 'NotebookLM', brand: '' },
+        { name: 'Microsoft Copilot', short: 'Copilot', brand: 'microsoftcopilot' }
       ],
       principle: 'AI-assisted outputs are independently checked against the underlying data, code, source literature and domain context before being used in research or scholarly communication.',
       note: 'Prompt engineering is presented here as an applied research-workflow capability, not as a substitute for statistical, computational or subject-matter expertise.'
@@ -371,6 +428,7 @@
       page: 'p. 120',
       presentation: 'Oral',
       role: 'Presenting Author',
+      url: 'https://csa.ru.ac.bd/science/conf2nd/',
       citation: 'Ahmed, M. R., Rakib, M. A., Shiddik, A. B., & Reza, M. S. (2025). Measuring Attitudes toward AI’s Impact on the Job Market in Bangladesh: A study at Pabna University of Science and Technology (p. 120).'
     },
     article: {
@@ -480,22 +538,22 @@
   ];
 
   const languageProfile = {
-    statement: 'My academic communication profile combines native Bangla proficiency with professional working proficiency in English. English served as the Medium of Instruction (MOI) across both my B.Sc. (Hons.) and M.S. degrees in Statistics, while Bangla remains central to local, field and community-facing communication.',
+    statement: 'Native Bangla and professional working proficiency in English, supported by English-medium university education and sustained use of English in research writing, peer review, conference communication, technical documentation and scholarly correspondence.',
     moi: {
-      title: 'Medium of Instruction (MOI)',
-      summary: 'Bangla was the Medium of Instruction for my SSC and HSC education under the Rajshahi Board, followed by English as the Medium of Instruction for both university degrees in Statistics at Pabna University of Science and Technology (PUST).',
+      title: 'Academic Medium of Instruction',
+      summary: 'Bangla was the Medium of Instruction for SSC and HSC under the Rajshahi Board. English was the Medium of Instruction throughout both Statistics degrees at Pabna University of Science and Technology (PUST).',
       degrees: [
-        { label: 'SSC · Rajshahi Board', value: 'Bangla MOI', stage: 'Secondary' },
-        { label: 'HSC · Rajshahi Board', value: 'Bangla MOI', stage: 'Higher Secondary' },
-        { label: 'Bachelor of Science (B.Sc. Hons.) in Statistics', value: 'English MOI', stage: 'Undergraduate' },
-        { label: 'Master of Science (M.S.) in Statistics', value: 'English MOI', stage: 'Postgraduate' }
+        { label: 'Secondary School Certificate (SSC)', value: 'Bangla', stage: 'Rajshahi Board · Secondary' },
+        { label: 'Higher Secondary Certificate (HSC)', value: 'Bangla', stage: 'Rajshahi Board · Higher Secondary' },
+        { label: 'Bachelor of Science (B.Sc. Hons.) in Statistics', value: 'English', stage: 'PUST · Undergraduate' },
+        { label: 'Master of Science (M.S.) in Statistics', value: 'English', stage: 'PUST · Postgraduate' }
       ]
     },
     evidence: [
-      { icon: 'publication', title: 'Research Writing', detail: 'Peer-reviewed journal articles, active manuscripts, technical documentation and scholarly correspondence prepared in English.' },
-      { icon: 'conference', title: 'Conference Communication', detail: 'Oral and poster research dissemination across national academic conferences, including presenting-author roles.' },
+      { icon: 'publication', title: 'Research Writing', detail: 'Peer-reviewed articles, active manuscripts, technical documentation and scholarly correspondence prepared in English.' },
+      { icon: 'conference', title: 'Conference Communication', detail: 'English used for research presentations, abstracts, posters and conference-facing academic communication.' },
       { icon: 'review', title: 'Peer Review', detail: '32 completed invited peer reviews across international journals, requiring sustained critical reading and written scholarly feedback in English.' },
-      { icon: 'field', title: 'Field & Local Communication', detail: 'Bangla supports participant-facing, community and local academic communication in Bangladesh-based research contexts.' }
+      { icon: 'field', title: 'Field & Local Communication', detail: 'Bangla supports participant-facing communication, local academic engagement and field research in Bangladesh.' }
     ]
   };
 
@@ -553,7 +611,7 @@
 
   window.MRA_V2 = {
     version: '2.0',
-    lastUpdated: '17 September 2026',
+    lastUpdated: '18 September 2026',
     brand: {
       monogram: 'MRA',
       name: 'Md. Razu Ahmed',
@@ -613,6 +671,7 @@
     engagement,
     personalInterests: interests,
     tools,
+    computationalEnvironments,
     technicalSkills,
     people,
     publicationLinks,
