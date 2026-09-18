@@ -6,7 +6,8 @@
   const publicationLinks = {
     fastica: {
       primary: [
-        { label: 'DOI', url: 'https://doi.org/10.1002/eng2.70575' }
+        { label: 'DOI', url: 'https://doi.org/10.1002/eng2.70575' },
+        { label: 'Engineering Reports', url: 'https://onlinelibrary.wiley.com/journal/25778196' }
       ],
       discovery: [
         { label: 'Scopus', url: 'https://www.scopus.com/pages/publications/105026452579' },
