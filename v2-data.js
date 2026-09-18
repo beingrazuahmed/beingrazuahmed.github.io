@@ -41,7 +41,7 @@
       affiliation: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
       description: 'Primary academic supervisor and long-term research mentor across statistical learning, machine learning, biomedical data science and applied AI research.',
       shared: ['FastICA source separation', 'CKD prediction', 'AI-employment perceptions', 'Diabetic-retinopathy grading', 'PUST cafeteria research'],
-      portrait: 'assets/collaborators/shamim-reza.jpg', links: []
+      portrait: 'assets/academic/instructors/shamim-reza.jpg?v=20260918-network24', links: []
     },
     {
       id: 'sabba-ruhi', name: 'Prof. Dr. Sabba Ruhi', group: 'Academic Guidance & Advisors',
@@ -49,20 +49,20 @@
       affiliation: 'Chairman, Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
       description: 'Senior departmental academic whose guidance intersects with applied statistics, biostatistics, regression and collaborative research activity.',
       shared: ['EFAST 2026 conference contributions'],
-      portrait: 'assets/collaborators/sabba-ruhi.jpg', links: []
+      portrait: 'assets/academic/instructors/sabba-ruhi.png?v=20260918-network24', links: []
     },
     {
       id: 'aminul-hoque', name: 'Prof. Dr. Md. Aminul Hoque', group: 'Academic Guidance & Advisors',
       roles: ['Professor', 'Academic Guest Teacher', 'Senior Academic Guidance'],
       affiliation: 'Department of Statistics and Data Science, University of Rajshahi, Rajshahi-6205, Bangladesh',
       description: 'Professor and academic guest teacher linked to genomics, bioinformatics and advanced statistical genetics coursework; PhD from Keio University, Japan, with postdoctoral training in Malaysia and Japan.',
-      shared: [], portrait: 'assets/collaborators/aminul-hoque.jpg', links: []
+      shared: [], portrait: 'assets/academic/instructors/aminul-hoque.jpg?v=20260918-network24', links: []
     },
     {
       id: 'menhazul-abedin', name: 'Dr. Md. Menhazul Abedin', group: 'Academic Guidance & Advisors',
       roles: ['Associate Professor', 'Academic Guest Teacher', 'Senior Academic Guidance'], affiliation: 'Statistics Discipline, Kabi Jibanananda Das Academic Building (3rd Academic Building), Room No. 3160, Khulna University, Khulna-9208, Bangladesh',
       description: 'Associate Professor and academic guest teacher linked to advanced multivariate analysis; PhD from Hokkaido University, Japan, with B.Sc. (Hons.) and M.Sc. (Thesis) training in Statistics from the University of Rajshahi.',
-      shared: [], portrait: 'assets/collaborators/menhazul-abedin.jpg', links: []
+      shared: [], portrait: 'assets/academic/instructors/menhazul-abedin.jpg?v=20260918-network24', links: []
     },
     {
       id: 'feroz-ali', name: 'Md. Feroz Ali', group: 'Academic Guidance & Advisors',
