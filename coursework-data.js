@@ -223,6 +223,7 @@ window.COURSEWORK_DATA = {
   instructorLinks: [
     {
       instructor: "Prof. Dr. Md. Shamim Reza",
+      portrait: "assets/academic/instructors/shamim-reza.jpg",
       role: "Academic Teacher · Project Supervisor",
       position: "Professor",
       department: "Department of Statistics and Data Science",
@@ -247,6 +248,7 @@ window.COURSEWORK_DATA = {
     },
     {
       instructor: "Prof. Dr. Sabba Ruhi",
+      portrait: "assets/academic/instructors/sabba-ruhi.jpg",
       role: "Academic Teacher · Departmental Leadership",
       position: "Professor",
       department: "Department of Statistics and Data Science",
@@ -268,6 +270,7 @@ window.COURSEWORK_DATA = {
     },
     {
       instructor: "Dr. Md. Menhazul Abedin",
+      portrait: "assets/academic/instructors/menhazul-abedin.jpg",
       role: "Academic Guest Teacher",
       position: "Associate Professor",
       department: "Statistics Discipline",
@@ -283,6 +286,7 @@ window.COURSEWORK_DATA = {
     },
     {
       instructor: "Prof. Dr. Md. Aminul Hoque",
+      portrait: "assets/academic/instructors/aminul-hoque.jpg",
       role: "Academic Guest Teacher",
       position: "Professor",
       department: "Department of Statistics and Data Science",
