@@ -565,10 +565,11 @@
       const wrap=img.closest('.tech-logo');
       if(wrap){const span=document.createElement('span');span.className='tech-logo-fallback';span.textContent=img.dataset.techFallback||'APP';wrap.replaceWith(span);}
     },{once:true}));
-    document.querySelectorAll('.project-figure-img').forEach(img=>img.addEventListener('error',()=>{
-      const figure=img.closest('.project-figure');
-      if(figure){figure.hidden=true;}
-    },{once:true}));
+    document.querySelectorAll('.project-figure-img').forEach(img=>{
+      const hideBroken=()=>{const figure=img.closest('.project-figure');if(figure){figure.hidden=true;}};
+      img.addEventListener('error',hideBroken,{once:true});
+      if(img.complete && !img.naturalWidth){hideBroken();}
+    });
     const courseSearch=$('#courseSearch'), curriculumGrid=$('#curriculumGrid');
     if(courseSearch&&curriculumGrid){
       const domains=[...curriculumGrid.querySelectorAll('.curriculum-domain')];
