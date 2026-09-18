@@ -477,7 +477,7 @@
 
       ${p.journal?`<div class="project-journal-card">
         <div class="project-journal-head">
-          <div><span class="section-kicker">Published journal output</span><h4>${esc(p.journal.name||'')}</h4></div>
+          <div><span class="section-kicker">Journal standing & citation impact</span><h4>${esc(p.journal.name||'')}</h4></div>
           ${p.outputUrl?`<a class="doi-icon-link" href="${esc(p.outputUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Open DOI ${esc(p.doi||'')}" title="Open DOI: ${esc(p.doi||'')}"><span class="doi-mark">doi</span></a>`:''}
         </div>
         ${p.journal.citation?`<p class="project-journal-citation">${esc(p.journal.citation)}</p>`:''}
