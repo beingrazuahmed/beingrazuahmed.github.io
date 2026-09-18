@@ -163,11 +163,13 @@
     { group: 'Web & Research Prototype Development', icon: 'web', items: [
       { name: 'HTML', short: 'HTML5', brand: 'html5', detail: 'Semantic structure for academic, research and prototype web interfaces.' },
       { name: 'CSS', short: 'CSS3', brand: 'css3', detail: 'Responsive interface styling, layout, visual hierarchy and research-web customization.' },
-      { name: 'Flask', short: 'Flask', brand: 'flask', detail: 'Lightweight Python web applications and deployment of research or machine-learning prototypes.' }
+      { name: 'Flask', short: 'Flask', brand: 'flask', detail: 'Lightweight Python web applications and deployment of research or machine-learning prototypes.' },
+      { name: 'Streamlit', short: 'Streamlit', brand: 'streamlit', detail: 'Interactive data-science and machine-learning web apps, research demos and rapid prototype interfaces; reinforced through the Coursera Project Network course “Build a Data Science Web App with Streamlit and Python” completed on 18 May 2023.' }
     ]},
     { group: 'Research Computing & Development Environments', icon: 'terminal', items: [
       { name: 'Jupyter Notebook', short: 'Jupyter', brand: 'jupyter', detail: 'Interactive statistical analysis, ML experimentation, EDA, visualization and documented reproducible workflows.' },
-      { name: 'Visual Studio Code', short: 'VS Code', brand: 'visualstudiocode', detail: 'Development environment for Python, R, web work, scripting, Git workflows and research project organization.' }
+      { name: 'Visual Studio Code', short: 'VS Code', brand: 'visualstudiocode', detail: 'Development environment for Python, R, web work, scripting, Git workflows and research project organization.' },
+      { name: 'Kaggle', short: 'Kaggle', brand: 'kaggle', detail: 'Cloud notebooks and data-science environment for dataset exploration, model experimentation, reproducible ML workflows and public research-profile activity.', url: 'https://www.kaggle.com/razuahmedpust' }
     ]},
     { group: 'Version Control & Reproducibility', icon: 'branch', items: [
       { name: 'Git', short: 'Git', brand: 'git', detail: 'Version control for code, analysis scripts, experimental revisions and reproducible research workflows.' },
@@ -227,7 +229,7 @@
         'Bangladesh National Scientific and Technical Documentation Centre (BANSDOC)'
       ],
       links: [
-        { label: 'Official Journal Website', url: 'https://ru.ac.bd/stat/ijss/' },
+        { label: 'Official Journal Website', url: 'https://www.ru.ac.bd/stat/ijss/' },
         { label: 'BanglaJOL Host Page', url: 'https://www.banglajol.info/index.php/ijss' }
       ],
       contact: {
@@ -260,7 +262,7 @@
     {
       degree: 'Higher Secondary Certificate (HSC)',
       institution: 'Rajshahi College, Rajshahi',
-      logo: 'assets/academic/education/rajshahi-college-logo.jpg?v=20260918-1',
+      logo: 'assets/academic/education/rajshahi-college-logo.jpg?v=20260918-white2',
       year: '2016',
       board: 'Rajshahi',
       detail: 'Science · GPA 4.83/5.00',
