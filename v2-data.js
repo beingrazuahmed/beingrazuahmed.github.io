@@ -244,26 +244,34 @@
       institution: 'Pabna University of Science and Technology (PUST)',
       year: 'Exam Year 2022 · Examination held 2025',
       detail: 'CGPA 3.49/4.00 · Ranked 5th in the project-based (non-thesis) track',
-      moi: 'Medium of Instruction (MOI): English'
+      moi: 'Medium of Instruction (MOI): English',
+      icon: 'graduation'
     },
     {
       degree: 'B.Sc. (Hons.) in Statistics',
       institution: 'Pabna University of Science and Technology (PUST)',
       year: 'Exam Year 2021 · Examination held 2024',
       detail: 'CGPA 2.87/4.00',
-      moi: 'Medium of Instruction (MOI): English'
+      moi: 'Medium of Instruction (MOI): English',
+      icon: 'graduation'
     },
     {
       degree: 'Higher Secondary Certificate (HSC)',
-      institution: 'Rajshahi College',
+      institution: 'Rajshahi College, Rajshahi',
       year: '2016',
-      detail: 'Science · GPA 4.83/5.00'
+      board: 'Rajshahi',
+      detail: 'Science · GPA 4.83/5.00',
+      moi: 'Medium of Instruction (MOI): Bangla',
+      icon: 'school'
     },
     {
       degree: 'Secondary School Certificate (SSC)',
       institution: 'Mashkatadighi Multilateral (Technical) High School, Rajshahi',
       year: '2014',
-      detail: 'Science · GPA 5.00/5.00'
+      board: 'Rajshahi',
+      detail: 'Science · GPA 5.00/5.00',
+      moi: 'Medium of Instruction (MOI): Bangla',
+      icon: 'school'
     }
   ];
 
@@ -302,10 +310,12 @@
     statement: 'My academic communication profile combines native Bangla proficiency with professional working proficiency in English. English served as the Medium of Instruction (MOI) across both my B.Sc. (Hons.) and M.S. degrees in Statistics, while Bangla remains central to local, field and community-facing communication.',
     moi: {
       title: 'Medium of Instruction (MOI)',
-      summary: 'English for both B.Sc. (Hons.) in Statistics and M.S. in Statistics at Pabna University of Science and Technology (PUST).',
+      summary: 'Bangla was the Medium of Instruction for my SSC and HSC education under the Rajshahi Board, followed by English as the Medium of Instruction for both university degrees in Statistics at Pabna University of Science and Technology (PUST).',
       degrees: [
-        { label: 'B.Sc. (Hons.) in Statistics', value: 'English MOI' },
-        { label: 'M.S. in Statistics', value: 'English MOI' }
+        { label: 'SSC · Rajshahi Board', value: 'Bangla MOI', stage: 'Secondary' },
+        { label: 'HSC · Rajshahi Board', value: 'Bangla MOI', stage: 'Higher Secondary' },
+        { label: 'B.Sc. (Hons.) in Statistics', value: 'English MOI', stage: 'Undergraduate' },
+        { label: 'M.S. in Statistics', value: 'English MOI', stage: 'Postgraduate' }
       ]
     },
     evidence: [
