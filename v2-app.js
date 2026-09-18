@@ -334,7 +334,24 @@
     <section class="section alt"><div class="container">${sectionHead('Research intelligence','Ask Razu AI','Explore research, methods, coursework, conferences, collaborators and public scholarly records through evidence-grounded portfolio intelligence.')}<div class="card"><h3>Research Intelligence for My Academic Portfolio</h3><p>Ask about publications, methods, collaborators, coursework, conferences, certificates, research directions and public metrics.</p><a class="btn primary" href="ask-razu.html">Open Ask Razu AI</a></div></div></section>`;
   }
 
-  function outputCard(p){ const id=(p.id||'').toLowerCase(); const linkObj=D.publicationLinks?.[id]||p.links||{}; return `<article class="card output-card"><div class="meta"><span class="badge">${esc(p.status||p.bucket||'Research')}</span>${p.role?`<span class="badge">${esc(p.role)}</span>`:''}</div><h3>${esc(p.title||'Untitled')}</h3><p>${esc(p.journal||p.venue||p.summary||p.description||'')}</p><div class="link-row">${links(linkObj)}</div></article>`; }
+  function outputCard(p){
+    const id=(p.id||'').toLowerCase();
+    const linkObj=D.publicationLinks?.[id]||p.links||{};
+    const js=p.journalStanding||null;
+    return `<article class="card output-card">
+      <div class="meta"><span class="badge">${esc(p.status||p.bucket||'Research')}</span>${p.role?`<span class="badge">${esc(p.role)}</span>`:''}</div>
+      <h3>${esc(p.title||'Untitled')}</h3>
+      <p>${esc(p.journal||p.venue||p.summary||p.description||'')}</p>
+      ${js?`<div class="output-standing">
+        <span><strong>${esc(js.jif2025||'')}</strong>JIF</span>
+        <span><strong>${esc(js.citeScore2025||'')}</strong>CiteScore</span>
+        <span><strong>${esc(js.quartile||'')}</strong>Quartile</span>
+        <span><strong>${esc(js.sjr2025||'')}</strong>SJR</span>
+        <small>${esc(js.indexing||'')}</small>
+      </div>`:''}
+      <div class="link-row">${links(linkObj)}</div>
+    </article>`;
+  }
   function personCard(x){return `<article class="card person-card">${safeImg(x.portrait,x.name,'avatar')}<h3>${esc(x.name)}</h3><div class="meta">${(x.roles||[]).map(r=>`<span class="badge">${esc(r)}</span>`).join('')}</div><p><strong>${esc(x.affiliation||'')}</strong></p><p>${esc(x.description||'')}</p><div class="link-row">${(x.links||[]).map(l=>ext(l.url,l.label)).join(' · ')}</div></article>`;}
   function fieldSurveyCard(){
     const f=D.fieldSurvey||{}, c=f.conference||{};
@@ -596,7 +613,29 @@
 
   function experience(){return `${pageHero('Experience','Research roles, mentorship and collaborative support.')}<section class="section"><div class="container">${sectionHead('Research experience','Roles & contribution')}<div class="timeline">${(D.experience||[]).map(x=>`<div class="timeline-item"><strong>${esc(x.period||x.date||'')}</strong><h3>${esc(x.title||x.role||'')}</h3><p><strong>${esc(x.organization||x.institution||'')}</strong></p><p>${esc(x.description||x.detail||'')}</p></div>`).join('')}</div></div></section><section class="section alt"><div class="container">${sectionHead('Mentorship','Collaborative research support')}<p class="section-copy">Research mentorship and collaborative support are presented separately from formal academic supervision, with emphasis on study formulation, analysis workflows, validation and manuscript development.</p><div class="grid grid-3">${(D.people||[]).filter(x=>(x.roles||[]).includes('Mentee')).map(personCard).join('')}</div></div></section>`;}
 
-  function conferences(){return `${pageHero('Conferences','Conference publications, oral/poster presentations and evidence.')}<section class="section"><div class="container">${sectionHead('Conference record','Eight contributions · three presentations')}<div class="grid grid-2">${(D.conferences||[]).flatMap(g=>g.items?g.items:[g]).map(c=>`<article class="card"><div class="meta"><span class="badge">${esc(c.event||c.conference||'Conference')}</span>${c.role?`<span class="badge">${esc(c.role)}</span>`:''}</div><h3>${esc(c.title||'')}</h3><p>${esc(c.authors||c.detail||c.description||'')}</p><p class="tiny">${esc(c.date||'')} ${c.page?`· p. ${esc(c.page)}`:''}</p></article>`).join('')}</div></div></section>`;}
+  function conferences(){
+    const groups=D.conferences||[];
+    return `${pageHero('Conferences','Conference publications, oral/poster presentations and evidence.')}
+      <section class="section"><div class="container">
+        ${sectionHead('Conference record','Eight contributions · three presentations','Conference records are grouped by event so publication context, presentation roles and official event links remain clear.')}
+        <div class="conference-groups">
+          ${groups.map(g=>`<article class="card conference-group-card">
+            <div class="conference-group-head">
+              <div><div class="section-kicker">${esc(g.event||'Conference')}</div><h3>${esc(g.full||g.event||'')}</h3></div>
+              ${g.url?`<a class="btn small" href="${esc(g.url)}" target="_blank" rel="noopener noreferrer">Official homepage ↗</a>`:''}
+            </div>
+            <p class="conference-group-meta"><strong>${esc(g.host||'')}</strong><span>${esc(g.date||'')}</span><span>${esc(g.meta||'')}</span></p>
+            <div class="conference-paper-list">
+              ${(g.papers||g.items||[]).map(p=>`<div class="conference-paper-item">
+                <div class="meta">${p.role?`<span class="badge">${esc(p.role)}</span>`:''}${p.page?`<span class="badge">${esc(p.page)}</span>`:''}</div>
+                <h4>${esc(p.title||'')}</h4>
+                <p>${esc(p.authors||'')}</p>
+              </div>`).join('')}
+            </div>
+          </article>`).join('')}
+        </div>
+      </div></section>`;
+  }
 
   function recognition(){return `${pageHero('Recognition','Awards, certificates & professional development.')}<section class="section"><div class="container">${sectionHead('Honors & awards','Evidence-backed recognition')}<div class="grid grid-3">${(D.awards||[]).map(a=>`<article class="card"><h3>${esc(a.title||a.name||'')}</h3><p>${esc(a.issuer||a.organization||'')}</p><p>${esc(a.description||a.detail||'')}</p></article>`).join('')}</div></div></section><section class="section alt"><div class="container">${sectionHead('Training & certifications','Professional development')}<div class="grid grid-3">${(D.training||[]).map(t=>`<article class="card"><div class="badge">${esc(t.date||t.year||'')}</div><h3>${esc(t.title||t.name||'')}</h3><p>${esc(t.provider||t.issuer||'')}</p><p>${esc(t.duration||t.detail||t.description||'')}</p></article>`).join('')}</div></div></section>`;}
 
