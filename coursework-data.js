@@ -172,7 +172,7 @@ window.COURSEWORK_DATA = {
         "Signal-to-Interference Ratio (SIR)",
         "Signal-to-Artifact Ratio (SAR)"
       ],
-      figure: "assets/academic/projects/bsc-fastica-pipeline.png",
+      figure: "assets/academic/projects/bsc-fastica-pipeline.png?v=20260918-portraits23",
       figureAlt: "End-to-end audio source separation workflow comparing FastICA, PCA and NMF",
       figureCaption: "End-to-end pipeline for audio source separation with FastICA and two baselines (PCA and NMF).",
       outcome: "Developed into a peer-reviewed journal article in Engineering Reports.",
@@ -213,7 +213,7 @@ window.COURSEWORK_DATA = {
         "Handcrafted features",
         "Feature fusion"
       ],
-      figure: "assets/academic/projects/ms-dr-screening-prototype.png",
+      figure: "assets/academic/projects/ms-dr-screening-prototype.png?v=20260918-portraits23",
       figureAlt: "Web-based diabetic retinopathy screening prototype with five-class prediction and Grad-CAM++",
       figureCaption: "Web-based DR screening prototype illustrating image upload, five-class prediction (Grades 0–4), Grad-CAM++ visualization, and class-wise probability outputs.",
       outcome: "Developed into an explainable diabetic-retinopathy grading framework and web-based research prototype."
@@ -223,7 +223,7 @@ window.COURSEWORK_DATA = {
   instructorLinks: [
     {
       instructor: "Prof. Dr. Md. Shamim Reza",
-      portrait: "assets/academic/instructors/shamim-reza.jpg",
+      portrait: "assets/academic/instructors/shamim-reza.jpg?v=20260918-portraits23",
       role: "Academic Teacher · Project Supervisor",
       position: "Professor",
       department: "Department of Statistics and Data Science",
@@ -248,7 +248,7 @@ window.COURSEWORK_DATA = {
     },
     {
       instructor: "Prof. Dr. Sabba Ruhi",
-      portrait: "assets/academic/instructors/sabba-ruhi.jpg",
+      portrait: "assets/academic/instructors/sabba-ruhi.png?v=20260918-portraits23",
       role: "Academic Teacher · Departmental Leadership",
       position: "Professor",
       department: "Department of Statistics and Data Science",
@@ -270,7 +270,7 @@ window.COURSEWORK_DATA = {
     },
     {
       instructor: "Dr. Md. Menhazul Abedin",
-      portrait: "assets/academic/instructors/menhazul-abedin.jpg",
+      portrait: "assets/academic/instructors/menhazul-abedin.jpg?v=20260918-portraits23",
       role: "Academic Guest Teacher",
       position: "Associate Professor",
       department: "Statistics Discipline",
@@ -286,7 +286,7 @@ window.COURSEWORK_DATA = {
     },
     {
       instructor: "Prof. Dr. Md. Aminul Hoque",
-      portrait: "assets/academic/instructors/aminul-hoque.jpg",
+      portrait: "assets/academic/instructors/aminul-hoque.jpg?v=20260918-portraits23",
       role: "Academic Guest Teacher",
       position: "Professor",
       department: "Department of Statistics and Data Science",
