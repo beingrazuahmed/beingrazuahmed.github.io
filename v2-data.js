@@ -169,16 +169,154 @@
     { group: 'Research Computing & Development Environments', icon: 'terminal', items: [
       { name: 'Jupyter Notebook', short: 'Jupyter', brand: 'jupyter', detail: 'Interactive statistical analysis, ML experimentation, EDA, visualization and documented reproducible workflows.' },
       { name: 'Visual Studio Code', short: 'VS Code', brand: 'visualstudiocode', detail: 'Development environment for Python, R, web work, scripting, Git workflows and research project organization.' },
-      { name: 'Kaggle', short: 'Kaggle', brand: 'kaggle', detail: 'Cloud notebooks and data-science environment for dataset exploration, model experimentation, reproducible ML workflows and public research-profile activity.', url: 'https://www.kaggle.com/razuahmedpust' }
+      { name: 'Kaggle', short: 'Kaggle', brand: 'kaggle', detail: 'Cloud notebooks and data-science environment for dataset exploration, model experimentation and reproducible ML workflows.' }
     ]},
     { group: 'Version Control & Reproducibility', icon: 'branch', items: [
       { name: 'Git', short: 'Git', brand: 'git', detail: 'Version control for code, analysis scripts, experimental revisions and reproducible research workflows.' },
       { name: 'GitHub', short: 'GitHub', brand: 'github', detail: 'Repository hosting, collaborative code management, portfolio deployment, documentation and sharing public reproducible research materials.' }
     ]},
+    { group: 'Python, ML & Scientific Libraries', icon: 'lab', items: [
+      { name: 'Pandas', short: 'Pandas', brand: 'pandas', detail: 'Tabular data manipulation, cleaning, transformation and analysis.' },
+      { name: 'NumPy', short: 'NumPy', brand: 'numpy', detail: 'Numerical arrays, vectorized computation and scientific data processing.' },
+      { name: 'SciPy', short: 'SciPy', brand: 'scipy', detail: 'Scientific computing, statistical routines and numerical methods.' },
+      { name: 'scikit-learn', short: 'scikit-learn', brand: 'scikitlearn', detail: 'Machine-learning pipelines, preprocessing, model selection, validation and evaluation.' },
+      { name: 'Statsmodels', short: 'Statsmodels', brand: '', detail: 'Statistical modelling, regression, inference and diagnostic analysis in Python.' },
+      { name: 'XGBoost', short: 'XGBoost', brand: 'xgboost', detail: 'Gradient-boosted classification and regression in predictive modelling workflows.' },
+      { name: 'SHAP', short: 'SHAP', brand: '', detail: 'Feature-attribution analysis and explainable-AI interpretation.' },
+      { name: 'TensorFlow / Keras', short: 'TensorFlow / Keras', brand: 'tensorflow', detail: 'Deep-learning model development, training and transfer-learning workflows.' },
+      { name: 'OpenCV', short: 'OpenCV', brand: 'opencv', detail: 'Image preprocessing, transformation and computer-vision workflows.' },
+      { name: 'Matplotlib', short: 'Matplotlib', brand: '', detail: 'Scientific visualization and publication-oriented plotting.' },
+      { name: 'Seaborn', short: 'Seaborn', brand: '', detail: 'Statistical visualization for exploratory and comparative analysis.' },
+      { name: 'Librosa', short: 'Librosa', brand: '', detail: 'Audio preprocessing and feature-based signal analysis.' },
+      { name: 'GeoPandas', short: 'GeoPandas', brand: 'geopandas', detail: 'Geospatial tabular data handling and spatial research workflows.' }
+    ]},
     { group: 'Productivity & Collaboration', icon: 'workspace', items: [
-      { name: 'Microsoft Office', short: 'Microsoft 365', brand: 'microsoft365', detail: 'Word for manuscripts, Excel for tabular analysis, and PowerPoint for conference, teaching and research presentations.' },
+      { name: 'Microsoft Office', short: 'Microsoft Office', brand: 'microsoft365', detail: 'Microsoft Word for manuscripts and technical documents; Excel for tabular work and research data handling; PowerPoint for conference, teaching and research presentations.' },
       { name: 'Google Workspace', short: 'Google Workspace', brand: 'google', detail: 'Docs, Sheets, Slides, Drive and Forms for collaborative research, survey workflows and team documentation.' }
     ]}
+  ];
+
+  const technicalSkills = [
+    {
+      icon: 'analysis',
+      title: 'Statistical Modelling & Research Methods',
+      summary: 'Core statistical design, inference and modelling methods used across survey, public-health and applied research.',
+      items: [
+        'Descriptive & inferential statistics',
+        'Hypothesis testing',
+        'Correlation & regression analysis',
+        'Multivariate analysis',
+        'Sampling & survey methods',
+        'Survey-weighted modelling',
+        'Generalised estimating equations',
+        'Time-series modelling & forecasting',
+        'Causal-inference methods',
+        'Sensitivity analysis'
+      ]
+    },
+    {
+      icon: 'code',
+      title: 'Machine Learning & Explainable AI',
+      summary: 'Predictive modelling from preprocessing through interpretation, validation and model comparison.',
+      items: [
+        'Data preprocessing',
+        'Feature engineering & selection',
+        'Classification & regression',
+        'Support vector machines',
+        'Decision trees & random forests',
+        'k-nearest neighbours',
+        'Gaussian naïve Bayes',
+        'Linear discriminant analysis',
+        'Multilayer perceptrons',
+        'XGBoost',
+        'Ensemble & stacking methods',
+        'Model calibration',
+        'SHAP-based interpretation'
+      ]
+    },
+    {
+      icon: 'lab',
+      title: 'Deep Learning, Computer Vision & NLP',
+      summary: 'Applied AI workflows spanning medical imaging, food computing, object detection and text analytics.',
+      items: [
+        'Artificial neural networks',
+        'Convolutional neural networks',
+        'Recurrent neural networks',
+        'Transfer learning',
+        'Image preprocessing & augmentation',
+        'Handcrafted feature extraction',
+        'Feature fusion',
+        'Medical-image classification & grading',
+        'YOLO & RT-DETR object detection',
+        'Grad-CAM++',
+        'Text preprocessing',
+        'Sentiment analysis'
+      ]
+    },
+    {
+      icon: 'field',
+      title: 'Signal Processing & Dimensionality Reduction',
+      summary: 'Feature extraction and latent-structure methods used in audio and multivariate research.',
+      items: [
+        'Principal component analysis',
+        'Factor analysis',
+        'Independent component analysis',
+        'FastICA',
+        'Audio preprocessing',
+        'Blind source separation',
+        'Feature-based audio analysis'
+      ]
+    },
+    {
+      icon: 'terminal',
+      title: 'Programming & Research Development',
+      summary: 'Programming, reproducible computing and research-prototype development across statistical and AI projects.',
+      items: [
+        'Python',
+        'R',
+        'C',
+        'Jupyter Notebook',
+        'Git & GitHub',
+        'Kaggle',
+        'Flask',
+        'Streamlit',
+        'HTML',
+        'CSS'
+      ]
+    },
+    {
+      icon: 'review',
+      title: 'Validation, Reproducibility & Scientific Communication',
+      summary: 'Research-quality evaluation, reporting and documentation practices used across manuscripts and analytical projects.',
+      items: [
+        'Data cleaning & preprocessing',
+        'Missing-data handling',
+        'Leakage-aware analytical workflows',
+        'Cross-validation',
+        'Bootstrapping',
+        'ROC-AUC & precision–recall evaluation',
+        'Calibration assessment',
+        'Confusion-matrix metrics',
+        'Reproducible analysis',
+        'Publication-quality figures & tables',
+        'Supplementary materials',
+        'Technical documentation'
+      ]
+    },
+    {
+      icon: 'workspace',
+      title: 'AI-Assisted Research Workflow',
+      summary: 'Responsible use of generative-AI assistance for research productivity while retaining human verification and methodological control.',
+      items: [
+        'Research ideation support',
+        'Code debugging & workflow refinement',
+        'Drafting & language polishing',
+        'Documentation assistance',
+        'Structured prompt design',
+        'Human verification of AI-assisted outputs'
+      ],
+      note: 'Specific AI platforms are intentionally not presented as core technical competencies unless their use is substantial and evidence-backed.'
+    }
   ];
 
   const fieldSurvey = {
@@ -446,6 +584,7 @@
     engagement,
     personalInterests: interests,
     tools,
+    technicalSkills,
     people,
     publicationLinks,
     privacy: {
