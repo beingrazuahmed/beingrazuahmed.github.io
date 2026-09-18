@@ -305,17 +305,33 @@
     },
     {
       icon: 'workspace',
-      title: 'AI-Assisted Research Workflow',
-      summary: 'Responsible use of generative-AI assistance for research productivity while retaining human verification and methodological control.',
+      featured: true,
+      eyebrow: 'Generative AI capability',
+      title: 'Generative AI, Prompt Engineering & AI-Assisted Research',
+      summary: 'Structured use of large-language-model tools to accelerate research thinking, coding, documentation and scholarly communication while keeping methodological decisions, source checking and final verification under human control.',
       items: [
-        'Research ideation support',
-        'Code debugging & workflow refinement',
-        'Drafting & language polishing',
-        'Documentation assistance',
         'Structured prompt design',
-        'Human verification of AI-assisted outputs'
+        'Task decomposition',
+        'Context-rich prompting',
+        'Iterative prompt refinement',
+        'Prompt templates & reusable workflows',
+        'Multi-model comparison',
+        'Research ideation & question refinement',
+        'Code debugging & analytical workflow support',
+        'Technical summarization & documentation',
+        'Manuscript language refinement',
+        'Output verification & hallucination checking',
+        'Human-in-the-loop validation'
       ],
-      note: 'Specific AI platforms are intentionally not presented as core technical competencies unless their use is substantial and evidence-backed.'
+      platforms: [
+        { name: 'ChatGPT', short: 'ChatGPT', brand: 'openai' },
+        { name: 'Claude', short: 'Claude', brand: 'anthropic' },
+        { name: 'Gemini', short: 'Gemini', brand: 'googlegemini' },
+        { name: 'DeepSeek', short: 'DeepSeek', brand: 'deepseek' },
+        { name: 'Grok', short: 'Grok', brand: '' }
+      ],
+      principle: 'AI-assisted outputs are independently checked against the underlying data, code, source literature and domain context before being used in research or scholarly communication.',
+      note: 'Prompt engineering is presented here as an applied research-workflow capability, not as a substitute for statistical, computational or subject-matter expertise.'
     }
   ];
 
