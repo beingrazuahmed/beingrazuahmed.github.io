@@ -38,7 +38,7 @@
     {
       id: 'shamim-reza', name: 'Prof. Dr. Md. Shamim Reza', group: 'Academic Guidance & Advisors',
       roles: ['Research Supervisor', 'Senior Research Guidance', 'Dean, Faculty of Science', 'Director, IQAC', 'Co-author'],
-      affiliation: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST)',
+      affiliation: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
       description: 'Primary academic supervisor and long-term research mentor across statistical learning, machine learning, biomedical data science and applied AI research.',
       shared: ['FastICA source separation', 'CKD prediction', 'AI-employment perceptions', 'Diabetic-retinopathy grading', 'PUST cafeteria research'],
       portrait: 'assets/collaborators/shamim-reza.jpg', links: []
@@ -46,7 +46,7 @@
     {
       id: 'sabba-ruhi', name: 'Prof. Dr. Sabba Ruhi', group: 'Academic Guidance & Advisors',
       roles: ['Professor', 'Chairman', 'Academic Guidance', 'Departmental Leadership', 'Co-author'],
-      affiliation: 'Chairman, Department of Statistics and Data Science, Pabna University of Science and Technology (PUST)',
+      affiliation: 'Chairman, Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
       description: 'Senior departmental academic whose guidance intersects with applied statistics, biostatistics, regression and collaborative research activity.',
       shared: ['EFAST 2026 conference contributions'],
       portrait: 'assets/collaborators/sabba-ruhi.jpg', links: []
@@ -60,7 +60,7 @@
     },
     {
       id: 'menhazul-abedin', name: 'Dr. Md. Menhazul Abedin', group: 'Academic Guidance & Advisors',
-      roles: ['Associate Professor', 'Academic Guest Teacher', 'Senior Academic Guidance'], affiliation: 'Academic network',
+      roles: ['Associate Professor', 'Academic Guest Teacher', 'Senior Academic Guidance'], affiliation: 'Statistics Discipline, Kabi Jibanananda Das Academic Building (3rd Academic Building), Room No. 3160, Khulna University, Khulna-9208, Bangladesh',
       description: 'Associate Professor and academic guest teacher linked to advanced multivariate analysis; PhD from Hokkaido University, Japan, with B.Sc. (Hons.) and M.Sc. (Thesis) training in Statistics from the University of Rajshahi.',
       shared: [], portrait: 'assets/collaborators/menhazul-abedin.jpg', links: []
     },
@@ -231,7 +231,8 @@
         'XGBoost',
         'Ensemble & stacking methods',
         'Model calibration',
-        'SHAP-based interpretation'
+        'SHAP-based interpretation',
+        'Grad-CAM++ visual interpretation'
       ]
     },
     {
@@ -319,6 +320,7 @@
         'Research ideation & question refinement',
         'Code debugging & analytical workflow support',
         'Technical summarization & documentation',
+        'Source-grounded document synthesis',
         'Manuscript language refinement',
         'Output verification & hallucination checking',
         'Human-in-the-loop validation'
@@ -329,7 +331,8 @@
         { name: 'Gemini', short: 'Gemini', brand: 'googlegemini' },
         { name: 'DeepSeek', short: 'DeepSeek', brand: 'deepseek' },
         { name: 'Grok', short: 'Grok', brand: '' },
-        { name: 'Perplexity', short: 'Perplexity', brand: 'perplexity' }
+        { name: 'Perplexity', short: 'Perplexity', brand: 'perplexity' },
+        { name: 'NotebookLM', short: 'NotebookLM', brand: '' }
       ],
       principle: 'AI-assisted outputs are independently checked against the underlying data, code, source literature and domain context before being used in research or scholarly communication.',
       note: 'Prompt engineering is presented here as an applied research-workflow capability, not as a substitute for statistical, computational or subject-matter expertise.'
@@ -343,7 +346,7 @@
     credits: 2,
     study: 'Measuring Attitudes toward AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology',
     supervisor: 'Prof. Dr. Md. Shamim Reza',
-    team: ['Md. Razu Ahmed', 'Md. Abdur Rakib', 'Abu Bakar Shiddik', 'Dr. Md. Shamim Reza'],
+    team: ['Md. Razu Ahmed', 'Md. Abdur Rakib', 'Abu Bakar Shiddik', 'Prof. Dr. Md. Shamim Reza'],
     population: 'Target population: 4,795',
     sample: '370 participants',
     variables: '33 variables · 8 socio-demographic + 25 attitudinal',
@@ -407,7 +410,7 @@
   const education = [
     {
       degree: 'Master of Science (M.S.) in Statistics',
-      institution: 'Pabna University of Science and Technology (PUST)',
+      institution: 'Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
       logo: 'assets/academic/education/pust-logo.png?v=20260918-1',
       year: 'Exam Year 2022 · Examination held 2025',
       detail: 'CGPA 3.49/4.00 · Ranked 5th in the project-based (non-thesis) track',
@@ -416,7 +419,7 @@
     },
     {
       degree: 'Bachelor of Science (B.Sc. Hons.) in Statistics',
-      institution: 'Pabna University of Science and Technology (PUST)',
+      institution: 'Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
       logo: 'assets/academic/education/pust-logo.png',
       year: 'Exam Year 2021 · Examination held 2024',
       detail: 'CGPA 2.87/4.00',
