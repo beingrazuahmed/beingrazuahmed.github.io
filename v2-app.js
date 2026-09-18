@@ -102,6 +102,13 @@
       conference:'<path d="M4 20V8h16v12M8 8V4h8v4M8 12h8M8 16h3m2 0h3"/>',
       review:'<path d="M5 3h10l4 4v14H5V3Zm10 0v5h5M8 12l2 2 4-4m-6 8h8"/>',
       field:'<path d="M3 18c4-4 8-4 12 0m-12-6c4-4 8-4 12 0M17 5h4v4h-4zM5 5h4v4H5z"/>',
+      calendar:'<path d="M6 3v3m12-3v3M4 8h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Zm3 7h3m2 0h3m-8 4h3m2 0h3"/>',
+      school:'<path d="M3 21h18M5 21V9l7-4 7 4v12M9 21v-6h6v6M8 11h2m4 0h2"/>',
+      board:'<path d="M4 5h16v14H4zM8 9h8m-8 4h5"/>',
+      lab:'<path d="M9 3h6m-5 0v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3M8 15h8"/>',
+      project:'<path d="M4 5h6l2 2h8v12H4zM8 12h8m-8 4h5"/>',
+      viva:'<path d="M5 6h14v9H9l-4 4V6Zm4 4h6"/>',
+      credits:'<path d="M4 6h16M4 12h16M4 18h16M7 4v4m5 2v4m5 2v4"/>',
       check:'<path d="m5 12 4 4L19 6"/>'
     };
     return `<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">${paths[name]||paths.check}</svg>`;
@@ -129,6 +136,26 @@
     </article>`;
   }
 
+  function educationCard(e){
+    return `<article class="card education-card">
+      <div class="education-card-top">
+        <div class="education-icon">${uiIcon(e.icon||'graduation')}</div>
+        <div class="badge">${esc(e.period||e.year||'')}</div>
+      </div>
+      <h3>${esc(e.degree||e.title||'')}</h3>
+      <div class="education-detail-list">
+        <div class="education-detail-row">${uiIcon('school')}<div><span>Institution</span><strong>${esc(e.institution||e.place||'')}</strong></div></div>
+        <div class="education-detail-row">${uiIcon('credits')}<div><span>Academic record</span><strong>${esc(e.detail||e.description||e.cgpa||'')}</strong></div></div>
+        ${e.board?`<div class="education-detail-row">${uiIcon('board')}<div><span>Education Board</span><strong>${esc(e.board)}</strong></div></div>`:''}
+        ${e.moi?`<div class="education-detail-row education-moi-row">${uiIcon('language')}<div><span>Medium of Instruction</span><strong>${esc(e.moi.replace('Medium of Instruction (MOI): ','')||e.moi)}</strong></div></div>`:''}
+      </div>
+    </article>`;
+  }
+
+  function academicMetric(icon,value,label,detail){
+    return `<article class="card metric academic-metric-card"><div class="academic-metric-icon">${uiIcon(icon)}</div><strong>${esc(value)}</strong><span>${esc(label)}</span><small>${esc(detail)}</small></article>`;
+  }
+
   function languagePanel(compact=false){
     const lp=D.languageProfile||{};
     return `<div class="language-suite ${compact?'compact':''}">
@@ -139,7 +166,7 @@
       <div class="grid grid-2 language-grid">${(D.languages||[]).map(languageCard).join('')}</div>
       <div class="moi-panel">
         <div class="moi-main"><div class="moi-icon">${uiIcon('graduation')}</div><div><div class="section-kicker">Medium of Instruction (MOI)</div><h3>${esc(lp.moi?.title||'Medium of Instruction')}</h3><p>${esc(lp.moi?.summary||'')}</p></div></div>
-        <div class="moi-degrees">${(lp.moi?.degrees||[]).map(x=>`<div class="moi-degree"><span>${esc(x.label)}</span><strong>${esc(x.value)}</strong></div>`).join('')}</div>
+        <div class="moi-degrees">${(lp.moi?.degrees||[]).map(x=>`<div class="moi-degree"><div><span>${esc(x.label)}</span>${x.stage?`<small>${esc(x.stage)}</small>`:''}</div><strong>${esc(x.value)}</strong></div>`).join('')}</div>
       </div>
       ${compact?'':`<div class="grid grid-2 language-evidence-grid">${(lp.evidence||[]).map(languageEvidenceCard).join('')}</div>`}
     </div>`;
@@ -226,7 +253,8 @@
       </div>
 
       ${f.workflowAsset?`<figure class="field-survey-workflow">
-        <div class="workflow-frame">
+        <div class="workflow-titlebar"><span class="workflow-title-icon">${uiIcon('field')}</span><div><span class="section-kicker">Methodological workflow</span><strong>B.Sc. Statistical Field Survey Workflow</strong></div></div>
+        <div class="workflow-frame workflow-frame-light">
           <img src="${esc(f.workflowAsset)}" alt="Workflow of the statistical field survey on attitudes toward AI and the job market">
         </div>
         <figcaption>${esc(f.workflowCaption||'Field-survey methodology workflow.')}</figcaption>
@@ -360,17 +388,17 @@
     return `${pageHero('Academic','Education, curriculum, fieldwork, supervised projects and research training.')}
     <section class="section"><div class="container">
       ${sectionHead('Academic journey','Education','Formal education from secondary science training through postgraduate statistics.')}
-      <div class="grid grid-4 education-grid">${(D.education||[]).map(e=>`<article class="card education-card"><div class="badge">${esc(e.period||e.year||'')}</div><h3>${esc(e.degree||e.title||'')}</h3><p><strong>${esc(e.institution||e.place||'')}</strong></p><p>${esc(e.detail||e.description||e.cgpa||'')}</p>${e.moi?`<p class="education-moi">${esc(e.moi)}</p>`:''}</article>`).join('')}</div>
+      <div class="grid grid-4 education-grid">${(D.education||[]).map(educationCard).join('')}</div>
     </div></section>
 
     <section class="section alt"><div class="container">
       ${sectionHead('Academic curriculum','200-credit quantitative foundation','B.Sc. 160 credits + M.S. 40 credits, including 40 laboratory/applied credits across 20 courses, 2 credits of statistical fieldwork, 7 credits of supervised projects and 20 credits of viva-voce assessment.')}
       <div class="grid academic-credit-grid">
-        <article class="card metric"><strong>${esc(cw.summary?.totalCredits ?? 200)}</strong><span>Total university credits</span><small>B.Sc. ${esc(cw.summary?.bscCredits ?? 160)} + M.S. ${esc(cw.summary?.msCredits ?? 40)}</small></article>
-        <article class="card metric"><strong>${esc(cw.summary?.laboratoryCredits ?? 40)}</strong><span>Laboratory / applied credits</span><small>${esc(cw.summary?.laboratoryCourses ?? 20)} applied courses</small></article>
-        <article class="card metric"><strong>${esc(cw.summary?.fieldSurveyCredits ?? 2)}</strong><span>Field-survey credits</span><small>Statistical fieldwork</small></article>
-        <article class="card metric"><strong>${esc(cw.summary?.projectCredits ?? 7)}</strong><span>Supervised-project credits</span><small>B.Sc. 3 + M.S. 4</small></article>
-        <article class="card metric"><strong>${esc(cw.summary?.vivaCredits ?? 20)}</strong><span>Viva-voce credits</span><small>B.Sc. 16 + M.S. 4</small></article>
+        ${academicMetric('credits',cw.summary?.totalCredits ?? 200,'Total university credits',`B.Sc. ${cw.summary?.bscCredits ?? 160} + M.S. ${cw.summary?.msCredits ?? 40}`)}
+        ${academicMetric('lab',cw.summary?.laboratoryCredits ?? 40,'Laboratory / applied credits',`${cw.summary?.laboratoryCourses ?? 20} applied courses`)}
+        ${academicMetric('field',cw.summary?.fieldSurveyCredits ?? 2,'Field-survey credits','Statistical fieldwork')}
+        ${academicMetric('project',cw.summary?.projectCredits ?? 7,'Supervised-project credits','B.Sc. 3 + M.S. 4')}
+        ${academicMetric('viva',cw.summary?.vivaCredits ?? 20,'Viva-voce credits','B.Sc. 16 + M.S. 4')}
       </div>
       <div class="curriculum-map-head">
         <div><div class="section-kicker">Curriculum map</div><h3>Six academic domains</h3></div>
