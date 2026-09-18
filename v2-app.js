@@ -118,21 +118,21 @@
                 <div class="impact-chip"><strong>8</strong><span>Conference Contributions</span></div>
               </div>
             </div>
-            <div class="portrait-stage" id="heroPortraitStage">
-              <div class="portrait-halo" aria-hidden="true"></div>
-              <div class="portrait-orbit portrait-orbit-one" aria-hidden="true"></div>
-              <div class="portrait-orbit portrait-orbit-two" aria-hidden="true"></div>
-              <div class="portrait-float">
-                <div class="portrait-frame" data-tilt>
-                  <div class="portrait-frame-inner">
+            <div class="portrait-stage portrait-stage-editorial" id="heroPortraitStage">
+              <div class="portrait-aura" aria-hidden="true"></div>
+              <div class="portrait-accent-orb portrait-accent-orb-a" aria-hidden="true"></div>
+              <div class="portrait-accent-orb portrait-accent-orb-b" aria-hidden="true"></div>
+              <div class="portrait-backplate portrait-backplate-a" aria-hidden="true"></div>
+              <div class="portrait-backplate portrait-backplate-b" aria-hidden="true"></div>
+              <div class="portrait-float portrait-float-editorial">
+                <div class="portrait-frame portrait-frame-editorial" data-tilt>
+                  <div class="portrait-frame-inner portrait-frame-inner-editorial">
                     ${safeImg('assets/profile/razu-portrait.jpg','Md. Razu Ahmed','portrait hero-portrait')}
                     <div class="portrait-shine" aria-hidden="true"></div>
                   </div>
-                  <div class="portrait-caption"><span class="live-dot"></span><span>MRA Research Intelligence</span></div>
                 </div>
               </div>
-              <div class="floating-badge floating-badge-top"><span class="badge-dot"></span><strong>32</strong><span>Invited reviews</span></div>
-              <div class="floating-badge floating-badge-bottom"><span class="badge-dot"></span><strong>1</strong><span>Public dataset</span></div>
+              <div class="portrait-caption portrait-caption-editorial"><span class="live-dot"></span><span>MRA Research Intelligence</span></div>
             </div>
           </div>
         </div>
