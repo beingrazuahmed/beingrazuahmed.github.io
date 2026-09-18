@@ -3090,3 +3090,96 @@
   .project-journal-meta{grid-template-columns:1fr}
   .project-journal-head{align-items:flex-start}
 }
+
+
+/* === Publication Standing + Conference Groups === */
+.output-standing{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin:14px 0;
+  padding:11px;
+  border:1px solid var(--line);
+  border-radius:13px;
+  background:color-mix(in srgb,var(--accent) 4%,var(--surface-2));
+}
+.output-standing span{
+  display:flex;
+  align-items:baseline;
+  gap:4px;
+  padding:5px 8px;
+  border-radius:9px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  color:var(--muted);
+  font-size:10px;
+  font-weight:800;
+  text-transform:uppercase;
+}
+.output-standing span strong{
+  color:var(--text);
+  font-size:12px;
+}
+.output-standing small{
+  flex:1 1 100%;
+  color:var(--muted);
+  font-size:10.5px;
+  line-height:1.45;
+}
+.conference-groups{
+  display:grid;
+  gap:18px;
+}
+.conference-group-card{
+  padding:24px;
+}
+.conference-group-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:18px;
+}
+.conference-group-head h3{
+  margin:4px 0 0;
+  font-size:clamp(1.3rem,2vw,1.65rem);
+}
+.conference-group-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 18px;
+  margin:14px 0 0;
+  color:var(--muted);
+  font-size:12.5px;
+}
+.conference-group-meta strong{
+  flex:1 1 100%;
+  color:var(--text);
+}
+.conference-paper-list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin-top:18px;
+}
+.conference-paper-item{
+  padding:15px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:color-mix(in srgb,var(--surface-2) 60%,var(--surface));
+}
+.conference-paper-item h4{
+  margin:8px 0 7px;
+  font-size:1rem;
+  line-height:1.45;
+}
+.conference-paper-item p{
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.55;
+}
+@media (max-width:760px){
+  .conference-group-head{display:block}
+  .conference-group-head .btn{margin-top:12px}
+  .conference-paper-list{grid-template-columns:1fr}
+}
