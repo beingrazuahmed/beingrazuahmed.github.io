@@ -37,6 +37,18 @@ window.PORTFOLIO_DATA = {
       title: "Sophisticated Audio Source Separation: A Statistical Exploration of Clarity and Precision With FastICA",
       venue: "Engineering Reports", citation: "Engineering Reports, 8(1), e70575",
       doi: "https://doi.org/10.1002/eng2.70575",
+      journalUrl: "https://onlinelibrary.wiley.com/journal/25778196",
+      journalStanding: {
+        publisher: "John Wiley & Sons, Ltd.",
+        onlineIssn: "2577-8196",
+        citeScore2025: "3.9",
+        jif2025: "2.9",
+        jci2025: "0.45",
+        sjr2025: "0.470",
+        quartile: "Q2",
+        hIndex: "39",
+        indexing: "Scopus · Web of Science Core Collection: ESCI"
+      },
       tags: ["FastICA", "Signal Processing", "Blind Source Separation"],
       summary: "A statistical evaluation of FastICA, PCA and NMF for conversational audio source separation, with FastICA achieving the strongest separation quality across repeated runs.",
       highlight: "FastICA achieved SDR 53.51 ± 0.07 dB and SIR 53.52 ± 0.07 dB.",
@@ -156,6 +168,7 @@ window.PORTFOLIO_DATA = {
     {
       id: "icrast-2025", event: "ICRAST 2025", full: "2nd International Conference on Recent Advances in Science and Technology 2025",
       host: "Faculty of Science, University of Rajshahi, Bangladesh", date: "14–15 November 2025", meta: "Book of Abstracts",
+      url: "https://csa.ru.ac.bd/science/conf2nd/",
       papers: [
         { title: "Measuring Attitudes toward AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology", authors: "Md. Razu Ahmed, Md. Abdur Rakib, Abu Bakar Shiddik, Md. Shamim Reza", page: "p. 120", role: "Oral Presentation · Presenting Author" },
         { title: "Facial Emotion Recognition with Dimensionality Reduction: A Comparative Study of PCA, FA, and Combined PCA–FA with a CNN Baseline", authors: "Md. Abdur Rakib, Md. Razu Ahmed, Abu Bakar Shiddik, Md. Shamim Reza", page: "p. 126", role: "Co-author" }
