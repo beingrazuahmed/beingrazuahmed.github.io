@@ -178,7 +178,7 @@
   function toolGroupCard(g){
     return `<article class="card tool-group tool-group-modern">
       <div class="tool-group-head"><span class="tool-group-icon">${uiIcon(g.icon||'analysis')}</span><h3>${esc(g.group)}</h3></div>
-      <div class="tool-items-modern">${(g.items||[]).map(i=>`<div class="tool-item-modern">${techBrandIcon(i)}<div><strong>${esc(i.name)}</strong><p>${esc(i.detail)}</p></div></div>`).join('')}</div>
+      <div class="tool-items-modern">${(g.items||[]).map(i=>`<div class="tool-item-modern">${techBrandIcon(i)}<div><strong>${esc(i.name)}</strong><p>${esc(i.detail)}</p>${i.url?`<a class="tool-profile-link" href="${esc(i.url)}" target="_blank" rel="noopener noreferrer">View profile ↗</a>`:''}</div></div>`).join('')}</div>
     </article>`;
   }
 
