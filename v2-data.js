@@ -339,10 +339,10 @@
   const fieldSurvey = {
     title: 'Statistical Field Survey',
     courseCode: 'STAT-4110',
-    degree: 'B.Sc. (Hons.) in Statistics',
+    degree: 'Bachelor of Science (B.Sc. Hons.) in Statistics',
     credits: 2,
     study: 'Measuring Attitudes toward AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology',
-    supervisor: 'Dr. Md. Shamim Reza',
+    supervisor: 'Prof. Dr. Md. Shamim Reza',
     team: ['Md. Razu Ahmed', 'Md. Abdur Rakib', 'Abu Bakar Shiddik', 'Dr. Md. Shamim Reza'],
     population: 'Target population: 4,795',
     sample: '370 participants',
@@ -353,6 +353,7 @@
     keywords: [
       'Artificial intelligence (AI)',
       'Job market perceptions',
+      'Job displacement',
       'Questionnaire survey',
       'Proportionate stratified random sampling',
       'Correspondence analysis',
