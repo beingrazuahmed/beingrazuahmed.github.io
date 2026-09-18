@@ -3996,3 +3996,127 @@ body[data-page="resources"] .mra-constellation{opacity:.34}
 @media (prefers-reduced-motion:reduce){
   .mra-constellation{opacity:.28}
 }
+
+/* === V3.1 Home corrections: single-line name, portrait depth, full compass === */
+.hero-title.hero-name{
+  display:flex;
+  flex-wrap:nowrap;
+  align-items:baseline;
+  gap:.16em;
+  width:max-content;
+  max-width:100%;
+  white-space:nowrap;
+}
+.hero-name-primary,
+.hero-name-accent{
+  display:inline-block;
+  flex:0 0 auto;
+  white-space:nowrap;
+}
+.hero-title.hero-name>.hero-name-node{
+  flex:0 0 auto;
+}
+
+.portrait-stage-editorial{
+  --portrait-shine-x:50%;
+  --portrait-shine-y:35%;
+}
+.portrait-aura{
+  opacity:.88;
+  animation:editorialAura 7.5s ease-in-out infinite;
+  filter:blur(22px);
+}
+.portrait-float-editorial{
+  animation:portraitFloatEditorial 6.2s ease-in-out infinite;
+  filter:drop-shadow(0 30px 44px rgba(35,61,84,.14));
+}
+.portrait-frame-editorial{
+  --portrait-rx:0deg;
+  --portrait-ry:0deg;
+  --portrait-shift-x:0px;
+  --portrait-shift-y:0px;
+  transform:
+    perspective(1200px)
+    translate3d(var(--portrait-shift-x),var(--portrait-shift-y),0)
+    rotateX(var(--portrait-rx))
+    rotateY(var(--portrait-ry)) !important;
+  transform-style:preserve-3d;
+  transition:transform .18s cubic-bezier(.2,.75,.25,1);
+  will-change:transform;
+}
+.portrait-frame-inner-editorial{
+  transform:translateZ(18px);
+  box-shadow:
+    0 28px 58px rgba(35,61,84,.16),
+    0 0 0 1px color-mix(in srgb,var(--accent) 12%,transparent),
+    inset 0 1px 0 rgba(255,255,255,.94);
+}
+.portrait-frame-inner-editorial::before{
+  display:block;
+}
+.portrait-frame-inner-editorial .portrait-shine{
+  position:absolute;
+  inset:8px;
+  z-index:3;
+  pointer-events:none;
+  border-radius:24px;
+  opacity:.56;
+  background:
+    radial-gradient(circle at var(--portrait-shine-x) var(--portrait-shine-y),
+      rgba(255,255,255,.48) 0,
+      rgba(255,255,255,.18) 18%,
+      transparent 48%),
+    linear-gradient(120deg,rgba(255,255,255,.12),transparent 38%);
+  mix-blend-mode:soft-light;
+  transition:opacity .2s ease;
+}
+.portrait-stage-editorial:hover .portrait-frame-inner-editorial{
+  box-shadow:
+    0 34px 70px rgba(35,61,84,.19),
+    0 0 0 1px color-mix(in srgb,var(--accent) 18%,transparent),
+    inset 0 1px 0 rgba(255,255,255,.96);
+}
+.portrait-accent-orb-a{animation:editorialOrbA 5.8s ease-in-out infinite}
+.portrait-accent-orb-b{animation:editorialOrbB 6.3s ease-in-out infinite}
+
+.portfolio-compass-v3{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+}
+.portfolio-compass-v3 .compass-card{
+  min-height:174px;
+}
+
+@media (max-width:1180px){
+  .portfolio-compass-v3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .hero-title.hero-name{font-size:clamp(3.35rem,4.9vw,5rem)}
+}
+@media (max-width:900px){
+  .portfolio-compass-v3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero-title.hero-name{
+    width:max-content;
+    max-width:100%;
+    white-space:nowrap;
+    font-size:clamp(2.75rem,8vw,4.35rem);
+  }
+}
+@media (max-width:620px){
+  .portfolio-compass-v3{grid-template-columns:1fr}
+  .hero-title.hero-name{
+    display:flex;
+    flex-wrap:nowrap;
+    width:max-content;
+    max-width:100%;
+    gap:.13em;
+    white-space:nowrap;
+    font-size:clamp(2.05rem,10.2vw,3.05rem);
+    letter-spacing:-.055em;
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  .portrait-aura,
+  .portrait-float-editorial,
+  .portrait-accent-orb-a,
+  .portrait-accent-orb-b{animation:none!important}
+  .portrait-frame-editorial{transform:none!important;transition:none!important}
+  .portrait-frame-inner-editorial .portrait-shine{opacity:.25}
+}
