@@ -34,10 +34,10 @@
       const updateNavControls = () => {
         const maxScroll = Math.max(0, navEl.scrollWidth - navEl.clientWidth);
         const overflowing = maxScroll > 4;
-        leftBtn.classList.toggle('is-hidden', !overflowing || navEl.scrollLeft <= 4);
-        rightBtn.classList.toggle('is-hidden', !overflowing || navEl.scrollLeft >= maxScroll - 4);
         leftBtn.disabled = !overflowing || navEl.scrollLeft <= 4;
         rightBtn.disabled = !overflowing || navEl.scrollLeft >= maxScroll - 4;
+        leftBtn.setAttribute('aria-disabled', String(leftBtn.disabled));
+        rightBtn.setAttribute('aria-disabled', String(rightBtn.disabled));
       };
       leftBtn.addEventListener('click', () => navEl.scrollBy({left:-step(), behavior:'smooth'}));
       rightBtn.addEventListener('click', () => navEl.scrollBy({left:step(), behavior:'smooth'}));
@@ -49,6 +49,11 @@
           navEl.scrollLeft += e.deltaY;
         }
       }, {passive:false});
+      navEl.tabIndex = 0;
+      navEl.addEventListener('keydown', (e) => {
+        if(e.key === 'ArrowRight'){ e.preventDefault(); navEl.scrollBy({left:step(),behavior:'smooth'}); }
+        if(e.key === 'ArrowLeft'){ e.preventDefault(); navEl.scrollBy({left:-step(),behavior:'smooth'}); }
+      });
       window.addEventListener('resize', updateNavControls, {passive:true});
       const active = navEl.querySelector('[aria-current="page"]');
       requestAnimationFrame(() => {
