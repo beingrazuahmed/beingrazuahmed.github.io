@@ -37,31 +37,31 @@
   const people = [
     {
       id: 'shamim-reza', name: 'Prof. Dr. Md. Shamim Reza', group: 'Academic Guidance & Advisors',
-      roles: ['Research Supervisor', 'Senior Research Guidance', 'Co-author'],
+      roles: ['Research Supervisor', 'Senior Research Guidance', 'Dean, Faculty of Science', 'Director, IQAC', 'Co-author'],
       affiliation: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST)',
       description: 'Primary academic supervisor and long-term research mentor across statistical learning, machine learning, biomedical data science and applied AI research.',
       shared: ['FastICA source separation', 'CKD prediction', 'AI-employment perceptions', 'Diabetic-retinopathy grading', 'PUST cafeteria research'],
       portrait: 'assets/collaborators/shamim-reza.jpg', links: []
     },
     {
-      id: 'sabba-ruhi', name: 'Dr. Sabba Ruhi', group: 'Academic Guidance & Advisors',
-      roles: ['Academic Guidance', 'Departmental Leadership', 'Co-author'],
+      id: 'sabba-ruhi', name: 'Prof. Dr. Sabba Ruhi', group: 'Academic Guidance & Advisors',
+      roles: ['Professor', 'Chairman', 'Academic Guidance', 'Departmental Leadership', 'Co-author'],
       affiliation: 'Chairman, Department of Statistics and Data Science, Pabna University of Science and Technology (PUST)',
       description: 'Senior departmental academic whose guidance intersects with applied statistics, biostatistics, regression and collaborative research activity.',
       shared: ['EFAST 2026 conference contributions'],
       portrait: 'assets/collaborators/sabba-ruhi.jpg', links: []
     },
     {
-      id: 'aminul-hoque', name: 'Dr. Md. Aminul Hoque', group: 'Academic Guidance & Advisors',
-      roles: ['Academic Guest Teacher', 'Senior Academic Guidance'],
-      affiliation: 'Academic network',
-      description: 'Academic guest teacher linked to genomics, bioinformatics and advanced statistical genetics coursework.',
+      id: 'aminul-hoque', name: 'Prof. Dr. Md. Aminul Hoque', group: 'Academic Guidance & Advisors',
+      roles: ['Professor', 'Academic Guest Teacher', 'Senior Academic Guidance'],
+      affiliation: 'Department of Statistics and Data Science, University of Rajshahi, Rajshahi-6205, Bangladesh',
+      description: 'Professor and academic guest teacher linked to genomics, bioinformatics and advanced statistical genetics coursework; PhD from Keio University, Japan, with postdoctoral training in Malaysia and Japan.',
       shared: [], portrait: 'assets/collaborators/aminul-hoque.jpg', links: []
     },
     {
       id: 'menhazul-abedin', name: 'Dr. Md. Menhazul Abedin', group: 'Academic Guidance & Advisors',
-      roles: ['Academic Guest Teacher', 'Senior Academic Guidance'], affiliation: 'Academic network',
-      description: 'Academic guest teacher linked to advanced multivariate analysis and the wider statistics research environment.',
+      roles: ['Associate Professor', 'Academic Guest Teacher', 'Senior Academic Guidance'], affiliation: 'Academic network',
+      description: 'Associate Professor and academic guest teacher linked to advanced multivariate analysis; PhD from Hokkaido University, Japan, with B.Sc. (Hons.) and M.Sc. (Thesis) training in Statistics from the University of Rajshahi.',
       shared: [], portrait: 'assets/collaborators/menhazul-abedin.jpg', links: []
     },
     {
