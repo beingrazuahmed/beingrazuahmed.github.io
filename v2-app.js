@@ -121,7 +121,7 @@
   }
 
   function languageCard(l){
-    return `<article class="card language-card language-card-${esc(l.id||'generic')}">
+    return `<article class="card language-card language-card-${esc(l.id||'generic')} academic-motion-card" data-academic-tilt data-tilt-strength="3.2">
       <div class="language-card-head">
         <div class="language-icon">${uiIcon(l.icon||'language')}</div>
         <div>
@@ -147,7 +147,7 @@
     const logo=e.logo? `<img class="education-logo-img" src="${esc(e.logo)}" alt="${esc(e.institution||e.degree)} logo" loading="lazy" decoding="async">` : `<span class="education-logo-fallback">${uiIcon(e.icon||'school')}</span>`;
     return `<article class="education-timeline-item">
       <span class="education-timeline-dot" aria-hidden="true"></span>
-      <div class="card education-card">
+      <div class="card education-card academic-motion-card" data-academic-tilt data-tilt-strength="2.8">
         <div class="education-logo-wrap">${logo}</div>
         <div class="education-card-main">
           <div class="education-card-heading">
@@ -165,7 +165,7 @@
   }
 
   function academicMetric(icon,value,label,detail){
-    return `<article class="card metric academic-metric-card"><div class="academic-metric-icon">${uiIcon(icon)}</div><strong>${esc(value)}</strong><span>${esc(label)}</span><small>${esc(detail)}</small></article>`;
+    return `<article class="card metric academic-metric-card academic-motion-card" data-academic-tilt data-tilt-strength="4"><div class="academic-metric-icon">${uiIcon(icon)}</div><strong>${esc(value)}</strong><span>${esc(label)}</span><small>${esc(detail)}</small></article>`;
   }
 
   function techBrandIcon(item){
@@ -177,7 +177,7 @@
   }
 
   function technicalSkillCard(x){
-    return `<article class="card technical-skill-card ${x.featured?'technical-skill-featured':''}">
+    return `<article class="card technical-skill-card academic-motion-card ${x.featured?'technical-skill-featured':''}" data-academic-tilt data-tilt-strength="${x.featured?'1.6':'2.8'}">
       <div class="technical-skill-head">
         <span class="technical-skill-icon">${uiIcon(x.icon||'analysis')}</span>
         <div>
@@ -197,7 +197,7 @@
   }
 
   function toolGroupCard(g){
-    return `<article class="card tool-group tool-group-modern">
+    return `<article class="card tool-group tool-group-modern academic-motion-card" data-academic-tilt data-tilt-strength="2.5">
       <div class="tool-group-head"><span class="tool-group-icon">${uiIcon(g.icon||'analysis')}</span><h3>${esc(g.group)}</h3></div>
       <div class="tool-items-modern">${(g.items||[]).map(i=>`<div class="tool-item-modern">${techBrandIcon(i)}<div><strong>${esc(i.name)}</strong><p>${esc(i.detail)}</p>${i.url?`<a class="tool-profile-link" href="${esc(i.url)}" target="_blank" rel="noopener noreferrer">View profile ↗</a>`:''}</div></div>`).join('')}</div>
     </article>`;
@@ -235,7 +235,7 @@
         <p>Version snapshots are reported by project because software stacks differ across analyses. This avoids implying that one fixed environment was used for every study.</p>
       </div>
       <div class="compute-environment-list">
-        ${items.map((x,i)=>`<details class="compute-environment-card" ${i===0?'open':''}>
+        ${items.map((x,i)=>`<details class="compute-environment-card academic-motion-card" data-academic-tilt data-tilt-strength="1.5" ${i===0?'open':''}>
           <summary>
             <div><strong>${esc(x.title||'Research environment')}</strong><span>${esc(x.context||'')}</span></div>
             <span class="compute-toggle">+</span>
@@ -355,11 +355,12 @@
   function personCard(x){return `<article class="card person-card">${safeImg(x.portrait,x.name,'avatar')}<h3>${esc(x.name)}</h3><div class="meta">${(x.roles||[]).map(r=>`<span class="badge">${esc(r)}</span>`).join('')}</div><p><strong>${esc(x.affiliation||'')}</strong></p><p>${esc(x.description||'')}</p><div class="link-row">${(x.links||[]).map(l=>ext(l.url,l.label)).join(' · ')}</div></article>`;}
   function fieldSurveyCard(){
     const f=D.fieldSurvey||{}, c=f.conference||{};
-    return `<article class="card field-survey-card">
+    return `<article class="card field-survey-card academic-motion-card" data-academic-tilt data-tilt-strength="1.35">
       <div class="meta">
         <span class="badge">${esc(f.courseCode||'')}</span>
         <span class="badge">${esc(f.degree||'')}</span>
         <span class="badge">${esc(f.credits||'')} credits</span>
+        ${f.grade?`<span class="academic-grade-pill"><span class="grade-star" aria-hidden="true">★</span><strong>${esc(f.grade)}</strong><small>${esc(f.gradeLabel||'Grade')}</small></span>`:''}
       </div>
       <h3>${esc(f.study||f.title||'')}</h3>
       <div class="field-survey-topline">
@@ -440,7 +441,7 @@
       : items.length
         ? `<div class="curriculum-components">${items.map(x=>`<div class="curriculum-component"><strong>${esc(x.title)}</strong><span>${esc(x.credits)} credits</span><p>${esc(x.detail||'')}</p></div>`).join('')}</div>`
         : tags(courses);
-    return `<article class="card curriculum-domain" data-search="${esc((g.name+' '+g.description+' '+courses.join(' ')+' '+groups.map(x=>(x.courses||[]).join(' ')).join(' ')+' '+items.map(x=>x.title).join(' ')).toLowerCase())}">
+    return `<article class="card curriculum-domain academic-motion-card" data-academic-tilt data-tilt-strength="2.3" data-search="${esc((g.name+' '+g.description+' '+courses.join(' ')+' '+groups.map(x=>(x.courses||[]).join(' ')).join(' ')+' '+items.map(x=>x.title).join(' ')).toLowerCase())}">
       <div class="curriculum-domain-head"><span class="domain-index">${esc(String((D.coursework?.categories||[]).indexOf(g)+1).padStart(2,'0'))}</span><div><h3>${esc(g.name||'Academic domain')}</h3><p>${esc(g.description||'')}</p></div></div>
       <div class="curriculum-domain-meta">${esc(meta)}</div>
       <details><summary>View coursework & components</summary><div class="curriculum-domain-body">${body}</div></details>
@@ -448,10 +449,10 @@
   }
 
   function academicProjectCard(p){
-    return `<article class="card academic-project-card academic-project-rich">
+    return `<article class="card academic-project-card academic-project-rich academic-motion-card" data-academic-tilt data-tilt-strength="1.25">
       <div class="academic-project-head">
         <div>
-          <div class="meta"><span class="badge">${esc(p.level||'')}</span><span class="badge">${esc(p.credits||'')} credits</span>${p.type?`<span class="badge">${esc(p.type)}</span>`:''}</div>
+          <div class="meta"><span class="badge">${esc(p.level||'')}</span><span class="badge">${esc(p.credits||'')} credits</span>${p.type?`<span class="badge">${esc(p.type)}</span>`:''}${p.grade?`<span class="academic-grade-pill"><span class="grade-star" aria-hidden="true">★</span><strong>${esc(p.grade)}</strong><small>${esc(p.gradeLabel||'Grade')}</small></span>`:''}</div>
           <div class="tiny project-course">${esc(p.course||'')}</div>
           <h3>${esc(p.title||'')}</h3>
         </div>
@@ -499,7 +500,7 @@
   }
 
   function instructorCard(i){
-    return `<article class="card instructor-card instructor-profile-card">
+    return `<article class="card instructor-card instructor-profile-card academic-motion-card" data-academic-tilt data-tilt-strength="2.2">
       <div class="instructor-portrait-wrap">
         ${i.portrait?`<img class="instructor-portrait" src="${esc(i.portrait)}" alt="${esc(i.instructor||'Instructor')} portrait" loading="lazy" decoding="async">`:''}
         <span class="instructor-portrait-fallback" aria-hidden="true">${uiIcon('graduation')}</span>
@@ -728,6 +729,31 @@
       });
     }
     const ask=$('#askInput'), ans=$('#askAnswer'); if(ask&&ans){const reply=q=>{const s=q.toLowerCase();let out='';if(s.includes('shap'))out='SHAP appears in the CKD, HCV and public-health / explainability research records where public-approved details are available.';else if(s.includes('first-author'))out='First-author published/accepted works include the FastICA source-separation study, CKD prediction study and accepted AI-employment perceptions article.';else if(s.includes('course')||s.includes('machine learning coursework'))out='Relevant coursework includes Data Mining, Machine Learning, Deep Learning for Computer Vision, Programming with Python and R, Numerical Analysis and Simulation, and supporting statistics/mathematics courses.';else if(s.includes('dengue'))out='The public dengue portfolio includes nationwide forecasting and decision-oriented preparedness research, including collaborations with Md. Ziaul Haque and other co-authors.';else if(s.includes('review'))out='Md. Razu Ahmed has completed 32 invited peer reviews: 25 for PLOS ONE, 6 for Biomedical Signal Processing and Control, and 1 for Engineering Applications of Artificial Intelligence.';else out='I can answer from the public portfolio about research, publications, methods, coursework, conferences, collaborators, training and scholarly metrics. Confidential research is intentionally excluded.';ans.textContent=out;}; ask.addEventListener('keydown',e=>{if(e.key==='Enter')reply(ask.value)}); $$('.askPrompt').forEach(b=>b.addEventListener('click',()=>{ask.value=b.dataset.q;reply(b.dataset.q)}));}
+    const academicTiltCards=[...document.querySelectorAll('[data-academic-tilt]')];
+    const canAcademicTilt=()=>window.matchMedia('(pointer:fine)').matches && window.innerWidth>820 && document.documentElement.dataset.motion!=='reduced';
+    academicTiltCards.forEach(card=>{
+      const reset=()=>{
+        card.style.removeProperty('--tilt-rx');
+        card.style.removeProperty('--tilt-ry');
+        card.style.removeProperty('--tilt-z');
+        card.style.removeProperty('--shine-x');
+        card.style.removeProperty('--shine-y');
+      };
+      card.addEventListener('pointermove',e=>{
+        if(!canAcademicTilt()) return;
+        const rect=card.getBoundingClientRect();
+        const px=(e.clientX-rect.left)/rect.width-.5;
+        const py=(e.clientY-rect.top)/rect.height-.5;
+        const strength=parseFloat(card.dataset.tiltStrength||'2.5');
+        card.style.setProperty('--tilt-rx',(-py*strength).toFixed(2)+'deg');
+        card.style.setProperty('--tilt-ry',(px*strength).toFixed(2)+'deg');
+        card.style.setProperty('--tilt-z','8px');
+        card.style.setProperty('--shine-x',((px+.5)*100).toFixed(1)+'%');
+        card.style.setProperty('--shine-y',((py+.5)*100).toFixed(1)+'%');
+      });
+      card.addEventListener('pointerleave',reset);
+      card.addEventListener('blur',reset,true);
+    });
     const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.06}); document.querySelectorAll('.card,.timeline-item').forEach(e=>{e.classList.add('reveal');io.observe(e)});
     const hero=$('#homeHero'), tilt=hero?.querySelector('[data-tilt]');
     if(hero&&tilt){
