@@ -420,7 +420,10 @@
 
   function instructorCard(i){
     return `<article class="card instructor-card instructor-profile-card">
-      <div class="instructor-mark" aria-hidden="true">${uiIcon('graduation')}</div>
+      <div class="instructor-portrait-wrap">
+        ${i.portrait?`<img class="instructor-portrait" src="${esc(i.portrait)}" alt="${esc(i.instructor||'Instructor')} portrait" loading="lazy" decoding="async">`:''}
+        <span class="instructor-portrait-fallback" aria-hidden="true">${uiIcon('graduation')}</span>
+      </div>
       <div class="instructor-profile-head">
         <div>
           <h3>${esc(i.instructor||'')}</h3>
@@ -565,6 +568,11 @@
       const wrap=img.closest('.tech-logo');
       if(wrap){const span=document.createElement('span');span.className='tech-logo-fallback';span.textContent=img.dataset.techFallback||'APP';wrap.replaceWith(span);}
     },{once:true}));
+    document.querySelectorAll('.instructor-portrait').forEach(img=>{
+      const hideBroken=()=>{img.hidden=true;};
+      img.addEventListener('error',hideBroken,{once:true});
+      if(img.complete && !img.naturalWidth){hideBroken();}
+    });
     document.querySelectorAll('.project-figure-img').forEach(img=>{
       const hideBroken=()=>{const figure=img.closest('.project-figure');if(figure){figure.hidden=true;}};
       img.addEventListener('error',hideBroken,{once:true});
