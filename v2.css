@@ -3206,6 +3206,14 @@
     border-color .28s ease,
     background-color .28s ease;
 }
+.academic-motion-card:not(.reveal){
+  transform:
+    perspective(1200px)
+    rotateX(var(--tilt-rx))
+    rotateY(var(--tilt-ry))
+    translateY(var(--card-lift))
+    translateZ(var(--tilt-z));
+}
 .reveal.visible.academic-motion-card{
   transform:
     perspective(1200px)
