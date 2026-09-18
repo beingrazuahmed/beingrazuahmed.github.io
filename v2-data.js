@@ -613,13 +613,13 @@
   ];
 
   window.MRA_V2 = {
-    version: '2.0',
+    version: '3.0',
     lastUpdated: '18 September 2026',
     brand: {
       monogram: 'MRA',
       name: 'Md. Razu Ahmed',
       headline: 'Statistician | Data Scientist | Researcher | Peer Reviewer',
-      subline: 'Machine Learning · Explainable AI · Public Health & Biomedical Data Science',
+      subline: 'Statistics · Data Science · Artificial Intelligence · Research',
       tagline: 'Advancing Rigorous, Explainable, and Reproducible Data-Driven Research'
     },
     themes: [
