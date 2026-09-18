@@ -514,7 +514,7 @@
       level: 'Native proficiency',
       badge: 'Native / Mother Tongue',
       icon: 'language',
-      note: 'Primary language for everyday, community, field and interpersonal communication in Bangladesh.',
+      note: 'Native language used across formal, interpersonal, participant-facing and community communication in Bangladesh.',
       evidence: [
         'Native spoken and written communication across formal and everyday contexts',
         'Field and participant-facing communication in Bangladesh-based survey and public-health research',
@@ -526,9 +526,9 @@
       name: 'English',
       nativeName: '',
       level: 'Professional working proficiency',
-      badge: 'Medium of Instruction: B.Sc. + M.S.',
+      badge: 'B.Sc. + M.S. · English MOI',
       icon: 'graduation',
-      note: 'English is the Medium of Instruction (MOI) for both the B.Sc. (Hons.) in Statistics and M.S. in Statistics at Pabna University of Science and Technology.',
+      note: 'Professional academic and research language, supported by English-medium instruction throughout both university degrees in Statistics at PUST.',
       evidence: [
         'Used throughout degree-level lectures, examinations, laboratory/applied coursework and supervised research projects',
         'Primary language for manuscript preparation, scholarly correspondence and research documentation',
