@@ -95,6 +95,10 @@
       "assets/academic/education/pust-logo.png",
       "assets/academic/education/rajshahi-college-logo.jpg",
       "assets/academic/education/mashkatadighi-high-school-logo.jpg"
+    ],
+    "projects": [
+      "assets/academic/projects/bsc-fastica-pipeline.png",
+      "assets/academic/projects/ms-dr-screening-prototype.png"
     ]
   }
 }
