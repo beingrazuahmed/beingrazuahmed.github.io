@@ -151,31 +151,31 @@
   ];
 
   const tools = [
-    { group: 'Statistical & Analytical Software', items: [
-      { name: 'IBM SPSS Statistics', detail: 'Statistical data management, descriptive and inferential analysis, regression, hypothesis testing and research reporting.' },
-      { name: 'Minitab', detail: 'Regression, experimental-design coursework, statistical quality-control methods and exploratory analysis.' }
+    { group: 'Statistical & Analytical Software', icon: 'analysis', items: [
+      { name: 'IBM SPSS Statistics', short: 'SPSS', brand: 'ibm', detail: 'Statistical data management, descriptive and inferential analysis, regression, hypothesis testing and research reporting.' },
+      { name: 'Minitab', short: 'Minitab', brand: '', detail: 'Regression, experimental-design coursework, statistical quality-control methods and exploratory analysis.' }
     ]},
-    { group: 'Programming Languages', items: [
-      { name: 'Python', detail: 'Primary computational research language for preprocessing, statistical learning, machine learning, deep learning, XAI, forecasting, visualization and reproducible pipelines.' },
-      { name: 'R', detail: 'Statistical computing, visualization, regression, multivariate methods, time-series, survival analysis and reproducible research.' },
-      { name: 'C', detail: 'Foundational programming, algorithmic thinking, numerical problem solving and undergraduate computational coursework.' }
+    { group: 'Programming & Statistical Computing', icon: 'code', items: [
+      { name: 'Python', short: 'Python', brand: 'python', detail: 'Primary computational research language for preprocessing, statistical learning, machine learning, deep learning, XAI, forecasting, visualization and reproducible pipelines.' },
+      { name: 'R', short: 'R', brand: 'rproject', detail: 'Statistical computing, visualization, regression, multivariate methods, time-series, survival analysis and reproducible research.' },
+      { name: 'C', short: 'C', brand: 'c', detail: 'Foundational programming, algorithmic thinking, numerical problem solving and undergraduate computational coursework.' }
     ]},
-    { group: 'Web & Prototype Development', items: [
-      { name: 'HTML', detail: 'Semantic structure for academic, research and prototype web interfaces.' },
-      { name: 'CSS', detail: 'Responsive interface styling, layout, visual hierarchy and research-web customization.' },
-      { name: 'Flask', detail: 'Lightweight Python web applications and deployment of research or machine-learning prototypes.' }
+    { group: 'Web & Research Prototype Development', icon: 'web', items: [
+      { name: 'HTML', short: 'HTML5', brand: 'html5', detail: 'Semantic structure for academic, research and prototype web interfaces.' },
+      { name: 'CSS', short: 'CSS3', brand: 'css3', detail: 'Responsive interface styling, layout, visual hierarchy and research-web customization.' },
+      { name: 'Flask', short: 'Flask', brand: 'flask', detail: 'Lightweight Python web applications and deployment of research or machine-learning prototypes.' }
     ]},
-    { group: 'Research Computing & Development Environments', items: [
-      { name: 'Jupyter Notebook', detail: 'Interactive statistical analysis, ML experimentation, EDA, visualization and documented reproducible workflows.' },
-      { name: 'Visual Studio Code', detail: 'Development environment for Python, R, web work, scripting, Git workflows and research project organization.' }
+    { group: 'Research Computing & Development Environments', icon: 'terminal', items: [
+      { name: 'Jupyter Notebook', short: 'Jupyter', brand: 'jupyter', detail: 'Interactive statistical analysis, ML experimentation, EDA, visualization and documented reproducible workflows.' },
+      { name: 'Visual Studio Code', short: 'VS Code', brand: 'visualstudiocode', detail: 'Development environment for Python, R, web work, scripting, Git workflows and research project organization.' }
     ]},
-    { group: 'Version Control & Research Reproducibility', items: [
-      { name: 'Git', detail: 'Version control for code, analysis scripts, experimental revisions and reproducible research workflows.' },
-      { name: 'GitHub', detail: 'Repository hosting, collaborative code management, portfolio deployment, documentation and sharing public reproducible research materials.' }
+    { group: 'Version Control & Reproducibility', icon: 'branch', items: [
+      { name: 'Git', short: 'Git', brand: 'git', detail: 'Version control for code, analysis scripts, experimental revisions and reproducible research workflows.' },
+      { name: 'GitHub', short: 'GitHub', brand: 'github', detail: 'Repository hosting, collaborative code management, portfolio deployment, documentation and sharing public reproducible research materials.' }
     ]},
-    { group: 'Productivity & Collaboration', items: [
-      { name: 'Microsoft Office', detail: 'Word for manuscripts, Excel for tabular analysis, and PowerPoint for conference, teaching and research presentations.' },
-      { name: 'Google Workspace', detail: 'Docs, Sheets, Slides, Drive and Forms for collaborative research, survey workflows and team documentation.' }
+    { group: 'Productivity & Collaboration', icon: 'workspace', items: [
+      { name: 'Microsoft Office', short: 'Microsoft 365', brand: 'microsoft365', detail: 'Word for manuscripts, Excel for tabular analysis, and PowerPoint for conference, teaching and research presentations.' },
+      { name: 'Google Workspace', short: 'Google Workspace', brand: 'google', detail: 'Docs, Sheets, Slides, Drive and Forms for collaborative research, survey workflows and team documentation.' }
     ]}
   ];
 
@@ -240,16 +240,18 @@
 
   const education = [
     {
-      degree: 'M.S. in Statistics',
+      degree: 'Master of Science (M.S.) in Statistics',
       institution: 'Pabna University of Science and Technology (PUST)',
+      logo: 'assets/academic/education/pust-logo.png',
       year: 'Exam Year 2022 · Examination held 2025',
       detail: 'CGPA 3.49/4.00 · Ranked 5th in the project-based (non-thesis) track',
       moi: 'Medium of Instruction (MOI): English',
       icon: 'graduation'
     },
     {
-      degree: 'B.Sc. (Hons.) in Statistics',
+      degree: 'Bachelor of Science (B.Sc. Hons.) in Statistics',
       institution: 'Pabna University of Science and Technology (PUST)',
+      logo: 'assets/academic/education/pust-logo.png',
       year: 'Exam Year 2021 · Examination held 2024',
       detail: 'CGPA 2.87/4.00',
       moi: 'Medium of Instruction (MOI): English',
@@ -258,6 +260,7 @@
     {
       degree: 'Higher Secondary Certificate (HSC)',
       institution: 'Rajshahi College, Rajshahi',
+      logo: 'assets/academic/education/rajshahi-college-logo.jpg',
       year: '2016',
       board: 'Rajshahi',
       detail: 'Science · GPA 4.83/5.00',
@@ -267,6 +270,7 @@
     {
       degree: 'Secondary School Certificate (SSC)',
       institution: 'Mashkatadighi Multilateral (Technical) High School, Rajshahi',
+      logo: 'assets/academic/education/mashkatadighi-high-school-logo.jpg',
       year: '2014',
       board: 'Rajshahi',
       detail: 'Science · GPA 5.00/5.00',
@@ -314,8 +318,8 @@
       degrees: [
         { label: 'SSC · Rajshahi Board', value: 'Bangla MOI', stage: 'Secondary' },
         { label: 'HSC · Rajshahi Board', value: 'Bangla MOI', stage: 'Higher Secondary' },
-        { label: 'B.Sc. (Hons.) in Statistics', value: 'English MOI', stage: 'Undergraduate' },
-        { label: 'M.S. in Statistics', value: 'English MOI', stage: 'Postgraduate' }
+        { label: 'Bachelor of Science (B.Sc. Hons.) in Statistics', value: 'English MOI', stage: 'Undergraduate' },
+        { label: 'Master of Science (M.S.) in Statistics', value: 'English MOI', stage: 'Postgraduate' }
       ]
     },
     evidence: [
