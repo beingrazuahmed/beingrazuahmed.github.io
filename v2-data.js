@@ -204,7 +204,37 @@
       role: 'Presenting Author',
       citation: 'Ahmed, M. R., Rakib, M. A., Shiddik, A. B., & Reza, M. S. (2025). Measuring Attitudes toward AI’s Impact on the Job Market in Bangladesh: A study at Pabna University of Science and Technology (p. 120).'
     },
-    article: 'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh · Accepted / Forthcoming',
+    article: {
+      title: 'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh',
+      status: 'Accepted / Forthcoming',
+      acceptedDate: '2 September 2026',
+      forthcoming: 'Volume 26, Issue 2 · November 2026',
+      journal: 'International Journal of Statistical Sciences',
+      abbreviatedJournal: 'Int. j. stat. sci.',
+      issn: '1683-5603',
+      citation: 'Ahmed, M. R., Rakib, M. A., Shiddik, A. B., Mauya, J., Hoque, M. A., & Reza, M. S. (2026). Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh. International Journal of Statistical Sciences. Accepted 2 September 2026; forthcoming in Volume 26, Issue 2, November 2026.',
+      publisher: 'Department of Statistics and Data Science, University of Rajshahi, Rajshahi, Bangladesh',
+      publicationModel: 'Peer-reviewed · Open access · Published biannually, with special issues when applicable',
+      license: 'Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)',
+      journalSince: 'Published since 2002',
+      hosting: 'Hosted on Bangladesh Journals Online (BanglaJOL) since 2023; BanglaJOL is managed by the Bangladesh Academy of Sciences.',
+      indexing: [
+        'Digital Object Identifier (DOI)',
+        'ICI World of Journals · ICV indicator 2024: 68.51',
+        'Eurasian Scientific Journal Index (ESJI)',
+        'Statistical Theory and Method Abstract, International Statistical Institute',
+        'Bangladesh Journals Online (BanglaJOL)',
+        'Bangladesh National Scientific and Technical Documentation Centre (BANSDOC)'
+      ],
+      links: [
+        { label: 'Official Journal Website', url: 'https://ru.ac.bd/stat/ijss/' },
+        { label: 'BanglaJOL Host Page', url: 'https://www.banglajol.info/index.php/ijss' }
+      ],
+      contact: {
+        office: 'Executive Editor, IJSS, Department of Statistics and Data Science, University of Rajshahi, Rajshahi-6205, Bangladesh',
+        email: 'ijss@ru.ac.bd'
+      }
+    },
     progression: ['B.Sc. Statistical Field Survey', '2nd ICRAST 2025 oral presentation', 'Accepted journal article']
   };
 
