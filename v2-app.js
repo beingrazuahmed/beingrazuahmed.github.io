@@ -237,12 +237,13 @@
     </div></section>
 
     <section class="section alt"><div class="container">
-      ${sectionHead('Academic curriculum','200-credit quantitative foundation','B.Sc. 160 credits + M.S. 40 credits, including 20 laboratory/applied courses, statistical fieldwork, supervised projects and viva voce assessment.')}
-      <div class="grid grid-4 academic-credit-grid">
-        <article class="card metric"><strong>200</strong><span>Total university credits</span><small>B.Sc. 160 + M.S. 40</small></article>
-        <article class="card metric"><strong>40</strong><span>Laboratory / applied credits</span><small>20 applied courses</small></article>
-        <article class="card metric"><strong>2</strong><span>Field-survey credits</span><small>Statistical fieldwork</small></article>
-        <article class="card metric"><strong>7</strong><span>Supervised-project credits</span><small>B.Sc. 3 + M.S. 4</small></article>
+      ${sectionHead('Academic curriculum','200-credit quantitative foundation','B.Sc. 160 credits + M.S. 40 credits, including 40 laboratory/applied credits across 20 courses, 2 credits of statistical fieldwork, 7 credits of supervised projects and 20 credits of viva-voce assessment.')}
+      <div class="grid academic-credit-grid">
+        <article class="card metric"><strong>${esc(cw.summary?.totalCredits ?? 200)}</strong><span>Total university credits</span><small>B.Sc. ${esc(cw.summary?.bscCredits ?? 160)} + M.S. ${esc(cw.summary?.msCredits ?? 40)}</small></article>
+        <article class="card metric"><strong>${esc(cw.summary?.laboratoryCredits ?? 40)}</strong><span>Laboratory / applied credits</span><small>${esc(cw.summary?.laboratoryCourses ?? 20)} applied courses</small></article>
+        <article class="card metric"><strong>${esc(cw.summary?.fieldSurveyCredits ?? 2)}</strong><span>Field-survey credits</span><small>Statistical fieldwork</small></article>
+        <article class="card metric"><strong>${esc(cw.summary?.projectCredits ?? 7)}</strong><span>Supervised-project credits</span><small>B.Sc. 3 + M.S. 4</small></article>
+        <article class="card metric"><strong>${esc(cw.summary?.vivaCredits ?? 20)}</strong><span>Viva-voce credits</span><small>B.Sc. 16 + M.S. 4</small></article>
       </div>
       <div class="curriculum-map-head">
         <div><div class="section-kicker">Curriculum map</div><h3>Five academic domains</h3></div>
