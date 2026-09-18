@@ -1942,7 +1942,7 @@
   width:max-content;
   gap:12px;
   padding:14px;
-  animation:techTicker 34s linear infinite;
+  animation:techTicker var(--ticker-duration,34s) linear infinite;
   will-change:transform;
 }
 .tech-marquee:hover .tech-marquee-track,
