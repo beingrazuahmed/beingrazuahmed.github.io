@@ -349,7 +349,15 @@
     variables: '33 variables · 8 socio-demographic + 25 attitudinal',
     design: 'Proportionate stratified random sampling · questionnaire survey and interviews · 5-point Likert instrument',
     workflowAsset: 'assets/academic/field-survey/ai-job-market-field-survey-workflow.png',
-    workflowCaption: 'Workflow of the B.Sc. statistical field survey on perceptions of AI and the job market at Pabna University of Science and Technology.',
+    workflowCaption: 'B.Sc. statistical field survey on perceptions of artificial intelligence and the job market at Pabna University of Science and Technology.',
+    keywords: [
+      'Artificial intelligence (AI)',
+      'Job market perceptions',
+      'Questionnaire survey',
+      'Proportionate stratified random sampling',
+      'Correspondence analysis',
+      'Principal component analysis (PCA)'
+    ],
     conference: {
       shortName: '2nd ICRAST 2025',
       fullName: '2nd International Conference on Recent Advances in Science and Technology 2025 (ICRAST 2025)',
