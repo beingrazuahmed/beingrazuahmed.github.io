@@ -176,8 +176,24 @@ window.COURSEWORK_DATA = {
       figureAlt: "End-to-end audio source separation workflow comparing FastICA, PCA and NMF",
       figureCaption: "End-to-end pipeline for audio source separation with FastICA and two baselines (PCA and NMF).",
       outcome: "Developed into a peer-reviewed journal article in Engineering Reports.",
-      outputLabel: "Published article",
-      outputUrl: "https://doi.org/10.1002/eng2.70575"
+      doi: "10.1002/eng2.70575",
+      outputUrl: "https://doi.org/10.1002/eng2.70575",
+      journal: {
+        name: "Engineering Reports",
+        citation: "Ahmed, M. R., Mauya, J., Reza, M. S., & Amin, R. (2026). Sophisticated Audio Source Separation: A Statistical Exploration of Clarity and Precision with FastICA. Engineering Reports, 8(1), e70575.",
+        publisher: "John Wiley & Sons, Ltd.",
+        onlineIssn: "2577-8196",
+        officialUrl: "https://onlinelibrary.wiley.com/journal/25778196",
+        metrics: [
+          { label: "2025 CiteScore", value: "3.9", source: "Scopus" },
+          { label: "2025 Journal Impact Factor", value: "2.9", source: "Clarivate" },
+          { label: "2025 Journal Citation Indicator", value: "0.45", source: "Clarivate" },
+          { label: "2025 SJR", value: "0.470", source: "SCImago" },
+          { label: "Quartile", value: "Q2", source: "JCR / SCImago" },
+          { label: "H-index", value: "39", source: "SCImago" }
+        ],
+        standing: "JCR Q2 · Engineering, Multidisciplinary · Scopus indexed · Web of Science Core Collection: Emerging Sources Citation Index (ESCI)"
+      }
     },
     {
       level: "Master of Science (M.S.) in Statistics",
