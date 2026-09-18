@@ -96,7 +96,44 @@
 
   function home(){
     const p=D.profile||{};
-    return `<section class="hero"><div class="container hero-grid"><div><div class="eyebrow"><span class="live-dot"></span><span>Portfolio online</span><span class="clock" data-clock></span></div><h1>${esc(D.brand?.name)}</h1><div class="hero-subline">${esc(D.brand?.headline)}</div><div class="lede">${esc(D.brand?.subline)}</div><p class="lede">I am Md. Razu Ahmed, a statistician, data scientist, researcher, and peer reviewer working at the intersection of statistical learning, artificial intelligence, public health, and biomedical data science. I develop rigorous, reproducible, and interpretable analytical workflows that connect statistical methodology with machine learning and deep learning to address real-world problems.</p><div class="cta-row"><a class="btn primary" href="research.html">Explore Research</a><a class="btn" href="ask-razu.html">Ask Razu AI</a><a class="btn" href="dashboard.html">Research Dashboard</a><a class="btn" href="cv.html">View CV</a><a class="btn" href="contact.html">Collaborate</a></div></div><div class="portrait-wrap">${safeImg('assets/profile/razu-portrait.jpg','Md. Razu Ahmed')}<div class="status-card"><strong>Selectively open to collaboration</strong><div class="tiny">Interdisciplinary research · PhD opportunities · academic partnerships</div></div></div></div></section>
+    return `<section class="hero hero-home" id="homeHero">
+      <div class="hero-ambient hero-ambient-a" aria-hidden="true"></div>
+      <div class="hero-ambient hero-ambient-b" aria-hidden="true"></div>
+      <div class="hero-grid-lines" aria-hidden="true"></div>
+      <div class="container hero-grid hero-grid-premium">
+        <div class="hero-copy">
+          <div class="eyebrow hero-eyebrow"><span class="live-dot"></span><span>Portfolio online</span><span class="clock" data-clock></span></div>
+          <h1 class="hero-title"><span class="hero-title-prefix">Md.</span> <span class="hero-title-accent">Razu Ahmed</span></h1>
+          <div class="hero-subline hero-role-line">Statistician <span>·</span> Data Scientist <span>·</span> Researcher <span>·</span> Peer Reviewer</div>
+          <div class="hero-topic-line"><span>Machine Learning</span><span>Explainable AI</span><span>Public Health</span><span>Biomedical Data Science</span></div>
+          <p class="hero-intro">I am Md. Razu Ahmed, a statistician and interdisciplinary data researcher working at the intersection of statistical learning, artificial intelligence, public health, and biomedical data science. I build rigorous, reproducible, and interpretable analytical workflows that connect statistical methodology with machine learning to address real-world problems.</p>
+          <div class="cta-row hero-actions"><a class="btn primary hero-primary" href="research.html">Explore Research <span aria-hidden="true">↗</span></a><a class="btn" href="cv.html">View CV</a><a class="btn" href="dashboard.html">Research Dashboard</a><a class="btn" href="ask-razu.html">Ask Razu AI</a><a class="btn hero-collab" href="contact.html">Collaborate</a></div>
+          <div class="hero-impact" aria-label="Research profile highlights">
+            <div class="impact-chip"><strong>3</strong><span>Published / Online</span></div>
+            <div class="impact-chip"><strong>1</strong><span>Accepted / Forthcoming</span></div>
+            <div class="impact-chip"><strong>32</strong><span>Peer Reviews</span></div>
+            <div class="impact-chip"><strong>8</strong><span>Conference Contributions</span></div>
+          </div>
+          <div class="hero-collab-note"><span class="hero-collab-dot"></span><span>Selectively open to interdisciplinary research, PhD opportunities and academic partnerships.</span></div>
+        </div>
+        <div class="portrait-stage" id="heroPortraitStage">
+          <div class="portrait-halo" aria-hidden="true"></div>
+          <div class="portrait-orbit portrait-orbit-one" aria-hidden="true"></div>
+          <div class="portrait-orbit portrait-orbit-two" aria-hidden="true"></div>
+          <div class="portrait-float">
+            <div class="portrait-frame" data-tilt>
+              <div class="portrait-frame-inner">
+                ${safeImg('assets/profile/razu-portrait.jpg','Md. Razu Ahmed','portrait hero-portrait')}
+                <div class="portrait-shine" aria-hidden="true"></div>
+              </div>
+              <div class="portrait-caption"><span class="live-dot"></span><span>MRA Research Intelligence</span></div>
+            </div>
+          </div>
+          <div class="floating-badge floating-badge-top"><span class="badge-dot"></span><strong>32</strong><span>Invited reviews</span></div>
+          <div class="floating-badge floating-badge-bottom"><span class="badge-dot"></span><strong>1</strong><span>Public dataset</span></div>
+        </div>
+      </div>
+    </section>
     <section class="section alt"><div class="container">${sectionHead('Quick academic profile','Research at a glance','A compact, evidence-grounded view of the current academic record.')}<div class="grid grid-4">${(D.quickProfile||[]).map(m=>`<article class="card metric"><strong>${esc(m.value)}</strong><span>${esc(m.label)}</span></article>`).join('')}</div></div></section>
     <section class="section"><div class="container">${sectionHead('Portfolio compass','Explore the research ecosystem','A structured route into research, evidence, academic development, networks and tools.')}<div class="grid grid-3">${(D.compass||[]).map(c=>`<a class="card compass-card" href="${c.href}"><div><h3>${esc(c.title)}</h3><p>${esc(c.detail)}</p></div><span class="arrow">Explore →</span></a>`).join('')}</div></div></section>
     <section class="section alt"><div class="container">${sectionHead('Research identity','Statistics, AI and decision-relevant evidence')}<div class="feature-band"><article class="card quote-card"><h3>Research statement</h3><p>${esc(D.research?.statement||'')}</p></article><div class="grid">${(D.research?.principles||[]).map(x=>`<article class="card"><h3>${esc(x.title)}</h3><p>${esc(x.detail)}</p></article>`).join('')}</div></div></div></section>
@@ -168,7 +205,24 @@
     document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();location.href='search.html'} if(e.key==='/'){if(!/INPUT|TEXTAREA/.test(document.activeElement.tagName)){e.preventDefault();location.href='search.html'}} if(e.key.toLowerCase()==='h'&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName))location.href='index.html'; if(e.key.toLowerCase()==='t'&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName))$('#settings').toggleAttribute('hidden'); if(e.key==='Escape'){ $('#settings')?.setAttribute('hidden','');$('#mobilePanel')?.setAttribute('hidden',''); }});
     const search=$('#pubSearch'), grid=$('#pubGrid'); if(search&&grid){const cards=[...grid.children]; let filter='all'; const run=()=>{const q=search.value.toLowerCase();cards.forEach((c,i)=>{const o=(D.outputs||[])[i]||{};const okQ=!q||c.textContent.toLowerCase().includes(q); const bucket=o.bucket||''; const okF=filter==='all'||bucket===filter; c.hidden=!(okQ&&okF)});}; search.addEventListener('input',run); $$('#pubFilters .filter').forEach(b=>b.addEventListener('click',()=>{$$('#pubFilters .filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');filter=b.dataset.filter;run()}));}
     const ask=$('#askInput'), ans=$('#askAnswer'); if(ask&&ans){const reply=q=>{const s=q.toLowerCase();let out='';if(s.includes('shap'))out='SHAP appears in the CKD, HCV and public-health / explainability research records where public-approved details are available.';else if(s.includes('first-author'))out='First-author published/accepted works include the FastICA source-separation study, CKD prediction study and accepted AI-employment perceptions article.';else if(s.includes('course')||s.includes('machine learning coursework'))out='Relevant coursework includes Data Mining, Machine Learning, Deep Learning for Computer Vision, Programming with Python and R, Numerical Analysis and Simulation, and supporting statistics/mathematics courses.';else if(s.includes('dengue'))out='The public dengue portfolio includes nationwide forecasting and decision-oriented preparedness research, including collaborations with Md. Ziaul Haque and other co-authors.';else if(s.includes('review'))out='Md. Razu Ahmed has completed 32 invited peer reviews: 25 for PLOS ONE, 6 for Biomedical Signal Processing and Control, and 1 for Engineering Applications of Artificial Intelligence.';else out='I can answer from the public portfolio about research, publications, methods, coursework, conferences, collaborators, training and scholarly metrics. Confidential research is intentionally excluded.';ans.textContent=out;}; ask.addEventListener('keydown',e=>{if(e.key==='Enter')reply(ask.value)}); $$('.askPrompt').forEach(b=>b.addEventListener('click',()=>{ask.value=b.dataset.q;reply(b.dataset.q)}));}
-    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.06}); $$('.card,.timeline-item').forEach(e=>{e.classList.add('reveal');io.observe(e)});
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.06}); $('.card,.timeline-item').forEach(e=>{e.classList.add('reveal');io.observe(e)});
+    const hero=$('#homeHero'), tilt=hero?.querySelector('[data-tilt]');
+    if(hero&&tilt){
+      const resetTilt=()=>{tilt.style.transform='perspective(1100px) rotateX(0deg) rotateY(0deg) translateZ(0)';};
+      tilt.addEventListener('pointermove',e=>{
+        if(document.documentElement.dataset.motion==='reduced') return;
+        const r=tilt.getBoundingClientRect();
+        const px=(e.clientX-r.left)/r.width-.5, py=(e.clientY-r.top)/r.height-.5;
+        tilt.style.transform=`perspective(1100px) rotateX(${(-py*8).toFixed(2)}deg) rotateY(${(px*10).toFixed(2)}deg) translateZ(10px)`;
+      });
+      tilt.addEventListener('pointerleave',resetTilt);
+      hero.addEventListener('pointermove',e=>{
+        if(document.documentElement.dataset.motion==='reduced') return;
+        const r=hero.getBoundingClientRect();
+        hero.style.setProperty('--hero-x',((e.clientX-r.left)/r.width*100).toFixed(1)+'%');
+        hero.style.setProperty('--hero-y',((e.clientY-r.top)/r.height*100).toFixed(1)+'%');
+      });
+    }
     clock();
   }
 
