@@ -242,7 +242,7 @@
     {
       degree: 'Master of Science (M.S.) in Statistics',
       institution: 'Pabna University of Science and Technology (PUST)',
-      logo: 'assets/academic/education/pust-logo.png',
+      logo: 'assets/academic/education/pust-logo.png?v=20260918-1',
       year: 'Exam Year 2022 · Examination held 2025',
       detail: 'CGPA 3.49/4.00 · Ranked 5th in the project-based (non-thesis) track',
       moi: 'Medium of Instruction (MOI): English',
@@ -260,7 +260,7 @@
     {
       degree: 'Higher Secondary Certificate (HSC)',
       institution: 'Rajshahi College, Rajshahi',
-      logo: 'assets/academic/education/rajshahi-college-logo.jpg',
+      logo: 'assets/academic/education/rajshahi-college-logo.jpg?v=20260918-1',
       year: '2016',
       board: 'Rajshahi',
       detail: 'Science · GPA 4.83/5.00',
@@ -270,7 +270,7 @@
     {
       degree: 'Secondary School Certificate (SSC)',
       institution: 'Mashkatadighi Multilateral (Technical) High School, Rajshahi',
-      logo: 'assets/academic/education/mashkatadighi-high-school-logo.jpg',
+      logo: 'assets/academic/education/mashkatadighi-high-school-logo.jpg?v=20260918-1',
       year: '2014',
       board: 'Rajshahi',
       detail: 'Science · GPA 5.00/5.00',
