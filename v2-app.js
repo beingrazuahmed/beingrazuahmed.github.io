@@ -187,7 +187,7 @@
       </div>
       <div class="technical-skill-tags">${(x.items||[]).map(item=>`<span>${esc(item)}</span>`).join('')}</div>
       ${(x.platforms||[]).length?`<div class="ai-platform-panel">
-        <div class="ai-platform-label">Platforms used</div>
+        <div class="ai-platform-label">AI platforms & research assistants</div>
         <div class="ai-platforms">${(x.platforms||[]).map(p=>`<div class="ai-platform">${techBrandIcon(p)}<span>${esc(p.name)}</span></div>`).join('')}</div>
       </div>`:''}
       ${x.principle?`<div class="ai-research-principle"><strong>Research-use principle</strong><p>${esc(x.principle)}</p></div>`:''}
