@@ -175,6 +175,17 @@
     return `<span class="tech-logo"><img src="${url}" alt="" loading="lazy" decoding="async" data-tech-fallback="${fallback}"></span>`;
   }
 
+  function technicalSkillCard(x){
+    return `<article class="card technical-skill-card">
+      <div class="technical-skill-head">
+        <span class="technical-skill-icon">${uiIcon(x.icon||'analysis')}</span>
+        <div><h3>${esc(x.title||'')}</h3><p>${esc(x.summary||'')}</p></div>
+      </div>
+      <div class="technical-skill-tags">${(x.items||[]).map(item=>`<span>${esc(item)}</span>`).join('')}</div>
+      ${x.note?`<p class="technical-skill-note">${esc(x.note)}</p>`:''}
+    </article>`;
+  }
+
   function toolGroupCard(g){
     return `<article class="card tool-group tool-group-modern">
       <div class="tool-group-head"><span class="tool-group-icon">${uiIcon(g.icon||'analysis')}</span><h3>${esc(g.group)}</h3></div>
@@ -467,7 +478,13 @@
     </div></section>
 
     <section class="section"><div class="container">
-      ${sectionHead('Skills & software','Evidence-linked research toolkit','Tools are grouped by how they support statistical analysis, reproducible research, programming, prototyping and collaboration.')}
+      ${sectionHead('Technical & analytical skills','Evidence-linked research capability','Methods and technical capabilities grounded in published work, active manuscripts, academic projects, coursework, research software and professional training.')}
+      <div class="grid grid-2 technical-skills-grid">${(D.technicalSkills||[]).map(technicalSkillCard).join('')}</div>
+
+      <div class="skills-stack-head">
+        <div><div class="section-kicker">Research software & technology stack</div><h3>Tools, libraries & development environments</h3></div>
+        <p>Software is separated from methodological capability so the portfolio distinguishes what I know from the platforms and libraries I use to implement it.</p>
+      </div>
       <div class="grid grid-3 tool-grid-modern">${(D.tools||[]).map(toolGroupCard).join('')}</div>
       ${techMarquee()}
     </div></section>`;
