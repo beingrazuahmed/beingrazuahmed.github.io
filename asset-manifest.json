@@ -99,6 +99,12 @@
     "projects": [
       "assets/academic/projects/bsc-fastica-pipeline.png",
       "assets/academic/projects/ms-dr-screening-prototype.png"
+    ],
+    "instructors": [
+      "assets/academic/instructors/shamim-reza.jpg",
+      "assets/academic/instructors/sabba-ruhi.jpg",
+      "assets/academic/instructors/menhazul-abedin.jpg",
+      "assets/academic/instructors/aminul-hoque.jpg"
     ]
   }
 }
