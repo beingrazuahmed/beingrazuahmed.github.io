@@ -85,8 +85,8 @@
   }
 
   function clock(){
-    const el=$('[data-clock]'); if(!el) return;
-    const tick=()=>{const now=new Date(); const t=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Dhaka',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true}).format(now); const d=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Dhaka',weekday:'short',day:'2-digit',month:'short',year:'numeric'}).format(now); el.textContent=`${d} · ${t} · Dhaka`;}; tick(); setInterval(tick,1000);
+    const els=$('[data-clock]'); if(!els.length) return;
+    const tick=()=>{const now=new Date(); const t=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Dhaka',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true}).format(now); const d=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Dhaka',weekday:'short',day:'2-digit',month:'short',year:'numeric'}).format(now); els.forEach(el=>el.textContent=`${d} · ${t} · Dhaka`);}; tick(); setInterval(tick,1000);
   }
 
   const tags = arr => `<div class="pill-row">${(arr||[]).map(x=>`<span class="tag">${esc(typeof x==='string'?x:(x.label||x.name||x.title||''))}</span>`).join('')}</div>`;
@@ -100,40 +100,44 @@
       <div class="hero-ambient hero-ambient-a" aria-hidden="true"></div>
       <div class="hero-ambient hero-ambient-b" aria-hidden="true"></div>
       <div class="hero-grid-lines" aria-hidden="true"></div>
-      <div class="container hero-grid hero-grid-premium">
-        <div class="hero-copy">
-          <div class="eyebrow hero-eyebrow"><span class="live-dot"></span><span>Portfolio online</span><span class="clock" data-clock></span></div>
-          <h1 class="hero-title"><span class="hero-title-prefix">Md.</span> <span class="hero-title-accent">Razu Ahmed</span></h1>
-          <div class="hero-subline hero-role-line">Statistician <span>·</span> Data Scientist <span>·</span> Researcher <span>·</span> Peer Reviewer</div>
-          <div class="hero-topic-line"><span>Machine Learning</span><span>Explainable AI</span><span>Public Health</span><span>Biomedical Data Science</span></div>
-          <p class="hero-intro">I am Md. Razu Ahmed, a statistician and interdisciplinary data researcher working at the intersection of statistical learning, artificial intelligence, public health, and biomedical data science. I build rigorous, reproducible, and interpretable analytical workflows that connect statistical methodology with machine learning to address real-world problems.</p>
-          <div class="cta-row hero-actions"><a class="btn primary hero-primary" href="research.html">Explore Research <span aria-hidden="true">↗</span></a><a class="btn" href="cv.html">View CV</a><a class="btn" href="dashboard.html">Research Dashboard</a><a class="btn" href="ask-razu.html">Ask Razu AI</a><a class="btn hero-collab" href="contact.html">Collaborate</a></div>
-          <div class="hero-impact" aria-label="Research profile highlights">
-            <div class="impact-chip"><strong>3</strong><span>Published / Online</span></div>
-            <div class="impact-chip"><strong>1</strong><span>Accepted / Forthcoming</span></div>
-            <div class="impact-chip"><strong>32</strong><span>Peer Reviews</span></div>
-            <div class="impact-chip"><strong>8</strong><span>Conference Contributions</span></div>
-          </div>
-          <div class="hero-collab-note"><span class="hero-collab-dot"></span><span>Selectively open to interdisciplinary research, PhD opportunities and academic partnerships.</span></div>
-        </div>
-        <div class="portrait-stage" id="heroPortraitStage">
-          <div class="portrait-halo" aria-hidden="true"></div>
-          <div class="portrait-orbit portrait-orbit-one" aria-hidden="true"></div>
-          <div class="portrait-orbit portrait-orbit-two" aria-hidden="true"></div>
-          <div class="portrait-float">
-            <div class="portrait-frame" data-tilt>
-              <div class="portrait-frame-inner">
-                ${safeImg('assets/profile/razu-portrait.jpg','Md. Razu Ahmed','portrait hero-portrait')}
-                <div class="portrait-shine" aria-hidden="true"></div>
+      <div class="container hero-container">
+        <div class="hero-shell">
+          <div class="hero-grid hero-grid-premium">
+            <div class="hero-copy">
+              <div class="eyebrow hero-eyebrow"><span class="live-dot"></span><span>Portfolio online</span><span class="hero-clock-sep">·</span><span class="clock" data-clock>Dhaka · UTC+06:00</span></div>
+              <h1 class="hero-title"><span class="hero-title-prefix">Md.</span> <span class="hero-title-accent">Razu Ahmed</span></h1>
+              <div class="hero-subline hero-role-line">Statistician <span>·</span> Data Scientist <span>·</span> Researcher <span>·</span> Peer Reviewer</div>
+              <div class="hero-topic-line"><span>Machine Learning</span><span>Explainable AI</span><span>Public Health</span><span>Biomedical Data Science</span></div>
+              <p class="hero-intro">I am Md. Razu Ahmed, a statistician and interdisciplinary data researcher working at the intersection of statistical learning, artificial intelligence, public health, and biomedical data science. I build rigorous, reproducible, and interpretable analytical workflows that connect statistical methodology with machine learning to address real-world problems.</p>
+              <div class="hero-opportunity"><span class="hero-collab-dot"></span><strong>Open to PhD opportunities</strong><span>Interdisciplinary research · academic partnerships · collaborative projects</span></div>
+              <div class="cta-row hero-actions"><a class="btn primary hero-primary" href="research.html">Explore Research <span aria-hidden="true">↗</span></a><a class="btn" href="cv.html">View CV</a><a class="btn" href="dashboard.html">Research Dashboard</a><a class="btn" href="ask-razu.html">Ask Razu AI</a><a class="btn hero-collab" href="contact.html">Collaborate</a></div>
+              <div class="hero-impact" aria-label="Research profile highlights">
+                <div class="impact-chip"><strong>3</strong><span>Published / Online</span></div>
+                <div class="impact-chip"><strong>1</strong><span>Accepted / Forthcoming</span></div>
+                <div class="impact-chip"><strong>32</strong><span>Peer Reviews</span></div>
+                <div class="impact-chip"><strong>8</strong><span>Conference Contributions</span></div>
               </div>
-              <div class="portrait-caption"><span class="live-dot"></span><span>MRA Research Intelligence</span></div>
+            </div>
+            <div class="portrait-stage" id="heroPortraitStage">
+              <div class="portrait-halo" aria-hidden="true"></div>
+              <div class="portrait-orbit portrait-orbit-one" aria-hidden="true"></div>
+              <div class="portrait-orbit portrait-orbit-two" aria-hidden="true"></div>
+              <div class="portrait-float">
+                <div class="portrait-frame" data-tilt>
+                  <div class="portrait-frame-inner">
+                    ${safeImg('assets/profile/razu-portrait.jpg','Md. Razu Ahmed','portrait hero-portrait')}
+                    <div class="portrait-shine" aria-hidden="true"></div>
+                  </div>
+                  <div class="portrait-caption"><span class="live-dot"></span><span>MRA Research Intelligence</span></div>
+                </div>
+              </div>
+              <div class="floating-badge floating-badge-top"><span class="badge-dot"></span><strong>32</strong><span>Invited reviews</span></div>
+              <div class="floating-badge floating-badge-bottom"><span class="badge-dot"></span><strong>1</strong><span>Public dataset</span></div>
             </div>
           </div>
-          <div class="floating-badge floating-badge-top"><span class="badge-dot"></span><strong>32</strong><span>Invited reviews</span></div>
-          <div class="floating-badge floating-badge-bottom"><span class="badge-dot"></span><strong>1</strong><span>Public dataset</span></div>
         </div>
       </div>
-    </section>
+    </section>`
     <section class="section alt"><div class="container">${sectionHead('Quick academic profile','Research at a glance','A compact, evidence-grounded view of the current academic record.')}<div class="grid grid-4">${(D.quickProfile||[]).map(m=>`<article class="card metric"><strong>${esc(m.value)}</strong><span>${esc(m.label)}</span></article>`).join('')}</div></div></section>
     <section class="section"><div class="container">${sectionHead('Portfolio compass','Explore the research ecosystem','A structured route into research, evidence, academic development, networks and tools.')}<div class="grid grid-3">${(D.compass||[]).map(c=>`<a class="card compass-card" href="${c.href}"><div><h3>${esc(c.title)}</h3><p>${esc(c.detail)}</p></div><span class="arrow">Explore →</span></a>`).join('')}</div></div></section>
     <section class="section alt"><div class="container">${sectionHead('Research identity','Statistics, AI and decision-relevant evidence')}<div class="feature-band"><article class="card quote-card"><h3>Research statement</h3><p>${esc(D.research?.statement||'')}</p></article><div class="grid">${(D.research?.principles||[]).map(x=>`<article class="card"><h3>${esc(x.title)}</h3><p>${esc(x.detail)}</p></article>`).join('')}</div></div></div></section>
