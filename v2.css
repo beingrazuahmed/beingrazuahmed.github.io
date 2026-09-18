@@ -503,3 +503,201 @@
   .hero-impact{grid-template-columns:repeat(2,minmax(0,1fr))}
   .portrait-stage{min-height:460px}
 }
+
+
+/* === MRA V2 Editorial Portrait Frame === */
+.portrait-stage-editorial{
+  position:relative;
+  width:min(100%,470px);
+  min-height:555px;
+  margin-inline:auto;
+  display:grid;
+  place-items:center;
+  perspective:1200px;
+  isolation:isolate;
+}
+.portrait-aura{
+  position:absolute;
+  inset:4% -8% 3%;
+  z-index:-4;
+  border-radius:42%;
+  background:
+    radial-gradient(circle at 50% 42%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 56%),
+    radial-gradient(circle at 52% 72%,rgba(229,192,110,.16),transparent 68%);
+  filter:blur(20px);
+  opacity:.9;
+  animation:editorialAura 7.5s ease-in-out infinite;
+}
+.portrait-backplate{
+  position:absolute;
+  width:76%;
+  aspect-ratio:4/5;
+  border-radius:32px;
+  pointer-events:none;
+  transform-origin:center;
+}
+.portrait-backplate-a{
+  z-index:-2;
+  right:5%;
+  top:11%;
+  transform:rotate(2.2deg);
+  background:linear-gradient(145deg,rgba(246,222,161,.78),rgba(255,247,224,.42));
+  box-shadow:0 24px 52px rgba(179,139,54,.14);
+}
+.portrait-backplate-b{
+  z-index:-3;
+  left:8%;
+  top:16%;
+  transform:rotate(-3.2deg);
+  background:linear-gradient(155deg,color-mix(in srgb,var(--accent) 13%,white),rgba(255,255,255,.22));
+  border:1px solid color-mix(in srgb,var(--accent) 10%,transparent);
+}
+.portrait-accent-orb{
+  position:absolute;
+  z-index:-1;
+  border-radius:50%;
+  pointer-events:none;
+  filter:blur(.2px);
+  opacity:.82;
+}
+.portrait-accent-orb-a{
+  width:48px;height:48px;
+  left:3%;bottom:19%;
+  background:linear-gradient(145deg,rgba(239,205,126,.94),rgba(225,185,92,.62));
+  box-shadow:0 10px 24px rgba(186,139,41,.18);
+  animation:editorialOrbA 5.8s ease-in-out infinite;
+}
+.portrait-accent-orb-b{
+  width:26px;height:26px;
+  right:9%;top:15%;
+  background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 62%,white),color-mix(in srgb,var(--accent) 22%,white));
+  box-shadow:0 8px 18px color-mix(in srgb,var(--accent) 16%,transparent);
+  animation:editorialOrbB 6.3s ease-in-out infinite;
+}
+.portrait-float-editorial{
+  width:78%;
+  position:relative;
+  z-index:3;
+  animation:portraitFloatEditorial 6.2s ease-in-out infinite;
+  filter:drop-shadow(0 30px 44px rgba(35,61,84,.14));
+}
+.portrait-frame-editorial{
+  position:relative;
+  transform-style:preserve-3d;
+  transition:transform .16s ease-out;
+  will-change:transform;
+}
+.portrait-frame-inner-editorial{
+  position:relative;
+  padding:8px;
+  border-radius:31px;
+  background:linear-gradient(155deg,#ffffff 0%,#fffdf7 62%,#f7f2e6 100%);
+  border:1px solid rgba(255,255,255,.9);
+  box-shadow:
+    0 24px 54px rgba(35,61,84,.16),
+    0 0 0 1px rgba(222,195,129,.18),
+    inset 0 1px 0 rgba(255,255,255,.98);
+  overflow:hidden;
+  transform:translateZ(18px);
+}
+.portrait-frame-inner-editorial::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  background:
+    linear-gradient(115deg,rgba(248,218,142,.28),transparent 28%,transparent 74%,rgba(86,169,217,.08));
+  z-index:2;
+  mix-blend-mode:soft-light;
+}
+.portrait-frame-inner-editorial .hero-portrait{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  object-position:center top;
+  border-radius:24px;
+  box-shadow:none;
+  background:#fff;
+}
+.portrait-frame-inner-editorial .portrait-shine{
+  inset:8px;
+  border-radius:24px;
+  opacity:.35;
+}
+.portrait-caption-editorial{
+  position:absolute;
+  left:50%;
+  bottom:1.8%;
+  transform:translateX(-50%);
+  z-index:5;
+  width:max-content;
+  max-width:84%;
+  margin:0;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid color-mix(in srgb,var(--accent) 14%,var(--line));
+  background:color-mix(in srgb,var(--surface) 90%,transparent);
+  backdrop-filter:blur(14px);
+  box-shadow:0 12px 28px rgba(35,61,84,.08);
+  color:var(--muted);
+  font-size:11.5px;
+  font-weight:820;
+}
+.portrait-caption-editorial .live-dot{
+  width:7px;height:7px;
+  box-shadow:0 0 0 5px rgba(34,197,94,.08)
+}
+@keyframes portraitFloatEditorial{
+  0%,100%{transform:translate3d(0,-3px,0) rotate(-.18deg)}
+  50%{transform:translate3d(0,8px,0) rotate(.18deg)}
+}
+@keyframes editorialAura{
+  0%,100%{transform:scale(.97);opacity:.72}
+  50%{transform:scale(1.04);opacity:1}
+}
+@keyframes editorialOrbA{
+  0%,100%{transform:translate3d(0,0,0)}
+  50%{transform:translate3d(5px,-10px,0)}
+}
+@keyframes editorialOrbB{
+  0%,100%{transform:translate3d(0,0,0)}
+  50%{transform:translate3d(-4px,8px,0)}
+}
+
+:root[data-mode="dark"] .portrait-frame-inner-editorial{
+  background:linear-gradient(155deg,#132438,#0d1d2f 72%,#16263a);
+  border-color:rgba(255,255,255,.09);
+  box-shadow:0 28px 58px rgba(0,0,0,.32),0 0 0 1px rgba(89,194,255,.1),inset 0 1px 0 rgba(255,255,255,.07);
+}
+:root[data-mode="dark"] .portrait-backplate-a{
+  background:linear-gradient(145deg,rgba(181,145,72,.30),rgba(73,62,39,.18));
+  box-shadow:0 22px 44px rgba(0,0,0,.16);
+}
+:root[data-mode="dark"] .portrait-backplate-b{
+  background:linear-gradient(155deg,rgba(89,194,255,.12),rgba(255,255,255,.02));
+}
+:root[data-mode="dark"] .portrait-accent-orb-a{opacity:.55}
+:root[data-mode="dark"] .portrait-caption-editorial{background:rgba(10,28,44,.84)}
+
+@media (max-width:1080px){
+  .portrait-stage-editorial{width:min(100%,410px);min-height:490px}
+  .portrait-float-editorial{width:80%}
+  .portrait-accent-orb-a{left:4%;bottom:17%}
+  .portrait-accent-orb-b{right:8%;top:14%}
+}
+@media (max-width:900px){
+  .portrait-stage-editorial{width:min(100%,400px);min-height:485px}
+  .portrait-caption-editorial{bottom:0}
+}
+@media (max-width:700px){
+  .portrait-stage-editorial{width:min(100%,350px);min-height:430px}
+  .portrait-float-editorial{width:82%}
+  .portrait-backplate-a{right:7%;top:12%}
+  .portrait-backplate-b{left:7%;top:16%}
+  .portrait-accent-orb-a{width:38px;height:38px;left:1%;bottom:20%}
+  .portrait-accent-orb-b{width:21px;height:21px;right:6%;top:17%}
+}
