@@ -536,7 +536,40 @@
 
   function recognition(){return `${pageHero('Recognition','Awards, certificates & professional development.')}<section class="section"><div class="container">${sectionHead('Honors & awards','Evidence-backed recognition')}<div class="grid grid-3">${(D.awards||[]).map(a=>`<article class="card"><h3>${esc(a.title||a.name||'')}</h3><p>${esc(a.issuer||a.organization||'')}</p><p>${esc(a.description||a.detail||'')}</p></article>`).join('')}</div></div></section><section class="section alt"><div class="container">${sectionHead('Training & certifications','Professional development')}<div class="grid grid-3">${(D.training||[]).map(t=>`<article class="card"><div class="badge">${esc(t.date||t.year||'')}</div><h3>${esc(t.title||t.name||'')}</h3><p>${esc(t.provider||t.issuer||'')}</p><p>${esc(t.duration||t.detail||t.description||'')}</p></article>`).join('')}</div></div></section>`;}
 
-  function network(){const groups=[...new Set((D.people||[]).map(x=>x.group))];return `${pageHero('Network & Impact','Mentors, advisors, collaborators & mentees — with shared works and relationship context.')}<section class="section"><div class="container">${groups.map(g=>`<div class="network-group">${sectionHead('Academic network',g)}<div class="grid grid-3">${D.people.filter(x=>x.group===g).map(x=>`<article class="card person-card">${safeImg(x.portrait,x.name,'avatar')}<h3>${esc(x.name)}</h3><div class="meta">${(x.roles||[]).map(r=>`<span class="badge">${esc(r)}</span>`).join('')}</div><p><strong>${esc(x.affiliation||'')}</strong></p><p>${esc(x.description||'')}</p>${x.shared?.length?`<h4>Shared works</h4><ul>${x.shared.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>`:''}<div class="link-row">${(x.links||[]).map(l=>ext(l.url,l.label)).join(' · ')}</div></article>`).join('')}</div></div>`).join('')}</div></section>`;}
+  function networkPersonCard(x){
+    const roles=x.roles||[];
+    const leadRoles=roles.slice(0,2);
+    const supportingRoles=roles.slice(2);
+    return `<article class="network-person-card">
+      <div class="network-person-media">
+        ${x.portrait?`<img class="network-person-portrait" src="${esc(x.portrait)}" alt="${esc(x.name||'Academic collaborator')} portrait" loading="lazy" decoding="async">`:''}
+        <div class="network-person-fallback" aria-hidden="true">${uiIcon('graduation')}</div>
+      </div>
+      <div class="network-person-body">
+        ${leadRoles.length?`<div class="network-roleline">${leadRoles.map(r=>esc(r)).join(' · ')}</div>`:''}
+        <h3>${esc(x.name||'')}</h3>
+        ${supportingRoles.length?`<div class="network-role-chips">${supportingRoles.map(r=>`<span>${esc(r)}</span>`).join('')}</div>`:''}
+        ${x.affiliation?`<p class="network-affiliation">${esc(x.affiliation)}</p>`:''}
+        ${x.description?`<p class="network-description">${esc(x.description)}</p>`:''}
+        ${x.shared?.length?`<details class="network-shared"><summary>Shared works <span>${x.shared.length}</span></summary><ul>${x.shared.map(s=>`<li>${esc(s)}</li>`).join('')}</ul></details>`:''}
+        ${(x.links||[]).length?`<div class="link-row network-links">${(x.links||[]).map(l=>ext(l.url,l.label)).join(' · ')}</div>`:''}
+      </div>
+    </article>`;
+  }
+
+  function network(){
+    const groups=[...new Set((D.people||[]).map(x=>x.group))];
+    return `${pageHero('Network & Impact','Mentors, advisors, collaborators & mentees — with shared works and relationship context.')}
+      <section class="section network-section"><div class="container">
+        ${groups.map((g,idx)=>`<div class="network-group ${idx===0?'network-group-featured':''}">
+          <div class="network-group-head">
+            ${sectionHead('Academic network',g)}
+            <div class="network-group-count">${D.people.filter(x=>x.group===g).length} people</div>
+          </div>
+          <div class="network-board">${D.people.filter(x=>x.group===g).map(networkPersonCard).join('')}</div>
+        </div>`).join('')}
+      </div></section>`;
+  }
 
   function resources(){return `${pageHero('Resources','Research toolkit, methods, notes and reproducibility resources.')}<section class="section"><div class="container">${sectionHead('Research toolkit','Software & environments')}<div class="grid grid-3">${(D.tools||[]).map(g=>`<article class="card tool-group"><h3>${esc(g.group)}</h3>${(g.items||[]).map(i=>`<div class="tool-item"><strong>${esc(i.name)}</strong><p>${esc(i.detail)}</p></div>`).join('')}</article>`).join('')}</div></div></section><section class="section alt"><div class="container">${sectionHead('Knowledge base','Planned research notes')}<div class="grid grid-3">${['Leakage-aware validation','Explainable AI & SHAP','Survey-weighted modelling','Missing-data analysis','Model calibration','Research reproducibility','Peer-review practice','Scientific writing'].map(x=>`<article class="card"><h3>${x}</h3><p>Evidence-grounded resource area. Published only when the underlying note or guide is ready.</p></article>`).join('')}</div></div></section>`;}
 
@@ -568,6 +601,11 @@
       const wrap=img.closest('.tech-logo');
       if(wrap){const span=document.createElement('span');span.className='tech-logo-fallback';span.textContent=img.dataset.techFallback||'APP';wrap.replaceWith(span);}
     },{once:true}));
+    document.querySelectorAll('.network-person-portrait').forEach(img=>{
+      const hideBroken=()=>{img.hidden=true;};
+      img.addEventListener('error',hideBroken,{once:true});
+      if(img.complete && !img.naturalWidth){hideBroken();}
+    });
     document.querySelectorAll('.instructor-portrait').forEach(img=>{
       const hideBroken=()=>{img.hidden=true;};
       img.addEventListener('error',hideBroken,{once:true});
