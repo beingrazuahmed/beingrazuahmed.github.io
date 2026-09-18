@@ -3225,7 +3225,7 @@
   content:"";
   position:absolute;
   inset:0;
-  z-index:0;
+  z-index:4;
   pointer-events:none;
   border-radius:inherit;
   opacity:0;
@@ -3237,10 +3237,6 @@
   transition:opacity .25s ease;
 }
 .academic-motion-card:hover::after{opacity:.72}
-.academic-motion-card>*{
-  position:relative;
-  z-index:1;
-}
 .academic-motion-card .education-logo-wrap,
 .academic-motion-card .academic-metric-icon,
 .academic-motion-card .domain-index,
