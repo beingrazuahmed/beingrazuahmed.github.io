@@ -153,7 +153,63 @@
 
   function outputCard(p){ const id=(p.id||'').toLowerCase(); const linkObj=D.publicationLinks?.[id]||p.links||{}; return `<article class="card output-card"><div class="meta"><span class="badge">${esc(p.status||p.bucket||'Research')}</span>${p.role?`<span class="badge">${esc(p.role)}</span>`:''}</div><h3>${esc(p.title||'Untitled')}</h3><p>${esc(p.journal||p.venue||p.summary||p.description||'')}</p><div class="link-row">${links(linkObj)}</div></article>`; }
   function personCard(x){return `<article class="card person-card">${safeImg(x.portrait,x.name,'avatar')}<h3>${esc(x.name)}</h3><div class="meta">${(x.roles||[]).map(r=>`<span class="badge">${esc(r)}</span>`).join('')}</div><p><strong>${esc(x.affiliation||'')}</strong></p><p>${esc(x.description||'')}</p><div class="link-row">${(x.links||[]).map(l=>ext(l.url,l.label)).join(' · ')}</div></article>`;}
-  function fieldSurveyCard(){const f=D.fieldSurvey||{};return `<article class="card"><div class="meta"><span class="badge">${esc(f.degree||'')}</span><span class="badge">${esc(f.credits||'')} credits</span></div><h3>${esc(f.study||f.title||'')}</h3><p><strong>Supervisor:</strong> ${esc(f.supervisor||'')} · <strong>Data collection:</strong> ${esc(f.collection||'')}</p><p>${esc(f.sample||'')} · ${esc(f.variables||'')} · ${esc(f.design||'')}</p><div class="progression">${(f.progression||[]).map(s=>`<div class="step">${esc(s)}</div>`).join('')}</div><p class="link-row">${f.dataset?ext(f.dataset.url,f.dataset.label):''}</p></article>`;}
+  function fieldSurveyCard(){
+    const f=D.fieldSurvey||{};
+    return `<article class="card field-survey-card">
+      <div class="meta"><span class="badge">${esc(f.degree||'')}</span><span class="badge">${esc(f.credits||'')} credits</span></div>
+      <h3>${esc(f.study||f.title||'')}</h3>
+      <p><strong>Supervisor:</strong> ${esc(f.supervisor||'')}</p>
+      <p><strong>Research team:</strong> ${esc((f.team||[]).join(' · '))}</p>
+      <div class="field-survey-facts">
+        <div><strong>${esc(f.population||'')}</strong><span>Study frame</span></div>
+        <div><strong>${esc(f.sample||'')}</strong><span>Analytical sample</span></div>
+        <div><strong>${esc(f.variables||'')}</strong><span>Study variables</span></div>
+        <div><strong>${esc(f.design||'')}</strong><span>Design</span></div>
+      </div>
+      <div class="progression progression-3">${(f.progression||[]).map(x=>`<div class="step">${esc(x)}</div>`).join('')}</div>
+      <div class="field-survey-outcomes">
+        ${f.conference?`<p><strong>Conference outcome:</strong> ${esc(f.conference)}</p>`:''}
+        ${f.article?`<p><strong>Journal outcome:</strong> ${esc(f.article)}</p>`:''}
+      </div>
+    </article>`;
+  }
+
+  function curriculumDomainCard(g){
+    const courses=g.courses||[];
+    const groups=g.groups||[];
+    const items=g.items||[];
+    const courseCount=courses.length+groups.reduce((n,x)=>n+(x.courses||[]).length,0);
+    const meta=items.length?`${items.length} research / assessment components`:`${courseCount} courses`;
+    const body=groups.length
+      ? groups.map(gr=>`<div class="curriculum-subgroup"><strong>${esc(gr.label||'')}</strong>${tags(gr.courses||[])}</div>`).join('')
+      : items.length
+        ? `<div class="curriculum-components">${items.map(x=>`<div class="curriculum-component"><strong>${esc(x.title)}</strong><span>${esc(x.credits)} credits</span><p>${esc(x.detail||'')}</p></div>`).join('')}</div>`
+        : tags(courses);
+    return `<article class="card curriculum-domain" data-search="${esc((g.name+' '+g.description+' '+courses.join(' ')+' '+groups.map(x=>(x.courses||[]).join(' ')).join(' ')+' '+items.map(x=>x.title).join(' ')).toLowerCase())}">
+      <div class="curriculum-domain-head"><span class="domain-index">${esc(String((D.coursework?.categories||[]).indexOf(g)+1).padStart(2,'0'))}</span><div><h3>${esc(g.name||'Academic domain')}</h3><p>${esc(g.description||'')}</p></div></div>
+      <div class="curriculum-domain-meta">${esc(meta)}</div>
+      <details><summary>View coursework & components</summary><div class="curriculum-domain-body">${body}</div></details>
+    </article>`;
+  }
+
+  function academicProjectCard(p){
+    return `<article class="card academic-project-card">
+      <div class="meta"><span class="badge">${esc(p.level||'')}</span><span class="badge">${esc(p.credits||'')} credits</span></div>
+      <div class="tiny project-course">${esc(p.course||'')}</div>
+      <h3>${esc(p.title||'')}</h3>
+      <p><strong>Supervisor:</strong> ${esc(p.supervisor||'')}</p>
+      <p>${esc(p.outcome||'')}</p>
+    </article>`;
+  }
+
+  function instructorCard(i){
+    return `<article class="card instructor-card">
+      <div class="instructor-mark" aria-hidden="true">${esc((i.instructor||'?').split(' ').filter(Boolean).slice(-1)[0]?.charAt(0)||'?')}</div>
+      <h3>${esc(i.instructor||'')}</h3>
+      <div class="tiny">${esc(i.role||'')}</div>
+      <div class="instructor-courses">${(i.courses||[]).map(c=>`<span class="tag">${esc(c)}</span>`).join('')}</div>
+    </article>`;
+  }
 
   function profile(){return `${pageHero('Profile','Academic identity, communication, working style and engagement.')}
     <section class="section"><div class="container">${sectionHead('Research profile','Academic identity')}<div class="grid grid-2"><article class="card quote-card"><h3>${esc(D.brand?.headline)}</h3><p>${esc(D.profile?.intro||D.research?.identity||'')}</p></article><article class="card"><h3>Research principles</h3>${tags((D.research?.principles||[]).map(x=>x.title))}</article></div></div></section>
@@ -171,12 +227,55 @@
   function publications(){const all=D.outputs||[];return `${pageHero('Publications & Research Outputs','Search and filter publicly shareable outputs. Confidential research is intentionally excluded from the public repository.')}
     <section class="section"><div class="container"><div class="search-wrap"><input class="search-input" id="pubSearch" placeholder="Search title, journal, method or topic…"></div><div class="filters" id="pubFilters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="published">Published</button><button class="filter" data-filter="accepted">Accepted</button><button class="filter" data-filter="under-review">Under review</button></div><div class="grid grid-2" id="pubGrid">${all.map(outputCard).join('')}</div></div></section>`;}
 
-  function academic(){ const cw=D.coursework||{}; const groups=cw.groups||cw.categories||[]; return `${pageHero('Academic','Education, curriculum, fieldwork and research training.')}
-    <section class="section"><div class="container">${sectionHead('Academic journey','Education')}<div class="grid grid-2">${(D.education||[]).map(e=>`<article class="card"><div class="badge">${esc(e.period||e.year||'')}</div><h3>${esc(e.degree||e.title||'')}</h3><p><strong>${esc(e.institution||e.place||'')}</strong></p><p>${esc(e.detail||e.description||e.cgpa||'')}</p></article>`).join('')}</div></div></section>
-    <section class="section alt"><div class="container">${sectionHead('Academic curriculum','200-credit quantitative foundation','B.Sc. 160 credits + M.S. 40 credits, including laboratory/applied work, field survey and supervised projects.')}<div class="grid grid-4"><article class="card metric"><strong>200</strong><span>Total university credits</span></article><article class="card metric"><strong>40</strong><span>Laboratory / applied credits</span></article><article class="card metric"><strong>2</strong><span>Field-survey credits</span></article><article class="card metric"><strong>7</strong><span>Supervised-project credits</span></article></div><div class="grid grid-3 curriculum-grid">${groups.map(g=>`<article class="card"><h3>${esc(g.name||g.title||'Course group')}</h3>${tags(g.courses||g.items||[])}</article>`).join('')}</div></div></section>
-    <section class="section"><div class="container">${sectionHead('Academic research & fieldwork','B.Sc. Statistical Field Survey')} ${fieldSurveyCard()}</div></section>
-    <section class="section alt"><div class="container">${sectionHead('Languages','Academic communication & MOI')}<div class="grid grid-2">${(D.languages||[]).map(l=>`<article class="card"><h3>${esc(l.name)}</h3><strong>${esc(l.level)}</strong><p>${esc(l.note)}</p></article>`).join('')}</div></div></section>
-    <section class="section"><div class="container">${sectionHead('Skills & software','Evidence-linked research toolkit')}<div class="grid grid-3">${(D.tools||[]).map(g=>`<article class="card tool-group"><h3>${esc(g.group)}</h3>${(g.items||[]).map(i=>`<div class="tool-item"><strong>${esc(i.name)}</strong><p>${esc(i.detail)}</p></div>`).join('')}</article>`).join('')}</div></div></section>`;}
+  function academic(){
+    const cw=D.coursework||{};
+    const domains=cw.categories||[];
+    return `${pageHero('Academic','Education, curriculum, fieldwork, supervised projects and research training.')}
+    <section class="section"><div class="container">
+      ${sectionHead('Academic journey','Education','Formal education from secondary science training through postgraduate statistics.')}
+      <div class="grid grid-4 education-grid">${(D.education||[]).map(e=>`<article class="card education-card"><div class="badge">${esc(e.period||e.year||'')}</div><h3>${esc(e.degree||e.title||'')}</h3><p><strong>${esc(e.institution||e.place||'')}</strong></p><p>${esc(e.detail||e.description||e.cgpa||'')}</p>${e.moi?`<p class="education-moi">${esc(e.moi)}</p>`:''}</article>`).join('')}</div>
+    </div></section>
+
+    <section class="section alt"><div class="container">
+      ${sectionHead('Academic curriculum','200-credit quantitative foundation','B.Sc. 160 credits + M.S. 40 credits, including 20 laboratory/applied courses, statistical fieldwork, supervised projects and viva voce assessment.')}
+      <div class="grid grid-4 academic-credit-grid">
+        <article class="card metric"><strong>200</strong><span>Total university credits</span><small>B.Sc. 160 + M.S. 40</small></article>
+        <article class="card metric"><strong>40</strong><span>Laboratory / applied credits</span><small>20 applied courses</small></article>
+        <article class="card metric"><strong>2</strong><span>Field-survey credits</span><small>Statistical fieldwork</small></article>
+        <article class="card metric"><strong>7</strong><span>Supervised-project credits</span><small>B.Sc. 3 + M.S. 4</small></article>
+      </div>
+      <div class="curriculum-map-head">
+        <div><div class="section-kicker">Curriculum map</div><h3>Five academic domains</h3></div>
+        <div class="search-wrap curriculum-search"><input class="search-input" id="courseSearch" placeholder="Search a course, method or domain…"></div>
+      </div>
+      <div class="grid curriculum-domain-grid" id="curriculumGrid">${domains.map(curriculumDomainCard).join('')}</div>
+    </div></section>
+
+    <section class="section"><div class="container">
+      ${sectionHead('Supervised research','B.Sc. and M.S. academic projects','Two project-based research components connecting formal coursework to peer-reviewed and applied research outputs.')}
+      <div class="grid grid-2">${(D.academicProjects||[]).map(academicProjectCard).join('')}</div>
+    </div></section>
+
+    <section class="section alt"><div class="container">
+      ${sectionHead('Academic research & fieldwork','B.Sc. Statistical Field Survey','A supervised field-based research component within the B.Sc. (Hons.) curriculum.')}
+      ${fieldSurveyCard()}
+    </div></section>
+
+    <section class="section"><div class="container">
+      ${sectionHead('Teaching network','Selected instructor-course links','Selected academic teachers and guest teachers linked to major courses in the B.Sc. and M.S. curriculum.')}
+      <div class="grid grid-2 teaching-network">${(D.instructorLinks||[]).map(instructorCard).join('')}</div>
+    </div></section>
+
+    <section class="section alt"><div class="container">
+      ${sectionHead('Languages','Academic communication & Medium of Instruction (MOI)')}
+      <div class="grid grid-2">${(D.languages||[]).map(l=>`<article class="card"><h3>${esc(l.name)}</h3><strong>${esc(l.level)}</strong><p>${esc(l.note)}</p></article>`).join('')}</div>
+    </div></section>
+
+    <section class="section"><div class="container">
+      ${sectionHead('Skills & software','Evidence-linked research toolkit')}
+      <div class="grid grid-3">${(D.tools||[]).map(g=>`<article class="card tool-group"><h3>${esc(g.group)}</h3>${(g.items||[]).map(i=>`<div class="tool-item"><strong>${esc(i.name)}</strong><p>${esc(i.detail)}</p></div>`).join('')}</article>`).join('')}</div>
+    </div></section>`;
+  }
 
   function experience(){return `${pageHero('Experience','Research roles, mentorship and collaborative support.')}<section class="section"><div class="container">${sectionHead('Research experience','Roles & contribution')}<div class="timeline">${(D.experience||[]).map(x=>`<div class="timeline-item"><strong>${esc(x.period||x.date||'')}</strong><h3>${esc(x.title||x.role||'')}</h3><p><strong>${esc(x.organization||x.institution||'')}</strong></p><p>${esc(x.description||x.detail||'')}</p></div>`).join('')}</div></div></section><section class="section alt"><div class="container">${sectionHead('Mentorship','Collaborative research support')}<p class="section-copy">Research mentorship and collaborative support are presented separately from formal academic supervision, with emphasis on study formulation, analysis workflows, validation and manuscript development.</p><div class="grid grid-3">${(D.people||[]).filter(x=>(x.roles||[]).includes('Mentee')).map(personCard).join('')}</div></div></section>`;}
 
@@ -208,6 +307,14 @@
     $('#searchBtn')?.addEventListener('click',()=>location.href='search.html');
     document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();location.href='search.html'} if(e.key==='/'){if(!/INPUT|TEXTAREA/.test(document.activeElement.tagName)){e.preventDefault();location.href='search.html'}} if(e.key.toLowerCase()==='h'&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName))location.href='index.html'; if(e.key.toLowerCase()==='t'&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName))$('#settings').toggleAttribute('hidden'); if(e.key==='Escape'){ $('#settings')?.setAttribute('hidden','');$('#mobilePanel')?.setAttribute('hidden',''); }});
     const search=$('#pubSearch'), grid=$('#pubGrid'); if(search&&grid){const cards=[...grid.children]; let filter='all'; const run=()=>{const q=search.value.toLowerCase();cards.forEach((c,i)=>{const o=(D.outputs||[])[i]||{};const okQ=!q||c.textContent.toLowerCase().includes(q); const bucket=o.bucket||''; const okF=filter==='all'||bucket===filter; c.hidden=!(okQ&&okF)});}; search.addEventListener('input',run); $$('#pubFilters .filter').forEach(b=>b.addEventListener('click',()=>{$$('#pubFilters .filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');filter=b.dataset.filter;run()}));}
+    const courseSearch=$('#courseSearch'), curriculumGrid=$('#curriculumGrid');
+    if(courseSearch&&curriculumGrid){
+      const domains=[...curriculumGrid.querySelectorAll('.curriculum-domain')];
+      courseSearch.addEventListener('input',()=>{
+        const q=courseSearch.value.trim().toLowerCase();
+        domains.forEach(card=>{card.hidden=!!q && !(card.dataset.search||card.textContent.toLowerCase()).includes(q);});
+      });
+    }
     const ask=$('#askInput'), ans=$('#askAnswer'); if(ask&&ans){const reply=q=>{const s=q.toLowerCase();let out='';if(s.includes('shap'))out='SHAP appears in the CKD, HCV and public-health / explainability research records where public-approved details are available.';else if(s.includes('first-author'))out='First-author published/accepted works include the FastICA source-separation study, CKD prediction study and accepted AI-employment perceptions article.';else if(s.includes('course')||s.includes('machine learning coursework'))out='Relevant coursework includes Data Mining, Machine Learning, Deep Learning for Computer Vision, Programming with Python and R, Numerical Analysis and Simulation, and supporting statistics/mathematics courses.';else if(s.includes('dengue'))out='The public dengue portfolio includes nationwide forecasting and decision-oriented preparedness research, including collaborations with Md. Ziaul Haque and other co-authors.';else if(s.includes('review'))out='Md. Razu Ahmed has completed 32 invited peer reviews: 25 for PLOS ONE, 6 for Biomedical Signal Processing and Control, and 1 for Engineering Applications of Artificial Intelligence.';else out='I can answer from the public portfolio about research, publications, methods, coursework, conferences, collaborators, training and scholarly metrics. Confidential research is intentionally excluded.';ans.textContent=out;}; ask.addEventListener('keydown',e=>{if(e.key==='Enter')reply(ask.value)}); $$('.askPrompt').forEach(b=>b.addEventListener('click',()=>{ask.value=b.dataset.q;reply(b.dataset.q)}));}
     const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.06}); $('.card,.timeline-item').forEach(e=>{e.classList.add('reveal');io.observe(e)});
     const hero=$('#homeHero'), tilt=hero?.querySelector('[data-tilt]');
