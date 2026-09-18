@@ -328,7 +328,8 @@
         { name: 'Claude', short: 'Claude', brand: 'anthropic' },
         { name: 'Gemini', short: 'Gemini', brand: 'googlegemini' },
         { name: 'DeepSeek', short: 'DeepSeek', brand: 'deepseek' },
-        { name: 'Grok', short: 'Grok', brand: '' }
+        { name: 'Grok', short: 'Grok', brand: '' },
+        { name: 'Perplexity', short: 'Perplexity', brand: 'perplexity' }
       ],
       principle: 'AI-assisted outputs are independently checked against the underlying data, code, source literature and domain context before being used in research or scholarly communication.',
       note: 'Prompt engineering is presented here as an applied research-workflow capability, not as a substitute for statistical, computational or subject-matter expertise.'
