@@ -402,6 +402,8 @@
     courseCode: 'STAT-4110',
     degree: 'Bachelor of Science (B.Sc. Hons.) in Statistics',
     credits: 2,
+    grade: 'A+',
+    gradeLabel: 'Academic grade',
     study: 'Measuring Attitudes toward AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology',
     supervisor: 'Prof. Dr. Md. Shamim Reza',
     team: ['Md. Razu Ahmed', 'Md. Abdur Rakib', 'Abu Bakar Shiddik', 'Prof. Dr. Md. Shamim Reza'],
