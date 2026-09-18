@@ -126,11 +126,12 @@
         <div class="language-icon">${uiIcon(l.icon||'language')}</div>
         <div>
           <h3>${esc(l.name||'')}${l.nativeName?` <span class="native-script">${esc(l.nativeName)}</span>`:''}</h3>
+          ${l.level?`<div class="language-level">${esc(l.level)}</div>`:''}
           <div class="language-badge">${uiIcon(l.id==='english'?'graduation':'check')}<span>${esc(l.badge||l.level||'')}</span></div>
         </div>
       </div>
       <p class="language-note">${esc(l.note||'')}</p>
-      <div class="language-evidence-title">${uiIcon('check')}<span>Competencies & evidence</span></div>
+      <div class="language-evidence-title">${uiIcon('check')}<span>Evidence of academic use</span></div>
       <ul class="language-evidence-list">${(l.evidence||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
     </article>`;
   }
@@ -255,7 +256,7 @@
     return `<div class="tech-marquee-wrap" aria-label="Technologies and software I work with">
       <div class="tech-marquee-title"><span class="section-kicker">Research technology stack</span><h3>Technologies & software I work with</h3><p>Statistical computing, reproducible research, programming, prototyping and collaborative research tools.</p></div>
       <div class="tech-marquee" tabindex="0">
-        <div class="tech-marquee-track">${track.map((i,idx)=>`<div class="tech-marquee-item" ${idx>=items.length?'aria-hidden="true"':''}>${techBrandIcon(i)}<span>${esc(i.short||i.name)}</span></div>`).join('')}</div>
+        <div class="tech-marquee-track" style="--ticker-duration:${Math.max(38,items.length*2.2)}s">${track.map((i,idx)=>`<div class="tech-marquee-item" ${idx>=items.length?'aria-hidden="true"':''}>${techBrandIcon(i)}<span>${esc(i.short||i.name)}</span></div>`).join('')}</div>
       </div>
     </div>`;
   }
