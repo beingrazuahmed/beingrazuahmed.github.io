@@ -91,7 +91,10 @@
 
   const tags = arr => `<div class="pill-row">${(arr||[]).map(x=>`<span class="tag">${esc(typeof x==='string'?x:(x.label||x.name||x.title||''))}</span>`).join('')}</div>`;
   const sectionHead=(k,t,c='')=>`<div class="section-head"><div><div class="section-kicker">${esc(k)}</div><h2>${esc(t)}</h2></div>${c?`<p class="section-copy">${esc(c)}</p>`:''}</div>`;
-  const safeImg=(src,alt,cls='portrait')=>`<img class="${cls} safe-img" src="${esc(src)}" alt="${esc(alt)}" loading="lazy" decoding="async" data-safe-fallback="Verified portrait will appear when the original asset is available.">`;
+  const safeImg=(src,alt,cls='portrait')=>{
+    const priority=String(cls).includes('hero-portrait');
+    return `<img class="${cls} safe-img" src="${esc(src)}" alt="${esc(alt)}" loading="${priority?'eager':'lazy'}" decoding="async" ${priority?'fetchpriority="high"':''} data-safe-fallback="Verified portrait will appear when the original asset is available.">`;
+  };
   const links=(obj={})=>['primary','discovery','social'].flatMap(k=>obj[k]||[]).map(x=>ext(x.url,x.label)).join(' · ');
 
   function uiIcon(name){
@@ -788,7 +791,7 @@
 
     function seed(){
       const mobile=width<720;
-      const count=Math.max(12,Math.round(profile.count*(mobile?.42:1)));
+      const count=Math.max(12,Math.round(profile.count*(mobile ? 0.42 : 1)));
       nodes=Array.from({length:count},(_,i)=>({
         x:Math.random()*width,
         y:Math.random()*height,
@@ -863,7 +866,7 @@
         const col=n.anchor?palette.anchor:palette.node;
         ctx.beginPath();
         ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
-        ctx.fillStyle=`rgba(${col[0]},${col[1]},${col[2]},${(n.anchor?.28*pulse:.20).toFixed(3)})`;
+        ctx.fillStyle=`rgba(${col[0]},${col[1]},${col[2]},${(n.anchor ? 0.28*pulse : 0.20).toFixed(3)})`;
         ctx.fill();
       });
     }
@@ -898,7 +901,7 @@
     const search=$('#pubSearch'), grid=$('#pubGrid'); if(search&&grid){const cards=[...grid.children]; let filter='all'; const run=()=>{const q=search.value.toLowerCase();cards.forEach((c,i)=>{const o=(D.outputs||[])[i]||{};const okQ=!q||c.textContent.toLowerCase().includes(q); const bucket=o.bucket||''; const okF=filter==='all'||bucket===filter; c.hidden=!(okQ&&okF)});}; search.addEventListener('input',run); $$('#pubFilters .filter').forEach(b=>b.addEventListener('click',()=>{$$('#pubFilters .filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');filter=b.dataset.filter;run()}));}
     document.querySelectorAll('img[data-safe-fallback]').forEach(img=>img.addEventListener('error',()=>{
       const fallback=document.createElement('div');
-      fallback.className=(img.className||'portrait')+' portrait-placeholder';
+      fallback.className=((img.className||'portrait').replace(/\bsafe-img\b/g,'').trim())+' portrait-placeholder';
       fallback.textContent=img.dataset.safeFallback||'Image unavailable';
       img.replaceWith(fallback);
     },{once:true}));
