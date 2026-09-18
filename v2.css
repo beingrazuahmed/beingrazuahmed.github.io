@@ -1706,3 +1706,299 @@
   .education-card{min-height:auto}
   .workflow-titlebar{align-items:flex-start}
 }
+
+
+/* === Academic Journey + Technology Marquee Upgrade === */
+.education-timeline{
+  position:relative;
+  display:grid;
+  gap:18px;
+  margin-top:8px;
+  padding-left:34px;
+}
+.education-timeline::before{
+  content:"";
+  position:absolute;
+  left:13px;
+  top:14px;
+  bottom:14px;
+  width:2px;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 60%,var(--line)),color-mix(in srgb,var(--accent-2) 35%,var(--line)));
+}
+.education-timeline-item{
+  position:relative;
+}
+.education-timeline-dot{
+  position:absolute;
+  left:-27px;
+  top:32px;
+  z-index:3;
+  width:14px;height:14px;
+  border-radius:50%;
+  background:var(--surface);
+  border:3px solid var(--accent);
+  box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 9%,transparent);
+}
+.education-card{
+  min-height:0;
+  display:grid;
+  grid-template-columns:110px 1fr;
+  gap:22px;
+  align-items:center;
+  padding:22px;
+}
+.education-logo-wrap{
+  width:110px;
+  min-height:96px;
+  display:grid;
+  place-items:center;
+  padding:10px;
+  border-radius:18px;
+  border:1px solid color-mix(in srgb,var(--accent) 16%,var(--line));
+  background:linear-gradient(145deg,#fff,color-mix(in srgb,#fff 92%,var(--accent) 8%));
+  box-shadow:0 10px 28px rgba(26,68,102,.055);
+}
+.education-logo-img{
+  display:block;
+  max-width:88px;
+  max-height:78px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+}
+.education-logo-fallback{
+  display:grid;
+  place-items:center;
+  width:52px;height:52px;
+  border-radius:15px;
+  color:var(--accent);
+  background:color-mix(in srgb,var(--accent) 9%,var(--surface-2));
+  border:1px solid color-mix(in srgb,var(--accent) 20%,var(--line));
+}
+.education-logo-fallback .ui-icon{width:24px;height:24px}
+.education-card-main{min-width:0}
+.education-card-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:18px;
+}
+.education-card-heading h3{
+  margin:0 0 5px;
+  font-size:clamp(1.18rem,1.8vw,1.48rem);
+  line-height:1.25;
+}
+.education-institution{
+  margin:0;
+  color:var(--muted);
+  font-weight:760;
+}
+.education-year{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  white-space:nowrap;
+}
+.education-year .ui-icon{width:14px;height:14px}
+.education-detail-list-inline{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  margin-top:16px;
+}
+.education-detail-list-inline .education-detail-row{
+  border:1px solid var(--line);
+  border-radius:13px;
+  padding:10px 11px;
+  background:color-mix(in srgb,var(--surface-2) 58%,transparent);
+}
+.education-detail-list-inline .education-moi-row{
+  margin-top:0;
+  background:color-mix(in srgb,var(--accent) 5%,var(--surface));
+  border-color:color-mix(in srgb,var(--accent) 18%,var(--line));
+}
+
+.tool-grid-modern{align-items:stretch}
+.tool-group-modern{
+  padding:22px;
+  min-height:100%;
+}
+.tool-group-head{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  padding-bottom:14px;
+  border-bottom:1px solid var(--line);
+}
+.tool-group-head h3{
+  margin:0;
+  font-size:1.15rem;
+  line-height:1.25;
+}
+.tool-group-icon{
+  display:grid;
+  place-items:center;
+  width:38px;height:38px;
+  border-radius:12px;
+  color:var(--accent);
+  background:color-mix(in srgb,var(--accent) 8%,var(--surface-2));
+  border:1px solid color-mix(in srgb,var(--accent) 18%,var(--line));
+}
+.tool-group-icon .ui-icon{width:18px;height:18px}
+.tool-items-modern{
+  display:grid;
+  gap:12px;
+  margin-top:15px;
+}
+.tool-item-modern{
+  display:grid;
+  grid-template-columns:42px 1fr;
+  gap:11px;
+  align-items:start;
+  padding:10px 0;
+}
+.tool-item-modern+.tool-item-modern{border-top:1px solid var(--line)}
+.tool-item-modern strong{display:block;margin-bottom:4px}
+.tool-item-modern p{
+  margin:0;
+  color:var(--muted);
+  font-size:12.5px;
+  line-height:1.55;
+}
+.tech-logo,
+.tech-logo-fallback{
+  width:38px;height:38px;
+  display:grid;
+  place-items:center;
+  flex:0 0 auto;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background:#fff;
+  box-shadow:0 6px 16px rgba(25,67,101,.05);
+}
+.tech-logo img{
+  width:22px;height:22px;
+  display:block;
+  object-fit:contain;
+}
+.tech-logo-fallback{
+  color:var(--accent);
+  background:color-mix(in srgb,var(--accent) 7%,var(--surface));
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.02em;
+}
+.tech-marquee-wrap{
+  margin-top:34px;
+  padding-top:28px;
+  border-top:1px solid var(--line);
+}
+.tech-marquee-title{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:end;
+  justify-content:space-between;
+  gap:10px 22px;
+  margin-bottom:16px;
+}
+.tech-marquee-title h3{
+  flex:1 1 360px;
+  margin:3px 0 0;
+  font-size:clamp(1.45rem,2.4vw,2rem);
+}
+.tech-marquee-title p{
+  flex:0 1 520px;
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.6;
+}
+.tech-marquee{
+  position:relative;
+  overflow:hidden;
+  border:1px solid color-mix(in srgb,var(--accent) 14%,var(--line));
+  border-radius:20px;
+  background:linear-gradient(145deg,color-mix(in srgb,var(--surface) 95%,white),color-mix(in srgb,var(--surface-2) 70%,var(--surface)));
+  box-shadow:0 14px 38px rgba(29,70,104,.05);
+}
+.tech-marquee::before,
+.tech-marquee::after{
+  content:"";
+  position:absolute;
+  top:0;bottom:0;
+  width:72px;
+  z-index:2;
+  pointer-events:none;
+}
+.tech-marquee::before{
+  left:0;
+  background:linear-gradient(90deg,var(--surface),transparent);
+}
+.tech-marquee::after{
+  right:0;
+  background:linear-gradient(270deg,var(--surface),transparent);
+}
+.tech-marquee-track{
+  display:flex;
+  width:max-content;
+  gap:12px;
+  padding:14px;
+  animation:techTicker 34s linear infinite;
+  will-change:transform;
+}
+.tech-marquee:hover .tech-marquee-track,
+.tech-marquee:focus-within .tech-marquee-track{
+  animation-play-state:paused;
+}
+.tech-marquee-item{
+  min-width:145px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 12px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:var(--surface);
+  box-shadow:0 8px 22px rgba(24,67,101,.045);
+}
+.tech-marquee-item>span:last-child{
+  color:var(--text);
+  font-size:12.5px;
+  font-weight:820;
+  white-space:nowrap;
+}
+@keyframes techTicker{
+  from{transform:translateX(0)}
+  to{transform:translateX(calc(-50% - 6px))}
+}
+:root[data-mode="dark"] .education-logo-wrap,
+:root[data-mode="dark"] .tech-logo{
+  background:#fff;
+}
+:root[data-mode="dark"] .tech-marquee::before{
+  background:linear-gradient(90deg,var(--surface),transparent);
+}
+:root[data-mode="dark"] .tech-marquee::after{
+  background:linear-gradient(270deg,var(--surface),transparent);
+}
+:root[data-motion="reduced"] .tech-marquee-track{
+  animation:none;
+  transform:none;
+}
+@media (max-width:1080px){
+  .education-card{grid-template-columns:92px 1fr;gap:18px}
+  .education-logo-wrap{width:92px;min-height:84px}
+  .education-logo-img{max-width:72px;max-height:64px}
+  .education-detail-list-inline{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .education-timeline{padding-left:25px}
+  .education-timeline::before{left:9px}
+  .education-timeline-dot{left:-22px}
+  .education-card{grid-template-columns:1fr;padding:18px}
+  .education-logo-wrap{width:82px;min-height:74px}
+  .education-card-heading{display:block}
+  .education-year{margin-top:10px}
+  .education-detail-list-inline{grid-template-columns:1fr}
+  .tech-marquee::before,.tech-marquee::after{width:34px}
+  .tech-marquee-item{min-width:132px}
+}
