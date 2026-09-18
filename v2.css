@@ -724,7 +724,7 @@
   font-weight:780;
   color:var(--accent)!important;
 }
-.academic-credit-grid{margin-bottom:34px}
+.academic-credit-grid{grid-template-columns:repeat(5,minmax(0,1fr));margin-bottom:34px}
 .academic-credit-grid .metric{
   min-height:136px;
   display:flex;
@@ -912,11 +912,13 @@
 }
 @media (max-width:1080px){
   .education-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .academic-credit-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
   .curriculum-domain-grid{grid-template-columns:1fr}
   .field-survey-facts{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:760px){
   .education-grid{grid-template-columns:1fr}
+  .academic-credit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .curriculum-map-head{display:block}
   .curriculum-search{margin-top:16px;width:100%}
   .curriculum-domain-head{grid-template-columns:1fr}
@@ -928,3 +930,5 @@
   .instructor-card{padding-left:22px;padding-top:82px}
   .instructor-mark{top:20px}
 }
+
+@media (max-width:520px){.academic-credit-grid{grid-template-columns:1fr}}
