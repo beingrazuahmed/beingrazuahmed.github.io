@@ -331,12 +331,15 @@
             </div>
             <div class="portrait-stage portrait-stage-editorial" id="heroPortraitStage">
               <div class="portrait-aura" aria-hidden="true"></div>
+              <div class="portrait-accent-orb portrait-accent-orb-a" aria-hidden="true"></div>
+              <div class="portrait-accent-orb portrait-accent-orb-b" aria-hidden="true"></div>
               <div class="portrait-backplate portrait-backplate-a" aria-hidden="true"></div>
               <div class="portrait-backplate portrait-backplate-b" aria-hidden="true"></div>
               <div class="portrait-float portrait-float-editorial">
                 <div class="portrait-frame portrait-frame-editorial">
                   <div class="portrait-frame-inner portrait-frame-inner-editorial">
                     ${safeImg('assets/profile/razu-portrait.jpg','Md. Razu Ahmed','portrait hero-portrait')}
+                    <div class="portrait-shine" aria-hidden="true"></div>
                   </div>
                 </div>
               </div>
@@ -364,7 +367,7 @@
 
     <section class="section alt"><div class="container">
       ${sectionHead('Portfolio compass','Explore the research ecosystem','A concise route into research, academic development, networks, evidence and tools.')}
-      <div class="grid grid-3 portfolio-compass-v3">${(D.compass||[]).slice(0,6).map(c=>`<a class="card compass-card editorial-card" href="${c.href}"><div><h3>${esc(c.title)}</h3><p>${esc(c.detail)}</p></div><span class="arrow">Explore <b>↗</b></span></a>`).join('')}</div>
+      <div class="grid grid-3 portfolio-compass-v3">${(D.compass||[]).map(c=>`<a class="card compass-card editorial-card" href="${c.href}"><div><h3>${esc(c.title)}</h3><p>${esc(c.detail)}</p></div><span class="arrow">Explore <b>↗</b></span></a>`).join('')}</div>
     </div></section>
 
     <section class="section"><div class="container">
@@ -898,6 +901,33 @@
     $('#menuBtn')?.addEventListener('click',()=>$('#mobilePanel').toggleAttribute('hidden'));
     $('#searchBtn')?.addEventListener('click',()=>location.href='search.html');
     document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();location.href='search.html'} if(e.key==='/'){if(!/INPUT|TEXTAREA/.test(document.activeElement.tagName)){e.preventDefault();location.href='search.html'}} if(e.key.toLowerCase()==='h'&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName))location.href='index.html'; if(e.key.toLowerCase()==='t'&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName))$('#settings').toggleAttribute('hidden'); if(e.key==='Escape'){ $('#settings')?.setAttribute('hidden','');$('#mobilePanel')?.setAttribute('hidden',''); }});
+    const portraitStage=$('#heroPortraitStage');
+    const portraitFrame=portraitStage?.querySelector('.portrait-frame-editorial');
+    if(portraitStage&&portraitFrame&&window.matchMedia('(hover:hover) and (pointer:fine)').matches&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      const updatePortraitTilt=e=>{
+        const r=portraitStage.getBoundingClientRect();
+        const px=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width));
+        const py=Math.max(0,Math.min(1,(e.clientY-r.top)/r.height));
+        const ry=(px-.5)*8;
+        const rx=(.5-py)*7;
+        portraitFrame.style.setProperty('--portrait-rx',rx.toFixed(2)+'deg');
+        portraitFrame.style.setProperty('--portrait-ry',ry.toFixed(2)+'deg');
+        portraitFrame.style.setProperty('--portrait-shift-x',((px-.5)*5).toFixed(2)+'px');
+        portraitFrame.style.setProperty('--portrait-shift-y',((py-.5)*4).toFixed(2)+'px');
+        portraitStage.style.setProperty('--portrait-shine-x',(px*100).toFixed(1)+'%');
+        portraitStage.style.setProperty('--portrait-shine-y',(py*100).toFixed(1)+'%');
+      };
+      const resetPortraitTilt=()=>{
+        portraitFrame.style.setProperty('--portrait-rx','0deg');
+        portraitFrame.style.setProperty('--portrait-ry','0deg');
+        portraitFrame.style.setProperty('--portrait-shift-x','0px');
+        portraitFrame.style.setProperty('--portrait-shift-y','0px');
+        portraitStage.style.setProperty('--portrait-shine-x','50%');
+        portraitStage.style.setProperty('--portrait-shine-y','35%');
+      };
+      portraitStage.addEventListener('pointermove',updatePortraitTilt,{passive:true});
+      portraitStage.addEventListener('pointerleave',resetPortraitTilt,{passive:true});
+    }
     const search=$('#pubSearch'), grid=$('#pubGrid'); if(search&&grid){const cards=[...grid.children]; let filter='all'; const run=()=>{const q=search.value.toLowerCase();cards.forEach((c,i)=>{const o=(D.outputs||[])[i]||{};const okQ=!q||c.textContent.toLowerCase().includes(q); const bucket=o.bucket||''; const okF=filter==='all'||bucket===filter; c.hidden=!(okQ&&okF)});}; search.addEventListener('input',run); $$('#pubFilters .filter').forEach(b=>b.addEventListener('click',()=>{$$('#pubFilters .filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');filter=b.dataset.filter;run()}));}
     document.querySelectorAll('img[data-safe-fallback]').forEach(img=>img.addEventListener('error',()=>{
       const fallback=document.createElement('div');
