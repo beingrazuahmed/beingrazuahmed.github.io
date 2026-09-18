@@ -495,7 +495,7 @@
 
     <section class="section"><div class="container">
       ${sectionHead('Supervised research','B.Sc. and M.S. academic projects','Two project-based research components connecting formal coursework to peer-reviewed and applied research outputs.')}
-      <div class="grid grid-2">${(D.academicProjects||[]).map(academicProjectCard).join('')}</div>
+      <div class="academic-project-grid">${(D.academicProjects||[]).map(academicProjectCard).join('')}</div>
     </div></section>
 
     <section class="section alt"><div class="container">
