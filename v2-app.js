@@ -202,6 +202,52 @@
     </article>`;
   }
 
+  function researchToolLayout(){
+    const groups=D.tools||[];
+    const pick=name=>groups.find(g=>g.group===name);
+    const primary=[
+      pick('Statistical & Analytical Software'),
+      pick('Programming & Statistical Computing'),
+      pick('Web & Research Prototype Development')
+    ].filter(Boolean);
+    const libs=pick('Python, ML & Scientific Libraries');
+    const env=pick('Research Computing & Development Environments');
+    const version=pick('Version Control & Reproducibility');
+    const productivity=pick('Productivity & Collaboration');
+
+    return `<div class="tool-layout">
+      <div class="grid grid-3 tool-grid-modern tool-grid-primary">${primary.map(toolGroupCard).join('')}</div>
+      <div class="tool-grid-research">
+        ${libs?`<div class="tool-libraries-wide">${toolGroupCard(libs)}</div>`:''}
+        <div class="tool-side-stack">${env?toolGroupCard(env):''}${version?toolGroupCard(version):''}</div>
+      </div>
+      ${productivity?`<div class="tool-productivity-row">${toolGroupCard(productivity)}</div>`:''}
+    </div>`;
+  }
+
+  function computationalEnvironmentPanel(){
+    const items=D.computationalEnvironments||[];
+    if(!items.length) return '';
+    return `<div class="compute-environments">
+      <div class="compute-environments-head">
+        <div><span class="section-kicker">Computational environment & reproducibility</span><h3>Verified research environments</h3></div>
+        <p>Version snapshots are reported by project because software stacks differ across analyses. This avoids implying that one fixed environment was used for every study.</p>
+      </div>
+      <div class="compute-environment-list">
+        ${items.map((x,i)=>`<details class="compute-environment-card" ${i===0?'open':''}>
+          <summary>
+            <div><strong>${esc(x.title||'Research environment')}</strong><span>${esc(x.context||'')}</span></div>
+            <span class="compute-toggle">+</span>
+          </summary>
+          <div class="compute-environment-body">
+            <p class="compute-system">${esc(x.system||'')}</p>
+            <div class="compute-stack">${(x.stack||[]).map(v=>`<span>${esc(v)}</span>`).join('')}</div>
+          </div>
+        </details>`).join('')}
+      </div>
+    </div>`;
+  }
+
   function techMarquee(){
     const items=(D.tools||[]).flatMap(g=>g.items||[]);
     if(!items.length) return '';
@@ -219,11 +265,11 @@
     return `<div class="language-suite ${compact?'compact':''}">
       <div class="language-statement-card">
         <div class="language-statement-icon">${uiIcon('graduation')}</div>
-        <div><div class="section-kicker">Academic communication profile</div><h3>Languages & scholarly communication</h3><p>${esc(lp.statement||'')}</p></div>
+        <div><div class="section-kicker">Language & scholarly communication</div><h3>Academic communication profile</h3><p>${esc(lp.statement||'')}</p></div>
       </div>
       <div class="grid grid-2 language-grid">${(D.languages||[]).map(languageCard).join('')}</div>
       <div class="moi-panel">
-        <div class="moi-main"><div class="moi-icon">${uiIcon('graduation')}</div><div><div class="section-kicker">Medium of Instruction (MOI)</div><h3>${esc(lp.moi?.title||'Medium of Instruction')}</h3><p>${esc(lp.moi?.summary||'')}</p></div></div>
+        <div class="moi-main"><div class="moi-icon">${uiIcon('graduation')}</div><div><div class="section-kicker">Formal education language record</div><h3>${esc(lp.moi?.title||'Medium of Instruction')}</h3><p>${esc(lp.moi?.summary||'')}</p></div></div>
         <div class="moi-degrees">${(lp.moi?.degrees||[]).map(x=>`<div class="moi-degree"><div><span>${esc(x.label)}</span>${x.stage?`<small>${esc(x.stage)}</small>`:''}</div><strong>${esc(x.value)}</strong></div>`).join('')}</div>
       </div>
       ${compact?'':`<div class="grid grid-2 language-evidence-grid">${(lp.evidence||[]).map(languageEvidenceCard).join('')}</div>`}
@@ -331,6 +377,7 @@
         <div class="conference-evidence-meta">
           <span>${esc(c.source||'')}</span><span>${esc(c.page||'')}</span><span>${esc(c.role||'')}</span>
         </div>
+        ${c.url?`<div class="conference-link-row"><a class="btn small" href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">Official conference homepage ↗</a></div>`:''}
         ${c.citation?`<details class="citation-details"><summary>View bibliographic citation</summary><p>${esc(c.citation)}</p></details>`:''}
       </div>
 
@@ -410,10 +457,25 @@
 
       ${(p.keywords||[]).length?`<div class="project-block project-keywords"><div class="project-block-label">Keywords</div><div class="project-tags">${(p.keywords||[]).map(x=>`<span>${esc(x)}</span>`).join('')}</div></div>`:''}
 
+      ${p.journal?`<div class="project-journal-card">
+        <div class="project-journal-head">
+          <div><span class="section-kicker">Published journal output</span><h4>${esc(p.journal.name||'')}</h4></div>
+          ${p.outputUrl?`<a class="doi-icon-link" href="${esc(p.outputUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Open DOI ${esc(p.doi||'')}" title="Open DOI: ${esc(p.doi||'')}"><span class="doi-mark">doi</span></a>`:''}
+        </div>
+        ${p.journal.citation?`<p class="project-journal-citation">${esc(p.journal.citation)}</p>`:''}
+        ${(p.journal.metrics||[]).length?`<div class="project-journal-metrics">${p.journal.metrics.map(m=>`<div><strong>${esc(m.value||'')}</strong><span>${esc(m.label||'')}</span><small>${esc(m.source||'')}</small></div>`).join('')}</div>`:''}
+        <div class="project-journal-meta">
+          ${p.journal.publisher?`<span><strong>Publisher</strong>${esc(p.journal.publisher)}</span>`:''}
+          ${p.journal.onlineIssn?`<span><strong>Online ISSN</strong>${esc(p.journal.onlineIssn)}</span>`:''}
+        </div>
+        ${p.journal.standing?`<p class="project-journal-standing">${esc(p.journal.standing)}</p>`:''}
+        ${p.journal.officialUrl?`<a class="journal-home-link" href="${esc(p.journal.officialUrl)}" target="_blank" rel="noopener noreferrer">Official journal page ↗</a>`:''}
+      </div>`:''}
+
       <div class="project-footer">
         <p><strong>Supervisor:</strong> ${esc(p.supervisor||'')}</p>
         <p><strong>Outcome:</strong> ${esc(p.outcome||'')}</p>
-        ${p.outputUrl?`<a class="btn small" href="${esc(p.outputUrl)}" target="_blank" rel="noopener noreferrer">${esc(p.outputLabel||'View related output')}</a>`:''}
+        ${p.outputUrl&&!p.journal?`<a class="btn small" href="${esc(p.outputUrl)}" target="_blank" rel="noopener noreferrer">${esc(p.outputLabel||'View related output')}</a>`:''}
       </div>
     </article>`;
   }
@@ -512,7 +574,7 @@
     </div></section>
 
     <section class="section alt"><div class="container">
-      ${sectionHead('Languages','Academic communication & Medium of Instruction (MOI)','A concise academic-language record linked to the full language and scholarly-communication profile.')}
+      ${sectionHead('Languages & academic communication','Communication profile & Medium of Instruction (MOI)','A professional language record linking proficiency, formal Medium of Instruction and evidence from research, peer review, conferences and field communication.')}
       ${languagePanel(true)}
       <div class="language-cta"><a class="btn" href="languages.html">View Full Language Profile</a></div>
     </div></section>
@@ -523,9 +585,10 @@
 
       <div class="skills-stack-head">
         <div><div class="section-kicker">Research software & technology stack</div><h3>Tools, libraries & development environments</h3></div>
-        <p>Software is separated from methodological capability so the portfolio distinguishes what I know from the platforms and libraries I use to implement it.</p>
+        <p>Methods are separated from implementation tools. Libraries, development environments and reproducibility infrastructure are shown as an evidence-backed research stack rather than proficiency scores.</p>
       </div>
-      <div class="grid grid-3 tool-grid-modern">${(D.tools||[]).map(toolGroupCard).join('')}</div>
+      ${researchToolLayout()}
+      ${computationalEnvironmentPanel()}
       ${techMarquee()}
     </div></section>`;
   }
