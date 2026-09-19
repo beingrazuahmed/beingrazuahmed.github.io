@@ -7070,3 +7070,99 @@ html[data-motion="reduced"]{scroll-behavior:auto!important}
 @media(max-width:520px){
   .academic-conference-metrics{grid-template-columns:1fr 1fr}
 }
+
+
+/* === Compact field-survey conference bridge · 2026-09-19 === */
+.field-survey-conference-bridge{
+  margin-top:18px;
+  padding:18px;
+  border:1px solid color-mix(in srgb,var(--accent) 18%,var(--line));
+  border-radius:17px;
+  background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 4%,var(--surface-2)),var(--surface));
+}
+.field-survey-conference-head{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  gap:14px;
+  align-items:center;
+}
+.field-survey-conference-head h4{
+  margin:4px 0 0;
+  color:var(--text);
+  font-size:17px;
+  line-height:1.4;
+}
+.field-survey-conference-head p{
+  margin:4px 0 0!important;
+  color:var(--muted);
+  font-size:11.5px;
+}
+.field-survey-conference-summary{
+  margin:14px 0 0!important;
+  color:var(--muted);
+  font-size:12.5px;
+  line-height:1.65;
+}
+.field-survey-conference-facts{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:9px;
+  margin-top:14px;
+}
+.field-survey-conference-facts>div{
+  padding:11px 12px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:var(--surface);
+}
+.field-survey-conference-facts span{
+  display:block;
+  color:var(--muted);
+  font-size:9.5px;
+  font-weight:900;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+.field-survey-conference-facts strong{
+  display:block;
+  margin-top:4px;
+  color:var(--text);
+  font-size:12px;
+  line-height:1.45;
+}
+.academic-progression-line{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:13px;
+  color:var(--muted);
+  font-size:11.5px;
+  font-weight:800;
+}
+.academic-progression-line span{
+  display:inline-flex;
+  align-items:center;
+  min-height:30px;
+  padding:5px 9px;
+  border:1px solid color-mix(in srgb,var(--accent) 16%,var(--line));
+  border-radius:999px;
+  background:var(--surface);
+  color:var(--text);
+}
+.academic-progression-line i{
+  color:var(--accent);
+  font-style:normal;
+  font-size:13px;
+}
+.field-survey-conference-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:14px;
+}
+@media(max-width:720px){
+  .field-survey-conference-head{grid-template-columns:auto minmax(0,1fr)}
+  .field-survey-conference-head>.badge{grid-column:1/-1;justify-self:start}
+  .field-survey-conference-facts{grid-template-columns:1fr}
+}
