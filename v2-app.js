@@ -902,12 +902,16 @@
   function initResearchConstellation(){
     if(document.getElementById('mraResearchConstellation')) return;
 
+    const host=document.querySelector('.hero-shell')||document.querySelector('.hero');
+    if(!host) return;
+    host.classList.add('has-mra-constellation');
+
     const canvas=document.createElement('canvas');
     canvas.id='mraResearchConstellation';
     canvas.className='mra-constellation';
     canvas.setAttribute('aria-hidden','true');
     canvas.setAttribute('role','presentation');
-    document.body.prepend(canvas);
+    host.prepend(canvas);
 
     const ctx=canvas.getContext('2d',{alpha:true});
     if(!ctx){canvas.remove();return;}
@@ -915,27 +919,27 @@
     const root=document.documentElement;
     const pageName=document.body.dataset.page||'home';
     const profiles={
-      home:{count:46,connect:150,speed:.082,anchors:5},
-      research:{count:42,connect:148,speed:.076,anchors:5},
-      network:{count:44,connect:154,speed:.074,anchors:6},
-      projects:{count:32,connect:144,speed:.068,anchors:4},
-      profile:{count:28,connect:142,speed:.064,anchors:4},
-      academic:{count:25,connect:138,speed:.058,anchors:3},
-      publications:{count:18,connect:132,speed:.052,anchors:3},
-      conferences:{count:16,connect:128,speed:.050,anchors:2},
-      resources:{count:14,connect:126,speed:.046,anchors:2},
-      default:{count:18,connect:132,speed:.052,anchors:3}
+      home:{count:42,connect:154,speed:.075,anchors:5},
+      research:{count:36,connect:148,speed:.068,anchors:5},
+      network:{count:38,connect:152,speed:.068,anchors:5},
+      projects:{count:30,connect:144,speed:.062,anchors:4},
+      profile:{count:28,connect:142,speed:.060,anchors:4},
+      academic:{count:24,connect:138,speed:.054,anchors:3},
+      publications:{count:18,connect:132,speed:.048,anchors:3},
+      conferences:{count:16,connect:128,speed:.046,anchors:2},
+      resources:{count:14,connect:126,speed:.044,anchors:2},
+      default:{count:20,connect:134,speed:.050,anchors:3}
     };
     const profile=profiles[pageName]||profiles.default;
 
     const motionMedia=window.matchMedia('(prefers-reduced-motion: reduce)');
-    let width=0,height=0,dpr=1,nodes=[],raf=0,last=0,isVisible=!document.hidden;
+    let width=0,height=0,dpr=1,nodes=[],raf=0,last=0,isVisible=true;
     const pointer={x:0,y:0,active:false};
     const reduced=()=>root.dataset.motion==='reduced'||motionMedia.matches;
 
     function seed(){
       const mobile=width<720;
-      const count=Math.max(10,Math.round(profile.count*(mobile ? .46 : 1)));
+      const count=Math.max(10,Math.round(profile.count*(mobile ? .55 : 1)));
       const anchorCount=Math.min(profile.anchors,Math.max(2,Math.round(count/8)));
       const anchors=[];
 
@@ -943,23 +947,23 @@
         const cols=Math.ceil(Math.sqrt(anchorCount));
         const rows=Math.ceil(anchorCount/cols);
         const col=i%cols,row=Math.floor(i/cols);
-        const cx=((col+.5)/cols)*width+(Math.random()-.5)*Math.min(90,width*.08);
-        const cy=((row+.5)/rows)*height+(Math.random()-.5)*Math.min(80,height*.08);
-        anchors.push({x:cx,y:cy});
+        anchors.push({
+          x:((col+.5)/cols)*width+(Math.random()-.5)*Math.min(80,width*.07),
+          y:((row+.5)/rows)*height+(Math.random()-.5)*Math.min(70,height*.08)
+        });
       }
 
       nodes=Array.from({length:count},(_,i)=>{
         const anchor=i<anchorCount;
         const cluster=anchors[i%anchorCount];
         const angle=Math.random()*Math.PI*2;
-        const radius=anchor ? 0 : Math.min(width,height)*(.05+Math.random()*.16);
-        const x=Math.max(18,Math.min(width-18,cluster.x+Math.cos(angle)*radius));
-        const y=Math.max(18,Math.min(height-18,cluster.y+Math.sin(angle)*radius));
+        const radius=anchor ? 0 : Math.min(width,height)*(.055+Math.random()*.18);
         return {
-          x,y,
+          x:Math.max(16,Math.min(width-16,cluster.x+Math.cos(angle)*radius)),
+          y:Math.max(16,Math.min(height-16,cluster.y+Math.sin(angle)*radius)),
           vx:(Math.random()-.5)*profile.speed,
           vy:(Math.random()-.5)*profile.speed,
-          r:anchor?2.35:1.05+Math.random()*.72,
+          r:anchor?2.45:1.15+Math.random()*.75,
           anchor,
           phase:Math.random()*Math.PI*2
         };
@@ -968,8 +972,8 @@
 
     function resize(){
       dpr=Math.min(window.devicePixelRatio||1,2);
-      width=Math.max(1,window.innerWidth);
-      height=Math.max(1,window.innerHeight);
+      width=Math.max(1,host.clientWidth);
+      height=Math.max(1,host.clientHeight);
       canvas.width=Math.round(width*dpr);
       canvas.height=Math.round(height*dpr);
       canvas.style.width=width+'px';
@@ -981,16 +985,8 @@
     function colors(){
       const dark=root.dataset.mode==='dark';
       return dark
-        ? {
-            line:[111,153,188],
-            node:[120,205,244],
-            anchor:[150,220,250]
-          }
-        : {
-            line:[86,118,147],
-            node:[52,153,207],
-            anchor:[31,118,176]
-          };
+        ? {line:[116,170,205],node:[132,214,247],anchor:[169,226,250]}
+        : {line:[90,132,166],node:[46,151,207],anchor:[22,115,176]};
     }
 
     function advanceNode(n){
@@ -1000,24 +996,24 @@
       if(pointer.active){
         const dx=n.x-pointer.x,dy=n.y-pointer.y;
         const dist=Math.hypot(dx,dy);
-        const range=145;
+        const range=135;
         if(dist>0&&dist<range){
-          const force=(1-dist/range)*(n.anchor ? .010 : .018);
+          const force=(1-dist/range)*(n.anchor ? .008 : .014);
           n.x+=(dx/dist)*force;
           n.y+=(dy/dist)*force;
         }
       }
 
-      if(n.x<-24)n.x=width+24;
-      else if(n.x>width+24)n.x=-24;
-      if(n.y<-24)n.y=height+24;
-      else if(n.y>height+24)n.y=-24;
+      if(n.x<-20)n.x=width+20;
+      else if(n.x>width+20)n.x=-20;
+      if(n.y<-20)n.y=height+20;
+      else if(n.y>height+20)n.y=-20;
     }
 
     function draw(time,advance){
       ctx.clearRect(0,0,width,height);
       const palette=colors();
-      const connect=width<720?profile.connect*.78:profile.connect;
+      const connect=width<720?profile.connect*.80:profile.connect;
 
       if(advance) nodes.forEach(advanceNode);
 
@@ -1029,42 +1025,42 @@
 
           const strength=1-dist/connect;
           const anchorLink=a.anchor||b.anchor;
-          const alpha=(anchorLink ? .155 : .105)*strength;
+          const alpha=(anchorLink ? .22 : .14)*strength;
 
           ctx.beginPath();
           ctx.moveTo(a.x,a.y);
           ctx.lineTo(b.x,b.y);
           ctx.strokeStyle=`rgba(${palette.line[0]},${palette.line[1]},${palette.line[2]},${alpha.toFixed(3)})`;
-          ctx.lineWidth=anchorLink ? .92 : .76;
+          ctx.lineWidth=anchorLink ? .95 : .78;
           ctx.stroke();
 
-          if((i*17+j*11)%47===0&&!reduced()){
-            const t=((time*.000018)+((i+j)%13)/13)%1;
+          if((i*17+j*11)%43===0&&!reduced()){
+            const t=((time*.000020)+((i+j)%13)/13)%1;
             const x=a.x+(b.x-a.x)*t;
             const y=a.y+(b.y-a.y)*t;
             ctx.beginPath();
-            ctx.arc(x,y,1.1,0,Math.PI*2);
-            ctx.fillStyle=`rgba(${palette.node[0]},${palette.node[1]},${palette.node[2]},.28)`;
+            ctx.arc(x,y,1.2,0,Math.PI*2);
+            ctx.fillStyle=`rgba(${palette.node[0]},${palette.node[1]},${palette.node[2]},.34)`;
             ctx.fill();
           }
         }
       }
 
       nodes.forEach(n=>{
-        const pulse=(n.anchor&&!reduced()) ? .78+.12*Math.sin(time*.00055+n.phase) : 1;
+        const pulse=(n.anchor&&!reduced()) ? .82+.10*Math.sin(time*.00055+n.phase) : 1;
         const col=n.anchor?palette.anchor:palette.node;
 
         if(n.anchor){
           ctx.beginPath();
-          ctx.arc(n.x,n.y,(n.r+3.1)*pulse,0,Math.PI*2);
-          ctx.strokeStyle=`rgba(${col[0]},${col[1]},${col[2]},.14)`;
-          ctx.lineWidth=.8;
+          ctx.arc(n.x,n.y,(n.r+3.2)*pulse,0,Math.PI*2);
+          ctx.strokeStyle=`rgba(${col[0]},${col[1]},${col[2]},.18)`;
+          ctx.lineWidth=.85;
           ctx.stroke();
         }
 
         ctx.beginPath();
         ctx.arc(n.x,n.y,n.r*(n.anchor?pulse:1),0,Math.PI*2);
-        ctx.fillStyle=`rgba(${col[0]},${col[1]},${col[2]},${n.anchor ? .40 : .26})`;
+        ctx.fillStyle=`rgba(${col[0]},${col[1]},${col[2]},${n.anchor ? .48 : .32})`;
         ctx.fill();
       });
     }
@@ -1085,25 +1081,30 @@
       raf=requestAnimationFrame(loop);
     }
 
-    function onResize(){resize();restart();}
     function onPointerMove(e){
-      if(e.pointerType==='touch') return;
-      pointer.x=e.clientX;
-      pointer.y=e.clientY;
-      pointer.active=true;
+      const rect=host.getBoundingClientRect();
+      pointer.x=e.clientX-rect.left;
+      pointer.y=e.clientY-rect.top;
+      pointer.active=pointer.x>=0&&pointer.x<=rect.width&&pointer.y>=0&&pointer.y<=rect.height;
     }
 
-    window.addEventListener('resize',onResize,{passive:true});
-    document.addEventListener('pointermove',onPointerMove,{passive:true});
-    document.addEventListener('pointerleave',()=>{pointer.active=false;},{passive:true});
+    window.addEventListener('resize',()=>{resize();restart();},{passive:true});
+    host.addEventListener('pointermove',onPointerMove,{passive:true});
+    host.addEventListener('pointerleave',()=>{pointer.active=false;},{passive:true});
     document.addEventListener('visibilitychange',()=>{
       isVisible=!document.hidden;
       if(isVisible) restart();
       else{cancelAnimationFrame(raf);raf=0;}
     });
 
-    const observer=new MutationObserver(restart);
-    observer.observe(root,{attributes:true,attributeFilter:['data-mode','data-motion','data-theme']});
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(entries=>{
+        isVisible=entries.some(entry=>entry.isIntersecting);
+        restart();
+      },{threshold:0}).observe(host);
+    }
+
+    new MutationObserver(restart).observe(root,{attributes:true,attributeFilter:['data-mode','data-motion','data-theme']});
     if(typeof motionMedia.addEventListener==='function') motionMedia.addEventListener('change',restart);
 
     resize();
