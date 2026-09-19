@@ -201,6 +201,7 @@
       { name: 'Matplotlib', short: 'Matplotlib', brand: '', detail: 'Scientific visualization and publication-oriented plotting.' },
       { name: 'Seaborn', short: 'Seaborn', brand: '', detail: 'Statistical visualization for exploratory and comparative analysis.' },
       { name: 'Librosa', short: 'Librosa', brand: '', detail: 'Audio preprocessing, spectral analysis and feature-based signal processing.' },
+      { name: 'SoundFile / PySoundFile', short: 'SoundFile', brand: '', detail: 'Audio-file reading and writing, waveform I/O and reproducible handling of WAV and related sound formats in Python signal-processing workflows.' },
       { name: 'mir_eval', short: 'mir_eval', brand: '', detail: 'Music-information-retrieval evaluation utilities used for source-separation metrics.' },
       { name: 'GeoPandas', short: 'GeoPandas', brand: 'geopandas', detail: 'Geospatial tabular data handling, mapping and spatial research workflows.' }
     ]},

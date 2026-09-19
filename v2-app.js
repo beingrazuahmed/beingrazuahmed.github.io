@@ -263,6 +263,7 @@
       'pingouin':'https://cdn.jsdelivr.net/gh/raphaelvallat/pingouin@main/docs/pictures/pingouin.svg',
       'mir_eval':'assets/academic/logos/mir-eval-digital.svg',
       'pyreadstat':'assets/academic/logos/pyreadstat-digital.svg',
+      'soundfile / pysoundfile':'assets/academic/logos/soundfile-digital.svg',
       'xgboost':'https://xgboost.ai/images/logo/xgboost-logo-trimmed.png',
       'scipy':'https://cdn.jsdelivr.net/gh/scipy/scipy.org@main/static/images/logo.svg',
       'c':'https://skillicons.dev/icons?i=c&theme=light',
