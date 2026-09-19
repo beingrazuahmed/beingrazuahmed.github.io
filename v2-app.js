@@ -747,7 +747,7 @@
           <div class="journal-identity-main">
             <div class="journal-identity-label">Journal & institutional identity</div>
             <div class="institution-logo-row">
-              ${academicBrandAsset('assets/academic/journals/ijss/department-statistics-data-science-ru.webp?v=20260919-deptlogo1','Department of Statistics and Data Science, University of Rajshahi','is-square is-department')}
+              ${academicBrandAsset('assets/academic/journals/ijss/department-statistics-data-science-ru.webp?v=20260919-deptlogo2','Department of Statistics and Data Science, University of Rajshahi','is-square is-department')}
               ${academicBrandAsset('assets/academic/journals/ijss/ru-logo.webp','University of Rajshahi','is-square')}
               ${academicBrandAsset('assets/academic/journals/ijss/banglajol.png','BanglaJOL','is-wide')}
             </div>

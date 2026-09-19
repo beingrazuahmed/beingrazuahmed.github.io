@@ -5680,3 +5680,17 @@ html[data-motion="reduced"]{scroll-behavior:auto!important}
     height:44px;
   }
 }
+
+
+/* Exact RU Statistics & Data Science emblem */
+.academic-brand-asset.is-department img{
+  width:52px!important;
+  height:52px!important;
+  padding:0!important;
+  border-radius:8px!important;
+  object-fit:contain!important;
+  background:transparent!important;
+}
+.academic-brand-asset.is-department{
+  grid-template-columns:52px minmax(0,1fr)!important;
+}
