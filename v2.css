@@ -7650,3 +7650,40 @@ html[data-motion="reduced"]{scroll-behavior:auto!important}
 .field-survey-conference-head>div{
   min-width:0;
 }
+
+
+/* === Exact ICRAST Faculty of Science logo · 2026-09-19 === */
+.field-survey-conference-head{
+  grid-template-columns:auto minmax(0,1fr) auto!important;
+  align-items:center!important;
+}
+.conference-brand-logo-exact,
+.conference-event-logo{
+  display:block!important;
+  flex:0 0 auto;
+  object-fit:contain!important;
+  object-position:center!important;
+  background:#fff!important;
+  border:1px solid color-mix(in srgb,var(--accent) 18%,var(--line))!important;
+  box-shadow:0 8px 22px rgba(20,58,84,.065)!important;
+}
+.conference-brand-logo-exact{
+  width:76px!important;
+  height:76px!important;
+  padding:4px!important;
+  border-radius:16px!important;
+}
+.conference-event-logo{
+  width:86px!important;
+  height:86px!important;
+  padding:5px!important;
+  border-radius:18px!important;
+}
+@media(max-width:700px){
+  .conference-brand-logo-exact{width:64px!important;height:64px!important}
+  .conference-event-logo{width:70px!important;height:70px!important}
+}
+@media(max-width:560px){
+  .field-survey-conference-head{grid-template-columns:auto minmax(0,1fr)!important}
+  .field-survey-conference-head>.badge{grid-column:2;justify-self:start}
+}
