@@ -266,7 +266,7 @@
       'xgboost':'https://xgboost.ai/images/logo/xgboost-logo-trimmed.png',
       'scipy':'https://cdn.jsdelivr.net/gh/scipy/scipy.org@main/static/images/logo.svg',
       'c':'https://skillicons.dev/icons?i=c&theme=light',
-      'jupyter notebook':'https://cdn.jsdelivr.net/gh/jupyter/design@main/logos/Favicon/favicon.svg',
+      'jupyter notebook':'https://raw.githubusercontent.com/jupyter/design/main/logos/Logo%20Mark/logomark-orangebody-greyplanets/logomark-orangebody-greyplanets.svg',
       'microsoft 365 / office':'https://commons.wikimedia.org/wiki/Special:Redirect/file/Microsoft_365_%282022%29.svg',
       'microsoft office':'https://commons.wikimedia.org/wiki/Special:Redirect/file/Microsoft_365_%282022%29.svg',
       'google workspace':'https://commons.wikimedia.org/wiki/Special:Redirect/file/Google_Favicon_2025.svg',
@@ -657,6 +657,22 @@
     </article>`;
   }
   function personCard(x){return `<article class="card person-card">${safeImg(x.portrait,x.name,'avatar')}<h3>${esc(x.name)}</h3><div class="meta">${(x.roles||[]).map(r=>`<span class="badge">${esc(r)}</span>`).join('')}</div><p><strong>${esc(x.affiliation||'')}</strong></p><p>${esc(x.description||'')}</p><div class="link-row">${(x.links||[]).map(l=>ext(l.url,l.label)).join(' · ')}</div></article>`;}
+  function academicGradeBadge(grade='A+',compact=false){
+    const g=esc(grade||'A+');
+    return `<span class="academic-grade-badge ${compact?'is-compact':''}" aria-label="${g} academic grade">
+      <span class="academic-grade-badge-medal" aria-hidden="true">
+        <svg viewBox="0 0 64 72" focusable="false">
+          <path class="grade-ribbon grade-ribbon-left" d="M21 48 13 69l13-5 6 8 5-21z"/>
+          <path class="grade-ribbon grade-ribbon-right" d="m43 48 8 21-13-5-6 8-5-21z"/>
+          <circle class="grade-medal-outer" cx="32" cy="29" r="24"/>
+          <circle class="grade-medal-inner" cx="32" cy="29" r="18"/>
+          <path class="grade-medal-star" d="m32 13 3.9 7.9 8.7 1.3-6.3 6.1 1.5 8.7-7.8-4.1-7.8 4.1 1.5-8.7-6.3-6.1 8.7-1.3z"/>
+        </svg>
+        <strong>${g}</strong>
+      </span>
+    </span>`;
+  }
+
   function fieldSurveyCard(){
     const f=D.fieldSurvey||{}, c=f.conference||{};
     return `<article class="card field-survey-card">
@@ -664,7 +680,7 @@
         <span class="badge">${esc(f.courseCode||'')}</span>
         <span class="badge">${esc(f.degree||'')}</span>
         <span class="badge">${esc(f.credits||'')} credits</span>
-        ${f.grade?`<span class="academic-grade-pill"><span class="grade-star" aria-hidden="true">★</span><strong>${esc(f.grade)}</strong><small>${esc(f.gradeLabel||'Grade')}</small></span>`:''}
+        ${f.grade?`<span class="academic-grade-pill">${academicGradeBadge(f.grade,true)}<small>${esc(f.gradeLabel||'Grade')}</small></span>`:''}
       </div>
       <h3>${esc(f.study||f.title||'')}</h3>
       <div class="field-survey-topline">
@@ -765,7 +781,7 @@
     return `<article class="card academic-project-card academic-project-rich">
       <div class="academic-project-head">
         <div>
-          <div class="meta"><span class="badge">${esc(p.level||'')}</span><span class="badge">${esc(p.credits||'')} credits</span>${p.type?`<span class="badge">${esc(p.type)}</span>`:''}${p.grade?`<span class="academic-grade-pill"><span class="grade-star" aria-hidden="true">★</span><strong>${esc(p.grade)}</strong><small>${esc(p.gradeLabel||'Grade')}</small></span>`:''}</div>
+          <div class="meta"><span class="badge">${esc(p.level||'')}</span><span class="badge">${esc(p.credits||'')} credits</span>${p.type?`<span class="badge">${esc(p.type)}</span>`:''}${p.grade?`<span class="academic-grade-pill">${academicGradeBadge(p.grade,true)}<small>${esc(p.gradeLabel||'Grade')}</small></span>`:''}</div>
           <div class="tiny project-course">${esc(p.course||'')}</div>
           <h3>${esc(p.title||'')}</h3>
         </div>
@@ -900,11 +916,11 @@
       ${sectionHead('Academic achievement','A+ in fieldwork & supervised research','The three formal research-intensive academic components were each completed with an A+ grade.')}
       <div class="academic-grade-showcase">
         <article class="card academic-grade-showcase-card">
-          <span class="academic-grade-emblem">A+</span>
+          <span class="academic-grade-emblem">${academicGradeBadge(D.fieldSurvey?.grade||'A+')}</span>
           <div><strong>Statistical Field Survey</strong><span>${esc(D.fieldSurvey?.courseCode||'STAT-4110')} · ${esc(D.fieldSurvey?.credits||2)} credits</span></div>
         </article>
         ${(D.academicProjects||[]).map(p=>`<article class="card academic-grade-showcase-card">
-          <span class="academic-grade-emblem">${esc(p.grade||'A+')}</span>
+          <span class="academic-grade-emblem">${academicGradeBadge(p.grade||'A+')}</span>
           <div><strong>${esc((p.course||'').includes('4210')?'B.Sc. Statistical Project':'M.S. Project')}</strong><span>${esc(p.course||'')} · ${esc(p.credits||'')} credits</span></div>
         </article>`).join('')}
       </div>

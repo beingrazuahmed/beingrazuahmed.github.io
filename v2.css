@@ -5040,3 +5040,113 @@ html[data-motion="reduced"]{scroll-behavior:auto!important}
     max-width:34px!important;
   }
 }
+
+
+/* === Academic A+ medal badges === */
+.academic-grade-badge{
+  display:inline-grid;
+  place-items:center;
+  line-height:1;
+}
+.academic-grade-badge-medal{
+  position:relative;
+  display:grid;
+  place-items:center;
+  width:58px;
+  height:64px;
+}
+.academic-grade-badge-medal svg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  overflow:visible;
+}
+.grade-ribbon{
+  fill:#2f78bc;
+}
+.grade-ribbon-right{
+  fill:#245f99;
+}
+.grade-medal-outer{
+  fill:#edf7ff;
+  stroke:#2f8edb;
+  stroke-width:3;
+}
+.grade-medal-inner{
+  fill:#fff8dc;
+  stroke:#d5a72e;
+  stroke-width:2.2;
+}
+.grade-medal-star{
+  fill:#f2c94c;
+  stroke:#b98a16;
+  stroke-width:1;
+  opacity:.34;
+}
+.academic-grade-badge-medal strong{
+  position:relative;
+  z-index:2;
+  margin-top:-6px;
+  color:#174d78;
+  font-size:1.12rem;
+  font-weight:950;
+  letter-spacing:-.035em;
+  text-shadow:0 1px 0 rgba(255,255,255,.9);
+}
+.academic-grade-badge.is-compact .academic-grade-badge-medal{
+  width:31px;
+  height:34px;
+}
+.academic-grade-badge.is-compact .academic-grade-badge-medal strong{
+  margin-top:-3px;
+  font-size:.68rem;
+}
+.academic-grade-emblem{
+  display:grid;
+  place-items:center;
+  width:60px!important;
+  height:64px!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  border-radius:0!important;
+}
+.academic-grade-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:3px 9px 3px 5px!important;
+}
+.academic-grade-pill small{
+  line-height:1.15;
+}
+:root[data-mode="dark"] .grade-medal-outer{
+  fill:#122b40;
+  stroke:#6ec6f2;
+}
+:root[data-mode="dark"] .grade-medal-inner{
+  fill:#3d3217;
+  stroke:#e0b949;
+}
+:root[data-mode="dark"] .academic-grade-badge-medal strong{
+  color:#f6db75;
+  text-shadow:none;
+}
+:root[data-mode="dark"] .grade-medal-star{
+  fill:#f0c64a;
+  stroke:#f0c64a;
+}
+@media (max-width:700px){
+  .academic-grade-showcase-card{
+    grid-template-columns:56px 1fr;
+  }
+  .academic-grade-emblem{
+    width:54px!important;
+    height:58px!important;
+  }
+  .academic-grade-badge-medal{
+    width:54px;
+    height:60px;
+  }
+}
