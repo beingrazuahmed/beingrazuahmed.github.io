@@ -744,6 +744,7 @@
 
       <div class="field-survey-conference-bridge">
         <div class="field-survey-conference-head">
+          <img class="conference-brand-logo-exact" src="assets/academic/conferences/icrast-2025-faculty-science-logo-original.jpeg?v=20260919-icrast-logo25" alt="Faculty of Science, University of Rajshahi logo" loading="eager" decoding="async">
           <div><div class="section-kicker">Conference progression</div><h4>${esc(c.fullName||c.shortName||'Conference presentation')}</h4><p>${esc(c.organizer||c.host||'')} · ${esc(c.date||'')}</p></div>
           <span class="badge">${esc(c.presentation||'Presentation')}</span>
         </div>
@@ -1085,7 +1086,7 @@
         <div class="conference-groups conference-groups-professional">
           ${groups.map((g,gi)=>`<article class="card conference-group-card ${g.id==='icrast-2025'?'conference-group-featured':''}" id="${esc(g.id||'conference-'+gi)}"><span class="conference-record-number" aria-hidden="true">${String(gi+1).padStart(2,'0')}</span>
             <div class="conference-group-head">
-              <div class="conference-group-identity"><span class="conference-event-monogram" aria-hidden="true">${esc((g.event||'CONF').replace(/\s+\d{4}$/,''))}</span><div><div class="section-kicker">${esc(g.event||'Conference')}</div><h3>${esc(g.full||g.event||'')}</h3></div></div>
+              <div class="conference-group-identity">${g.id==='icrast-2025'?'<img class="conference-event-logo" src="assets/academic/conferences/icrast-2025-faculty-science-logo-original.jpeg?v=20260919-icrast-logo25" alt="Faculty of Science, University of Rajshahi logo" loading="eager" decoding="async">':`<span class="conference-event-monogram" aria-hidden="true">${esc((g.event||'CONF').replace(/\s+\d{4}$/,''))}</span>`}<div><div class="section-kicker">${esc(g.event||'Conference')}</div><h3>${esc(g.full||g.event||'')}</h3></div></div>
               <div class="conference-group-actions">
                 ${g.url?`<a class="btn small" href="${esc(g.url)}" target="_blank" rel="noopener noreferrer">Official homepage ↗</a>`:''}
                 ${g.flyerUrl?`<a class="btn small ghost" href="${esc(g.flyerUrl)}" target="_blank" rel="noopener noreferrer">Official flyer / CFP ↗</a>`:''}
