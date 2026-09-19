@@ -1056,12 +1056,12 @@
       ${sectionHead('Technical & analytical skills','Evidence-linked research capability','Methods and technical capabilities grounded in published work, active manuscripts, academic projects, coursework, research software and professional training.')}
       <div class="grid grid-2 technical-skills-grid">${(D.technicalSkills||[]).map(technicalSkillCard).join('')}</div>
 
-      ${techMarquee()}
       <div class="skills-stack-head">
         <div><div class="section-kicker">Research software & technology stack</div><h3>Tools, libraries, development environments & system tools</h3></div>
         <p>Methods are separated from implementation tools. Libraries, development environments and reproducibility infrastructure are shown as an evidence-backed research stack rather than proficiency scores.</p>
       </div>
       ${researchToolLayout()}
+      ${techMarquee()}
       ${computationalEnvironmentPanel()}
     </div></section>`;
   }
