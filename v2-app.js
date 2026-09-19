@@ -260,7 +260,7 @@
       'shap':'https://cdn.jsdelivr.net/gh/shap/shap@master/docs/artwork/shap_logo.png',
       'seaborn':'https://cdn.jsdelivr.net/gh/gilbarbara/logos@main/logos/seaborn-icon.svg',
       'librosa':'https://cdn.jsdelivr.net/gh/librosa/librosa@main/docs/img/librosa_logo_dark.svg',
-      'pingouin':'https://cdn.jsdelivr.net/gh/raphaelvallat/pingouin@master/docs/pictures/pingouin.svg'
+      'pingouin':'https://cdn.jsdelivr.net/gh/raphaelvallat/pingouin@main/docs/pictures/pingouin.svg'
     };
     const devicons={
       'python':'python/python-original.svg',
