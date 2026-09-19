@@ -319,6 +319,7 @@
       'ultralytics':'ultralytics',
       'geopandas':'geopandas',
       'mendeley':'mendeley',
+      'diagrams.net':'diagramsdotnet',
     };
 
     if(customAssets[key]){
