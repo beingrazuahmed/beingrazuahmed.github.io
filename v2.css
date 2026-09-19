@@ -3306,25 +3306,53 @@
 
 /* Signature research-constellation layer */
 .mra-constellation{
-  position:fixed;
+  position:absolute;
   inset:0;
-  z-index:0;
-  width:100vw;
-  height:100vh;
+  z-index:1;
+  width:100%;
+  height:100%;
   pointer-events:none;
-  opacity:.30;
-  transition:opacity .35s ease;
+  opacity:.72;
 }
-body[data-page="home"] .mra-constellation{opacity:.90}
+
+body[data-page="home"] .mra-constellation{opacity:1}
 body[data-page="research"] .mra-constellation,
-body[data-page="network"] .mra-constellation{opacity:.76}
-body[data-page="projects"] .mra-constellation{opacity:.58}
-body[data-page="profile"] .mra-constellation{opacity:.48}
-body[data-page="academic"] .mra-constellation{opacity:.40}
+body[data-page="network"] .mra-constellation{opacity:.90}
+body[data-page="projects"] .mra-constellation{opacity:.78}
+body[data-page="profile"] .mra-constellation{opacity:.70}
+body[data-page="academic"] .mra-constellation{opacity:.62}
 body[data-page="publications"] .mra-constellation,
 body[data-page="conferences"] .mra-constellation,
 body[data-page="resources"] .mra-constellation,
-body[data-page="dashboard"] .mra-constellation{opacity:.26}
+body[data-page="dashboard"] .mra-constellation{opacity:.50}
+
+.hero-shell.has-mra-constellation{
+  position:relative;
+  isolation:isolate;
+}
+.hero-shell.has-mra-constellation::before{
+  z-index:0;
+}
+.hero-shell.has-mra-constellation>.mra-constellation{
+  z-index:1;
+}
+.hero-shell.has-mra-constellation>:not(.mra-constellation){
+  position:relative;
+  z-index:2;
+}
+
+.hero.has-mra-constellation{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+}
+.hero.has-mra-constellation>.mra-constellation{
+  z-index:0;
+}
+.hero.has-mra-constellation>.container{
+  position:relative;
+  z-index:1;
+}
 
 #site-header,#page-content,#site-footer{
   position:relative;
@@ -3338,16 +3366,13 @@ body[data-page="dashboard"] .mra-constellation{opacity:.26}
   background:color-mix(in srgb,var(--surface-2) 82%,transparent);
 }
 @media (max-width:720px){
-  .mra-constellation{opacity:.22}
-  body[data-page="home"] .mra-constellation{opacity:.62}
+  .mra-constellation{opacity:.54}
+  body[data-page="home"] .mra-constellation{opacity:.86}
   body[data-page="research"] .mra-constellation,
-  body[data-page="network"] .mra-constellation{opacity:.54}
+  body[data-page="network"] .mra-constellation{opacity:.72}
 }
 @media (prefers-reduced-motion:reduce){
-  .mra-constellation{
-    opacity:.20;
-    transition:none;
-  }
+  .mra-constellation{transition:none}
 }
 @media print{
   .mra-constellation{display:none!important}
