@@ -278,13 +278,13 @@
       'perplexity':'assets/academic/logos/vendor/perplexity.svg',
       'gemini notebook':'assets/academic/logos/gemini-notebook-logo.png',
       'microsoft copilot':'assets/academic/logos/vendor/copilot.png',
-      'quillbot':'https://www.google.com/s2/favicons?sz=128&domain=quillbot.com'
+      'quillbot':'https://www.google.com/s2/favicons?sz=128&domain=quillbot.com',
+      'c':'https://skillicons.dev/icons?i=c&theme=light'
     };
     const horizontalLogoKeys=new Set(['xgboost']);
     const devicons={
       'python':'python/python-original.svg',
       'r':'r/r-original.svg',
-      'c':'c/c-original.svg',
       'html':'html5/html5-original.svg',
       'html5':'html5/html5-original.svg',
       'javascript':'javascript/javascript-original.svg',
@@ -355,7 +355,7 @@
       bansdoc:{slug:'',label:'BANSDOC'}
     };
     if(type==='doi'){
-      return `<span class="scholar-brand-icon doi-brand-mark" aria-hidden="true"><img class="doi-logo-img" src="assets/academic/logos/vendor/doi.svg" alt="" loading="lazy" decoding="async"></span>`;
+      return `<span class="scholar-brand-icon doi-brand-mark" aria-hidden="true"><img class="doi-logo-img" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/DOI_logo.svg" alt="" loading="lazy" decoding="async"></span>`;
     }
     const x=map[type]||{slug:'',label:label||type};
     if(x.slug){
