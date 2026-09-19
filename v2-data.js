@@ -203,7 +203,7 @@
       { name: 'GeoPandas', short: 'GeoPandas', brand: 'geopandas', detail: 'Geospatial tabular data handling, mapping and spatial research workflows.' }
     ]},
     { group: 'Productivity & Collaboration', icon: 'workspace', items: [
-      { name: 'Microsoft Office', short: 'Microsoft Office', brand: 'microsoft365', detail: 'Microsoft Word for manuscripts and technical documents; Excel for tabular work and research data handling; PowerPoint for conference, teaching and research presentations.' },
+      { name: 'Microsoft Office', short: 'Microsoft 365 / Office', brand: 'microsoft365', detail: 'Microsoft Word for manuscripts and technical documents; Excel for tabular work and research data handling; PowerPoint for conference, teaching and research presentations.' },
       { name: 'Google Workspace', short: 'Google Workspace', brand: 'google', detail: 'Docs, Sheets, Slides, Drive and Forms for collaborative research, survey workflows and team documentation.' }
     ]},
     { group: 'Reference & Research Management', icon: 'publication', items: [
@@ -392,7 +392,7 @@
         { name: 'DeepSeek', short: 'DeepSeek', brand: 'deepseek' },
         { name: 'Grok', short: 'Grok', brand: '' },
         { name: 'Perplexity', short: 'Perplexity', brand: 'perplexity' },
-        { name: 'NotebookLM', short: 'NotebookLM', brand: '' },
+        { name: 'Gemini Notebook', short: 'Gemini Notebook', brand: 'googlegemini' },
         { name: 'Microsoft Copilot', short: 'Copilot', brand: 'microsoftcopilot' }
       ],
       principle: 'AI-assisted outputs are independently checked against the underlying data, code, source literature and domain context before being used in research or scholarly communication.',
