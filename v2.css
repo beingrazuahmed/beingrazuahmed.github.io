@@ -6120,3 +6120,120 @@ html[data-motion="reduced"]{scroll-behavior:auto!important}
   .conference-evidence-primary{grid-template-columns:78px minmax(0,1fr)}
   .conference-evidence-primary img{width:78px;height:62px}
 }
+
+
+/* === ICRAST verified documentary evidence · 2026-09-19 === */
+.verified-evidence-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  min-height:27px;
+  padding:4px 9px 4px 6px;
+  border:1px solid color-mix(in srgb,#1684c7 34%,var(--line));
+  border-radius:999px;
+  background:color-mix(in srgb,#eaf7ff 78%,var(--surface));
+  color:color-mix(in srgb,#075f94 92%,var(--text));
+  font-size:10.5px;
+  font-weight:900;
+  line-height:1;
+  letter-spacing:.02em;
+  white-space:nowrap;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.72);
+}
+.verified-evidence-mark{
+  width:17px;
+  height:17px;
+  display:grid;
+  place-items:center;
+  flex:0 0 17px;
+  border-radius:50%;
+  background:#1586c7;
+  color:#fff;
+  font-size:11px;
+  font-weight:1000;
+  line-height:1;
+  box-shadow:0 0 0 2px color-mix(in srgb,#1586c7 13%,transparent);
+}
+.conference-evidence-type-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  margin-bottom:2px;
+}
+.conference-evidence-type-row>span:first-child{
+  color:var(--muted);
+  font-size:10.5px;
+  font-weight:850;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.conference-evidence-item.is-verified{
+  border-color:color-mix(in srgb,#1684c7 28%,var(--line));
+  box-shadow:inset 3px 0 0 color-mix(in srgb,#1684c7 74%,transparent);
+}
+.evidence-source-name{
+  display:block;
+  margin-top:4px;
+  color:var(--muted);
+  font-size:9.7px!important;
+  line-height:1.35;
+  overflow-wrap:anywhere;
+}
+.conference-evidence-secondary-row{
+  display:flex;
+  flex-wrap:wrap;
+  border-top:1px solid var(--line);
+}
+.conference-evidence-secondary-row .conference-evidence-secondary{
+  flex:1 1 180px;
+  border-top:0;
+}
+.conference-evidence-secondary-row .conference-evidence-secondary+.conference-evidence-secondary{
+  border-left:1px solid var(--line);
+}
+.conference-evidence-link-wrap{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  flex-wrap:wrap;
+}
+.conference-evidence-link-wrap .verified-evidence-badge{
+  min-height:24px;
+  padding:3px 7px 3px 5px;
+  font-size:9.8px;
+}
+.conference-evidence-link-wrap .verified-evidence-mark{
+  width:15px;
+  height:15px;
+  flex-basis:15px;
+  font-size:10px;
+}
+.certificate-verified-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:0 0 9px;
+}
+.gallery-evidence-meta .verified-evidence-badge{
+  margin-left:auto;
+}
+.conference-flyer-document img{
+  object-fit:cover;
+  object-position:center;
+}
+:root[data-mode="dark"] .verified-evidence-badge{
+  background:color-mix(in srgb,#0b3955 66%,var(--surface));
+  color:#bfe8ff;
+  border-color:color-mix(in srgb,#65c3f2 34%,var(--line));
+  box-shadow:none;
+}
+@media(max-width:620px){
+  .conference-evidence-type-row{align-items:flex-start;flex-direction:column}
+  .conference-evidence-secondary-row .conference-evidence-secondary{flex-basis:100%}
+  .conference-evidence-secondary-row .conference-evidence-secondary+.conference-evidence-secondary{border-left:0;border-top:1px solid var(--line)}
+  .certificate-verified-row{align-items:flex-start}
+  .gallery-evidence-meta .verified-evidence-badge{margin-left:0}
+}
