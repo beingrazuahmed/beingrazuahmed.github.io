@@ -4520,3 +4520,18 @@ body[data-page="resources"] .mra-constellation{opacity:.34}
   .research-theme-tags span:last-child{border-bottom:0}
   .home-network-secondary{grid-template-columns:1fr}
 }
+
+
+/* === Mendeley Research Management Card === */
+.tool-bottom-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);
+  gap:18px;
+  align-items:stretch;
+}
+.tool-bottom-grid .tool-group-modern{
+  min-height:100%;
+}
+@media (max-width:900px){
+  .tool-bottom-grid{grid-template-columns:1fr}
+}
