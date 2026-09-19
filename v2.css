@@ -7641,3 +7641,12 @@ html[data-motion="reduced"]{scroll-behavior:auto!important}
 #academic-skills .tech-marquee-wrap + .compute-environments{
   margin-top:30px;
 }
+
+
+/* === ICRAST original-logo pending cleanup · 2026-09-19 === */
+.field-survey-conference-head{
+  grid-template-columns:minmax(0,1fr) auto!important;
+}
+.field-survey-conference-head>div{
+  min-width:0;
+}
