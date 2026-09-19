@@ -1099,9 +1099,9 @@
     const presentedWorks=conferencePapers.filter(p=>(p.role||'').includes('Presenting Author')||p.presentedBy==='Md. Razu Ahmed');
     const conferenceAwards=conferencePapers.filter(p=>(p.role||'').includes('Award')).length;
     const authorLine=s=>esc(s||'').split('Md. Razu Ahmed').join('<strong class="conference-self-author">Md. Razu Ahmed</strong>');
-    return `${pageHero('Conferences','Conference publications, oral/poster presentations and evidence.')}
-      <section class="section"><div class="container">
-        ${sectionHead('Conference record','Eight contributions · three presentations','Conference records are grouped by event so publication context, presentation roles and official event links remain clear.')}
+    return `${pageHero('Conferences','Research dissemination, conference publications, presentations and documentary evidence.')}
+      <section class="section conference-profile-section"><div class="container">
+        ${sectionHead('Conference portfolio','Research dissemination & scholarly communication','Conference activity is organized by event, authorship role and source evidence so each contribution remains easy to verify and explore.')}
         <div class="conference-profile-stats" aria-label="Conference portfolio summary">
           <article><strong>${groups.length}</strong><span>Conference events</span><small>2025–2026</small></article>
           <article><strong>${conferencePapers.length}</strong><span>Contributions</span><small>Authored or co-authored</small></article>
@@ -1134,10 +1134,34 @@
                 <h4>${esc(p.title||'')}</h4>
                 <p class="conference-authors">${authorLine(p.authors)}</p>
                 ${p.presentedBy?`<p class="conference-presented-by"><strong>Presented by:</strong> ${esc(p.presentedBy)}</p>`:''}
-                ${(p.evidence||[]).length?`<div class="conference-paper-evidence-links">${p.evidence.map(ev=>`<span class="conference-evidence-link-wrap"><a href="${esc(ev.href||ev.asset||'#')}" ${(ev.href||ev.asset||'').startsWith('http')||ev.asset?'target="_blank" rel="noopener noreferrer"':''}>${esc(ev.label||ev.type||'Evidence')} ↗</a>${ev.verified?verifiedEvidenceBadge('Verified'):''}</span>`).join('')}${p.evidence.filter(ev=>ev.galleryHref).map(ev=>`<a class="is-gallery-link" href="${esc(ev.galleryHref)}">Gallery evidence →</a>`).join('')}${p.evidence.filter(ev=>ev.officialHref).map(ev=>`<a class="is-official-link" href="${esc(ev.officialHref)}" target="_blank" rel="noopener noreferrer">Official source ↗</a>`).join('')}</div>`:''}
+                ${(p.evidence||[]).length?`<div class="conference-paper-evidence-links">${p.evidence.map(ev=>`<span class="conference-evidence-link-wrap"><a href="${esc(ev.href||ev.asset||'#')}" ${(ev.href||ev.asset||'#')!=='#'?'target="_blank" rel="noopener noreferrer"':''}>${esc(ev.label||ev.type||'Evidence')} ↗</a></span>`).join('')}${p.evidence.filter(ev=>ev.galleryHref).map(ev=>`<a class="is-gallery-link" href="${esc(ev.galleryHref)}">Gallery evidence →</a>`).join('')}${p.evidence.filter(ev=>ev.officialHref).map(ev=>`<a class="is-official-link" href="${esc(ev.officialHref)}" target="_blank" rel="noopener noreferrer">Official source ↗</a>`).join('')}</div>`:''}
                 ${p.citation&&p.citationIEEE?`<details class="citation-details conference-list-citation"><summary>APA & IEEE citation</summary>${dualAcademicCitation(p.citation,p.citationIEEE)}</details>`:''}
               </article>`).join('')}
             </div>
+            ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAST 2025 source documents">
+              <div class="conference-source-hub-head">
+                <div><div class="section-kicker">Source documents</div><h4>ICRAST 2025 evidence library</h4><p>Paper 440 and Paper 461 remain separate records, with the exact certificate, brochure, proceedings and presentation files linked below.</p></div>
+                <span class="paper-id-chip">2 papers · 5 source records</span>
+              </div>
+              <div class="conference-source-grid">
+                <article class="conference-source-card source-visual is-verified-document">
+                  ${verifiedCornerRibbon()}
+                  <a href="assets/academic/conferences/icrast-2025-paper-440-certificate.jpeg" target="_blank" rel="noopener noreferrer"><span class="conference-source-preview"><img src="assets/academic/conferences/icrast-2025-paper-440-certificate.jpeg" alt="ICRAST 2025 Paper 440 certificate" loading="lazy" decoding="async"></span><span class="conference-source-copy"><small>Certificate · Paper 440</small><strong>Certificate of Achievement</strong><span>Md. Razu Ahmed · Presenting Author</span></span></a>
+                </article>
+                <article class="conference-source-card source-pdf">
+                  <a href="assets/academic/conferences/icrast-2025-documents/icrast-2025-paper-440-proceedings.pdf" target="_blank" rel="noopener noreferrer"><span class="conference-source-pdfmark">PDF</span><span class="conference-source-copy"><small>Proceedings · Paper 440</small><strong>Book of Abstracts</strong><span>Paper ID 440 · p. 120</span></span></a>
+                </article>
+                <article class="conference-source-card source-pdf">
+                  <a href="assets/academic/conferences/icrast-2025-documents/icrast-2025-paper-461-proceedings.pdf" target="_blank" rel="noopener noreferrer"><span class="conference-source-pdfmark">PDF</span><span class="conference-source-copy"><small>Proceedings · Paper 461</small><strong>Book of Abstracts</strong><span>Paper ID 461 · p. 126</span></span></a>
+                </article>
+                <article class="conference-source-card source-pdf">
+                  <a href="assets/academic/conferences/icrast-2025-documents/icrast-2025-paper-440-presentation.pdf" target="_blank" rel="noopener noreferrer"><span class="conference-source-pdfmark">PDF</span><span class="conference-source-copy"><small>Presentation · Paper 440</small><strong>Presentation Deck</strong><span>Md. Razu Ahmed · 14 November 2025</span></span></a>
+                </article>
+                <article class="conference-source-card source-visual source-brochure">
+                  <a href="assets/academic/conferences/icrast-2025-brochure.jpg" target="_blank" rel="noopener noreferrer"><span class="conference-source-preview"><img src="assets/academic/conferences/icrast-2025-brochure.jpg" alt="ICRAST 2025 conference brochure" loading="lazy" decoding="async"></span><span class="conference-source-copy"><small>Conference document</small><strong>ICRAST 2025 Brochure</strong><span>Faculty of Science · University of Rajshahi</span></span></a>
+                </article>
+              </div>
+            </section>`:''}
           </article>`).join('')}
         </div>
       </div></section>`;
