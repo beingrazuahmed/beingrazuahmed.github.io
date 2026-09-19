@@ -252,6 +252,16 @@
     const fallback=esc((item.short||item.name||'?').split(/\s+/).map(x=>x[0]).join('').slice(0,4).toUpperCase());
 
     const deviconBase='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/';
+    const customAssets={
+      'ibm spss statistics':'https://cdn.jsdelivr.net/gh/AdittoAhosanKabbo/adittoahosankabbo.github.io@main/assets/images/LOGO/SPSS.png',
+      'statsmodels':'https://cdn.jsdelivr.net/gh/statsmodels/statsmodels@main/docs/source/images/statsmodels-logo-v2-no-text.svg',
+      'lightgbm':'https://cdn.jsdelivr.net/gh/lightgbm-org/LightGBM@main/docs/logo/LightGBM-logo-hex.svg',
+      'catboost':'https://cdn.jsdelivr.net/gh/catboost/catboost@master/logo/catboost.png',
+      'shap':'https://cdn.jsdelivr.net/gh/shap/shap@master/docs/artwork/shap_logo.png',
+      'seaborn':'https://cdn.jsdelivr.net/gh/gilbarbara/logos@main/logos/seaborn-icon.svg',
+      'librosa':'https://cdn.jsdelivr.net/gh/librosa/librosa@main/docs/img/librosa_logo_dark.svg',
+      'pingouin':'https://cdn.jsdelivr.net/gh/raphaelvallat/pingouin@master/docs/pictures/pingouin.svg'
+    };
     const devicons={
       'python':'python/python-original.svg',
       'r':'r/r-original.svg',
@@ -275,7 +285,8 @@
       'pytorch':'pytorch/pytorch-original.svg',
       'torchvision':'pytorch/pytorch-original.svg',
       'opencv':'opencv/opencv-original.svg',
-      'matplotlib':'matplotlib/matplotlib-original.svg'
+      'matplotlib':'matplotlib/matplotlib-original.svg',
+      'minitab':'minitab/minitab-original.svg'
     };
 
     const simpleSlug={
@@ -296,6 +307,10 @@
       'notebooklm':'googlenotebooklm',
       'microsoft copilot':'microsoftcopilot'
     };
+
+    if(customAssets[key]){
+      return `<span class="tech-logo tech-logo-digital tech-logo-custom"><img src="${customAssets[key]}" alt="" loading="lazy" decoding="async" data-tech-fallback="${fallback}"></span>`;
+    }
 
     if(key==='tensorflow / keras'){
       return `<span class="tech-logo tech-logo-pair" aria-hidden="true">
