@@ -7445,3 +7445,44 @@ html[data-motion="reduced"]{scroll-behavior:auto!important}
   border-color:color-mix(in srgb,#11a77e 58%,var(--line));
   background:color-mix(in srgb,#11a77e 10%,var(--surface));
 }
+
+
+/* === Inline brochure-crop ICRAST logo · 2026-09-19 === */
+.conference-event-logo,
+.conference-brand-logo-exact{
+  display:block!important;
+  flex:0 0 auto;
+  overflow:hidden!important;
+  background:#fff!important;
+  border:1px solid color-mix(in srgb,var(--accent) 20%,var(--line))!important;
+  box-shadow:0 8px 22px rgba(20,58,84,.07)!important;
+}
+.conference-event-logo{
+  width:86px!important;
+  height:86px!important;
+  padding:4px!important;
+  border-radius:18px!important;
+}
+.conference-brand-logo-exact{
+  width:76px!important;
+  height:76px!important;
+  padding:4px!important;
+  border-radius:16px!important;
+}
+.conference-event-logo image,
+.conference-brand-logo-exact image{
+  image-rendering:auto;
+}
+.field-survey-conference-actions .academic-certificate-link{
+  border-color:color-mix(in srgb,#10a77e 42%,var(--line))!important;
+  background:color-mix(in srgb,#10a77e 7%,var(--surface))!important;
+}
+.field-survey-conference-actions .academic-certificate-link:hover,
+.field-survey-conference-actions .academic-certificate-link:focus-visible{
+  border-color:color-mix(in srgb,#10a77e 64%,var(--line))!important;
+  background:color-mix(in srgb,#10a77e 11%,var(--surface))!important;
+}
+@media(max-width:700px){
+  .conference-event-logo{width:70px!important;height:70px!important}
+  .conference-brand-logo-exact{width:64px!important;height:64px!important}
+}
