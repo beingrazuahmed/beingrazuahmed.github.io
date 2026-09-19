@@ -741,71 +741,24 @@
 
       <div class="progression progression-3">${(f.progression||[]).map(x=>`<div class="step">${esc(x)}</div>`).join('')}</div>
 
-      <div class="conference-evidence-card">
-        <div class="conference-evidence-head conference-evidence-head-branded">
+      <div class="field-survey-conference-bridge">
+        <div class="field-survey-conference-head">
           <span class="conference-brand-monogram" aria-hidden="true">ICRAST</span>
-          <div class="conference-evidence-title"><div class="section-kicker">Conference presentation</div><h4>${esc(c.fullName||c.shortName||'')}</h4></div>
-          <span class="badge">${esc(c.presentation||'')}</span>
+          <div><div class="section-kicker">Conference progression</div><h4>${esc(c.fullName||c.shortName||'Conference presentation')}</h4><p>${esc(c.organizer||c.host||'')} · ${esc(c.date||'')}</p></div>
+          <span class="badge">${esc(c.presentation||'Presentation')}</span>
         </div>
-        ${c.summary?`<p class="conference-summary">${esc(c.summary)}</p>`:''}
-        <div class="conference-record-grid">
-          <div class="conference-record-main">
-            <div class="conference-meta-list">
-              <div class="conference-meta-row">${uiIcon('calendar')}<div><span>Date</span><strong>${esc(c.date||'')}</strong></div></div>
-              <div class="conference-meta-row">${uiIcon('location')}<div><span>Venue</span><strong>${esc(c.venue||c.host||'')}</strong></div></div>
-              <div class="conference-meta-row">${uiIcon('school')}<div><span>Organized by</span><strong>${esc(c.organizer||c.host||'')}</strong></div></div>
-              <div class="conference-meta-row">${uiIcon('conference')}<div><span>Presentation</span><strong>${esc(c.presentation||'')}${c.role?` · ${esc(c.role)}`:''}</strong></div></div>
-              <div class="conference-meta-row">${uiIcon('publication')}<div><span>Paper ID</span><strong>${esc(c.paperId||'')}</strong></div></div>
-              <div class="conference-meta-row">${uiIcon('publication')}<div><span>Conference record</span><strong>${esc(c.source||'')}${c.page?` · ${esc(c.page)}`:''}</strong></div></div>
-            </div>
-            <div class="conference-contributions">
-              <div class="conference-contributions-head"><span class="project-block-label">ICRAST contributions</span><span>2 papers</span></div>
-              ${(c.contributions||[]).map(p=>`<article class="conference-contribution ${p.paperId===c.paperId?'is-primary':''}">
-                <div class="conference-contribution-meta">
-                  <span class="paper-id-chip">Paper ID ${esc(p.paperId||'')}</span>
-                  <span>${esc(p.presentation||'')}${p.role?` · ${esc(p.role)}`:''}</span>
-                  ${p.page?`<span>${esc(p.page)}</span>`:''}
-                </div>
-                <strong>${esc(p.title||'')}</strong>
-                <p>${p.presentedBy?`Presented by ${esc(p.presentedBy)}`:''}</p>
-              </article>`).join('')}
-            </div>
-            ${((c.contributions||[]).find(p=>p.paperId==='440')?.evidence||[]).length?`<section class="conference-evidence-materials" id="icrast-440-evidence">
-              <div class="conference-evidence-materials-head">
-                <div><span class="project-block-label">Paper 440 · Evidence & materials</span><p>Verified conference records connected to the presented AI-employment study.</p></div>
-                <span class="paper-id-chip">Paper ID 440</span>
-              </div>
-              <div class="conference-evidence-grid">
-                ${((c.contributions||[]).find(p=>p.paperId==='440')?.evidence||[]).map(ev=>`<article class="conference-evidence-item ${ev.verified?'is-verified is-verified-document':''} evidence-${esc((ev.type||'evidence').toLowerCase())}">${ev.verified?verifiedCornerRibbon():''}
-                  <a class="conference-evidence-primary" href="${esc(ev.href||ev.asset||'#')}" target="_blank" rel="noopener noreferrer">
-                    ${ev.asset&&['certificate','brochure'].includes((ev.type||'').toLowerCase())?`<img class="conference-evidence-image" src="${esc(ev.asset)}" alt="${esc(ev.label||'ICRAST evidence')}" loading="lazy" decoding="async">`:`<div class="conference-document-thumb" aria-hidden="true">${uiIcon('publication')}<span>${(ev.type||'Document').toLowerCase()==='slides'?'SLIDES':'PDF'}</span></div>`}
-                    <div class="conference-evidence-copy"><div class="conference-evidence-type-row"><span>${esc(ev.type||'Evidence')}</span></div><strong>${esc(ev.label||'Documentary evidence')}</strong><small>${esc(ev.note||'')}</small>${ev.sourceFile?`<small class="evidence-source-name">Source file · ${esc(ev.sourceFile)}</small>`:''}</div>
-                  </a>
-                  ${ev.galleryHref||ev.officialHref?`<div class="conference-evidence-secondary-row">${ev.galleryHref?`<a class="conference-evidence-secondary" href="${esc(ev.galleryHref)}">View certificate in Gallery →</a>`:''}${ev.officialHref?`<a class="conference-evidence-secondary" href="${esc(ev.officialHref)}" target="_blank" rel="noopener noreferrer">Official CFP source ↗</a>`:''}</div>`:''}
-                </article>`).join('')}
-              </div>
-            </section>`:''}
-            <div class="conference-link-row">
-              ${c.url?`<a class="btn small" href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">Official conference website ↗</a>`:''}
-              ${c.flyerUrl?`<a class="btn small ghost" href="${esc(c.flyerUrl)}" target="_blank" rel="noopener noreferrer">Official flyer / CFP PDF ↗</a>`:''}
-              <a class="btn small ghost" href="conferences.html#icrast-2025">Full conference profile →</a>
-            </div>
-          </div>
-          ${c.flyerUrl?`<figure class="conference-flyer-evidence conference-document-evidence conference-brochure-evidence">
-            <a class="conference-flyer-image-link" href="assets/academic/conferences/icrast-2025-brochure.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open the exact ICRAST 2025 conference brochure image">
-              <img src="assets/academic/conferences/icrast-2025-brochure.jpg" alt="2nd ICRAST 2025 conference brochure" loading="lazy" decoding="async">
-            </a>
-            <figcaption>
-              <strong>ICRAST 2025 Conference Brochure</strong>
-              <span>Exact uploaded brochure · 14–15 November 2025 · Faculty of Science, University of Rajshahi</span>
-            </figcaption>
-            <div class="conference-brochure-actions">
-              <a class="conference-flyer-link" href="assets/academic/conferences/icrast-2025-brochure.jpg" target="_blank" rel="noopener noreferrer">${uiIcon('publication')}<span>Open brochure image ↗</span></a>
-              <a class="conference-flyer-link" href="${esc(c.flyerUrl)}" target="_blank" rel="noopener noreferrer">${uiIcon('publication')}<span>Official CFP source ↗</span></a>
-            </div>
-          </figure>`:''}
+        ${c.summary?`<p class="field-survey-conference-summary">${esc(c.summary)}</p>`:''}
+        <div class="field-survey-conference-facts">
+          <div><span>Paper ID</span><strong>${esc(c.paperId||'440')}</strong></div>
+          <div><span>Role</span><strong>${esc(c.role||'Presenting Author')}</strong></div>
+          <div><span>Record</span><strong>${esc(c.source||'Book of Abstracts')}${c.page?` · ${esc(c.page)}`:''}</strong></div>
         </div>
-        ${(c.contributions||[]).length?`<details class="citation-details conference-citation-details"><summary>View APA & IEEE citations for both ICRAST papers</summary><div class="conference-paper-citations">${c.contributions.map(p=>`<section><div class="conference-paper-citation-head"><span class="paper-id-chip">Paper ID ${esc(p.paperId||'')}</span><strong>${esc(p.title||'')}</strong></div>${dualAcademicCitation(p.citation,p.citationIEEE)}</section>`).join('')}</div></details>`:c.citation?`<details class="citation-details"><summary>${academicCitationMode?'View APA & IEEE citations':'View bibliographic citation'}</summary>${academicCitationMode?dualAcademicCitation(c.citation,c.citationIEEE):`<p>${esc(c.citation)}</p>`}</details>`:''}
+        <div class="academic-progression-line" aria-label="Academic research progression"><span>Field Survey</span><i aria-hidden="true">→</i><span>ICRAST Presentation</span><i aria-hidden="true">→</i><span>Journal Article</span></div>
+        <div class="field-survey-conference-actions">
+          <a class="btn small" href="conferences.html#icrast-2025">View Full Conference Profile</a>
+          <a class="btn small ghost" href="assets/academic/conferences/icrast-2025-documents/icrast-2025-paper-440-proceedings.pdf" target="_blank" rel="noopener noreferrer">Proceedings PDF ↗</a>
+          <a class="btn small ghost" href="assets/academic/conferences/icrast-2025-documents/icrast-2025-paper-440-presentation.pdf" target="_blank" rel="noopener noreferrer">Presentation PDF ↗</a>
+        </div>
       </div>
 
       ${f.article?`<div class="journal-progression journal-progression-rich">
@@ -1068,7 +1021,6 @@
     <section class="section alt" id="academic-fieldwork"><div class="container">
       ${sectionHead('Academic research & fieldwork','B.Sc. Statistical Field Survey','A supervised field-based research component within the B.Sc. (Hons.) curriculum.')}
       ${fieldSurveyCard()}
-      <div class="language-cta academic-conference-cta"><a class="btn" href="conferences.html#icrast-2025">View Full Conference Profile</a></div>
     </div></section>
 
     <section class="section" id="academic-teaching"><div class="container">
