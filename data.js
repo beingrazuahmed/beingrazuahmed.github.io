@@ -177,7 +177,13 @@ window.PORTFOLIO_DATA = {
           authors: "Md. Razu Ahmed, Md. Abdur Rakib, Abu Bakar Shiddik, Md. Shamim Reza",
           page: "p. 120", presentation: "Oral Presentation", role: "Presenting Author", presentedBy: "Md. Razu Ahmed",
           citation: "Ahmed, M. R., Rakib, M. A., Shiddik, A. B., & Reza, M. S. (2025). Measuring attitudes toward AI’s impact on the job market in Bangladesh: A study at Pabna University of Science and Technology. In Book of Abstracts, 2nd International Conference on Recent Advances in Science and Technology (ICRAST 2025) (p. 120). Faculty of Science, University of Rajshahi.",
-          citationIEEE: "M. R. Ahmed, M. A. Rakib, A. B. Shiddik, and M. S. Reza, “Measuring Attitudes toward AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology,” in Book of Abstracts, 2nd International Conference on Recent Advances in Science and Technology (ICRAST 2025), Rajshahi, Bangladesh, Nov. 14–15, 2025, p. 120."
+          citationIEEE: "M. R. Ahmed, M. A. Rakib, A. B. Shiddik, and M. S. Reza, “Measuring Attitudes toward AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology,” in Book of Abstracts, 2nd International Conference on Recent Advances in Science and Technology (ICRAST 2025), Rajshahi, Bangladesh, Nov. 14–15, 2025, p. 120.",
+          evidence: [
+            { type:"Certificate", label:"Certificate of Achievement", asset:"assets/academic/conferences/icrast-2025-paper-440-certificate.jpg", href:"assets/academic/conferences/icrast-2025-paper-440-certificate.jpg", note:"Md. Razu Ahmed · Paper ID 440 · ICRAST 2025", galleryHref:"gallery.html#icrast-440-certificate-gallery" },
+            { type:"Proceedings", label:"Book of Abstracts · Paper 440", asset:"assets/academic/conferences/icrast-2025-paper-440-proceedings.webp", href:"assets/academic/conferences/icrast-2025-paper-440-proceedings.webp", note:"Abstract record · p. 120" },
+            { type:"Slides", label:"Presentation deck · Paper 440", asset:"assets/academic/conferences/icrast-2025-paper-440-presentation.webp", href:"assets/academic/conferences/icrast-2025-paper-440-presentation.webp", note:"Md. Razu Ahmed (presenting) · 14 November 2025" },
+            { type:"Brochure", label:"Official conference brochure", asset:"assets/academic/conferences/icrast-2025-brochure.webp", href:"https://www.ru.ac.bd/wp-content/uploads/2025/08/CFP.pdf", note:"2nd ICRAST 2025 · Faculty of Science, University of Rajshahi" }
+          ]
         },
         {
           paperId: "461",
@@ -185,7 +191,10 @@ window.PORTFOLIO_DATA = {
           authors: "Md. Abdur Rakib, Md. Razu Ahmed, Abu Bakar Shiddik, Md. Shamim Reza",
           page: "p. 126", presentation: "Oral Presentation", role: "Co-author", presentedBy: "Md. Abdur Rakib",
           citation: "Rakib, M. A., Ahmed, M. R., Shiddik, A. B., & Reza, M. S. (2025). Facial emotion recognition with dimensionality reduction: A comparative study of PCA, FA, and combined PCA–FA with a CNN baseline. In Book of Abstracts, 2nd International Conference on Recent Advances in Science and Technology (ICRAST 2025) (p. 126). Faculty of Science, University of Rajshahi.",
-          citationIEEE: "M. A. Rakib, M. R. Ahmed, A. B. Shiddik, and M. S. Reza, “Facial Emotion Recognition with Dimensionality Reduction: A Comparative Study of PCA, FA, and Combined PCA–FA with a CNN Baseline,” in Book of Abstracts, 2nd International Conference on Recent Advances in Science and Technology (ICRAST 2025), Rajshahi, Bangladesh, Nov. 14–15, 2025, p. 126."
+          citationIEEE: "M. A. Rakib, M. R. Ahmed, A. B. Shiddik, and M. S. Reza, “Facial Emotion Recognition with Dimensionality Reduction: A Comparative Study of PCA, FA, and Combined PCA–FA with a CNN Baseline,” in Book of Abstracts, 2nd International Conference on Recent Advances in Science and Technology (ICRAST 2025), Rajshahi, Bangladesh, Nov. 14–15, 2025, p. 126.",
+          evidence: [
+            { type:"Proceedings", label:"Book of Abstracts · Paper 461", note:"Separate co-authored contribution · p. 126" }
+          ]
         }
       ]
     }
@@ -266,7 +275,7 @@ window.PORTFOLIO_DATA = {
   ],
 
   gallery: [
-    { title: "ICRAST 2025 — Paper 440 Certificate", category: "Conference", paperId: "440", caption: "Certificate of Achievement connected to the AI-employment oral presentation at the 2nd ICRAST 2025, Faculty of Science, University of Rajshahi.", asset: "assets/academic/conferences/icrast-2025-paper-440-certificate.jpg", related: "academic.html#icrast-440-evidence" },
+    { id: "icrast-440-certificate-gallery", title: "ICRAST 2025 — Paper 440 Certificate of Achievement", category: "Conference", evidenceType: "Certificate", paperId: "440", date: "14–15 November 2025", issuer: "Faculty of Science, University of Rajshahi", caption: "Certificate issued to Md. Razu Ahmed for Paper ID 440, “Measuring Attitudes toward AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology,” at the 2nd ICRAST 2025.", asset: "assets/academic/conferences/icrast-2025-paper-440-certificate.jpg", href: "assets/academic/conferences/icrast-2025-paper-440-certificate.jpg", related: "academic.html#icrast-440-evidence" },
     { title: "JSR Award — ICASDS 2025", category: "Award", caption: "Recognition for outstanding poster performance at ICASDS 2025.", asset: "assets/gallery/jsr-award-icasds-2025.jpg" },
     { title: "EFAST 2026 Oral Presentation", category: "Conference", caption: "Presenting Author for the diabetic-retinopathy grading study.", asset: "assets/gallery/efast-2026-oral.jpg" },
     { title: "ICRAST 2025 Oral Presentation", category: "Conference", caption: "Oral presentation on AI and employment perceptions in Bangladesh.", asset: "assets/gallery/icrast-2025-oral.jpg" },
