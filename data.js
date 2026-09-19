@@ -266,6 +266,7 @@ window.PORTFOLIO_DATA = {
   ],
 
   gallery: [
+    { title: "ICRAST 2025 — Paper 440 Certificate", category: "Conference", paperId: "440", caption: "Certificate of Achievement connected to the AI-employment oral presentation at the 2nd ICRAST 2025, Faculty of Science, University of Rajshahi.", asset: "assets/academic/conferences/icrast-2025-paper-440-certificate.jpg", related: "academic.html#icrast-440-evidence" },
     { title: "JSR Award — ICASDS 2025", category: "Award", caption: "Recognition for outstanding poster performance at ICASDS 2025.", asset: "assets/gallery/jsr-award-icasds-2025.jpg" },
     { title: "EFAST 2026 Oral Presentation", category: "Conference", caption: "Presenting Author for the diabetic-retinopathy grading study.", asset: "assets/gallery/efast-2026-oral.jpg" },
     { title: "ICRAST 2025 Oral Presentation", category: "Conference", caption: "Oral presentation on AI and employment perceptions in Bangladesh.", asset: "assets/gallery/icrast-2025-oral.jpg" },
