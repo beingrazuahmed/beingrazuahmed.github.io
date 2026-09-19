@@ -411,9 +411,10 @@
       <div class="grid grid-3 tool-grid-modern tool-grid-primary">${primary.map(toolGroupCard).join('')}</div>
       <div class="tool-grid-research">
         ${libs?`<div class="tool-libraries-wide">${toolGroupCard(libs)}</div>`:''}
-        <div class="tool-side-stack">${env?toolGroupCard(env):''}${version?toolGroupCard(version):''}</div>
+        <div class="tool-side-stack">${env?toolGroupCard(env):''}</div>
       </div>
       <div class="tool-bottom-grid">
+        ${version?toolGroupCard(version):''}
         ${productivity?toolGroupCard(productivity):''}
         ${reference?toolGroupCard(reference):''}
       </div>
