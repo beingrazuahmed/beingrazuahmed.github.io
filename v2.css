@@ -5423,7 +5423,7 @@ html[data-motion="reduced"]{scroll-behavior:auto!important}
 .tool-item-modern:has(.tech-logo-wordmark){
   grid-template-columns:48px minmax(0,1fr)!important;
 }
-#academic-skills .tech-marquee-wrap{display:none!important}
+
 @media (max-width:900px){
   .academic-jump-nav{top:64px}
   #academic-education,
@@ -7622,4 +7622,22 @@ html[data-motion="reduced"]{scroll-behavior:auto!important}
   #academic-skills .tech-marquee-wrap + .compute-environments{
     margin-top:24px;
   }
+}
+
+
+/* === Academic technology marquee visibility fix · 2026-09-19 === */
+#academic-skills .tech-marquee-wrap{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+}
+#academic-skills .tool-layout + .tech-marquee-wrap{
+  display:block!important;
+  margin-top:30px;
+  margin-bottom:0;
+  padding-top:26px;
+  border-top:1px solid var(--line);
+}
+#academic-skills .tech-marquee-wrap + .compute-environments{
+  margin-top:30px;
 }
