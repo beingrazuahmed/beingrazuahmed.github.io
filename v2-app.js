@@ -93,6 +93,7 @@
     const applyTextScale=value=>{
       const scale=normalizeScale(value);
       root.style.setProperty('--mra-text-scale',scale+'%');
+      root.style.setProperty('--mra-text-factor',String(scale/100));
       root.dataset.textScale=String(scale);
       store.setItem('mra-text-scale',String(scale));
       const sel=$('#textSel'); if(sel) sel.value=String(scale);
