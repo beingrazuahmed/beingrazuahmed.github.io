@@ -4120,3 +4120,52 @@ body[data-page="resources"] .mra-constellation{opacity:.34}
   .portrait-frame-editorial{transform:none!important;transition:none!important}
   .portrait-frame-inner-editorial .portrait-shine{opacity:.25}
 }
+
+/* === V3.1 Final Hero Name Lock === */
+.hero-copy{min-width:0}
+.hero-title.hero-name{
+  display:flex!important;
+  flex-flow:row nowrap!important;
+  align-items:baseline;
+  gap:.15em;
+  width:max-content;
+  max-width:none;
+  white-space:nowrap!important;
+  font-size:clamp(3.9rem,5.65vw,6.25rem);
+  line-height:.92;
+  letter-spacing:-.072em;
+}
+.hero-name-primary,
+.hero-name-accent{
+  display:inline-block;
+  flex:0 0 auto;
+  white-space:nowrap!important;
+}
+.hero-name-primary{color:var(--text)}
+.hero-name-accent{
+  color:#1597d4!important;
+}
+.hero-title.hero-name>.hero-name-node{display:none!important}
+
+@media (max-width:1180px){
+  .hero-title.hero-name{font-size:clamp(3.35rem,5.25vw,5rem)}
+}
+@media (max-width:980px){
+  .hero-title.hero-name{font-size:clamp(3rem,7.2vw,4.55rem)}
+}
+@media (max-width:760px){
+  .hero-title.hero-name{
+    font-size:clamp(2.55rem,9.2vw,3.85rem);
+    letter-spacing:-.06em;
+    gap:.13em;
+  }
+}
+@media (max-width:520px){
+  .hero-title.hero-name{
+    font-size:clamp(2.08rem,9.6vw,3rem);
+    letter-spacing:-.055em;
+  }
+}
+:root[data-mode="dark"] .hero-name-accent{
+  color:#59c2ff!important;
+}
