@@ -204,7 +204,8 @@
     ]},
     { group: 'Productivity & Collaboration', icon: 'workspace', items: [
       { name: 'Microsoft Office', short: 'Microsoft Office', brand: 'microsoft365', detail: 'Microsoft Word for manuscripts and technical documents; Excel for tabular work and research data handling; PowerPoint for conference, teaching and research presentations.' },
-      { name: 'Google Workspace', short: 'Google Workspace', brand: 'google', detail: 'Docs, Sheets, Slides, Drive and Forms for collaborative research, survey workflows and team documentation.' }
+      { name: 'Google Workspace', short: 'Google Workspace', brand: 'google', detail: 'Docs, Sheets, Slides, Drive and Forms for collaborative research, survey workflows and team documentation.' },
+      { name: 'Mendeley', short: 'Mendeley', brand: 'mendeley', detail: 'Reference management, scholarly literature organization, research-PDF library management, citation and bibliography workflows, and preparation of publication-ready references.' }
     ]}
   ];
 
