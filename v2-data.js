@@ -168,7 +168,7 @@
       { name: 'Flask', short: 'Flask', brand: 'flask', detail: 'Lightweight Python web applications and deployment of research or machine-learning prototypes.' },
       { name: 'Streamlit', short: 'Streamlit', brand: 'streamlit', detail: 'Interactive data-science and machine-learning web apps, research demos and rapid prototype interfaces; reinforced through the Coursera Project Network course “Build a Data Science Web App with Streamlit and Python” completed on 18 May 2023.' }
     ]},
-    { group: 'Research Computing & Development Environments', icon: 'terminal', items: [
+    { group: 'Research Computing, Development & System Tools', icon: 'terminal', items: [
       { name: 'Jupyter Notebook', short: 'Jupyter', brand: 'jupyter', detail: 'Interactive statistical analysis, ML experimentation, exploratory analysis, visualization and documented reproducible workflows.' },
       { name: 'Visual Studio Code', short: 'VS Code', brand: 'visualstudiocode', detail: 'Development environment for Python, R, web work, scripting, Git workflows and research project organization.' },
       { name: 'Code::Blocks', short: 'Code::Blocks', brand: 'codeblocks', detail: 'Integrated development environment used for C programming, compilation, debugging and undergraduate computational coursework.' },
@@ -221,7 +221,7 @@
       title: 'Audio source separation / FastICA',
       context: 'Published reproducible signal-processing workflow',
       system: 'Windows 11 · build 10.0.26200 · Python 3.12.3 · NVIDIA GeForce RTX 4090',
-      stack: ['NumPy 2.0.0', 'scikit-learn 1.7.2', 'librosa 0.11.0', 'mir_eval 0.8.2', 'PyTorch 2.5.1', 'CUDA device cuda:0']
+      stack: ['NumPy 2.0.0', 'scikit-learn 1.7.2', 'librosa 0.11.0', 'SoundFile / PySoundFile', 'mir_eval 0.8.2', 'FFmpeg', 'PyTorch 2.5.1', 'CUDA device cuda:0']
     },
     {
       title: 'Diabetic-retinopathy grading',
@@ -338,16 +338,14 @@
       title: 'Programming & Research Development',
       summary: 'Programming, reproducible computing and research-prototype development across statistical and AI projects.',
       items: [
-        'Python',
-        'R',
-        'C',
-        'Jupyter Notebook',
-        'Git & GitHub',
-        'Kaggle',
-        'Flask',
-        'Streamlit',
-        'HTML',
-        'CSS'
+        'Python, R & C programming',
+        'JavaScript for interactive research interfaces',
+        'Jupyter Notebook & Google Colab',
+        'Flask backend & model-serving prototypes',
+        'Streamlit research applications',
+        'HTML5 & CSS3',
+        'Git & GitHub workflows',
+        'Kaggle notebook workflows'
       ]
     },
     {
@@ -458,7 +456,6 @@
       journalSince: 'Published since 2002',
       hosting: 'Hosted on Bangladesh Journals Online (BanglaJOL) since 2023; BanglaJOL is managed by the Bangladesh Academy of Sciences.',
       indexing: [
-        'Digital Object Identifier (DOI)',
         'ICI World of Journals · ICV indicator 2024: 68.51',
         'Eurasian Scientific Journal Index (ESJI)',
         'Statistical Theory and Method Abstract, International Statistical Institute',
@@ -623,7 +620,7 @@
 
   window.MRA_V2 = {
     version: '3.0',
-    lastUpdated: '18 September 2026',
+    lastUpdated: '19 September 2026',
     brand: {
       monogram: 'MRA',
       name: 'Md. Razu Ahmed',
