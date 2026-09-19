@@ -458,7 +458,13 @@
           role: 'Presenting Author',
           presentedBy: 'Md. Razu Ahmed',
           citation: 'Ahmed, M. R., Rakib, M. A., Shiddik, A. B., & Reza, M. S. (2025). Measuring attitudes toward AI’s impact on the job market in Bangladesh: A study at Pabna University of Science and Technology. In Book of Abstracts, 2nd International Conference on Recent Advances in Science and Technology (ICRAST 2025) (p. 120). Faculty of Science, University of Rajshahi.',
-          citationIEEE: 'M. R. Ahmed, M. A. Rakib, A. B. Shiddik, and M. S. Reza, “Measuring Attitudes toward AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology,” in Book of Abstracts, 2nd International Conference on Recent Advances in Science and Technology (ICRAST 2025), Rajshahi, Bangladesh, Nov. 14–15, 2025, p. 120.'
+          citationIEEE: 'M. R. Ahmed, M. A. Rakib, A. B. Shiddik, and M. S. Reza, “Measuring Attitudes toward AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology,” in Book of Abstracts, 2nd International Conference on Recent Advances in Science and Technology (ICRAST 2025), Rajshahi, Bangladesh, Nov. 14–15, 2025, p. 120.',
+          evidence: [
+            { type:'certificate', label:'Certificate of Achievement', asset:'assets/academic/conferences/icrast-2025-paper-440-certificate.jpg', note:'Paper ID 440 · Md. Razu Ahmed · ICRAST 2025' },
+            { type:'proceedings', label:'Book of Abstracts', asset:'assets/academic/conferences/icrast-2025-paper-440-proceedings.webp', note:'Paper ID 440 · p. 120' },
+            { type:'slides', label:'Presentation slides', asset:'assets/academic/conferences/icrast-2025-paper-440-presentation.webp', note:'Paper ID 440 · Md. Razu Ahmed (presenting)' },
+            { type:'brochure', label:'Official conference brochure', asset:'assets/academic/conferences/icrast-2025-brochure.webp', note:'2nd ICRAST 2025 · Faculty of Science, University of Rajshahi' }
+          ]
         },
         {
           paperId: '461',
@@ -469,7 +475,8 @@
           role: 'Co-author',
           presentedBy: 'Md. Abdur Rakib',
           citation: 'Rakib, M. A., Ahmed, M. R., Shiddik, A. B., & Reza, M. S. (2025). Facial emotion recognition with dimensionality reduction: A comparative study of PCA, FA, and combined PCA–FA with a CNN baseline. In Book of Abstracts, 2nd International Conference on Recent Advances in Science and Technology (ICRAST 2025) (p. 126). Faculty of Science, University of Rajshahi.',
-          citationIEEE: 'M. A. Rakib, M. R. Ahmed, A. B. Shiddik, and M. S. Reza, “Facial Emotion Recognition with Dimensionality Reduction: A Comparative Study of PCA, FA, and Combined PCA–FA with a CNN Baseline,” in Book of Abstracts, 2nd International Conference on Recent Advances in Science and Technology (ICRAST 2025), Rajshahi, Bangladesh, Nov. 14–15, 2025, p. 126.'
+          citationIEEE: 'M. A. Rakib, M. R. Ahmed, A. B. Shiddik, and M. S. Reza, “Facial Emotion Recognition with Dimensionality Reduction: A Comparative Study of PCA, FA, and Combined PCA–FA with a CNN Baseline,” in Book of Abstracts, 2nd International Conference on Recent Advances in Science and Technology (ICRAST 2025), Rajshahi, Bangladesh, Nov. 14–15, 2025, p. 126.',
+          evidence: [{ type:'proceedings', label:'Book of Abstracts', note:'Paper ID 461 · p. 126 · separate co-authored contribution' }]
         }
       ]
     },
