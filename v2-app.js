@@ -314,7 +314,6 @@
               <h1 class="hero-title hero-name">
                 <span class="hero-name-primary">Md. Razu</span>
                 <span class="hero-name-accent">Ahmed</span>
-                <i class="hero-name-node" aria-hidden="true"></i>
               </h1>
               <div class="hero-subline hero-role-line">Statistician <span>·</span> Data Scientist <span>·</span> Researcher <span>·</span> Peer Reviewer</div>
               <p class="hero-intro">I work at the intersection of statistical learning, machine learning, explainable AI, public health and biomedical data science, developing rigorous, reproducible and interpretable analytical workflows for real-world research problems.</p>
