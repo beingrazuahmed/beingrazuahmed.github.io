@@ -7433,3 +7433,15 @@ html[data-motion="reduced"]{scroll-behavior:auto!important}
   }
   .recognition-certificates-section .recognition-certificate-grid{grid-template-columns:1fr!important}
 }
+
+
+/* === Embedded ICRAST logo + academic certificate action · 2026-09-19 === */
+.field-survey-conference-actions .academic-certificate-link{
+  border-color:color-mix(in srgb,#11a77e 34%,var(--line));
+  background:color-mix(in srgb,#11a77e 6%,var(--surface));
+}
+.field-survey-conference-actions .academic-certificate-link:hover,
+.field-survey-conference-actions .academic-certificate-link:focus-visible{
+  border-color:color-mix(in srgb,#11a77e 58%,var(--line));
+  background:color-mix(in srgb,#11a77e 10%,var(--surface));
+}
