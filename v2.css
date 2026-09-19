@@ -3312,15 +3312,20 @@
   width:100vw;
   height:100vh;
   pointer-events:none;
-  opacity:.78;
+  opacity:.30;
+  transition:opacity .35s ease;
 }
-body[data-page="home"] .mra-constellation{opacity:1}
+body[data-page="home"] .mra-constellation{opacity:.90}
 body[data-page="research"] .mra-constellation,
-body[data-page="network"] .mra-constellation{opacity:.88}
-body[data-page="academic"] .mra-constellation{opacity:.46}
+body[data-page="network"] .mra-constellation{opacity:.76}
+body[data-page="projects"] .mra-constellation{opacity:.58}
+body[data-page="profile"] .mra-constellation{opacity:.48}
+body[data-page="academic"] .mra-constellation{opacity:.40}
 body[data-page="publications"] .mra-constellation,
 body[data-page="conferences"] .mra-constellation,
-body[data-page="resources"] .mra-constellation{opacity:.34}
+body[data-page="resources"] .mra-constellation,
+body[data-page="dashboard"] .mra-constellation{opacity:.26}
+
 #site-header,#page-content,#site-footer{
   position:relative;
   z-index:1;
@@ -3331,6 +3336,21 @@ body[data-page="resources"] .mra-constellation{opacity:.34}
 }
 :root[data-mode="dark"] .section.alt{
   background:color-mix(in srgb,var(--surface-2) 82%,transparent);
+}
+@media (max-width:720px){
+  .mra-constellation{opacity:.22}
+  body[data-page="home"] .mra-constellation{opacity:.62}
+  body[data-page="research"] .mra-constellation,
+  body[data-page="network"] .mra-constellation{opacity:.54}
+}
+@media (prefers-reduced-motion:reduce){
+  .mra-constellation{
+    opacity:.20;
+    transition:none;
+  }
+}
+@media print{
+  .mra-constellation{display:none!important}
 }
 
 /* Brand identity */
