@@ -5,6 +5,7 @@
   const $$ = (s, r=document) => [...r.querySelectorAll(s)];
   const esc = (v='') => String(v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
   const ext = (u,l) => `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(l)}</a>`;
+  const verifiedEvidenceBadge = (label='Verified record') => `<span class="verified-evidence-badge" title="Documentary evidence linked to this portfolio record"><span class="verified-evidence-mark" aria-hidden="true">✓</span><span>${esc(label)}</span></span>`;
   const page = document.body.dataset.page || 'home';
 
   const nav = [
@@ -774,12 +775,12 @@
                 <span class="paper-id-chip">Paper ID 440</span>
               </div>
               <div class="conference-evidence-grid">
-                ${((c.contributions||[]).find(p=>p.paperId==='440')?.evidence||[]).map(ev=>`<article class="conference-evidence-item">
+                ${((c.contributions||[]).find(p=>p.paperId==='440')?.evidence||[]).map(ev=>`<article class="conference-evidence-item ${ev.verified?'is-verified':''}">
                   <a class="conference-evidence-primary" href="${esc(ev.href||ev.asset||'#')}" target="_blank" rel="noopener noreferrer">
                     ${ev.asset?`<img src="${esc(ev.asset)}" alt="${esc(ev.label||'ICRAST evidence')}" loading="lazy" decoding="async">`:''}
-                    <div><span>${esc(ev.type||'Evidence')}</span><strong>${esc(ev.label||'Verified evidence')}</strong><small>${esc(ev.note||'')}</small></div>
+                    <div><div class="conference-evidence-type-row"><span>${esc(ev.type||'Evidence')}</span>${ev.verified?verifiedEvidenceBadge('Verified certificate'):''}</div><strong>${esc(ev.label||'Documentary evidence')}</strong><small>${esc(ev.note||'')}</small>${ev.sourceFile?`<small class="evidence-source-name">Source file · ${esc(ev.sourceFile)}</small>`:''}</div>
                   </a>
-                  ${ev.galleryHref?`<a class="conference-evidence-secondary" href="${esc(ev.galleryHref)}">View certificate in Gallery →</a>`:''}
+                  ${ev.galleryHref||ev.officialHref?`<div class="conference-evidence-secondary-row">${ev.galleryHref?`<a class="conference-evidence-secondary" href="${esc(ev.galleryHref)}">View certificate in Gallery →</a>`:''}${ev.officialHref?`<a class="conference-evidence-secondary" href="${esc(ev.officialHref)}" target="_blank" rel="noopener noreferrer">Official CFP source ↗</a>`:''}</div>`:''}
                 </article>`).join('')}
               </div>
             </section>`:''}
@@ -789,10 +790,10 @@
             </div>
           </div>
           ${c.flyerUrl?`<figure class="conference-flyer-evidence conference-document-evidence">
-            <a class="conference-flyer-document" href="${esc(c.flyerUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${esc(c.flyerLabel||'official conference flyer')}">
-              <img src="assets/academic/conferences/icrast-faculty-science.webp" alt="" loading="lazy" decoding="async">
-              <span class="conference-document-kicker">Official document</span>
-              <strong>Call for Papers</strong>
+            <a class="conference-flyer-document" href="assets/academic/conferences/icrast-2025-brochure.webp" target="_blank" rel="noopener noreferrer" aria-label="Open the ICRAST 2025 conference brochure">
+              <img src="assets/academic/conferences/icrast-2025-brochure.webp" alt="2nd ICRAST 2025 conference brochure" loading="lazy" decoding="async">
+              <span class="conference-document-kicker">Conference document</span>
+              <strong>ICRAST 2025 Brochure</strong>
               <span>2nd ICRAST 2025</span>
               <small>14–15 November 2025 · University of Rajshahi</small>
               <b>PDF</b>
@@ -1120,7 +1121,7 @@
                 <h4>${esc(p.title||'')}</h4>
                 <p class="conference-authors">${authorLine(p.authors)}</p>
                 ${p.presentedBy?`<p class="conference-presented-by"><strong>Presented by:</strong> ${esc(p.presentedBy)}</p>`:''}
-                ${(p.evidence||[]).length?`<div class="conference-paper-evidence-links">${p.evidence.map(ev=>`<a href="${esc(ev.href||ev.asset||'#')}" ${(ev.href||ev.asset||'').startsWith('http')||ev.asset?'target="_blank" rel="noopener noreferrer"':''}>${esc(ev.label||ev.type||'Evidence')} ↗</a>`).join('')}${p.evidence.filter(ev=>ev.galleryHref).map(ev=>`<a class="is-gallery-link" href="${esc(ev.galleryHref)}">Gallery evidence →</a>`).join('')}</div>`:''}
+                ${(p.evidence||[]).length?`<div class="conference-paper-evidence-links">${p.evidence.map(ev=>`<span class="conference-evidence-link-wrap"><a href="${esc(ev.href||ev.asset||'#')}" ${(ev.href||ev.asset||'').startsWith('http')||ev.asset?'target="_blank" rel="noopener noreferrer"':''}>${esc(ev.label||ev.type||'Evidence')} ↗</a>${ev.verified?verifiedEvidenceBadge('Verified'):''}</span>`).join('')}${p.evidence.filter(ev=>ev.galleryHref).map(ev=>`<a class="is-gallery-link" href="${esc(ev.galleryHref)}">Gallery evidence →</a>`).join('')}${p.evidence.filter(ev=>ev.officialHref).map(ev=>`<a class="is-official-link" href="${esc(ev.officialHref)}" target="_blank" rel="noopener noreferrer">Official source ↗</a>`).join('')}</div>`:''}
                 ${p.citation&&p.citationIEEE?`<details class="citation-details conference-list-citation"><summary>APA & IEEE citation</summary>${dualAcademicCitation(p.citation,p.citationIEEE)}</details>`:''}
               </article>`).join('')}
             </div>
@@ -1133,7 +1134,7 @@
     const conferenceCertificates=(D.gallery||[]).filter(g=>g.evidenceType==='Certificate');
     return `${pageHero('Recognition','Awards, certificates & professional development.')}
       <section class="section"><div class="container">${sectionHead('Honors & awards','Evidence-backed recognition')}<div class="grid grid-3">${(D.awards||[]).map(a=>`<article class="card"><h3>${esc(a.title||a.name||'')}</h3><p>${esc(a.issuer||a.organization||'')}</p><p>${esc(a.description||a.detail||'')}</p></article>`).join('')}</div></div></section>
-      ${conferenceCertificates.length?`<section class="section alt"><div class="container">${sectionHead('Conference certificates','Verified presentation evidence','Conference certificates are shown as documentary evidence and are kept separate from competitive awards.')}<div class="grid grid-3 recognition-certificate-grid">${conferenceCertificates.map(g=>`<article class="card recognition-certificate-card">${g.asset?`<a href="${esc(g.href||g.asset)}" target="_blank" rel="noopener noreferrer"><img src="${esc(g.asset)}" alt="${esc(g.title)}" loading="lazy" decoding="async"></a>`:''}<div class="gallery-evidence-meta"><span class="badge">Certificate</span>${g.paperId?`<span class="paper-id-chip">Paper ID ${esc(g.paperId)}</span>`:''}</div><h3>${esc(g.title)}</h3><p>${esc(g.issuer||'')}</p><p>${esc(g.caption||'')}</p><div class="recognition-certificate-links"><a href="${esc(g.href||g.asset)}" target="_blank" rel="noopener noreferrer">View certificate ↗</a>${g.related?`<a href="${esc(g.related)}">Academic record →</a>`:''}<a href="gallery.html#${esc(g.id||'')}">Gallery evidence →</a></div></article>`).join('')}</div></div></section>`:''}
+      ${conferenceCertificates.length?`<section class="section alt"><div class="container">${sectionHead('Conference certificates','Verified presentation evidence','Conference certificates are shown as documentary evidence and are kept separate from competitive awards.')}<div class="grid grid-3 recognition-certificate-grid">${conferenceCertificates.map(g=>`<article class="card recognition-certificate-card">${g.asset?`<a href="${esc(g.href||g.asset)}" target="_blank" rel="noopener noreferrer"><img src="${esc(g.asset)}" alt="${esc(g.title)}" loading="lazy" decoding="async"></a>`:''}<div class="certificate-verified-row"><div class="gallery-evidence-meta"><span class="badge">Certificate</span>${g.paperId?`<span class="paper-id-chip">Paper ID ${esc(g.paperId)}</span>`:''}</div>${g.verified?verifiedEvidenceBadge('Verified certificate'):''}</div><h3>${esc(g.title)}</h3><p>${esc(g.issuer||'')}</p><p>${esc(g.caption||'')}</p><div class="recognition-certificate-links"><a href="${esc(g.href||g.asset)}" target="_blank" rel="noopener noreferrer">View certificate ↗</a>${g.related?`<a href="${esc(g.related)}">Academic record →</a>`:''}<a href="gallery.html#${esc(g.id||'')}">Gallery evidence →</a></div></article>`).join('')}</div></div></section>`:''}
       <section class="section"><div class="container">${sectionHead('Training & certifications','Professional development')}<div class="grid grid-3">${(D.training||[]).map(t=>`<article class="card"><div class="badge">${esc(t.date||t.year||'')}</div><h3>${esc(t.title||t.name||'')}</h3><p>${esc(t.provider||t.issuer||'')}</p><p>${esc(t.duration||t.detail||t.description||'')}</p></article>`).join('')}</div></div></section>`;
   }
 
@@ -1176,7 +1177,7 @@
 
   function gallery(){return `${pageHero('Gallery & Evidence','A curated visual archive of verified academic, research and professional records.')}<section class="section"><div class="container"><div class="filters">${['All','Award','Conference','Scientific Engagement','Professional Development','Scholarly Service'].map((x,i)=>`<button class="filter ${i===0?'active':''}" data-gallery-filter="${esc(x)}">${x}</button>`).join('')}</div><div class="grid grid-3 gallery-evidence-grid">${(D.gallery||[]).map(g=>`<article class="card gallery-evidence-card" ${g.id?`id="${esc(g.id)}"`:''} data-gallery-category="${esc(g.category||'')}">
       ${g.asset?`<a class="gallery-evidence-media" href="${esc(g.href||g.asset)}" target="${g.href&&g.href.startsWith('http')?'_blank':'_self'}" rel="noopener noreferrer"><img src="${esc(g.asset)}" alt="${esc(g.title||'Academic evidence')}" loading="lazy" decoding="async"></a>`:`<div class="portrait-placeholder">${esc(g.title||g.category||'Verified visual evidence')}</div>`}
-      <div class="gallery-evidence-meta"><span class="badge">${esc(g.category||'Evidence')}</span>${g.evidenceType?`<span class="badge gallery-evidence-type">${esc(g.evidenceType)}</span>`:''}${g.paperId?`<span class="paper-id-chip">Paper ID ${esc(g.paperId)}</span>`:''}</div>
+      <div class="gallery-evidence-meta"><span class="badge">${esc(g.category||'Evidence')}</span>${g.evidenceType?`<span class="badge gallery-evidence-type">${esc(g.evidenceType)}</span>`:''}${g.paperId?`<span class="paper-id-chip">Paper ID ${esc(g.paperId)}</span>`:''}${g.verified?verifiedEvidenceBadge('Verified'):''}</div>
       ${g.issuer||g.date?`<div class="gallery-evidence-context">${g.issuer?`<span>${esc(g.issuer)}</span>`:''}${g.date?`<span>${esc(g.date)}</span>`:''}</div>`:''}
       <h3>${esc(g.title||g.category||'')}</h3><p>${esc(g.caption||g.description||'')}</p>
       ${g.related?`<a class="gallery-related-link" href="${esc(g.related)}">View related academic record →</a>`:''}
