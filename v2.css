@@ -5274,3 +5274,46 @@ html[data-motion="reduced"]{scroll-behavior:auto!important}
     grid-template-columns:44px minmax(0,1fr)!important;
   }
 }
+
+
+/* === Academic layout alignment fixes === */
+.tool-grid-primary{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  align-items:stretch;
+}
+.tool-grid-primary>.tool-group-modern{
+  width:100%;
+  min-width:0;
+  height:100%;
+}
+.academic-grade-pill{
+  align-items:center!important;
+}
+.academic-grade-pill .academic-grade-badge.is-compact{
+  display:inline-grid;
+  align-self:center;
+  transform:translateY(2px);
+}
+.academic-grade-pill .academic-grade-badge.is-compact .academic-grade-badge-medal{
+  display:grid;
+  place-items:center;
+}
+.academic-grade-pill small{
+  display:flex;
+  align-items:center;
+  min-height:30px;
+  padding-top:1px;
+}
+@media (max-width:1050px){
+  .tool-grid-primary{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+}
+@media (max-width:700px){
+  .tool-grid-primary{
+    grid-template-columns:1fr!important;
+  }
+  .academic-grade-pill .academic-grade-badge.is-compact{
+    transform:translateY(1px);
+  }
+}
