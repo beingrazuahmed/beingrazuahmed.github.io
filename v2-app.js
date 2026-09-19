@@ -1075,22 +1075,38 @@
 
   function conferences(){
     const groups=D.conferences||[];
+    const authorLine=s=>esc(s||'').split('Md. Razu Ahmed').join('<strong class="conference-self-author">Md. Razu Ahmed</strong>');
     return `${pageHero('Conferences','Conference publications, oral/poster presentations and evidence.')}
       <section class="section"><div class="container">
         ${sectionHead('Conference record','Eight contributions · three presentations','Conference records are grouped by event so publication context, presentation roles and official event links remain clear.')}
         <div class="conference-groups">
-          ${groups.map(g=>`<article class="card conference-group-card">
+          ${groups.map(g=>`<article class="card conference-group-card ${g.id==='icrast-2025'?'conference-group-featured':''}">
             <div class="conference-group-head">
-              <div><div class="section-kicker">${esc(g.event||'Conference')}</div><h3>${esc(g.full||g.event||'')}</h3></div>
-              ${g.url?`<a class="btn small" href="${esc(g.url)}" target="_blank" rel="noopener noreferrer">Official homepage ↗</a>`:''}
+              <div class="conference-group-identity">${g.id==='icrast-2025'?'<img src="assets/academic/conferences/icrast-faculty-science.webp" alt="Faculty of Science, University of Rajshahi" loading="lazy" decoding="async">':''}<div><div class="section-kicker">${esc(g.event||'Conference')}</div><h3>${esc(g.full||g.event||'')}</h3></div></div>
+              <div class="conference-group-actions">
+                ${g.url?`<a class="btn small" href="${esc(g.url)}" target="_blank" rel="noopener noreferrer">Official homepage ↗</a>`:''}
+                ${g.flyerUrl?`<a class="btn small ghost" href="${esc(g.flyerUrl)}" target="_blank" rel="noopener noreferrer">Official flyer / CFP ↗</a>`:''}
+              </div>
             </div>
-            <p class="conference-group-meta"><strong>${esc(g.host||'')}</strong><span>${esc(g.date||'')}</span><span>${esc(g.meta||'')}</span></p>
+            <div class="conference-group-meta conference-group-meta-rich">
+              <span><strong>Host</strong>${esc(g.organizer||g.host||'')}</span>
+              <span><strong>Date</strong>${esc(g.date||'')}</span>
+              ${g.venue?`<span><strong>Venue</strong>${esc(g.venue)}</span>`:''}
+              <span><strong>Record</strong>${esc(g.meta||'')}</span>
+            </div>
             <div class="conference-paper-list">
-              ${(g.papers||g.items||[]).map(p=>`<div class="conference-paper-item">
-                <div class="meta">${p.role?`<span class="badge">${esc(p.role)}</span>`:''}${p.page?`<span class="badge">${esc(p.page)}</span>`:''}</div>
+              ${(g.papers||g.items||[]).map(p=>`<article class="conference-paper-item ${p.paperId==='440'?'is-presented-paper':''}">
+                <div class="conference-paper-meta">
+                  ${p.paperId?`<span class="paper-id-chip">Paper ID ${esc(p.paperId)}</span>`:''}
+                  ${p.presentation?`<span class="badge">${esc(p.presentation)}</span>`:''}
+                  ${p.role?`<span class="badge">${esc(p.role)}</span>`:''}
+                  ${p.page?`<span class="badge">${esc(p.page)}</span>`:''}
+                </div>
                 <h4>${esc(p.title||'')}</h4>
-                <p>${esc(p.authors||'')}</p>
-              </div>`).join('')}
+                <p class="conference-authors">${authorLine(p.authors)}</p>
+                ${p.presentedBy?`<p class="conference-presented-by"><strong>Presented by:</strong> ${esc(p.presentedBy)}</p>`:''}
+                ${p.citation&&p.citationIEEE?`<details class="citation-details conference-list-citation"><summary>APA & IEEE citation</summary>${dualAcademicCitation(p.citation,p.citationIEEE)}</details>`:''}
+              </article>`).join('')}
             </div>
           </article>`).join('')}
         </div>
