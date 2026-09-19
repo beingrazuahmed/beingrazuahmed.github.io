@@ -1029,13 +1029,13 @@
 
           const strength=1-dist/connect;
           const anchorLink=a.anchor||b.anchor;
-          const alpha=(anchorLink ? .060 : .043)*strength;
+          const alpha=(anchorLink ? .155 : .105)*strength;
 
           ctx.beginPath();
           ctx.moveTo(a.x,a.y);
           ctx.lineTo(b.x,b.y);
           ctx.strokeStyle=`rgba(${palette.line[0]},${palette.line[1]},${palette.line[2]},${alpha.toFixed(3)})`;
-          ctx.lineWidth=anchorLink ? .82 : .68;
+          ctx.lineWidth=anchorLink ? .92 : .76;
           ctx.stroke();
 
           if((i*17+j*11)%47===0&&!reduced()){
@@ -1044,7 +1044,7 @@
             const y=a.y+(b.y-a.y)*t;
             ctx.beginPath();
             ctx.arc(x,y,1.1,0,Math.PI*2);
-            ctx.fillStyle=`rgba(${palette.node[0]},${palette.node[1]},${palette.node[2]},.18)`;
+            ctx.fillStyle=`rgba(${palette.node[0]},${palette.node[1]},${palette.node[2]},.28)`;
             ctx.fill();
           }
         }
@@ -1057,14 +1057,14 @@
         if(n.anchor){
           ctx.beginPath();
           ctx.arc(n.x,n.y,(n.r+3.1)*pulse,0,Math.PI*2);
-          ctx.strokeStyle=`rgba(${col[0]},${col[1]},${col[2]},.075)`;
+          ctx.strokeStyle=`rgba(${col[0]},${col[1]},${col[2]},.14)`;
           ctx.lineWidth=.8;
           ctx.stroke();
         }
 
         ctx.beginPath();
         ctx.arc(n.x,n.y,n.r*(n.anchor?pulse:1),0,Math.PI*2);
-        ctx.fillStyle=`rgba(${col[0]},${col[1]},${col[2]},${n.anchor ? .26 : .17})`;
+        ctx.fillStyle=`rgba(${col[0]},${col[1]},${col[2]},${n.anchor ? .40 : .26})`;
         ctx.fill();
       });
     }
