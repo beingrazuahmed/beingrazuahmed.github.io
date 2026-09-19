@@ -4933,8 +4933,9 @@ html[data-motion="reduced"]{scroll-behavior:auto!important}
 .scholarly-brand-row-indexing{margin:10px 0 12px}
 :root[data-mode="dark"] .tech-logo-digital,
 :root[data-mode="dark"] .tech-logo-pair{
-  background:linear-gradient(145deg,rgba(17,39,60,.94),rgba(11,30,48,.92));
-  box-shadow:0 8px 22px rgba(0,0,0,.20),inset 0 1px 0 rgba(255,255,255,.05);
+  background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(239,247,252,.96));
+  border-color:rgba(113,177,216,.28);
+  box-shadow:0 8px 22px rgba(0,0,0,.20),inset 0 1px 0 rgba(255,255,255,.86);
 }
 :root[data-mode="dark"] .doi-brand-mark{
   background:linear-gradient(145deg,rgba(19,47,67,.98),rgba(12,34,52,.96));
@@ -4948,4 +4949,11 @@ html[data-motion="reduced"]{scroll-behavior:auto!important}
 }
 @media (prefers-reduced-motion:reduce){
   .tech-logo-digital,.tech-logo-pair,.tech-logo-fallback-digital{transition:none!important}
+}
+
+.tech-logo-custom img{
+  max-width:34px;
+  max-height:31px;
+  width:auto;
+  height:auto;
 }
