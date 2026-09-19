@@ -458,7 +458,7 @@
     if(!items.length) return '';
     const track=[...items,...items];
     return `<div class="tech-marquee-wrap" aria-label="Technologies and software I work with">
-      <div class="tech-marquee-title"><span class="section-kicker">Research technology stack</span><h3>Technologies & software I work with</h3><p>Statistical computing, reproducible research, programming, prototyping and collaborative research tools.</p></div>
+      <div class="tech-marquee-title"><span class="section-kicker">Research technology stack</span><h3>Technologies I Work With</h3><p>Statistical computing, scientific programming, machine learning, reproducible research, prototyping, diagramming and collaborative research tools.</p></div>
       <div class="tech-marquee" tabindex="0">
         <div class="tech-marquee-track" style="--ticker-duration:${Math.max(38,items.length*2.2)}s">${track.map((i,idx)=>`<div class="tech-marquee-item" ${idx>=items.length?'aria-hidden="true"':''}>${techBrandIcon(i)}<span>${esc(i.short||i.name)}</span></div>`).join('')}</div>
       </div>
@@ -1056,6 +1056,7 @@
       ${sectionHead('Technical & analytical skills','Evidence-linked research capability','Methods and technical capabilities grounded in published work, active manuscripts, academic projects, coursework, research software and professional training.')}
       <div class="grid grid-2 technical-skills-grid">${(D.technicalSkills||[]).map(technicalSkillCard).join('')}</div>
 
+      ${techMarquee()}
       <div class="skills-stack-head">
         <div><div class="section-kicker">Research software & technology stack</div><h3>Tools, libraries, development environments & system tools</h3></div>
         <p>Methods are separated from implementation tools. Libraries, development environments and reproducibility infrastructure are shown as an evidence-backed research stack rather than proficiency scores.</p>
