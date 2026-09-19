@@ -17,7 +17,7 @@
   function header(){
     const el = $('#site-header'); if(!el) return;
     el.innerHTML = `<div class="topbar"><div class="container nav-shell">
-      <a class="brand" href="index.html"><span class="monogram">MRA</span><span class="brand-name"><span>Md. Razu</span><span class="brand-accent">Ahmed</span><i class="brand-node" aria-hidden="true"></i></span></a>
+      <a class="brand" href="index.html"><span class="monogram">MRA</span><span class="brand-name"><span class="brand-primary">Md. Razu</span><span class="brand-accent">Ahmed</span></span></a>
       <div class="nav-scroll-zone">
         <button class="nav-scroll-btn left" id="navScrollLeft" type="button" aria-label="Scroll navigation left">‹</button>
         <nav class="nav" id="primaryNav" aria-label="Primary">${nav.map(([k,l,h])=>`<a href="${h}" ${page===k?'aria-current="page"':''}>${l}</a>`).join('')}</nav>
@@ -299,10 +299,34 @@
     </a>`;
   }
 
+  function compactResearchOutputCard(x){
+    const id=(x.id||'').toLowerCase();
+    return `<a class="compact-output-card" href="publications.html#output-${esc(id)}">
+      <div class="compact-output-top"><span class="compact-output-status">${esc(x.status||x.bucket||'Research')}</span><span class="compact-output-arrow" aria-hidden="true">↗</span></div>
+      <h4>${esc(x.title||'Untitled research output')}</h4>
+      <p>${esc(x.journal||x.venue||'')}</p>
+    </a>`;
+  }
+
+  function homeNetworkMiniCard(x){
+    const roles=(x.roles||[]).slice(0,2);
+    return `<a class="home-network-mini" href="network.html">
+      <div class="home-network-mini-media">${safeImg(x.portrait,x.name,'home-network-mini-avatar')}</div>
+      <div class="home-network-mini-copy">
+        <h4>${esc(x.name||'')}</h4>
+        ${roles.length?`<p>${roles.map(esc).join(' · ')}</p>`:''}
+        <span>${esc((x.affiliation||'').split(',')[0])}</span>
+      </div>
+      <b aria-hidden="true">↗</b>
+    </a>`;
+  }
+
   function home(){
     const p=D.profile||{};
     const selectedIds=['fastica','dr','dengue-forecast'];
     const selected=selectedIds.map(id=>(D.outputs||[]).find(x=>x.id===id)).filter(Boolean);
+    const moreOutputIds=['ckd','dib','ai-employment','hcv','beyond-burden'];
+    const moreOutputs=moreOutputIds.map(id=>(D.outputs||[]).find(x=>x.id===id)).filter(Boolean);
     return `<section class="hero hero-home" id="homeHero">
       <div class="container hero-container">
         <div class="hero-shell">
@@ -316,7 +340,7 @@
                 <span class="hero-name-accent">Ahmed</span>
               </h1>
               <div class="hero-subline hero-role-line">Statistician <span>·</span> Data Scientist <span>·</span> Researcher <span>·</span> Peer Reviewer</div>
-              <p class="hero-intro">I work at the intersection of statistical learning, machine learning, explainable AI, public health and biomedical data science, developing rigorous, reproducible and interpretable analytical workflows for real-world research problems.</p>
+              <p class="hero-intro">I am a statistician, data scientist, and interdisciplinary data researcher working across statistical learning, artificial intelligence, public health, and biomedical data science. My work develops rigorous, reproducible, and interpretable analytical workflows that combine statistical methodology with machine learning to address real-world research questions.</p>
               <div class="hero-status-line"><span class="live-dot"></span><strong>Portfolio online</strong><span class="clock" data-clock>Dhaka · UTC+06:00</span></div>
               <div class="hero-opportunity"><span class="hero-collab-dot"></span><strong>Open to PhD opportunities</strong><span>Research collaborations · academic partnerships</span></div>
               <div class="cta-row hero-actions"><a class="btn primary hero-primary" href="research.html">Explore Research <span aria-hidden="true">↗</span></a><a class="btn" href="cv.html">View CV</a><a class="btn hero-collab" href="contact.html">Collaborate</a></div>
@@ -357,6 +381,10 @@
     <section class="section alt selected-works-section"><div class="container">
       <div class="selected-works-head">${sectionHead('Selected research','Selected Works','Three representative projects spanning statistical signal processing, medical AI and public-health forecasting.')}<a class="section-text-link" href="publications.html">View all research ↗</a></div>
       <div class="selected-works-grid">${selected.map(selectedWorkCard).join('')}</div>
+      ${moreOutputs.length?`<div class="more-outputs-wrap">
+        <div class="more-outputs-head"><span>More research outputs</span><a href="publications.html">Browse complete record ↗</a></div>
+        <div class="more-outputs-grid">${moreOutputs.map(compactResearchOutputCard).join('')}</div>
+      </div>`:''}
     </div></section>
 
     <section class="section"><div class="container">
@@ -364,9 +392,35 @@
       <div class="feature-band editorial-feature-band"><article class="card quote-card editorial-card"><div class="section-kicker">Research statement</div><p>${esc(D.research?.statement||'')}</p></article><div class="grid">${(D.research?.principles||[]).map(x=>`<article class="card editorial-card"><h3>${esc(x.title)}</h3><p>${esc(x.detail)}</p></article>`).join('')}</div></div>
     </div></section>
 
+    <section class="section alt home-research-themes"><div class="container">
+      ${sectionHead('Research themes','Methods & application domains','A concise map of the methodological areas and application contexts that define my current research profile.')}
+      <div class="research-theme-matrix">
+        <article class="research-theme-column">
+          <div class="research-theme-label"><span>01</span><div><small>Methodological core</small><h3>Methods</h3></div></div>
+          <div class="research-theme-tags">${(D.research?.methods||[]).map((x,i)=>`<span><b>${String(i+1).padStart(2,'0')}</b>${esc(x)}</span>`).join('')}</div>
+        </article>
+        <article class="research-theme-column">
+          <div class="research-theme-label"><span>02</span><div><small>Application context</small><h3>Domains</h3></div></div>
+          <div class="research-theme-tags">${(D.research?.applications||[]).map((x,i)=>`<span><b>${String(i+1).padStart(2,'0')}</b>${esc(x)}</span>`).join('')}</div>
+        </article>
+      </div>
+      <div class="section-action"><a class="section-text-link" href="research.html">Explore research profile ↗</a></div>
+    </div></section>
+
     <section class="section alt"><div class="container">
       ${sectionHead('Portfolio compass','Explore the research ecosystem','A concise route into research, academic development, networks, evidence and tools.')}
       <div class="grid grid-3 portfolio-compass-v3">${(D.compass||[]).map(c=>`<a class="card compass-card editorial-card" href="${c.href}"><div><h3>${esc(c.title)}</h3><p>${esc(c.detail)}</p></div><span class="arrow">Explore <b>↗</b></span></a>`).join('')}</div>
+    </div></section>
+
+    <section class="section home-research-evolution"><div class="container">
+      ${sectionHead('Research evolution','From statistical foundations to decision-focused AI','A chronological view of how my work has expanded from statistical learning and signal processing toward biomedical AI, forecasting, explainability and decision-relevant research.')}
+      <div class="research-evolution-track">
+        ${(D.research?.evolution||[]).map((x,i)=>`<article class="research-evolution-step">
+          <div class="evolution-marker"><span>${String(i+1).padStart(2,'0')}</span></div>
+          <div class="evolution-copy"><small>${esc(x.year||'')}</small><h3>${esc(x.title||'')}</h3><p>${esc(x.detail||'')}</p></div>
+        </article>`).join('')}
+      </div>
+      <div class="section-action"><a class="section-text-link" href="research.html">View full research direction ↗</a></div>
     </div></section>
 
     <section class="section"><div class="container">
@@ -377,6 +431,7 @@
     <section class="section alt"><div class="container">
       ${sectionHead('Academic network','Guidance, collaboration & mentorship','A selected view of the people connected to my academic development and research collaborations.')}
       <div class="grid grid-4 home-network-preview">${(D.people||[]).slice(0,4).map(personCard).join('')}</div>
+      <div class="home-network-secondary">${(D.people||[]).slice(4,8).map(homeNetworkMiniCard).join('')}</div>
       <div class="section-action"><a class="section-text-link" href="network.html">Explore full research network ↗</a></div>
     </div></section>
 
@@ -387,7 +442,7 @@
 
     <section class="section alt"><div class="container">
       ${sectionHead('Latest activity','Recent research updates','Recent public milestones across publications, submissions, conferences and research development.')}
-      <div class="timeline">${(D.latestUpdates||[]).slice(0,5).map(u=>`<div class="timeline-item"><strong>${esc(u.date||'')}</strong><h3>${esc(u.title||u.label||'')}</h3><p>${esc(u.detail||u.description||'')}</p></div>`).join('')}</div>
+      <div class="timeline">${(D.latestUpdates||[]).slice(0,6).map(u=>`<div class="timeline-item"><strong>${esc(u.date||'')}</strong><h3>${esc(u.title||u.label||'')}</h3><p>${esc(u.detail||u.description||'')}</p></div>`).join('')}</div>
     </div></section>
 
     <section class="section"><div class="container">
