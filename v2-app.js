@@ -294,6 +294,7 @@
       'visual studio code':'vscode/vscode-original.svg',
       'anaconda':'anaconda/anaconda-original.svg',
       'kaggle':'kaggle/kaggle-original.svg',
+      'google colab':'googlecolab/googlecolab-original.svg',
       'windows 10 / windows 11':'windows11/windows11-original.svg',
       'git':'git/git-original.svg',
       'github':'github/github-original.svg',
