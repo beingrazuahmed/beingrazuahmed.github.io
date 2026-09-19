@@ -72,7 +72,7 @@
       <p class="tiny">Shortcuts: <span class="kbd">/</span> search · <span class="kbd">H</span> home · <span class="kbd">T</span> theme · <span class="kbd">Esc</span> close</p></aside>
       <div class="accessibility-dock" aria-label="Reading controls">
         <button class="accessibility-fab text-size-trigger" id="textSizeTrigger" type="button" aria-label="Text size controls" aria-expanded="false" aria-controls="textSizePanel" title="Text size"><span aria-hidden="true">AA</span></button>
-        <button class="accessibility-fab back-to-top" id="backToTop" type="button" aria-label="Back to top" title="Back to top"><span aria-hidden="true">↑</span></button>
+        <button class="accessibility-fab back-to-top" id="backToTop" type="button" aria-label="Back to top" title="Back to top" tabindex="-1" aria-hidden="true"><svg class="back-to-top-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h14M12 20V9m-5 5 5-5 5 5"/></svg></button>
       </div>
       <aside class="text-size-panel" id="textSizePanel" hidden aria-label="Text size controls">
         <div class="text-size-panel-head"><strong>Text size</strong><button type="button" class="text-size-close" id="textSizeClose" aria-label="Close text size controls">×</button></div>
@@ -136,7 +136,19 @@
       topBtn.tabIndex=show?0:-1;
       topBtn.setAttribute('aria-hidden',String(!show));
     };
-    topBtn?.addEventListener('click',()=>window.scrollTo({top:0,behavior:root.dataset.motion==='reduced'?'auto':'smooth'}));
+    topBtn?.addEventListener('click',event=>{
+      const reduced=root.dataset.motion==='reduced'||window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(event.detail===0){
+        const target=document.querySelector('main h1')||document.querySelector('main');
+        if(target){
+          const hadTabIndex=target.hasAttribute('tabindex');
+          if(!hadTabIndex)target.setAttribute('tabindex','-1');
+          target.focus({preventScroll:true});
+          if(!hadTabIndex)target.addEventListener('blur',()=>target.removeAttribute('tabindex'),{once:true});
+        }
+      }
+      window.scrollTo({top:0,behavior:reduced?'auto':'smooth'});
+    });
     window.addEventListener('scroll',updateTopButton,{passive:true});
     updateTopButton();
     apply();
