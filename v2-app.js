@@ -768,6 +768,18 @@
                 <p>${p.presentedBy?`Presented by ${esc(p.presentedBy)}`:''}</p>
               </article>`).join('')}
             </div>
+            ${((c.contributions||[]).find(p=>p.paperId==='440')?.evidence||[]).length?`<section class="conference-evidence-materials" id="icrast-440-evidence">
+              <div class="conference-evidence-materials-head">
+                <div><span class="project-block-label">Paper 440 · Evidence & materials</span><p>Verified conference records connected to the presented AI-employment study.</p></div>
+                <span class="paper-id-chip">Paper ID 440</span>
+              </div>
+              <div class="conference-evidence-grid">
+                ${((c.contributions||[]).find(p=>p.paperId==='440')?.evidence||[]).map(ev=>`<a class="conference-evidence-item" href="${esc(ev.asset||'#')}" target="_blank" rel="noopener noreferrer">
+                  ${ev.asset?`<img src="${esc(ev.asset)}" alt="${esc(ev.label||'ICRAST evidence')}" loading="lazy" decoding="async">`:''}
+                  <div><span>${esc(ev.type||'Evidence')}</span><strong>${esc(ev.label||'Verified evidence')}</strong><small>${esc(ev.note||'')}</small></div>
+                </a>`).join('')}
+              </div>
+            </section>`:''}
             <div class="conference-link-row">
               ${c.url?`<a class="btn small" href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">Official conference website ↗</a>`:''}
               ${c.flyerUrl?`<a class="btn small ghost" href="${esc(c.flyerUrl)}" target="_blank" rel="noopener noreferrer">Official flyer / CFP PDF ↗</a>`:''}
@@ -1105,6 +1117,7 @@
                 <h4>${esc(p.title||'')}</h4>
                 <p class="conference-authors">${authorLine(p.authors)}</p>
                 ${p.presentedBy?`<p class="conference-presented-by"><strong>Presented by:</strong> ${esc(p.presentedBy)}</p>`:''}
+                ${(p.evidence||[]).filter(ev=>ev.asset).length?`<div class="conference-paper-evidence-links">${p.evidence.filter(ev=>ev.asset).map(ev=>`<a href="${esc(ev.asset)}" target="_blank" rel="noopener noreferrer">${esc(ev.label)} ↗</a>`).join('')}</div>`:''}
                 ${p.citation&&p.citationIEEE?`<details class="citation-details conference-list-citation"><summary>APA & IEEE citation</summary>${dualAcademicCitation(p.citation,p.citationIEEE)}</details>`:''}
               </article>`).join('')}
             </div>
@@ -1152,7 +1165,12 @@
 
   function resources(){return `${pageHero('Resources','Research toolkit, methods, notes and reproducibility resources.')}<section class="section"><div class="container">${sectionHead('Research toolkit','Software & environments')}<div class="grid grid-3">${(D.tools||[]).map(g=>`<article class="card tool-group"><h3>${esc(g.group)}</h3>${(g.items||[]).map(i=>`<div class="tool-item"><strong>${esc(i.name)}</strong><p>${esc(i.detail)}</p></div>`).join('')}</article>`).join('')}</div></div></section><section class="section alt"><div class="container">${sectionHead('Knowledge base','Planned research notes')}<div class="grid grid-3">${['Leakage-aware validation','Explainable AI & SHAP','Survey-weighted modelling','Missing-data analysis','Model calibration','Research reproducibility','Peer-review practice','Scientific writing'].map(x=>`<article class="card"><h3>${x}</h3><p>Evidence-grounded resource area. Published only when the underlying note or guide is ready.</p></article>`).join('')}</div></div></section>`;}
 
-  function gallery(){return `${pageHero('Gallery & Evidence','A curated visual archive of verified academic, research and professional records.')}<section class="section"><div class="container"><div class="filters">${['All','Award','Conference','Scientific Engagement','Professional Development','Scholarly Service'].map((x,i)=>`<button class="filter ${i===0?'active':''}">${x}</button>`).join('')}</div><div class="grid grid-3">${(D.gallery||[]).map(g=>`<article class="card"><div class="portrait-placeholder">${esc(g.title||g.category||'Verified visual evidence')}</div><h3>${esc(g.title||g.category||'')}</h3><p>${esc(g.caption||g.description||'')}</p></article>`).join('')}</div></div></section>`;}
+  function gallery(){return `${pageHero('Gallery & Evidence','A curated visual archive of verified academic, research and professional records.')}<section class="section"><div class="container"><div class="filters">${['All','Award','Conference','Scientific Engagement','Professional Development','Scholarly Service'].map((x,i)=>`<button class="filter ${i===0?'active':''}" data-gallery-filter="${esc(x)}">${x}</button>`).join('')}</div><div class="grid grid-3 gallery-evidence-grid">${(D.gallery||[]).map(g=>`<article class="card gallery-evidence-card" data-gallery-category="${esc(g.category||'')}">
+      ${g.asset?`<a class="gallery-evidence-media" href="${esc(g.href||g.asset)}" target="${g.href&&g.href.startsWith('http')?'_blank':'_self'}" rel="noopener noreferrer"><img src="${esc(g.asset)}" alt="${esc(g.title||'Academic evidence')}" loading="lazy" decoding="async"></a>`:`<div class="portrait-placeholder">${esc(g.title||g.category||'Verified visual evidence')}</div>`}
+      <div class="gallery-evidence-meta"><span class="badge">${esc(g.category||'Evidence')}</span>${g.paperId?`<span class="paper-id-chip">Paper ID ${esc(g.paperId)}</span>`:''}</div>
+      <h3>${esc(g.title||g.category||'')}</h3><p>${esc(g.caption||g.description||'')}</p>
+      ${g.related?`<a class="gallery-related-link" href="${esc(g.related)}">View related academic record →</a>`:''}
+    </article>`).join('')}</div></div></section>`;}
 
   function dashboard(){return `${pageHero('Research & Impact Dashboard','Interactive academic metrics with source-aware interpretation.')}<section class="section"><div class="container">${sectionHead('Verified metrics','Current scholarly indicators')}<div class="grid grid-4">${(D.impactMetrics||[]).map(m=>`<article class="card metric"><strong>${esc(m.value)}</strong><span>${esc(m.label)}</span><small>${esc(m.source||'')} ${m.date?'· '+esc(m.date):''}</small></article>`).join('')}</div></div></section><section class="section alt"><div class="container">${sectionHead('Portfolio analytics','Research distribution')}<div class="grid grid-3"><article class="card"><h3>Publication status</h3><p>3 published/online · 1 accepted/forthcoming · 8 under review · 7 in preparation.</p></article><article class="card"><h3>Conference record</h3><p>8 contributions · 3 presentations · 1 JSR Award.</p></article><article class="card"><h3>Scholarly service</h3><p>32 completed invited reviews across three journals.</p></article></div></div></section>`;}
 
