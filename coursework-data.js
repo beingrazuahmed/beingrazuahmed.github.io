@@ -181,6 +181,7 @@ window.COURSEWORK_DATA = {
       journal: {
         name: "Engineering Reports",
         citation: "Ahmed, M. R., Mauya, J., Reza, M. S., & Amin, R. (2026). Sophisticated Audio Source Separation: A Statistical Exploration of Clarity and Precision with FastICA. Engineering Reports, 8(1), e70575.",
+        citationIEEE: "M. R. Ahmed, J. Mauya, M. S. Reza, and R. Amin, “Sophisticated Audio Source Separation: A Statistical Exploration of Clarity and Precision with FastICA,” Engineering Reports, vol. 8, no. 1, Art. no. e70575, 2026, doi: 10.1002/eng2.70575.",
         publisher: "John Wiley & Sons, Ltd.",
         onlineIssn: "2577-8196",
         officialUrl: "https://onlinelibrary.wiley.com/journal/25778196",
