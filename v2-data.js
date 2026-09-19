@@ -161,7 +161,7 @@
       { name: 'R', short: 'R', brand: 'rproject', detail: 'Statistical computing, visualization, regression, multivariate methods, time-series, survival analysis and reproducible research.' },
       { name: 'C', short: 'C', brand: 'c', detail: 'Foundational programming, algorithmic thinking, numerical problem solving and undergraduate computational coursework.' }
     ]},
-    { group: 'Web & Research Prototype Development', icon: 'web', items: [
+    { group: 'Web, Backend & Research Prototype Development', icon: 'web', items: [
       { name: 'HTML', short: 'HTML5', brand: 'html5', detail: 'Semantic structure for academic, research and prototype web interfaces.' },
       { name: 'JavaScript', short: 'JavaScript', brand: 'javascript', detail: 'Client-side scripting for interactive portfolio features, dynamic interfaces, DOM-driven components and lightweight research-web functionality.' },
       { name: 'CSS', short: 'CSS3', brand: 'css3', detail: 'Responsive interface styling, layout, visual hierarchy and research-web customization.' },
