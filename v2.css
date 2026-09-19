@@ -4957,3 +4957,29 @@ html[data-motion="reduced"]{scroll-behavior:auto!important}
   width:auto;
   height:auto;
 }
+
+.tech-logo-wide{
+  width:76px;
+  flex-basis:76px;
+  padding-left:8px;
+  padding-right:8px;
+}
+.tech-logo-wide img{
+  max-width:60px!important;
+  width:60px!important;
+  max-height:30px!important;
+  height:auto!important;
+}
+.ai-platform .tech-logo-custom img{
+  image-rendering:auto;
+}
+@media (max-width:700px){
+  .tech-logo-wide{
+    width:68px;
+    flex-basis:68px;
+  }
+  .tech-logo-wide img{
+    max-width:54px!important;
+    width:54px!important;
+  }
+}
