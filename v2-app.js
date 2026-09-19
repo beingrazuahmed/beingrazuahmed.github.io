@@ -266,15 +266,20 @@
       'xgboost':'https://xgboost.ai/images/logo/xgboost-logo-trimmed.png',
       'scipy':'https://cdn.jsdelivr.net/gh/scipy/scipy.org@main/static/images/logo.svg',
       'c':'https://skillicons.dev/icons?i=c&theme=light',
+      'jupyter notebook':'https://cdn.jsdelivr.net/gh/jupyter/design@main/logos/Favicon/favicon.svg',
+      'microsoft 365 / office':'https://commons.wikimedia.org/wiki/Special:Redirect/file/Microsoft_365_%282022%29.svg',
       'microsoft office':'https://commons.wikimedia.org/wiki/Special:Redirect/file/Microsoft_365_%282022%29.svg',
-      'google workspace':'https://commons.wikimedia.org/wiki/Special:Redirect/file/Google_Workspace_2026_wordmark.svg',
+      'google workspace':'https://commons.wikimedia.org/wiki/Special:Redirect/file/Google_Favicon_2025.svg',
       'chatgpt':'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/openai.png',
       'claude':'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/claude-color.png',
+      'gemini':'https://commons.wikimedia.org/wiki/Special:Redirect/file/Google_Gemini_icon_2025.svg',
+      'deepseek':'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/deepseek-color.png',
       'grok':'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/grok.png',
-      'gemini notebook':'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/gemini-color.png',
+      'perplexity':'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/perplexity-color.png',
+      'gemini notebook':'assets/academic/logos/gemini-notebook-logo.png',
       'microsoft copilot':'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/copilot-color.png'
     };
-    const wideLogoKeys=new Set(['xgboost','google workspace']);
+    const horizontalLogoKeys=new Set(['xgboost']);
     const devicons={
       'python':'python/python-original.svg',
       'r':'r/r-original.svg',
@@ -283,7 +288,6 @@
       'css':'css3/css3-original.svg',
       'css3':'css3/css3-original.svg',
       'flask':'flask/flask-original.svg',
-      'jupyter notebook':'jupyter/jupyter-original.svg',
       'visual studio code':'vscode/vscode-original.svg',
       'anaconda':'anaconda/anaconda-original.svg',
       'kaggle':'kaggle/kaggle-original.svg',
@@ -306,15 +310,11 @@
       'ultralytics':'ultralytics',
       'geopandas':'geopandas',
       'mendeley':'mendeley',
-      'gemini':'googlegemini',
-      'deepseek':'deepseek',
-      'perplexity':'perplexity',
-      'microsoft copilot':'microsoftcopilot'
     };
 
     if(customAssets[key]){
-      const wide=wideLogoKeys.has(key)?' tech-logo-wide':'';
-      return `<span class="tech-logo tech-logo-digital tech-logo-custom${wide}"><img src="${customAssets[key]}" alt="" loading="lazy" decoding="async" data-tech-fallback="${fallback}"></span>`;
+      const horizontal=horizontalLogoKeys.has(key)?' tech-logo-horizontal':'';
+      return `<span class="tech-logo tech-logo-digital tech-logo-custom${horizontal}"><img src="${customAssets[key]}" alt="" loading="lazy" decoding="async" data-tech-fallback="${fallback}"></span>`;
     }
 
     if(key==='tensorflow / keras'){
@@ -351,7 +351,7 @@
       bansdoc:{slug:'',label:'BANSDOC'}
     };
     if(type==='doi'){
-      return `<span class="scholar-brand-icon doi-brand-mark" aria-hidden="true"><span>DOI</span><sup>®</sup></span>`;
+      return `<span class="scholar-brand-icon doi-brand-mark" aria-hidden="true"><img class="doi-logo-img" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/DOI_logo.svg" alt="" loading="lazy" decoding="async"></span>`;
     }
     const x=map[type]||{slug:'',label:label||type};
     if(x.slug){

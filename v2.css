@@ -4983,3 +4983,60 @@ html[data-motion="reduced"]{scroll-behavior:auto!important}
     width:54px!important;
   }
 }
+
+
+/* === Academic logo final pass: contained current marks === */
+.tech-logo-horizontal{
+  width:48px!important;
+  height:48px!important;
+  flex:0 0 48px!important;
+  padding:9px 5px!important;
+}
+.tech-logo-horizontal img{
+  width:38px!important;
+  max-width:38px!important;
+  height:auto!important;
+  max-height:24px!important;
+  object-fit:contain!important;
+}
+.tool-item-modern .tech-logo,
+.ai-platform .tech-logo{
+  overflow:hidden;
+}
+.tool-item-modern .tech-logo img,
+.ai-platform .tech-logo img{
+  object-fit:contain;
+}
+.doi-brand-mark{
+  min-height:0;
+  padding:0;
+  border:0;
+  background:transparent!important;
+  box-shadow:none;
+}
+.doi-brand-mark .doi-logo-img{
+  width:24px;
+  height:24px;
+  display:block;
+  border-radius:50%;
+  object-fit:cover;
+}
+.doi-icon-link-modern .doi-brand-mark .doi-logo-img{
+  width:34px;
+  height:34px;
+}
+:root[data-mode="dark"] .doi-brand-mark{
+  background:transparent!important;
+  border:0!important;
+}
+@media (max-width:700px){
+  .tech-logo-horizontal{
+    width:44px!important;
+    height:44px!important;
+    flex-basis:44px!important;
+  }
+  .tech-logo-horizontal img{
+    width:34px!important;
+    max-width:34px!important;
+  }
+}
