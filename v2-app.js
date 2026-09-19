@@ -935,7 +935,7 @@
 
     function seed(){
       const mobile=width<720;
-      const count=Math.max(10,Math.round(profile.count*(mobile?.46:1)));
+      const count=Math.max(10,Math.round(profile.count*(mobile ? .46 : 1)));
       const anchorCount=Math.min(profile.anchors,Math.max(2,Math.round(count/8)));
       const anchors=[];
 
@@ -1002,7 +1002,7 @@
         const dist=Math.hypot(dx,dy);
         const range=145;
         if(dist>0&&dist<range){
-          const force=(1-dist/range)*(n.anchor?.010:.018);
+          const force=(1-dist/range)*(n.anchor ? .010 : .018);
           n.x+=(dx/dist)*force;
           n.y+=(dy/dist)*force;
         }
@@ -1029,13 +1029,13 @@
 
           const strength=1-dist/connect;
           const anchorLink=a.anchor||b.anchor;
-          const alpha=(anchorLink?.060:.043)*strength;
+          const alpha=(anchorLink ? .060 : .043)*strength;
 
           ctx.beginPath();
           ctx.moveTo(a.x,a.y);
           ctx.lineTo(b.x,b.y);
           ctx.strokeStyle=`rgba(${palette.line[0]},${palette.line[1]},${palette.line[2]},${alpha.toFixed(3)})`;
-          ctx.lineWidth=anchorLink?.82:.68;
+          ctx.lineWidth=anchorLink ? .82 : .68;
           ctx.stroke();
 
           if((i*17+j*11)%47===0&&!reduced()){
@@ -1051,7 +1051,7 @@
       }
 
       nodes.forEach(n=>{
-        const pulse=n.anchor&&!reduced()?.78+.12*Math.sin(time*.00055+n.phase):1;
+        const pulse=(n.anchor&&!reduced()) ? .78+.12*Math.sin(time*.00055+n.phase) : 1;
         const col=n.anchor?palette.anchor:palette.node;
 
         if(n.anchor){
@@ -1064,7 +1064,7 @@
 
         ctx.beginPath();
         ctx.arc(n.x,n.y,n.r*(n.anchor?pulse:1),0,Math.PI*2);
-        ctx.fillStyle=`rgba(${col[0]},${col[1]},${col[2]},${n.anchor?.26:.17})`;
+        ctx.fillStyle=`rgba(${col[0]},${col[1]},${col[2]},${n.anchor ? .26 : .17})`;
         ctx.fill();
       });
     }
