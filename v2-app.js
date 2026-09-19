@@ -683,8 +683,29 @@
     </span>`;
   }
 
+  function highlightCitationAuthor(citation,style='apa'){
+    let out=esc(citation||'');
+    const names=style==='ieee'
+      ? ['M. R. Ahmed','Md. Razu Ahmed']
+      : ['Ahmed, M. R.','Md. Razu Ahmed'];
+    names.forEach(name=>{
+      const safe=esc(name);
+      out=out.split(safe).join(`<strong class="citation-self">${safe}</strong>`);
+    });
+    return out;
+  }
+
+  function dualAcademicCitation(apa='',ieee=''){
+    if(!apa&&!ieee)return '';
+    return `<div class="dual-citation" aria-label="APA and IEEE citation formats">
+      ${apa?`<div class="citation-format citation-format-apa"><span class="citation-style-label">APA</span><p>${highlightCitationAuthor(apa,'apa')}</p></div>`:''}
+      ${ieee?`<div class="citation-format citation-format-ieee"><span class="citation-style-label">IEEE</span><p>${highlightCitationAuthor(ieee,'ieee')}</p></div>`:''}
+    </div>`;
+  }
+
   function fieldSurveyCard(){
     const f=D.fieldSurvey||{}, c=f.conference||{};
+    const academicCitationMode=page==='academic';
     return `<article class="card field-survey-card">
       <div class="meta">
         <span class="badge">${esc(f.courseCode||'')}</span>
@@ -728,7 +749,7 @@
           <span>${esc(c.source||'')}</span><span>${esc(c.page||'')}</span><span>${esc(c.role||'')}</span>
         </div>
         ${c.url?`<div class="conference-link-row"><a class="btn small" href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">Official conference homepage ↗</a></div>`:''}
-        ${c.citation?`<details class="citation-details"><summary>View bibliographic citation</summary><p>${esc(c.citation)}</p></details>`:''}
+        ${c.citation?`<details class="citation-details"><summary>${academicCitationMode?'View APA & IEEE citations':'View bibliographic citation'}</summary>${academicCitationMode?dualAcademicCitation(c.citation,c.citationIEEE):`<p>${esc(c.citation)}</p>`}</details>`:''}
       </div>
 
       ${f.article?`<div class="journal-progression journal-progression-rich">
@@ -763,7 +784,7 @@
         <div class="journal-links">${(f.article.links||[]).map(x=>ext(x.url,x.label)).join(' · ')}</div>
         <details class="journal-details">
           <summary>Publication record & journal profile</summary>
-          ${f.article.citation?`<div class="journal-detail-block"><span class="detail-label">Reference</span><p>${esc(f.article.citation)}</p></div>`:''}
+          ${f.article.citation?`<div class="journal-detail-block"><span class="detail-label">${academicCitationMode?'Citation formats':'Reference'}</span>${academicCitationMode?dualAcademicCitation(f.article.citation,f.article.citationIEEE):`<p>${esc(f.article.citation)}</p>`}</div>`:''}
           ${f.article.publisher?`<div class="journal-detail-block"><span class="detail-label">Publisher</span><p>${esc(f.article.publisher)}</p></div>`:''}
           ${f.article.publicationModel?`<div class="journal-detail-block"><span class="detail-label">Journal model</span><p>${esc(f.article.publicationModel)}</p></div>`:''}
           ${f.article.journalSince?`<div class="journal-detail-block"><span class="detail-label">Journal history</span><p>${esc(f.article.journalSince)}. ${esc(f.article.hosting||'')}</p></div>`:''}
@@ -853,7 +874,7 @@
             ${p.journal.officialUrl?`<a class="journal-library-link" href="${esc(p.journal.officialUrl)}" target="_blank" rel="noopener noreferrer"><img src="assets/academic/journals/engineering-reports/wiley-online-library.webp" alt="Wiley Online Library" loading="lazy" decoding="async"><span>Official journal page ↗</span></a>`:''}
           </div>
         </div>`:''}
-        ${p.journal.citation?`<p class="project-journal-citation">${esc(p.journal.citation)}</p>`:''}
+        ${p.journal.citation?`<div class="project-journal-citation-block"><div class="detail-label">APA & IEEE citations</div>${dualAcademicCitation(p.journal.citation,p.journal.citationIEEE)}</div>`:''}
         ${(p.journal.metrics||[]).length?`<div class="project-journal-metrics">${p.journal.metrics.map(m=>`<div><strong>${esc(m.value||'')}</strong><span>${esc(m.label||'')}</span><small>${esc(m.source||'')}</small></div>`).join('')}</div>`:''}
         ${!isEngineeringReports?`<div class="scholarly-brand-row scholarly-brand-row-project">
           ${scholarlyBrandIcon('wiley')}
