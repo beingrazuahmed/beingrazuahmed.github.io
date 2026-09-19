@@ -5650,3 +5650,33 @@ html[data-motion="reduced"]{scroll-behavior:auto!important}
     flex:1 1 150px;
   }
 }
+
+
+/* === RU Statistics & Data Science identity correction === */
+.academic-brand-asset.is-department{
+  grid-template-columns:48px minmax(0,1fr);
+  min-height:60px;
+  padding:7px 11px;
+  border-color:color-mix(in srgb,var(--accent) 24%,var(--line));
+  background:color-mix(in srgb,var(--accent) 4%,var(--surface));
+}
+.academic-brand-asset.is-department img{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  object-fit:contain;
+  background:#fff;
+}
+.academic-brand-asset.is-department span{
+  max-width:235px;
+  line-height:1.35;
+}
+@media (max-width:700px){
+  .academic-brand-asset.is-department{
+    grid-template-columns:44px minmax(0,1fr);
+  }
+  .academic-brand-asset.is-department img{
+    width:44px;
+    height:44px;
+  }
+}
