@@ -1,9 +1,9 @@
-# ICRAST 2025 PDF documents
+# ICRAST 2025 source documents
 
-Upload the replacement source PDFs to this folder using these exact filenames:
+The live portfolio uses these uploaded source PDFs:
 
-- paper-440-proceedings.pdf
-- paper-461-proceedings.pdf
-- paper-440-presentation.pdf
+- `icrast-2025-paper-440-proceedings.pdf`
+- `icrast-2025-paper-461-proceedings.pdf`
+- `icrast-2025-paper-440-presentation.pdf`
 
-These files are kept separate from image evidence such as the conference brochure and Paper 440 certificate.
+Paper 440 and Paper 461 are intentionally kept as separate conference records.
