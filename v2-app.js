@@ -260,12 +260,24 @@
       'shap':'https://cdn.jsdelivr.net/gh/shap/shap@master/docs/artwork/shap_logo.png',
       'seaborn':'https://cdn.jsdelivr.net/gh/gilbarbara/logos@main/logos/seaborn-icon.svg',
       'librosa':'https://cdn.jsdelivr.net/gh/librosa/librosa@main/docs/img/librosa_logo_dark.svg',
-      'pingouin':'https://cdn.jsdelivr.net/gh/raphaelvallat/pingouin@main/docs/pictures/pingouin.svg'
+      'pingouin':'https://cdn.jsdelivr.net/gh/raphaelvallat/pingouin@main/docs/pictures/pingouin.svg',
+      'mir_eval':'assets/academic/logos/mir-eval-digital.svg',
+      'pyreadstat':'assets/academic/logos/pyreadstat-digital.svg',
+      'xgboost':'https://xgboost.ai/images/logo/xgboost-logo-trimmed.png',
+      'scipy':'https://cdn.jsdelivr.net/gh/scipy/scipy.org@main/static/images/logo.svg',
+      'c':'https://skillicons.dev/icons?i=c&theme=light',
+      'microsoft office':'https://commons.wikimedia.org/wiki/Special:Redirect/file/Microsoft_365_%282022%29.svg',
+      'google workspace':'https://commons.wikimedia.org/wiki/Special:Redirect/file/Google_Workspace_2026_wordmark.svg',
+      'chatgpt':'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/openai.png',
+      'claude':'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/claude-color.png',
+      'grok':'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/grok.png',
+      'gemini notebook':'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/gemini-color.png',
+      'microsoft copilot':'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/copilot-color.png'
     };
+    const wideLogoKeys=new Set(['xgboost','google workspace']);
     const devicons={
       'python':'python/python-original.svg',
       'r':'r/r-original.svg',
-      'c':'c/c-original.svg',
       'html':'html5/html5-original.svg',
       'html5':'html5/html5-original.svg',
       'css':'css3/css3-original.svg',
@@ -280,7 +292,6 @@
       'github':'github/github-original.svg',
       'pandas':'pandas/pandas-original.svg',
       'numpy':'numpy/numpy-original.svg',
-      'scipy':'scipy/scipy-original.svg',
       'scikit-learn':'scikitlearn/scikitlearn-original.svg',
       'pytorch':'pytorch/pytorch-original.svg',
       'torchvision':'pytorch/pytorch-original.svg',
@@ -292,24 +303,18 @@
     const simpleSlug={
       'streamlit':'streamlit',
       'nvidia cuda / cudnn':'nvidia',
-      'xgboost':'xgboost',
       'ultralytics':'ultralytics',
       'geopandas':'geopandas',
-      'microsoft office':'microsoft365',
-      'google workspace':'google',
       'mendeley':'mendeley',
-      'chatgpt':'openai',
-      'claude':'anthropic',
       'gemini':'googlegemini',
       'deepseek':'deepseek',
-      'grok':'xai',
       'perplexity':'perplexity',
-      'notebooklm':'googlenotebooklm',
       'microsoft copilot':'microsoftcopilot'
     };
 
     if(customAssets[key]){
-      return `<span class="tech-logo tech-logo-digital tech-logo-custom"><img src="${customAssets[key]}" alt="" loading="lazy" decoding="async" data-tech-fallback="${fallback}"></span>`;
+      const wide=wideLogoKeys.has(key)?' tech-logo-wide':'';
+      return `<span class="tech-logo tech-logo-digital tech-logo-custom${wide}"><img src="${customAssets[key]}" alt="" loading="lazy" decoding="async" data-tech-fallback="${fallback}"></span>`;
     }
 
     if(key==='tensorflow / keras'){
