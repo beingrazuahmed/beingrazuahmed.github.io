@@ -279,7 +279,6 @@
     };
 
     const simpleSlug={
-      'ibm spss statistics':'ibm',
       'streamlit':'streamlit',
       'nvidia cuda / cudnn':'nvidia',
       'xgboost':'xgboost',
@@ -1260,8 +1259,9 @@
     },{once:true}));
     document.querySelectorAll('img[data-tech-fallback]').forEach(img=>img.addEventListener('error',()=>{
       const wrap=img.closest('.tech-logo');
-      if(wrap){const span=document.createElement('span');span.className='tech-logo-fallback';span.textContent=img.dataset.techFallback||'APP';wrap.replaceWith(span);}
+      if(wrap){const span=document.createElement('span');span.className='tech-logo-fallback tech-logo-fallback-digital';span.innerHTML='<span>'+(img.dataset.techFallback||'APP')+'</span>';wrap.replaceWith(span);}
     },{once:true}));
+    document.querySelectorAll('.scholar-brand-icon img').forEach(img=>img.addEventListener('error',()=>{img.hidden=true;},{once:true}));
     document.querySelectorAll('.network-person-portrait').forEach(img=>{
       const hideBroken=()=>{img.hidden=true;};
       img.addEventListener('error',hideBroken,{once:true});
