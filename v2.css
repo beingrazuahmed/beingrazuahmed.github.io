@@ -7207,3 +7207,229 @@ html[data-motion="reduced"]{scroll-behavior:auto!important}
     border-radius:14px;
   }
 }
+
+
+/* === ICRAST logo + premium verified document cards · 2026-09-19 === */
+.conference-event-logo,
+.conference-brand-logo-exact{
+  display:block!important;
+  flex:0 0 auto;
+  object-fit:contain!important;
+  object-position:center!important;
+  background:#fff!important;
+  border:1px solid color-mix(in srgb,var(--accent) 20%,var(--line))!important;
+}
+.conference-event-logo{
+  width:86px!important;
+  height:86px!important;
+  padding:5px!important;
+  border-radius:18px!important;
+}
+.conference-brand-logo-exact{
+  width:76px!important;
+  height:76px!important;
+  padding:4px!important;
+  border-radius:16px!important;
+}
+.field-survey-conference-head .conference-brand-logo-exact{align-self:start}
+
+/* Visual documents get the prominent row; PDFs form a balanced second row. */
+.conference-source-grid{
+  display:grid!important;
+  grid-template-columns:repeat(12,minmax(0,1fr))!important;
+  gap:16px!important;
+  align-items:stretch;
+}
+.conference-source-card{
+  min-width:0;
+  border:1px solid color-mix(in srgb,var(--line) 92%,transparent)!important;
+  border-radius:18px!important;
+  background:var(--surface)!important;
+  box-shadow:0 10px 28px rgba(20,58,84,.055)!important;
+}
+.conference-source-card.source-certificate{
+  grid-column:span 6;
+  order:1;
+  border-color:color-mix(in srgb,#11a77e 38%,var(--line))!important;
+}
+.conference-source-card.source-brochure{
+  grid-column:span 6;
+  order:2;
+}
+.conference-source-card.source-pdf{
+  grid-column:span 4;
+  order:3;
+}
+.conference-source-card>a{height:100%}
+.conference-source-card.source-visual>a{
+  display:flex!important;
+  flex-direction:column;
+}
+.conference-source-preview{
+  display:block;
+  overflow:hidden;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
+.conference-source-card.source-certificate .conference-source-preview{aspect-ratio:1536/1116}
+.conference-source-card.source-brochure .conference-source-preview{aspect-ratio:1080/769}
+.conference-source-card.source-visual .conference-source-preview img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  background:#fff!important;
+}
+.conference-source-card.source-visual .conference-source-copy{
+  min-height:112px;
+  padding:18px 20px 20px!important;
+}
+.conference-source-card.source-visual .conference-source-copy small{font-size:10.5px!important}
+.conference-source-card.source-visual .conference-source-copy strong{
+  margin-top:7px!important;
+  font-size:17px!important;
+  line-height:1.35!important;
+}
+.conference-source-card.source-visual .conference-source-copy span{
+  margin-top:7px!important;
+  font-size:12.5px!important;
+}
+
+/* Kabbo-style verified ribbon: slim, crisp, attached to the document corner. */
+.verified-corner-ribbon{
+  width:94px!important;
+  height:94px!important;
+  top:0!important;
+  right:0!important;
+  overflow:hidden!important;
+  z-index:30!important;
+}
+.verified-corner-ribbon>span{
+  top:18px!important;
+  right:-37px!important;
+  width:136px!important;
+  min-height:27px!important;
+  padding:6px 8px!important;
+  transform:rotate(45deg)!important;
+  background:linear-gradient(90deg,#08a77b,#14bc8b)!important;
+  color:#fff!important;
+  border:0!important;
+  box-shadow:0 7px 18px rgba(6,119,87,.18)!important;
+  font-size:9.5px!important;
+  font-weight:900!important;
+  letter-spacing:.075em!important;
+}
+.conference-source-card.source-certificate .verified-corner-ribbon{
+  width:102px!important;
+  height:102px!important;
+}
+.conference-source-card.source-certificate .verified-corner-ribbon>span{
+  top:20px!important;
+  right:-35px!important;
+  width:144px!important;
+  min-height:29px!important;
+  font-size:10px!important;
+}
+
+/* Compact PDF cards */
+.conference-source-card.source-pdf>a{
+  min-height:152px!important;
+  padding:20px!important;
+  gap:16px!important;
+}
+.conference-source-pdfmark{
+  flex:0 0 68px!important;
+  width:68px!important;
+  height:84px!important;
+  border-radius:12px!important;
+}
+.conference-source-card.source-pdf .conference-source-copy strong{font-size:15px!important}
+.conference-source-card.source-pdf .conference-source-copy span{font-size:12px!important}
+
+/* Recognition credential card */
+.recognition-certificates-section .recognition-certificate-grid{
+  grid-template-columns:minmax(0,640px)!important;
+  justify-content:center!important;
+}
+.recognition-certificates-section .recognition-certificate-card{
+  padding:0 22px 22px!important;
+  border-radius:20px!important;
+  border-color:color-mix(in srgb,#11a77e 30%,var(--line))!important;
+  box-shadow:0 16px 42px rgba(20,58,84,.075)!important;
+}
+.recognition-certificates-section .recognition-certificate-card>a:first-child{
+  display:block!important;
+  margin:0 -22px 18px!important;
+  border-radius:20px 20px 0 0!important;
+  overflow:hidden!important;
+  background:#fff!important;
+  border-bottom:1px solid var(--line)!important;
+}
+.recognition-certificates-section .recognition-certificate-card>a:first-child img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  aspect-ratio:1536/1116!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  background:#fff!important;
+}
+.recognition-certificates-section .recognition-certificate-card h3{
+  margin-top:8px!important;
+  font-size:20px!important;
+}
+.recognition-certificates-section .verified-corner-ribbon{
+  width:106px!important;
+  height:106px!important;
+}
+.recognition-certificates-section .verified-corner-ribbon>span{
+  top:21px!important;
+  right:-35px!important;
+  width:146px!important;
+  min-height:30px!important;
+  font-size:10px!important;
+}
+
+/* Gallery certificate preserves full-document proportions. */
+.gallery-evidence-card.is-verified-certificate{
+  border-color:color-mix(in srgb,#11a77e 30%,var(--line))!important;
+  box-shadow:0 14px 36px rgba(20,58,84,.06)!important;
+}
+.gallery-evidence-card.is-verified-certificate .gallery-evidence-media{background:#fff!important}
+.gallery-evidence-card.is-verified-certificate .gallery-evidence-media img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  aspect-ratio:1536/1116!important;
+  object-fit:contain!important;
+  background:#fff!important;
+}
+
+@media(max-width:980px){
+  .conference-source-card.source-certificate,
+  .conference-source-card.source-brochure{grid-column:span 12}
+  .conference-source-card.source-pdf{grid-column:span 6}
+}
+@media(max-width:680px){
+  .conference-event-logo{
+    width:70px!important;
+    height:70px!important;
+    border-radius:15px!important;
+  }
+  .conference-brand-logo-exact{
+    width:64px!important;
+    height:64px!important;
+    border-radius:14px!important;
+  }
+  .conference-source-grid{grid-template-columns:1fr!important}
+  .conference-source-card.source-certificate,
+  .conference-source-card.source-brochure,
+  .conference-source-card.source-pdf{grid-column:auto!important}
+  .conference-source-card.source-pdf>a{
+    min-height:118px!important;
+    padding:15px!important;
+  }
+  .recognition-certificates-section .recognition-certificate-grid{grid-template-columns:1fr!important}
+}
