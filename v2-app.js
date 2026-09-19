@@ -744,7 +744,6 @@
 
       <div class="field-survey-conference-bridge">
         <div class="field-survey-conference-head">
-          <svg class="conference-brand-logo-exact" viewBox="839 210 114 114" role="img" aria-label="Faculty of Science, University of Rajshahi logo" focusable="false"><image href="assets/academic/conferences/icrast-2025-brochure.jpg" x="0" y="0" width="1080" height="769" preserveAspectRatio="none"></image></svg>
           <div><div class="section-kicker">Conference progression</div><h4>${esc(c.fullName||c.shortName||'Conference presentation')}</h4><p>${esc(c.organizer||c.host||'')} · ${esc(c.date||'')}</p></div>
           <span class="badge">${esc(c.presentation||'Presentation')}</span>
         </div>
@@ -1086,7 +1085,7 @@
         <div class="conference-groups conference-groups-professional">
           ${groups.map((g,gi)=>`<article class="card conference-group-card ${g.id==='icrast-2025'?'conference-group-featured':''}" id="${esc(g.id||'conference-'+gi)}"><span class="conference-record-number" aria-hidden="true">${String(gi+1).padStart(2,'0')}</span>
             <div class="conference-group-head">
-              <div class="conference-group-identity">${g.id==='icrast-2025'?'<svg class="conference-event-logo" viewBox="839 210 114 114" role="img" aria-label="Faculty of Science, University of Rajshahi logo" focusable="false"><image href="assets/academic/conferences/icrast-2025-brochure.jpg" x="0" y="0" width="1080" height="769" preserveAspectRatio="none"></image></svg>':`<span class="conference-event-monogram" aria-hidden="true">${esc((g.event||'CONF').replace(/\s+\d{4}$/,''))}</span>`}<div><div class="section-kicker">${esc(g.event||'Conference')}</div><h3>${esc(g.full||g.event||'')}</h3></div></div>
+              <div class="conference-group-identity"><span class="conference-event-monogram" aria-hidden="true">${esc((g.event||'CONF').replace(/\s+\d{4}$/,''))}</span><div><div class="section-kicker">${esc(g.event||'Conference')}</div><h3>${esc(g.full||g.event||'')}</h3></div></div>
               <div class="conference-group-actions">
                 ${g.url?`<a class="btn small" href="${esc(g.url)}" target="_blank" rel="noopener noreferrer">Official homepage ↗</a>`:''}
                 ${g.flyerUrl?`<a class="btn small ghost" href="${esc(g.flyerUrl)}" target="_blank" rel="noopener noreferrer">Official flyer / CFP ↗</a>`:''}
