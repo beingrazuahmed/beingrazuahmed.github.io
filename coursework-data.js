@@ -54,7 +54,7 @@ window.COURSEWORK_DATA = {
     {
       id: "laboratory-applied",
       name: "Laboratory & Applied Coursework",
-      description: "Twenty applied/laboratory courses spanning simulation, C, Python/R, econometrics, epidemiology, data mining and machine learning.",
+      description: "Twenty applied/laboratory courses spanning simulation, programming, statistical data analysis, econometrics, epidemiology, data mining and machine learning.",
       groups: [
         {
           label: "B.Sc. laboratory courses · 32 credits",
@@ -91,14 +91,12 @@ window.COURSEWORK_DATA = {
     {
       id: "artificial-intelligence-data-science",
       name: "Artificial Intelligence & Data Science",
-      description: "Programming, data mining, machine learning, deep learning and statistical data-analysis coursework supporting modern data-driven research.",
+      description: "Programming, data mining, machine learning and deep learning coursework supporting modern data-driven research.",
       courses: [
         "Programming with Python and R",
         "Data Mining",
         "Machine Learning",
-        "Deep Learning for Computer Vision",
-        "Statistical Data Analysis - I",
-        "Statistical Data Analysis - II"
+        "Deep Learning for Computer Vision"
       ]
     },
     {
