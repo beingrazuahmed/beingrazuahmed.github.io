@@ -253,39 +253,38 @@
 
     const deviconBase='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/';
     const customAssets={
-      'ibm spss statistics':'https://cdn.jsdelivr.net/gh/AdittoAhosanKabbo/adittoahosankabbo.github.io@main/assets/images/LOGO/SPSS.png',
-      'statsmodels':'https://cdn.jsdelivr.net/gh/statsmodels/statsmodels@main/docs/source/images/statsmodels-logo-v2-no-text.svg',
-      'lightgbm':'https://cdn.jsdelivr.net/gh/lightgbm-org/LightGBM@main/docs/logo/LightGBM-logo-hex.svg',
-      'catboost':'https://cdn.jsdelivr.net/gh/catboost/catboost@master/logo/catboost.png',
-      'shap':'https://cdn.jsdelivr.net/gh/shap/shap@master/docs/artwork/shap_logo.png',
-      'seaborn':'https://cdn.jsdelivr.net/gh/gilbarbara/logos@main/logos/seaborn-icon.svg',
-      'librosa':'https://cdn.jsdelivr.net/gh/librosa/librosa@main/docs/img/librosa_logo_dark.svg',
-      'pingouin':'https://cdn.jsdelivr.net/gh/raphaelvallat/pingouin@main/docs/pictures/pingouin.svg',
+      'ibm spss statistics':'assets/academic/logos/vendor/spss.png',
+      'statsmodels':'assets/academic/logos/vendor/statsmodels.svg',
+      'lightgbm':'assets/academic/logos/vendor/lightgbm.svg',
+      'catboost':'assets/academic/logos/vendor/catboost.png',
+      'shap':'assets/academic/logos/vendor/shap.png',
+      'seaborn':'assets/academic/logos/vendor/seaborn.svg',
+      'librosa':'assets/academic/logos/vendor/librosa.svg',
+      'pingouin':'assets/academic/logos/vendor/pingouin.svg',
       'mir_eval':'assets/academic/logos/mir-eval-digital.svg',
       'pyreadstat':'assets/academic/logos/pyreadstat-digital.svg',
       'soundfile / pysoundfile':'assets/academic/logos/soundfile-digital.svg',
-      'xgboost':'https://xgboost.ai/images/logo/xgboost-logo-trimmed.png',
-      'scipy':'https://cdn.jsdelivr.net/gh/scipy/scipy.org@main/static/images/logo.svg',
-      'c':'https://skillicons.dev/icons?i=c&theme=light',
-      'jupyter notebook':'https://raw.githubusercontent.com/AdittoAhosanKabbo/adittoahosankabbo.github.io/main/assets/images/LOGO/JUPYTER.png',
-      'microsoft 365 / office':'https://commons.wikimedia.org/wiki/Special:Redirect/file/Microsoft_365_%282022%29.svg',
-      'microsoft office':'https://commons.wikimedia.org/wiki/Special:Redirect/file/Microsoft_365_%282022%29.svg',
-      'google workspace':'https://commons.wikimedia.org/wiki/Special:Redirect/file/Google_Favicon_2025.svg',
-      'chatgpt':'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/openai.png',
-      'claude':'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/claude-color.png',
-      'gemini':'https://commons.wikimedia.org/wiki/Special:Redirect/file/Google_Gemini_icon_2025.svg',
-      'deepseek':'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/deepseek-color.png',
-      'grok':'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/grok.png',
-      'perplexity':'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-svg/icons/perplexity-color.svg',
+      'xgboost':'assets/academic/logos/vendor/xgboost.png',
+      'scipy':'assets/academic/logos/vendor/scipy.svg',
+      'jupyter notebook':'assets/academic/logos/vendor/jupyter.jpg',
+      'microsoft 365 / office':'assets/academic/logos/vendor/microsoft365.svg',
+      'microsoft office':'assets/academic/logos/vendor/microsoft365.svg',
+      'google workspace':'assets/academic/logos/vendor/google-g.svg',
+      'chatgpt':'assets/academic/logos/vendor/chatgpt.png',
+      'claude':'assets/academic/logos/vendor/claude.png',
+      'gemini':'assets/academic/logos/vendor/gemini.svg',
+      'deepseek':'assets/academic/logos/vendor/deepseek.png',
+      'grok':'assets/academic/logos/vendor/grok.png',
+      'perplexity':'assets/academic/logos/vendor/perplexity.svg',
       'gemini notebook':'assets/academic/logos/gemini-notebook-logo.png',
-      'microsoft copilot':'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/copilot-color.png',
+      'microsoft copilot':'assets/academic/logos/vendor/copilot.png',
       'quillbot':'https://www.google.com/s2/favicons?sz=128&domain=quillbot.com'
     };
     const horizontalLogoKeys=new Set(['xgboost']);
-    const wordmarkLogoKeys=new Set([]);
     const devicons={
       'python':'python/python-original.svg',
       'r':'r/r-original.svg',
+      'c':'c/c-original.svg',
       'html':'html5/html5-original.svg',
       'html5':'html5/html5-original.svg',
       'javascript':'javascript/javascript-original.svg',
@@ -319,8 +318,7 @@
 
     if(customAssets[key]){
       const horizontal=horizontalLogoKeys.has(key)?' tech-logo-horizontal':'';
-      const wordmark=wordmarkLogoKeys.has(key)?' tech-logo-wordmark':'';
-      return `<span class="tech-logo tech-logo-digital tech-logo-custom${horizontal}${wordmark}"><img src="${customAssets[key]}" alt="" loading="lazy" decoding="async" data-tech-fallback="${fallback}"></span>`;
+      return `<span class="tech-logo tech-logo-digital tech-logo-custom${horizontal}"><img src="${customAssets[key]}" alt="" loading="lazy" decoding="async" data-tech-fallback="${fallback}"></span>`;
     }
 
     if(key==='tensorflow / keras'){
@@ -357,7 +355,7 @@
       bansdoc:{slug:'',label:'BANSDOC'}
     };
     if(type==='doi'){
-      return `<span class="scholar-brand-icon doi-brand-mark" aria-hidden="true"><img class="doi-logo-img" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/DOI_logo.svg" alt="" loading="lazy" decoding="async"></span>`;
+      return `<span class="scholar-brand-icon doi-brand-mark" aria-hidden="true"><img class="doi-logo-img" src="assets/academic/logos/vendor/doi.svg" alt="" loading="lazy" decoding="async"></span>`;
     }
     const x=map[type]||{slug:'',label:label||type};
     if(x.slug){
@@ -402,7 +400,7 @@
       pick('Web, Backend & Research Prototype Development')
     ].filter(Boolean);
     const libs=pick('Python, ML & Scientific Libraries');
-    const env=pick('Research Computing & Development Environments');
+    const env=pick('Research Computing, Development & System Tools');
     const version=pick('Version Control & Reproducibility');
     const productivity=pick('Productivity & Collaboration');
     const reference=pick('Reference & Research Management');
@@ -427,7 +425,7 @@
     return `<div class="compute-environments">
       <div class="compute-environments-head">
         <div><span class="section-kicker">Computational environment & reproducibility</span><h3>Verified research environments</h3></div>
-        <p>Version snapshots are reported by project because software stacks differ across analyses. This avoids implying that one fixed environment was used for every study.</p>
+        <p>Version snapshots are reported by project because software stacks differ across analyses. Exact versions are shown where they were captured; verified dependencies without a recorded version are listed by name.</p>
       </div>
       <div class="compute-environment-list">
         ${items.map((x,i)=>`<details class="compute-environment-card" ${i===0?'open':''}>
@@ -747,10 +745,9 @@
           ${f.article.publisher?`<div class="journal-detail-block"><span class="detail-label">Publisher</span><p>${esc(f.article.publisher)}</p></div>`:''}
           ${f.article.publicationModel?`<div class="journal-detail-block"><span class="detail-label">Journal model</span><p>${esc(f.article.publicationModel)}</p></div>`:''}
           ${f.article.journalSince?`<div class="journal-detail-block"><span class="detail-label">Journal history</span><p>${esc(f.article.journalSince)}. ${esc(f.article.hosting||'')}</p></div>`:''}
-          ${f.article.license?`<div class="journal-detail-block"><span class="detail-label">License</span><p>${esc(f.article.license)}</p></div>`:''}
+          ${f.article.license?`<div class="journal-detail-block"><span class="detail-label">License</span><div class="journal-license-row">${scholarlyBrandIcon('creativecommons','CC BY-NC-SA 4.0')}<p>${esc(f.article.license)}</p></div></div>`:''}
           ${(f.article.indexing||[]).length?`<div class="journal-detail-block"><span class="detail-label">Indexing & discovery</span>
             <div class="scholarly-brand-row scholarly-brand-row-indexing">
-              ${scholarlyBrandIcon('doi')}
               ${scholarlyBrandIcon('banglajol','BanglaJOL')}
               ${scholarlyBrandIcon('ici','ICI')}
               ${scholarlyBrandIcon('esji','ESJI')}
@@ -896,12 +893,22 @@
     const cw=D.coursework||{};
     const domains=cw.categories||[];
     return `${pageHero('Academic','Education, curriculum, fieldwork, supervised projects and research training.')}
-    <section class="section"><div class="container">
+    <nav class="academic-jump-nav" aria-label="Academic page sections"><div class="container academic-jump-nav-inner">
+      <a href="#academic-education">Education</a>
+      <a href="#academic-curriculum">Curriculum</a>
+      <a href="#academic-achievement">A+ Research</a>
+      <a href="#academic-projects">Projects</a>
+      <a href="#academic-fieldwork">Fieldwork</a>
+      <a href="#academic-teaching">Teaching</a>
+      <a href="#academic-languages">Languages</a>
+      <a href="#academic-skills">Skills & Tools</a>
+    </div></nav>
+    <section class="section" id="academic-education"><div class="container">
       ${sectionHead('Academic journey','Education','Formal education from secondary science training through postgraduate statistics.')}
       <div class="education-timeline">${(D.education||[]).map(educationCard).join('')}</div>
     </div></section>
 
-    <section class="section alt"><div class="container">
+    <section class="section alt" id="academic-curriculum"><div class="container">
       ${sectionHead('Academic curriculum','200-credit quantitative foundation','B.Sc. 160 credits + M.S. 40 credits, including 40 laboratory/applied credits across 20 courses, 2 credits of statistical fieldwork, 7 credits of supervised projects and 20 credits of viva-voce assessment.')}
       <div class="grid academic-credit-grid">
         ${academicMetric('credits',cw.summary?.totalCredits ?? 200,'Total university credits',`B.Sc. ${cw.summary?.bscCredits ?? 160} + M.S. ${cw.summary?.msCredits ?? 40}`)}
@@ -912,12 +919,12 @@
       </div>
       <div class="curriculum-map-head">
         <div><div class="section-kicker">Curriculum map</div><h3>Six academic domains</h3></div>
-        <div class="search-wrap curriculum-search"><input class="search-input" id="courseSearch" placeholder="Search a course, method or domain…"></div>
+        <div class="search-wrap curriculum-search"><input class="search-input" id="courseSearch" aria-label="Search academic curriculum" placeholder="Search a course, method or domain…"></div>
       </div>
       <div class="grid curriculum-domain-grid" id="curriculumGrid">${domains.map(curriculumDomainCard).join('')}</div>
     </div></section>
 
-    <section class="section academic-achievement-section"><div class="container">
+    <section class="section academic-achievement-section" id="academic-achievement"><div class="container">
       ${sectionHead('Academic achievement','A+ in fieldwork & supervised research','The three formal research-intensive academic components were each completed with an A+ grade.')}
       <div class="academic-grade-showcase">
         <article class="card academic-grade-showcase-card">
@@ -931,38 +938,37 @@
       </div>
     </div></section>
 
-    <section class="section"><div class="container">
+    <section class="section" id="academic-projects"><div class="container">
       ${sectionHead('Supervised research','B.Sc. and M.S. academic projects','Two project-based research components connecting formal coursework to peer-reviewed and applied research outputs.')}
       <div class="academic-project-grid">${(D.academicProjects||[]).map(academicProjectCard).join('')}</div>
     </div></section>
 
-    <section class="section alt"><div class="container">
+    <section class="section alt" id="academic-fieldwork"><div class="container">
       ${sectionHead('Academic research & fieldwork','B.Sc. Statistical Field Survey','A supervised field-based research component within the B.Sc. (Hons.) curriculum.')}
       ${fieldSurveyCard()}
     </div></section>
 
-    <section class="section"><div class="container">
+    <section class="section" id="academic-teaching"><div class="container">
       ${sectionHead('Teaching network','Selected instructor-course links','Academic teachers and guest teachers connected to major B.Sc. and M.S. coursework, presented with their academic roles, leadership appointments and qualifications.')}
       <div class="grid grid-2 teaching-network">${(D.instructorLinks||[]).map(instructorCard).join('')}</div>
     </div></section>
 
-    <section class="section alt"><div class="container">
+    <section class="section alt" id="academic-languages"><div class="container">
       ${sectionHead('Languages & academic communication','Communication profile & Medium of Instruction (MOI)','A professional language record linking proficiency, formal Medium of Instruction and evidence from research, peer review, conferences and field communication.')}
       ${languagePanel(true)}
       <div class="language-cta"><a class="btn" href="languages.html">View Full Language Profile</a></div>
     </div></section>
 
-    <section class="section"><div class="container">
+    <section class="section" id="academic-skills"><div class="container">
       ${sectionHead('Technical & analytical skills','Evidence-linked research capability','Methods and technical capabilities grounded in published work, active manuscripts, academic projects, coursework, research software and professional training.')}
       <div class="grid grid-2 technical-skills-grid">${(D.technicalSkills||[]).map(technicalSkillCard).join('')}</div>
 
       <div class="skills-stack-head">
-        <div><div class="section-kicker">Research software & technology stack</div><h3>Tools, libraries & development environments</h3></div>
+        <div><div class="section-kicker">Research software & technology stack</div><h3>Tools, libraries, development environments & system tools</h3></div>
         <p>Methods are separated from implementation tools. Libraries, development environments and reproducibility infrastructure are shown as an evidence-backed research stack rather than proficiency scores.</p>
       </div>
       ${researchToolLayout()}
       ${computationalEnvironmentPanel()}
-      ${techMarquee()}
     </div></section>`;
   }
 
