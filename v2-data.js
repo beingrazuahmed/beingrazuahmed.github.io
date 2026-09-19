@@ -439,7 +439,8 @@
       presentation: 'Oral',
       role: 'Presenting Author',
       url: 'https://csa.ru.ac.bd/science/conf2nd/',
-      citation: 'Ahmed, M. R., Rakib, M. A., Shiddik, A. B., & Reza, M. S. (2025). Measuring Attitudes toward AI’s Impact on the Job Market in Bangladesh: A study at Pabna University of Science and Technology (p. 120).'
+      citation: 'Ahmed, M. R., Rakib, M. A., Shiddik, A. B., & Reza, M. S. (2025). Measuring Attitudes toward AI’s Impact on the Job Market in Bangladesh: A study at Pabna University of Science and Technology (p. 120).',
+      citationIEEE: 'M. R. Ahmed, M. A. Rakib, A. B. Shiddik, and M. S. Reza, “Measuring Attitudes toward AI’s Impact on the Job Market in Bangladesh: A study at Pabna University of Science and Technology,” in Book of Abstracts, 2nd International Conference on Recent Advances in Science and Technology (ICRAST 2025), Rajshahi, Bangladesh, Nov. 14–15, 2025, p. 120.'
     },
     article: {
       title: 'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh',
@@ -450,6 +451,7 @@
       abbreviatedJournal: 'Int. j. stat. sci.',
       issn: '1683-5603',
       citation: 'Ahmed, M. R., Rakib, M. A., Shiddik, A. B., Mauya, J., Hoque, M. A., & Reza, M. S. (2026). Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh. International Journal of Statistical Sciences. Accepted 2 September 2026; forthcoming in Volume 26, Issue 2, November 2026.',
+      citationIEEE: 'M. R. Ahmed, M. A. Rakib, A. B. Shiddik, J. Mauya, M. A. Hoque, and M. S. Reza, “Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh,” International Journal of Statistical Sciences, vol. 26, no. 2, forthcoming Nov. 2026.',
       publisher: 'Department of Statistics and Data Science, University of Rajshahi, Rajshahi, Bangladesh',
       publicationModel: 'Peer-reviewed · Open access · Published biannually, with special issues when applicable',
       license: 'Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)',
