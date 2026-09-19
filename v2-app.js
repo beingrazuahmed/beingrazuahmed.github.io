@@ -181,6 +181,7 @@
       review:'<path d="M5 3h10l4 4v14H5V3Zm10 0v5h5M8 12l2 2 4-4m-6 8h8"/>',
       field:'<path d="M3 18c4-4 8-4 12 0m-12-6c4-4 8-4 12 0M17 5h4v4h-4zM5 5h4v4H5z"/>',
       calendar:'<path d="M6 3v3m12-3v3M4 8h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Zm3 7h3m2 0h3m-8 4h3m2 0h3"/>',
+      location:'<path d="M12 21s7-5.2 7-12a7 7 0 1 0-14 0c0 6.8 7 12 7 12Zm0-9a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>',
       school:'<path d="M3 21h18M5 21V9l7-4 7 4v12M9 21v-6h6v6M8 11h2m4 0h2"/>',
       board:'<path d="M4 5h16v14H4zM8 9h8m-8 4h5"/>',
       lab:'<path d="M9 3h6m-5 0v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3M8 15h8"/>',
@@ -744,11 +745,30 @@
           <div class="conference-evidence-title"><div class="section-kicker">Conference presentation</div><h4>${esc(c.fullName||c.shortName||'')}</h4></div>
           <span class="badge">${esc(c.presentation||'')}</span>
         </div>
-        <p><strong>${esc(c.host||'')}</strong><br>${esc(c.date||'')}</p>
-        <div class="conference-evidence-meta">
-          <span>${esc(c.source||'')}</span><span>${esc(c.page||'')}</span><span>${esc(c.role||'')}</span>
+        ${c.summary?`<p class="conference-summary">${esc(c.summary)}</p>`:''}
+        <div class="conference-record-grid">
+          <div class="conference-record-main">
+            <div class="conference-meta-list">
+              <div class="conference-meta-row">${uiIcon('calendar')}<div><span>Date</span><strong>${esc(c.date||'')}</strong></div></div>
+              <div class="conference-meta-row">${uiIcon('location')}<div><span>Venue</span><strong>${esc(c.venue||c.host||'')}</strong></div></div>
+              <div class="conference-meta-row">${uiIcon('school')}<div><span>Organized by</span><strong>${esc(c.organizer||c.host||'')}</strong></div></div>
+              <div class="conference-meta-row">${uiIcon('conference')}<div><span>Presentation</span><strong>${esc(c.presentation||'')}${c.role?` · ${esc(c.role)}`:''}</strong></div></div>
+              <div class="conference-meta-row">${uiIcon('publication')}<div><span>Conference record</span><strong>${esc(c.source||'')}${c.page?` · ${esc(c.page)}`:''}</strong></div></div>
+            </div>
+            <div class="conference-presented-work">
+              <span class="project-block-label">Presented work</span>
+              <strong>${esc(f.study||'')}</strong>
+            </div>
+            ${c.url?`<div class="conference-link-row"><a class="btn small" href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">Official conference website ↗</a></div>`:''}
+          </div>
+          ${c.flyerAsset?`<figure class="conference-flyer-evidence">
+            <a class="conference-flyer-image-link" href="${esc(c.flyerAsset)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${esc(c.flyerLabel||'conference flyer')}">
+              <img src="${esc(c.flyerAsset)}" alt="Official 2nd ICRAST 2025 conference flyer showing the dates, University of Rajshahi venue and Faculty of Science organizer" loading="lazy" decoding="async">
+            </a>
+            <figcaption><strong>${esc(c.flyerLabel||'Official conference flyer')}</strong><span>Documentary conference evidence</span></figcaption>
+            <a class="conference-flyer-link" href="${esc(c.flyerAsset)}" target="_blank" rel="noopener noreferrer">${uiIcon('publication')}<span>View full flyer ↗</span></a>
+          </figure>`:''}
         </div>
-        ${c.url?`<div class="conference-link-row"><a class="btn small" href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">Official conference homepage ↗</a></div>`:''}
         ${c.citation?`<details class="citation-details"><summary>${academicCitationMode?'View APA & IEEE citations':'View bibliographic citation'}</summary>${academicCitationMode?dualAcademicCitation(c.citation,c.citationIEEE):`<p>${esc(c.citation)}</p>`}</details>`:''}
       </div>
 

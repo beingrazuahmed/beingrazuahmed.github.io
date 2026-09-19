@@ -5752,3 +5752,165 @@ html[data-motion="reduced"]{scroll-behavior:auto!important}
     justify-self:start;
   }
 }
+
+
+/* === ICRAST conference record & documentary flyer · 2026-09-19 === */
+.conference-summary{
+  max-width:1100px;
+  margin:15px 0 0!important;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.7;
+}
+.conference-record-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(280px,360px);
+  gap:22px;
+  align-items:start;
+  margin-top:18px;
+}
+.conference-record-main{
+  min-width:0;
+}
+.conference-meta-list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+.conference-meta-row{
+  display:grid;
+  grid-template-columns:38px minmax(0,1fr);
+  gap:10px;
+  align-items:center;
+  min-height:68px;
+  padding:11px 12px;
+  border:1px solid color-mix(in srgb,var(--accent) 14%,var(--line));
+  border-radius:14px;
+  background:color-mix(in srgb,var(--surface) 86%,transparent);
+}
+.conference-meta-row>.ui-icon{
+  width:20px;
+  height:20px;
+  justify-self:center;
+  color:var(--accent);
+}
+.conference-meta-row div{
+  min-width:0;
+}
+.conference-meta-row span{
+  display:block;
+  margin-bottom:3px;
+  color:var(--muted);
+  font-size:10.5px;
+  font-weight:850;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.conference-meta-row strong{
+  display:block;
+  color:var(--text);
+  font-size:13px;
+  line-height:1.42;
+}
+.conference-presented-work{
+  margin-top:12px;
+  padding:13px 14px;
+  border-left:3px solid color-mix(in srgb,var(--accent) 72%,transparent);
+  border-radius:0 12px 12px 0;
+  background:color-mix(in srgb,var(--accent) 5%,var(--surface-2));
+}
+.conference-presented-work strong{
+  display:block;
+  margin-top:5px;
+  color:var(--text);
+  font-size:13.5px;
+  line-height:1.55;
+}
+.conference-link-row{
+  margin-top:13px;
+}
+.conference-flyer-evidence{
+  margin:0;
+  padding:11px;
+  border:1px solid color-mix(in srgb,var(--accent) 18%,var(--line));
+  border-radius:16px;
+  background:var(--surface);
+  box-shadow:0 12px 30px rgba(24,61,90,.07);
+}
+.conference-flyer-image-link{
+  display:block;
+  overflow:hidden;
+  border:1px solid color-mix(in srgb,var(--line) 88%,transparent);
+  border-radius:11px;
+  background:#fff;
+}
+.conference-flyer-image-link img{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:1080/769;
+  object-fit:contain;
+  background:#fff;
+  transition:transform .22s ease;
+}
+.conference-flyer-image-link:hover img,
+.conference-flyer-image-link:focus-visible img{
+  transform:scale(1.012);
+}
+.conference-flyer-image-link:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+}
+.conference-flyer-evidence figcaption{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+  margin:9px 2px 0;
+}
+.conference-flyer-evidence figcaption strong{
+  color:var(--text);
+  font-size:12.5px;
+}
+.conference-flyer-evidence figcaption span{
+  color:var(--muted);
+  font-size:11px;
+}
+.conference-flyer-link{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  margin-top:10px;
+  color:var(--accent-2);
+  font-size:12px;
+  font-weight:850;
+  text-decoration:none;
+}
+.conference-flyer-link .ui-icon{
+  width:16px;
+  height:16px;
+}
+.conference-flyer-link:hover,
+.conference-flyer-link:focus-visible{
+  text-decoration:underline;
+  outline:none;
+}
+:root[data-mode="dark"] .conference-flyer-evidence,
+:root[data-mode="dark"] .conference-meta-row{
+  background:color-mix(in srgb,var(--surface) 92%,#fff 8%);
+}
+@media (max-width:900px){
+  .conference-record-grid{
+    grid-template-columns:minmax(0,1fr) minmax(240px,300px);
+  }
+  .conference-meta-list{
+    grid-template-columns:1fr;
+  }
+}
+@media (max-width:700px){
+  .conference-record-grid{
+    grid-template-columns:1fr;
+  }
+  .conference-flyer-evidence{
+    max-width:440px;
+  }
+}
