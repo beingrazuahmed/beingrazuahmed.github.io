@@ -1010,6 +1010,9 @@
   function academic(){
     const cw=D.coursework||{};
     const domains=cw.categories||[];
+    const conferenceGroups=D.conferences||[];
+    const conferencePapers=conferenceGroups.flatMap(g=>g.papers||g.items||[]);
+    const conferencePresentations=conferencePapers.filter(p=>(p.role||'').includes('Presenting Author')||p.presentedBy==='Md. Razu Ahmed');
     return `${pageHero('Academic','Education, curriculum, fieldwork, supervised projects and research training.')}
     <nav class="academic-jump-nav" aria-label="Academic page sections"><div class="container academic-jump-nav-inner">
       <a href="#academic-education">Education</a>
@@ -1018,6 +1021,7 @@
       <a href="#academic-projects">Projects</a>
       <a href="#academic-fieldwork">Fieldwork</a>
       <a href="#academic-teaching">Teaching</a>
+      <a href="#academic-conferences">Conferences</a>
       <a href="#academic-languages">Languages</a>
       <a href="#academic-skills">Skills & Tools</a>
     </div></nav>
@@ -1072,13 +1076,29 @@
       <div class="grid grid-2 teaching-network">${(D.instructorLinks||[]).map(instructorCard).join('')}</div>
     </div></section>
 
-    <section class="section alt" id="academic-languages"><div class="container">
+    <section class="section alt academic-conference-section" id="academic-conferences"><div class="container">
+      ${sectionHead('Scholarly communication','Conference activity','A concise academic snapshot of research dissemination. The dedicated conference profile contains the complete event record, source documents, presentation roles and citations.')}
+      <div class="academic-conference-panel">
+        <div class="academic-conference-metrics">
+          <div><strong>${conferenceGroups.length}</strong><span>Events</span></div>
+          <div><strong>${conferencePapers.length}</strong><span>Contributions</span></div>
+          <div><strong>${conferencePresentations.length}</strong><span>Presented works</span></div>
+          <div><strong>1</strong><span>Conference award</span></div>
+        </div>
+        <div class="academic-conference-list">
+          ${conferenceGroups.map((g,i)=>`<article><span class="academic-conference-index">${String(i+1).padStart(2,'0')}</span><div><strong>${esc(g.event||g.full||'Conference')}</strong><p>${esc(g.date||'')} · ${(g.papers||g.items||[]).length} contribution${(g.papers||g.items||[]).length===1?'':'s'}</p></div></article>`).join('')}
+        </div>
+      </div>
+      <div class="language-cta academic-conference-cta"><a class="btn" href="conferences.html">View Full Conference Profile</a></div>
+    </div></section>
+
+    <section class="section" id="academic-languages"><div class="container">
       ${sectionHead('Languages & academic communication','Communication profile & Medium of Instruction (MOI)','A professional language record linking proficiency, formal Medium of Instruction and evidence from research, peer review, conferences and field communication.')}
       ${languagePanel(true)}
       <div class="language-cta"><a class="btn" href="languages.html">View Full Language Profile</a></div>
     </div></section>
 
-    <section class="section" id="academic-skills"><div class="container">
+    <section class="section alt" id="academic-skills"><div class="container">
       ${sectionHead('Technical & analytical skills','Evidence-linked research capability','Methods and technical capabilities grounded in published work, active manuscripts, academic projects, coursework, research software and professional training.')}
       <div class="grid grid-2 technical-skills-grid">${(D.technicalSkills||[]).map(technicalSkillCard).join('')}</div>
 
