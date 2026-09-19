@@ -282,7 +282,8 @@
       'gemini notebook':'assets/academic/logos/gemini-notebook-logo.png',
       'microsoft copilot':'assets/academic/logos/vendor/copilot.png',
       'quillbot':'https://www.google.com/s2/favicons?sz=128&domain=quillbot.com',
-      'c':'https://skillicons.dev/icons?i=c&theme=light'
+      'c':'https://skillicons.dev/icons?i=c&theme=light',
+      'graphviz':'assets/academic/logos/vendor/graphviz-digital.svg'
     };
     const horizontalLogoKeys=new Set(['xgboost']);
     const devicons={
@@ -318,7 +319,6 @@
       'ultralytics':'ultralytics',
       'geopandas':'geopandas',
       'mendeley':'mendeley',
-      'graphviz':'graphviz',
     };
 
     if(customAssets[key]){
@@ -417,13 +417,11 @@
     const productivity=pick('Productivity & Collaboration');
     const reference=pick('Reference & Research Management');
 
-    return `<div class="tool-layout">
+    return `<div class="tool-layout tool-layout-balanced">
       <div class="grid grid-3 tool-grid-modern tool-grid-primary">${primary.map(toolGroupCard).join('')}</div>
-      <div class="tool-grid-research">
-        ${libs?`<div class="tool-libraries-wide">${toolGroupCard(libs)}</div>`:''}
-        <div class="tool-side-stack">${env?toolGroupCard(env):''}</div>
-      </div>
-      <div class="tool-bottom-grid">
+      ${libs?`<div class="tool-category-wide tool-category-libraries">${toolGroupCard(libs)}</div>`:''}
+      ${env?`<div class="tool-category-wide tool-category-system">${toolGroupCard(env)}</div>`:''}
+      <div class="tool-bottom-grid tool-bottom-grid-balanced">
         ${version?toolGroupCard(version):''}
         ${productivity?toolGroupCard(productivity):''}
         ${reference?toolGroupCard(reference):''}
