@@ -80,7 +80,7 @@
   margin: 0;
   padding: clamp(24px, 3vw, 40px);
   border-radius: var(--radius);
-  background: var(--surface);
+  background: linear-gradient(var(--surface), var(--surface)), var(--bg);
   opacity: 1;
   transform: translateX(calc(var(--showcase-offset) * 68%))
     translateZ(calc(var(--showcase-distance) * -160px))
