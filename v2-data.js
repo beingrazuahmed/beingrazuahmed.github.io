@@ -173,6 +173,7 @@
       { name: 'Visual Studio Code', short: 'VS Code', brand: 'visualstudiocode', detail: 'Development environment for Python, R, web work, scripting, Git workflows and research project organization.' },
       { name: 'Visual Studio Build Tools', short: 'VS Build Tools', brand: 'visualstudio', detail: 'Microsoft build toolchain for compiling native C/C++ components and supporting Windows-based Python and scientific-computing dependencies that require local compilation.' },
       { name: 'Graphviz', short: 'Graphviz', brand: 'graphviz', detail: 'Graph and diagram rendering for directed workflows, dependency structures, model pipelines and publication-ready research schematics.' },
+      { name: 'diagrams.net', short: 'diagrams.net', brand: 'diagramsdotnet', detail: 'Visual diagramming for research workflows, methodology figures, system architecture, flowcharts, conceptual models and publication-ready schematic design.' },
       { name: 'Code::Blocks', short: 'Code::Blocks', brand: 'codeblocks', detail: 'Integrated development environment used for C programming, compilation, debugging and undergraduate computational coursework.' },
       { name: 'Anaconda', short: 'Anaconda', brand: 'anaconda', detail: 'Python environment and package management for isolated analytical and research workflows.' },
       { name: 'Kaggle', short: 'Kaggle', brand: 'kaggle', detail: 'Cloud notebooks and data-science environment for dataset exploration, model experimentation and reproducible ML workflows.' },
