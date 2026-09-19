@@ -266,7 +266,7 @@
       'xgboost':'https://xgboost.ai/images/logo/xgboost-logo-trimmed.png',
       'scipy':'https://cdn.jsdelivr.net/gh/scipy/scipy.org@main/static/images/logo.svg',
       'c':'https://skillicons.dev/icons?i=c&theme=light',
-      'jupyter notebook':'https://raw.githubusercontent.com/jupyter/design/main/logos/Logo%20Mark/logomark-orangebody-greyplanets/logomark-orangebody-greyplanets.svg',
+      'jupyter notebook':'https://raw.githubusercontent.com/jupyter/design/main/logos/Rectangle%20Logo/rectanglelogo-greytext-orangebody-greymoons/rectanglelogo-greytext-orangebody-greymoons.svg',
       'microsoft 365 / office':'https://commons.wikimedia.org/wiki/Special:Redirect/file/Microsoft_365_%282022%29.svg',
       'microsoft office':'https://commons.wikimedia.org/wiki/Special:Redirect/file/Microsoft_365_%282022%29.svg',
       'google workspace':'https://commons.wikimedia.org/wiki/Special:Redirect/file/Google_Favicon_2025.svg',
@@ -281,6 +281,7 @@
       'quillbot':'https://www.google.com/s2/favicons?sz=128&domain=quillbot.com'
     };
     const horizontalLogoKeys=new Set(['xgboost']);
+    const wordmarkLogoKeys=new Set(['jupyter notebook']);
     const devicons={
       'python':'python/python-original.svg',
       'r':'r/r-original.svg',
@@ -316,7 +317,8 @@
 
     if(customAssets[key]){
       const horizontal=horizontalLogoKeys.has(key)?' tech-logo-horizontal':'';
-      return `<span class="tech-logo tech-logo-digital tech-logo-custom${horizontal}"><img src="${customAssets[key]}" alt="" loading="lazy" decoding="async" data-tech-fallback="${fallback}"></span>`;
+      const wordmark=wordmarkLogoKeys.has(key)?' tech-logo-wordmark':'';
+      return `<span class="tech-logo tech-logo-digital tech-logo-custom${horizontal}${wordmark}"><img src="${customAssets[key]}" alt="" loading="lazy" decoding="async" data-tech-fallback="${fallback}"></span>`;
     }
 
     if(key==='tensorflow / keras'){
@@ -662,11 +664,11 @@
     return `<span class="academic-grade-badge ${compact?'is-compact':''}" aria-label="${g} academic grade">
       <span class="academic-grade-badge-medal" aria-hidden="true">
         <svg viewBox="0 0 64 72" focusable="false">
-          <path class="grade-ribbon grade-ribbon-left" d="M21 48 13 69l13-5 6 8 5-21z"/>
-          <path class="grade-ribbon grade-ribbon-right" d="m43 48 8 21-13-5-6 8-5-21z"/>
-          <circle class="grade-medal-outer" cx="32" cy="29" r="24"/>
-          <circle class="grade-medal-inner" cx="32" cy="29" r="18"/>
-          <path class="grade-medal-star" d="m32 13 3.9 7.9 8.7 1.3-6.3 6.1 1.5 8.7-7.8-4.1-7.8 4.1 1.5-8.7-6.3-6.1 8.7-1.3z"/>
+          <path class="grade-ribbon grade-ribbon-left" d="M19 46 12 69l14-6 6 8 4-23z"/>
+          <path class="grade-ribbon grade-ribbon-right" d="m45 46 7 23-14-6-6 8-4-23z"/>
+          <circle class="grade-medal-outer" cx="32" cy="27" r="23"/>
+          <circle class="grade-medal-ring" cx="32" cy="27" r="18.5"/>
+          <circle class="grade-medal-inner" cx="32" cy="27" r="15.5"/>
         </svg>
         <strong>${g}</strong>
       </span>

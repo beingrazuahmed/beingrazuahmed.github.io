@@ -5150,3 +5150,92 @@ html[data-motion="reduced"]{scroll-behavior:auto!important}
     height:60px;
   }
 }
+
+
+/* === Jupyter full wordmark + corrected A+ medal === */
+.tech-logo-wordmark{
+  width:72px!important;
+  height:48px!important;
+  flex:0 0 72px!important;
+  padding:6px 5px!important;
+}
+.tech-logo-wordmark img{
+  width:62px!important;
+  max-width:62px!important;
+  height:auto!important;
+  max-height:36px!important;
+  object-fit:contain!important;
+}
+.tool-item-modern:has(.tech-logo-wordmark){
+  grid-template-columns:76px minmax(0,1fr);
+  gap:12px;
+}
+
+.grade-medal-outer{
+  fill:#f8fcff;
+  stroke:#2f8edb;
+  stroke-width:3;
+}
+.grade-medal-ring{
+  fill:#fff2b7;
+  stroke:#d6a928;
+  stroke-width:2;
+}
+.grade-medal-inner{
+  fill:#fffaf0;
+  stroke:#efcf68;
+  stroke-width:1.3;
+}
+.academic-grade-badge-medal strong{
+  position:absolute!important;
+  left:50%!important;
+  top:37.5%!important;
+  transform:translate(-50%,-50%)!important;
+  margin:0!important;
+  color:#164d78!important;
+  font-size:1.08rem!important;
+  line-height:1!important;
+  font-weight:950!important;
+  letter-spacing:-.045em!important;
+  text-shadow:none!important;
+  white-space:nowrap;
+}
+.academic-grade-badge.is-compact .academic-grade-badge-medal strong{
+  top:37.5%!important;
+  margin:0!important;
+  font-size:.63rem!important;
+}
+.grade-ribbon-left{fill:#2d78bd!important}
+.grade-ribbon-right{fill:#245f99!important}
+.grade-medal-star{display:none!important}
+
+:root[data-mode="dark"] .grade-medal-outer{
+  fill:#10283b;
+  stroke:#69c2f0;
+}
+:root[data-mode="dark"] .grade-medal-ring{
+  fill:#4a3a12;
+  stroke:#e2ba45;
+}
+:root[data-mode="dark"] .grade-medal-inner{
+  fill:#1c2933;
+  stroke:#b89535;
+}
+:root[data-mode="dark"] .academic-grade-badge-medal strong{
+  color:#f6da73!important;
+}
+
+@media (max-width:700px){
+  .tech-logo-wordmark{
+    width:66px!important;
+    height:44px!important;
+    flex-basis:66px!important;
+  }
+  .tech-logo-wordmark img{
+    width:56px!important;
+    max-width:56px!important;
+  }
+  .tool-item-modern:has(.tech-logo-wordmark){
+    grid-template-columns:70px minmax(0,1fr);
+  }
+}
