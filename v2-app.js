@@ -295,6 +295,7 @@
       'css3':'css3/css3-original.svg',
       'flask':'flask/flask-original.svg',
       'visual studio code':'vscode/vscode-original.svg',
+      'visual studio build tools':'visualstudio/visualstudio-plain.svg',
       'anaconda':'anaconda/anaconda-original.svg',
       'kaggle':'kaggle/kaggle-original.svg',
       'google colab':'googlecolab/googlecolab-original.svg',
@@ -317,6 +318,7 @@
       'ultralytics':'ultralytics',
       'geopandas':'geopandas',
       'mendeley':'mendeley',
+      'graphviz':'graphviz',
     };
 
     if(customAssets[key]){
