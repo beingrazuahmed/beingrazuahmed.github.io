@@ -6168,9 +6168,33 @@ html[data-motion="reduced"]{scroll-behavior:auto!important}
   letter-spacing:.08em;
   text-transform:uppercase;
 }
+.conference-evidence-item{
+  display:block;
+  grid-template-columns:none;
+  gap:0;
+  align-items:stretch;
+  min-height:0;
+  padding:0;
+}
 .conference-evidence-item.is-verified{
   border-color:color-mix(in srgb,#1684c7 28%,var(--line));
   box-shadow:inset 3px 0 0 color-mix(in srgb,#1684c7 74%,transparent);
+}
+.conference-evidence-item .verified-evidence-badge{
+  display:inline-flex;
+  color:color-mix(in srgb,#075f94 92%,var(--text));
+  font-size:10.5px;
+  font-weight:900;
+  line-height:1;
+  letter-spacing:.02em;
+  text-transform:none;
+}
+.conference-evidence-item .verified-evidence-mark{
+  display:grid;
+  color:#fff;
+  font-size:11px;
+  letter-spacing:0;
+  text-transform:none;
 }
 .evidence-source-name{
   display:block;
