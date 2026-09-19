@@ -5694,3 +5694,61 @@ html[data-motion="reduced"]{scroll-behavior:auto!important}
 .academic-brand-asset.is-department{
   grid-template-columns:52px minmax(0,1fr)!important;
 }
+
+
+/* === Academic APA + IEEE citation system === */
+.dual-citation{
+  display:grid;
+  gap:10px;
+  margin-top:8px;
+}
+.citation-format{
+  display:grid;
+  grid-template-columns:54px minmax(0,1fr);
+  gap:10px;
+  align-items:start;
+  padding:11px 12px;
+  border:1px solid color-mix(in srgb,var(--accent) 14%,var(--line));
+  border-radius:12px;
+  background:color-mix(in srgb,var(--surface) 82%,transparent);
+}
+.citation-style-label{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  min-height:28px;
+  padding:4px 7px;
+  border-radius:8px;
+  background:color-mix(in srgb,var(--accent) 9%,var(--surface-2));
+  color:var(--accent-2);
+  font-size:10.5px;
+  font-weight:900;
+  letter-spacing:.055em;
+}
+.citation-format p{
+  margin:0!important;
+  color:var(--muted);
+  font-size:12.8px;
+  line-height:1.65;
+}
+.citation-self{
+  color:var(--text);
+  font-weight:900;
+}
+.project-journal-citation-block{
+  margin-top:14px;
+  padding-top:13px;
+  border-top:1px solid var(--line);
+}
+.project-journal-citation-block .dual-citation{
+  margin-top:0;
+}
+@media (max-width:620px){
+  .citation-format{
+    grid-template-columns:1fr;
+    gap:7px;
+  }
+  .citation-style-label{
+    justify-self:start;
+  }
+}
