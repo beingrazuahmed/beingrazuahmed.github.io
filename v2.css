@@ -7486,3 +7486,94 @@ html[data-motion="reduced"]{scroll-behavior:auto!important}
   .conference-event-logo{width:70px!important;height:70px!important}
   .conference-brand-logo-exact{width:64px!important;height:64px!important}
 }
+
+
+/* === Balanced research tools layout + Graphviz digital icon · 2026-09-19 === */
+.tool-layout-balanced{
+  display:grid;
+  gap:18px;
+}
+.tool-layout-balanced .tool-grid-primary{
+  align-items:stretch;
+}
+.tool-category-wide{
+  min-width:0;
+}
+.tool-category-wide .tool-group-modern{
+  min-height:0!important;
+}
+.tool-category-wide .tool-items-modern{
+  display:grid!important;
+  gap:0 24px!important;
+  align-items:start;
+}
+.tool-category-libraries .tool-items-modern{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+}
+.tool-category-system .tool-items-modern{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+}
+.tool-category-wide .tool-item-modern{
+  min-width:0;
+  border-top:1px solid var(--line);
+}
+.tool-category-libraries .tool-item-modern:nth-child(-n+3),
+.tool-category-system .tool-item-modern:nth-child(-n+2){
+  border-top:0;
+}
+.tool-bottom-grid-balanced{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:18px!important;
+  align-items:start!important;
+}
+.tool-bottom-grid-balanced .tool-group-modern{
+  min-height:0!important;
+}
+.tool-item-modern{
+  align-items:flex-start;
+}
+.tool-item-modern>div{
+  min-width:0;
+}
+.tech-logo img[src*="graphviz-digital.svg"]{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+@media(max-width:1180px){
+  .tool-category-libraries .tool-items-modern{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+  .tool-category-libraries .tool-item-modern:nth-child(3){
+    border-top:1px solid var(--line);
+  }
+}
+@media(max-width:980px){
+  .tool-category-system .tool-items-modern{
+    grid-template-columns:1fr!important;
+  }
+  .tool-category-system .tool-item-modern:nth-child(2){
+    border-top:1px solid var(--line);
+  }
+  .tool-bottom-grid-balanced{
+    grid-template-columns:1fr 1fr!important;
+  }
+  .tool-bottom-grid-balanced .tool-group-modern:last-child{
+    grid-column:1/-1;
+  }
+}
+@media(max-width:700px){
+  .tool-category-libraries .tool-items-modern,
+  .tool-category-system .tool-items-modern,
+  .tool-bottom-grid-balanced{
+    grid-template-columns:1fr!important;
+  }
+  .tool-category-libraries .tool-item-modern:nth-child(2),
+  .tool-category-libraries .tool-item-modern:nth-child(3){
+    border-top:1px solid var(--line);
+  }
+  .tool-bottom-grid-balanced .tool-group-modern:last-child{
+    grid-column:auto;
+  }
+}
