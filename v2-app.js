@@ -275,9 +275,10 @@
       'gemini':'https://commons.wikimedia.org/wiki/Special:Redirect/file/Google_Gemini_icon_2025.svg',
       'deepseek':'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/deepseek-color.png',
       'grok':'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/grok.png',
-      'perplexity':'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/perplexity-color.png',
+      'perplexity':'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-svg/icons/perplexity-color.svg',
       'gemini notebook':'assets/academic/logos/gemini-notebook-logo.png',
-      'microsoft copilot':'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/copilot-color.png'
+      'microsoft copilot':'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/copilot-color.png',
+      'quillbot':'https://www.google.com/s2/favicons?sz=128&domain=quillbot.com'
     };
     const horizontalLogoKeys=new Set(['xgboost']);
     const devicons={
@@ -285,6 +286,7 @@
       'r':'r/r-original.svg',
       'html':'html5/html5-original.svg',
       'html5':'html5/html5-original.svg',
+      'javascript':'javascript/javascript-original.svg',
       'css':'css3/css3-original.svg',
       'css3':'css3/css3-original.svg',
       'flask':'flask/flask-original.svg',

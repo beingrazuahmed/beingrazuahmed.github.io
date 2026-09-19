@@ -163,6 +163,7 @@
     ]},
     { group: 'Web & Research Prototype Development', icon: 'web', items: [
       { name: 'HTML', short: 'HTML5', brand: 'html5', detail: 'Semantic structure for academic, research and prototype web interfaces.' },
+      { name: 'JavaScript', short: 'JavaScript', brand: 'javascript', detail: 'Client-side scripting for interactive portfolio features, dynamic interfaces, DOM-driven components and lightweight research-web functionality.' },
       { name: 'CSS', short: 'CSS3', brand: 'css3', detail: 'Responsive interface styling, layout, visual hierarchy and research-web customization.' },
       { name: 'Flask', short: 'Flask', brand: 'flask', detail: 'Lightweight Python web applications and deployment of research or machine-learning prototypes.' },
       { name: 'Streamlit', short: 'Streamlit', brand: 'streamlit', detail: 'Interactive data-science and machine-learning web apps, research demos and rapid prototype interfaces; reinforced through the Coursera Project Network course “Build a Data Science Web App with Streamlit and Python” completed on 18 May 2023.' }
@@ -393,6 +394,7 @@
         { name: 'Grok', short: 'Grok', brand: '' },
         { name: 'Perplexity', short: 'Perplexity', brand: 'perplexity' },
         { name: 'Gemini Notebook', short: 'Gemini Notebook', brand: 'googlegemini' },
+        { name: 'QuillBot', short: 'QuillBot', brand: 'quillbot' },
         { name: 'Microsoft Copilot', short: 'Copilot', brand: 'microsoftcopilot' }
       ],
       principle: 'AI-assisted outputs are independently checked against the underlying data, code, source literature and domain context before being used in research or scholarly communication.',
