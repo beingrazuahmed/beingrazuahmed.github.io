@@ -357,6 +357,9 @@
     if(type==='doi'){
       return `<span class="scholar-brand-icon doi-brand-mark" aria-hidden="true"><img class="doi-logo-img" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/DOI_logo.svg" alt="" loading="lazy" decoding="async"></span>`;
     }
+    if(type==='scopus'){
+      return `<span class="scholar-brand-icon scholar-brand-scopus"><img src="assets/academic/logos/scopus-circle.png" alt="" loading="lazy" decoding="async"><span>${esc(label||'Scopus')}</span></span>`;
+    }
     const x=map[type]||{slug:'',label:label||type};
     if(x.slug){
       return `<span class="scholar-brand-icon"><img src="https://cdn.simpleicons.org/${encodeURIComponent(x.slug)}" alt="" loading="lazy" decoding="async"><span>${esc(label||x.label)}</span></span>`;
