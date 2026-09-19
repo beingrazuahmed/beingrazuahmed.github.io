@@ -171,9 +171,11 @@
     { group: 'Research Computing & Development Environments', icon: 'terminal', items: [
       { name: 'Jupyter Notebook', short: 'Jupyter', brand: 'jupyter', detail: 'Interactive statistical analysis, ML experimentation, exploratory analysis, visualization and documented reproducible workflows.' },
       { name: 'Visual Studio Code', short: 'VS Code', brand: 'visualstudiocode', detail: 'Development environment for Python, R, web work, scripting, Git workflows and research project organization.' },
+      { name: 'Code::Blocks', short: 'Code::Blocks', brand: 'codeblocks', detail: 'Integrated development environment used for C programming, compilation, debugging and undergraduate computational coursework.' },
       { name: 'Anaconda', short: 'Anaconda', brand: 'anaconda', detail: 'Python environment and package management for isolated analytical and research workflows.' },
       { name: 'Kaggle', short: 'Kaggle', brand: 'kaggle', detail: 'Cloud notebooks and data-science environment for dataset exploration, model experimentation and reproducible ML workflows.' },
       { name: 'Google Colab', short: 'Colab', brand: 'googlecolab', detail: 'Cloud-hosted Jupyter notebook environment for collaborative Python analysis, machine-learning experimentation, GPU-enabled workflows and reproducible research prototypes.' },
+      { name: 'FFmpeg', short: 'FFmpeg', brand: 'ffmpeg', detail: 'Command-line multimedia processing for audio conversion, format handling and preprocessing in reproducible signal-processing workflows.' },
       { name: 'Windows 10 / Windows 11', short: 'Windows', brand: 'windows11', detail: 'Windows 11 is the primary documented operating system across recent canonical analyses; Windows 10 is also part of general desktop computing experience.' },
       { name: 'NVIDIA CUDA / cuDNN', short: 'CUDA / cuDNN', brand: 'nvidia', detail: 'GPU-accelerated deep-learning workflows, including documented CUDA and cuDNN configurations on RTX and Tesla-class NVIDIA GPUs.' }
     ]},
