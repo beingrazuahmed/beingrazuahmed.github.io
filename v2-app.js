@@ -364,6 +364,10 @@
     return `<span class="scholar-brand-icon scholar-brand-word"><span>${esc(label||x.label)}</span></span>`;
   }
 
+  function academicBrandAsset(src,label,cls=''){
+    return `<span class="academic-brand-asset ${cls}"><img src="${esc(src)}" alt="" loading="lazy" decoding="async"><span>${esc(label)}</span></span>`;
+  }
+
   function technicalSkillCard(x){
     return `<article class="card technical-skill-card ${x.featured?'technical-skill-featured':''}">
       <div class="technical-skill-head">
@@ -711,8 +715,9 @@
       <div class="progression progression-3">${(f.progression||[]).map(x=>`<div class="step">${esc(x)}</div>`).join('')}</div>
 
       <div class="conference-evidence-card">
-        <div class="conference-evidence-head">
-          <div><div class="section-kicker">Conference presentation</div><h4>${esc(c.fullName||c.shortName||'')}</h4></div>
+        <div class="conference-evidence-head conference-evidence-head-branded">
+          <img class="conference-brand-logo" src="assets/academic/conferences/icrast-faculty-science.webp" alt="Faculty of Science, University of Rajshahi" loading="lazy" decoding="async">
+          <div class="conference-evidence-title"><div class="section-kicker">Conference presentation</div><h4>${esc(c.fullName||c.shortName||'')}</h4></div>
           <span class="badge">${esc(c.presentation||'')}</span>
         </div>
         <p><strong>${esc(c.host||'')}</strong><br>${esc(c.date||'')}</p>
@@ -732,6 +737,20 @@
           </div>
           <span class="badge journal-status">${esc(f.article.status||'')}</span>
         </div>
+        <div class="journal-identity-panel journal-identity-ijss">
+          <div class="journal-cover-shell">
+            <img class="journal-cover-thumb" src="assets/academic/journals/ijss/cover.webp" alt="International Journal of Statistical Sciences cover" loading="lazy" decoding="async">
+          </div>
+          <div class="journal-identity-main">
+            <div class="journal-identity-label">Journal & institutional identity</div>
+            <div class="institution-logo-row">
+              ${academicBrandAsset('assets/academic/journals/ijss/ru-statistics-logo.webp','Department of Statistics, University of Rajshahi','is-square')}
+              ${academicBrandAsset('assets/academic/journals/ijss/ru-logo.webp','University of Rajshahi','is-square')}
+              ${academicBrandAsset('assets/academic/journals/ijss/banglajol.png','BanglaJOL','is-wide')}
+            </div>
+            <p class="journal-identity-note">Published by the Department of Statistics and Data Science, University of Rajshahi, and hosted on Bangladesh Journals Online (BanglaJOL).</p>
+          </div>
+        </div>
         <div class="journal-meta-strip">
           ${f.article.acceptedDate?`<span><strong>Accepted</strong>${esc(f.article.acceptedDate)}</span>`:''}
           ${f.article.forthcoming?`<span><strong>Forthcoming</strong>${esc(f.article.forthcoming)}</span>`:''}
@@ -748,7 +767,7 @@
           ${f.article.license?`<div class="journal-detail-block"><span class="detail-label">License</span><div class="journal-license-row">${scholarlyBrandIcon('creativecommons','CC BY-NC-SA 4.0')}<p>${esc(f.article.license)}</p></div></div>`:''}
           ${(f.article.indexing||[]).length?`<div class="journal-detail-block"><span class="detail-label">Indexing & discovery</span>
             <div class="scholarly-brand-row scholarly-brand-row-indexing">
-              ${scholarlyBrandIcon('banglajol','BanglaJOL')}
+              ${academicBrandAsset('assets/academic/journals/ijss/banglajol.png','BanglaJOL','is-wide')}
               ${scholarlyBrandIcon('ici','ICI')}
               ${scholarlyBrandIcon('esji','ESJI')}
               ${scholarlyBrandIcon('bansdoc','BANSDOC')}
@@ -780,6 +799,7 @@
   }
 
   function academicProjectCard(p){
+    const isEngineeringReports=(p.journal?.name||'').toLowerCase()==='engineering reports';
     return `<article class="card academic-project-card academic-project-rich">
       <div class="academic-project-head">
         <div>
@@ -812,20 +832,38 @@
           <div><span class="section-kicker">Journal standing & citation impact</span><h4>${esc(p.journal.name||'')}</h4></div>
           ${p.outputUrl?`<a class="doi-icon-link doi-icon-link-modern" href="${esc(p.outputUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Open DOI ${esc(p.doi||'')}" title="Open DOI: ${esc(p.doi||'')}">${scholarlyBrandIcon('doi')}<span class="doi-link-text">${esc(p.doi||'Open DOI')}</span></a>`:''}
         </div>
+        ${isEngineeringReports?`<div class="journal-identity-panel journal-identity-engineering">
+          <div class="journal-cover-shell">
+            <img class="journal-cover-thumb" src="assets/academic/journals/engineering-reports/cover.webp" alt="Engineering Reports Volume 8 Number 1 January 2026 cover" loading="lazy" decoding="async">
+          </div>
+          <div class="journal-identity-main">
+            <img class="journal-title-logo" src="assets/academic/journals/engineering-reports/logo.webp" alt="Engineering Reports" loading="lazy" decoding="async">
+            <div class="publisher-logo-row">
+              <span class="publisher-logo-card"><img src="assets/academic/journals/engineering-reports/wiley-wordmark.webp" alt="Wiley" loading="lazy" decoding="async"></span>
+            </div>
+            <div class="journal-identity-label">Indexing & visibility</div>
+            <div class="indexing-logo-row">
+              ${academicBrandAsset('assets/academic/journals/engineering-reports/web-of-science.webp','Web of Science','is-square')}
+              ${academicBrandAsset('assets/academic/journals/engineering-reports/scimago.webp','SCImago','is-square')}
+              ${scholarlyBrandIcon('scopus')}
+            </div>
+            ${p.journal.officialUrl?`<a class="journal-library-link" href="${esc(p.journal.officialUrl)}" target="_blank" rel="noopener noreferrer"><img src="assets/academic/journals/engineering-reports/wiley-online-library.webp" alt="Wiley Online Library" loading="lazy" decoding="async"><span>Official journal page ↗</span></a>`:''}
+          </div>
+        </div>`:''}
         ${p.journal.citation?`<p class="project-journal-citation">${esc(p.journal.citation)}</p>`:''}
         ${(p.journal.metrics||[]).length?`<div class="project-journal-metrics">${p.journal.metrics.map(m=>`<div><strong>${esc(m.value||'')}</strong><span>${esc(m.label||'')}</span><small>${esc(m.source||'')}</small></div>`).join('')}</div>`:''}
-        <div class="scholarly-brand-row scholarly-brand-row-project">
+        ${!isEngineeringReports?`<div class="scholarly-brand-row scholarly-brand-row-project">
           ${scholarlyBrandIcon('wiley')}
           ${scholarlyBrandIcon('scopus')}
           ${scholarlyBrandIcon('clarivate')}
           ${scholarlyBrandIcon('scimago','SCImago')}
-        </div>
+        </div>`:''}
         <div class="project-journal-meta">
           ${p.journal.publisher?`<span><strong>Publisher</strong>${esc(p.journal.publisher)}</span>`:''}
           ${p.journal.onlineIssn?`<span><strong>Online ISSN</strong>${esc(p.journal.onlineIssn)}</span>`:''}
         </div>
         ${p.journal.standing?`<p class="project-journal-standing">${esc(p.journal.standing)}</p>`:''}
-        ${p.journal.officialUrl?`<a class="journal-home-link" href="${esc(p.journal.officialUrl)}" target="_blank" rel="noopener noreferrer">Official journal page ↗</a>`:''}
+        ${p.journal.officialUrl&&!isEngineeringReports?`<a class="journal-home-link" href="${esc(p.journal.officialUrl)}" target="_blank" rel="noopener noreferrer">Official journal page ↗</a>`:''}
       </div>`:''}
 
       <div class="project-footer">
