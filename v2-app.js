@@ -218,6 +218,7 @@
     const env=pick('Research Computing & Development Environments');
     const version=pick('Version Control & Reproducibility');
     const productivity=pick('Productivity & Collaboration');
+    const reference=pick('Reference & Research Management');
 
     return `<div class="tool-layout">
       <div class="grid grid-3 tool-grid-modern tool-grid-primary">${primary.map(toolGroupCard).join('')}</div>
@@ -225,7 +226,10 @@
         ${libs?`<div class="tool-libraries-wide">${toolGroupCard(libs)}</div>`:''}
         <div class="tool-side-stack">${env?toolGroupCard(env):''}${version?toolGroupCard(version):''}</div>
       </div>
-      ${productivity?`<div class="tool-productivity-row">${toolGroupCard(productivity)}</div>`:''}
+      <div class="tool-bottom-grid">
+        ${productivity?toolGroupCard(productivity):''}
+        ${reference?toolGroupCard(reference):''}
+      </div>
     </div>`;
   }
 
