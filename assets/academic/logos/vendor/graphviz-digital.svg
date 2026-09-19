@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Graphviz</title>
+  <desc id="desc">Digital graph visualization icon with connected nodes.</desc>
+  <defs>
+    <linearGradient id="g" x1="18" y1="18" x2="110" y2="110" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2F80ED"/>
+      <stop offset="1" stop-color="#15A7A1"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="112" height="112" rx="24" fill="#fff"/>
+  <path d="M36 36 64 64 95 34M64 64l28 29M64 64 34 96" fill="none" stroke="url(#g)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="36" cy="36" r="13" fill="#2F80ED"/>
+  <circle cx="95" cy="34" r="13" fill="#6C63FF"/>
+  <circle cx="64" cy="64" r="14" fill="#15A7A1"/>
+  <circle cx="92" cy="93" r="13" fill="#2F80ED"/>
+  <circle cx="34" cy="96" r="13" fill="#6C63FF"/>
+  <circle cx="36" cy="36" r="5" fill="#fff"/>
+  <circle cx="95" cy="34" r="5" fill="#fff"/>
+  <circle cx="64" cy="64" r="5" fill="#fff"/>
+  <circle cx="92" cy="93" r="5" fill="#fff"/>
+  <circle cx="34" cy="96" r="5" fill="#fff"/>
+</svg>
