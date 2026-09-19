@@ -67,16 +67,78 @@
     document.body.insertAdjacentHTML('beforeend', `<aside class="settings" id="settings" hidden aria-label="Appearance settings"><strong>Appearance</strong>
       <label for="themeSel">Theme</label><select id="themeSel"><option value="scientific">Scientific Horizon</option><option value="executive">Executive Intelligence</option><option value="quantum">Quantum Research</option><option value="mono">Minimal Monochrome</option></select>
       <label for="modeSel">Mode</label><select id="modeSel"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select>
-      <label for="textSel">Text size</label><select id="textSel"><option value="normal">Normal</option><option value="large">Large</option></select>
+      <label for="textSel">Text size</label><select id="textSel"><option value="90">90%</option><option value="100">100%</option><option value="110">110%</option><option value="120">120%</option></select>
       <label for="motionSel">Motion</label><select id="motionSel"><option value="balanced">Balanced</option><option value="reduced">Reduced</option></select>
-      <p class="tiny">Shortcuts: <span class="kbd">/</span> search · <span class="kbd">H</span> home · <span class="kbd">T</span> theme · <span class="kbd">Esc</span> close</p></aside>`);
+      <p class="tiny">Shortcuts: <span class="kbd">/</span> search · <span class="kbd">H</span> home · <span class="kbd">T</span> theme · <span class="kbd">Esc</span> close</p></aside>
+      <div class="accessibility-dock" aria-label="Reading controls">
+        <button class="accessibility-fab text-size-trigger" id="textSizeTrigger" type="button" aria-label="Text size controls" aria-expanded="false" aria-controls="textSizePanel" title="Text size"><span aria-hidden="true">AA</span></button>
+        <button class="accessibility-fab back-to-top" id="backToTop" type="button" aria-label="Back to top" title="Back to top"><span aria-hidden="true">↑</span></button>
+      </div>
+      <aside class="text-size-panel" id="textSizePanel" hidden aria-label="Text size controls">
+        <div class="text-size-panel-head"><strong>Text size</strong><button type="button" class="text-size-close" id="textSizeClose" aria-label="Close text size controls">×</button></div>
+        <div class="text-size-options" role="group" aria-label="Choose text size">
+          <button type="button" class="text-size-option size-90" data-text-scale="90" aria-label="Small text, 90 percent">A</button>
+          <button type="button" class="text-size-option size-100" data-text-scale="100" aria-label="Default text, 100 percent">A</button>
+          <button type="button" class="text-size-option size-110" data-text-scale="110" aria-label="Large text, 110 percent">A</button>
+          <button type="button" class="text-size-option size-120" data-text-scale="120" aria-label="Extra large text, 120 percent">A</button>
+        </div>
+        <div class="text-size-status"><span id="textSizePercent">100%</span><button type="button" class="text-size-reset" id="textSizeReset">Reset</button></div>
+      </aside>`);
+
     const root=document.documentElement, store=localStorage;
-    const apply=()=>{
-      const theme=store.getItem('mra-theme')||'scientific', mode=store.getItem('mra-mode')||'system', text=store.getItem('mra-text')||'normal', motion=store.getItem('mra-motion')||'balanced';
-      root.dataset.theme=theme; const sys=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'; root.dataset.mode=mode==='system'?sys:mode; root.dataset.text=text; root.dataset.motion=motion;
-      $('#themeSel').value=theme; $('#modeSel').value=mode; $('#textSel').value=text; $('#motionSel').value=motion;
+    const normalizeScale=value=>{
+      const n=parseInt(value,10);
+      return [90,100,110,120].includes(n)?n:100;
     };
-    ['theme','mode','text','motion'].forEach(k=>$('#'+k+'Sel').addEventListener('change',e=>{store.setItem('mra-'+k,e.target.value);apply()})); apply();
+    const applyTextScale=value=>{
+      const scale=normalizeScale(value);
+      root.style.setProperty('--mra-text-scale',scale+'%');
+      root.dataset.textScale=String(scale);
+      store.setItem('mra-text-scale',String(scale));
+      const sel=$('#textSel'); if(sel) sel.value=String(scale);
+      const pct=$('#textSizePercent'); if(pct) pct.textContent=scale+'%';
+      $$('.text-size-option').forEach(btn=>btn.setAttribute('aria-pressed',String(Number(btn.dataset.textScale)===scale)));
+    };
+    const legacyText=store.getItem('mra-text');
+    const storedScale=store.getItem('mra-text-scale')||(legacyText==='large'?'110':'100');
+
+    const apply=()=>{
+      const theme=store.getItem('mra-theme')||'scientific', mode=store.getItem('mra-mode')||'system', motion=store.getItem('mra-motion')||'balanced';
+      root.dataset.theme=theme;
+      const sys=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+      root.dataset.mode=mode==='system'?sys:mode;
+      root.dataset.motion=motion;
+      $('#themeSel').value=theme;
+      $('#modeSel').value=mode;
+      $('#motionSel').value=motion;
+      applyTextScale(store.getItem('mra-text-scale')||storedScale);
+    };
+
+    ['theme','mode','motion'].forEach(k=>$('#'+k+'Sel').addEventListener('change',e=>{store.setItem('mra-'+k,e.target.value);apply()}));
+    $('#textSel').addEventListener('change',e=>applyTextScale(e.target.value));
+
+    const trigger=$('#textSizeTrigger'), panel=$('#textSizePanel'), close=$('#textSizeClose'), reset=$('#textSizeReset'), topBtn=$('#backToTop');
+    const closePanel=()=>{if(!panel)return;panel.hidden=true;trigger?.setAttribute('aria-expanded','false');};
+    const openPanel=()=>{if(!panel)return;panel.hidden=false;trigger?.setAttribute('aria-expanded','true');};
+    trigger?.addEventListener('click',e=>{e.stopPropagation();panel?.hidden?openPanel():closePanel();});
+    close?.addEventListener('click',closePanel);
+    panel?.addEventListener('click',e=>e.stopPropagation());
+    $$('.text-size-option').forEach(btn=>btn.addEventListener('click',()=>applyTextScale(btn.dataset.textScale)));
+    reset?.addEventListener('click',()=>applyTextScale(100));
+    document.addEventListener('click',e=>{if(panel&&!panel.hidden&&!panel.contains(e.target)&&e.target!==trigger)closePanel();});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closePanel();});
+
+    const updateTopButton=()=>{
+      if(!topBtn)return;
+      const show=window.scrollY>520;
+      topBtn.classList.toggle('is-visible',show);
+      topBtn.tabIndex=show?0:-1;
+      topBtn.setAttribute('aria-hidden',String(!show));
+    };
+    topBtn?.addEventListener('click',()=>window.scrollTo({top:0,behavior:root.dataset.motion==='reduced'?'auto':'smooth'}));
+    window.addEventListener('scroll',updateTopButton,{passive:true});
+    updateTopButton();
+    apply();
   }
 
   function footer(){
