@@ -247,11 +247,98 @@
   }
 
   function techBrandIcon(item){
-    const slug=(item.brand||'').trim();
-    const fallback=esc((item.short||item.name||'?').split(/\s+/).map(x=>x[0]).join('').slice(0,3).toUpperCase());
-    if(!slug) return `<span class="tech-logo-fallback">${fallback}</span>`;
-    const url=`https://cdn.simpleicons.org/${encodeURIComponent(slug)}`;
-    return `<span class="tech-logo"><img src="${url}" alt="" loading="lazy" decoding="async" data-tech-fallback="${fallback}"></span>`;
+    const name=(item.name||item.short||'').trim();
+    const key=name.toLowerCase();
+    const fallback=esc((item.short||item.name||'?').split(/\s+/).map(x=>x[0]).join('').slice(0,4).toUpperCase());
+
+    const deviconBase='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/';
+    const devicons={
+      'python':'python/python-original.svg',
+      'r':'r/r-original.svg',
+      'c':'c/c-original.svg',
+      'html':'html5/html5-original.svg',
+      'html5':'html5/html5-original.svg',
+      'css':'css3/css3-original.svg',
+      'css3':'css3/css3-original.svg',
+      'flask':'flask/flask-original.svg',
+      'jupyter notebook':'jupyter/jupyter-original.svg',
+      'visual studio code':'vscode/vscode-original.svg',
+      'anaconda':'anaconda/anaconda-original.svg',
+      'kaggle':'kaggle/kaggle-original.svg',
+      'windows 10 / windows 11':'windows11/windows11-original.svg',
+      'git':'git/git-original.svg',
+      'github':'github/github-original.svg',
+      'pandas':'pandas/pandas-original.svg',
+      'numpy':'numpy/numpy-original.svg',
+      'scipy':'scipy/scipy-original.svg',
+      'scikit-learn':'scikitlearn/scikitlearn-original.svg',
+      'pytorch':'pytorch/pytorch-original.svg',
+      'torchvision':'pytorch/pytorch-original.svg',
+      'opencv':'opencv/opencv-original.svg',
+      'matplotlib':'matplotlib/matplotlib-original.svg'
+    };
+
+    const simpleSlug={
+      'ibm spss statistics':'ibm',
+      'streamlit':'streamlit',
+      'nvidia cuda / cudnn':'nvidia',
+      'xgboost':'xgboost',
+      'ultralytics':'ultralytics',
+      'geopandas':'geopandas',
+      'microsoft office':'microsoft365',
+      'google workspace':'google',
+      'mendeley':'mendeley',
+      'chatgpt':'openai',
+      'claude':'anthropic',
+      'gemini':'googlegemini',
+      'deepseek':'deepseek',
+      'grok':'xai',
+      'perplexity':'perplexity',
+      'notebooklm':'googlenotebooklm',
+      'microsoft copilot':'microsoftcopilot'
+    };
+
+    if(key==='tensorflow / keras'){
+      return `<span class="tech-logo tech-logo-pair" aria-hidden="true">
+        <img src="${deviconBase}tensorflow/tensorflow-original.svg" alt="" loading="lazy" decoding="async">
+        <img src="${deviconBase}keras/keras-original.svg" alt="" loading="lazy" decoding="async">
+      </span>`;
+    }
+
+    if(devicons[key]){
+      const url=deviconBase+devicons[key];
+      return `<span class="tech-logo tech-logo-digital"><img src="${url}" alt="" loading="lazy" decoding="async" data-tech-fallback="${fallback}"></span>`;
+    }
+
+    const slug=simpleSlug[key]||(item.brand||'').trim();
+    if(slug){
+      const url=`https://cdn.simpleicons.org/${encodeURIComponent(slug)}`;
+      return `<span class="tech-logo tech-logo-digital"><img src="${url}" alt="" loading="lazy" decoding="async" data-tech-fallback="${fallback}"></span>`;
+    }
+
+    return `<span class="tech-logo-fallback tech-logo-fallback-digital" aria-hidden="true"><span>${fallback}</span></span>`;
+  }
+
+  function scholarlyBrandIcon(type,label=''){
+    const map={
+      wiley:{slug:'wiley',label:'Wiley'},
+      scopus:{slug:'scopus',label:'Scopus'},
+      clarivate:{slug:'clarivate',label:'Clarivate'},
+      creativecommons:{slug:'creativecommons',label:'Creative Commons'},
+      banglajol:{slug:'',label:'BanglaJOL'},
+      scimago:{slug:'',label:'SCImago'},
+      ici:{slug:'',label:'ICI'},
+      esji:{slug:'',label:'ESJI'},
+      bansdoc:{slug:'',label:'BANSDOC'}
+    };
+    if(type==='doi'){
+      return `<span class="scholar-brand-icon doi-brand-mark" aria-hidden="true"><span>DOI</span><sup>®</sup></span>`;
+    }
+    const x=map[type]||{slug:'',label:label||type};
+    if(x.slug){
+      return `<span class="scholar-brand-icon"><img src="https://cdn.simpleicons.org/${encodeURIComponent(x.slug)}" alt="" loading="lazy" decoding="async"><span>${esc(label||x.label)}</span></span>`;
+    }
+    return `<span class="scholar-brand-icon scholar-brand-word"><span>${esc(label||x.label)}</span></span>`;
   }
 
   function technicalSkillCard(x){
@@ -619,7 +706,16 @@
           ${f.article.publicationModel?`<div class="journal-detail-block"><span class="detail-label">Journal model</span><p>${esc(f.article.publicationModel)}</p></div>`:''}
           ${f.article.journalSince?`<div class="journal-detail-block"><span class="detail-label">Journal history</span><p>${esc(f.article.journalSince)}. ${esc(f.article.hosting||'')}</p></div>`:''}
           ${f.article.license?`<div class="journal-detail-block"><span class="detail-label">License</span><p>${esc(f.article.license)}</p></div>`:''}
-          ${(f.article.indexing||[]).length?`<div class="journal-detail-block"><span class="detail-label">Indexing & discovery</span><div class="journal-indexing">${(f.article.indexing||[]).map(x=>`<span>${esc(x)}</span>`).join('')}</div></div>`:''}
+          ${(f.article.indexing||[]).length?`<div class="journal-detail-block"><span class="detail-label">Indexing & discovery</span>
+            <div class="scholarly-brand-row scholarly-brand-row-indexing">
+              ${scholarlyBrandIcon('doi')}
+              ${scholarlyBrandIcon('banglajol','BanglaJOL')}
+              ${scholarlyBrandIcon('ici','ICI')}
+              ${scholarlyBrandIcon('esji','ESJI')}
+              ${scholarlyBrandIcon('bansdoc','BANSDOC')}
+            </div>
+            <div class="journal-indexing">${(f.article.indexing||[]).map(x=>`<span>${esc(x)}</span>`).join('')}</div>
+          </div>`:''}
           ${f.article.contact?.office?`<div class="journal-detail-block"><span class="detail-label">Official journal address</span><p>${esc(f.article.contact.office)}${f.article.contact.email?` · ${ext('mailto:'+f.article.contact.email,f.article.contact.email)}`:''}</p></div>`:''}
         </details>
       </div>`:''}
@@ -675,10 +771,16 @@
       ${p.journal?`<div class="project-journal-card">
         <div class="project-journal-head">
           <div><span class="section-kicker">Journal standing & citation impact</span><h4>${esc(p.journal.name||'')}</h4></div>
-          ${p.outputUrl?`<a class="doi-icon-link" href="${esc(p.outputUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Open DOI ${esc(p.doi||'')}" title="Open DOI: ${esc(p.doi||'')}"><span class="doi-mark">doi</span></a>`:''}
+          ${p.outputUrl?`<a class="doi-icon-link doi-icon-link-modern" href="${esc(p.outputUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Open DOI ${esc(p.doi||'')}" title="Open DOI: ${esc(p.doi||'')}">${scholarlyBrandIcon('doi')}<span class="doi-link-text">${esc(p.doi||'Open DOI')}</span></a>`:''}
         </div>
         ${p.journal.citation?`<p class="project-journal-citation">${esc(p.journal.citation)}</p>`:''}
         ${(p.journal.metrics||[]).length?`<div class="project-journal-metrics">${p.journal.metrics.map(m=>`<div><strong>${esc(m.value||'')}</strong><span>${esc(m.label||'')}</span><small>${esc(m.source||'')}</small></div>`).join('')}</div>`:''}
+        <div class="scholarly-brand-row scholarly-brand-row-project">
+          ${scholarlyBrandIcon('wiley')}
+          ${scholarlyBrandIcon('scopus')}
+          ${scholarlyBrandIcon('clarivate')}
+          ${scholarlyBrandIcon('scimago','SCImago')}
+        </div>
         <div class="project-journal-meta">
           ${p.journal.publisher?`<span><strong>Publisher</strong>${esc(p.journal.publisher)}</span>`:''}
           ${p.journal.onlineIssn?`<span><strong>Online ISSN</strong>${esc(p.journal.onlineIssn)}</span>`:''}
