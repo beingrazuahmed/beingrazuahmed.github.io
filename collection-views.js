@@ -12,8 +12,8 @@
     ],
     projects: [['#page-content .section.alt .grid', 'projects', 'Current projects']],
     recognition: [
-      ['#page-content .section:not(.alt) .grid', 'awards', 'Honors and awards'],
-      ['#page-content .section.alt .grid', 'training', 'Training and certifications']
+      ['#page-content .recognition-awards-section .grid', 'awards', 'Honors and awards'],
+      ['#page-content .recognition-training-section .grid', 'training', 'Training and certifications']
     ],
     gallery: [['#page-content .section .grid', 'gallery', 'Gallery and evidence']]
   };
