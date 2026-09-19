@@ -5239,3 +5239,38 @@ html[data-motion="reduced"]{scroll-behavior:auto!important}
     grid-template-columns:70px minmax(0,1fr);
   }
 }
+
+
+/* === Kabbo-style compact Jupyter tile === */
+.tech-logo-custom img[src*="JUPYTER.png"]{
+  width:34px!important;
+  max-width:34px!important;
+  height:34px!important;
+  max-height:34px!important;
+  object-fit:contain!important;
+}
+.tool-item-modern:has(img[src*="JUPYTER.png"]){
+  grid-template-columns:48px minmax(0,1fr)!important;
+  gap:11px!important;
+}
+.tech-logo:has(img[src*="JUPYTER.png"]){
+  width:48px!important;
+  height:48px!important;
+  flex:0 0 48px!important;
+  padding:7px!important;
+  border-radius:14px!important;
+}
+@media (max-width:700px){
+  .tech-logo:has(img[src*="JUPYTER.png"]){
+    width:44px!important;
+    height:44px!important;
+    flex-basis:44px!important;
+  }
+  .tech-logo-custom img[src*="JUPYTER.png"]{
+    width:31px!important;
+    height:31px!important;
+  }
+  .tool-item-modern:has(img[src*="JUPYTER.png"]){
+    grid-template-columns:44px minmax(0,1fr)!important;
+  }
+}

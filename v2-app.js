@@ -266,7 +266,7 @@
       'xgboost':'https://xgboost.ai/images/logo/xgboost-logo-trimmed.png',
       'scipy':'https://cdn.jsdelivr.net/gh/scipy/scipy.org@main/static/images/logo.svg',
       'c':'https://skillicons.dev/icons?i=c&theme=light',
-      'jupyter notebook':'https://raw.githubusercontent.com/jupyter/design/main/logos/Rectangle%20Logo/rectanglelogo-greytext-orangebody-greymoons/rectanglelogo-greytext-orangebody-greymoons.svg',
+      'jupyter notebook':'https://raw.githubusercontent.com/AdittoAhosanKabbo/adittoahosankabbo.github.io/main/assets/images/LOGO/JUPYTER.png',
       'microsoft 365 / office':'https://commons.wikimedia.org/wiki/Special:Redirect/file/Microsoft_365_%282022%29.svg',
       'microsoft office':'https://commons.wikimedia.org/wiki/Special:Redirect/file/Microsoft_365_%282022%29.svg',
       'google workspace':'https://commons.wikimedia.org/wiki/Special:Redirect/file/Google_Favicon_2025.svg',
@@ -281,7 +281,7 @@
       'quillbot':'https://www.google.com/s2/favicons?sz=128&domain=quillbot.com'
     };
     const horizontalLogoKeys=new Set(['xgboost']);
-    const wordmarkLogoKeys=new Set(['jupyter notebook']);
+    const wordmarkLogoKeys=new Set([]);
     const devicons={
       'python':'python/python-original.svg',
       'r':'r/r-original.svg',
