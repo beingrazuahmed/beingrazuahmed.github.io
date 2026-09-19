@@ -6403,3 +6403,83 @@ html[data-motion="reduced"]{scroll-behavior:auto!important}
     height:68px;
   }
 }
+
+
+/* === ICRAST connected-file cleanup · 2026-09-19 === */
+.conference-brochure-evidence{
+  padding:12px;
+}
+.conference-brochure-evidence .conference-flyer-image-link{
+  border-radius:12px;
+  background:#fff;
+  box-shadow:none;
+}
+.conference-brochure-evidence .conference-flyer-image-link img{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:1080/769;
+  object-fit:contain;
+  object-position:center;
+}
+.conference-brochure-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 16px;
+  align-items:center;
+  margin:10px 2px 2px;
+}
+.conference-brochure-actions .conference-flyer-link{
+  margin-top:0;
+}
+.recognition-certificates-section .recognition-certificate-grid{
+  display:grid;
+  grid-template-columns:minmax(0,860px)!important;
+  justify-content:center;
+}
+.recognition-certificates-section .recognition-certificate-card{
+  overflow:hidden;
+  padding:20px;
+}
+.recognition-certificates-section .recognition-certificate-card>a:first-child{
+  margin:-20px -20px 18px;
+  border-radius:16px 16px 0 0;
+  background:#fff;
+}
+.recognition-certificates-section .recognition-certificate-card>a:first-child img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:none;
+  aspect-ratio:1536/1116;
+  object-fit:contain;
+  object-position:center;
+}
+.recognition-certificates-section .verified-evidence-badge{
+  min-height:30px;
+  padding:5px 10px 5px 7px;
+  font-size:11px;
+}
+.recognition-certificates-section .verified-evidence-mark{
+  width:18px;
+  height:18px;
+  flex-basis:18px;
+}
+.conference-evidence-item.evidence-certificate .conference-evidence-image,
+.conference-evidence-item.evidence-brochure .conference-evidence-image{
+  image-rendering:auto;
+}
+@media(min-width:980px){
+  .conference-evidence-item.evidence-certificate,
+  .conference-evidence-item.evidence-brochure{
+    min-height:100%;
+  }
+}
+@media(max-width:700px){
+  .conference-brochure-evidence{
+    max-width:none;
+  }
+  .recognition-certificates-section .recognition-certificate-grid{
+    grid-template-columns:1fr!important;
+  }
+}
