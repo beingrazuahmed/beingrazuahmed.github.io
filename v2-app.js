@@ -1518,8 +1518,10 @@
     if(!x)return `${pageHero('Academic Network Profile','Profile information is currently unavailable.')}<section class="section"><div class="container"><a class="btn ghost" href="network.html">← Back to Network</a></div></section>`;
 
     const supervisionPath=x.relationshipPath||['B.Sc. Statistical Field Survey','B.Sc. Statistical Project','M.S. Project','Continuing Research Collaboration'];
+    const hasSharedRecord=['sharedPublications','sharedAccepted','sharedDataset','sharedEditorial'].some(k=>(x[k]||[]).length);
+    const hasTeachingLab=(x.taughtCourses||[]).length||x.labProfile||(x.careerHistory||[]).length;
 
-    return `${pageHero('Academic Network Profile','A detailed academic profile and collaboration record within this research network.')}
+    return `${pageHero('Academic Network Profile','A detailed academic profile and relationship context within this research network.')}
       <section class="section network-profile-page">
         <div class="container">
           <div class="network-profile-breadcrumb"><a href="network.html">Network & Impact</a><span>›</span><strong>${esc(x.name||'')}</strong></div>
@@ -1542,6 +1544,7 @@
             <div class="network-profile-linkrail-label"><span class="section-kicker">Academic identity</span><strong>Profiles & contact</strong></div>
             <div class="network-profile-links network-profile-links-premium">
               ${x.email?mentorProfileLink({label:'Email',url:`mailto:${x.email}`}):''}
+              ${x.additionalEmail?mentorProfileLink({label:'Alt Email',url:`mailto:${x.additionalEmail}`}):''}
               ${(x.links||[]).map(mentorProfileLink).join('')}
             </div>
           </div>
@@ -1549,13 +1552,14 @@
           <nav class="network-profile-nav" aria-label="Profile sections">
             <a href="#overview">Overview</a>
             <a href="#academic-profile">Academic Profile</a>
-            <a href="#collaboration">Research Collaboration</a>
+            ${hasTeachingLab?'<a href="#teaching-lab">Teaching & Lab</a>':''}
+            ${hasSharedRecord?'<a href="#collaboration">Research Collaboration</a>':''}
             ${(x.sharedConferences||[]).length?'<a href="#conferences">Conferences</a>':''}
             <a href="#recognition">Recognition</a>
           </nav>
 
           <section class="network-profile-section" id="overview">
-            <div class="network-profile-section-head"><div><span class="section-kicker">Overview</span><h2>Academic relationship & collaboration</h2></div></div>
+            <div class="network-profile-section-head"><div><span class="section-kicker">Overview</span><h2>Academic relationship & profile</h2></div></div>
             <div class="network-overview-grid">
               <article class="network-profile-panel network-profile-panel-lead">
                 <h3>Profile</h3>
@@ -1582,9 +1586,18 @@
                 <ul class="mentor-clean-list">${(x.currentPositions||[]).map(v=>`<li>${esc(v)}</li>`).join('')}</ul>
               </article>
             </div>
+            ${(x.careerHistory||[]).length?`<div class="network-profile-record-block"><div class="mentor-record-heading"><h3>Teaching & research experience</h3></div><ul class="mentor-clean-list">${x.careerHistory.map(v=>`<li>${esc(v)}</li>`).join('')}</ul></div>`:''}
           </section>
 
-          <section class="network-profile-section" id="collaboration">
+          ${hasTeachingLab?`<section class="network-profile-section" id="teaching-lab">
+            <div class="network-profile-section-head"><div><span class="section-kicker">Teaching & research environment</span><h2>Courses, laboratory & interdisciplinary work</h2></div></div>
+            <div class="network-overview-grid ${!x.labProfile||!(x.taughtCourses||[]).length?'is-single':''}">
+              ${(x.taughtCourses||[]).length?`<article class="network-profile-panel"><h3>Taught courses</h3><ul class="mentor-clean-list">${x.taughtCourses.map(v=>`<li>${esc(v)}</li>`).join('')}</ul></article>`:''}
+              ${x.labProfile?`<article class="network-profile-panel"><h3>${esc(x.labProfile.name||'Research laboratory')}</h3>${x.labProfile.established?`<p><strong>${esc(x.labProfile.established)}</strong></p>`:''}<p>${esc(x.labProfile.summary||'')}</p><div class="mentor-interest-list compact">${(x.labProfile.areas||[]).map(v=>`<span>${esc(v)}</span>`).join('')}</div></article>`:''}
+            </div>
+          </section>`:''}
+
+          ${hasSharedRecord?`<section class="network-profile-section" id="collaboration">
             <div class="network-profile-section-head"><div><span class="section-kicker">Research collaboration</span><h2>Shared scholarly record with ${highlightRazuName('Razu')}</h2></div></div>
             ${(x.collaborationStats||[]).length?`<div class="network-profile-statbar">${(x.collaborationStats||[]).map(s=>`<div><strong>${esc(s.value)}</strong><span>${esc(s.label)}</span></div>`).join('')}</div>`:''}
             ${x.relationship?.detail?`<div class="network-profile-record-block network-profile-collab-summary"><div class="mentor-record-heading"><h3>Collaboration context</h3></div><p>${highlightRazuName(x.relationship.detail)}</p></div>`:''}
@@ -1594,7 +1607,7 @@
               ${(x.sharedDataset||[]).length?`<div class="network-profile-record-block"><div class="mentor-record-heading"><h3>Public research dataset</h3><span>${x.sharedDataset.length}</span></div>${mentorWorkList(x.sharedDataset)}</div>`:''}
             </div>`:''}
             ${(x.sharedEditorial||[]).length?`<div class="network-profile-record-block"><div class="mentor-record-heading"><h3>Manuscripts in the editorial process</h3><span>${x.sharedEditorial.length}</span></div><p class="mentor-record-note">Shown for collaboration context only; these records are not presented as published outputs.</p>${mentorWorkList(x.sharedEditorial,'editorial')}</div>`:''}
-          </section>
+          </section>`:''}
 
           ${(x.sharedConferences||[]).length?`<section class="network-profile-section" id="conferences">
             <div class="network-profile-section-head"><div><span class="section-kicker">Conference record</span><h2>Shared conference contributions</h2></div></div>
