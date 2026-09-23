@@ -555,7 +555,7 @@
       portrait: 'assets/collaborators/abdur-rakib.jpg', links: []
     },
     {
-      id: 'ziaul-haque', name: 'Md. Ziaul Haque', group: 'Peer & Batchmate Research Collaborators',
+      id: 'ziaul-haque', name: 'Muhammad Ziaul Haque', group: 'Peer & Batchmate Research Collaborators',
       roles: ['Batchmate', 'Co-author', 'Research Collaborator'], affiliation: 'PUST research network',
       description: 'Batchmate and co-author working with Razu on nationwide dengue forecasting and decision-oriented public-health research.',
       shared: ['Nationwide dengue admission forecasting', 'Beyond Burden dengue preparedness study'],
@@ -569,7 +569,7 @@
       portrait: 'assets/collaborators/abu-bakar-shiddik.jpg', links: []
     },
     {
-      id: 'marufa', name: 'Marufa', group: 'Peer & Batchmate Research Collaborators',
+      id: 'marufa', name: 'Marufa Yeasmin', group: 'Peer & Batchmate Research Collaborators',
       roles: ['Co-author', 'Research Collaborator', 'DSLR Member'], affiliation: 'PUST research network',
       description: 'Research collaborator in food-computing, dataset development and automated cafeteria analysis.',
       shared: ['PUST Cafeteria Food Image Dataset', 'RT-DETR cafeteria billing'],
