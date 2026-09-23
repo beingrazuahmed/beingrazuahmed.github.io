@@ -127,6 +127,39 @@ window.PORTFOLIO_DATA = {
     }
   ],
 
+  datasets: [
+    {
+      id: "pust-cafeteria-dataset",
+      type: "Dataset",
+      status: "Published",
+      year: 2026,
+      role: "Second Contributor",
+      title: "PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations",
+      repository: "Mendeley Data",
+      venue: "Mendeley Data",
+      version: "2",
+      publishedDate: "28 August 2026",
+      doi: "https://doi.org/10.17632/fn6yhzjz83.2",
+      license: "CC BY 4.0",
+      institution: "Pabna University of Science and Technology",
+      contributors: "Marufa Yeasmin, Md. Razu Ahmed, Protiva Rani Kundu, Jannatul Mauya, Md. Shamim Reza",
+      citationAPA: "Yeasmin, M., Ahmed, M. R., Kundu, P. R., Mauya, J., & Reza, M. S. (2026). PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations (Version 2) [Data set]. Mendeley Data. https://doi.org/10.17632/fn6yhzjz83.2",
+      citationIEEE: "M. Yeasmin, M. R. Ahmed, P. R. Kundu, J. Mauya, and M. S. Reza, “PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations,” Mendeley Data, ver. 2, 2026, doi: 10.17632/fn6yhzjz83.2.",
+      relatedArticle: "https://doi.org/10.1016/j.dib.2026.113262",
+      originalImages: 720,
+      processedImages: 1728,
+      annotatedInstances: 6297,
+      classes: 16,
+      split: "1,512 train · 108 validation · 108 test",
+      annotationFormats: ["YOLO detection TXT", "YOLO segmentation TXT", "COCO JSON"],
+      imageSize: "640 × 640",
+      collectionPeriod: "1 August–5 September 2025",
+      devices: "Realme GT Master Edition · OPPO A92",
+      summary: "A public real-world Bangladeshi cafeteria food-image dataset for food recognition, object detection and instance segmentation, released with bounding-box and polygon annotations.",
+      tags: ["Mendeley Data", "Open Dataset", "Food Computing", "Object Detection", "Instance Segmentation", "YOLO", "COCO"]
+    }
+  ],
+
   manuscripts: [
     {
       id: "dr", status: "Submitted / Under Review", role: "First Author",
