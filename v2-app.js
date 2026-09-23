@@ -1192,32 +1192,38 @@
 
   function publications(){
     const all=D.outputs||[];
-    const published=all.filter(x=>x.bucket==='published');
+    const publishedArticles=all.filter(x=>x.bucket==='published'&&!(x.outputKind==='dataset'||x.type==='Dataset'));
+    const datasets=all.filter(x=>x.outputKind==='dataset'||x.type==='Dataset');
     const accepted=all.filter(x=>x.bucket==='accepted');
     const reviewing=all.filter(x=>x.bucket==='under-review');
-    return `${pageHero('Publications & Research Outputs','Published, accepted and submitted work are kept in separate views so publication status is never visually mixed.')}
+    return `${pageHero('Publications & Research Outputs','Scroll through the complete scholarly record. Published articles, published data, accepted work and manuscripts in the editorial process remain clearly separated in dedicated sections.')}
     <section class="section publication-directory"><div class="container">
       <div class="publication-controls">
-        <div class="search-wrap"><input class="search-input" id="pubSearch" placeholder="Search title, journal, method or topic…"></div>
-        <div class="filters publication-status-tabs" id="pubFilters" aria-label="Publication status">
-          <button class="filter active" data-filter="published">Published</button>
-          <button class="filter" data-filter="dataset">Published Dataset</button>
-          <button class="filter" data-filter="accepted">Accepted / Forthcoming</button>
-          <button class="filter" data-filter="under-review">Editorial Process</button>
-        </div>
+        <div class="search-wrap"><input class="search-input" id="pubSearch" placeholder="Search title, journal, publisher, method or topic…"></div>
+        <nav class="publication-section-nav" id="pubSectionNav" aria-label="Publication sections">
+          <a href="#published-articles" data-publication-jump="published">Published Articles</a>
+          <a href="#published-dataset" data-publication-jump="dataset">Published Dataset</a>
+          <a href="#accepted-forthcoming" data-publication-jump="accepted">Accepted / Forthcoming</a>
+          <a href="#editorial-process" data-publication-jump="under-review">Editorial Process</a>
+        </nav>
       </div>
 
-      <section class="publication-status-group publication-status-published" data-publication-group="published">
-        ${sectionHead('Published scholarly outputs','Peer-reviewed articles & public research data','Final published journal articles and the citable Mendeley Data release. Submitted manuscripts are kept separate below.')}
-        <div class="grid grid-2 publication-group-grid">${published.map(outputCard).join('')}</div>
+      <section class="publication-status-group publication-status-published" id="published-articles" data-publication-group="published">
+        ${sectionHead('Published articles','Peer-reviewed journal publications','Final published journal articles with bibliographic, journal-metric and discovery information.')}
+        <div class="grid grid-2 publication-group-grid">${publishedArticles.map(outputCard).join('')}</div>
       </section>
 
-      <section class="publication-status-group publication-status-accepted" data-publication-group="accepted">
+      <section class="publication-status-group publication-status-dataset" id="published-dataset" data-publication-group="dataset">
+        ${sectionHead('Published dataset','Open research data','A citable public data release presented separately from journal articles and manuscript records.')}
+        <div class="grid publication-group-grid publication-dataset-grid">${datasets.map(outputCard).join('')}</div>
+      </section>
+
+      <section class="publication-status-group publication-status-accepted" id="accepted-forthcoming" data-publication-group="accepted">
         ${sectionHead('Accepted / forthcoming','Accepted scholarly output','Accepted work awaiting final issue publication or complete bibliographic assignment.')}
         <div class="grid grid-2 publication-group-grid">${accepted.map(outputCard).join('')}</div>
       </section>
 
-      <section class="publication-status-group publication-status-reviewing" data-publication-group="under-review">
+      <section class="publication-status-group publication-status-reviewing" id="editorial-process" data-publication-group="under-review">
         ${sectionHead('Editorial status','Manuscripts in the editorial process','These manuscripts are not published outputs. Current workflow states such as With Editor, Under Review, Under Revision and Awaiting Admin Processing are shown on each record.')}
         <div class="grid grid-2 publication-group-grid">${reviewing.map(outputCard).join('')}</div>
       </section>
@@ -1800,38 +1806,43 @@
     const publicationGroups=[...document.querySelectorAll('.publication-status-group')];
     if(search&&publicationGroups.length){
       const cards=[...document.querySelectorAll('.publication-group-grid > .output-card')];
+      const jumpLinks=[...document.querySelectorAll('[data-publication-jump]')];
       const requestedStatus=new URLSearchParams(window.location.search).get('status');
-      const allowedStatuses=['published','dataset','accepted','under-review'];
-      let filter=allowedStatuses.includes(requestedStatus)?requestedStatus:'published';
-      $$('#pubFilters .filter').forEach(x=>x.classList.toggle('active',x.dataset.filter===filter));
+      const sectionMap={
+        published:'#published-articles',
+        dataset:'#published-dataset',
+        accepted:'#accepted-forthcoming',
+        'under-review':'#editorial-process'
+      };
       const run=()=>{
         const q=search.value.trim().toLowerCase();
         cards.forEach(c=>{
-          const bucket=c.dataset.outputBucket||'';
-          const isDataset=c.dataset.outputKind==='dataset';
           const okQ=!q||c.textContent.toLowerCase().includes(q);
-          const okF=filter==='all'||(filter==='dataset'?isDataset:bucket===filter);
-          c.hidden=!(okQ&&okF);
+          c.hidden=!okQ;
         });
         publicationGroups.forEach(group=>{
           const visible=[...group.querySelectorAll('.output-card')].some(c=>!c.hidden);
-          group.hidden=!visible;
+          group.hidden=!!q&&!visible;
         });
       };
       run();
-      if(window.location.hash){
-        requestAnimationFrame(()=>{
-          const target=document.querySelector(window.location.hash);
-          if(target&&!target.hidden) target.scrollIntoView({block:'start'});
-        });
-      }
+      requestAnimationFrame(()=>{
+        const hashTarget=window.location.hash&&document.querySelector(window.location.hash);
+        const statusTarget=!window.location.hash&&sectionMap[requestedStatus]?document.querySelector(sectionMap[requestedStatus]):null;
+        const target=hashTarget||statusTarget;
+        if(target) target.scrollIntoView({block:'start'});
+      });
       search.addEventListener('input',run);
-      $$('#pubFilters .filter').forEach(b=>b.addEventListener('click',()=>{
-        $$('#pubFilters .filter').forEach(x=>x.classList.remove('active'));
-        b.classList.add('active');
-        filter=b.dataset.filter;
-        run();
-      }));
+
+      if('IntersectionObserver' in window&&jumpLinks.length){
+        const sectionObserver=new IntersectionObserver(entries=>{
+          const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+          if(!visible)return;
+          const key=visible.target.dataset.publicationGroup;
+          jumpLinks.forEach(link=>link.classList.toggle('active',link.dataset.publicationJump===key));
+        },{rootMargin:'-24% 0px -60% 0px',threshold:[0,.08,.25,.5]});
+        publicationGroups.forEach(group=>sectionObserver.observe(group));
+      }
     }
     document.querySelectorAll('img[data-safe-fallback]').forEach(img=>img.addEventListener('error',()=>{
       const fallback=document.createElement('div');
