@@ -1433,6 +1433,10 @@
       <section class="section recognition-training-section"><div class="container">${sectionHead('Training & certifications','Professional development')}<div class="grid grid-3">${(D.training||[]).map(t=>`<article class="card"><div class="badge">${esc(t.date||t.year||'')}</div><h3>${esc(t.title||t.name||'')}</h3><p>${esc(t.provider||t.issuer||'')}</p><p>${esc(t.duration||t.detail||t.description||'')}</p></article>`).join('')}</div></div></section>`;
   }
 
+  function highlightRazuName(text=''){
+    return esc(text).replace(/Md\. Razu Ahmed|Ahmed, M\. R\.|Razu/g,match=>`<strong class="razu-name">${match}</strong>`);
+  }
+
   function mentorProfileLink(link={}){
     const meta=publicationBrandMeta(link.label||'');
     return `<a class="mentor-profile-link ${esc(meta.cls||'')}" href="${esc(link.url||'#')}" target="_blank" rel="noopener noreferrer" title="${esc(link.label||'Academic profile')}">
@@ -1515,7 +1519,7 @@
 
     const supervisionPath=x.relationshipPath||['B.Sc. Statistical Field Survey','B.Sc. Statistical Project','M.S. Project','Continuing Research Collaboration'];
 
-    return `${pageHero('Academic Network Profile','A detailed academic profile and collaboration record within Md. Razu Ahmed’s research network.')}
+    return `${pageHero('Academic Network Profile','A detailed academic profile and collaboration record within this research network.')}
       <section class="section network-profile-page">
         <div class="container">
           <div class="network-profile-breadcrumb"><a href="network.html">Network & Impact</a><span>›</span><strong>${esc(x.name||'')}</strong></div>
@@ -1523,11 +1527,11 @@
           <article class="network-profile-hero network-profile-hero-premium">
             <div class="network-profile-photo">${x.portrait?`<img src="${esc(x.portrait)}" alt="${esc(x.name||'Academic mentor')} portrait" loading="eager" decoding="async">`:''}</div>
             <div class="network-profile-identity">
-              <div class="network-profile-eyebrow"><span>Primary Research Supervisor</span><span>Academic Mentor</span></div>
+              <div class="network-profile-eyebrow">${(x.profileBadges||x.roles?.slice(0,2)||[]).map(b=>`<span>${esc(b)}</span>`).join('')}</div>
               <h1>${esc(x.name||'')}</h1>
               ${x.headline?`<p class="network-profile-headline">${esc(x.headline)}</p>`:''}
               ${x.affiliation?`<p class="network-profile-affiliation">${esc(x.affiliation)}</p>`:''}
-              <p class="network-profile-bio-intro">${esc(x.description||'')}</p>
+              <p class="network-profile-bio-intro">${highlightRazuName(x.description||'')}</p>
             </div>
             <aside class="network-profile-leadership">
               <span class="section-kicker">Current leadership</span>
@@ -1555,12 +1559,12 @@
             <div class="network-overview-grid">
               <article class="network-profile-panel network-profile-panel-lead">
                 <h3>Profile</h3>
-                <p>${esc(x.biography||x.description||'')}</p>
+                <p>${highlightRazuName(x.biography||x.description||'')}</p>
                 <div class="mentor-interest-list compact">${(x.researchInterests||[]).map(r=>`<span>${esc(r)}</span>`).join('')}</div>
               </article>
               <article class="network-profile-panel">
-                <h3>Relationship with Razu</h3>
-                <p>${esc(x.relationship?.detail||'')}</p>
+                <h3>Relationship with ${highlightRazuName('Razu')}</h3>
+                <p>${highlightRazuName(x.relationship?.detail||'')}</p>
                 <div class="network-supervision-path">${supervisionPath.map((step,i)=>`<div><span>${String(i+1).padStart(2,'0')}</span><strong>${esc(step)}</strong></div>`).join('')}</div>
               </article>
             </div>
@@ -1581,9 +1585,9 @@
           </section>
 
           <section class="network-profile-section" id="collaboration">
-            <div class="network-profile-section-head"><div><span class="section-kicker">Research collaboration</span><h2>Shared scholarly record with Razu</h2></div></div>
+            <div class="network-profile-section-head"><div><span class="section-kicker">Research collaboration</span><h2>Shared scholarly record with ${highlightRazuName('Razu')}</h2></div></div>
             ${(x.collaborationStats||[]).length?`<div class="network-profile-statbar">${(x.collaborationStats||[]).map(s=>`<div><strong>${esc(s.value)}</strong><span>${esc(s.label)}</span></div>`).join('')}</div>`:''}
-            ${x.relationship?.detail?`<div class="network-profile-record-block network-profile-collab-summary"><div class="mentor-record-heading"><h3>Collaboration context</h3></div><p>${esc(x.relationship.detail)}</p></div>`:''}
+            ${x.relationship?.detail?`<div class="network-profile-record-block network-profile-collab-summary"><div class="mentor-record-heading"><h3>Collaboration context</h3></div><p>${highlightRazuName(x.relationship.detail)}</p></div>`:''}
             ${(x.sharedPublications||[]).length?`<div class="network-profile-record-block"><div class="mentor-record-heading"><h3>Peer-reviewed journal publications</h3><span>${x.sharedPublications.length}</span></div>${mentorWorkList(x.sharedPublications)}</div>`:''}
             ${(x.sharedAccepted||[]).length||(x.sharedDataset||[]).length?`<div class="network-profile-two-col">
               ${(x.sharedAccepted||[]).length?`<div class="network-profile-record-block"><div class="mentor-record-heading"><h3>Accepted / forthcoming</h3><span>${x.sharedAccepted.length}</span></div>${mentorWorkList(x.sharedAccepted)}</div>`:''}
@@ -1594,7 +1598,7 @@
 
           <section class="network-profile-section" id="conferences">
             <div class="network-profile-section-head"><div><span class="section-kicker">Conference record</span><h2>Shared conference contributions</h2></div></div>
-            <div class="mentor-conference-groups compact">${(x.sharedConferences||[]).map(g=>`<article><h3>${esc(g.event||'')}</h3><p>${esc(g.venue||'')}</p><ol>${(g.items||[]).map(i=>`<li>${esc(i)}</li>`).join('')}</ol></article>`).join('')}</div>
+            <div class="mentor-conference-groups compact">${(x.sharedConferences||[]).map(g=>`<article><h3>${esc(g.event||'')}</h3><p>${esc(g.venue||'')}</p><ol>${(g.items||[]).map(i=>`<li>${highlightRazuName(i)}</li>`).join('')}</ol></article>`).join('')}</div>
           </section>
 
           <section class="network-profile-section" id="recognition">
@@ -1624,7 +1628,7 @@
         <h3>${esc(x.name||'')}</h3>
         ${supportingRoles.length?`<div class="network-role-chips">${supportingRoles.map(r=>`<span>${esc(r)}</span>`).join('')}</div>`:''}
         ${x.affiliation?`<p class="network-affiliation">${esc(x.affiliation)}</p>`:''}
-        ${x.description?`<p class="network-description">${esc(x.description)}</p>`:''}
+        ${x.description?`<p class="network-description">${highlightRazuName(x.description)}</p>`:''}
         ${x.shared?.length?`<details class="network-shared"><summary>Shared works <span>${x.shared.length}</span></summary><ul>${x.shared.map(s=>`<li>${esc(s)}</li>`).join('')}</ul></details>`:''}
         ${x.profilePage?`<div class="network-person-profile-action"><a class="btn ghost" href="${esc(x.profilePage)}">View Full Profile →</a></div>`:(x.links||[]).length?`<div class="link-row network-links">${(x.links||[]).map(l=>ext(l.url,l.label)).join(' · ')}</div>`:''}
       </div>
@@ -1633,18 +1637,15 @@
 
   function network(){
     const people=D.people||[];
-    const featured=people.find(x=>x.featuredProfile);
-    const remaining=people.filter(x=>!x.featuredProfile);
-    const groups=[...new Set(remaining.map(x=>x.group))];
+    const groups=[...new Set(people.map(x=>x.group))];
     return `${pageHero('Network & Impact','Mentors, advisors, collaborators & mentees — with shared works and relationship context.')}
-      ${featured?featuredMentorSummaryCard(featured):''}
       <section class="section network-section"><div class="container">
         ${groups.map((g,idx)=>`<div class="network-group ${idx===0?'network-group-featured':''}">
           <div class="network-group-head">
             ${sectionHead('Academic network',g)}
-            <div class="network-group-count">${remaining.filter(x=>x.group===g).length} people</div>
+            <div class="network-group-count">${people.filter(x=>x.group===g).length} people</div>
           </div>
-          <div class="network-board">${remaining.filter(x=>x.group===g).map(networkPersonCard).join('')}</div>
+          <div class="network-board">${people.filter(x=>x.group===g).map(networkPersonCard).join('')}</div>
         </div>`).join('')}
       </div></section>`;
   }
