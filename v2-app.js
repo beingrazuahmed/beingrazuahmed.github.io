@@ -66,12 +66,28 @@
   }
 
   function settings(){
-    document.body.insertAdjacentHTML('beforeend', `<aside class="settings" id="settings" hidden aria-label="Appearance settings"><strong>Appearance</strong>
-      <label for="themeSel">Theme</label><select id="themeSel"><option value="scientific">Scientific Horizon</option><option value="executive">Executive Intelligence</option><option value="quantum">Quantum Research</option><option value="mono">Minimal Monochrome</option></select>
-      <label for="modeSel">Mode</label><select id="modeSel"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select>
-      <label for="textSel">Text size</label><select id="textSel"><option value="90">90%</option><option value="100">100%</option><option value="110">110%</option><option value="120">120%</option></select>
-      <label for="motionSel">Motion</label><select id="motionSel"><option value="balanced">Balanced</option><option value="reduced">Reduced</option></select>
-      <p class="tiny">Shortcuts: <span class="kbd">/</span> search · <span class="kbd">H</span> home · <span class="kbd">T</span> theme · <span class="kbd">Esc</span> close</p></aside>
+    document.body.insertAdjacentHTML('beforeend', `<aside class="settings appearance-panel" id="settings" hidden aria-label="Appearance settings">
+      <div class="appearance-panel-head"><div><span class="appearance-eyebrow">Interface</span><strong>Appearance</strong><p>Choose a color system, display mode and motion level.</p></div><button class="appearance-close" id="appearanceClose" type="button" aria-label="Close appearance settings">×</button></div>
+      <div class="appearance-group">
+        <label for="themeSel">Color theme</label>
+        <select id="themeSel"><option value="scientific">Scientific Horizon</option><option value="executive">Executive Intelligence</option><option value="quantum">Quantum Research</option><option value="mono">Minimal Monochrome</option></select>
+      </div>
+      <div class="appearance-group">
+        <span class="appearance-label">Display mode</span>
+        <div class="mode-segmented" id="modeSegmented" role="group" aria-label="Display mode">
+          <button type="button" data-mode-choice="system" aria-pressed="false"><span class="mode-icon">◐</span><span>System</span></button>
+          <button type="button" data-mode-choice="light" aria-pressed="false"><span class="mode-icon">☀</span><span>Light</span></button>
+          <button type="button" data-mode-choice="dark" aria-pressed="false"><span class="mode-icon">◒</span><span>Dark</span></button>
+        </div>
+        <select id="modeSel" class="appearance-native-select" aria-label="Display mode fallback"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select>
+        <p class="appearance-mode-status" id="modeStatus" aria-live="polite"></p>
+      </div>
+      <div class="appearance-group appearance-grid-2">
+        <div><label for="textSel">Text size</label><select id="textSel"><option value="90">90%</option><option value="100">100%</option><option value="110">110%</option><option value="120">120%</option></select></div>
+        <div><label for="motionSel">Motion</label><select id="motionSel"><option value="balanced">Balanced</option><option value="reduced">Reduced</option></select></div>
+      </div>
+      <p class="tiny appearance-shortcuts">Shortcuts: <span class="kbd">/</span> search · <span class="kbd">H</span> home · <span class="kbd">T</span> appearance · <span class="kbd">Esc</span> close</p>
+    </aside>
       <div class="accessibility-dock" aria-label="Reading controls">
         <button class="accessibility-fab text-size-trigger" id="textSizeTrigger" type="button" aria-label="Text size controls" aria-expanded="false" aria-controls="textSizePanel" title="Text size"><span aria-hidden="true">AA</span></button>
         <button class="accessibility-fab back-to-top" id="backToTop" type="button" aria-label="Back to top" title="Back to top" tabindex="-1" aria-hidden="true"><svg class="back-to-top-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m7.5 14.5 4.5-4.5 4.5 4.5"/></svg></button>
@@ -105,26 +121,70 @@
     const legacyText=store.getItem('mra-text');
     const storedScale=store.getItem('mra-text-scale')||(legacyText==='large'?'110':'100');
 
-    const apply=()=>{
-      const theme=store.getItem('mra-theme')||'scientific', mode=store.getItem('mra-mode')||'system', motion=store.getItem('mra-motion')||'balanced';
-      root.dataset.theme=theme;
-      const sys=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
-      root.dataset.mode=mode==='system'?sys:mode;
-      root.dataset.motion=motion;
-      $('#themeSel').value=theme;
-      $('#modeSel').value=mode;
-      $('#motionSel').value=motion;
-      applyTextScale(store.getItem('mra-text-scale')||storedScale);
+    const systemMode=window.matchMedia('(prefers-color-scheme: dark)');
+    const validThemes=new Set(['scientific','executive','quantum','mono']);
+    const validModes=new Set(['system','light','dark']);
+    const validMotion=new Set(['balanced','reduced']);
+
+    const syncThemeColor=resolved=>{
+      let meta=document.querySelector('meta[name="theme-color"]');
+      if(!meta){
+        meta=document.createElement('meta');
+        meta.name='theme-color';
+        document.head.appendChild(meta);
+      }
+      const bg=getComputedStyle(root).getPropertyValue('--bg').trim();
+      meta.content=bg|| (resolved==='dark'?'#06111d':'#f6fbff');
     };
 
-    ['theme','mode','motion'].forEach(k=>$('#'+k+'Sel').addEventListener('change',e=>{store.setItem('mra-'+k,e.target.value);apply()}));
+    const apply=()=>{
+      let theme=store.getItem('mra-theme')||'scientific';
+      let mode=store.getItem('mra-mode')||'system';
+      let motion=store.getItem('mra-motion')||'balanced';
+      if(!validThemes.has(theme)) theme='scientific';
+      if(!validModes.has(mode)) mode='system';
+      if(!validMotion.has(motion)) motion='balanced';
+
+      const resolved=mode==='system'?(systemMode.matches?'dark':'light'):mode;
+      root.dataset.theme=theme;
+      root.dataset.modeChoice=mode;
+      root.dataset.mode=resolved;
+      root.dataset.motion=motion;
+      root.style.colorScheme=resolved;
+
+      const themeSel=$('#themeSel'), modeSel=$('#modeSel'), motionSel=$('#motionSel');
+      if(themeSel) themeSel.value=theme;
+      if(modeSel) modeSel.value=mode;
+      if(motionSel) motionSel.value=motion;
+
+      $('#modeSegmented [data-mode-choice]').forEach(btn=>{
+        const active=btn.dataset.modeChoice===mode;
+        btn.setAttribute('aria-pressed',String(active));
+        btn.classList.toggle('is-active',active);
+      });
+      const status=$('#modeStatus');
+      if(status) status.textContent=mode==='system'?('System is currently using '+resolved+' mode.'):(resolved.charAt(0).toUpperCase()+resolved.slice(1)+' mode is active.');
+      applyTextScale(store.getItem('mra-text-scale')||storedScale);
+      requestAnimationFrame(()=>syncThemeColor(resolved));
+    };
+
+    $('#themeSel')?.addEventListener('change',e=>{store.setItem('mra-theme',e.target.value);apply();});
+    $('#modeSel')?.addEventListener('change',e=>{store.setItem('mra-mode',e.target.value);apply();});
+    $('#motionSel')?.addEventListener('change',e=>{store.setItem('mra-motion',e.target.value);apply();});
+    $('#modeSegmented [data-mode-choice]').forEach(btn=>btn.addEventListener('click',()=>{
+      store.setItem('mra-mode',btn.dataset.modeChoice);
+      apply();
+    }));
+    if(typeof systemMode.addEventListener==='function') systemMode.addEventListener('change',()=>{if((store.getItem('mra-mode')||'system')==='system')apply();});
+    else if(typeof systemMode.addListener==='function') systemMode.addListener(()=>{if((store.getItem('mra-mode')||'system')==='system')apply();});
     $('#textSel').addEventListener('change',e=>applyTextScale(e.target.value));
 
-    const trigger=$('#textSizeTrigger'), panel=$('#textSizePanel'), close=$('#textSizeClose'), reset=$('#textSizeReset'), topBtn=$('#backToTop');
+    const trigger=$('#textSizeTrigger'), panel=$('#textSizePanel'), close=$('#textSizeClose'), reset=$('#textSizeReset'), topBtn=$('#backToTop'), appearanceClose=$('#appearanceClose');
     const closePanel=()=>{if(!panel)return;panel.hidden=true;trigger?.setAttribute('aria-expanded','false');};
     const openPanel=()=>{if(!panel)return;panel.hidden=false;trigger?.setAttribute('aria-expanded','true');};
     trigger?.addEventListener('click',e=>{e.stopPropagation();panel?.hidden?openPanel():closePanel();});
     close?.addEventListener('click',closePanel);
+    appearanceClose?.addEventListener('click',()=>$('#settings')?.setAttribute('hidden',''));
     panel?.addEventListener('click',e=>e.stopPropagation());
     $$('.text-size-option').forEach(btn=>btn.addEventListener('click',()=>applyTextScale(btn.dataset.textScale)));
     reset?.addEventListener('click',()=>applyTextScale(100));
