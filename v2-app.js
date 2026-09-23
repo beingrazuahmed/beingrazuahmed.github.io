@@ -1762,7 +1762,7 @@
     restart();
   }
 
-  function pageHero(title,lead){return `<section class="hero compact"><div class="container"><div class="eyebrow"><span class="live-dot"></span><span>MRA Research Intelligence</span><span class="clock" data-clock></span></div><h1>${esc(title)}</h1><p class="lede">${esc(lead)}</p></div></section>`;}
+  function pageHero(title,lead){return `<section class="hero compact"><div class="container"><div class="eyebrow"><span class="live-dot"></span><span>MRA Research Intelligence</span><span class="clock" data-clock>Dhaka · UTC+06:00</span></div><h1>${esc(title)}</h1><p class="lede">${esc(lead)}</p></div></section>`;}
 
   function initInteractive(){
     $('#settingsBtn')?.addEventListener('click',()=>$('#settings').toggleAttribute('hidden'));
@@ -1803,7 +1803,7 @@
       const requestedStatus=new URLSearchParams(window.location.search).get('status');
       const allowedStatuses=['published','dataset','accepted','under-review'];
       let filter=allowedStatuses.includes(requestedStatus)?requestedStatus:'published';
-      $('#pubFilters .filter').forEach(x=>x.classList.toggle('active',x.dataset.filter===filter));
+      $$('#pubFilters .filter').forEach(x=>x.classList.toggle('active',x.dataset.filter===filter));
       const run=()=>{
         const q=search.value.trim().toLowerCase();
         cards.forEach(c=>{
@@ -1826,8 +1826,8 @@
         });
       }
       search.addEventListener('input',run);
-      $('#pubFilters .filter').forEach(b=>b.addEventListener('click',()=>{
-        $('#pubFilters .filter').forEach(x=>x.classList.remove('active'));
+      $$('#pubFilters .filter').forEach(b=>b.addEventListener('click',()=>{
+        $$('#pubFilters .filter').forEach(x=>x.classList.remove('active'));
         b.classList.add('active');
         filter=b.dataset.filter;
         run();
@@ -1873,7 +1873,6 @@
     }
     const ask=$('#askInput'), ans=$('#askAnswer'); if(ask&&ans){const reply=q=>{const s=q.toLowerCase();let out='';if(s.includes('shap'))out='SHAP appears in the CKD, HCV and public-health / explainability research records where public-approved details are available.';else if(s.includes('first-author'))out='First-author published/accepted works include the FastICA source-separation study, CKD prediction study and accepted AI-employment perceptions article.';else if(s.includes('course')||s.includes('machine learning coursework'))out='Relevant coursework includes Data Mining, Machine Learning, Deep Learning for Computer Vision, Programming with Python and R, Numerical Analysis and Simulation, and supporting statistics/mathematics courses.';else if(s.includes('dengue'))out='The public dengue portfolio includes nationwide forecasting and decision-oriented preparedness research, including collaborations with Md. Ziaul Haque and other co-authors.';else if(s.includes('review'))out='Md. Razu Ahmed has completed 32 invited peer reviews: 25 for PLOS ONE, 6 for Biomedical Signal Processing and Control, and 1 for Engineering Applications of Artificial Intelligence.';else out='I can answer from the public portfolio about research, publications, methods, coursework, conferences, collaborators, training and scholarly metrics. Confidential research is intentionally excluded.';ans.textContent=out;}; ask.addEventListener('keydown',e=>{if(e.key==='Enter')reply(ask.value)}); $$('.askPrompt').forEach(b=>b.addEventListener('click',()=>{ask.value=b.dataset.q;reply(b.dataset.q)}));}
     const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.06}); document.querySelectorAll('.card,.timeline-item').forEach(e=>{e.classList.add('reveal');io.observe(e)});
-    clock();
   }
 
   function render(){
@@ -1884,6 +1883,9 @@
     const map={home,profile,languages,research,publications,projects,academic,experience,conferences,recognition,network,resources,gallery,dashboard,'ask-razu':askRazu,contact,copyright:copyrightPage};
     main.innerHTML=(map[page]||home)();
 
+    // Start date/time immediately after the page hero exists. This remains live even if a later UI control fails.
+    clock();
+
     // Appearance controls are non-critical UI. A settings fault must never blank the portfolio.
     try{settings();}catch(err){
       console.error('MRA appearance controls failed to initialize:',err);
@@ -1893,7 +1895,7 @@
     }
 
     try{initResearchConstellation();}catch(err){console.error('MRA constellation failed to initialize:',err);}
-    initInteractive();
+    try{initInteractive();}catch(err){console.error('MRA interactive controls failed to initialize:',err);}
   }
   render();
 })();
