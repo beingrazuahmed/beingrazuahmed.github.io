@@ -36,6 +36,8 @@ window.PORTFOLIO_DATA = {
       id: "fastica", type: "Journal Article", status: "Published", year: 2026, role: "First Author",
       title: "Sophisticated Audio Source Separation: A Statistical Exploration of Clarity and Precision With FastICA",
       venue: "Engineering Reports", citation: "Engineering Reports, 8(1), e70575",
+      citationAPA: "Ahmed, M. R., Mauya, J., Reza, M. S., & Amin, R. (2026). Sophisticated audio source separation: A statistical exploration of clarity and precision with FastICA. Engineering Reports, 8(1), e70575. https://doi.org/10.1002/eng2.70575",
+      citationIEEE: "M. R. Ahmed, J. Mauya, M. S. Reza, and R. Amin, “Sophisticated Audio Source Separation: A Statistical Exploration of Clarity and Precision With FastICA,” Engineering Reports, vol. 8, no. 1, Art. no. e70575, 2026, doi: 10.1002/eng2.70575.",
       doi: "https://doi.org/10.1002/eng2.70575",
       journalUrl: "https://onlinelibrary.wiley.com/journal/25778196",
       journalStanding: {
@@ -59,6 +61,8 @@ window.PORTFOLIO_DATA = {
       id: "ckd", type: "Journal Article", status: "Published", year: 2025, role: "First Author",
       title: "Identification of Predisposing Risk Factors for Chronic Kidney Disease and Optimizing Disease Prediction Using a Stacking Machine Learning Algorithm",
       venue: "International Journal of Statistical Sciences", citation: "International Journal of Statistical Sciences, 25(2), 1–32",
+      citationAPA: "Ahmed, M. R., Rakib, M. A., Shiddik, A. B., & Reza, M. S. (2025). Identification of predisposing risk factors for chronic kidney disease and optimizing disease prediction using a stacking machine learning algorithm. International Journal of Statistical Sciences, 25(2), 1–32. https://doi.org/10.3329/ijss.v25i2.85732",
+      citationIEEE: "M. R. Ahmed, M. A. Rakib, A. B. Shiddik, and M. S. Reza, “Identification of Predisposing Risk Factors for Chronic Kidney Disease and Optimizing Disease Prediction Using a Stacking Machine Learning Algorithm,” International Journal of Statistical Sciences, vol. 25, no. 2, pp. 1–32, 2025, doi: 10.3329/ijss.v25i2.85732.",
       doi: "https://doi.org/10.3329/ijss.v25i2.85732",
       indexingDiscovery: [
         "ICI World of Journals · ICV indicator 2024: 68.51",
@@ -76,6 +80,8 @@ window.PORTFOLIO_DATA = {
       id: "dib", type: "Journal Article", status: "Published", year: 2026, role: "Second Author",
       title: "PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations",
       venue: "Data in Brief", citation: "Data in Brief, Volume 69, 2026, Article 113262",
+      citationAPA: "Yeasmin, M., Ahmed, M. R., Kundu, P. R., Mauya, J., & Reza, M. S. (2026). PUST cafeteria food image dataset: Real-world Bangladeshi meal-platter images with bounding-box and polygon annotations. Data in Brief, 69, 113262. https://doi.org/10.1016/j.dib.2026.113262",
+      citationIEEE: "M. Yeasmin, M. R. Ahmed, P. R. Kundu, J. Mauya, and M. S. Reza, “PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations,” Data in Brief, vol. 69, Art. no. 113262, 2026, doi: 10.1016/j.dib.2026.113262.",
       authors: "Marufa Yeasmin, Md. Razu Ahmed, Protiva Rani Kundu, Jannatul Mauya, Md. Shamim Reza",
       volume: "69",
       articleNumber: "113262",
@@ -107,6 +113,13 @@ window.PORTFOLIO_DATA = {
       id: "ai-employment", type: "Journal Article", status: "Accepted / Forthcoming", year: 2026, role: "First Author",
       title: "Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh",
       venue: "International Journal of Statistical Sciences", citation: "Forthcoming in 26(2), November 2026",
+      indexingDiscovery: [
+        "ICI World of Journals · ICV indicator 2024: 68.51",
+        "Eurasian Scientific Journal Index (ESJI)",
+        "Statistical Theory and Method Abstract, International Statistical Institute",
+        "Bangladesh Journals Online (BanglaJOL)",
+        "Bangladesh National Scientific and Technical Documentation Centre (BANSDOC)"
+      ],
       tags: ["AI Perception", "Employment", "PCA", "Correspondence Analysis"],
       summary: "A survey-based study of perceptions of AI and employment implications in Bangladesh using multivariate statistical methods.",
       highlight: "Accepted 2 September 2026; 370 respondents and a 33-item instrument.",
