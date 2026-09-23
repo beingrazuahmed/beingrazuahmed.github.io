@@ -311,15 +311,18 @@
 
   function academicJourneyIntro(){
     return `<div class="academic-journey-intro" aria-labelledby="academic-journey-title">
-      <div class="academic-journey-icons" aria-hidden="true">
-        <span class="academic-journey-icon academic-journey-icon-left">${uiIcon('publication')}</span>
-        <span class="academic-journey-icon academic-journey-icon-main">${uiIcon('graduation')}</span>
-        <span class="academic-journey-icon academic-journey-icon-right">${uiIcon('school')}</span>
+      <div class="academic-journey-visual" aria-hidden="true">
+        <div class="academic-journey-icons">
+          <span class="academic-journey-icon academic-journey-icon-left">${uiIcon('publication')}</span>
+          <span class="academic-journey-icon academic-journey-icon-main">${uiIcon('graduation')}</span>
+          <span class="academic-journey-icon academic-journey-icon-right">${uiIcon('school')}</span>
+        </div>
       </div>
-      <div class="academic-journey-pill"><span class="academic-journey-pulse"></span><span>Academic journey</span></div>
-      <h2 id="academic-journey-title">Education</h2>
-      <p>Formal academic training from secondary science through postgraduate statistics.</p>
-      <div class="academic-journey-divider" aria-hidden="true"><span></span><i></i><span></span></div>
+      <div class="academic-journey-copy">
+        <div class="academic-journey-pill"><span class="academic-journey-pulse"></span><span>Academic journey</span></div>
+        <h2 id="academic-journey-title">Education</h2>
+        <p>Formal academic training from secondary science to postgraduate statistics.</p>
+      </div>
     </div>`;
   }
 
