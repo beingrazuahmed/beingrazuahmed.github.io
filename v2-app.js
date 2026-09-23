@@ -748,6 +748,16 @@
         ${js.jci2025?`<span><strong>${esc(js.jci2025)}</strong>JCI</span>`:''}
         <small>${esc([js.publisher,js.onlineIssn?`Online ISSN: ${js.onlineIssn}`:'',js.indexing].filter(Boolean).join(' · '))}</small>
       </div>`:''}
+      ${(p.indexingDiscovery||[]).length?`<div class="publication-indexing-panel">
+        <div class="publication-indexing-label">Indexing & discovery</div>
+        <div class="scholarly-brand-row scholarly-brand-row-indexing publication-indexing-brands">
+          ${academicBrandAsset('assets/academic/journals/ijss/banglajol.png','BanglaJOL','is-wide')}
+          ${scholarlyBrandIcon('ici','ICI')}
+          ${scholarlyBrandIcon('esji','ESJI')}
+          ${scholarlyBrandIcon('bansdoc','BANSDOC')}
+        </div>
+        <div class="journal-indexing publication-indexing-list">${(p.indexingDiscovery||[]).map(x=>`<span>${esc(x)}</span>`).join('')}</div>
+      </div>`:''}
       <div class="link-row">${links(linkObj)}</div>
     </article>`;
   }
