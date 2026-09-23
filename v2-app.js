@@ -605,7 +605,8 @@
       'dengue-forecast':{title:'Nationwide Dengue Forecasting',category:'Public Health AI',detail:'District-informed one-week-ahead forecasting of dengue hospital admissions across Bangladesh.'}
     };
     const m=map[id]||{title:p.title||'Research work',category:(p.tags||[])[0]||'Research',detail:p.summary||''};
-    return `<a class="card feature-work-card ${index===0?'feature-work-card-primary':''}" href="publications.html#output-${esc(id)}">
+    const status=p.bucket==='accepted'?'accepted':p.bucket==='under-review'?'under-review':'published';
+    return `<a class="card feature-work-card ${index===0?'feature-work-card-primary':''}" href="publications.html?status=${esc(status)}#output-${esc(id)}">
       <div class="feature-work-index">0${index+1}</div>
       <div class="feature-work-copy">
         <div class="feature-work-kicker">${esc(m.category)}</div>
@@ -618,7 +619,8 @@
 
   function compactResearchOutputCard(x){
     const id=(x.id||'').toLowerCase();
-    return `<a class="compact-output-card" href="publications.html#output-${esc(id)}">
+    const status=x.outputKind==='dataset'||x.type==='Dataset'?'dataset':x.bucket==='accepted'?'accepted':x.bucket==='under-review'?'under-review':'published';
+    return `<a class="compact-output-card" href="publications.html?status=${esc(status)}#output-${esc(id)}">
       <div class="compact-output-top"><span class="compact-output-status">${esc(x.status||x.bucket||'Research')}</span><span class="compact-output-arrow" aria-hidden="true">↗</span></div>
       <h4>${esc(x.title||'Untitled research output')}</h4>
       <p>${esc(x.journal||x.venue||'')}</p>
@@ -640,10 +642,13 @@
 
   function home(){
     const p=D.profile||{};
-    const selectedIds=['fastica','dr','dengue-forecast'];
-    const selected=selectedIds.map(id=>(D.outputs||[]).find(x=>x.id===id)).filter(Boolean);
-    const moreOutputIds=['ckd','dib','ai-employment','hcv','beyond-burden'];
-    const moreOutputs=moreOutputIds.map(id=>(D.outputs||[]).find(x=>x.id===id)).filter(Boolean);
+    const outputs=D.outputs||[];
+    const publishedIds=['fastica','ckd','dib'];
+    const selected=publishedIds.map(id=>outputs.find(x=>x.id===id&&x.bucket==='published')).filter(Boolean);
+    const publishedDataset=outputs.find(x=>x.outputKind==='dataset'||x.type==='Dataset');
+    const acceptedOutputs=outputs.filter(x=>x.bucket==='accepted');
+    const reviewPriority=['dr','dengue-forecast','hcv','beyond-burden'];
+    const reviewOutputs=reviewPriority.map(id=>outputs.find(x=>x.id===id&&x.bucket==='under-review')).filter(Boolean);
     return `<section class="hero hero-home" id="homeHero">
       <div class="container hero-container">
         <div class="hero-shell">
@@ -695,14 +700,26 @@
       <div class="grid grid-4 home-metric-grid">${(D.quickProfile||[]).slice(0,8).map(m=>`<article class="card metric metric-card"><strong>${esc(m.value)}</strong><span>${esc(m.label)}</span></article>`).join('')}</div>
     </div></section>
 
-    <section class="section alt selected-works-section"><div class="container">
-      <div class="selected-works-head">${sectionHead('Selected research','Selected Works','Three representative projects spanning statistical signal processing, medical AI and public-health forecasting.')}<a class="section-text-link" href="publications.html">View all research ↗</a></div>
+    <section class="section alt selected-works-section home-published-work"><div class="container">
+      <div class="selected-works-head">${sectionHead('Published research','Selected Published Works','Peer-reviewed journal articles are shown here separately from accepted and submitted manuscripts.')}<a class="section-text-link" href="publications.html?status=published">View published record ↗</a></div>
       <div class="selected-works-grid">${selected.map(selectedWorkCard).join('')}</div>
-      ${moreOutputs.length?`<div class="more-outputs-wrap">
-        <div class="more-outputs-head"><span>More research outputs</span><a href="publications.html">Browse complete record ↗</a></div>
-        <div class="more-outputs-grid">${moreOutputs.map(compactResearchOutputCard).join('')}</div>
+      ${publishedDataset?`<div class="more-outputs-wrap home-published-dataset">
+        <div class="more-outputs-head"><span>Published research data</span><a href="publications.html?status=dataset">View dataset ↗</a></div>
+        <div class="more-outputs-grid">${compactResearchOutputCard(publishedDataset)}</div>
       </div>`:''}
     </div></section>
+
+    ${acceptedOutputs.length?`<section class="section home-accepted-work"><div class="container">
+      ${sectionHead('Accepted / forthcoming','Accepted scholarly work','Accepted work is presented separately from both published outputs and manuscripts still under review.')}
+      <div class="more-outputs-grid home-status-output-grid">${acceptedOutputs.map(compactResearchOutputCard).join('')}</div>
+      <div class="section-action"><a class="section-text-link" href="publications.html?status=accepted">View accepted record ↗</a></div>
+    </div></section>`:''}
+
+    ${reviewOutputs.length?`<section class="section alt home-under-review-work"><div class="container">
+      ${sectionHead('Submitted / under review','Current manuscript pipeline','These manuscripts are in the editorial process and are not presented as published outputs.')}
+      <div class="more-outputs-grid home-status-output-grid">${reviewOutputs.map(compactResearchOutputCard).join('')}</div>
+      <div class="section-action"><a class="section-text-link" href="publications.html?status=under-review">View manuscripts under review ↗</a></div>
+    </div></section>`:''}
 
     <section class="section"><div class="container">
       ${sectionHead('Research identity','Statistics, AI & decision-relevant evidence','Methodological rigor first; predictive flexibility second; interpretation, reproducibility and real-world usefulness throughout.')}
@@ -1776,7 +1793,10 @@
     const publicationGroups=[...document.querySelectorAll('.publication-status-group')];
     if(search&&publicationGroups.length){
       const cards=[...document.querySelectorAll('.publication-group-grid > .output-card')];
-      let filter='published';
+      const requestedStatus=new URLSearchParams(window.location.search).get('status');
+      const allowedStatuses=['published','dataset','accepted','under-review'];
+      let filter=allowedStatuses.includes(requestedStatus)?requestedStatus:'published';
+      $('#pubFilters .filter').forEach(x=>x.classList.toggle('active',x.dataset.filter===filter));
       const run=()=>{
         const q=search.value.trim().toLowerCase();
         cards.forEach(c=>{
@@ -1792,6 +1812,12 @@
         });
       };
       run();
+      if(window.location.hash){
+        requestAnimationFrame(()=>{
+          const target=document.querySelector(window.location.hash);
+          if(target&&!target.hidden) target.scrollIntoView({block:'start'});
+        });
+      }
       search.addEventListener('input',run);
       $('#pubFilters .filter').forEach(b=>b.addEventListener('click',()=>{
         $('#pubFilters .filter').forEach(x=>x.classList.remove('active'));
