@@ -164,7 +164,7 @@ window.PORTFOLIO_DATA = {
     {
       id: "dr", status: "With Editor", role: "First Author",
       title: "A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images",
-      venue: "Measurement", tags: ["Medical Imaging", "Deep Learning", "Feature Fusion", "Explainable AI"],
+      venue: "Measurement", publisher: "Elsevier", tags: ["Medical Imaging", "Deep Learning", "Feature Fusion", "Explainable AI"],
       summary: "A five-stage leak-safe validation framework combining deep representations, handcrafted descriptors and explainable modelling for diabetic-retinopathy grading.",
       highlight: "Best held-out model: FT-DenseNet121 + SIFT-BoVW + XGBoost; accuracy 78.71%, OvR AUC 94.80%.",
       visual: "assets/manuscripts/dr-grading/workflow.png"
@@ -172,7 +172,7 @@ window.PORTFOLIO_DATA = {
     {
       id: "hcv", status: "With Editor", role: "Second Author",
       title: "Comparative Evaluation of Hybrid MICE–Median Missing-Value Reconstruction and Downstream Hepatitis C Prediction Using Machine Learning",
-      venue: "BMC Medical Informatics and Decision Making", tags: ["Missing Data", "HCV", "Machine Learning", "MICE"],
+      venue: "BMC Medical Informatics and Decision Making", publisher: "BMC · Springer Nature", tags: ["Missing Data", "HCV", "Machine Learning", "MICE"],
       summary: "A rigorous comparison of missing-data reconstruction strategies and their downstream impact on hepatitis-C prediction and severity estimation.",
       highlight: "Hybrid MICE–Median achieved the lowest standardized MAE across all tested missingness levels.",
       visual: "assets/manuscripts/hcv/methodology.png"
@@ -180,7 +180,7 @@ window.PORTFOLIO_DATA = {
     {
       id: "dengue-forecast", status: "Under Review", role: "Second Author",
       title: "Nationwide Evaluation of District-Informed Bottom-Up and Direct National Approaches for One-Week-Ahead Forecasting of Dengue Hospital Admissions in Bangladesh",
-      venue: "BMC Public Health", tags: ["Dengue", "Forecasting", "LightGBM", "Public Health"],
+      venue: "BMC Public Health", publisher: "BMC · Springer Nature", tags: ["Dengue", "Forecasting", "LightGBM", "Public Health"],
       summary: "A temporally locked nationwide comparison of district-informed bottom-up and direct national one-week-ahead dengue admission forecasts across all 64 districts of Bangladesh.",
       highlight: "Bottom-up LightGBM achieved held-out national wMAPE 12.10% and R² 0.9625 in 2025.",
       visual: "assets/manuscripts/dengue-forecasting/workflow.png"
@@ -188,7 +188,7 @@ window.PORTFOLIO_DATA = {
     {
       id: "beyond-burden", status: "Under Review", role: "Joint First Author · Co-corresponding Author",
       title: "Beyond Burden: Testing the Incremental Decision Value of Operational Readiness for Dengue Preparedness in Bangladesh",
-      venue: "Scientific Reports", tags: ["Dengue Preparedness", "Operational Readiness", "Decision Emulation"],
+      venue: "Scientific Reports", publisher: "Nature Portfolio · Springer Nature", tags: ["Dengue Preparedness", "Operational Readiness", "Decision Emulation"],
       summary: "A nationwide code-locked retrospective decision-emulation study testing whether operational readiness adds actionable value to district prioritization beyond epidemiological and structural information.",
       highlight: "Held-out evaluation showed operational fragility altered some rankings but not the primary top-10 allocation.",
       visual: "assets/manuscripts/beyond-burden/workflow.png"
@@ -196,7 +196,7 @@ window.PORTFOLIO_DATA = {
     {
       id: "food-billing", status: "Under Review", role: "Third Author",
       title: "Real-Time Food Detection for Automated Cafeteria Billing Using RT-DETR and GAN-Based Data Augmentation",
-      venue: "Discover Artificial Intelligence", tags: ["RT-DETR", "GAN", "Food Detection", "Automated Billing"],
+      venue: "Discover Artificial Intelligence", publisher: "Springer Nature", tags: ["RT-DETR", "GAN", "Food Detection", "Automated Billing"],
       summary: "A real-time cafeteria billing framework benchmarking RT-DETR-L, YOLO and Faster R-CNN and evaluating Pix2Pix GAN augmentation.",
       highlight: "RT-DETR-L achieved 76.55% Exact Bill Accuracy with MAE 3.41 BDT on 145 untouched test platters.",
       visual: "assets/manuscripts/cafeteria-billing/workflow.png"
@@ -204,7 +204,7 @@ window.PORTFOLIO_DATA = {
     {
       id: "sentiment", status: "Under Revision", role: "Fourth Author",
       title: "Adaptive Probability Fusion of Lightweight Recurrent Networks for Cross-Domain Sentiment Classification",
-      venue: "Applied AI Letters", tags: ["NLP", "Sentiment Analysis", "RNN", "BiLSTM"],
+      venue: "Applied AI Letters", publisher: "Wiley", tags: ["NLP", "Sentiment Analysis", "RNN", "BiLSTM"],
       summary: "A lightweight cross-domain sentiment-classification framework using RNN and BiLSTM probability fusion across social-media and movie-review datasets.",
       highlight: "The ensemble reached 77.36% accuracy on Twitter Airline Sentiment; standalone BiLSTM reached 85% on IMDb.",
       visual: "assets/manuscripts/sentiment/workflow.png"
@@ -212,7 +212,7 @@ window.PORTFOLIO_DATA = {
     {
       id: "academic-performance", status: "Awaiting Admin Processing", role: "Second Author",
       title: "Factors Associated with Undergraduates Academic Performance Among Public University Students: A Case Study",
-      venue: "International Journal of Educational Reform", tags: ["Higher Education", "Ordinal Regression", "Student Engagement"],
+      venue: "International Journal of Educational Reform", publisher: "SAGE", tags: ["Higher Education", "Ordinal Regression", "Student Engagement"],
       summary: "A cross-sectional analysis of academic performance, student engagement and rural–urban background among public-university students in Bangladesh.",
       highlight: "Academic reading ≥3 h/day was associated with higher CGPA categories (AOR 16.30, 95% CI 5.39–49.26).",
       visual: "assets/manuscripts/academic-performance/forest-plot.png"
