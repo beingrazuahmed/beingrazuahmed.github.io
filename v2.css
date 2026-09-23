@@ -10172,3 +10172,62 @@ body[data-page="dashboard"] .dashboard-source-date{
   .mentor-work-item-compact{grid-template-columns:1fr}
   .mentor-doi-link{width:max-content}
 }
+
+/* === Mentor academic dossier redesign · 2026-09-23 === */
+.mentor-feature-section{padding:22px 0 26px}
+.mentor-profile-dossier{position:relative;overflow:hidden;border:1px solid color-mix(in srgb,var(--accent) 13%,var(--line));border-radius:22px;background:var(--surface);box-shadow:0 16px 42px rgba(22,58,84,.055)}
+.mentor-dossier-accent{height:4px;background:linear-gradient(90deg,var(--accent),color-mix(in srgb,var(--accent-2) 72%,var(--accent)))}
+.mentor-dossier-header{display:grid;grid-template-columns:190px minmax(0,1fr) 275px;gap:28px;align-items:center;padding:26px 28px 24px}
+.mentor-dossier-photo-wrap{display:grid;gap:10px}
+.mentor-dossier-photo{aspect-ratio:4/5;overflow:hidden;border:1px solid color-mix(in srgb,var(--accent) 12%,var(--line));border-radius:18px;background:#fff;box-shadow:0 10px 26px rgba(20,55,80,.07)}
+.mentor-dossier-photo img{width:100%;height:100%;object-fit:cover;object-position:center 14%;display:block}
+.mentor-dossier-status{display:flex;align-items:center;justify-content:center;gap:7px;color:var(--muted);font-size:9.7px;font-weight:850;letter-spacing:.035em;text-transform:uppercase}
+.mentor-dossier-status span{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 10%,transparent)}
+.mentor-dossier-identity h2{margin:6px 0 7px;font-size:clamp(1.85rem,3vw,2.65rem);line-height:1.03;letter-spacing:-.045em}
+.mentor-dossier-identity .mentor-headline{max-width:760px;font-size:12.4px}
+.mentor-dossier-identity .mentor-main-affiliation{max-width:760px;margin-top:9px;font-size:11.5px;line-height:1.55}
+.mentor-dossier-roles{align-self:stretch;padding-left:24px;border-left:1px solid var(--line)}
+.mentor-role-list{display:grid;margin-top:10px}
+.mentor-role-list>div{display:grid;grid-template-columns:24px 1fr;gap:10px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,var(--line) 72%,transparent)}
+.mentor-role-list>div:last-child{border-bottom:0}
+.mentor-role-list>div>span{color:var(--accent);font-size:9px;font-weight:900}
+.mentor-role-list p{margin:0;color:var(--muted);font-size:10.3px;line-height:1.45}
+.mentor-supervision-strip{display:grid;grid-template-columns:260px minmax(0,1fr);gap:24px;align-items:center;padding:14px 28px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--accent) 3.5%,var(--surface-2))}
+.mentor-supervision-strip strong{display:block;margin-top:3px;font-size:11.8px}
+.mentor-supervision-strip p{margin:0;color:var(--muted);font-size:10.7px;line-height:1.5}
+.mentor-profile-links-compact{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.mentor-profile-link{display:inline-flex;align-items:center;gap:6px;min-height:33px;padding:5px 9px 5px 6px;border:1px solid var(--line);border-radius:9px;background:color-mix(in srgb,var(--surface) 96%,var(--surface-2));color:var(--text);font-size:10.2px;font-weight:800;text-decoration:none;transition:.18s ease}
+.mentor-profile-link:hover,.mentor-profile-link:focus-visible{transform:translateY(-1px);border-color:color-mix(in srgb,var(--accent) 28%,var(--line));color:var(--accent)}
+.mentor-profile-link-icon,.mentor-doi-icon{display:grid;place-items:center;width:23px;height:23px;flex:0 0 23px;overflow:hidden;border:1px solid rgba(0,0,0,.055);border-radius:7px;background:#fff!important}
+.mentor-profile-link-icon img{width:16px;height:16px;object-fit:contain}
+.mentor-profile-link.is-email .mentor-profile-link-icon img{width:17px;height:17px}
+.mentor-profile-link.is-doi .mentor-profile-link-icon img,.mentor-doi-icon img{width:19px;height:19px;object-fit:contain;border-radius:50%}
+.mentor-doi-link{display:inline-flex;align-items:center;gap:5px;padding:5px 7px;border:1px solid color-mix(in srgb,var(--accent) 10%,var(--line));border-radius:8px;background:#fff;color:var(--text);font-size:9.5px;font-weight:850;text-decoration:none;white-space:nowrap}
+.mentor-collab-stats-compact{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:0;border-bottom:1px solid var(--line);background:var(--surface)}
+.mentor-collab-stats-compact>div{padding:12px 16px;border-right:1px solid var(--line)}
+.mentor-collab-stats-compact>div:last-child{border-right:0}
+.mentor-collab-stats-compact strong{display:block;color:var(--accent);font-size:1.3rem;line-height:1}
+.mentor-collab-stats-compact span{display:block;margin-top:5px;color:var(--muted);font-size:9.5px;line-height:1.35;font-weight:760}
+.mentor-dossier-accordions{display:grid;background:color-mix(in srgb,var(--surface-2) 24%,var(--surface))}
+.mentor-dossier-accordions .mentor-accordion{border-bottom:1px solid var(--line)}
+.mentor-dossier-accordions .mentor-accordion:last-child{border-bottom:0}
+.mentor-dossier-accordions .mentor-accordion>summary{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 20px;cursor:pointer;list-style:none}
+.mentor-dossier-accordions .mentor-accordion>summary::-webkit-details-marker{display:none}
+.mentor-dossier-accordions .mentor-accordion>summary strong{display:block;margin-top:3px;font-size:12.5px}
+.mentor-dossier-accordions .mentor-accordion>summary small{display:block;margin-top:4px;color:var(--muted);font-size:9.8px;line-height:1.4}
+.mentor-dossier-accordions .mentor-accordion-body{padding:0 20px 20px;border-top:1px solid var(--line);background:var(--surface)}
+:root[data-mode="dark"] .mentor-dossier-photo,:root[data-mode="dark"] .mentor-profile-link-icon,:root[data-mode="dark"] .mentor-doi-icon{background:#fff!important}
+@media(max-width:1040px){
+  .mentor-dossier-header{grid-template-columns:170px minmax(0,1fr)}
+  .mentor-dossier-roles{grid-column:1/-1;padding:18px 0 0;border-left:0;border-top:1px solid var(--line)}
+  .mentor-role-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px}
+}
+@media(max-width:700px){
+  .mentor-dossier-header{grid-template-columns:1fr;padding:20px}
+  .mentor-dossier-photo-wrap{width:min(230px,72vw);margin:0 auto}
+  .mentor-dossier-roles{grid-column:auto}
+  .mentor-role-list{grid-template-columns:1fr}
+  .mentor-supervision-strip{grid-template-columns:1fr;gap:7px;padding:14px 20px}
+  .mentor-collab-stats-compact{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+

@@ -238,7 +238,7 @@
     const key=String(label||'').trim().toLowerCase();
     const favicon=domain=>`https://www.google.com/s2/favicons?sz=128&domain=${domain}`;
     const map={
-      'doi': {src:'assets/academic/logos/vendor/doi.svg', cls:'is-doi'},
+      'doi': {src:'assets/academic/logos/vendor/doi-user.png', cls:'is-doi'},
       'engineering reports': {src:'assets/academic/journals/engineering-reports/logo.webp', cls:'is-wide is-journal'},
       'scopus': {src:'assets/academic/logos/scopus-circle.png', cls:'is-scopus'},
       'google scholar': {src:favicon('scholar.google.com'), cls:'is-google-scholar'},
@@ -252,7 +252,8 @@
       'mendeley data': {src:favicon('data.mendeley.com'), cls:'is-mendeley'},
       'plumx': {src:favicon('plu.mx'), cls:'is-plumx'},
       'plumx metrics': {src:favicon('plu.mx'), cls:'is-plumx'},
-      'gmail': {src:'https://cdn.simpleicons.org/gmail', cls:'is-gmail'},
+      'gmail': {src:'assets/academic/logos/vendor/email-user.png', cls:'is-gmail'},
+      'email': {src:'assets/academic/logos/vendor/email-user.png', cls:'is-email'},
       'orcid': {src:favicon('orcid.org'), cls:'is-orcid'},
       'pust profile': {src:favicon('pust.ac.bd'), cls:'is-pust'},
       'ad scientific index': {src:favicon('adscientificindex.com'), cls:'is-adscientific'},
@@ -483,7 +484,7 @@
       bansdoc:{slug:'',label:'BANSDOC'}
     };
     if(type==='doi'){
-      return `<span class="scholar-brand-icon doi-brand-mark" aria-hidden="true"><img class="doi-logo-img" src="assets/academic/logos/vendor/doi.svg" alt="" loading="lazy" decoding="async"></span>`;
+      return `<span class="scholar-brand-icon doi-brand-mark" aria-hidden="true"><img class="doi-logo-img" src="assets/academic/logos/vendor/doi-user.png" alt="" loading="lazy" decoding="async"></span>`;
     }
     if(type==='scopus'){
       return `<span class="scholar-brand-icon scholar-brand-scopus"><img src="assets/academic/logos/scopus-circle.png" alt="" loading="lazy" decoding="async"><span>${esc(label||'Scopus')}</span></span>`;
@@ -1443,7 +1444,7 @@
   function mentorDoiLink(url=''){
     if(!url)return '';
     return `<a class="mentor-doi-link" href="${esc(url)}" target="_blank" rel="noopener noreferrer" aria-label="Open DOI" title="DOI">
-      <span class="mentor-doi-icon"><img src="assets/academic/logos/vendor/doi.svg" alt="" loading="lazy" decoding="async"></span>
+      <span class="mentor-doi-icon"><img src="assets/academic/logos/vendor/doi-user.png" alt="" loading="lazy" decoding="async"></span>
       <span>DOI</span>
     </a>`;
   }
@@ -1473,6 +1474,7 @@
 
   function featuredMentorProfile(x){
     if(!x)return '';
+
     const academicProfile=`<div class="mentor-detail-grid">
       <section>
         <h4>Biography</h4>
@@ -1519,32 +1521,41 @@
     </div>`;
 
     const recordMeta=`${(x.sharedPublications||[]).length} published · ${(x.sharedAccepted||[]).length} accepted · ${(x.sharedDataset||[]).length} dataset · 7 conference · ${(x.sharedEditorial||[]).length} editorial`;
+    const leadershipPreview=(x.currentPositions||[]).slice(0,4);
 
     return `<section class="section mentor-feature-section" id="mentor-${esc(x.id||'profile')}"><div class="container">
-      <article class="mentor-feature-card mentor-feature-card-compact">
-        <div class="mentor-feature-hero mentor-feature-hero-compact">
-          <div class="mentor-feature-photo mentor-feature-photo-compact">
-            ${x.portrait?`<img src="${esc(x.portrait)}" alt="${esc(x.name||'Academic mentor')} portrait" loading="eager" decoding="async">`:''}
+      <article class="mentor-profile-dossier">
+        <div class="mentor-dossier-accent" aria-hidden="true"></div>
+        <div class="mentor-dossier-header">
+          <div class="mentor-dossier-photo-wrap">
+            <div class="mentor-dossier-photo">${x.portrait?`<img src="${esc(x.portrait)}" alt="${esc(x.name||'Academic mentor')} portrait" loading="eager" decoding="async">`:''}</div>
+            <div class="mentor-dossier-status"><span></span> Primary Supervisor</div>
           </div>
-          <div class="mentor-feature-intro mentor-feature-intro-compact">
-            <div class="mentor-feature-topline"><span class="section-kicker">Featured academic mentor</span><span class="mentor-feature-badge">Primary Supervisor</span></div>
+
+          <div class="mentor-dossier-identity">
+            <span class="section-kicker">Academic guidance & research mentorship</span>
             <h2>${esc(x.name||'')}</h2>
             ${x.headline?`<p class="mentor-headline">${esc(x.headline)}</p>`:''}
             ${x.affiliation?`<p class="mentor-main-affiliation">${esc(x.affiliation)}</p>`:''}
-            <p class="mentor-summary">${esc(x.description||'')}</p>
-            ${x.relationship?`<div class="mentor-relationship mentor-relationship-compact"><strong>${esc(x.relationship.title||'')}</strong><span>${esc(x.relationship.detail||'')}</span></div>`:''}
             <div class="mentor-profile-links mentor-profile-links-compact">
-              ${x.email?mentorProfileLink({label:'Gmail',url:`mailto:${x.email}`}):''}
+              ${x.email?mentorProfileLink({label:'Email',url:`mailto:${x.email}`}):''}
               ${(x.links||[]).map(mentorProfileLink).join('')}
             </div>
           </div>
+
+          <aside class="mentor-dossier-roles">
+            <span class="section-kicker">Current leadership</span>
+            <div class="mentor-role-list">${leadershipPreview.map((role,i)=>`<div><span>0${i+1}</span><p>${esc(role)}</p></div>`).join('')}</div>
+          </aside>
         </div>
+
+        ${x.relationship?`<div class="mentor-supervision-strip"><div><span class="section-kicker">Supervision relationship</span><strong>${esc(x.relationship.title||'')}</strong></div><p>${esc(x.relationship.detail||'')}</p></div>`:''}
 
         <div class="mentor-collab-stats mentor-collab-stats-compact">
           ${(x.collaborationStats||[]).map(s=>`<div><strong>${esc(s.value)}</strong><span>${esc(s.label)}</span></div>`).join('')}
         </div>
 
-        <div class="mentor-accordion-stack">
+        <div class="mentor-accordion-stack mentor-dossier-accordions">
           ${mentorAccordion('Academic profile','Biography & education',academicProfile,'Research interests, training and academic background')}
           ${mentorAccordion('Leadership & recognition','Appointments, awards & service',leadership,'Current PUST roles and selected academic recognition')}
           ${mentorAccordion('Research collaboration with Razu','Shared scholarly record',sharedRecord,recordMeta)}
