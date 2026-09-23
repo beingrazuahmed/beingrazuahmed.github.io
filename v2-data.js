@@ -37,7 +37,7 @@
       primary: [
         { label: 'ScienceDirect', url: 'https://www.sciencedirect.com/science/article/pii/S2352340926008097' },
         { label: 'DOI', url: 'https://doi.org/10.1016/j.dib.2026.113262' },
-        { label: 'Dataset', url: 'https://doi.org/10.17632/fn6yhzjz83.2' }
+        { label: 'Mendeley Data', url: 'https://doi.org/10.17632/fn6yhzjz83.2' }
       ],
       discovery: [
         { label: 'Google Scholar', url: 'https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=PUST+Cafeteria+Food+Image+Dataset%3A+Real-World+Bangladeshi+Meal-Platter+Images+with+Bounding-Box+and+Polygon+Annotations&btnG=' },
