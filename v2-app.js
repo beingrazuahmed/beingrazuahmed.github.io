@@ -1648,7 +1648,7 @@
         ${supportingRoles.length?`<div class="network-role-chips">${supportingRoles.map(r=>`<span>${esc(r)}</span>`).join('')}</div>`:''}
         ${x.affiliation?`<p class="network-affiliation">${esc(x.affiliation)}</p>`:''}
         ${x.description?`<p class="network-description">${highlightRazuName(x.description)}</p>`:''}
-        ${x.heroNote?`<div class="network-person-relationship-note"><span>Academic relationship</span><p>${highlightRazuName(x.heroNote)}</p></div>`:''}
+        ${x.heroNote && x.showCardNote !== false?`<div class="network-person-relationship-note"><span>Academic relationship</span><p>${highlightRazuName(x.heroNote)}</p></div>`:''}
         ${x.shared?.length?`<details class="network-shared"><summary>Shared works <span>${x.shared.length}</span></summary><ul>${x.shared.map(s=>`<li>${esc(s)}</li>`).join('')}</ul></details>`:''}
         ${x.profilePage?`<div class="network-person-profile-action"><a class="btn ghost" href="${esc(x.profilePage)}">View Full Profile →</a></div>`:(x.links||[]).length?`<div class="link-row network-links">${(x.links||[]).map(l=>ext(l.url,l.label)).join(' · ')}</div>`:''}
       </div>
