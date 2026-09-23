@@ -8666,3 +8666,346 @@ body,
     font-size:14px!important;
   }
 }
+
+/* === Academic page calm editorial redesign · 2026-09-23 === */
+body[data-page="academic"] .hero.compact{
+  padding:46px 0 34px;
+  min-height:0;
+  border-bottom:1px solid color-mix(in srgb,var(--accent) 10%,var(--line));
+  background:
+    radial-gradient(circle at 18% 18%,color-mix(in srgb,var(--accent) 5%,transparent),transparent 34%),
+    linear-gradient(180deg,color-mix(in srgb,var(--bg) 94%,transparent),color-mix(in srgb,var(--surface-2) 42%,transparent));
+}
+body[data-page="academic"] .hero.compact .container{
+  max-width:1240px;
+}
+body[data-page="academic"] .hero.compact .eyebrow{
+  gap:8px;
+  font-size:11.5px;
+  line-height:1.4;
+  font-weight:800;
+  letter-spacing:.11em;
+  color:color-mix(in srgb,var(--muted) 92%,var(--text));
+}
+body[data-page="academic"] .hero.compact .live-dot{
+  width:7px;
+  height:7px;
+  box-shadow:0 0 0 5px rgba(34,197,94,.08);
+}
+body[data-page="academic"] .hero.compact h1{
+  margin-top:14px;
+  max-width:none;
+  font-size:clamp(3.1rem,5.2vw,4.2rem);
+  line-height:.98;
+  letter-spacing:-.052em;
+}
+body[data-page="academic"] .hero.compact .lede{
+  max-width:760px;
+  margin-top:18px;
+  font-size:1rem;
+  line-height:1.65;
+}
+body[data-page="academic"] .mra-constellation-global{
+  opacity:.34!important;
+}
+:root[data-mode="dark"] body[data-page="academic"] .mra-constellation-global{
+  opacity:.48!important;
+}
+
+/* Slim editorial section navigation: quiet, readable, and less button-heavy. */
+body[data-page="academic"] .academic-jump-nav{
+  top:68px;
+  border-top:0;
+  border-bottom:1px solid color-mix(in srgb,var(--accent) 10%,var(--line));
+  background:color-mix(in srgb,var(--bg) 91%,transparent);
+  box-shadow:0 8px 22px rgba(25,58,82,.025);
+}
+body[data-page="academic"] .academic-jump-nav-inner{
+  gap:2px;
+  max-width:1240px;
+  padding-top:0;
+  padding-bottom:0;
+}
+body[data-page="academic"] .academic-jump-nav a{
+  position:relative;
+  padding:15px 13px 14px;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  color:var(--muted);
+  font-size:12px;
+  font-weight:760;
+  letter-spacing:.005em;
+}
+body[data-page="academic"] .academic-jump-nav a::after{
+  content:"";
+  position:absolute;
+  left:13px;
+  right:13px;
+  bottom:0;
+  height:2px;
+  border-radius:999px;
+  background:var(--accent);
+  transform:scaleX(0);
+  transform-origin:center;
+  transition:transform .18s ease;
+}
+body[data-page="academic"] .academic-jump-nav a:hover,
+body[data-page="academic"] .academic-jump-nav a:focus-visible{
+  color:var(--text);
+  border-color:transparent;
+  background:color-mix(in srgb,var(--accent) 4%,transparent);
+  transform:none;
+}
+body[data-page="academic"] .academic-jump-nav a:hover::after,
+body[data-page="academic"] .academic-jump-nav a:focus-visible::after{
+  transform:scaleX(1);
+}
+
+/* Education opens like an editorial chapter instead of another floating card. */
+body[data-page="academic"] .academic-education-section{
+  padding-top:46px;
+  padding-bottom:72px;
+}
+body[data-page="academic"] .academic-education-section>.container{
+  max-width:1240px;
+}
+body[data-page="academic"] .academic-journey-intro{
+  width:100%!important;
+  margin:0 auto 28px!important;
+  padding:0 0 24px!important;
+  grid-template-columns:72px minmax(0,1fr)!important;
+  gap:22px!important;
+  overflow:visible;
+  border:0!important;
+  border-bottom:1px solid color-mix(in srgb,var(--accent) 11%,var(--line))!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+}
+body[data-page="academic"] .academic-journey-intro::before,
+body[data-page="academic"] .academic-journey-intro::after{
+  display:none!important;
+}
+body[data-page="academic"] .academic-journey-visual{
+  min-width:0!important;
+  width:72px;
+  height:72px;
+  align-self:start;
+}
+body[data-page="academic"] .academic-journey-icons{
+  width:72px;
+  height:72px;
+  display:grid!important;
+  place-items:center;
+}
+body[data-page="academic"] .academic-journey-icon-left,
+body[data-page="academic"] .academic-journey-icon-right{
+  display:none!important;
+}
+body[data-page="academic"] .academic-journey-icon-main{
+  width:64px!important;
+  height:64px!important;
+  border-radius:18px!important;
+  color:var(--accent)!important;
+  border:1px solid color-mix(in srgb,var(--accent) 17%,var(--line))!important;
+  background:color-mix(in srgb,var(--accent) 5%,var(--surface))!important;
+  box-shadow:0 10px 26px color-mix(in srgb,var(--accent) 7%,transparent)!important;
+}
+body[data-page="academic"] .academic-journey-icon-main .ui-icon{
+  width:27px!important;
+  height:27px!important;
+  stroke-width:1.65!important;
+}
+body[data-page="academic"] .academic-journey-copy{
+  padding-top:1px;
+}
+body[data-page="academic"] .academic-journey-pill{
+  margin:0 0 8px!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  color:var(--accent)!important;
+  font-size:10.5px!important;
+  font-weight:850!important;
+  letter-spacing:.16em!important;
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+}
+body[data-page="academic"] .academic-journey-pulse{
+  display:none!important;
+}
+body[data-page="academic"] .academic-journey-intro h2{
+  font-size:clamp(2.25rem,3.4vw,3.15rem)!important;
+  line-height:1!important;
+  letter-spacing:-.045em!important;
+}
+body[data-page="academic"] .academic-journey-intro p{
+  max-width:720px!important;
+  margin:10px 0 0!important;
+  font-size:15px!important;
+  line-height:1.6!important;
+}
+body[data-page="academic"] .academic-journey-intro + .education-timeline{
+  margin-top:0!important;
+}
+
+/* Make the actual education record the visual focus. */
+body[data-page="academic"] .education-timeline{
+  gap:14px;
+  padding-left:30px;
+}
+body[data-page="academic"] .education-timeline::before{
+  left:10px;
+  width:1px;
+  background:color-mix(in srgb,var(--accent) 26%,var(--line));
+}
+body[data-page="academic"] .education-timeline-dot{
+  left:-25px;
+  top:30px;
+  width:12px;
+  height:12px;
+  border-width:2px;
+  box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 6%,transparent);
+}
+body[data-page="academic"] .education-card{
+  grid-template-columns:92px minmax(0,1fr);
+  gap:20px;
+  padding:20px 22px;
+  border-radius:18px;
+  border-color:color-mix(in srgb,var(--accent) 8%,var(--line));
+  background:color-mix(in srgb,var(--surface) 97%,transparent);
+  box-shadow:0 8px 24px rgba(20,53,78,.04);
+}
+body[data-page="academic"] .education-card:hover{
+  transform:translateY(-2px);
+  border-color:color-mix(in srgb,var(--accent) 18%,var(--line));
+  box-shadow:0 14px 32px rgba(20,53,78,.07);
+}
+body[data-page="academic"] .education-logo-wrap{
+  width:92px;
+  min-height:82px;
+  padding:9px;
+  border-radius:15px;
+  box-shadow:none;
+}
+body[data-page="academic"] .education-logo-img{
+  max-width:72px;
+  max-height:66px;
+}
+body[data-page="academic"] .education-card-heading h3{
+  font-size:clamp(1.12rem,1.7vw,1.34rem);
+}
+body[data-page="academic"] .education-institution{
+  margin-top:2px;
+  font-size:13.5px;
+}
+body[data-page="academic"] .education-year{
+  padding:6px 9px;
+  background:transparent;
+  border-color:color-mix(in srgb,var(--accent) 11%,var(--line));
+}
+body[data-page="academic"] .education-detail-list-inline{
+  margin-top:14px;
+}
+body[data-page="academic"] .education-detail-row{
+  padding-top:9px;
+}
+body[data-page="academic"] .education-detail-row span{
+  font-size:9.5px;
+  letter-spacing:.08em;
+}
+body[data-page="academic"] .education-detail-row strong{
+  font-size:12.5px;
+  font-weight:700;
+}
+
+@media(max-width:900px){
+  body[data-page="academic"] .hero.compact{
+    padding:38px 0 30px;
+  }
+  body[data-page="academic"] .academic-jump-nav{
+    top:64px;
+  }
+}
+@media(max-width:760px){
+  body[data-page="academic"] .hero.compact h1{
+    font-size:clamp(2.65rem,12vw,3.45rem);
+  }
+  body[data-page="academic"] .hero.compact .lede{
+    margin-top:13px;
+    font-size:.95rem;
+  }
+  body[data-page="academic"] .academic-jump-nav-inner{
+    padding-inline:14px;
+  }
+  body[data-page="academic"] .academic-jump-nav a{
+    padding:12px 10px 11px;
+    font-size:11.5px;
+  }
+  body[data-page="academic"] .academic-jump-nav a::after{
+    left:10px;
+    right:10px;
+  }
+  body[data-page="academic"] .academic-education-section{
+    padding-top:34px;
+    padding-bottom:56px;
+  }
+  body[data-page="academic"] .academic-journey-intro{
+    grid-template-columns:52px minmax(0,1fr)!important;
+    gap:15px!important;
+    padding:0 0 20px!important;
+    text-align:left!important;
+  }
+  body[data-page="academic"] .academic-journey-visual,
+  body[data-page="academic"] .academic-journey-icons{
+    width:52px;
+    height:52px;
+  }
+  body[data-page="academic"] .academic-journey-icon-main{
+    width:50px!important;
+    height:50px!important;
+    border-radius:14px!important;
+  }
+  body[data-page="academic"] .academic-journey-icon-main .ui-icon{
+    width:22px!important;
+    height:22px!important;
+  }
+  body[data-page="academic"] .academic-journey-pill{
+    margin:0 0 6px!important;
+  }
+  body[data-page="academic"] .academic-journey-intro h2{
+    font-size:clamp(1.95rem,9vw,2.55rem)!important;
+  }
+  body[data-page="academic"] .academic-journey-intro p{
+    margin:8px 0 0!important;
+    font-size:14px!important;
+  }
+  body[data-page="academic"] .education-timeline{
+    padding-left:20px;
+  }
+  body[data-page="academic"] .education-timeline::before{
+    left:5px;
+  }
+  body[data-page="academic"] .education-timeline-dot{
+    left:-20px;
+    top:25px;
+  }
+  body[data-page="academic"] .education-card{
+    grid-template-columns:1fr;
+    gap:15px;
+    padding:18px;
+  }
+  body[data-page="academic"] .education-logo-wrap{
+    width:82px;
+    min-height:72px;
+  }
+  body[data-page="academic"] .education-card-heading{
+    gap:10px;
+  }
+}
+
