@@ -718,7 +718,7 @@
     </div></section>`:''}
 
     ${reviewOutputs.length?`<section class="section alt home-under-review-work"><div class="container">
-      ${sectionHead('Editorial process','Current manuscript pipeline','Current journal-workflow states are shown explicitly, and these manuscripts remain separate from published and accepted outputs.')}}
+      ${sectionHead('Editorial process','Current manuscript pipeline','Current journal-workflow states are shown explicitly, and these manuscripts remain separate from published and accepted outputs.')}
       <div class="more-outputs-grid home-status-output-grid">${reviewOutputs.map(compactResearchOutputCard).join('')}</div>
       <div class="section-action"><a class="section-text-link" href="publications.html?status=under-review">View editorial-process manuscripts ↗</a></div>
     </div></section>`:''}
@@ -1213,7 +1213,7 @@
       </section>
 
       <section class="publication-status-group publication-status-reviewing" data-publication-group="under-review">
-        ${sectionHead('Editorial status','Manuscripts in the editorial process','These manuscripts are not published outputs. Current workflow states such as With Editor, Under Review, Under Revision and Awaiting Admin Processing are shown on each record.')}}
+        ${sectionHead('Editorial status','Manuscripts in the editorial process','These manuscripts are not published outputs. Current workflow states such as With Editor, Under Review, Under Revision and Awaiting Admin Processing are shown on each record.')}
         <div class="grid grid-2 publication-group-grid">${reviewing.map(outputCard).join('')}</div>
       </section>
     </div></section>`;
