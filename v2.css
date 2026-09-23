@@ -9800,3 +9800,56 @@ body[data-page="academic"] .education-detail-row strong{
   }
 }
 
+/* === Editorial manuscript journal identity · 2026-09-23 === */
+.editorial-journal-info{
+  display:grid;
+  grid-template-columns:minmax(0,1.45fr) minmax(160px,.75fr);
+  gap:10px;
+  margin:14px 0 2px;
+  padding:11px 12px;
+  border:1px solid color-mix(in srgb,var(--accent) 9%,var(--line));
+  border-radius:13px;
+  background:color-mix(in srgb,var(--surface-2) 42%,var(--surface));
+}
+.editorial-journal-info>div{
+  min-width:0;
+}
+.editorial-journal-info span{
+  display:block;
+  margin-bottom:4px;
+  color:var(--muted);
+  font-size:9.5px;
+  font-weight:900;
+  letter-spacing:.075em;
+  text-transform:uppercase;
+}
+.editorial-journal-info strong{
+  display:block;
+  color:var(--text);
+  font-size:12.5px;
+  line-height:1.4;
+  overflow-wrap:anywhere;
+}
+.editorial-publisher{
+  padding-left:12px;
+  border-left:1px solid var(--line);
+}
+.compact-output-publisher{
+  color:var(--muted);
+  font-weight:650;
+}
+:root[data-mode="dark"] .editorial-journal-info{
+  background:color-mix(in srgb,var(--surface-2) 70%,var(--surface));
+}
+@media(max-width:620px){
+  .editorial-journal-info{
+    grid-template-columns:1fr;
+  }
+  .editorial-publisher{
+    padding-left:0;
+    padding-top:9px;
+    border-left:0;
+    border-top:1px solid var(--line);
+  }
+}
+
