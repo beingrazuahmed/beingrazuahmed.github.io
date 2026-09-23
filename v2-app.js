@@ -252,6 +252,7 @@
       'mendeley data': {src:favicon('data.mendeley.com'), cls:'is-mendeley'},
       'plumx': {src:favicon('plu.mx'), cls:'is-plumx'},
       'plumx metrics': {src:favicon('plu.mx'), cls:'is-plumx'},
+      'gmail': {src:'https://cdn.simpleicons.org/gmail', cls:'is-gmail'},
       'orcid': {src:favicon('orcid.org'), cls:'is-orcid'},
       'pust profile': {src:favicon('pust.ac.bd'), cls:'is-pust'},
       'ad scientific index': {src:favicon('adscientificindex.com'), cls:'is-adscientific'},
@@ -482,7 +483,7 @@
       bansdoc:{slug:'',label:'BANSDOC'}
     };
     if(type==='doi'){
-      return `<span class="scholar-brand-icon doi-brand-mark" aria-hidden="true"><img class="doi-logo-img" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/DOI_logo.svg" alt="" loading="lazy" decoding="async"></span>`;
+      return `<span class="scholar-brand-icon doi-brand-mark" aria-hidden="true"><img class="doi-logo-img" src="assets/academic/logos/vendor/doi.svg" alt="" loading="lazy" decoding="async"></span>`;
     }
     if(type==='scopus'){
       return `<span class="scholar-brand-icon scholar-brand-scopus"><img src="assets/academic/logos/scopus-circle.png" alt="" loading="lazy" decoding="async"><span>${esc(label||'Scopus')}</span></span>`;
@@ -1439,100 +1440,115 @@
     </a>`;
   }
 
+  function mentorDoiLink(url=''){
+    if(!url)return '';
+    return `<a class="mentor-doi-link" href="${esc(url)}" target="_blank" rel="noopener noreferrer" aria-label="Open DOI" title="DOI">
+      <span class="mentor-doi-icon"><img src="assets/academic/logos/vendor/doi.svg" alt="" loading="lazy" decoding="async"></span>
+      <span>DOI</span>
+    </a>`;
+  }
+
   function mentorWorkList(items=[],kind='publication'){
     if(!items.length)return '';
-    return `<div class="mentor-work-list">${items.map(item=>`<article class="mentor-work-item">
-      <h5>${esc(item.title||'')}</h5>
-      ${item.venue?`<p>${esc(item.venue)}</p>`:''}
-      ${item.journal?`<p><strong>${esc(item.journal)}</strong>${item.publisher?` · ${esc(item.publisher)}`:''}</p>`:''}
-      ${item.detail?`<small>${esc(item.detail)}</small>`:''}
-      ${item.doi?`<a href="${esc(item.doi)}" target="_blank" rel="noopener noreferrer">DOI ↗</a>`:''}
+    return `<div class="mentor-work-list mentor-work-list-compact">${items.map(item=>`<article class="mentor-work-item mentor-work-item-compact">
+      <div class="mentor-work-copy">
+        <h5>${esc(item.title||'')}</h5>
+        ${item.venue?`<p>${esc(item.venue)}</p>`:''}
+        ${item.journal?`<p><strong>${esc(item.journal)}</strong>${item.publisher?` · ${esc(item.publisher)}`:''}</p>`:''}
+        ${item.detail?`<small>${esc(item.detail)}</small>`:''}
+      </div>
+      ${item.doi?mentorDoiLink(item.doi):''}
     </article>`).join('')}</div>`;
+  }
+
+  function mentorAccordion(title,kicker,content,meta=''){
+    return `<details class="mentor-accordion">
+      <summary>
+        <div><span class="section-kicker">${esc(kicker)}</span><strong>${esc(title)}</strong>${meta?`<small>${esc(meta)}</small>`:''}</div>
+        <span class="mentor-record-toggle">+</span>
+      </summary>
+      <div class="mentor-accordion-body">${content}</div>
+    </details>`;
   }
 
   function featuredMentorProfile(x){
     if(!x)return '';
+    const academicProfile=`<div class="mentor-detail-grid">
+      <section>
+        <h4>Biography</h4>
+        <p>${esc(x.biography||x.description||'')}</p>
+        <div class="mentor-interest-list compact">${(x.researchInterests||[]).map(r=>`<span>${esc(r)}</span>`).join('')}</div>
+      </section>
+      <section>
+        <h4>Education</h4>
+        <div class="mentor-timeline compact">${(x.education||[]).map(e=>`<div class="mentor-timeline-item"><span>${esc(e.year||'')}</span><div><strong>${esc(e.degree||'')}</strong><p>${esc(e.institution||'')}</p>${e.detail?`<small>${esc(e.detail)}</small>`:''}</div></div>`).join('')}</div>
+      </section>
+    </div>`;
+
+    const leadership=`<div class="mentor-detail-grid">
+      <section>
+        <h4>Current appointments</h4>
+        <ul class="mentor-clean-list">${(x.currentPositions||[]).map(v=>`<li>${esc(v)}</li>`).join('')}</ul>
+      </section>
+      <section>
+        <h4>Awards & recognition</h4>
+        <ul class="mentor-clean-list">${(x.awards||[]).map(v=>`<li>${esc(v)}</li>`).join('')}</ul>
+        <h4 class="mentor-subhead">External affiliations</h4>
+        <ul class="mentor-clean-list">${(x.externalAffiliations||[]).map(v=>`<li>${esc(v)}</li>`).join('')}</ul>
+      </section>
+    </div>`;
+
+    const sharedRecord=`<div class="mentor-record-body compact">
+      <div class="mentor-record-section">
+        <div class="mentor-record-heading"><h4>Peer-reviewed journal publications</h4><span>${(x.sharedPublications||[]).length}</span></div>
+        ${mentorWorkList(x.sharedPublications||[])}
+      </div>
+      <div class="mentor-record-section mentor-two-col">
+        <div><div class="mentor-record-heading"><h4>Accepted / forthcoming</h4><span>${(x.sharedAccepted||[]).length}</span></div>${mentorWorkList(x.sharedAccepted||[])}</div>
+        <div><div class="mentor-record-heading"><h4>Public research dataset</h4><span>${(x.sharedDataset||[]).length}</span></div>${mentorWorkList(x.sharedDataset||[])}</div>
+      </div>
+      <div class="mentor-record-section">
+        <div class="mentor-record-heading"><h4>Conference contributions</h4><span>7</span></div>
+        <div class="mentor-conference-groups compact">${(x.sharedConferences||[]).map(g=>`<article><h5>${esc(g.event||'')}</h5><p>${esc(g.venue||'')}</p><ol>${(g.items||[]).map(i=>`<li>${esc(i)}</li>`).join('')}</ol></article>`).join('')}</div>
+      </div>
+      <div class="mentor-record-section">
+        <div class="mentor-record-heading"><h4>Manuscripts in the editorial process</h4><span>${(x.sharedEditorial||[]).length}</span></div>
+        <p class="mentor-record-note">Shown for collaboration context only; these are not published outputs.</p>
+        ${mentorWorkList(x.sharedEditorial||[],'editorial')}
+      </div>
+    </div>`;
+
+    const recordMeta=`${(x.sharedPublications||[]).length} published · ${(x.sharedAccepted||[]).length} accepted · ${(x.sharedDataset||[]).length} dataset · 7 conference · ${(x.sharedEditorial||[]).length} editorial`;
+
     return `<section class="section mentor-feature-section" id="mentor-${esc(x.id||'profile')}"><div class="container">
-      <article class="mentor-feature-card">
-        <div class="mentor-feature-hero">
-          <div class="mentor-feature-photo">
+      <article class="mentor-feature-card mentor-feature-card-compact">
+        <div class="mentor-feature-hero mentor-feature-hero-compact">
+          <div class="mentor-feature-photo mentor-feature-photo-compact">
             ${x.portrait?`<img src="${esc(x.portrait)}" alt="${esc(x.name||'Academic mentor')} portrait" loading="eager" decoding="async">`:''}
           </div>
-          <div class="mentor-feature-intro">
-            <span class="section-kicker">Featured academic mentor</span>
+          <div class="mentor-feature-intro mentor-feature-intro-compact">
+            <div class="mentor-feature-topline"><span class="section-kicker">Featured academic mentor</span><span class="mentor-feature-badge">Primary Supervisor</span></div>
             <h2>${esc(x.name||'')}</h2>
             ${x.headline?`<p class="mentor-headline">${esc(x.headline)}</p>`:''}
             ${x.affiliation?`<p class="mentor-main-affiliation">${esc(x.affiliation)}</p>`:''}
-            ${x.relationship?`<div class="mentor-relationship"><span>Relationship with Razu</span><strong>${esc(x.relationship.title||'')}</strong><p>${esc(x.relationship.detail||'')}</p></div>`:''}
-            <div class="mentor-profile-links">
-              ${x.email?`<a class="mentor-profile-link is-email" href="mailto:${esc(x.email)}"><span class="mentor-profile-link-icon mentor-email-icon">@</span><span>Email</span></a>`:''}
+            <p class="mentor-summary">${esc(x.description||'')}</p>
+            ${x.relationship?`<div class="mentor-relationship mentor-relationship-compact"><strong>${esc(x.relationship.title||'')}</strong><span>${esc(x.relationship.detail||'')}</span></div>`:''}
+            <div class="mentor-profile-links mentor-profile-links-compact">
+              ${x.email?mentorProfileLink({label:'Gmail',url:`mailto:${x.email}`}):''}
               ${(x.links||[]).map(mentorProfileLink).join('')}
             </div>
           </div>
         </div>
 
-        <div class="mentor-collab-stats">
+        <div class="mentor-collab-stats mentor-collab-stats-compact">
           ${(x.collaborationStats||[]).map(s=>`<div><strong>${esc(s.value)}</strong><span>${esc(s.label)}</span></div>`).join('')}
         </div>
 
-        <div class="mentor-profile-grid">
-          <section class="mentor-profile-panel mentor-profile-bio">
-            <span class="section-kicker">Biography</span>
-            <h3>Academic profile</h3>
-            <p>${esc(x.biography||x.description||'')}</p>
-            <div class="mentor-interest-list">${(x.researchInterests||[]).map(r=>`<span>${esc(r)}</span>`).join('')}</div>
-          </section>
-          <section class="mentor-profile-panel">
-            <span class="section-kicker">Current appointments</span>
-            <h3>Academic leadership</h3>
-            <ul class="mentor-clean-list">${(x.currentPositions||[]).map(v=>`<li>${esc(v)}</li>`).join('')}</ul>
-          </section>
+        <div class="mentor-accordion-stack">
+          ${mentorAccordion('Academic profile','Biography & education',academicProfile,'Research interests, training and academic background')}
+          ${mentorAccordion('Leadership & recognition','Appointments, awards & service',leadership,'Current PUST roles and selected academic recognition')}
+          ${mentorAccordion('Research collaboration with Razu','Shared scholarly record',sharedRecord,recordMeta)}
         </div>
-
-        <div class="mentor-profile-grid">
-          <section class="mentor-profile-panel">
-            <span class="section-kicker">Education</span>
-            <h3>Academic training</h3>
-            <div class="mentor-timeline">${(x.education||[]).map(e=>`<div class="mentor-timeline-item"><span>${esc(e.year||'')}</span><div><strong>${esc(e.degree||'')}</strong><p>${esc(e.institution||'')}</p>${e.detail?`<small>${esc(e.detail)}</small>`:''}</div></div>`).join('')}</div>
-          </section>
-          <section class="mentor-profile-panel">
-            <span class="section-kicker">Recognition & service</span>
-            <h3>Awards and external roles</h3>
-            <h4>Awards & recognition</h4>
-            <ul class="mentor-clean-list">${(x.awards||[]).map(v=>`<li>${esc(v)}</li>`).join('')}</ul>
-            <h4 class="mentor-subhead">External affiliations</h4>
-            <ul class="mentor-clean-list">${(x.externalAffiliations||[]).map(v=>`<li>${esc(v)}</li>`).join('')}</ul>
-          </section>
-        </div>
-
-        <details class="mentor-record" open>
-          <summary><div><span class="section-kicker">Shared scholarly record</span><strong>Research collaboration with Razu</strong></div><span class="mentor-record-toggle">+</span></summary>
-          <div class="mentor-record-body">
-            <div class="mentor-record-section">
-              <div class="mentor-record-heading"><h4>Peer-reviewed journal publications</h4><span>${(x.sharedPublications||[]).length}</span></div>
-              ${mentorWorkList(x.sharedPublications||[])}
-            </div>
-            <div class="mentor-record-section mentor-two-col">
-              <div>
-                <div class="mentor-record-heading"><h4>Accepted / forthcoming</h4><span>${(x.sharedAccepted||[]).length}</span></div>
-                ${mentorWorkList(x.sharedAccepted||[])}
-              </div>
-              <div>
-                <div class="mentor-record-heading"><h4>Public research dataset</h4><span>${(x.sharedDataset||[]).length}</span></div>
-                ${mentorWorkList(x.sharedDataset||[])}
-              </div>
-            </div>
-            <div class="mentor-record-section">
-              <div class="mentor-record-heading"><h4>Conference contributions</h4><span>7</span></div>
-              <div class="mentor-conference-groups">${(x.sharedConferences||[]).map(g=>`<article><h5>${esc(g.event||'')}</h5><p>${esc(g.venue||'')}</p><ol>${(g.items||[]).map(i=>`<li>${esc(i)}</li>`).join('')}</ol></article>`).join('')}</div>
-            </div>
-            <div class="mentor-record-section">
-              <div class="mentor-record-heading"><h4>Manuscripts in the editorial process</h4><span>${(x.sharedEditorial||[]).length}</span></div>
-              <p class="mentor-record-note">Journal names are shown for collaboration context; editorial-process manuscripts are not presented as published outputs.</p>
-              ${mentorWorkList(x.sharedEditorial||[],'editorial')}
-            </div>
-          </div>
-        </details>
       </article>
     </div></section>`;
   }
