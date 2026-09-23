@@ -163,6 +163,7 @@
         'Undergraduate academic-performance research'
       ],
       email: 'shamim.reza@pust.ac.bd',
+      additionalEmail: 'mshamim.pust@gmail.com',
       links: [
         { label: 'PUST Profile', url: 'https://pust.ac.bd/academic/departments/dept_teachers/dept_teachers_profile/100038' },
         { label: 'Google Scholar', url: 'https://scholar.google.com/citations?user=QlWV6XoAAAAJ&hl=en' },
@@ -224,6 +225,7 @@
         'Cesarean-section determinants in Bangladesh — EFAST 2026'
       ],
       email: 'sabba.ruhi@pust.ac.bd',
+      additionalEmail: 'sabba.ruhi@gmail.com',
       links: [
         { label: 'PUST Profile', url: 'https://pust.ac.bd/academic/departments/dept_teachers/dept_teachers_profile/100146' },
         { label: 'Google Scholar', url: 'https://scholar.google.com/citations?user=USWvpZEAAAAJ&hl=en' },
@@ -305,6 +307,7 @@
         'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh — accepted / forthcoming'
       ],
       email: 'aminul@ru.ac.bd',
+      additionalEmail: 'mdaminulh@gmail.com',
       links: [
         { label: 'RU Profile', url: 'https://profile.ru.ac.bd/public/profile/00608' },
         { label: 'Google Scholar', url: 'https://scholar.google.com/citations?user=TuzbEhAAAAAJ&hl=en' },
