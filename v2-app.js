@@ -1295,19 +1295,19 @@
     const root=document.documentElement;
     const pageName=document.body.dataset.page||'home';
     const profiles={
-      home:{count:86,connect:142,speed:.082,anchors:8,dust:42},
-      research:{count:78,connect:140,speed:.076,anchors:7,dust:38},
-      network:{count:80,connect:142,speed:.076,anchors:7,dust:40},
-      projects:{count:72,connect:138,speed:.070,anchors:6,dust:34},
-      profile:{count:68,connect:136,speed:.068,anchors:6,dust:32},
-      academic:{count:74,connect:138,speed:.068,anchors:7,dust:36},
-      publications:{count:62,connect:132,speed:.060,anchors:5,dust:30},
-      conferences:{count:60,connect:132,speed:.060,anchors:5,dust:30},
-      resources:{count:58,connect:130,speed:.058,anchors:5,dust:28},
-      recognition:{count:58,connect:130,speed:.058,anchors:5,dust:28},
-      experience:{count:64,connect:134,speed:.062,anchors:5,dust:30},
-      languages:{count:58,connect:130,speed:.058,anchors:5,dust:28},
-      default:{count:62,connect:132,speed:.060,anchors:5,dust:30}
+      home:{count:112,connect:148,speed:.074,anchors:10,dust:72},
+      research:{count:102,connect:146,speed:.070,anchors:9,dust:64},
+      network:{count:108,connect:148,speed:.070,anchors:9,dust:68},
+      projects:{count:94,connect:144,speed:.064,anchors:8,dust:58},
+      profile:{count:90,connect:142,speed:.062,anchors:8,dust:54},
+      academic:{count:98,connect:144,speed:.064,anchors:9,dust:62},
+      publications:{count:86,connect:140,speed:.058,anchors:7,dust:50},
+      conferences:{count:84,connect:140,speed:.058,anchors:7,dust:50},
+      resources:{count:82,connect:138,speed:.056,anchors:7,dust:48},
+      recognition:{count:82,connect:138,speed:.056,anchors:7,dust:48},
+      experience:{count:88,connect:140,speed:.060,anchors:7,dust:52},
+      languages:{count:82,connect:138,speed:.056,anchors:7,dust:48},
+      default:{count:86,connect:140,speed:.058,anchors:7,dust:50}
     };
     const profile=profiles[pageName]||profiles.default;
     const motionMedia=window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -1321,7 +1321,7 @@
     function seed(){
       const mobile=width<720;
       const tablet=width<1050;
-      const density=mobile?.47:(tablet?.72:1);
+      const density=mobile?.42:(tablet?.70:1);
       const count=Math.max(26,Math.round(profile.count*density));
       const dustCount=Math.max(14,Math.round(profile.dust*density));
       const anchorCount=Math.max(3,Math.round(profile.anchors*(mobile?.6:1)));
@@ -1360,17 +1360,49 @@
       seed();
     }
 
+    function readCssRgb(name,fallback){
+      const raw=getComputedStyle(root).getPropertyValue(name).trim();
+      if(/^#[0-9a-f]{3}$/i.test(raw)){
+        return raw.slice(1).split('').map(x=>parseInt(x+x,16));
+      }
+      if(/^#[0-9a-f]{6}$/i.test(raw)){
+        return [parseInt(raw.slice(1,3),16),parseInt(raw.slice(3,5),16),parseInt(raw.slice(5,7),16)];
+      }
+      const match=raw.match(/rgba?\(\s*([\d.]+)[,\s]+([\d.]+)[,\s]+([\d.]+)/i);
+      return match?[+match[1],+match[2],+match[3]]:fallback;
+    }
+
+    function blendRgb(a,b,t){
+      return a.map((v,i)=>Math.round(v+(b[i]-v)*t));
+    }
+
     function palette(){
       const dark=root.dataset.mode==='dark';
-      const theme=root.dataset.theme||'scientific';
-      if(theme==='mono'){
-        return dark
-          ? {line:[158,174,188],node:[214,225,235],anchor:[238,245,250],dust:[190,204,216]}
-          : {line:[95,108,120],node:[65,77,89],anchor:[25,35,45],dust:[90,104,117]};
-      }
+      const accent=readCssRgb('--accent',dark?[89,194,255]:[25,150,230]);
+      const accent2=readCssRgb('--accent-2',dark?[183,228,255]:[15,76,129]);
+      const text=readCssRgb('--text',dark?[238,247,255]:[16,32,51]);
+      const muted=readCssRgb('--muted',dark?[157,177,197]:[93,108,124]);
+
+      // Pull the constellation directly from the active portfolio theme so
+      // Scientific, Executive, Quantum and Monochrome all get a visible,
+      // coherent network in both light and dark modes.
       return dark
-        ? {line:[73,159,210],node:[96,200,245],anchor:[170,229,255],dust:[126,188,222]}
-        : {line:[66,139,184],node:[35,146,205],anchor:[15,104,164],dust:[70,128,164]};
+        ? {
+            line:blendRgb(accent,accent2,.22),
+            node:blendRgb(accent,accent2,.08),
+            anchor:blendRgb(accent2,[255,255,255],.18),
+            dust:blendRgb(accent,muted,.42),
+            lineAlpha:.094,anchorLineAlpha:.170,nodeAlpha:.31,anchorAlpha:.52,
+            ringAlpha:.125,haloAlpha:.036,dustBoost:1.02,pulseAlpha:.46
+          }
+        : {
+            line:blendRgb(accent2,accent,.24),
+            node:blendRgb(accent,accent2,.18),
+            anchor:blendRgb(accent2,text,.28),
+            dust:blendRgb(accent2,muted,.34),
+            lineAlpha:.155,anchorLineAlpha:.245,nodeAlpha:.43,anchorAlpha:.62,
+            ringAlpha:.155,haloAlpha:.050,dustBoost:1.36,pulseAlpha:.58
+          };
     }
 
     function wrap(p){
@@ -1419,7 +1451,7 @@
         const shimmer=reduced()?1:(.82+.18*Math.sin(time*.00042+p.phase));
         ctx.beginPath();
         ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-        ctx.fillStyle=`rgba(${colors.dust[0]},${colors.dust[1]},${colors.dust[2]},${(p.alpha*shimmer).toFixed(3)})`;
+        ctx.fillStyle=`rgba(${colors.dust[0]},${colors.dust[1]},${colors.dust[2]},${Math.min(.42,p.alpha*shimmer*colors.dustBoost).toFixed(3)})`;
         ctx.fill();
       });
 
@@ -1433,7 +1465,7 @@
 
           const strength=1-dist/connect;
           const anchorLink=a.anchor||b.anchor;
-          const alpha=(anchorLink?.145:.082)*strength;
+          const alpha=(anchorLink?colors.anchorLineAlpha:colors.lineAlpha)*strength;
 
           ctx.beginPath();
           ctx.moveTo(a.x,a.y);
@@ -1449,7 +1481,7 @@
             const py=a.y+(b.y-a.y)*t;
             ctx.beginPath();
             ctx.arc(px,py,1.25,0,Math.PI*2);
-            ctx.fillStyle=`rgba(${colors.anchor[0]},${colors.anchor[1]},${colors.anchor[2]},.38)`;
+            ctx.fillStyle=`rgba(${colors.anchor[0]},${colors.anchor[1]},${colors.anchor[2]},${colors.pulseAlpha})`;
             ctx.fill();
           }
         }
@@ -1463,26 +1495,26 @@
         if(n.anchor){
           ctx.beginPath();
           ctx.arc(n.x,n.y,(n.r+4.6)*pulse,0,Math.PI*2);
-          ctx.strokeStyle=`rgba(${col[0]},${col[1]},${col[2]},.105)`;
+          ctx.strokeStyle=`rgba(${col[0]},${col[1]},${col[2]},${colors.ringAlpha})`;
           ctx.lineWidth=.8;
           ctx.stroke();
 
           ctx.beginPath();
           ctx.arc(n.x,n.y,(n.r+8.5)*pulse,0,Math.PI*2);
-          ctx.fillStyle=`rgba(${col[0]},${col[1]},${col[2]},.025)`;
+          ctx.fillStyle=`rgba(${col[0]},${col[1]},${col[2]},${(colors.ringAlpha*.25).toFixed(3)})`;
           ctx.fill();
         }
 
         ctx.beginPath();
         ctx.arc(n.x,n.y,n.r*pulse,0,Math.PI*2);
-        ctx.fillStyle=`rgba(${col[0]},${col[1]},${col[2]},${n.anchor?.44:.25})`;
+        ctx.fillStyle=`rgba(${col[0]},${col[1]},${col[2]},${n.anchor?colors.anchorAlpha:colors.nodeAlpha})`;
         ctx.fill();
       });
 
       // Very light pointer halo keeps the motion responsive but restrained.
       if(pointer.active&&!reduced()){
         const gradient=ctx.createRadialGradient(pointer.x,pointer.y,0,pointer.x,pointer.y,150);
-        gradient.addColorStop(0,`rgba(${colors.node[0]},${colors.node[1]},${colors.node[2]},.035)`);
+        gradient.addColorStop(0,`rgba(${colors.node[0]},${colors.node[1]},${colors.node[2]},${colors.haloAlpha})`);
         gradient.addColorStop(1,`rgba(${colors.node[0]},${colors.node[1]},${colors.node[2]},0)`);
         ctx.fillStyle=gradient;
         ctx.beginPath();
