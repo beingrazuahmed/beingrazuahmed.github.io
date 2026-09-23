@@ -229,7 +229,7 @@
         { label: 'ORCID', url: 'https://orcid.org/0009-0008-2321-8738' },
         { label: 'AD Scientific Index', url: 'https://adscientificindex.com/scientist/sabba-ruhi/6259964/' }
       ]
-    }
+    },
     {
       id: 'aminul-hoque', name: 'Prof. Dr. Md. Aminul Hoque', group: 'Academic Guidance & Advisors',
       roles: ['Professor', 'Academic Guest Teacher', 'Senior Academic Guidance'],
