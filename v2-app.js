@@ -871,18 +871,27 @@
           <div class="journal-cover-shell">
             <img class="journal-cover-thumb" src="assets/academic/journals/engineering-reports/cover.webp" alt="Engineering Reports Volume 8 Number 1 January 2026 cover" loading="lazy" decoding="async">
           </div>
-          <div class="journal-identity-main">
-            <img class="journal-title-logo" src="assets/academic/journals/engineering-reports/logo.webp" alt="Engineering Reports" loading="lazy" decoding="async">
-            <div class="publisher-logo-row">
-              <span class="publisher-logo-card"><img src="assets/academic/journals/engineering-reports/wiley-wordmark.webp" alt="Wiley" loading="lazy" decoding="async"></span>
+          <div class="journal-identity-main journal-identity-main-engineering">
+            <div class="journal-identity-brand">
+              <img class="journal-title-logo" src="assets/academic/journals/engineering-reports/logo.webp" alt="Engineering Reports" loading="lazy" decoding="async">
+              <div class="publisher-logo-row">
+                <span class="publisher-logo-card"><img src="assets/academic/journals/engineering-reports/wiley-wordmark.webp" alt="Wiley" loading="lazy" decoding="async"></span>
+              </div>
+              ${p.journal.officialUrl?`<a class="journal-library-link journal-library-link-wiley" href="${esc(p.journal.officialUrl)}" target="_blank" rel="noopener noreferrer"><span class="journal-library-logo-shell"><img src="assets/academic/journals/engineering-reports/wiley-online-library.webp" alt="Wiley Online Library" loading="lazy" decoding="async"></span><span class="journal-library-copy"><small>Publisher platform</small><strong>Official journal page ↗</strong></span></a>`:''}
             </div>
-            <div class="journal-identity-label">Indexing & visibility</div>
-            <div class="indexing-logo-row">
-              ${academicBrandAsset('assets/academic/journals/engineering-reports/web-of-science.webp','Web of Science','is-square')}
-              ${academicBrandAsset('assets/academic/journals/engineering-reports/scimago.webp','SCImago','is-square')}
-              ${scholarlyBrandIcon('scopus')}
+            <div class="journal-identity-discovery">
+              <div class="journal-identity-label">Indexing & visibility</div>
+              <div class="indexing-logo-row">
+                ${academicBrandAsset('assets/academic/journals/engineering-reports/web-of-science.webp','Web of Science','is-square')}
+                ${academicBrandAsset('assets/academic/journals/engineering-reports/scimago.webp','SCImago','is-square')}
+                ${scholarlyBrandIcon('scopus')}
+              </div>
+              <div class="journal-quick-meta">
+                ${p.journal.publisher?`<span><strong>Publisher</strong>${esc(p.journal.publisher)}</span>`:''}
+                ${p.journal.onlineIssn?`<span><strong>Online ISSN</strong>${esc(p.journal.onlineIssn)}</span>`:''}
+              </div>
+              ${p.journal.standing?`<p class="journal-standing-inline">${esc(p.journal.standing)}</p>`:''}
             </div>
-            ${p.journal.officialUrl?`<a class="journal-library-link" href="${esc(p.journal.officialUrl)}" target="_blank" rel="noopener noreferrer"><img src="assets/academic/journals/engineering-reports/wiley-online-library.webp" alt="Wiley Online Library" loading="lazy" decoding="async"><span>Official journal page ↗</span></a>`:''}
           </div>
         </div>`:''}
         ${p.journal.citation?`<div class="project-journal-citation-block"><div class="detail-label">APA & IEEE citations</div>${dualAcademicCitation(p.journal.citation,p.journal.citationIEEE)}</div>`:''}
@@ -893,11 +902,11 @@
           ${scholarlyBrandIcon('clarivate')}
           ${scholarlyBrandIcon('scimago','SCImago')}
         </div>`:''}
-        <div class="project-journal-meta">
+        ${!isEngineeringReports?`<div class="project-journal-meta">
           ${p.journal.publisher?`<span><strong>Publisher</strong>${esc(p.journal.publisher)}</span>`:''}
           ${p.journal.onlineIssn?`<span><strong>Online ISSN</strong>${esc(p.journal.onlineIssn)}</span>`:''}
-        </div>
-        ${p.journal.standing?`<p class="project-journal-standing">${esc(p.journal.standing)}</p>`:''}
+        </div>`:''}
+        ${p.journal.standing&&!isEngineeringReports?`<p class="project-journal-standing">${esc(p.journal.standing)}</p>`:''}
         ${p.journal.officialUrl&&!isEngineeringReports?`<a class="journal-home-link" href="${esc(p.journal.officialUrl)}" target="_blank" rel="noopener noreferrer">Official journal page ↗</a>`:''}
       </div>`:''}
 
