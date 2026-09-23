@@ -46,6 +46,15 @@
       social: [
         { label: 'ResearchGate', url: 'https://www.researchgate.net/publication/414270604_PUST_Cafeteria_Food_Image_Dataset_Real-World_Bangladeshi_Meal-Platter_Images_with_Bounding-Box_and_Polygon_Annotations' }
       ]
+    },
+    'pust-cafeteria-dataset': {
+      primary: [
+        { label: 'Mendeley Data', url: 'https://data.mendeley.com/datasets/fn6yhzjz83/2' },
+        { label: 'DOI', url: 'https://doi.org/10.17632/fn6yhzjz83.2' },
+        { label: 'ScienceDirect', url: 'https://www.sciencedirect.com/science/article/pii/S2352340926008097' }
+      ],
+      discovery: [],
+      social: []
     }
   };
 
@@ -670,8 +679,12 @@
       : m
   );
 
+  const publishedArticles=(base.publications||[]).filter(p=>!p.status?.toLowerCase().includes('accepted'));
+  const acceptedArticles=(base.publications||[]).filter(p=>p.status?.toLowerCase().includes('accepted'));
   const outputs = [
-    ...(base.publications || []).map(p => ({ ...p, bucket: p.status?.toLowerCase().includes('accepted') ? 'accepted' : 'published', links: publicationLinks[p.id] || {} })),
+    ...publishedArticles.map(p => ({ ...p, bucket: 'published', links: publicationLinks[p.id] || {} })),
+    ...(base.datasets || []).map(p => ({ ...p, bucket: 'published', outputKind: 'dataset', links: publicationLinks[p.id] || {} })),
+    ...acceptedArticles.map(p => ({ ...p, bucket: 'accepted', links: publicationLinks[p.id] || {} })),
     ...(base.manuscripts || []).map(p => ({ ...p, bucket: 'under-review', links: {} }))
   ];
 
@@ -714,6 +727,7 @@
     },
     outputs,
     publications: base.publications || [],
+    datasets: base.datasets || [],
     manuscripts: base.manuscripts || [],
     conferences: base.conferences || [],
     awards: base.awards || [],
