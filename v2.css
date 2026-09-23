@@ -7860,3 +7860,117 @@ html[data-motion="reduced"]{scroll-behavior:auto!important}
     padding:2px 3px 4px;
   }
 }
+
+
+/* === Full-page live research constellation · 2026-09-23 === */
+body.has-mra-constellation{
+  position:relative;
+  isolation:isolate;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 13% 12%,color-mix(in srgb,var(--accent) 10%,transparent),transparent 29%),
+    radial-gradient(circle at 86% 7%,color-mix(in srgb,var(--accent-2) 7%,transparent),transparent 26%),
+    var(--bg);
+}
+body.has-mra-constellation::before,
+body.has-mra-constellation::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+}
+body.has-mra-constellation::before{
+  opacity:.24;
+  background-image:
+    radial-gradient(circle,color-mix(in srgb,var(--accent) 36%,transparent) .65px,transparent .8px);
+  background-size:38px 38px;
+  background-position:10px 7px;
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,.82),rgba(0,0,0,.34) 72%,transparent);
+}
+body.has-mra-constellation::after{
+  background:
+    radial-gradient(circle at 22% 26%,color-mix(in srgb,var(--accent) 5%,transparent),transparent 27%),
+    radial-gradient(circle at 80% 18%,color-mix(in srgb,var(--accent-2) 4%,transparent),transparent 23%),
+    linear-gradient(to bottom,transparent 0 76%,color-mix(in srgb,var(--bg) 18%,transparent));
+}
+.mra-constellation-global{
+  position:fixed!important;
+  inset:0!important;
+  width:100vw!important;
+  height:100vh!important;
+  z-index:0!important;
+  pointer-events:none!important;
+  opacity:.74!important;
+  mix-blend-mode:normal;
+}
+body[data-page="home"] .mra-constellation-global{opacity:.92!important}
+body[data-page="research"] .mra-constellation-global,
+body[data-page="network"] .mra-constellation-global{opacity:.84!important}
+body[data-page="academic"] .mra-constellation-global,
+body[data-page="projects"] .mra-constellation-global,
+body[data-page="profile"] .mra-constellation-global{opacity:.76!important}
+body[data-page="publications"] .mra-constellation-global,
+body[data-page="conferences"] .mra-constellation-global,
+body[data-page="recognition"] .mra-constellation-global,
+body[data-page="resources"] .mra-constellation-global{opacity:.68!important}
+
+#site-header,
+#page-content,
+#site-footer,
+.settings,
+.accessibility-dock,
+.text-size-panel{
+  position:relative;
+  z-index:1;
+}
+.topbar{
+  background:color-mix(in srgb,var(--bg) 76%,transparent)!important;
+  -webkit-backdrop-filter:blur(18px) saturate(118%);
+  backdrop-filter:blur(18px) saturate(118%);
+}
+.hero,
+.hero-home,
+.hero-shell{
+  position:relative;
+  z-index:1;
+}
+.hero.compact{
+  background:
+    linear-gradient(90deg,color-mix(in srgb,var(--bg) 74%,transparent),color-mix(in srgb,var(--surface-2) 28%,transparent),color-mix(in srgb,var(--bg) 64%,transparent));
+  border-bottom:1px solid color-mix(in srgb,var(--accent) 9%,var(--line));
+}
+.section{
+  position:relative;
+}
+.section.alt{
+  background:color-mix(in srgb,var(--surface-2) 72%,transparent)!important;
+  -webkit-backdrop-filter:blur(2px);
+  backdrop-filter:blur(2px);
+}
+:root[data-mode="dark"] .section.alt{
+  background:color-mix(in srgb,var(--surface-2) 74%,transparent)!important;
+}
+.card,
+.network-person-card,
+.conference-group-card,
+.compute-environment-card{
+  background:color-mix(in srgb,var(--surface) 94%,transparent);
+  -webkit-backdrop-filter:blur(3px);
+  backdrop-filter:blur(3px);
+}
+
+@media(max-width:720px){
+  body.has-mra-constellation::before{opacity:.14}
+  .mra-constellation-global{opacity:.58!important}
+  body[data-page="home"] .mra-constellation-global{opacity:.72!important}
+}
+@media(prefers-reduced-motion:reduce){
+  body.has-mra-constellation::before{opacity:.12}
+  .mra-constellation-global{opacity:.28!important}
+}
+@media print{
+  body.has-mra-constellation::before,
+  body.has-mra-constellation::after,
+  .mra-constellation-global{display:none!important}
+}
