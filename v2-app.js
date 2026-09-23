@@ -1475,6 +1475,38 @@
       ${g.related?`<a class="gallery-related-link" href="${esc(g.related)}">View related record →</a>`:''}
     </article>`).join('')}</div></div></section>`;}
 
+  function dashboardMetricSource(m={}){
+    const profileUrl=(label)=>{
+      const match=(D.profiles||[]).find(p=>String(p.label||'').toLowerCase()===String(label||'').toLowerCase());
+      return match?.url||'';
+    };
+    const sources=[];
+    const source=String(m.source||'').trim();
+
+    if(source==='Google Scholar'){
+      sources.push({label:'Google Scholar',url:profileUrl('Google Scholar')});
+    }else if(source==='ResearchGate'){
+      sources.push({label:'ResearchGate',url:profileUrl('ResearchGate')});
+    }else if(source==='Google Scholar / ResearchGate'){
+      sources.push({label:'Google Scholar',url:profileUrl('Google Scholar')});
+      sources.push({label:'ResearchGate',url:profileUrl('ResearchGate')});
+    }else if(source==='Mendeley Data'){
+      sources.push({label:'Mendeley Data',url:'https://data.mendeley.com/datasets/fn6yhzjz83/2'});
+    }else if(source){
+      sources.push({label:source,url:''});
+    }
+
+    const sourceHtml=sources.map(s=>{
+      const meta=publicationBrandMeta(s.label);
+      const icon=`<span class="dashboard-source-icon ${esc(meta.cls||'')}"><img src="${esc(meta.src)}" alt="" loading="lazy" decoding="async"></span>`;
+      return s.url
+        ? `<a class="dashboard-source-link" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer" title="Open ${esc(s.label)} profile">${icon}<span>${esc(s.label)}</span></a>`
+        : `<span class="dashboard-source-link is-static">${icon}<span>${esc(s.label)}</span></span>`;
+    }).join('<span class="dashboard-source-separator">+</span>');
+
+    return `<small class="dashboard-metric-meta dashboard-source-row">${sourceHtml}${m.date?`<span class="dashboard-source-date">· ${esc(m.date)}</span>`:''}</small>`;
+  }
+
   function dashboard(){
     const outputs=D.outputs||[];
     const publishedArticles=outputs.filter(x=>x.bucket==='published'&&!(x.outputKind==='dataset'||x.type==='Dataset')).length;
@@ -1482,7 +1514,7 @@
     const accepted=outputs.filter(x=>x.bucket==='accepted').length;
     const editorial=outputs.filter(x=>x.bucket==='under-review').length;
     const preparing=(D.ongoing||[]).length;
-    return `${pageHero('Research & Impact Dashboard','Interactive academic metrics with source-aware interpretation.')}<section class="section"><div class="container">${sectionHead('Verified metrics','Current scholarly indicators','ResearchGate and Mendeley Data indicators are shown with source and verification date.')}<div class="grid grid-4">${(D.impactMetrics||[]).map(m=>`<article class="card metric dashboard-metric-card"><strong class="dashboard-metric-value">${esc(m.value)}</strong><span class="dashboard-metric-label">${esc(m.label)}</span><small class="dashboard-metric-meta">${esc(m.source||'')}${m.date?' · '+esc(m.date):''}</small>${m.source==='Mendeley Data'&&['Usage','Views','Downloads'].includes(m.label)?`<small class="dashboard-impact-system"><span>Impact system</span><strong>PlumX Metrics</strong> · Usage category</small>`:''}</article>`).join('')}</div><aside class="dashboard-impact-provenance"><div><span class="section-kicker">Dataset impact provenance</span><strong>Mendeley Data + PlumX Metrics</strong></div><p>Usage, Views and Downloads are attributed to Mendeley Data. PlumX is shown as the broader impact system for dataset-level engagement and alternative-impact signals.</p><div class="dashboard-impact-links dashboard-impact-brand-links">
+    return `${pageHero('Research & Impact Dashboard','Interactive academic metrics with source-aware interpretation.')}<section class="section"><div class="container">${sectionHead('Verified metrics','Current scholarly indicators','ResearchGate and Mendeley Data indicators are shown with source and verification date.')}<div class="grid grid-4">${(D.impactMetrics||[]).map(m=>`<article class="card metric dashboard-metric-card"><strong class="dashboard-metric-value">${esc(m.value)}</strong><span class="dashboard-metric-label">${esc(m.label)}</span>${dashboardMetricSource(m)}${m.source==='Mendeley Data'&&['Usage','Views','Downloads'].includes(m.label)?`<small class="dashboard-impact-system"><span>Impact system</span><strong>PlumX Metrics</strong> · Usage category</small>`:''}</article>`).join('')}</div><aside class="dashboard-impact-provenance"><div><span class="section-kicker">Dataset impact provenance</span><strong>Mendeley Data + PlumX Metrics</strong></div><p>Usage, Views and Downloads are attributed to Mendeley Data. PlumX is shown as the broader impact system for dataset-level engagement and alternative-impact signals.</p><div class="dashboard-impact-links dashboard-impact-brand-links">
           ${publicationBrandLink({label:'Mendeley Data',url:'https://data.mendeley.com/datasets/fn6yhzjz83/2'})}
           ${publicationBrandLink({label:'PlumX Metrics',url:'https://plu.mx/plum/a/?doi=10.17632/fn6yhzjz83&theme=plum-bigben-theme'})}
         </div></aside></div></section><section class="section alt"><div class="container">${sectionHead('Portfolio analytics','Research distribution')}<div class="grid grid-3"><article class="card"><h3>Publication status</h3><p>${publishedArticles} published articles · ${publishedDatasets} published dataset · ${accepted} accepted/forthcoming · ${editorial} in the editorial process${preparing?` · ${preparing} in preparation`:''}.</p></article><article class="card"><h3>Conference record</h3><p>8 contributions · 3 presentations · 1 JSR Award.</p></article><article class="card"><h3>Scholarly service</h3><p>32 completed invited reviews across three journals.</p></article></div></div></section>`;
