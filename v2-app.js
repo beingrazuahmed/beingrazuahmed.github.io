@@ -771,7 +771,7 @@
   function datasetOutputCard(p){
     const id=(p.id||'pust-cafeteria-dataset').toLowerCase();
     const linkObj=D.publicationLinks?.[id]||p.links||{};
-    return `<article class="card output-card editorial-card dataset-output-card" id="output-${esc(id)}">
+    return `<article class="card output-card editorial-card dataset-output-card" id="output-${esc(id)}" data-output-bucket="published" data-output-kind="dataset">
       <div class="dataset-card-head">
         <div class="dataset-brand-lockup">
           <span class="dataset-mendeley-mark" aria-hidden="true"><img src="https://cdn.simpleicons.org/mendeley" alt="" loading="lazy" decoding="async"></span>
@@ -837,7 +837,7 @@
     const id=(p.id||'').toLowerCase();
     const linkObj=D.publicationLinks?.[id]||p.links||{};
     const js=p.journalStanding||null;
-    return `<article class="card output-card editorial-card" id="output-${esc(id)}">
+    return `<article class="card output-card editorial-card" id="output-${esc(id)}" data-output-bucket="${esc(p.bucket||'')}" data-output-kind="${esc((p.type||'article').toLowerCase())}">
       <div class="meta"><span class="badge">${esc(p.status||p.bucket||'Research')}</span>${p.role?`<span class="badge">${esc(p.role)}</span>`:''}</div>
       <h3>${esc(p.title||'Untitled')}</h3>
       <p>${esc(p.journal||p.venue||p.summary||p.description||'')}</p>
@@ -1166,8 +1166,40 @@
     <section class="section"><div class="container">${sectionHead('Evolution','Research trajectory')}<div class="timeline">${(D.research?.evolution||[]).map(e=>`<div class="timeline-item"><strong>${esc(e.period||e.year||'')}</strong><h3>${esc(e.title||'')}</h3><p>${esc(e.detail||e.description||'')}</p></div>`).join('')}</div></div></section>
     <section class="section"><div class="container">${sectionHead('Current directions','Ongoing & in preparation')}<div class="grid grid-3">${(D.ongoing||[]).map(x=>`<article class="card"><div class="badge">In preparation</div><h3>${esc(x.title)}</h3><p>${esc(x.objective||x.summary||x.description||'')}</p>${tags(x.methods||x.tags||[])}</article>`).join('')}</div></div></section>`;}
 
-  function publications(){const all=D.outputs||[];return `${pageHero('Publications & Research Outputs','Search and filter publicly shareable outputs. Confidential research is intentionally excluded from the public repository.')}
-    <section class="section"><div class="container"><div class="search-wrap"><input class="search-input" id="pubSearch" placeholder="Search title, journal, method or topic…"></div><div class="filters" id="pubFilters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="published">Published</button><button class="filter" data-filter="dataset">Dataset</button><button class="filter" data-filter="accepted">Accepted</button><button class="filter" data-filter="under-review">Under review</button></div><div class="grid grid-2" id="pubGrid">${all.map(outputCard).join('')}</div></div></section>`;}
+  function publications(){
+    const all=D.outputs||[];
+    const published=all.filter(x=>x.bucket==='published');
+    const accepted=all.filter(x=>x.bucket==='accepted');
+    const reviewing=all.filter(x=>x.bucket==='under-review');
+    return `${pageHero('Publications & Research Outputs','Published work, accepted articles and submitted manuscripts are presented in separate scholarly-status sections.')}
+    <section class="section publication-directory"><div class="container">
+      <div class="publication-controls">
+        <div class="search-wrap"><input class="search-input" id="pubSearch" placeholder="Search title, journal, method or topic…"></div>
+        <div class="filters" id="pubFilters">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="published">Published</button>
+          <button class="filter" data-filter="dataset">Dataset</button>
+          <button class="filter" data-filter="accepted">Accepted</button>
+          <button class="filter" data-filter="under-review">Under review</button>
+        </div>
+      </div>
+
+      <section class="publication-status-group publication-status-published" data-publication-group="published">
+        ${sectionHead('Published scholarly outputs','Peer-reviewed articles & public research data','Final published journal articles and the citable Mendeley Data release. Submitted manuscripts are kept separate below.')}
+        <div class="grid grid-2 publication-group-grid">${published.map(outputCard).join('')}</div>
+      </section>
+
+      <section class="publication-status-group publication-status-accepted" data-publication-group="accepted">
+        ${sectionHead('Accepted / forthcoming','Accepted scholarly output','Accepted work awaiting final issue publication or complete bibliographic assignment.')}
+        <div class="grid grid-2 publication-group-grid">${accepted.map(outputCard).join('')}</div>
+      </section>
+
+      <section class="publication-status-group publication-status-reviewing" data-publication-group="under-review">
+        ${sectionHead('Submitted / under review','Manuscripts in the editorial process','These manuscripts are not published outputs and are intentionally presented in a separate section.')}
+        <div class="grid grid-2 publication-group-grid">${reviewing.map(outputCard).join('')}</div>
+      </section>
+    </div></section>`;
+  }
 
   function academic(){
     const cw=D.coursework||{};
@@ -1741,7 +1773,33 @@
       portraitStage.addEventListener('pointermove',updatePortraitTilt,{passive:true});
       portraitStage.addEventListener('pointerleave',resetPortraitTilt,{passive:true});
     }
-    const search=$('#pubSearch'), grid=$('#pubGrid'); if(search&&grid){const cards=[...grid.children]; let filter='all'; const run=()=>{const q=search.value.toLowerCase();cards.forEach((c,i)=>{const o=(D.outputs||[])[i]||{};const okQ=!q||c.textContent.toLowerCase().includes(q); const bucket=o.bucket||''; const isDataset=o.outputKind==='dataset'||o.type==='Dataset'; const okF=filter==='all'||(filter==='dataset'?isDataset:bucket===filter); c.hidden=!(okQ&&okF)});}; search.addEventListener('input',run); $$('#pubFilters .filter').forEach(b=>b.addEventListener('click',()=>{$$('#pubFilters .filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');filter=b.dataset.filter;run()}));}
+    const search=$('#pubSearch');
+    const publicationGroups=[...document.querySelectorAll('.publication-status-group')];
+    if(search&&publicationGroups.length){
+      const cards=[...document.querySelectorAll('.publication-group-grid > .output-card')];
+      let filter='all';
+      const run=()=>{
+        const q=search.value.trim().toLowerCase();
+        cards.forEach(c=>{
+          const bucket=c.dataset.outputBucket||'';
+          const isDataset=c.dataset.outputKind==='dataset';
+          const okQ=!q||c.textContent.toLowerCase().includes(q);
+          const okF=filter==='all'||(filter==='dataset'?isDataset:bucket===filter);
+          c.hidden=!(okQ&&okF);
+        });
+        publicationGroups.forEach(group=>{
+          const visible=[...group.querySelectorAll('.output-card')].some(c=>!c.hidden);
+          group.hidden=!visible;
+        });
+      };
+      search.addEventListener('input',run);
+      $('#pubFilters .filter').forEach(b=>b.addEventListener('click',()=>{
+        $('#pubFilters .filter').forEach(x=>x.classList.remove('active'));
+        b.classList.add('active');
+        filter=b.dataset.filter;
+        run();
+      }));
+    }
     document.querySelectorAll('img[data-safe-fallback]').forEach(img=>img.addEventListener('error',()=>{
       const fallback=document.createElement('div');
       fallback.className=((img.className||'portrait').replace(/\bsafe-img\b/g,'').trim())+' portrait-placeholder';
