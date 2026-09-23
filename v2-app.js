@@ -718,9 +718,9 @@
     </div></section>`:''}
 
     ${reviewOutputs.length?`<section class="section alt home-under-review-work"><div class="container">
-      ${sectionHead('Submitted / under review','Current manuscript pipeline','These manuscripts are in the editorial process and are not presented as published outputs.')}
+      ${sectionHead('Editorial process','Current manuscript pipeline','Current journal-workflow states are shown explicitly, and these manuscripts remain separate from published and accepted outputs.')}}
       <div class="more-outputs-grid home-status-output-grid">${reviewOutputs.map(compactResearchOutputCard).join('')}</div>
-      <div class="section-action"><a class="section-text-link" href="publications.html?status=under-review">View manuscripts under review ↗</a></div>
+      <div class="section-action"><a class="section-text-link" href="publications.html?status=under-review">View editorial-process manuscripts ↗</a></div>
     </div></section>`:''}
 
     <section class="section"><div class="container">
@@ -1198,7 +1198,7 @@
           <button class="filter active" data-filter="published">Published</button>
           <button class="filter" data-filter="dataset">Published Dataset</button>
           <button class="filter" data-filter="accepted">Accepted / Forthcoming</button>
-          <button class="filter" data-filter="under-review">Submitted / Under Review</button>
+          <button class="filter" data-filter="under-review">Editorial Process</button>
         </div>
       </div>
 
@@ -1213,7 +1213,7 @@
       </section>
 
       <section class="publication-status-group publication-status-reviewing" data-publication-group="under-review">
-        ${sectionHead('Submitted / under review','Manuscripts in the editorial process','These manuscripts are not published outputs and are intentionally presented in a separate section.')}
+        ${sectionHead('Editorial status','Manuscripts in the editorial process','These manuscripts are not published outputs. Current workflow states such as With Editor, Under Review, Under Revision and Awaiting Admin Processing are shown on each record.')}}
         <div class="grid grid-2 publication-group-grid">${reviewing.map(outputCard).join('')}</div>
       </section>
     </div></section>`;
