@@ -625,7 +625,7 @@
     return `<a class="compact-output-card" href="publications.html?status=${esc(status)}#output-${esc(id)}">
       <div class="compact-output-top"><span class="compact-output-status">${esc(x.status||x.bucket||'Research')}</span><span class="compact-output-arrow" aria-hidden="true">↗</span></div>
       <h4>${esc(x.title||'Untitled research output')}</h4>
-      <p>${esc(x.journal||x.venue||'')}</p>
+      <p>${esc(x.journal||x.venue||'')}${x.bucket==='under-review'&&x.publisher?` <span class="compact-output-publisher">· ${esc(x.publisher)}</span>`:''}</p>
     </a>`;
   }
 
@@ -859,7 +859,12 @@
     return `<article class="card output-card editorial-card" id="output-${esc(id)}" data-output-bucket="${esc(p.bucket||'')}" data-output-kind="${esc((p.type||'article').toLowerCase())}">
       <div class="meta"><span class="badge">${esc(p.status||p.bucket||'Research')}</span>${p.role?`<span class="badge">${esc(p.role)}</span>`:''}</div>
       <h3>${esc(p.title||'Untitled')}</h3>
-      <p>${esc(p.journal||p.venue||p.summary||p.description||'')}</p>
+      ${p.bucket==='under-review'
+        ? `<div class="editorial-journal-info">
+            <div class="editorial-journal-main"><span>Journal</span><strong>${esc(p.journal||p.venue||'')}</strong></div>
+            ${p.publisher?`<div class="editorial-publisher"><span>Publisher</span><strong>${esc(p.publisher)}</strong></div>`:''}
+          </div>`
+        : `<p>${esc(p.journal||p.venue||p.summary||p.description||'')}</p>`}
       ${(p.citationAPA||p.citationIEEE)
         ? `<div class="publication-citation-block"><div class="publication-citation-label">APA & IEEE citations</div>${dualAcademicCitation(p.citationAPA,p.citationIEEE)}</div>`
         : (p.citation? `<p class="output-citation">${esc(p.citation)}</p>` : '')}
