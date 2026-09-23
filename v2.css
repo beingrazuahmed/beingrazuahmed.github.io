@@ -8202,3 +8202,117 @@ body,
   .mode-segmented button,
   body,.topbar,.card,.section.alt,.footer,.settings,.mobile-panel{transition:none!important}
 }
+
+
+/* === Theme-balanced professional constellation visibility · 2026-09-23 === */
+/* The live research web remains legible in every mode, not only dark mode. */
+:root[data-mode="light"] .mra-constellation-global{
+  opacity:.86!important;
+}
+:root[data-mode="dark"] .mra-constellation-global{
+  opacity:.82!important;
+}
+:root[data-mode="light"] body[data-page="home"] .mra-constellation-global{
+  opacity:.94!important;
+}
+:root[data-mode="dark"] body[data-page="home"] .mra-constellation-global{
+  opacity:.96!important;
+}
+:root[data-mode="light"] body[data-page="research"] .mra-constellation-global,
+:root[data-mode="light"] body[data-page="network"] .mra-constellation-global{
+  opacity:.90!important;
+}
+:root[data-mode="light"] body[data-page="academic"] .mra-constellation-global,
+:root[data-mode="light"] body[data-page="projects"] .mra-constellation-global,
+:root[data-mode="light"] body[data-page="profile"] .mra-constellation-global{
+  opacity:.87!important;
+}
+
+/* Light mode needs slightly stronger ambient marks because the canvas sits on a bright field. */
+:root[data-mode="light"] body.has-mra-constellation::before{
+  opacity:.22!important;
+  background-image:
+    radial-gradient(circle,color-mix(in srgb,var(--accent-2) 46%,transparent) .72px,transparent .92px);
+  background-size:42px 42px;
+}
+:root[data-mode="dark"] body.has-mra-constellation::before{
+  opacity:.20!important;
+}
+:root[data-mode="light"] body.has-mra-constellation::after{
+  background:
+    radial-gradient(circle at 18% 18%,color-mix(in srgb,var(--accent) 7%,transparent),transparent 25%),
+    radial-gradient(circle at 78% 22%,color-mix(in srgb,var(--accent-2) 5%,transparent),transparent 24%),
+    linear-gradient(to bottom,transparent 0 78%,color-mix(in srgb,var(--bg) 12%,transparent));
+}
+:root[data-mode="dark"] body.has-mra-constellation::after{
+  background:
+    radial-gradient(circle at 18% 18%,color-mix(in srgb,var(--accent) 6%,transparent),transparent 25%),
+    radial-gradient(circle at 78% 22%,color-mix(in srgb,var(--accent-2) 4%,transparent),transparent 24%),
+    linear-gradient(to bottom,transparent 0 78%,color-mix(in srgb,var(--bg) 17%,transparent));
+}
+
+/* Let the research web breathe through large page regions while preserving card readability. */
+:root[data-mode="light"] .hero.compact{
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb,var(--bg) 58%,transparent),
+      color-mix(in srgb,var(--surface-2) 22%,transparent),
+      color-mix(in srgb,var(--bg) 52%,transparent)
+    )!important;
+}
+:root[data-mode="dark"] .hero.compact{
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb,var(--bg) 70%,transparent),
+      color-mix(in srgb,var(--surface-2) 29%,transparent),
+      color-mix(in srgb,var(--bg) 62%,transparent)
+    )!important;
+}
+:root[data-mode="light"] .section.alt{
+  background:color-mix(in srgb,var(--surface-2) 66%,transparent)!important;
+  -webkit-backdrop-filter:blur(1.5px);
+  backdrop-filter:blur(1.5px);
+}
+:root[data-mode="dark"] .section.alt{
+  background:color-mix(in srgb,var(--surface-2) 72%,transparent)!important;
+}
+
+/* Cards remain calm, readable surfaces; the motion lives mainly in the page field around them. */
+:root[data-mode="light"] .card,
+:root[data-mode="light"] .network-person-card,
+:root[data-mode="light"] .conference-group-card,
+:root[data-mode="light"] .compute-environment-card{
+  background:color-mix(in srgb,var(--surface) 91%,transparent)!important;
+  box-shadow:0 14px 38px color-mix(in srgb,var(--accent-2) 7%,transparent);
+}
+:root[data-mode="dark"] .card,
+:root[data-mode="dark"] .network-person-card,
+:root[data-mode="dark"] .conference-group-card,
+:root[data-mode="dark"] .compute-environment-card{
+  background:color-mix(in srgb,var(--surface) 93%,transparent)!important;
+}
+
+/* Header stays crisp while the web continues beneath it. */
+:root[data-mode="light"] .topbar{
+  background:color-mix(in srgb,var(--bg) 88%,transparent)!important;
+  border-bottom-color:color-mix(in srgb,var(--accent-2) 12%,var(--line))!important;
+}
+:root[data-mode="dark"] .topbar{
+  background:color-mix(in srgb,var(--bg) 79%,transparent)!important;
+}
+
+/* More subtle on touch devices, but still visibly alive. */
+@media(max-width:720px){
+  :root[data-mode="light"] .mra-constellation-global{opacity:.72!important}
+  :root[data-mode="dark"] .mra-constellation-global{opacity:.68!important}
+  :root[data-mode="light"] body[data-page="home"] .mra-constellation-global{opacity:.80!important}
+  :root[data-mode="dark"] body[data-page="home"] .mra-constellation-global{opacity:.78!important}
+}
+@media(prefers-reduced-motion:reduce){
+  :root[data-mode="light"] .mra-constellation-global,
+  :root[data-mode="dark"] .mra-constellation-global{
+    opacity:.34!important;
+  }
+}
