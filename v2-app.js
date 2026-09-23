@@ -257,6 +257,12 @@
 
   function publicationBrandLink(item={}){
     const label=item.label||'Scholarly link';
+    const key=String(label||'').trim().toLowerCase();
+    if(key==='doi'){
+      return `<a class="publication-brand-link publication-doi-link doi-icon-link doi-icon-link-modern" href="${esc(item.url||'#')}" target="_blank" rel="noopener noreferrer" aria-label="Open DOI" title="DOI" data-label="DOI">
+        ${scholarlyBrandIcon('doi')}
+      </a>`;
+    }
     const meta=publicationBrandMeta(label);
     return `<a class="publication-brand-link ${esc(meta.cls||'')}" href="${esc(item.url||'#')}" target="_blank" rel="noopener noreferrer" aria-label="Open ${esc(label)}" title="${esc(label)}" data-label="${esc(label)}">
       <span class="publication-brand-logo"><img src="${esc(meta.src)}" alt="" loading="lazy" decoding="async"></span>
