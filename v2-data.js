@@ -62,13 +62,114 @@
 
   const people = [
     {
-      id: 'shamim-reza', name: 'Prof. Dr. Md. Shamim Reza', group: 'Academic Guidance & Advisors',
-      roles: ['Research Supervisor', 'Senior Research Guidance', 'Dean, Faculty of Science', 'Director, IQAC', 'Co-author'],
+      id: 'shamim-reza',
+      name: 'Prof. Dr. Md. Shamim Reza',
+      group: 'Academic Guidance & Advisors',
+      featuredProfile: true,
+      headline: 'Professor · Dean, Faculty of Science · Director, IQAC · Head, DSLR Lab',
+      roles: ['Primary Research Supervisor', 'Academic Mentor', 'Professor', 'Dean, Faculty of Science', 'Director, IQAC', 'Head, DSLR Lab', 'Co-author'],
       affiliation: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
-      description: 'Primary academic supervisor and long-term research mentor across statistical learning, machine learning, biomedical data science and applied AI research.',
-      shared: ['FastICA source separation', 'CKD prediction', 'AI-employment perceptions', 'Diabetic-retinopathy grading', 'PUST cafeteria research'],
-      portrait: 'assets/academic/instructors/shamim-reza.jpg?v=20260918-network24', links: []
-    },
+      description: 'Professor of Statistics and Data Science at PUST and Razu’s primary academic supervisor and long-term research mentor across statistical learning, machine learning, biomedical data science, computer vision and applied artificial intelligence.',
+      biography: 'Dr. Md. Shamim Reza is a Professor in the Department of Statistics and Data Science at Pabna University of Science and Technology, Bangladesh. He received his PhD from Peking University, China, in 2019 after earlier completing B.Sc. and M.Sc. degrees in Statistics from the University of Rajshahi. His research spans artificial intelligence, machine learning, deep learning, medical imaging, multivariate analysis and computer vision.',
+      portrait: 'assets/academic/instructors/shamim-reza.jpg?v=20260918-network24',
+      currentPositions: [
+        'Professor, Department of Statistics and Data Science, Pabna University of Science and Technology',
+        'Dean, Faculty of Science, Pabna University of Science and Technology',
+        'Director, Institutional Quality Assurance Cell (IQAC), Pabna University of Science and Technology',
+        'Lab Head, Deep Statistical Learning and Research (DSLR) Lab, Department of Statistics and Data Science, PUST'
+      ],
+      researchInterests: ['Artificial Intelligence', 'Machine Learning', 'Deep Learning', 'Medical Imaging', 'Multivariate Analysis', 'Computer Vision'],
+      education: [
+        { degree: 'Doctor of Philosophy (PhD)', institution: 'School of Mathematical Sciences, Department of Information Science, Peking University, Beijing, China', year: '2019', detail: 'Chinese Government Scholarship (CSC); Peking University International Students Academic Award, 2019.' },
+        { degree: 'Master of Science (M.Sc., Thesis) in Statistics', institution: 'University of Rajshahi, Rajshahi-6205, Bangladesh', year: '2008', detail: 'First Class · 1st position out of 82 students.' },
+        { degree: 'Bachelor of Science (B.Sc.) in Statistics', institution: 'University of Rajshahi, Rajshahi-6205, Bangladesh', year: '2007', detail: 'First Class · 1st position out of 87 students.' }
+      ],
+      awards: [
+        'K.M. Hossain Award, University of Rajshahi, for securing First Class First in the 2007 B.Sc. (Honours) examination in Statistics.',
+        'Peking University International Students Academic Award, 2019.',
+        'Chinese Government Scholarship (CSC), Ministry of Education, China, for doctoral study, September 2015–June 2019.'
+      ],
+      externalAffiliations: [
+        'General Secretary, Teachers Association, Pabna University of Science and Technology (2013).',
+        'Joint Secretary, Federation of Bangladesh University Teachers Association (2014).'
+      ],
+      relationship: {
+        title: 'Primary research supervision',
+        detail: 'Supervisor for Razu’s B.Sc. Statistical Field Survey, B.Sc. Statistical Project and M.S. Project, with continuing mentorship and research collaboration beyond the degree programmes.'
+      },
+      collaborationStats: [
+        { value: '3', label: 'Published journal articles' },
+        { value: '1', label: 'Accepted / forthcoming article' },
+        { value: '1', label: 'Public research dataset' },
+        { value: '7', label: 'Conference contributions' },
+        { value: '5', label: 'Manuscripts in editorial process' }
+      ],
+      sharedPublications: [
+        { title: 'Sophisticated Audio Source Separation: A Statistical Exploration of Clarity and Precision With FastICA', venue: 'Engineering Reports, 8(1), e70575 (2026)', doi: 'https://doi.org/10.1002/eng2.70575' },
+        { title: 'Identification of Predisposing Risk Factors for Chronic Kidney Disease and Optimizing Disease Prediction Using a Stacking Machine Learning Algorithm', venue: 'International Journal of Statistical Sciences, 25(2), 1–32 (2025)', doi: 'https://doi.org/10.3329/ijss.v25i2.85732' },
+        { title: 'PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations', venue: 'Data in Brief, 69, Article 113262 (2026)', doi: 'https://doi.org/10.1016/j.dib.2026.113262' }
+      ],
+      sharedAccepted: [
+        { title: 'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh', venue: 'International Journal of Statistical Sciences, 26(2), forthcoming November 2026', detail: 'Accepted 2 September 2026.' }
+      ],
+      sharedDataset: [
+        { title: 'PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations (Version 2)', venue: 'Mendeley Data', doi: 'https://doi.org/10.17632/fn6yhzjz83.2', detail: 'Published 28 August 2026.' }
+      ],
+      sharedConferences: [
+        {
+          event: 'International Conference on Emerging Frontiers in Advanced Sciences and Technologies 2026 (EFAST 2026)',
+          venue: 'Pabna University of Science and Technology · 27–28 June 2026 · Proceedings ISBN 978-984-37-0635-5',
+          items: [
+            'Automated Five-Stage Diabetic Retinopathy Grading Using a Leak-Safe and Explainable Deep-Handcrafted Fusion Framework · p. 173 · Paper ID 108',
+            'A Multi-Scale Attention-Based Dense Residual Network for Sugarcane Leaf Disease Detection Using BSRI Data · p. 172 · Paper ID 107',
+            'Comparative Analysis of Missing Value Imputation Methods with a Hybrid Approach for HCV Prediction Using Machine Learning · p. 174 · Paper ID 115'
+          ]
+        },
+        {
+          event: 'International Conference on Applied Statistics and Data Science 2025 (ICASDS 2025)',
+          venue: 'University of Dhaka · 28–29 December 2025 · Programme and Abstract Book',
+          items: [
+            'A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images · p. 200 · Paper ID 341',
+            'Predisposing Factor Identification and Multi-Class Grading of Diabetes Mellitus Using Machine Learning · p. 199 · Paper ID 315'
+          ]
+        },
+        {
+          event: '2nd International Conference on Recent Advances in Science and Technology 2025 (ICRAST 2025)',
+          venue: 'University of Rajshahi · 14–15 November 2025 · Book of Abstracts',
+          items: [
+            'Measuring Attitudes toward AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology · p. 120 · Paper ID 440',
+            'Facial Emotion Recognition with Dimensionality Reduction: A Comparative Study of PCA, FA, and Combined PCA–FA with a CNN Baseline · p. 126 · Paper ID 461'
+          ]
+        }
+      ],
+      sharedEditorial: [
+        { title: 'A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images', journal: 'Measurement', publisher: 'Elsevier' },
+        { title: 'Comparative Evaluation of Hybrid MICE–Median Missing-Value Reconstruction and Downstream Hepatitis C Prediction Using Machine Learning', journal: 'BMC Medical Informatics and Decision Making', publisher: 'BMC · Springer Nature' },
+        { title: 'Real-Time Food Detection for Automated Cafeteria Billing Using RT-DETR and GAN-Based Data Augmentation', journal: 'Discover Artificial Intelligence', publisher: 'Springer Nature' },
+        { title: 'Adaptive Probability Fusion of Lightweight Recurrent Networks for Cross-Domain Sentiment Classification', journal: 'Applied AI Letters', publisher: 'Wiley' },
+        { title: 'Factors Associated with Undergraduates Academic Performance Among Public University Students: A Case Study', journal: 'International Journal of Educational Reform', publisher: 'SAGE' }
+      ],
+      shared: [
+        'FastICA source separation',
+        'CKD prediction',
+        'AI-employment perceptions',
+        'Diabetic-retinopathy grading',
+        'HCV missing-data reconstruction',
+        'PUST Cafeteria Food Image Dataset',
+        'Cafeteria billing and food detection',
+        'Cross-domain sentiment classification',
+        'Undergraduate academic-performance research'
+      ],
+      email: 'shamim.reza@pust.ac.bd',
+      links: [
+        { label: 'PUST Profile', url: 'https://pust.ac.bd/academic/departments/dept_teachers/dept_teachers_profile/100038' },
+        { label: 'Google Scholar', url: 'https://scholar.google.com/citations?user=QlWV6XoAAAAJ&hl=en' },
+        { label: 'ORCID', url: 'https://orcid.org/0000-0002-3699-0494' },
+        { label: 'Scopus', url: 'https://www.scopus.com/authid/detail.uri?authorId=58044597500' },
+        { label: 'ResearchGate', url: 'https://www.researchgate.net/profile/Md-Reza-18' },
+        { label: 'AD Scientific Index', url: 'https://adscientificindex.com/scientist/md-shamim-reza/5906837/' }
+      ]
+    }
     {
       id: 'sabba-ruhi', name: 'Prof. Dr. Sabba Ruhi', group: 'Academic Guidance & Advisors',
       roles: ['Professor', 'Chairman', 'Academic Guidance', 'Departmental Leadership', 'Co-author'],
