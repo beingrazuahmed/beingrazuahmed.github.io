@@ -739,11 +739,14 @@
       <p>${esc(p.journal||p.venue||p.summary||p.description||'')}</p>
       ${p.citation? `<p class="output-citation">${esc(p.citation)}</p>` : ''}
       ${js?`<div class="output-standing">
-        <span><strong>${esc(js.jif2025||'')}</strong>JIF</span>
-        <span><strong>${esc(js.citeScore2025||'')}</strong>CiteScore</span>
-        <span><strong>${esc(js.quartile||'')}</strong>Quartile</span>
-        <span><strong>${esc(js.sjr2025||'')}</strong>SJR</span>
-        <small>${esc(js.indexing||'')}</small>
+        ${js.jif2025?`<span><strong>${esc(js.jif2025)}</strong>JIF</span>`:''}
+        ${js.citeScore2025?`<span><strong>${esc(js.citeScore2025)}</strong>CiteScore</span>`:''}
+        ${js.quartile?`<span><strong>${esc(js.quartile)}</strong>Quartile</span>`:''}
+        ${js.snip2025?`<span><strong>${esc(js.snip2025)}</strong>SNIP</span>`:''}
+        ${js.sjr2025?`<span><strong>${esc(js.sjr2025)}</strong>SJR</span>`:''}
+        ${js.hIndex?`<span><strong>${esc(js.hIndex)}</strong>H-index</span>`:''}
+        ${js.jci2025?`<span><strong>${esc(js.jci2025)}</strong>JCI</span>`:''}
+        <small>${esc([js.publisher,js.onlineIssn?`Online ISSN: ${js.onlineIssn}`:'',js.indexing].filter(Boolean).join(' · '))}</small>
       </div>`:''}
       <div class="link-row">${links(linkObj)}</div>
     </article>`;
