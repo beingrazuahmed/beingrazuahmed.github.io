@@ -8316,3 +8316,201 @@ body,
     opacity:.34!important;
   }
 }
+
+
+/* === Academic Journey education intro · 2026-09-23 === */
+.academic-education-section{
+  position:relative;
+  overflow:hidden;
+}
+.academic-journey-intro{
+  width:min(760px,100%);
+  margin:4px auto 34px;
+  padding:26px 24px 22px;
+  text-align:center;
+  position:relative;
+}
+.academic-journey-intro::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:0;
+  width:min(540px,84%);
+  height:210px;
+  transform:translateX(-50%);
+  background:
+    radial-gradient(circle at 50% 35%,color-mix(in srgb,var(--accent) 12%,transparent),transparent 52%);
+  pointer-events:none;
+  filter:blur(1px);
+}
+.academic-journey-icons{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  gap:15px;
+  margin-bottom:20px;
+}
+.academic-journey-icon{
+  width:58px;
+  height:58px;
+  display:grid;
+  place-items:center;
+  border:1px solid color-mix(in srgb,var(--accent) 18%,var(--line));
+  border-radius:17px;
+  color:var(--accent);
+  background:
+    linear-gradient(180deg,color-mix(in srgb,var(--surface) 94%,transparent),color-mix(in srgb,var(--surface-2) 86%,transparent));
+  box-shadow:
+    0 14px 34px color-mix(in srgb,var(--accent) 10%,transparent),
+    inset 0 1px 0 rgba(255,255,255,.06);
+  -webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(10px);
+  transform-origin:center;
+}
+.academic-journey-icon .ui-icon{
+  width:27px;
+  height:27px;
+  stroke-width:1.8;
+}
+.academic-journey-icon-main{
+  width:74px;
+  height:74px;
+  border-radius:21px;
+  color:var(--accent-2);
+  background:
+    linear-gradient(180deg,color-mix(in srgb,var(--accent) 13%,var(--surface)),color-mix(in srgb,var(--surface) 94%,transparent));
+  box-shadow:
+    0 18px 42px color-mix(in srgb,var(--accent) 15%,transparent),
+    inset 0 1px 0 rgba(255,255,255,.08);
+  animation:academicJourneyFloat 5.8s ease-in-out infinite;
+}
+.academic-journey-icon-left{
+  transform:rotate(-8deg) translateY(2px);
+  animation:academicJourneyFloatLeft 6.8s ease-in-out infinite;
+}
+.academic-journey-icon-right{
+  transform:rotate(8deg) translateY(2px);
+  animation:academicJourneyFloatRight 7.2s ease-in-out infinite;
+}
+.academic-journey-pill{
+  position:relative;
+  z-index:1;
+  width:max-content;
+  max-width:100%;
+  margin:0 auto 14px;
+  padding:9px 16px;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  border:1px solid color-mix(in srgb,var(--accent) 20%,var(--line));
+  border-radius:999px;
+  background:color-mix(in srgb,var(--surface) 93%,transparent);
+  color:var(--text);
+  box-shadow:0 10px 24px color-mix(in srgb,var(--accent) 7%,transparent);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+  -webkit-backdrop-filter:blur(12px);
+  backdrop-filter:blur(12px);
+}
+.academic-journey-pulse{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 10%,transparent);
+  animation:academicJourneyPulse 2.2s ease-in-out infinite;
+}
+.academic-journey-intro h2{
+  position:relative;
+  z-index:1;
+  margin:0;
+  color:var(--text);
+  font-size:clamp(34px,4.4vw,58px);
+  line-height:.98;
+  letter-spacing:-.045em;
+}
+.academic-journey-intro p{
+  position:relative;
+  z-index:1;
+  max-width:620px;
+  margin:14px auto 0;
+  color:var(--muted);
+  font-size:clamp(14px,1.5vw,17px);
+  line-height:1.6;
+}
+.academic-journey-divider{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  width:min(190px,48%);
+  margin:22px auto 0;
+}
+.academic-journey-divider span{
+  height:1px;
+  flex:1;
+  background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--accent) 34%,var(--line)));
+}
+.academic-journey-divider span:last-child{
+  background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 34%,var(--line)),transparent);
+}
+.academic-journey-divider i{
+  width:10px;
+  height:10px;
+  border:2px solid color-mix(in srgb,var(--accent) 70%,var(--line));
+  border-radius:50%;
+  background:var(--surface);
+  box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 7%,transparent);
+}
+:root[data-mode="light"] .academic-journey-icon{
+  background:rgba(255,255,255,.86);
+  box-shadow:0 16px 36px rgba(60,116,156,.10);
+}
+:root[data-mode="light"] .academic-journey-icon-main{
+  background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 8%,white),rgba(255,255,255,.94));
+}
+:root[data-mode="dark"] .academic-journey-pill{
+  background:color-mix(in srgb,var(--surface) 91%,transparent);
+}
+.academic-journey-intro + .education-timeline{
+  margin-top:8px;
+}
+
+@keyframes academicJourneyFloat{
+  0%,100%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(-7px) scale(1.015)}
+}
+@keyframes academicJourneyFloatLeft{
+  0%,100%{transform:rotate(-8deg) translateY(2px)}
+  50%{transform:rotate(-5deg) translateY(-4px)}
+}
+@keyframes academicJourneyFloatRight{
+  0%,100%{transform:rotate(8deg) translateY(2px)}
+  50%{transform:rotate(5deg) translateY(-5px)}
+}
+@keyframes academicJourneyPulse{
+  0%,100%{transform:scale(1);opacity:.82}
+  50%{transform:scale(1.16);opacity:1}
+}
+
+@media(max-width:700px){
+  .academic-journey-intro{
+    padding:20px 8px 17px;
+    margin-bottom:26px;
+  }
+  .academic-journey-icons{gap:11px;margin-bottom:17px}
+  .academic-journey-icon{width:50px;height:50px;border-radius:15px}
+  .academic-journey-icon-main{width:64px;height:64px;border-radius:18px}
+  .academic-journey-icon .ui-icon{width:24px;height:24px}
+  .academic-journey-divider{width:min(170px,60%)}
+}
+@media(prefers-reduced-motion:reduce){
+  .academic-journey-icon,
+  .academic-journey-pulse{animation:none!important}
+}
