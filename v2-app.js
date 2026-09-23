@@ -1219,13 +1219,12 @@
   function initResearchConstellation(){
     if(document.getElementById('mraResearchConstellation')) return;
 
-    const host=document.querySelector('.hero-shell')||document.querySelector('.hero');
-    if(!host) return;
+    const host=document.body;
     host.classList.add('has-mra-constellation');
 
     const canvas=document.createElement('canvas');
     canvas.id='mraResearchConstellation';
-    canvas.className='mra-constellation';
+    canvas.className='mra-constellation mra-constellation-global';
     canvas.setAttribute('aria-hidden','true');
     canvas.setAttribute('role','presentation');
     host.prepend(canvas);
@@ -1236,61 +1235,63 @@
     const root=document.documentElement;
     const pageName=document.body.dataset.page||'home';
     const profiles={
-      home:{count:42,connect:154,speed:.075,anchors:5},
-      research:{count:36,connect:148,speed:.068,anchors:5},
-      network:{count:38,connect:152,speed:.068,anchors:5},
-      projects:{count:30,connect:144,speed:.062,anchors:4},
-      profile:{count:28,connect:142,speed:.060,anchors:4},
-      academic:{count:24,connect:138,speed:.054,anchors:3},
-      publications:{count:18,connect:132,speed:.048,anchors:3},
-      conferences:{count:16,connect:128,speed:.046,anchors:2},
-      resources:{count:14,connect:126,speed:.044,anchors:2},
-      default:{count:20,connect:134,speed:.050,anchors:3}
+      home:{count:86,connect:142,speed:.082,anchors:8,dust:42},
+      research:{count:78,connect:140,speed:.076,anchors:7,dust:38},
+      network:{count:80,connect:142,speed:.076,anchors:7,dust:40},
+      projects:{count:72,connect:138,speed:.070,anchors:6,dust:34},
+      profile:{count:68,connect:136,speed:.068,anchors:6,dust:32},
+      academic:{count:74,connect:138,speed:.068,anchors:7,dust:36},
+      publications:{count:62,connect:132,speed:.060,anchors:5,dust:30},
+      conferences:{count:60,connect:132,speed:.060,anchors:5,dust:30},
+      resources:{count:58,connect:130,speed:.058,anchors:5,dust:28},
+      recognition:{count:58,connect:130,speed:.058,anchors:5,dust:28},
+      experience:{count:64,connect:134,speed:.062,anchors:5,dust:30},
+      languages:{count:58,connect:130,speed:.058,anchors:5,dust:28},
+      default:{count:62,connect:132,speed:.060,anchors:5,dust:30}
     };
     const profile=profiles[pageName]||profiles.default;
-
     const motionMedia=window.matchMedia('(prefers-reduced-motion: reduce)');
-    let width=0,height=0,dpr=1,nodes=[],raf=0,last=0,isVisible=true;
+
+    let width=0,height=0,dpr=1,nodes=[],dust=[],raf=0,last=0,isVisible=!document.hidden;
     const pointer={x:0,y:0,active:false};
     const reduced=()=>root.dataset.motion==='reduced'||motionMedia.matches;
 
+    function random(min,max){return min+Math.random()*(max-min);}
+
     function seed(){
       const mobile=width<720;
-      const count=Math.max(10,Math.round(profile.count*(mobile ? .55 : 1)));
-      const anchorCount=Math.min(profile.anchors,Math.max(2,Math.round(count/8)));
-      const anchors=[];
+      const tablet=width<1050;
+      const density=mobile?.47:(tablet?.72:1);
+      const count=Math.max(26,Math.round(profile.count*density));
+      const dustCount=Math.max(14,Math.round(profile.dust*density));
+      const anchorCount=Math.max(3,Math.round(profile.anchors*(mobile?.6:1)));
 
-      for(let i=0;i<anchorCount;i++){
-        const cols=Math.ceil(Math.sqrt(anchorCount));
-        const rows=Math.ceil(anchorCount/cols);
-        const col=i%cols,row=Math.floor(i/cols);
-        anchors.push({
-          x:((col+.5)/cols)*width+(Math.random()-.5)*Math.min(80,width*.07),
-          y:((row+.5)/rows)*height+(Math.random()-.5)*Math.min(70,height*.08)
-        });
-      }
+      nodes=Array.from({length:count},(_,i)=>({
+        x:random(0,width),
+        y:random(0,height),
+        vx:random(-profile.speed,profile.speed),
+        vy:random(-profile.speed*.78,profile.speed*.78),
+        r:i<anchorCount?random(2.15,2.8):random(.85,1.65),
+        anchor:i<anchorCount,
+        phase:random(0,Math.PI*2),
+        pulseSeed:random(0,1)
+      }));
 
-      nodes=Array.from({length:count},(_,i)=>{
-        const anchor=i<anchorCount;
-        const cluster=anchors[i%anchorCount];
-        const angle=Math.random()*Math.PI*2;
-        const radius=anchor ? 0 : Math.min(width,height)*(.055+Math.random()*.18);
-        return {
-          x:Math.max(16,Math.min(width-16,cluster.x+Math.cos(angle)*radius)),
-          y:Math.max(16,Math.min(height-16,cluster.y+Math.sin(angle)*radius)),
-          vx:(Math.random()-.5)*profile.speed,
-          vy:(Math.random()-.5)*profile.speed,
-          r:anchor?2.45:1.15+Math.random()*.75,
-          anchor,
-          phase:Math.random()*Math.PI*2
-        };
-      });
+      dust=Array.from({length:dustCount},()=>({
+        x:random(0,width),
+        y:random(0,height),
+        vx:random(-.025,.025),
+        vy:random(-.018,.018),
+        r:random(.45,1.05),
+        alpha:random(.08,.24),
+        phase:random(0,Math.PI*2)
+      }));
     }
 
     function resize(){
-      dpr=Math.min(window.devicePixelRatio||1,2);
-      width=Math.max(1,host.clientWidth);
-      height=Math.max(1,host.clientHeight);
+      dpr=Math.min(window.devicePixelRatio||1,1.65);
+      width=Math.max(1,window.innerWidth);
+      height=Math.max(1,window.innerHeight);
       canvas.width=Math.round(width*dpr);
       canvas.height=Math.round(height*dpr);
       canvas.style.width=width+'px';
@@ -1299,11 +1300,24 @@
       seed();
     }
 
-    function colors(){
+    function palette(){
       const dark=root.dataset.mode==='dark';
+      const theme=root.dataset.theme||'scientific';
+      if(theme==='mono'){
+        return dark
+          ? {line:[158,174,188],node:[214,225,235],anchor:[238,245,250],dust:[190,204,216]}
+          : {line:[95,108,120],node:[65,77,89],anchor:[25,35,45],dust:[90,104,117]};
+      }
       return dark
-        ? {line:[116,170,205],node:[132,214,247],anchor:[169,226,250]}
-        : {line:[90,132,166],node:[46,151,207],anchor:[22,115,176]};
+        ? {line:[73,159,210],node:[96,200,245],anchor:[170,229,255],dust:[126,188,222]}
+        : {line:[66,139,184],node:[35,146,205],anchor:[15,104,164],dust:[70,128,164]};
+    }
+
+    function wrap(p){
+      if(p.x<-24)p.x=width+24;
+      else if(p.x>width+24)p.x=-24;
+      if(p.y<-24)p.y=height+24;
+      else if(p.y>height+24)p.y=-24;
     }
 
     function advanceNode(n){
@@ -1313,73 +1327,108 @@
       if(pointer.active){
         const dx=n.x-pointer.x,dy=n.y-pointer.y;
         const dist=Math.hypot(dx,dy);
-        const range=135;
+        const range=170;
         if(dist>0&&dist<range){
-          const force=(1-dist/range)*(n.anchor ? .008 : .014);
+          const force=(1-dist/range)*(n.anchor?.060:.040);
           n.x+=(dx/dist)*force;
           n.y+=(dy/dist)*force;
         }
       }
+      wrap(n);
+    }
 
-      if(n.x<-20)n.x=width+20;
-      else if(n.x>width+20)n.x=-20;
-      if(n.y<-20)n.y=height+20;
-      else if(n.y>height+20)n.y=-20;
+    function advanceDust(p){
+      p.x+=p.vx;
+      p.y+=p.vy;
+      wrap(p);
     }
 
     function draw(time,advance){
       ctx.clearRect(0,0,width,height);
-      const palette=colors();
-      const connect=width<720?profile.connect*.80:profile.connect;
+      const colors=palette();
+      const mobile=width<720;
+      const connect=profile.connect*(mobile?.76:1);
 
-      if(advance) nodes.forEach(advanceNode);
+      if(advance){
+        nodes.forEach(advanceNode);
+        dust.forEach(advanceDust);
+      }
 
+      // Fine ambient particles add depth without competing with content.
+      dust.forEach(p=>{
+        const shimmer=reduced()?1:(.82+.18*Math.sin(time*.00042+p.phase));
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fillStyle=`rgba(${colors.dust[0]},${colors.dust[1]},${colors.dust[2]},${(p.alpha*shimmer).toFixed(3)})`;
+        ctx.fill();
+      });
+
+      // Network web.
       for(let i=0;i<nodes.length;i++){
+        const a=nodes[i];
         for(let j=i+1;j<nodes.length;j++){
-          const a=nodes[i],b=nodes[j];
+          const b=nodes[j];
           const dx=a.x-b.x,dy=a.y-b.y,dist=Math.hypot(dx,dy);
           if(dist>=connect) continue;
 
           const strength=1-dist/connect;
           const anchorLink=a.anchor||b.anchor;
-          const alpha=(anchorLink ? .22 : .14)*strength;
+          const alpha=(anchorLink?.145:.082)*strength;
 
           ctx.beginPath();
           ctx.moveTo(a.x,a.y);
           ctx.lineTo(b.x,b.y);
-          ctx.strokeStyle=`rgba(${palette.line[0]},${palette.line[1]},${palette.line[2]},${alpha.toFixed(3)})`;
-          ctx.lineWidth=anchorLink ? .95 : .78;
+          ctx.strokeStyle=`rgba(${colors.line[0]},${colors.line[1]},${colors.line[2]},${alpha.toFixed(3)})`;
+          ctx.lineWidth=anchorLink?.9:.64;
           ctx.stroke();
 
-          if((i*17+j*11)%43===0&&!reduced()){
-            const t=((time*.000020)+((i+j)%13)/13)%1;
-            const x=a.x+(b.x-a.x)*t;
-            const y=a.y+(b.y-a.y)*t;
+          // Sparse moving signal pulse along selected links.
+          if(!reduced()&&((i*19+j*13)%67===0)){
+            const t=((time*.000026)+a.pulseSeed)%1;
+            const px=a.x+(b.x-a.x)*t;
+            const py=a.y+(b.y-a.y)*t;
             ctx.beginPath();
-            ctx.arc(x,y,1.2,0,Math.PI*2);
-            ctx.fillStyle=`rgba(${palette.node[0]},${palette.node[1]},${palette.node[2]},.34)`;
+            ctx.arc(px,py,1.25,0,Math.PI*2);
+            ctx.fillStyle=`rgba(${colors.anchor[0]},${colors.anchor[1]},${colors.anchor[2]},.38)`;
             ctx.fill();
           }
         }
       }
 
+      // Nodes.
       nodes.forEach(n=>{
-        const pulse=(n.anchor&&!reduced()) ? .82+.10*Math.sin(time*.00055+n.phase) : 1;
-        const col=n.anchor?palette.anchor:palette.node;
+        const pulse=(n.anchor&&!reduced()) ? .92+.10*Math.sin(time*.00062+n.phase) : 1;
+        const col=n.anchor?colors.anchor:colors.node;
 
         if(n.anchor){
           ctx.beginPath();
-          ctx.arc(n.x,n.y,(n.r+3.2)*pulse,0,Math.PI*2);
-          ctx.strokeStyle=`rgba(${col[0]},${col[1]},${col[2]},.18)`;
-          ctx.lineWidth=.85;
+          ctx.arc(n.x,n.y,(n.r+4.6)*pulse,0,Math.PI*2);
+          ctx.strokeStyle=`rgba(${col[0]},${col[1]},${col[2]},.105)`;
+          ctx.lineWidth=.8;
           ctx.stroke();
+
+          ctx.beginPath();
+          ctx.arc(n.x,n.y,(n.r+8.5)*pulse,0,Math.PI*2);
+          ctx.fillStyle=`rgba(${col[0]},${col[1]},${col[2]},.025)`;
+          ctx.fill();
         }
 
         ctx.beginPath();
-        ctx.arc(n.x,n.y,n.r*(n.anchor?pulse:1),0,Math.PI*2);
-        ctx.fillStyle=`rgba(${col[0]},${col[1]},${col[2]},${n.anchor ? .48 : .32})`;
+        ctx.arc(n.x,n.y,n.r*pulse,0,Math.PI*2);
+        ctx.fillStyle=`rgba(${col[0]},${col[1]},${col[2]},${n.anchor?.44:.25})`;
         ctx.fill();
       });
+
+      // Very light pointer halo keeps the motion responsive but restrained.
+      if(pointer.active&&!reduced()){
+        const gradient=ctx.createRadialGradient(pointer.x,pointer.y,0,pointer.x,pointer.y,150);
+        gradient.addColorStop(0,`rgba(${colors.node[0]},${colors.node[1]},${colors.node[2]},.035)`);
+        gradient.addColorStop(1,`rgba(${colors.node[0]},${colors.node[1]},${colors.node[2]},0)`);
+        ctx.fillStyle=gradient;
+        ctx.beginPath();
+        ctx.arc(pointer.x,pointer.y,150,0,Math.PI*2);
+        ctx.fill();
+      }
     }
 
     function loop(time){
@@ -1399,27 +1448,27 @@
     }
 
     function onPointerMove(e){
-      const rect=host.getBoundingClientRect();
-      pointer.x=e.clientX-rect.left;
-      pointer.y=e.clientY-rect.top;
-      pointer.active=pointer.x>=0&&pointer.x<=rect.width&&pointer.y>=0&&pointer.y<=rect.height;
+      pointer.x=e.clientX;
+      pointer.y=e.clientY;
+      pointer.active=true;
     }
 
-    window.addEventListener('resize',()=>{resize();restart();},{passive:true});
-    host.addEventListener('pointermove',onPointerMove,{passive:true});
-    host.addEventListener('pointerleave',()=>{pointer.active=false;},{passive:true});
+    function onPointerLeave(){pointer.active=false;}
+
+    let resizeTimer=0;
+    window.addEventListener('resize',()=>{
+      clearTimeout(resizeTimer);
+      resizeTimer=setTimeout(()=>{resize();restart();},100);
+    },{passive:true});
+    window.addEventListener('pointermove',onPointerMove,{passive:true});
+    document.addEventListener('mouseleave',onPointerLeave,{passive:true});
+    window.addEventListener('blur',onPointerLeave,{passive:true});
+
     document.addEventListener('visibilitychange',()=>{
       isVisible=!document.hidden;
       if(isVisible) restart();
       else{cancelAnimationFrame(raf);raf=0;}
     });
-
-    if('IntersectionObserver' in window){
-      new IntersectionObserver(entries=>{
-        isVisible=entries.some(entry=>entry.isIntersecting);
-        restart();
-      },{threshold:0}).observe(host);
-    }
 
     new MutationObserver(restart).observe(root,{attributes:true,attributeFilter:['data-mode','data-motion','data-theme']});
     if(typeof motionMedia.addEventListener==='function') motionMedia.addEventListener('change',restart);
