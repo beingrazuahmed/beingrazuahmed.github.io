@@ -9950,3 +9950,19 @@ body[data-page="dashboard"] .dashboard-metric-meta{
   }
 }
 
+/* === PlumX impact provenance · 2026-09-23 === */
+body[data-page="dashboard"] .dashboard-impact-system{display:block;width:100%;margin-top:10px;padding-top:9px;border-top:1px solid color-mix(in srgb,var(--accent) 10%,var(--line));color:var(--muted);font-size:.78rem;line-height:1.45}
+body[data-page="dashboard"] .dashboard-impact-system span{margin-right:5px;font-weight:700;color:var(--muted)}
+body[data-page="dashboard"] .dashboard-impact-system strong{display:inline;margin:0;font-size:inherit;line-height:inherit;color:var(--text)}
+.dashboard-impact-provenance{display:grid;grid-template-columns:minmax(210px,.7fr) minmax(0,1.8fr) auto;gap:18px 24px;align-items:center;margin-top:18px;padding:18px 20px;border:1px solid color-mix(in srgb,var(--accent) 13%,var(--line));border-radius:16px;background:color-mix(in srgb,var(--surface-2) 42%,var(--surface))}
+.dashboard-impact-provenance .section-kicker{display:block;margin-bottom:5px;font-size:10px}
+.dashboard-impact-provenance>div>strong{display:block;font-size:14px;color:var(--text)}
+.dashboard-impact-provenance p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}
+.dashboard-impact-links{display:flex;flex-direction:column;gap:7px;align-items:flex-start}
+.dashboard-impact-links a,.dataset-impact-row a{color:var(--accent);font-size:12px;font-weight:800;text-decoration:none}
+.dataset-impact-row{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:12px;padding:12px 14px;border:1px solid color-mix(in srgb,var(--accent) 10%,var(--line));border-radius:13px;background:color-mix(in srgb,var(--surface-2) 38%,var(--surface))}
+.dataset-impact-row span{display:block;margin-bottom:4px;color:var(--muted);font-size:9.5px;font-weight:900;letter-spacing:.075em;text-transform:uppercase}
+.dataset-impact-row strong{display:block;font-size:12.5px;line-height:1.4}
+@media(max-width:900px){.dashboard-impact-provenance{grid-template-columns:1fr}.dashboard-impact-links{flex-direction:row;flex-wrap:wrap}}
+@media(max-width:620px){.dataset-impact-row{align-items:flex-start;flex-direction:column}}
+
