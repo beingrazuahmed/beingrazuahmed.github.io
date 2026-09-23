@@ -1,5 +1,5 @@
 window.PORTFOLIO_EXTRA = {
-  lastUpdated: "16 September 2026",
+  lastUpdated: "23 September 2026",
   impactMetrics: [
     { label: "Google Scholar citations", value: 2, source: "Google Scholar", date: "15 September 2026" },
     { label: "ResearchGate citations", value: 5, source: "ResearchGate", date: "15 September 2026" },
@@ -10,6 +10,7 @@ window.PORTFOLIO_EXTRA = {
     { label: "Dataset downloads", value: 47, source: "Mendeley Data", date: "15 September 2026" }
   ],
   latestUpdates: [
+    { date: "23 Sep 2026", type: "Publication", title: "Data in Brief final article published in Volume 69", detail: "PUST Cafeteria Food Image Dataset published in Data in Brief, Volume 69 (2026), Article 113262, with its final ScienceDirect record." },
     { date: "16 Sep 2026", type: "Portfolio", title: "Dynamic academic portfolio build initiated", detail: "Structured research, conference, service, network and evidence data connected to the public portfolio." },
     { date: "13 Sep 2026", type: "Publication", title: "Data in Brief article available online", detail: "PUST Cafeteria Food Image Dataset became available online as a Journal Pre-proof, Article 113262." },
     { date: "10 Sep 2026", type: "Publication", title: "Data in Brief article accepted", detail: "PUST Cafeteria Food Image Dataset accepted for publication in Data in Brief." },
