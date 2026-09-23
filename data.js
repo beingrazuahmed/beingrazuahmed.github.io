@@ -65,13 +65,19 @@ window.PORTFOLIO_DATA = {
       visual: "assets/publications/ckd/feature-importance.png"
     },
     {
-      id: "dib", type: "Journal Article", status: "Available Online · Journal Pre-proof", year: 2026, role: "Second Author",
+      id: "dib", type: "Journal Article", status: "Published", year: 2026, role: "Second Author",
       title: "PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations",
-      venue: "Data in Brief", citation: "Data in Brief, Article 113262",
+      venue: "Data in Brief", citation: "Data in Brief, Volume 69, 2026, Article 113262",
+      authors: "Marufa Yeasmin, Md. Razu Ahmed, Protiva Rani Kundu, Jannatul Mauya, Md. Shamim Reza",
+      volume: "69",
+      articleNumber: "113262",
+      issn: "2352-3409",
       doi: "https://doi.org/10.1016/j.dib.2026.113262",
+      sciencedirect: "https://www.sciencedirect.com/science/article/pii/S2352340926008097",
       researchgate: "https://www.researchgate.net/publication/414270604_PUST_Cafeteria_Food_Image_Dataset_Real-World_Bangladeshi_Meal-Platter_Images_with_Bounding-Box_and_Polygon_Annotations",
+      googleScholar: "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=PUST+Cafeteria+Food+Image+Dataset%3A+Real-World+Bangladeshi+Meal-Platter+Images+with+Bounding-Box+and+Polygon+Annotations&btnG=",
       dataset: "https://doi.org/10.17632/fn6yhzjz83.2",
-      tags: ["Food Computing", "Object Detection", "Instance Segmentation", "Dataset"],
+      tags: ["Bangladeshi Food", "Food Image Dataset", "Object Detection", "Instance Segmentation", "YOLO Annotations", "COCO Annotations"],
       summary: "A real-world Bangladeshi cafeteria food-image resource with bounding-box and polygon annotations for object detection and instance segmentation.",
       highlight: "720 source photographs yielded 1,728 processed images with 6,297 annotated instances across 16 classes.",
       visual: "assets/publications/data-in-brief/figure-5-annotations.png"
