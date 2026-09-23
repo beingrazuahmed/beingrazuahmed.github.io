@@ -706,7 +706,7 @@
       { value: '3', label: 'Published / Online Articles' },
       { value: '1', label: 'Accepted / Forthcoming' },
       { value: '8', label: 'Under Review' },
-      { value: '7', label: 'In Preparation' },
+      { value: String((extra.ongoing || []).length), label: 'In Preparation' },
       { value: '8', label: 'Conference Contributions' },
       { value: '32', label: 'Completed Peer Reviews' },
       { value: '1', label: 'Public Dataset' }
