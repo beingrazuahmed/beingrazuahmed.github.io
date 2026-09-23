@@ -321,7 +321,7 @@
       headline: 'Associate Professor · Head, STAANS Lab · Academic Guest Teacher',
       roles: ['Academic Guest Teacher', 'Academic Mentor', 'Senior Academic Guidance', 'Associate Professor', 'Head, STAANS Lab'],
       affiliation: 'Statistics Discipline, Kabi Jibanananda Das Academic Building, Room No. 3160, Khulna University, Khulna-9208, Bangladesh',
-      description: 'Associate Professor at Khulna University who taught Advanced Multivariate Analysis during Md. Razu Ahmed’s M.S. programme and has continued to support his academic and research development through encouragement, constructive guidance and perspectives on statistical and machine-learning research.',
+      description: 'Associate Professor at Khulna University who taught Advanced Multivariate Analysis during Md. Razu Ahmed’s M.S. programme and has continued to support and actively motivate his academic and research development through encouragement, constructive guidance and perspectives on statistical and machine-learning research.',
       biography: 'Dr. Md. Menhazul Abedin is an Associate Professor in the Statistics Discipline at Khulna University and Head of the Statistical Theory and Analysis on Natural Sciences Laboratory (STAANS Lab). He received his PhD from Hokkaido University, Japan, where his doctoral research focused on multi-armed and contextual bandit algorithms for sequential experiments, dynamic feature selection and molecule-search applications. His broader research spans reinforcement learning, machine learning, bioinformatics, public health and interdisciplinary statistical applications.',
       portrait: 'assets/academic/instructors/menhazul-abedin.jpg?v=20260918-network24',
       currentRoleLabel: 'Current academic roles',
@@ -395,7 +395,7 @@
       ],
       relationship: {
         title: 'M.S. academic guest teacher & continuing mentor',
-        detail: 'Dr. Md. Menhazul Abedin taught Advanced Multivariate Analysis during Md. Razu Ahmed’s M.S. programme and has continued to encourage his research journey. He has shown particular appreciation for Razu’s FastICA-based audio source separation work, often affectionately referring to him as “ICA Razu”.'
+        detail: 'Dr. Md. Menhazul Abedin taught Advanced Multivariate Analysis during Md. Razu Ahmed’s M.S. programme and has continued to encourage and actively motivate him to pursue research. His constructive guidance, appreciation of Razu’s research efforts and enthusiasm for his development have been especially meaningful. He has shown particular appreciation for Razu’s FastICA-based audio source separation work, often affectionately referring to him as “ICA Razu”.'
       },
       relationshipPath: [
         'M.S. Advanced Multivariate Analysis',
@@ -407,11 +407,11 @@
       email: 'menhaz@stat.ku.ac.bd',
       additionalEmail: 'menhaz70@gmail.com',
       links: [
-        { label: 'KU Profile', url: 'https://ku.ac.bd/discipline/stat/faculty/menhaz70' },
+        { label: 'Khulna University', url: 'https://ku.ac.bd/discipline/stat/faculty/menhaz70' },
         { label: 'Google Scholar', url: 'https://scholar.google.com/citations?hl=en&user=T751PSwAAAAJ' },
         { label: 'ORCID', url: 'https://orcid.org/0000-0002-5293-4636' },
         { label: 'Scopus', url: 'https://www.scopus.com/authid/detail.uri?authorId=57195631682' },
-        { label: 'STAANS Lab', url: 'https://staansl.blogspot.com/' },
+        { label: 'STAANS Lab Blog', url: 'https://staansl.blogspot.com/' },
         { label: 'AD Scientific Index', url: 'https://adscientificindex.com/scientist/md-menhazul-abedinabedin-md-menhazul-abedin-mm-mm-abedin/1967701/' }
       ]
     },
