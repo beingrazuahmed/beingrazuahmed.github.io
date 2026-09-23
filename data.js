@@ -60,6 +60,13 @@ window.PORTFOLIO_DATA = {
       title: "Identification of Predisposing Risk Factors for Chronic Kidney Disease and Optimizing Disease Prediction Using a Stacking Machine Learning Algorithm",
       venue: "International Journal of Statistical Sciences", citation: "International Journal of Statistical Sciences, 25(2), 1–32",
       doi: "https://doi.org/10.3329/ijss.v25i2.85732",
+      indexingDiscovery: [
+        "ICI World of Journals · ICV indicator 2024: 68.51",
+        "Eurasian Scientific Journal Index (ESJI)",
+        "Statistical Theory and Method Abstract, International Statistical Institute",
+        "Bangladesh Journals Online (BanglaJOL)",
+        "Bangladesh National Scientific and Technical Documentation Centre (BANSDOC)"
+      ],
       tags: ["CKD", "Machine Learning", "Stacking", "Feature Selection"],
       summary: "A leakage-aware machine-learning workflow for CKD risk-factor identification and predictive modelling using feature-selection consensus and stacked learners.",
       highlight: "The proposed stacking approach reported 100% accuracy on the UCI CKD data and 96.7% on simulated validation data.",
