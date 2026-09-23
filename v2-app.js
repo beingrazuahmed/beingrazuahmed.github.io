@@ -600,7 +600,9 @@
   function selectedWorkCard(p,index){
     const id=(p.id||'').toLowerCase();
     const map={
-      fastica:{title:'FastICA Audio Source Separation',category:'Signal Processing',detail:'Reproducible blind-source separation with FastICA, PCA and NMF benchmarking.'},
+      fastica:{title:'FastICA Audio Source Separation',category:'Signal Processing',detail:'Published in Engineering Reports: reproducible blind-source separation with FastICA, PCA and NMF benchmarking.'},
+      ckd:{title:'CKD Risk Factors & Stacking ML',category:'Biomedical Data Science',detail:'Published in International Journal of Statistical Sciences: risk-factor analysis and stacked machine-learning prediction.'},
+      dib:{title:'PUST Cafeteria Food Image Dataset',category:'Food Computing',detail:'Published in Data in Brief: a real-world Bangladeshi meal-platter image resource with detection and segmentation annotations.'},
       dr:{title:'Diabetic Retinopathy Grading',category:'Medical AI',detail:'Deep-handcrafted feature fusion with DenseNet121, SIFT-BoVW, XGBoost and Grad-CAM++.'},
       'dengue-forecast':{title:'Nationwide Dengue Forecasting',category:'Public Health AI',detail:'District-informed one-week-ahead forecasting of dengue hospital admissions across Bangladesh.'}
     };
