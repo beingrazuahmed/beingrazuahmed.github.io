@@ -32,6 +32,19 @@
       social: [
         { label: 'ResearchGate', url: 'https://www.researchgate.net/publication/398787461_Identification_of_Predisposing_Risk_Factors_for_Chronic_Kidney_Disease_and_Optimizing_Disease_Prediction_Using_a_Stacking_Machine_Learning_Algorithm' }
       ]
+    },
+    dib: {
+      primary: [
+        { label: 'ScienceDirect', url: 'https://www.sciencedirect.com/science/article/pii/S2352340926008097' },
+        { label: 'DOI', url: 'https://doi.org/10.1016/j.dib.2026.113262' },
+        { label: 'Dataset', url: 'https://doi.org/10.17632/fn6yhzjz83.2' }
+      ],
+      discovery: [
+        { label: 'Google Scholar', url: 'https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=PUST+Cafeteria+Food+Image+Dataset%3A+Real-World+Bangladeshi+Meal-Platter+Images+with+Bounding-Box+and+Polygon+Annotations&btnG=' }
+      ],
+      social: [
+        { label: 'ResearchGate', url: 'https://www.researchgate.net/publication/414270604_PUST_Cafeteria_Food_Image_Dataset_Real-World_Bangladeshi_Meal-Platter_Images_with_Bounding-Box_and_Polygon_Annotations' }
+      ]
     }
   };
 
