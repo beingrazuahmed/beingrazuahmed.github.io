@@ -3,11 +3,11 @@ window.PORTFOLIO_EXTRA = {
   impactMetrics: [
     { label: "Google Scholar citations", value: 2, source: "Google Scholar", date: "15 September 2026" },
     { label: "ResearchGate citations", value: 5, source: "ResearchGate", date: "15 September 2026" },
-    { label: "ResearchGate Research Interest", value: 9.5, source: "ResearchGate", date: "12 September 2026" },
+    { label: "Research Interest Score", value: 9.8, source: "ResearchGate", date: "23 September 2026" },
     { label: "h-index", value: 1, source: "Google Scholar / ResearchGate", date: "15 September 2026" },
-    { label: "Dataset usage", value: 128, source: "Mendeley Data", date: "15 September 2026" },
-    { label: "Dataset views", value: 81, source: "Mendeley Data", date: "15 September 2026" },
-    { label: "Dataset downloads", value: 47, source: "Mendeley Data", date: "15 September 2026" }
+    { label: "Usage", value: 184, source: "Mendeley Data", date: "23 September 2026" },
+    { label: "Views", value: 106, source: "Mendeley Data", date: "23 September 2026" },
+    { label: "Downloads", value: 78, source: "Mendeley Data", date: "23 September 2026" }
   ],
   latestUpdates: [
     { date: "23 Sep 2026", type: "Publication", title: "Data in Brief final article published in Volume 69", detail: "PUST Cafeteria Food Image Dataset published in Data in Brief, Volume 69 (2026), Article 113262, with its final ScienceDirect record." },

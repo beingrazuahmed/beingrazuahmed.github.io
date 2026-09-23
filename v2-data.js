@@ -673,11 +673,7 @@
     { title: 'CV / Research Vault', href: 'cv.html', detail: 'Interactive CV and public academic evidence.' }
   ];
 
-  const updatedImpact = (extra.impactMetrics || []).map(m =>
-    m.label === 'ResearchGate Research Interest'
-      ? { ...m, value: 9.6, date: '17 September 2026' }
-      : m
-  );
+  const updatedImpact = extra.impactMetrics || [];
 
   const publishedArticles=(base.publications||[]).filter(p=>!p.status?.toLowerCase().includes('accepted'));
   const acceptedArticles=(base.publications||[]).filter(p=>p.status?.toLowerCase().includes('accepted'));
@@ -690,7 +686,7 @@
 
   window.MRA_V2 = {
     version: '3.0',
-    lastUpdated: '19 September 2026',
+    lastUpdated: '23 September 2026',
     brand: {
       monogram: 'MRA',
       name: 'Md. Razu Ahmed',
