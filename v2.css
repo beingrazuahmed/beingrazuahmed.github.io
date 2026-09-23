@@ -10738,3 +10738,33 @@ body[data-page="network-profile"] .mentor-conference-groups.compact li{
 :root[data-mode="dark"] .mentor-profile-link.is-ru .mentor-profile-link-icon{
   background:#fff!important;
 }
+
+/* === Network-card academic relationship note · 2026-09-23 === */
+.network-person-relationship-note{
+  margin-top:12px;
+  padding:11px 12px;
+  border:1px solid color-mix(in srgb,var(--accent) 13%,var(--line));
+  border-radius:12px;
+  background:color-mix(in srgb,var(--accent) 4%,var(--surface-2));
+}
+.network-person-relationship-note>span{
+  display:block;
+  margin-bottom:4px;
+  color:var(--accent);
+  font-size:9.5px;
+  font-weight:900;
+  letter-spacing:.065em;
+  text-transform:uppercase;
+}
+.network-person-relationship-note>p{
+  margin:0;
+  color:var(--text);
+  font-size:11.5px;
+  line-height:1.58;
+  font-weight:650;
+}
+.mentor-profile-link.is-ru .mentor-profile-link-icon img{
+  object-fit:contain;
+  width:22px;
+  height:22px;
+}

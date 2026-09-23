@@ -310,7 +310,7 @@
       email: 'aminul@ru.ac.bd',
       additionalEmail: 'mdaminulh@gmail.com',
       links: [
-        { label: 'RU Profile', url: 'https://profile.ru.ac.bd/public/profile/00608' },
+        { label: 'RU Profile', url: 'https://profile.ru.ac.bd/public/profile/00608', icon: 'assets/academic/journals/ijss/ru-logo.webp?v=20260923-ru2' },
         { label: 'Google Scholar', url: 'https://scholar.google.com/citations?user=TuzbEhAAAAAJ&hl=en' },
         { label: 'Scopus', url: 'https://www.scopus.com/authid/detail.uri?authorId=59157780100' },
         { label: 'AD Scientific Index', url: 'https://adscientificindex.com/scientist/md-aminul-hoque/402952/' }
