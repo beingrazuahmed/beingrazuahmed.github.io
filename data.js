@@ -162,7 +162,7 @@ window.PORTFOLIO_DATA = {
 
   manuscripts: [
     {
-      id: "dr", status: "Submitted / Under Review", role: "First Author",
+      id: "dr", status: "With Editor", role: "First Author",
       title: "A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images",
       venue: "Measurement", tags: ["Medical Imaging", "Deep Learning", "Feature Fusion", "Explainable AI"],
       summary: "A five-stage leak-safe validation framework combining deep representations, handcrafted descriptors and explainable modelling for diabetic-retinopathy grading.",
@@ -170,7 +170,7 @@ window.PORTFOLIO_DATA = {
       visual: "assets/manuscripts/dr-grading/workflow.png"
     },
     {
-      id: "hcv", status: "Submitted / Under Review", role: "Second Author",
+      id: "hcv", status: "With Editor", role: "Second Author",
       title: "Comparative Evaluation of Hybrid MICE–Median Missing-Value Reconstruction and Downstream Hepatitis C Prediction Using Machine Learning",
       venue: "BMC Medical Informatics and Decision Making", tags: ["Missing Data", "HCV", "Machine Learning", "MICE"],
       summary: "A rigorous comparison of missing-data reconstruction strategies and their downstream impact on hepatitis-C prediction and severity estimation.",
@@ -178,7 +178,7 @@ window.PORTFOLIO_DATA = {
       visual: "assets/manuscripts/hcv/methodology.png"
     },
     {
-      id: "dengue-forecast", status: "Under Peer Review", role: "Second Author",
+      id: "dengue-forecast", status: "Under Review", role: "Second Author",
       title: "Nationwide Evaluation of District-Informed Bottom-Up and Direct National Approaches for One-Week-Ahead Forecasting of Dengue Hospital Admissions in Bangladesh",
       venue: "BMC Public Health", tags: ["Dengue", "Forecasting", "LightGBM", "Public Health"],
       summary: "A temporally locked nationwide comparison of district-informed bottom-up and direct national one-week-ahead dengue admission forecasts across all 64 districts of Bangladesh.",
@@ -186,7 +186,7 @@ window.PORTFOLIO_DATA = {
       visual: "assets/manuscripts/dengue-forecasting/workflow.png"
     },
     {
-      id: "beyond-burden", status: "Submitted / Under Review", role: "Joint First Author · Co-corresponding Author",
+      id: "beyond-burden", status: "Under Review", role: "Joint First Author · Co-corresponding Author",
       title: "Beyond Burden: Testing the Incremental Decision Value of Operational Readiness for Dengue Preparedness in Bangladesh",
       venue: "Scientific Reports", tags: ["Dengue Preparedness", "Operational Readiness", "Decision Emulation"],
       summary: "A nationwide code-locked retrospective decision-emulation study testing whether operational readiness adds actionable value to district prioritization beyond epidemiological and structural information.",
@@ -194,7 +194,7 @@ window.PORTFOLIO_DATA = {
       visual: "assets/manuscripts/beyond-burden/workflow.png"
     },
     {
-      id: "food-billing", status: "Submitted / Under Review", role: "Third Author",
+      id: "food-billing", status: "Under Review", role: "Third Author",
       title: "Real-Time Food Detection for Automated Cafeteria Billing Using RT-DETR and GAN-Based Data Augmentation",
       venue: "Discover Artificial Intelligence", tags: ["RT-DETR", "GAN", "Food Detection", "Automated Billing"],
       summary: "A real-time cafeteria billing framework benchmarking RT-DETR-L, YOLO and Faster R-CNN and evaluating Pix2Pix GAN augmentation.",
@@ -202,7 +202,7 @@ window.PORTFOLIO_DATA = {
       visual: "assets/manuscripts/cafeteria-billing/workflow.png"
     },
     {
-      id: "sentiment", status: "Submitted / Under Review", role: "Fourth Author",
+      id: "sentiment", status: "Under Revision", role: "Fourth Author",
       title: "Adaptive Probability Fusion of Lightweight Recurrent Networks for Cross-Domain Sentiment Classification",
       venue: "Applied AI Letters", tags: ["NLP", "Sentiment Analysis", "RNN", "BiLSTM"],
       summary: "A lightweight cross-domain sentiment-classification framework using RNN and BiLSTM probability fusion across social-media and movie-review datasets.",
@@ -210,7 +210,7 @@ window.PORTFOLIO_DATA = {
       visual: "assets/manuscripts/sentiment/workflow.png"
     },
     {
-      id: "academic-performance", status: "Submitted / Under Review", role: "Second Author",
+      id: "academic-performance", status: "Awaiting Admin Processing", role: "Second Author",
       title: "Factors Associated with Undergraduates Academic Performance Among Public University Students: A Case Study",
       venue: "International Journal of Educational Reform", tags: ["Higher Education", "Ordinal Regression", "Student Engagement"],
       summary: "A cross-sectional analysis of academic performance, student engagement and rural–urban background among public-university students in Bangladesh.",
