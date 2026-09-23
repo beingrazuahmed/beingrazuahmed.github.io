@@ -1475,45 +1475,35 @@
   function featuredMentorSummaryCard(x){
     if(!x)return '';
     const stats=x.collaborationStats||[];
-    const supervision=['B.Sc. Field Survey','B.Sc. Statistical Project','M.S. Project'];
+    const profileLinks=[...(x.email?[{label:'Email',url:`mailto:${x.email}`}]:[]),...(x.links||[])];
     return `<section class="section network-featured-summary"><div class="container">
-      <article class="network-featured-card network-featured-card-v2">
-        <div class="network-featured-photo network-featured-photo-v2">
-          ${x.portrait?`<img src="${esc(x.portrait)}" alt="${esc(x.name||'Academic mentor')} portrait" loading="eager" decoding="async">`:''}
-        </div>
-
-        <div class="network-featured-main network-featured-main-v2">
-          <div class="network-featured-meta">
-            <span class="section-kicker">Featured academic mentor</span>
-            <span class="network-featured-status">Primary Research Supervisor</span>
-          </div>
-
-          <h2>${esc(x.name||'')}</h2>
-          ${x.headline?`<p class="network-featured-headline">${esc(x.headline)}</p>`:''}
-          ${x.affiliation?`<p class="network-featured-affiliation">${esc(x.affiliation)}</p>`:''}
-
-          <div class="network-featured-relationship">
-            <span>Supervision with Razu</span>
-            <div>${supervision.map(s=>`<strong>${esc(s)}</strong>`).join('<i>→</i>')}</div>
-          </div>
-
-          <div class="network-featured-actions">
-            <a class="btn primary network-profile-cta" href="network-shamim-reza.html">View Full Profile <span aria-hidden="true">→</span></a>
-            <div class="network-featured-iconlinks" aria-label="Academic profiles">
-              ${x.email?mentorProfileLink({label:'Email',url:`mailto:${x.email}`}):''}
-              ${(x.links||[]).filter(l=>['Google Scholar','ORCID','Scopus','ResearchGate'].includes(l.label)).map(mentorProfileLink).join('')}
+      <article class="network-premium-card">
+        <div class="network-premium-accent" aria-hidden="true"></div>
+        <div class="network-premium-top">
+          <div class="network-premium-photo">${x.portrait?`<img src="${esc(x.portrait)}" alt="${esc(x.name||'Academic mentor')} portrait" loading="eager" decoding="async">`:''}</div>
+          <div class="network-premium-identity">
+            <div class="network-premium-eyebrow"><span class="section-kicker">Featured Academic Mentor</span><span class="network-featured-status">Primary Research Supervisor</span></div>
+            <h2>${esc(x.name||'')}</h2>
+            ${x.headline?`<p class="network-premium-headline">${esc(x.headline)}</p>`:''}
+            ${x.affiliation?`<p class="network-premium-affiliation">${esc(x.affiliation)}</p>`:''}
+            <div class="network-premium-relationship">
+              <div><span>Academic relationship</span><strong>${esc(x.relationship?.title||'Research supervision')}</strong></div>
+              <p>B.Sc. Field Survey <i>→</i> B.Sc. Statistical Project <i>→</i> M.S. Project <i>→</i> Continuing research collaboration</p>
             </div>
+            <a class="btn primary network-profile-cta" href="network-shamim-reza.html">View Full Profile <span aria-hidden="true">→</span></a>
           </div>
+          <aside class="network-premium-leadership">
+            <span class="section-kicker">Academic Leadership</span>
+            <div class="network-premium-rolelist">${(x.currentPositions||[]).slice(0,4).map((role,i)=>`<div><span>0${i+1}</span><p>${esc(role)}</p></div>`).join('')}</div>
+          </aside>
         </div>
-
-        <footer class="network-featured-proof network-featured-proof-v2">
-          <div class="network-featured-proof-label">
-            <span class="section-kicker">Shared scholarly record</span>
-            <strong>Research collaboration with Razu</strong>
-          </div>
-          <div class="network-featured-stats network-featured-stats-v2">
-            ${stats.map(s=>`<div><strong>${esc(s.value)}</strong><span>${esc(s.label)}</span></div>`).join('')}
-          </div>
+        <div class="network-premium-profiles" aria-label="Academic and professional profiles">
+          <div class="network-premium-profiles-label"><span class="section-kicker">Academic identity</span><strong>Profiles & contact</strong></div>
+          <div class="network-premium-profilelinks">${profileLinks.map(mentorProfileLink).join('')}</div>
+        </div>
+        <footer class="network-premium-record">
+          <div class="network-premium-record-label"><span class="section-kicker">Shared Scholarly Record</span><strong>Research collaboration with Razu</strong></div>
+          <div class="network-premium-stats">${stats.map(s=>`<div><strong>${esc(s.value)}</strong><span>${esc(s.label)}</span></div>`).join('')}</div>
         </footer>
       </article>
     </div></section>`;
@@ -1530,23 +1520,27 @@
         <div class="container">
           <div class="network-profile-breadcrumb"><a href="network.html">Network & Impact</a><span>›</span><strong>${esc(x.name||'')}</strong></div>
 
-          <article class="network-profile-hero">
+          <article class="network-profile-hero network-profile-hero-premium">
             <div class="network-profile-photo">${x.portrait?`<img src="${esc(x.portrait)}" alt="${esc(x.name||'Academic mentor')} portrait" loading="eager" decoding="async">`:''}</div>
             <div class="network-profile-identity">
               <div class="network-profile-eyebrow"><span>Primary Research Supervisor</span><span>Academic Mentor</span></div>
               <h1>${esc(x.name||'')}</h1>
               ${x.headline?`<p class="network-profile-headline">${esc(x.headline)}</p>`:''}
               ${x.affiliation?`<p class="network-profile-affiliation">${esc(x.affiliation)}</p>`:''}
-              <div class="network-profile-links">
-                ${x.email?mentorProfileLink({label:'Email',url:`mailto:${x.email}`}):''}
-                ${(x.links||[]).map(mentorProfileLink).join('')}
-              </div>
+              <p class="network-profile-bio-intro">${esc(x.description||'')}</p>
             </div>
             <aside class="network-profile-leadership">
               <span class="section-kicker">Current leadership</span>
               ${(x.currentPositions||[]).map((role,i)=>`<div class="network-profile-role"><span>0${i+1}</span><p>${esc(role)}</p></div>`).join('')}
             </aside>
           </article>
+          <div class="network-profile-linkrail">
+            <div class="network-profile-linkrail-label"><span class="section-kicker">Academic identity</span><strong>Profiles & contact</strong></div>
+            <div class="network-profile-links network-profile-links-premium">
+              ${x.email?mentorProfileLink({label:'Email',url:`mailto:${x.email}`}):''}
+              ${(x.links||[]).map(mentorProfileLink).join('')}
+            </div>
+          </div>
 
           <nav class="network-profile-nav" aria-label="Profile sections">
             <a href="#overview">Overview</a>
