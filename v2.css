@@ -10677,3 +10677,24 @@ body[data-page="network-profile"] .mentor-conference-groups.compact li{
   }
 }
 
+/* === Profiled network person cards · 2026-09-23 === */
+.network-person-profile-action{
+  margin-top:14px;
+  padding-top:12px;
+  border-top:1px solid var(--line);
+}
+.network-person-profile-action .btn{
+  min-height:36px;
+  padding:8px 11px;
+  font-size:10.5px;
+}
+.network-profile-collab-summary p{
+  margin:0;
+  color:var(--muted);
+  font-size:13.5px;
+  line-height:1.7;
+}
+.network-overview-grid.is-single{
+  grid-template-columns:1fr;
+}
+

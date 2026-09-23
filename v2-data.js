@@ -171,13 +171,65 @@
       ]
     },
     {
-      id: 'sabba-ruhi', name: 'Prof. Dr. Sabba Ruhi', group: 'Academic Guidance & Advisors',
-      roles: ['Professor', 'Chairman', 'Academic Guidance', 'Departmental Leadership', 'Co-author'],
-      affiliation: 'Chairman, Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
-      description: 'Senior departmental academic whose guidance intersects with applied statistics, biostatistics, regression and collaborative research activity.',
-      shared: ['EFAST 2026 conference contributions'],
-      portrait: 'assets/academic/instructors/sabba-ruhi.png?v=20260918-network24', links: []
-    },
+      id: 'sabba-ruhi',
+      name: 'Prof. Dr. Sabba Ruhi',
+      group: 'Academic Guidance & Advisors',
+      profilePage: 'network-sabba-ruhi.html',
+      headline: 'Professor · Chairman, Department of Statistics and Data Science',
+      roles: ['Professor', 'Chairman', 'Research Collaborator', 'Co-author'],
+      affiliation: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+      description: 'Professor and Chairman of the Department of Statistics and Data Science at PUST, with research interests spanning complex lifetime models, biostatistics, machine learning, survival analysis and reliability analysis.',
+      biography: 'Dr. Sabba Ruhi is a Professor in the Department of Statistics and Data Science at Pabna University of Science and Technology, Bangladesh. She completed her B.Sc. and M.Sc. degrees in Statistics and doctoral studies at the University of Rajshahi. Her research focuses on complex lifetime models, biostatistics, machine learning, survival analysis and reliability analysis.',
+      portrait: 'assets/academic/instructors/sabba-ruhi.png?v=20260918-network24',
+      currentPositions: [
+        'Professor, Department of Statistics and Data Science, Pabna University of Science and Technology',
+        'Chairman, Department of Statistics and Data Science, Pabna University of Science and Technology'
+      ],
+      researchInterests: ['Complex Lifetime Models', 'Biostatistics', 'Machine Learning', 'Survival Analysis', 'Reliability Analysis'],
+      education: [
+        { degree: 'PhD in Statistics', institution: 'Department of Statistics, Faculty of Science, University of Rajshahi, Rajshahi-6205, Bangladesh', year: '2016', detail: 'Thesis: Analysis of Complex Lifetime Models for Analysis of Product Failure Data.' },
+        { degree: 'Master of Science (M.Sc., Thesis) in Statistics', institution: 'University of Rajshahi, Rajshahi-6205, Bangladesh', year: '2008', detail: 'First Class · 2nd position in order of merit (70% marks). Thesis: Product Failure Data Analysis.' },
+        { degree: 'Bachelor of Science (B.Sc.) in Statistics', institution: 'University of Rajshahi, Rajshahi-6205, Bangladesh', year: '2007', detail: 'First Class · 6th position in order of merit (67.60% marks).' }
+      ],
+      awards: [
+        'Gold Medalist, Tapasi Rabeya Hall Talent Award 2007, University of Rajshahi.',
+        'University Merit Scholarship during B.Sc. and M.Sc. study.',
+        'Lifetime Member, Rajshahi University Statistics Alumni (RUSA).'
+      ],
+      externalAffiliations: [],
+      relationship: {
+        title: 'Research collaborator & co-author',
+        detail: 'Research collaborator and co-author with Razu on two conference papers presented at the International Conference on Emerging Frontiers in Advanced Sciences and Technologies 2026 (EFAST 2026).'
+      },
+      relationshipPath: ['Research collaboration', 'EFAST 2026', '2 conference contributions'],
+      collaborationStats: [
+        { value: '1', label: 'Shared conference event' },
+        { value: '2', label: 'Conference contributions' }
+      ],
+      sharedConferences: [
+        {
+          event: 'International Conference on Emerging Frontiers in Advanced Sciences and Technologies 2026 (EFAST 2026)',
+          venue: 'Pabna University of Science and Technology · 27–28 June 2026 · Conference Proceedings · ISBN 978-984-37-0635-5',
+          items: [
+            'Mauya, J., Ahmed, M. R., Ruhi, S., & Reza, M. S. (2026). A Multi-Scale Attention-Based Dense Residual Network for Sugarcane Leaf Disease Detection Using BSRI Data · p. 172',
+            'Islam, M. O., Ahmed, M. R., & Ruhi, S. (2026). Socioeconomic Determinants of Cesarean Section Delivery in Bangladesh: A Survey-Weighted Statistical and Explainable Machine Learning Analysis · p. 298'
+          ]
+        }
+      ],
+      shared: [
+        'Sugarcane leaf disease detection — EFAST 2026',
+        'Cesarean-section determinants in Bangladesh — EFAST 2026'
+      ],
+      email: 'sabba.ruhi@pust.ac.bd',
+      links: [
+        { label: 'PUST Profile', url: 'https://pust.ac.bd/academic/departments/dept_teachers/dept_teachers_profile/100146' },
+        { label: 'Google Scholar', url: 'https://scholar.google.com/citations?user=USWvpZEAAAAJ&hl=en' },
+        { label: 'ResearchGate', url: 'https://www.researchgate.net/profile/Sabba-Ruhi' },
+        { label: 'Scopus', url: 'https://www.scopus.com/authid/detail.uri?authorId=56919677900' },
+        { label: 'ORCID', url: 'https://orcid.org/0009-0008-2321-8738' },
+        { label: 'AD Scientific Index', url: 'https://adscientificindex.com/scientist/sabba-ruhi/6259964/' }
+      ]
+    }
     {
       id: 'aminul-hoque', name: 'Prof. Dr. Md. Aminul Hoque', group: 'Academic Guidance & Advisors',
       roles: ['Professor', 'Academic Guest Teacher', 'Senior Academic Guidance'],
