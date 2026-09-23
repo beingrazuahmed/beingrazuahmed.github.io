@@ -1534,7 +1534,7 @@
               <p class="network-profile-bio-intro">${highlightRazuName(x.description||'')}</p>
             </div>
             <aside class="network-profile-leadership">
-              <span class="section-kicker">Current leadership</span>
+              <span class="section-kicker">${esc(x.currentRoleLabel||'Current leadership')}</span>
               ${(x.currentPositions||[]).map((role,i)=>`<div class="network-profile-role"><span>0${i+1}</span><p>${esc(role)}</p></div>`).join('')}
             </aside>
           </article>
@@ -1550,7 +1550,7 @@
             <a href="#overview">Overview</a>
             <a href="#academic-profile">Academic Profile</a>
             <a href="#collaboration">Research Collaboration</a>
-            <a href="#conferences">Conferences</a>
+            ${(x.sharedConferences||[]).length?'<a href="#conferences">Conferences</a>':''}
             <a href="#recognition">Recognition</a>
           </nav>
 
@@ -1596,10 +1596,10 @@
             ${(x.sharedEditorial||[]).length?`<div class="network-profile-record-block"><div class="mentor-record-heading"><h3>Manuscripts in the editorial process</h3><span>${x.sharedEditorial.length}</span></div><p class="mentor-record-note">Shown for collaboration context only; these records are not presented as published outputs.</p>${mentorWorkList(x.sharedEditorial,'editorial')}</div>`:''}
           </section>
 
-          <section class="network-profile-section" id="conferences">
+          ${(x.sharedConferences||[]).length?`<section class="network-profile-section" id="conferences">
             <div class="network-profile-section-head"><div><span class="section-kicker">Conference record</span><h2>Shared conference contributions</h2></div></div>
             <div class="mentor-conference-groups compact">${(x.sharedConferences||[]).map(g=>`<article><h3>${esc(g.event||'')}</h3><p>${esc(g.venue||'')}</p><ol>${(g.items||[]).map(i=>`<li>${highlightRazuName(i)}</li>`).join('')}</ol></article>`).join('')}</div>
-          </section>
+          </section>`:''}
 
           <section class="network-profile-section" id="recognition">
             <div class="network-profile-section-head"><div><span class="section-kicker">Recognition & service</span><h2>Awards and external affiliations</h2></div></div>
