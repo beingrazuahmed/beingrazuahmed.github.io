@@ -234,11 +234,83 @@
       ]
     },
     {
-      id: 'aminul-hoque', name: 'Prof. Dr. Md. Aminul Hoque', group: 'Academic Guidance & Advisors',
-      roles: ['Professor', 'Academic Guest Teacher', 'Senior Academic Guidance'],
+      id: 'aminul-hoque',
+      name: 'Prof. Dr. Md. Aminul Hoque',
+      group: 'Academic Guidance & Advisors',
+      profilePage: 'network-aminul-hoque.html',
+      profileBadges: ['Research Mentor', 'Academic Guest Teacher', 'Collaborator'],
+      headline: 'Professor · Academic Guest Teacher · Bioinformatics & Statistical Genetics',
+      roles: ['Research Mentor', 'Academic Guest Teacher', 'Research Collaborator', 'Professor'],
       affiliation: 'Department of Statistics and Data Science, University of Rajshahi, Rajshahi-6205, Bangladesh',
-      description: 'Professor and academic guest teacher linked to genomics, bioinformatics and advanced statistical genetics coursework; PhD from Keio University, Japan, with postdoctoral training in Malaysia and Japan.',
-      shared: [], portrait: 'assets/academic/instructors/aminul-hoque.jpg?v=20260918-network24', links: []
+      description: 'Professor at the University of Rajshahi and a senior academic mentor to Md. Razu Ahmed, providing scholarly guidance and encouragement in statistical modelling, machine learning, bioinformatics and interdisciplinary research.',
+      biography: 'Dr. Md. Aminul Hoque is a Professor in the Department of Statistics and Data Science at the University of Rajshahi, Bangladesh. He earned his PhD in Bioinformatics from Keio University, Japan, and completed postdoctoral research in bioinformatics at the University of Malaya, Malaysia, and Niigata University, Japan. His academic profile spans statistics, genomics, bioinformatics, statistical genetics, machine learning and interdisciplinary data-driven research.',
+      portrait: 'assets/academic/instructors/aminul-hoque.jpg?v=20260918-network24',
+      currentRoleLabel: 'Current appointments & teaching',
+      currentPositions: [
+        'Professor, Department of Statistics and Data Science, University of Rajshahi',
+        'Academic Guest Teacher — Genomics and Bioinformatics',
+        'Academic Guest Teacher — Advanced Statistical Genetics and Bioinformatics'
+      ],
+      researchInterests: ['Bioinformatics', 'Statistical Genetics', 'Genomics', 'Statistical Modelling', 'Machine Learning', 'Computational Biology'],
+      education: [
+        { degree: 'PhD in Bioinformatics', institution: 'Keio University, Japan', year: '2005', detail: 'Awarded.' },
+        { degree: 'Postdoctoral Research in Bioinformatics', institution: 'University of Malaya (UM), Malaysia', year: '2008–2009', detail: 'Completed.' },
+        { degree: 'JSPS Postdoctoral Research in Bioinformatics', institution: 'Niigata University, Japan', year: '2009–2011', detail: 'Completed.' },
+        { degree: 'Visiting Professor', institution: 'Tokyo University of Science (TUS), Japan', year: 'Aug–Sep 2009', detail: 'Visiting academic appointment.' },
+        { degree: 'Young Scientist Fellowship · ICTP (SRM2255)', institution: 'International Centre for Theoretical Physics (ICTP), Italy', year: 'Oct–Nov 2011', detail: 'Participant.' },
+        { degree: 'Master of Science (M.Sc., Thesis) in Statistics', institution: 'University of Rajshahi, Bangladesh', year: '1989', detail: 'First Class · Stood 2nd.' },
+        { degree: 'Bachelor of Science (B.Sc. Hons.) in Statistics', institution: 'University of Rajshahi, Bangladesh', year: '1988', detail: 'First Class · Stood 2nd.' },
+        { degree: 'Higher Secondary Certificate (Science)', institution: 'Rajshahi Board, Bangladesh', year: '1985', detail: 'First Division.' },
+        { degree: 'Secondary School Certificate (Science)', institution: 'Rajshahi Board, Bangladesh', year: '1983', detail: 'First Division.' }
+      ],
+      awards: [
+        'Young Scientist Fellowship participant, ICTP (SRM2255), Italy, October–November 2011.',
+        'JSPS postdoctoral research appointment in Bioinformatics, Niigata University, Japan, 2009–2011.',
+        'Visiting Professor, Tokyo University of Science, Japan, August–September 2009.'
+      ],
+      externalAffiliations: [
+        'Editorial Board Member, Journal of Integrative Computational Biosciences (JICB).',
+        'External Expert in Mathematics for faculty evaluation, University of Malaya, Kuala Lumpur, Malaysia.',
+        'Member, International Society for Computational Biology (ISCB).',
+        'Vice President & Life Member, Bangladesh Bioinformatics and Computational Biology Association (BBCBA).',
+        'Vice President & Life Member, Bioinformatics Research Group in Rajshahi University (BioRGRU).',
+        'Joint Secretary, Executive Committee, Bangladesh Statistical Association (BSA), 2015–2017.',
+        'Life Member, International Journal of Statistical Sciences.',
+        'Life Member, Bangladesh Statistical Association.',
+        'Life Member, Rajshahi University Statistical Alumni (RUSA).',
+        'Life Member, Rajshahi University Alumni Association (RUAA).',
+        'Executive Member, Rajshahi University Teacher Association, 1998.',
+        'Member, Bangladesh Science Association.',
+        'Guest Editor, BioMed Research International — special issue: “Computational Biology and Bioinformatics: Challenges and Solutions in omics Data Analysis”.',
+        'Guest Editor, International Journal of Statistical Sciences (IJSS).'
+      ],
+      relationship: {
+        title: 'Senior academic guidance & research collaboration',
+        detail: 'Provides valuable guidance, encouragement and scholarly advice to Md. Razu Ahmed in statistical modelling, machine learning, bioinformatics and interdisciplinary research, and collaborates on the accepted AI-and-employment manuscript.'
+      },
+      relationshipPath: [
+        'Academic Guest Teaching',
+        'Statistical Modelling & Machine Learning Guidance',
+        'Bioinformatics & Interdisciplinary Research Advice',
+        'Ongoing Research Collaboration'
+      ],
+      sharedAccepted: [
+        {
+          title: 'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh',
+          venue: 'International Journal of Statistical Sciences, Volume 26, Issue 2 · forthcoming November 2026',
+          detail: 'Accepted 2 September 2026.'
+        }
+      ],
+      shared: [
+        'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh — accepted / forthcoming'
+      ],
+      email: 'aminul@ru.ac.bd',
+      links: [
+        { label: 'RU Profile', url: 'https://profile.ru.ac.bd/public/profile/00608' },
+        { label: 'Google Scholar', url: 'https://scholar.google.com/citations?user=TuzbEhAAAAAJ&hl=en' },
+        { label: 'Scopus', url: 'https://www.scopus.com/authid/detail.uri?authorId=59157780100' },
+        { label: 'AD Scientific Index', url: 'https://adscientificindex.com/scientist/md-aminul-hoque/402952/' }
+      ]
     },
     {
       id: 'menhazul-abedin', name: 'Dr. Md. Menhazul Abedin', group: 'Academic Guidance & Advisors',
