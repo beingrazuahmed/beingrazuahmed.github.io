@@ -157,7 +157,7 @@
       if(modeSel) modeSel.value=mode;
       if(motionSel) motionSel.value=motion;
 
-      $('#modeSegmented [data-mode-choice]').forEach(btn=>{
+      $$('#modeSegmented [data-mode-choice]').forEach(btn=>{
         const active=btn.dataset.modeChoice===mode;
         btn.setAttribute('aria-pressed',String(active));
         btn.classList.toggle('is-active',active);
@@ -171,7 +171,7 @@
     $('#themeSel')?.addEventListener('change',e=>{store.setItem('mra-theme',e.target.value);apply();});
     $('#modeSel')?.addEventListener('change',e=>{store.setItem('mra-mode',e.target.value);apply();});
     $('#motionSel')?.addEventListener('change',e=>{store.setItem('mra-motion',e.target.value);apply();});
-    $('#modeSegmented [data-mode-choice]').forEach(btn=>btn.addEventListener('click',()=>{
+    $$('#modeSegmented [data-mode-choice]').forEach(btn=>btn.addEventListener('click',()=>{
       store.setItem('mra-mode',btn.dataset.modeChoice);
       apply();
     }));
@@ -1615,6 +1615,24 @@
     clock();
   }
 
-  function render(){header();settings();footer(); const main=$('#page-content'); if(!main)return; const map={home,profile,languages,research,publications,projects,academic,experience,conferences,recognition,network,resources,gallery,dashboard,'ask-razu':askRazu,contact,copyright:copyrightPage}; main.innerHTML=(map[page]||home)(); initResearchConstellation(); initInteractive();}
+  function render(){
+    header();
+    footer();
+    const main=$('#page-content');
+    if(!main)return;
+    const map={home,profile,languages,research,publications,projects,academic,experience,conferences,recognition,network,resources,gallery,dashboard,'ask-razu':askRazu,contact,copyright:copyrightPage};
+    main.innerHTML=(map[page]||home)();
+
+    // Appearance controls are non-critical UI. A settings fault must never blank the portfolio.
+    try{settings();}catch(err){
+      console.error('MRA appearance controls failed to initialize:',err);
+      document.documentElement.dataset.theme=document.documentElement.dataset.theme||'scientific';
+      document.documentElement.dataset.mode=document.documentElement.dataset.mode||'light';
+      document.documentElement.dataset.motion=document.documentElement.dataset.motion||'balanced';
+    }
+
+    try{initResearchConstellation();}catch(err){console.error('MRA constellation failed to initialize:',err);}
+    initInteractive();
+  }
   render();
 })();
