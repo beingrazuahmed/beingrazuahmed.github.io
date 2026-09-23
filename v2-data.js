@@ -183,6 +183,7 @@
       roles: ['Professor', 'Chairman', 'Research Collaborator', 'Co-author'],
       affiliation: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
       description: 'Professor and Chairman of the Department of Statistics and Data Science at PUST, with research interests spanning complex lifetime models, biostatistics, machine learning, survival analysis and reliability analysis.',
+      heroNote: 'As Razu’s department chairman and research collaborator, she has been a valued senior academic presence in his journey—encouraging his research development, strengthening his confidence, and supporting his growth through meaningful scholarly collaboration.',
       biography: 'Dr. Sabba Ruhi is a Professor in the Department of Statistics and Data Science at Pabna University of Science and Technology, Bangladesh. She completed her B.Sc. and M.Sc. degrees in Statistics and doctoral studies at the University of Rajshahi. Her research focuses on complex lifetime models, biostatistics, machine learning, survival analysis and reliability analysis.',
       portrait: 'assets/academic/instructors/sabba-ruhi.png?v=20260918-network24',
       currentPositions: [
