@@ -188,7 +188,8 @@ window.COURSEWORK_DATA = {
         metrics: [
           { label: "2025 CiteScore", value: "3.9", source: "Scopus" },
           { label: "2025 Journal Impact Factor", value: "2.9", source: "Clarivate" },
-          { label: "2025 Journal Citation Indicator", value: "0.45", source: "Clarivate" },
+          { label: "2025 Journal Citation Indicator", value: "0.14", source: "Clarivate" },
+          { label: "2025 SNIP", value: "0.833", source: "Scopus" },
           { label: "2025 SJR", value: "0.470", source: "SCImago" },
           { label: "Quartile", value: "Q2", source: "JCR / SCImago" },
           { label: "H-index", value: "39", source: "SCImago" }
