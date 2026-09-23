@@ -1443,9 +1443,8 @@
 
   function mentorDoiLink(url=''){
     if(!url)return '';
-    return `<a class="mentor-doi-link" href="${esc(url)}" target="_blank" rel="noopener noreferrer" aria-label="Open DOI" title="DOI">
+    return `<a class="mentor-doi-link mentor-doi-link-icononly" href="${esc(url)}" target="_blank" rel="noopener noreferrer" aria-label="Open DOI" title="Open DOI">
       <span class="mentor-doi-icon"><img src="assets/academic/logos/vendor/doi-user.png" alt="" loading="lazy" decoding="async"></span>
-      <span>DOI</span>
     </a>`;
   }
 
