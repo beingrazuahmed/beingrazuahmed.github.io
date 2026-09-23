@@ -234,6 +234,39 @@
   };
   const links=(obj={})=>['primary','discovery','social'].flatMap(k=>obj[k]||[]).map(x=>ext(x.url,x.label)).join(' · ');
 
+  function publicationBrandMeta(label=''){
+    const key=String(label||'').trim().toLowerCase();
+    const favicon=domain=>`https://www.google.com/s2/favicons?sz=128&domain=${domain}`;
+    const map={
+      'doi': {src:'assets/academic/logos/vendor/doi.svg', cls:'is-doi'},
+      'engineering reports': {src:'assets/academic/journals/engineering-reports/logo.webp', cls:'is-wide is-journal'},
+      'scopus': {src:'assets/academic/logos/scopus-circle.png', cls:'is-scopus'},
+      'google scholar': {src:favicon('scholar.google.com'), cls:'is-google-scholar'},
+      'proquest': {src:favicon('proquest.com'), cls:'is-proquest'},
+      'semantic scholar': {src:favicon('semanticscholar.org'), cls:'is-semantic-scholar'},
+      'sciprofiles': {src:favicon('sciprofiles.com'), cls:'is-sciprofiles'},
+      'researchgate': {src:favicon('researchgate.net'), cls:'is-researchgate'},
+      'sciencedirect': {src:favicon('sciencedirect.com'), cls:'is-sciencedirect'},
+      'dataset': {src:favicon('data.mendeley.com'), cls:'is-mendeley'},
+      'dataset (mendeley)': {src:favicon('data.mendeley.com'), cls:'is-mendeley'},
+      'mendeley data': {src:favicon('data.mendeley.com'), cls:'is-mendeley'},
+      'banglajol': {src:'assets/academic/journals/ijss/banglajol.png', cls:'is-wide'}
+    };
+    return map[key]||{src:favicon((key.replace(/[^a-z0-9]+/g,'')||'google')+'.com'),cls:'is-generic'};
+  }
+
+  function publicationBrandLink(item={}){
+    const label=item.label||'Scholarly link';
+    const meta=publicationBrandMeta(label);
+    return `<a class="publication-brand-link ${esc(meta.cls||'')}" href="${esc(item.url||'#')}" target="_blank" rel="noopener noreferrer" aria-label="Open ${esc(label)}" title="${esc(label)}" data-label="${esc(label)}">
+      <span class="publication-brand-logo"><img src="${esc(meta.src)}" alt="" loading="lazy" decoding="async"></span>
+    </a>`;
+  }
+
+  function publicationBrandLinks(obj={}){
+    return ['primary','discovery','social'].flatMap(k=>obj[k]||[]).map(publicationBrandLink).join('');
+  }
+
   function uiIcon(name){
     const paths={
       language:'<path d="M4 5h10M9 3v2m-4 4c1.5 3 3.6 5.2 6.5 6.8M13 9c-1.5 3.1-3.6 5.4-6.6 7M15 20l3-8 3 8m-5-3h4"/>',
@@ -758,7 +791,7 @@
         </div>
         <div class="journal-indexing publication-indexing-list">${(p.indexingDiscovery||[]).map(x=>`<span>${esc(x)}</span>`).join('')}</div>
       </div>`:''}
-      <div class="link-row">${links(linkObj)}</div>
+      <div class="link-row publication-link-row" aria-label="Publication links">${publicationBrandLinks(linkObj)}</div>
     </article>`;
   }
   function personCard(x){return `<article class="card person-card">${safeImg(x.portrait,x.name,'avatar')}<h3>${esc(x.name)}</h3><div class="meta">${(x.roles||[]).map(r=>`<span class="badge">${esc(r)}</span>`).join('')}</div><p><strong>${esc(x.affiliation||'')}</strong></p><p>${esc(x.description||'')}</p><div class="link-row">${(x.links||[]).map(l=>ext(l.url,l.label)).join(' · ')}</div></article>`;}
