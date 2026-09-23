@@ -184,6 +184,7 @@
       affiliation: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
       description: 'Professor and Chairman of the Department of Statistics and Data Science at PUST, with research interests spanning complex lifetime models, biostatistics, machine learning, survival analysis and reliability analysis.',
       heroNote: 'As Razu’s department chairman and research collaborator, she has been a valued senior academic presence in his journey—encouraging his research development, strengthening his confidence, and supporting his growth through meaningful scholarly collaboration.',
+      showHeroNote: false,
       biography: 'Dr. Sabba Ruhi is a Professor in the Department of Statistics and Data Science at Pabna University of Science and Technology, Bangladesh. She completed her B.Sc. and M.Sc. degrees in Statistics and doctoral studies at the University of Rajshahi. Her research focuses on complex lifetime models, biostatistics, machine learning, survival analysis and reliability analysis.',
       portrait: 'assets/academic/instructors/sabba-ruhi.png?v=20260918-network24',
       currentPositions: [
@@ -430,6 +431,7 @@
       affiliation: 'Department of Electrical and Electronic Engineering, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
       description: 'Associate Professor at PUST and a supportive senior academic in Md. Razu Ahmed’s research journey. He provides clear guidance, shares practical research tools and workflow strategies, and collaborates with Razu on nationwide dengue forecasting research.',
       heroNote: 'Dr. Md. Feroz Ali has been a highly supportive and practical senior academic in Razu’s research development. He guides carefully, shares useful research tools, workflow shortcuts and research strategies, and helps Razu approach research problems more efficiently and confidently.',
+      showHeroNote: false,
       biography: 'Dr. Md. Feroz Ali is an Associate Professor in the Department of Electrical and Electronic Engineering at Pabna University of Science and Technology (PUST), Bangladesh. He received his PhD in Electrical Engineering in 2025. During his doctoral research he produced ten scholarly works, including six Q1-ranked journal articles and four IEEE Xplore international conference papers. He began his academic career at PUST as a Lecturer and was subsequently promoted to Assistant Professor and then Associate Professor. He earned his M.Sc. Engg. and B.Sc. Engg. degrees in Electrical and Electronic Engineering from Rajshahi University of Engineering and Technology (RUET). His research spans renewable energy, microgrid planning and optimization, power systems, electrical machines and drives, power electronic converters, solar-cell devices and photovoltaic systems, with international collaborations across multiple countries.',
       portrait: 'assets/academic/instructors/feroz-ali.webp?v=20260923-feroz1',
       currentRoleLabel: 'Current academic roles',

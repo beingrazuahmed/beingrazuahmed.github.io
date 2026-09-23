@@ -1539,7 +1539,7 @@
               ${x.headline?`<p class="network-profile-headline">${esc(x.headline)}</p>`:''}
               ${x.affiliation?`<p class="network-profile-affiliation">${esc(x.affiliation)}</p>`:''}
               <p class="network-profile-bio-intro">${highlightRazuName(x.description||'')}</p>
-              ${x.heroNote?`<div class="network-profile-hero-note"><span>Academic relationship</span><p>${highlightRazuName(x.heroNote)}</p></div>`:''}
+              ${x.heroNote && x.showHeroNote !== false?`<div class="network-profile-hero-note"><span>Academic relationship</span><p>${highlightRazuName(x.heroNote)}</p></div>`:''}
             </div>
             <aside class="network-profile-leadership">
               <span class="section-kicker">${esc(x.currentRoleLabel||'Current leadership')}</span>
