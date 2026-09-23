@@ -257,7 +257,7 @@
       'orcid': {src:favicon('orcid.org'), cls:'is-orcid'},
       'pust profile': {src:favicon('pust.ac.bd'), cls:'is-pust'},
       'khulna university': {src:favicon('ku.ac.bd'), cls:'is-university'},
-      'personal email': {src:'assets/academic/logos/vendor/personal-email-blue.png', cls:'is-personal-email'},
+      'personal email': {src:'assets/academic/logos/vendor/personal-email-blue.png?v=20260923-exact1', cls:'is-personal-email'},
       'staans lab blog': {src:favicon('blogger.com'), cls:'is-blogger'},
       'ad scientific index': {src:favicon('adscientificindex.com'), cls:'is-adscientific'},
       'banglajol': {src:'assets/academic/journals/ijss/banglajol.png', cls:'is-wide'}
