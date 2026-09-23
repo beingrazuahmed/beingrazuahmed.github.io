@@ -737,6 +737,7 @@
       <div class="meta"><span class="badge">${esc(p.status||p.bucket||'Research')}</span>${p.role?`<span class="badge">${esc(p.role)}</span>`:''}</div>
       <h3>${esc(p.title||'Untitled')}</h3>
       <p>${esc(p.journal||p.venue||p.summary||p.description||'')}</p>
+      ${p.citation? `<p class="output-citation">${esc(p.citation)}</p>` : ''}
       ${js?`<div class="output-standing">
         <span><strong>${esc(js.jif2025||'')}</strong>JIF</span>
         <span><strong>${esc(js.citeScore2025||'')}</strong>CiteScore</span>
