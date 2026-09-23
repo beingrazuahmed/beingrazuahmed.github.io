@@ -53,7 +53,9 @@
         { label: 'DOI', url: 'https://doi.org/10.17632/fn6yhzjz83.2' },
         { label: 'ScienceDirect', url: 'https://www.sciencedirect.com/science/article/pii/S2352340926008097' }
       ],
-      discovery: [],
+      discovery: [
+        { label: 'PlumX Metrics', url: 'https://plu.mx/plum/a/?doi=10.17632/fn6yhzjz83&theme=plum-bigben-theme' }
+      ],
       social: []
     }
   };

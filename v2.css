@@ -9966,3 +9966,51 @@ body[data-page="dashboard"] .dashboard-impact-system strong{display:inline;margi
 @media(max-width:900px){.dashboard-impact-provenance{grid-template-columns:1fr}.dashboard-impact-links{flex-direction:row;flex-wrap:wrap}}
 @media(max-width:620px){.dataset-impact-row{align-items:flex-start;flex-direction:column}}
 
+/* === PlumX + Mendeley brand links · 2026-09-23 === */
+.dashboard-impact-brand-links,
+.dataset-impact-brands{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:9px;
+}
+.dashboard-impact-brand-links{
+  flex-direction:row;
+  justify-content:flex-start;
+}
+.dashboard-impact-brand-links .publication-brand-link,
+.dataset-impact-brands .publication-brand-link{
+  width:48px;
+  height:48px;
+  min-width:48px;
+  border-radius:13px;
+  background:var(--surface);
+  border:1px solid color-mix(in srgb,var(--accent) 12%,var(--line));
+  box-shadow:0 6px 16px rgba(25,61,86,.05);
+}
+.dashboard-impact-brand-links .publication-brand-logo,
+.dataset-impact-brands .publication-brand-logo{
+  width:30px;
+  height:30px;
+}
+.dashboard-impact-brand-links .publication-brand-logo img,
+.dataset-impact-brands .publication-brand-logo img{
+  width:26px;
+  height:26px;
+  object-fit:contain;
+}
+.publication-brand-link.is-plumx{
+  background:#fff;
+}
+.publication-brand-link.is-plumx .publication-brand-logo img{
+  width:28px;
+  height:28px;
+}
+:root[data-mode="dark"] .publication-brand-link.is-plumx{
+  background:#fff;
+  border-color:rgba(255,255,255,.18);
+}
+@media(max-width:620px){
+  .dataset-impact-brands{width:100%}
+}
+
