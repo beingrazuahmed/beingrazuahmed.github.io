@@ -169,7 +169,7 @@
         { label: 'ResearchGate', url: 'https://www.researchgate.net/profile/Md-Reza-18' },
         { label: 'AD Scientific Index', url: 'https://adscientificindex.com/scientist/md-shamim-reza/5906837/' }
       ]
-    }
+    },
     {
       id: 'sabba-ruhi', name: 'Prof. Dr. Sabba Ruhi', group: 'Academic Guidance & Advisors',
       roles: ['Professor', 'Chairman', 'Academic Guidance', 'Departmental Leadership', 'Co-author'],
