@@ -666,7 +666,7 @@
     { title: 'Conferences', href: 'conferences.html', detail: 'Eight contributions, three presentations and conference evidence.' },
     { title: 'Recognition', href: 'recognition.html', detail: 'Awards, certificates and professional development.' },
     { title: 'Research Network', href: 'network.html', detail: 'Guidance, departmental seniors, collaborators and mentees.' },
-    { title: 'Dashboard', href: 'dashboard.html?v=20260923-dashboard54', detail: 'Research, impact, service and collaboration analytics.' },
+    { title: 'Dashboard', href: 'dashboard-live.html?v=20260923-dashboardlive56', detail: 'Research, impact, service and collaboration analytics.' },
     { title: 'Resources', href: 'resources.html', detail: 'Research toolkit, methods, notes and reproducibility resources.' },
     { title: 'Gallery & Evidence', href: 'gallery.html', detail: 'Verified visual records with context.' },
     { title: 'Ask Razu AI', href: 'ask-razu.html', detail: 'Evidence-grounded research intelligence across the portfolio.' },
