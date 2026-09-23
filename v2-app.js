@@ -1524,7 +1524,7 @@
 
     const supervisionPath=x.relationshipPath||['B.Sc. Statistical Field Survey','B.Sc. Statistical Project','M.S. Project','Continuing Research Collaboration'];
     const hasSharedRecord=['sharedPublications','sharedAccepted','sharedDataset','sharedEditorial'].some(k=>(x[k]||[]).length);
-    const hasTeachingLab=(x.taughtCourses||[]).length||x.labProfile||(x.careerHistory||[]).length;
+    const hasTeachingLab=(x.taughtCourses||[]).length||x.labProfile;
 
     return `${pageHero('Academic Network Profile','A detailed academic profile and relationship context within this research network.')}
       <section class="section network-profile-page">

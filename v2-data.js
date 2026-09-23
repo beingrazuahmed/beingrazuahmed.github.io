@@ -420,10 +420,106 @@
       ]
     },
     {
-      id: 'feroz-ali', name: 'Md. Feroz Ali', group: 'Academic Guidance & Advisors',
-      roles: ['Senior Academic Guidance'], affiliation: 'Academic network',
-      description: 'Senior academic connection within the statistics and data-science community.',
-      shared: [], portrait: 'assets/collaborators/feroz-ali.jpg', links: []
+      id: 'feroz-ali',
+      name: 'Dr. Md. Feroz Ali',
+      group: 'Academic Guidance & Advisors',
+      profilePage: 'network-feroz-ali.html',
+      profileBadges: ['Research Collaborator', 'Academic Mentor', 'Co-author'],
+      headline: 'Associate Professor · Electrical & Electronic Engineering · PUST',
+      roles: ['Research Collaborator', 'Academic Mentor', 'Co-author', 'Associate Professor'],
+      affiliation: 'Department of Electrical and Electronic Engineering, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+      description: 'Associate Professor at PUST and a supportive senior academic in Md. Razu Ahmed’s research journey. He provides clear guidance, shares practical research tools and workflow strategies, and collaborates with Razu on nationwide dengue forecasting research.',
+      heroNote: 'Dr. Md. Feroz Ali has been a highly supportive and practical senior academic in Razu’s research development. He guides carefully, shares useful research tools, workflow shortcuts and research strategies, and helps Razu approach research problems more efficiently and confidently.',
+      biography: 'Dr. Md. Feroz Ali is an Associate Professor in the Department of Electrical and Electronic Engineering at Pabna University of Science and Technology (PUST), Bangladesh. He received his PhD in Electrical Engineering in 2025. During his doctoral research he produced ten scholarly works, including six Q1-ranked journal articles and four IEEE Xplore international conference papers. He began his academic career at PUST as a Lecturer and was subsequently promoted to Assistant Professor and then Associate Professor. He earned his M.Sc. Engg. and B.Sc. Engg. degrees in Electrical and Electronic Engineering from Rajshahi University of Engineering and Technology (RUET). His research spans renewable energy, microgrid planning and optimization, power systems, electrical machines and drives, power electronic converters, solar-cell devices and photovoltaic systems, with international collaborations across multiple countries.',
+      portrait: 'assets/academic/instructors/feroz-ali.webp?v=20260923-feroz1',
+      currentRoleLabel: 'Current academic roles',
+      currentPositions: [
+        'Associate Professor, Department of Electrical and Electronic Engineering, Pabna University of Science and Technology',
+        'Advisor, Solver Green, PUST',
+        'Treasurer, Electrical and Electronic Engineering Samity, PUST',
+        'Advisor, Engineering Students Association of Bangladesh (ESAB) PUST Unit'
+      ],
+      researchInterests: [
+        'Renewable Energy Technologies',
+        'Microgrid Planning and Optimization',
+        'Power System Analysis and Operation',
+        'Electrical Machines and Drives',
+        'Power Electronic Converters',
+        'Solar Cell Devices and Photovoltaic Systems'
+      ],
+      education: [
+        { degree: 'PhD in Electrical Engineering', institution: '', year: '2025', detail: 'Doctoral research produced 10 scholarly works, including 6 Q1-ranked journal articles and 4 IEEE Xplore international conference papers.' },
+        { degree: 'M.Sc. Engg. in Electrical and Electronic Engineering', institution: 'Rajshahi University of Engineering and Technology (RUET), Rajshahi-6204, Bangladesh', year: '2016', detail: 'CGPA: 3.92 out of 4.00.' },
+        { degree: 'B.Sc. Engg. in Electrical and Electronic Engineering', institution: 'Rajshahi University of Engineering and Technology (RUET), Rajshahi-6204, Bangladesh', year: '2012', detail: 'CGPA: 3.80 out of 4.00.' },
+        { degree: 'Higher Secondary Certificate (H.S.C.)', institution: 'Rajshahi Govt. City College, Rajshahi, Bangladesh', year: '2007', detail: 'GPA: 5.00 out of 5.00.' },
+        { degree: 'Secondary School Certificate (S.S.C.)', institution: 'Nazipur High School, Patnitala, Naogaon, Bangladesh', year: '2005', detail: 'GPA: 4.94 out of 5.00.' }
+      ],
+      careerHistory: [
+        'Associate Professor, Department of Electrical and Electronic Engineering, PUST.',
+        'Former Assistant Professor, Department of Electrical and Electronic Engineering, PUST.',
+        'Former Lecturer, Department of Electrical and Electronic Engineering, PUST.',
+        'Assistant Director, Student Advisor Office, PUST (1 September 2022 – 8 October 2024).',
+        'Former Counselor, IEEE PUST Student Branch (1 December 2017 – 15 January 2021).',
+        'Advisor, Solver Green, PUST (24 June 2019 – Present).',
+        'Treasurer, Electrical and Electronic Engineering Samity, PUST (12 August 2018 – Present).',
+        'Advisor, Engineering Students Association of Bangladesh (ESAB) PUST Unit (1 December 2017 – Present).'
+      ],
+      awards: [
+        'Academic Excellence Award, Rajshahi University of Engineering and Technology — received four times during undergraduate study (2008–2012).',
+        'Recipient of competitive research project awards funded by the University Grants Commission (UGC) of Bangladesh.',
+        'Certificate for a highly cited paper in 2024 — Designs (MDPI).',
+        'Certificate for a highly cited paper in 2024 — Sustainability (MDPI).'
+      ],
+      externalAffiliations: [
+        'Member, IEEE.',
+        'Editorial Board Member, EcoEnergy (Wiley).',
+        'Reviewer, Applied Energy.',
+        'Reviewer, Energy Conversion and Management.',
+        'Reviewer, Renewable and Sustainable Energy Reviews.',
+        'Reviewer, Reliability Engineering & System Safety.',
+        'Reviewer, International Journal of Electrical Power & Energy Systems.',
+        'Reviewer, Journal of Cleaner Production.',
+        'Reviewer, Engineering Applications of Artificial Intelligence.',
+        'Reviewer, Journal of Energy Storage.',
+        'Reviewer, Energy.',
+        'Reviewer, Scientific Reports.',
+        'Reviewer, PLOS ONE.',
+        'Reviewer, Results in Engineering.'
+      ],
+      relationship: {
+        title: 'Supportive mentor, research guide & co-author',
+        detail: 'Dr. Md. Feroz Ali has been highly helpful and supportive in Razu’s research development. He provides clear guidance, teaches practical research hacks and useful tools, and shares workflow strategies that help make research more efficient and methodologically focused. He is also a co-author with Razu on a nationwide dengue forecasting manuscript currently under review.'
+      },
+      relationshipPath: [
+        'Supportive senior guidance',
+        'Research tools & workflow strategies',
+        'Joint dengue forecasting manuscript',
+        'Continuing research collaboration'
+      ],
+      collaborationStats: [
+        { value: '1', label: 'Manuscript under review' }
+      ],
+      sharedEditorial: [
+        {
+          title: 'Nationwide Evaluation of District-Informed Bottom-Up and Direct National Approaches for One-Week-Ahead Forecasting of Dengue Hospital Admissions in Bangladesh',
+          journal: 'BMC Public Health',
+          publisher: 'Springer Nature',
+          detail: 'Manuscript under review.'
+        }
+      ],
+      shared: [
+        'Nationwide dengue forecasting — manuscript under review at BMC Public Health'
+      ],
+      email: 'feroz.ali.eee@pust.ac.bd',
+      additionalEmail: 'feroz071021@gmail.com',
+      links: [
+        { label: 'PUST Profile', url: 'https://pust.ac.bd/academic/departments/dept_teachers/dept_teachers_profile/100025' },
+        { label: 'Google Scholar', url: 'https://scholar.google.com/citations?user=4U27H6gAAAAJ&hl=en' },
+        { label: 'ORCID', url: 'https://orcid.org/0000-0003-2764-9371' },
+        { label: 'Scopus', url: 'https://www.scopus.com/authid/detail.uri?authorId=57214142395' },
+        { label: 'SciProfiles', url: 'https://sciprofiles.com/profile/3188758' },
+        { label: 'AD Scientific Index', url: 'https://adscientificindex.com/scientist/md-feroz-ali/4835819/' }
+      ]
     },
     {
       id: 'ashad-alam', name: 'Dr. Md. Ashad Alam', group: 'Academic Guidance & Advisors',
