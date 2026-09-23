@@ -9735,3 +9735,68 @@ body[data-page="academic"] .education-detail-row strong{
   .publication-status-group{animation:none}
 }
 
+/* === Home scholarly status separation · 2026-09-23 === */
+.home-published-work{
+  border-top:1px solid color-mix(in srgb,var(--accent) 8%,var(--line));
+}
+.home-published-work .selected-works-head{
+  align-items:end;
+}
+.home-published-dataset{
+  margin-top:22px;
+  padding-top:18px;
+  border-top:1px solid color-mix(in srgb,var(--accent) 10%,var(--line));
+}
+.home-accepted-work,
+.home-under-review-work{
+  position:relative;
+}
+.home-accepted-work::before,
+.home-under-review-work::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:3px;
+  background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 65%,transparent),transparent 64%);
+  opacity:.7;
+}
+.home-accepted-work{
+  background:color-mix(in srgb,var(--surface) 97%,var(--accent) 3%);
+}
+.home-under-review-work{
+  background:color-mix(in srgb,var(--surface-2) 58%,var(--bg));
+}
+.home-status-output-grid{
+  margin-top:16px;
+}
+.home-accepted-work .compact-output-card,
+.home-under-review-work .compact-output-card{
+  min-height:100%;
+}
+.home-accepted-work .compact-output-status{
+  background:color-mix(in srgb,var(--accent) 9%,var(--surface));
+  border-color:color-mix(in srgb,var(--accent) 18%,var(--line));
+}
+.home-under-review-work .compact-output-card{
+  box-shadow:none;
+  border-color:color-mix(in srgb,var(--line) 90%,#b97a24 10%);
+  background:color-mix(in srgb,var(--surface) 92%,var(--surface-2));
+}
+.home-under-review-work .compact-output-status{
+  background:color-mix(in srgb,#f0c77b 16%,var(--surface));
+  border-color:color-mix(in srgb,#b97a24 24%,var(--line));
+}
+:root[data-mode="dark"] .home-accepted-work{
+  background:color-mix(in srgb,var(--surface) 94%,var(--accent) 6%);
+}
+:root[data-mode="dark"] .home-under-review-work{
+  background:color-mix(in srgb,var(--surface-2) 78%,var(--bg));
+}
+@media(max-width:760px){
+  .home-published-work .selected-works-head{
+    align-items:start;
+  }
+}
+
