@@ -776,7 +776,9 @@
       <div class="meta"><span class="badge">${esc(p.status||p.bucket||'Research')}</span>${p.role?`<span class="badge">${esc(p.role)}</span>`:''}</div>
       <h3>${esc(p.title||'Untitled')}</h3>
       <p>${esc(p.journal||p.venue||p.summary||p.description||'')}</p>
-      ${p.citation? `<p class="output-citation">${esc(p.citation)}</p>` : ''}
+      ${(p.citationAPA||p.citationIEEE)
+        ? `<div class="publication-citation-block"><div class="publication-citation-label">APA & IEEE citations</div>${dualAcademicCitation(p.citationAPA,p.citationIEEE)}</div>`
+        : (p.citation? `<p class="output-citation">${esc(p.citation)}</p>` : '')}
       ${js?`<div class="output-standing">
         ${js.jif2025?`<span><strong>${esc(js.jif2025)}</strong>JIF</span>`:''}
         ${js.citeScore2025?`<span><strong>${esc(js.citeScore2025)}</strong>CiteScore</span>`:''}
