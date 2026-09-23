@@ -313,10 +313,107 @@
       ]
     },
     {
-      id: 'menhazul-abedin', name: 'Dr. Md. Menhazul Abedin', group: 'Academic Guidance & Advisors',
-      roles: ['Associate Professor', 'Academic Guest Teacher', 'Senior Academic Guidance'], affiliation: 'Statistics Discipline, Kabi Jibanananda Das Academic Building (3rd Academic Building), Room No. 3160, Khulna University, Khulna-9208, Bangladesh',
-      description: 'Associate Professor and academic guest teacher linked to advanced multivariate analysis; PhD from Hokkaido University, Japan, with B.Sc. (Hons.) and M.Sc. (Thesis) training in Statistics from the University of Rajshahi.',
-      shared: [], portrait: 'assets/academic/instructors/menhazul-abedin.jpg?v=20260918-network24', links: []
+      id: 'menhazul-abedin',
+      name: 'Dr. Md. Menhazul Abedin',
+      group: 'Academic Guidance & Advisors',
+      profilePage: 'network-menhazul-abedin.html',
+      profileBadges: ['Academic Guest Teacher', 'Academic Mentor', 'Senior Academic Guidance'],
+      headline: 'Associate Professor · Head, STAANS Lab · Academic Guest Teacher',
+      roles: ['Academic Guest Teacher', 'Academic Mentor', 'Senior Academic Guidance', 'Associate Professor', 'Head, STAANS Lab'],
+      affiliation: 'Statistics Discipline, Kabi Jibanananda Das Academic Building, Room No. 3160, Khulna University, Khulna-9208, Bangladesh',
+      description: 'Associate Professor at Khulna University who taught Advanced Multivariate Analysis during Md. Razu Ahmed’s M.S. programme and has continued to support his academic and research development through encouragement, constructive guidance and perspectives on statistical and machine-learning research.',
+      biography: 'Dr. Md. Menhazul Abedin is an Associate Professor in the Statistics Discipline at Khulna University and Head of the Statistical Theory and Analysis on Natural Sciences Laboratory (STAANS Lab). He received his PhD from Hokkaido University, Japan, where his doctoral research focused on multi-armed and contextual bandit algorithms for sequential experiments, dynamic feature selection and molecule-search applications. His broader research spans reinforcement learning, machine learning, bioinformatics, public health and interdisciplinary statistical applications.',
+      portrait: 'assets/academic/instructors/menhazul-abedin.jpg?v=20260918-network24',
+      currentRoleLabel: 'Current academic roles',
+      currentPositions: [
+        'Associate Professor, Statistics Discipline, Khulna University',
+        'Head, Statistical Theory and Analysis on Natural Sciences Laboratory (STAANS Lab), Khulna University',
+        'Academic Guest Teacher — Advanced Multivariate Analysis'
+      ],
+      researchInterests: [
+        'Reinforcement Learning',
+        'Multi-Armed Bandit Algorithms',
+        'Contextual Bandit Algorithms',
+        'Sequential Decision-Making',
+        'Machine Learning',
+        'Bioinformatics',
+        'Public Health'
+      ],
+      education: [
+        {
+          degree: 'PhD',
+          institution: 'Graduate School of Chemical Science and Engineering, Hokkaido University, Japan',
+          year: '',
+          detail: 'Doctoral research under Professor Tamiki Komatsuzaki. Thesis: “Study on Multi-armed Bandit Algorithm for Sequential Experiments to Predict the Best Molecule with Dynamic Feature Selection.”'
+        },
+        {
+          degree: 'Master of Science (M.Sc., Thesis) in Statistics',
+          institution: 'University of Rajshahi, Rajshahi-6205, Bangladesh',
+          year: '',
+          detail: 'Thesis: “Prospects and Problems of Artificial Neural Network Based Supervised Learning.” Supervisor: Professor Dr. Mohammad Nasser.'
+        },
+        {
+          degree: 'Bachelor of Science (B.Sc. Hons.) in Statistics',
+          institution: 'University of Rajshahi, Rajshahi-6205, Bangladesh',
+          year: '',
+          detail: ''
+        }
+      ],
+      careerHistory: [
+        'Associate Professor, Statistics Discipline, Khulna University, Bangladesh.',
+        'PhD Fellow, Molecule and Life Nonlinear Sciences Laboratory, Hokkaido University, Japan — DX Fellowship and Hokkaido University Special Grant Program.',
+        'Research Assistant, Molecule and Life Nonlinear Sciences Laboratory, Hokkaido University, Japan.',
+        'Former Assistant Professor, Statistics Discipline, Khulna University, Bangladesh.',
+        'Former Lecturer, Statistics Discipline, Khulna University, Bangladesh.',
+        'Former Lecturer in Statistics, Rajshahi Engineering Science & Technology College, Rajshahi, Bangladesh.'
+      ],
+      taughtCourses: [
+        'Stat-5103 · Advanced Multivariate Analysis',
+        'Stat-5201 · Generalized Linear Models (GLM)',
+        'Stat-4101 · Multivariate Analysis-I',
+        'Stat-4201 · Multivariate Analysis-II',
+        'Stat-3209 · Actuarial Statistics',
+        'Stat-3205 · Advanced Sampling Techniques',
+        'Stat-3203 · Sampling Techniques-II',
+        'Stat-3111 · Actuarial Statistics',
+        'Stat-2251 · Advanced Statistics — Development Studies Discipline',
+        'Stat-2153 · Statistics-III — Mathematics Discipline',
+        'Stat-1203 · Discrete Probability Distribution',
+        'Stat-1163 · Statistics in Environmental Science — Environmental Science Discipline'
+      ],
+      labProfile: {
+        name: 'Statistical Theory and Analysis on Natural Sciences Laboratory (STAANS Lab)',
+        established: 'Established November 2016 · website launched November 2025',
+        summary: 'A research-oriented laboratory within the Statistics Discipline at Khulna University, founded to advance multidisciplinary research through statistical theory, machine learning and data-driven analysis of natural-science problems.',
+        areas: ['Bandit Algorithms', 'Chemical Engineering', 'Chemoinformatics', 'Biomedical Engineering', 'Bioinformatics', 'Biological Science', 'Public Health', 'Regression & Multivariate Analysis', 'Time Series', 'Spatial Statistics', 'Machine Learning']
+      },
+      awards: [
+        'DX Fellowship, Hokkaido University.',
+        'AGS Fellowship, Hokkaido University.',
+        'National Science and Technology Scholarship, Ministry of Science and Technology, Government of the People’s Republic of Bangladesh.',
+        'Khandokar Manowar Hossain Memorial Award, Department of Statistics, University of Rajshahi.'
+      ],
+      relationship: {
+        title: 'M.S. academic guest teacher & continuing mentor',
+        detail: 'Dr. Md. Menhazul Abedin taught Advanced Multivariate Analysis during Md. Razu Ahmed’s M.S. programme and has continued to encourage his research journey. He has shown particular appreciation for Razu’s FastICA-based audio source separation work, often affectionately referring to him as “ICA Razu”.'
+      },
+      relationshipPath: [
+        'M.S. Advanced Multivariate Analysis',
+        'Academic Encouragement & Guidance',
+        'Statistical & Machine-Learning Research Perspectives',
+        'Continuing Academic Mentorship'
+      ],
+      shared: [],
+      email: 'menhaz@stat.ku.ac.bd',
+      additionalEmail: 'menhaz70@gmail.com',
+      links: [
+        { label: 'KU Profile', url: 'https://ku.ac.bd/discipline/stat/faculty/menhaz70' },
+        { label: 'Google Scholar', url: 'https://scholar.google.com/citations?hl=en&user=T751PSwAAAAJ' },
+        { label: 'ORCID', url: 'https://orcid.org/0000-0002-5293-4636' },
+        { label: 'Scopus', url: 'https://www.scopus.com/authid/detail.uri?authorId=57195631682' },
+        { label: 'STAANS Lab', url: 'https://staansl.blogspot.com/' },
+        { label: 'AD Scientific Index', url: 'https://adscientificindex.com/scientist/md-menhazul-abedinabedin-md-menhazul-abedin-mm-mm-abedin/1967701/' }
+      ]
     },
     {
       id: 'feroz-ali', name: 'Md. Feroz Ali', group: 'Academic Guidance & Advisors',
