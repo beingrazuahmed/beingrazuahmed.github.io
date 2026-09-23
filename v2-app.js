@@ -1171,16 +1171,15 @@
     const published=all.filter(x=>x.bucket==='published');
     const accepted=all.filter(x=>x.bucket==='accepted');
     const reviewing=all.filter(x=>x.bucket==='under-review');
-    return `${pageHero('Publications & Research Outputs','Published work, accepted articles and submitted manuscripts are presented in separate scholarly-status sections.')}
+    return `${pageHero('Publications & Research Outputs','Published, accepted and submitted work are kept in separate views so publication status is never visually mixed.')}
     <section class="section publication-directory"><div class="container">
       <div class="publication-controls">
         <div class="search-wrap"><input class="search-input" id="pubSearch" placeholder="Search title, journal, method or topic…"></div>
-        <div class="filters" id="pubFilters">
-          <button class="filter active" data-filter="all">All</button>
-          <button class="filter" data-filter="published">Published</button>
-          <button class="filter" data-filter="dataset">Dataset</button>
-          <button class="filter" data-filter="accepted">Accepted</button>
-          <button class="filter" data-filter="under-review">Under review</button>
+        <div class="filters publication-status-tabs" id="pubFilters" aria-label="Publication status">
+          <button class="filter active" data-filter="published">Published</button>
+          <button class="filter" data-filter="dataset">Published Dataset</button>
+          <button class="filter" data-filter="accepted">Accepted / Forthcoming</button>
+          <button class="filter" data-filter="under-review">Submitted / Under Review</button>
         </div>
       </div>
 
@@ -1777,7 +1776,7 @@
     const publicationGroups=[...document.querySelectorAll('.publication-status-group')];
     if(search&&publicationGroups.length){
       const cards=[...document.querySelectorAll('.publication-group-grid > .output-card')];
-      let filter='all';
+      let filter='published';
       const run=()=>{
         const q=search.value.trim().toLowerCase();
         cards.forEach(c=>{
@@ -1792,6 +1791,7 @@
           group.hidden=!visible;
         });
       };
+      run();
       search.addEventListener('input',run);
       $('#pubFilters .filter').forEach(b=>b.addEventListener('click',()=>{
         $('#pubFilters .filter').forEach(x=>x.classList.remove('active'));
