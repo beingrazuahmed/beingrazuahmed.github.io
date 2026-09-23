@@ -309,6 +309,20 @@
     return `<article class="card metric academic-metric-card"><div class="academic-metric-icon">${uiIcon(icon)}</div><strong>${esc(value)}</strong><span>${esc(label)}</span><small>${esc(detail)}</small></article>`;
   }
 
+  function academicJourneyIntro(){
+    return `<div class="academic-journey-intro" aria-labelledby="academic-journey-title">
+      <div class="academic-journey-icons" aria-hidden="true">
+        <span class="academic-journey-icon academic-journey-icon-left">${uiIcon('publication')}</span>
+        <span class="academic-journey-icon academic-journey-icon-main">${uiIcon('graduation')}</span>
+        <span class="academic-journey-icon academic-journey-icon-right">${uiIcon('school')}</span>
+      </div>
+      <div class="academic-journey-pill"><span class="academic-journey-pulse"></span><span>Academic journey</span></div>
+      <h2 id="academic-journey-title">Education</h2>
+      <p>Formal academic training from secondary science through postgraduate statistics.</p>
+      <div class="academic-journey-divider" aria-hidden="true"><span></span><i></i><span></span></div>
+    </div>`;
+  }
+
   function techBrandIcon(item){
     const name=(item.name||item.short||'').trim();
     const key=name.toLowerCase();
@@ -1049,8 +1063,8 @@
       <a href="#academic-languages">Languages</a>
       <a href="#academic-skills">Skills & Tools</a>
     </div></nav>
-    <section class="section" id="academic-education"><div class="container">
-      ${sectionHead('Academic journey','Education','Formal education from secondary science training through postgraduate statistics.')}
+    <section class="section academic-education-section" id="academic-education"><div class="container">
+      ${academicJourneyIntro()}
       <div class="education-timeline">${(D.education||[]).map(educationCard).join('')}</div>
     </div></section>
 
