@@ -1040,7 +1040,7 @@
       profileBadges: ['Batchmate', 'Research Collaborator', 'Co-author', 'NST Fellow'],
       headline: 'Statistics Graduate · Machine Learning & Computer Vision Researcher · PUST',
       roles: ['Batchmate', 'Research Collaborator', 'Co-author', 'DSLR Lab Member'],
-      affiliation: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+      affiliation: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
       description: 'Statistics graduate, DSLR Lab member and research collaborator of Md. Razu Ahmed with interests in machine learning, computer vision, explainable and deployable AI, health applications and agricultural image analysis.',
       portrait: 'assets/collaborators/abdur-rakib.JPG?v=20260924-rakib1',
       currentRoleLabel: 'Academic distinctions',
@@ -1068,13 +1068,13 @@
       education: [
         {
           degree: 'Master of Science (M.S., Thesis) in Statistics',
-          institution: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Bangladesh',
+          institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
           year: '',
           detail: 'CGPA: 3.99/4.00. Thesis: “A Multimodal Deep Learning Framework for Skin Lesion Classification Using Smartphone Images and Clinical Metadata.”'
         },
         {
           degree: 'Bachelor of Science (B.Sc. Hons.) in Statistics',
-          institution: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Bangladesh',
+          institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
           year: '',
           detail: 'CGPA: 3.90/4.00. Project: “Optimizing Facial Emotion Recognition through Statistical Dimensionality Reduction and CNN Integration.” Statistical Field Survey: “Measuring Attitudes towards AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology.”'
         },
