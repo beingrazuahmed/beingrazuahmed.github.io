@@ -1114,7 +1114,7 @@
         {
           period: 'B.Sc. & M.S. programmes',
           title: 'Class Representative (CR)',
-          institution: 'Department of Statistics, Pabna University of Science and Technology',
+          institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
           detail: 'Served as Class Representative throughout the B.Sc. and M.S. programmes.'
         }
       ],
