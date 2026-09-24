@@ -1716,10 +1716,14 @@
       { name: 'Minitab', short: 'Minitab', brand: '', detail: 'Regression, experimental-design coursework, statistical quality-control methods and exploratory analysis.' }
     ]},
     { group: 'Programming & Statistical Computing', icon: 'code', items: [
-      { name: 'Python', short: 'Python', brand: 'python', detail: 'Primary computational research language across statistical analysis, machine learning, deep learning, XAI, forecasting, signal processing, geospatial analysis and reproducible pipelines.' },
-      { name: 'R', short: 'R', brand: 'rproject', detail: 'Statistical computing, visualization, regression, multivariate methods, time-series, survival analysis and reproducible research.' },
-      { name: 'C', short: 'C', brand: 'c', detail: 'Foundational programming, algorithmic thinking, numerical problem solving and undergraduate computational coursework.' }
-    ]},
+  { name: 'Python', short: 'Python', brand: 'python', detail: 'Primary computational research language across statistical analysis, machine learning, deep learning, XAI, forecasting, signal processing, geospatial analysis and reproducible pipelines.' },
+
+  { name: 'R', short: 'R', brand: 'rproject', detail: 'Statistical computing, visualization, regression, multivariate methods, time-series, survival analysis and reproducible research.' },
+
+  { name: 'RStudio', short: 'RStudio', brand: 'rstudio', detail: 'Integrated development environment for R programming, statistical analysis, data visualization, reproducible research workflows and academic computing.' },
+
+  { name: 'C', short: 'C', brand: 'c', detail: 'Foundational programming, algorithmic thinking, numerical problem solving and undergraduate computational coursework.' }
+]},
     { group: 'Web, Backend & Research Prototype Development', icon: 'web', items: [
       { name: 'HTML', short: 'HTML5', brand: 'html5', detail: 'Semantic structure for academic, research and prototype web interfaces.' },
       { name: 'JavaScript', short: 'JavaScript', brand: 'javascript', detail: 'Client-side scripting for interactive portfolio features, dynamic interfaces, DOM-driven components and lightweight research-web functionality.' },
