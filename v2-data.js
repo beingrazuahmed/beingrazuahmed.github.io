@@ -1033,11 +1033,148 @@
       ]
     },
     {
-      id: 'abdur-rakib', name: 'Md. Abdur Rakib', group: 'Peer & Batchmate Research Collaborators',
-      roles: ['Co-author', 'Research Collaborator', 'DSLR Member'], affiliation: 'PUST research network',
-      description: 'Research collaborator on AI-employment perceptions and facial-emotion-recognition research.',
-      shared: ['AI and employment perceptions', 'Facial emotion recognition — ICRAST 2025'],
-      portrait: 'assets/collaborators/abdur-rakib.JPG?v=20260924-collab2', links: []
+      id: 'abdur-rakib',
+      name: 'Md. Abdur Rakib',
+      group: 'Peer & Batchmate Research Collaborators',
+      profilePage: 'network-abdur-rakib.html',
+      profileBadges: ['Batchmate', 'Research Collaborator', 'Co-author', 'NST Fellow'],
+      headline: 'Statistics Graduate · Machine Learning & Computer Vision Researcher · PUST',
+      roles: ['Batchmate', 'Research Collaborator', 'Co-author', 'DSLR Lab Member'],
+      affiliation: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+      description: 'Statistics graduate, DSLR Lab member and research collaborator of Md. Razu Ahmed with interests in machine learning, computer vision, explainable and deployable AI, health applications and agricultural image analysis.',
+      portrait: 'assets/collaborators/abdur-rakib.JPG?v=20260924-rakib1',
+      currentRoleLabel: 'Academic distinctions',
+      currentPositions: [
+        'National Science & Technology (NST) Fellowship recipient, Ministry of Science and Technology, Government of Bangladesh',
+        'Dean’s Honors Award recipient, Pabna University of Science and Technology',
+        'Sakura Science Exchange Program invited participant, University of Yamanashi, Japan · selected as 1 of 7 students in the PUST delegation'
+      ],
+      biographyParagraphs: [
+        'Md. Abdur Rakib completed both his B.Sc. (Hons.) and M.S. (Thesis) in Statistics at Pabna University of Science and Technology (PUST), securing first position in departmental merit. He is a member of the Deep Statistical Learning and Research Laboratory (DSLR Lab) and has been active in research, student leadership, innovation and international academic exchange.',
+        'His research focuses on machine learning and computer vision, with particular interest in explainable and deployable AI systems for health and agricultural applications. His experience includes survey-based research, predictive modelling, multimodal deep learning and image-based decision support.'
+      ],
+      researchInterests: [
+        'Machine Learning',
+        'Computer Vision',
+        'Deep Learning',
+        'Explainable AI',
+        'Deployable AI',
+        'Health Informatics',
+        'Medical Image Analysis',
+        'Agricultural Artificial Intelligence',
+        'Predictive Modelling',
+        'Survey-Based Research'
+      ],
+      education: [
+        {
+          degree: 'Master of Science (M.S., Thesis) in Statistics',
+          institution: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Bangladesh',
+          year: '',
+          detail: 'CGPA: 3.99/4.00. Thesis: “A Multimodal Deep Learning Framework for Skin Lesion Classification Using Smartphone Images and Clinical Metadata.”'
+        },
+        {
+          degree: 'Bachelor of Science (B.Sc. Hons.) in Statistics',
+          institution: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Bangladesh',
+          year: '',
+          detail: 'CGPA: 3.90/4.00. Project: “Optimizing Facial Emotion Recognition through Statistical Dimensionality Reduction and CNN Integration.” Statistical Field Survey: “Measuring Attitudes towards AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology.”'
+        },
+        {
+          degree: 'Higher Secondary Certificate (H.S.C.)',
+          institution: 'Rangpur Government College, Rangpur, Bangladesh',
+          year: '',
+          detail: 'GPA: 4.92/5.00.'
+        },
+        {
+          degree: 'Secondary School Certificate (S.S.C.)',
+          institution: 'Rangpur Zilla School, Rangpur, Bangladesh',
+          year: '',
+          detail: 'GPA: 5.00/5.00.'
+        }
+      ],
+      careerTimeline: [
+        {
+          period: '1 January 2026–30 June 2026',
+          title: 'Research Assistant · RTTC Project',
+          institution: 'Research and Technology Transfer Cell (RTTC), Pabna University of Science and Technology',
+          detail: 'Project: “Clinical Prediction of Depression and Anxiety Symptom Severity among Psychiatric Patients at Pabna Mental Hospital.”'
+        },
+        {
+          period: 'International academic exposure',
+          title: 'Invited Participant · Sakura Science Exchange Program',
+          institution: 'University of Yamanashi, Japan',
+          detail: 'Selected as 1 of 7 students in the PUST delegation. Participated in academic and research activities and laboratory exposure under host Prof. Hiromitsu Nishizaki, and presented “Image-Based Disease Detection in Lychee Plants Using Deep Learning Techniques.”'
+        },
+        {
+          period: 'B.Sc. & M.S. programmes',
+          title: 'Class Representative (CR)',
+          institution: 'Department of Statistics, Pabna University of Science and Technology',
+          detail: 'Served as Class Representative throughout the B.Sc. and M.S. programmes.'
+        }
+      ],
+      awards: [
+        'National Science & Technology (NST) Fellowship, Ministry of Science and Technology, Government of the People’s Republic of Bangladesh.',
+        'Dean’s Honors Award, Pabna University of Science and Technology.',
+        'PUST Students Innovation Award.',
+        'PUST Merit Scholarship during B.Sc.: 1st rank in Years 2–4 and 3rd rank in Year 1; also received merit scholarship during M.S.'
+      ],
+      externalAffiliations: [
+        'Member, Deep Statistical Learning and Research Laboratory (DSLR Lab), PUST.',
+        'HULT Prize · Stat4Change team member and Chief Technology Officer (CTO).',
+        'IT Support Service Course Partner.',
+        'Statistical Field Survey Group Member, Department of Statistics, PUST.',
+        'Sakura Science Exchange Program participant, University of Yamanashi, Japan.'
+      ],
+      relationship: {
+        title: 'Batchmate, field-survey teammate & research collaborator',
+        detail: 'Md. Abdur Rakib is Razu’s batchmate from PUST, a fellow DSLR Lab member and a continuing research collaborator. Their shared academic path includes the undergraduate statistical field survey, joint journal publications and conference contributions spanning chronic-kidney-disease prediction, AI-employment perceptions and facial-emotion recognition.'
+      },
+      relationshipPath: [
+        'Batchmates at PUST',
+        'Statistical Field Survey group',
+        'Joint journal publication and accepted article',
+        'ICRAST 2025 conference collaboration'
+      ],
+      collaborationStats: [
+        { value: '1', label: 'Published journal article' },
+        { value: '1', label: 'Accepted / forthcoming' },
+        { value: '2', label: 'Conference contributions' }
+      ],
+      sharedPublications: [
+        {
+          title: 'Identification of Predisposing Risk Factors for Chronic Kidney Disease and Optimizing Disease Prediction Using a Stacking Machine Learning Algorithm',
+          venue: 'International Journal of Statistical Sciences, 25(2), 1–32 (2025)',
+          doi: 'https://doi.org/10.3329/ijss.v25i2.85732'
+        }
+      ],
+      sharedAccepted: [
+        {
+          title: 'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh',
+          venue: 'International Journal of Statistical Sciences, Volume 26, Issue 2 · forthcoming November 2026',
+          detail: 'Accepted 2 September 2026.'
+        }
+      ],
+      sharedConferences: [
+        {
+          event: '2nd International Conference on Recent Advances in Science and Technology 2025 (ICRAST 2025)',
+          venue: 'Faculty of Science, University of Rajshahi · 14–15 November 2025 · Book of Abstracts',
+          items: [
+            'Ahmed, M. R., Rakib, M. A., Shiddik, A. B., & Reza, M. S. (2025). Measuring Attitudes toward AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology · p. 120 · Paper ID 440.',
+            'Rakib, M. A., Ahmed, M. R., Shiddik, A. B., & Reza, M. S. (2025). Facial Emotion Recognition with Dimensionality Reduction: A Comparative Study of PCA, FA, and Combined PCA–FA with a CNN Baseline · p. 126 · Paper ID 461.'
+          ]
+        }
+      ],
+      shared: [
+        'CKD risk-factor identification and stacking machine-learning prediction — published in International Journal of Statistical Sciences',
+        'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh — accepted / forthcoming',
+        'ICRAST 2025 Paper ID 440 — AI and employment perceptions',
+        'ICRAST 2025 Paper ID 461 — facial emotion recognition'
+      ],
+      email: 'marakib94@gmail.com',
+      links: [
+        { label: 'ResearchGate', url: 'https://www.researchgate.net/profile/Md-Rakib-43' },
+        { label: 'LinkedIn', url: 'https://www.linkedin.com/in/mdabdurrakib14/' },
+        { label: 'ORCID', url: 'https://orcid.org/0009-0000-7625-0442' }
+      ]
     },
     {
       id: 'ziaul-haque', name: 'Muhammad Ziaul Haque', group: 'Peer & Batchmate Research Collaborators',
