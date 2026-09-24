@@ -4,14 +4,14 @@ Upload collaborator portraits here using the exact filenames below. JPG/JPEG ima
 
 - ashad-alam.jpg — Dr. Md. Ashad Alam
 - ruhul-amin.jpg — Ruhul Amin
-- jannatul-mauya.jpg — Jannatul Mauya
-- abdur-rakib.jpg — Md. Abdur Rakib
-- ziaul-haque.jpg — Muhammad Ziaul Haque
-- abu-bakar-shiddik.jpg — Abu Bakar Shiddik
+- jannatul-mauya.jpeg — Jannatul Mauya
+- abdur-rakib.JPG — Md. Abdur Rakib
+- ziaul-haque.jpeg — Muhammad Ziaul Haque
+- abu-bakar-shiddik.jpeg — Abu Bakar Shiddik
 - marufa.jpg — Marufa Yeasmin
 - protiva-rani-kundu.jpg — Protiva Rani Kundu
 - mimosa-saha.jpg — Mimosa Saha
 - farzana-mehedi-moly.jpg — Farzana Mehedi Moly
-- obaidul-islam.jpg — Md. Obaidul Islam
+- obaidul-islam.png — Md. Obaidul Islam
 
 Recommended source image: square or portrait-oriented, clear head-and-shoulders crop, at least 800 px on the shorter side.
