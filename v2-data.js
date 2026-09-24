@@ -1486,7 +1486,6 @@
   id: 'marufa-yeasmin',
   name: 'Marufa Yeasmin',
   group: 'Peer & Batchmate Research Collaborators',
-
   profilePage: 'network-marufa-yeasmin.html',
 
   profileBadges: [
@@ -1496,36 +1495,43 @@
     'NST Fellow'
   ],
 
-  headline: 'Research Assistant · Research Collaborator · Co-author · NST Fellow',
+  headline: 'Research Assistant · DSLR Lab, PUST · Research Collaborator',
 
   roles: [
-    'Research Assistant · DSLR Lab',
+    'Research Assistant',
     'Research Collaborator',
     'Co-author',
-    'NST Fellow',
     'Batchmate'
   ],
 
-  affiliation: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+  affiliation: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
 
-  description: 'Marufa Yeasmin is a Research Assistant at the Deep Statistical Learning and Research Laboratory (DSLR Lab), a batchmate, co-author and research collaborator of Razu from Pabna University of Science and Technology. Her research interests include applied statistics, data science, machine learning, deep learning, computer vision and AI-driven decision-making.',
-
-  biography: 'Marufa Yeasmin completed her B.Sc. (Hons.) and M.S. (Thesis) in Statistics from Pabna University of Science and Technology. She has contributed to machine learning, computer vision and AI-driven research through collaborative publications, dataset development and statistical modelling projects.',
+  description: 'Research Assistant at the Deep Statistical Learning and Research Laboratory (DSLR Lab) and research collaborator of Md. Razu Ahmed, with interests in applied statistics, data science, machine learning, deep learning, computer vision and AI-driven decision-making.',
 
   portrait: 'assets/collaborators/marufa.jpg',
   cardPortraitPosition: '50% 14%',
 
+  currentRoleLabel: 'Current research role',
+
   currentPositions: [
-    'Research Assistant, Deep Statistical Learning and Research Laboratory (DSLR Lab), PUST'
+    'Research Assistant, Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh'
   ],
 
-  experience: [
-    {
-      title: 'Survey Enumerator',
-      organization: 'Bangladesh Bureau of Statistics (BBS) · Contract',
-      period: 'May 2022 – December 2024',
-      detail: 'Participated in national survey and census data collection activities conducted by Bangladesh Bureau of Statistics (BBS). Contributed to household listing, demographic data collection, economic and establishment-related data collection, verification and questionnaire-based academic survey research.'
-    }
+  biographyParagraphs: [
+    'Marufa Yeasmin is a Research Assistant at the Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), and a continuing research collaborator of Md. Razu Ahmed. She completed her B.Sc. (Hons.) and M.S. (Thesis) in Statistics at PUST with strong academic performance and received NST Fellowship and academic recognitions.',
+
+    'Her research focuses on applied statistics, data science, machine learning, deep learning, computer vision and AI-driven decision-making. Her experience includes real-world dataset development, statistical modelling, survey-based research and AI applications for automated food analysis and intelligent decision-support systems.'
+  ],
+
+  researchInterests: [
+    'Applied Statistics',
+    'Data Science',
+    'Machine Learning',
+    'Deep Learning',
+    'Computer Vision',
+    'AI-driven Decision Making',
+    'Predictive Modelling',
+    'Survey-Based Research'
   ],
 
   education: [
@@ -1539,7 +1545,7 @@
       degree: 'Bachelor of Science (B.Sc. Hons.) in Statistics',
       institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
       year: '2021 · held in 2024',
-      detail: 'CGPA: 3.83/4.00. Project: “Handling Complex Censoring Mechanism in Reliability Data.” Survey: “Prevalence and Associated Factors of Smartphone Addiction on Family Relationship.”'
+      detail: 'CGPA: 3.83/4.00. Project: “Handling Complex Censoring Mechanism in Reliability Data.” Statistical Field Survey: “Prevalence and Associated Factors of Smartphone Addiction on Family Relationship.”'
     },
     {
       degree: 'Higher Secondary Certificate (H.S.C.) · Science',
@@ -1555,34 +1561,67 @@
     }
   ],
 
-  researchInterests: [
-    'Applied Statistics',
-    'Data Science',
-    'Machine Learning',
-    'Deep Learning',
-    'Computer Vision',
-    'AI-driven Decision Making'
+  careerTimeline: [
+    {
+      period: 'Current',
+      title: 'Research Assistant',
+      institution: 'Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST)',
+      location: 'Pabna-6600, Bangladesh'
+    },
+    {
+      period: 'May 2022–December 2024',
+      title: 'Survey Enumerator',
+      institution: 'Bangladesh Bureau of Statistics (BBS) · Contract',
+      detail: 'Participated in national survey and census data collection activities including the 6th Population and Housing Census 2022 and 4th Economic Census 2023. Contributed to household listing, demographic data collection, economic and establishment-related data collection, verification and questionnaire-based academic survey research.'
+    },
+    {
+      period: 'B.Sc. & M.S. programmes',
+      title: 'Class Representative (CR)',
+      institution: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST)',
+      detail: 'Served as Class Representative throughout the B.Sc. and M.S. programmes.'
+    }
   ],
 
   awards: [
-    'NST Fellowship',
-    'Dean’s Honors Award',
-    'JSR Award',
-    'Merit Scholarships during undergraduate and M.S. studies',
-    'Department 2nd Position in merit'
+    'National Science & Technology (NST) Fellowship, Ministry of Science and Technology, Government of the People’s Republic of Bangladesh.',
+    'Dean’s Honors Award, Pabna University of Science and Technology.',
+    'JSR Award.',
+    'Merit Scholarships during undergraduate studies and M.S. for outstanding academic performance.',
+    'Department 2nd Position in merit.'
   ],
 
-  activities: [
-    'PLOS ONE Peer Reviewer',
-    'HULT Prize (Stat4Change) Team Member · Chief Marketing Officer (CMO)',
-    'IT Support Service Course Partner',
-    'Class Representative (CR), Department of Statistics, PUST · B.Sc. and M.S.'
+  externalAffiliations: [
+    'Research Assistant, Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST).',
+    'PLOS ONE Peer Reviewer.',
+    'HULT Prize (Stat4Change) Team Member · Chief Marketing Officer (CMO).',
+    'IT Support Service Course Partner.'
   ],
 
   relationship: {
     title: 'Batchmate, co-author & research collaborator',
-    detail: 'Marufa Yeasmin is Razu’s batchmate from PUST and a continuing research collaborator. Their collaboration includes dataset development, machine learning research, statistical modelling and AI-based applications.'
+    detail: 'Marufa Yeasmin is Razu’s batchmate from PUST and a continuing research collaborator. Their shared academic journey includes dataset development, joint journal publications, conference contributions and collaborative research in machine learning and artificial intelligence.'
   },
+
+  relationshipPath: [
+    'Batchmates at PUST',
+    'Joint journal publication and dataset development',
+    'Collaborative AI and machine learning research'
+  ],
+
+  collaborationStats: [
+    {
+      value: '1',
+      label: 'Published journal article'
+    },
+    {
+      value: '1',
+      label: 'Public research dataset'
+    },
+    {
+      value: '1',
+      label: 'Under review article'
+    }
+  ],
 
   sharedPublications: [
     {
@@ -1609,10 +1648,10 @@
   ],
 
   shared: [
-    'PUST Cafeteria Food Image Dataset',
-    'Automated food detection and calorie estimation research',
-    'Machine learning and computer vision applications',
-    'Statistical modelling research'
+    'PUST Cafeteria Food Image Dataset — Data in Brief publication',
+    'Public research dataset development',
+    'Real-time food detection and automated cafeteria billing research',
+    'AI-driven computer vision applications'
   ],
 
   email: 'marufayeas4@gmail.com',
