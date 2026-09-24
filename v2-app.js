@@ -1532,7 +1532,7 @@
           <div class="network-profile-breadcrumb"><a href="network.html">Network & Impact</a><span>›</span><strong>${esc(x.name||'')}</strong></div>
 
           <article class="network-profile-hero network-profile-hero-premium">
-            <div class="network-profile-photo">${x.portrait?`<img src="${esc(x.portrait)}" alt="${esc(x.name||'Academic mentor')} portrait" loading="eager" decoding="async">`:''}</div>
+            <div class="network-profile-photo">${x.portrait?`<img src="${esc(x.portrait)}" alt="${esc(x.name||'Academic mentor')} portrait" loading="eager" decoding="async"${x.profilePortraitPosition?` style="object-position:${esc(x.profilePortraitPosition)}"`:''}>`:''}</div>
             <div class="network-profile-identity">
               <div class="network-profile-eyebrow">${(x.profileBadges||x.roles?.slice(0,2)||[]).map(b=>`<span>${esc(b)}</span>`).join('')}</div>
               <h1>${esc(x.name||'')}</h1>
@@ -1645,7 +1645,7 @@
     const supportingRoles=roles.slice(2);
     return `<article class="network-person-card">
       <div class="network-person-media">
-        ${x.portrait?`<img class="network-person-portrait" src="${esc(x.portrait)}" alt="${esc(x.name||'Academic collaborator')} portrait" loading="lazy" decoding="async">`:''}
+        ${x.portrait?`<img class="network-person-portrait" src="${esc(x.portrait)}" alt="${esc(x.name||'Academic collaborator')} portrait" loading="lazy" decoding="async"${x.cardPortraitPosition?` style="object-position:${esc(x.cardPortraitPosition)}"`:''}>`:''}
         <div class="network-person-fallback" aria-hidden="true">${uiIcon('graduation')}</div>
       </div>
       <div class="network-person-body">
