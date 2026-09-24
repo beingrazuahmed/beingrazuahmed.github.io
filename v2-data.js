@@ -1319,7 +1319,7 @@
 
   relationship: {
     title: 'Batchmate, co-author & research collaborator',
-    detail: 'Muhammad Ziaul Haque is Razu’s batchmate from PUST and continuing research collaborator. Their collaboration includes mathematical modelling, CFD research, machine learning applications and nationwide dengue forecasting studies.'
+    detail: 'Muhammad Ziaul Haque is Razu’s batchmate from PUST and continuing research collaborator. Their collaboration includes machine learning applications and nationwide dengue forecasting studies.'
   },
 
   relationshipPath: [
