@@ -74,6 +74,7 @@
       description: 'Professor of Statistics and Data Science at PUST and Razu’s primary academic supervisor and long-term research mentor across statistical learning, machine learning, biomedical data science, computer vision and applied artificial intelligence.',
       biography: 'Dr. Md. Shamim Reza is a Professor in the Department of Statistics and Data Science at Pabna University of Science and Technology, Bangladesh. He received his PhD from Peking University, China, in 2019 after earlier completing B.Sc. and M.Sc. degrees in Statistics from the University of Rajshahi. His research spans artificial intelligence, machine learning, deep learning, medical imaging, multivariate analysis and computer vision.',
       portrait: 'assets/academic/instructors/shamim-reza.jpg?v=20260918-network24',
+      cardPortraitPosition: '50% 16%',
       currentPositions: [
         'Professor, Department of Statistics and Data Science, Pabna University of Science and Technology',
         'Dean, Faculty of Science, Pabna University of Science and Technology',
@@ -188,6 +189,7 @@
       showCardNote: false,
       biography: 'Dr. Sabba Ruhi is a Professor in the Department of Statistics and Data Science at Pabna University of Science and Technology, Bangladesh. She completed her B.Sc. and M.Sc. degrees in Statistics and doctoral studies at the University of Rajshahi. Her research focuses on complex lifetime models, biostatistics, machine learning, survival analysis and reliability analysis.',
       portrait: 'assets/academic/instructors/sabba-ruhi.png?v=20260918-network24',
+      cardPortraitPosition: '50% 22%',
       currentPositions: [
         'Professor, Department of Statistics and Data Science, Pabna University of Science and Technology',
         'Chairman, Department of Statistics and Data Science, Pabna University of Science and Technology'
@@ -250,6 +252,7 @@
       description: 'Professor at the University of Rajshahi and a senior academic mentor to Md. Razu Ahmed, providing scholarly guidance and encouragement in statistical modelling, machine learning, bioinformatics and interdisciplinary research.',
       biography: 'Dr. Md. Aminul Hoque is a Professor in the Department of Statistics and Data Science at the University of Rajshahi, Bangladesh. He earned his PhD in Bioinformatics from Keio University, Japan, and completed postdoctoral research in bioinformatics at the University of Malaya, Malaysia, and Niigata University, Japan. His academic profile spans statistics, genomics, bioinformatics, statistical genetics, machine learning and interdisciplinary data-driven research.',
       portrait: 'assets/academic/instructors/aminul-hoque.jpg?v=20260918-network24',
+      cardPortraitPosition: '50% 18%',
       currentRoleLabel: 'Current appointments & teaching',
       currentPositions: [
         'Professor, Department of Statistics and Data Science, University of Rajshahi',
@@ -330,6 +333,7 @@
       description: 'Associate Professor at Khulna University who taught Advanced Multivariate Analysis during Md. Razu Ahmed’s M.S. programme and has continued to support and actively motivate his academic and research development through encouragement, constructive guidance and perspectives on statistical and machine-learning research.',
       biography: 'Dr. Md. Menhazul Abedin is an Associate Professor in the Statistics Discipline at Khulna University and Head of the Statistical Theory and Analysis on Natural Sciences Laboratory (STAANS Lab). He received his PhD from Hokkaido University, Japan, where his doctoral research focused on multi-armed and contextual bandit algorithms for sequential experiments, dynamic feature selection and molecule-search applications. His broader research spans reinforcement learning, machine learning, bioinformatics, public health and interdisciplinary statistical applications.',
       portrait: 'assets/academic/instructors/menhazul-abedin.jpg?v=20260918-network24',
+      cardPortraitPosition: '50% 18%',
       currentRoleLabel: 'Current academic roles',
       currentPositions: [
         'Associate Professor, Statistics Discipline, Khulna University',
@@ -436,7 +440,7 @@
       showCardNote: false,
       biography: 'Dr. Md. Feroz Ali is an Associate Professor in the Department of Electrical and Electronic Engineering at Pabna University of Science and Technology (PUST), Bangladesh. He received his PhD in Electrical Engineering in 2025. During his doctoral research he produced ten scholarly works, including six Q1-ranked journal articles and four IEEE Xplore international conference papers. He began his academic career at PUST as a Lecturer and was subsequently promoted to Assistant Professor and then Associate Professor. He earned his M.Sc. Engg. and B.Sc. Engg. degrees in Electrical and Electronic Engineering from Rajshahi University of Engineering and Technology (RUET). His research spans renewable energy, microgrid planning and optimization, power systems, electrical machines and drives, power electronic converters, solar-cell devices and photovoltaic systems, with international collaborations across multiple countries.',
       portrait: 'assets/academic/instructors/feroz-ali.webp?v=20260923-feroz1',
-      cardPortraitPosition: '50% 4%',
+      cardPortraitPosition: '50% 10%',
       currentRoleLabel: 'Current academic roles',
       currentPositions: [
         'Associate Professor, Department of Electrical and Electronic Engineering, Pabna University of Science and Technology',
@@ -545,7 +549,7 @@
       "affiliation": "Xavier Ochsner College of Medicine, Xavier University of Louisiana, New Orleans, LA 70112, USA",
       "description": "International research collaborator and external mentor in statistical machine learning, causal inference, genomics, bioinformatics and biomedical AI. His scholarly guidance supports Razu’s work on emerging research directions and a joint causal-inference review currently in preparation.",
       "portrait": "assets/collaborators/ashad-alam.jpg?v=20260924-collab2",
-      cardPortraitPosition: '50% 35%',
+      cardPortraitPosition: '50% 26%',
       "currentRoleLabel": "Current appointments",
       "currentPositions": [
         "Assistant Professor of Biomedical Sciences, Xavier Ochsner College of Medicine, Xavier University of Louisiana · April 2026–present",
@@ -717,6 +721,7 @@
       affiliation: 'Department of Computer Science & Engineering, Metropolitan University, Sylhet-3104, Bangladesh',
       description: 'Senior Lecturer in Computer Science & Engineering at Metropolitan University and a departmental senior of Md. Razu Ahmed from PUST. His research spans statistical machine learning, deep learning, pattern recognition, medical imaging, health informatics and intelligent biomedical applications.',
       portrait: 'assets/collaborators/ruhul-amin.jpg?v=20260924-ruhul1',
+      cardPortraitPosition: '50% 14%',
       currentRoleLabel: 'Current academic role',
       currentPositions: [
         'Senior Lecturer, Department of Computer Science & Engineering, Metropolitan University, Sylhet-3104, Bangladesh'
@@ -851,6 +856,7 @@
       affiliation: 'University of Rajshahi, Rajshahi-6205, Bangladesh · Departmental senior and DSLR Lab member, PUST',
       description: 'M.Phil. student in Bioinformatics at the University of Rajshahi and a departmental senior of Md. Razu Ahmed from PUST. Her research interests span statistics, machine learning, deep learning, medical imaging, image processing, multivariate analysis and big-data analytics.',
       portrait: 'assets/collaborators/jannatul-mauya.jpeg?v=20260924-mauya1',
+      cardPortraitPosition: '50% 18%',
       currentRoleLabel: 'Current academic & research roles',
       currentPositions: [
         'M.Phil. Student in Bioinformatics, University of Rajshahi, Rajshahi-6205, Bangladesh',
@@ -1049,6 +1055,7 @@
       affiliation: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
       description: 'Statistics graduate, DSLR Lab member and research collaborator of Md. Razu Ahmed with interests in machine learning, computer vision, explainable and deployable AI, health applications and agricultural image analysis.',
       portrait: 'assets/collaborators/abdur-rakib.JPG?v=20260924-rakib1',
+      cardPortraitPosition: '50% 14%',
       currentRoleLabel: 'Academic distinctions',
       currentPositions: [
         'Research Assistant, Deep Statistical Learning and Research Lab (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh · Current',
@@ -1194,7 +1201,8 @@
       roles: ['Batchmate', 'Co-author', 'Research Collaborator'], affiliation: 'PUST research network',
       description: 'Batchmate and co-author working with Razu on nationwide dengue forecasting and decision-oriented public-health research.',
       shared: ['Nationwide dengue admission forecasting', 'Beyond Burden dengue preparedness study'],
-      portrait: 'assets/collaborators/ziaul-haque.jpeg?v=20260924-collab2', links: []
+      portrait: 'assets/collaborators/ziaul-haque.jpeg?v=20260924-collab2',
+      cardPortraitPosition: '50% 14%', links: []
     },
     {
       id: 'bakar-shiddik', name: 'Abu Bakar Shiddik', group: 'Peer & Batchmate Research Collaborators',
@@ -1202,28 +1210,31 @@
       description: 'Co-author and collaborator on AI-employment perceptions and related statistical research.',
       shared: ['AI and employment perceptions', 'Facial emotion recognition — ICRAST 2025'],
       portrait: 'assets/collaborators/abu-bakar-shiddik.jpeg?v=20260924-collab2',
-      cardPortraitPosition: '50% 5%', links: []
+      cardPortraitPosition: '50% 12%', links: []
     },
     {
       id: 'marufa', name: 'Marufa Yeasmin', group: 'Peer & Batchmate Research Collaborators',
       roles: ['Co-author', 'Research Collaborator', 'DSLR Member'], affiliation: 'PUST research network',
       description: 'Research collaborator in food-computing, dataset development and automated cafeteria analysis.',
       shared: ['PUST Cafeteria Food Image Dataset', 'RT-DETR cafeteria billing'],
-      portrait: 'assets/collaborators/marufa.jpg?v=20260924-collab2', links: []
+      portrait: 'assets/collaborators/marufa.jpg?v=20260924-collab2',
+      cardPortraitPosition: '50% 18%', links: []
     },
     {
       id: 'protiva-kundu', name: 'Protiva Rani Kundu', group: 'Peer & Batchmate Research Collaborators',
       roles: ['Batchmate', 'Co-author', 'Research Collaborator', 'DSLR Member'], affiliation: 'PUST research network',
       description: 'Batchmate and major peer collaborator in computer vision, cafeteria automation and dataset-centered research.',
       shared: ['PUST Cafeteria Food Image Dataset', 'RT-DETR cafeteria billing'],
-      portrait: 'assets/collaborators/protiva-rani-kundu.jpg?v=20260924-collab2', links: []
+      portrait: 'assets/collaborators/protiva-rani-kundu.jpg?v=20260924-collab2',
+      cardPortraitPosition: '50% 12%', links: []
     },
     {
       id: 'mimosa-saha', name: 'Mimosa Saha', group: 'Junior Collaborators & Mentees',
       roles: ['Junior Collaborator', 'Mentee', 'DSLR Member'], affiliation: 'PUST research network',
       description: 'Junior collaborator supported in research formulation, analysis and conference-oriented machine-learning work.',
       shared: ['Multiclass diabetes research — ICASDS 2025'],
-      portrait: 'assets/collaborators/mimosa-saha.jpg?v=20260924-collab2', links: []
+      portrait: 'assets/collaborators/mimosa-saha.jpg?v=20260924-collab2',
+      cardPortraitPosition: '50% 18%', links: []
     },
     {
       id: 'farzana-moly', name: 'Farzana Mehedi Moly', group: 'Junior Collaborators & Mentees',
@@ -1231,7 +1242,7 @@
       description: 'Junior collaborator in missing-data methodology and hepatitis-C prediction research.',
       shared: ['HCV missing-data manuscript', 'HCV conference contribution — EFAST 2026'],
       portrait: 'assets/collaborators/farzana-mehedi-moly.jpg?v=20260924-collab2',
-      cardPortraitPosition: '50% 50%', links: []
+      cardPortraitPosition: '50% 30%', links: []
     },
     {
       id: 'obaidul-islam', name: 'Md. Obaidul Islam', group: 'Junior Collaborators & Mentees',
@@ -1239,6 +1250,7 @@
       description: 'Junior collaborator supported in survey-weighted analysis, machine-learning workflow development and conference dissemination.',
       shared: ['EFAST 2026 cesarean-delivery conference contribution'],
       portrait: 'assets/collaborators/obaidul-islam.png?v=20260924-collab2',
+      cardPortraitPosition: '50% 18%',
       profilePortraitPosition: '35% 50%', links: []
     }
   ];
