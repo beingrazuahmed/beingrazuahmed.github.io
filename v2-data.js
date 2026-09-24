@@ -715,13 +715,12 @@
       affiliation: 'Department of Computer Science & Engineering, Metropolitan University, Sylhet-3104, Bangladesh',
       description: 'Senior Lecturer in Computer Science & Engineering at Metropolitan University and a departmental senior of Md. Razu Ahmed from PUST. His research spans statistical machine learning, deep learning, pattern recognition, medical imaging, health informatics and intelligent biomedical applications.',
       portrait: 'assets/collaborators/ruhul-amin.jpg?v=20260924-ruhul1',
-      currentRoleLabel: 'Current academic roles',
+      currentRoleLabel: 'Current academic role',
       currentPositions: [
-        'Senior Lecturer, Department of Computer Science & Engineering, Metropolitan University, Sylhet-3104, Bangladesh',
-        'Member, Deep Statistical Learning & Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh'
+        'Senior Lecturer, Department of Computer Science & Engineering, Metropolitan University, Sylhet-3104, Bangladesh'
       ],
       biographyParagraphs: [
-        'Ruhul Amin is a Senior Lecturer in the Department of Computer Science & Engineering at Metropolitan University, Sylhet, Bangladesh. He completed both his B.Sc. and M.S. in Statistics at Pabna University of Science and Technology (PUST), where he joined the Deep Statistical Learning & Research Laboratory (DSLR Lab) in 2021 under the supervision of Prof. Dr. Md. Shamim Reza.',
+        'Ruhul Amin is a Senior Lecturer in the Department of Computer Science & Engineering at Metropolitan University, Sylhet, Bangladesh. He completed both his B.Sc. and M.S. in Statistics at Pabna University of Science and Technology (PUST), where he joined the Deep Statistical Learning & Research Laboratory (DSLR Lab) in 2021 under the supervision of Prof. Dr. Md. Shamim Reza and later served there as a Research Assistant.',
         'His research focuses on statistical machine learning, deep learning, pattern recognition, medical imaging, image processing, health informatics and data-driven biomedical applications. His work has addressed osteoporosis, sarcopenia, liver-disease diagnosis, diabetes, handwritten-digit recognition and related healthcare problems, with a broader interest in developing intelligent statistical and AI-based solutions for real-world clinical and biomedical settings.'
       ],
       researchInterests: [
@@ -754,6 +753,11 @@
           title: 'Senior Lecturer',
           institution: 'Department of Computer Science & Engineering, Metropolitan University',
           location: 'Sylhet-3104, Bangladesh'
+        },
+        {
+          period: 'Past research experience',
+          title: 'Research Assistant · DSLR Lab',
+          institution: 'Deep Statistical Learning & Research Laboratory (DSLR Lab), Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh'
         },
         {
           period: '26 January 2019–14 March 2021',
