@@ -715,9 +715,9 @@
       name: 'Ruhul Amin',
       group: 'Departmental Seniors & Senior Collaborators',
       profilePage: 'network-ruhul-amin.html',
-      profileBadges: ['Departmental Senior', 'Research Collaborator', 'Co-author'],
+      profileBadges: ['Senior Lecturer', 'Research Collaborator', 'Co-author', 'Departmental Senior'],
       headline: 'Senior Lecturer · Computer Science & Engineering · Metropolitan University',
-      roles: ['Departmental Senior', 'Research Collaborator', 'Co-author', 'Senior Lecturer'],
+      roles: ['Senior Lecturer', 'Research Collaborator', 'Co-author', 'Departmental Senior'],
       affiliation: 'Department of Computer Science & Engineering, Metropolitan University, Sylhet-3104, Bangladesh',
       description: 'Senior Lecturer in Computer Science & Engineering at Metropolitan University and a departmental senior of Md. Razu Ahmed from PUST. His research spans statistical machine learning, deep learning, pattern recognition, medical imaging, health informatics and intelligent biomedical applications.',
       portrait: 'assets/collaborators/ruhul-amin.jpg?v=20260924-ruhul1',
@@ -784,7 +784,7 @@
       ],
       relationship: {
         title: 'Departmental senior & continuing research collaborator',
-        detail: 'Ruhul Amin is one of Razu’s departmental seniors from PUST and a fellow member of the DSLR research environment. Their collaboration began through shared statistical and machine-learning research and has developed into recurring co-authorship across signal processing, sentiment analysis, academic-performance research and an emerging causal-inference review.'
+        detail: 'Ruhul Amin is one of Razu’s departmental seniors from PUST and a continuing research collaborator. Their collaboration began through shared statistical and machine-learning research and has developed into recurring co-authorship across signal processing, sentiment analysis, academic-performance research and an emerging causal-inference review.'
       },
       relationshipPath: [
         'Departmental senior at PUST',
@@ -850,20 +850,20 @@
       name: 'Jannatul Mauya',
       group: 'Departmental Seniors & Senior Collaborators',
       profilePage: 'network-jannatul-mauya.html',
-      profileBadges: ['Departmental Senior', 'Research Collaborator', 'Co-author'],
+      profileBadges: ['M.Phil. Student', 'Research Assistant', 'Research Collaborator', 'Departmental Senior'],
       headline: 'M.Phil. Student in Bioinformatics · University of Rajshahi',
-      roles: ['Departmental Senior', 'Research Collaborator', 'Co-author', 'M.Phil. Student'],
-      affiliation: 'University of Rajshahi, Rajshahi-6205, Bangladesh · Departmental senior, PUST',
+      roles: ['M.Phil. Student', 'Research Assistant', 'Research Collaborator', 'Co-author', 'Departmental Senior'],
+      affiliation: 'University of Rajshahi, Rajshahi-6205, Bangladesh',
       description: 'M.Phil. student in Bioinformatics at the University of Rajshahi and a departmental senior of Md. Razu Ahmed from PUST. Her research interests span statistics, machine learning, deep learning, medical imaging, image processing, multivariate analysis and big-data analytics.',
       portrait: 'assets/collaborators/jannatul-mauya.jpeg?v=20260924-mauya1',
       cardPortraitPosition: '50% 18%',
       currentRoleLabel: 'Current academic & research roles',
       currentPositions: [
         'M.Phil. Student in Bioinformatics, University of Rajshahi, Rajshahi-6205, Bangladesh',
-        'Research Assistant, Deep Statistical Learning and Research Lab, Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh · February 2025–present'
+        'Research Assistant, Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh · February 2025–present'
       ],
       biographyParagraphs: [
-        'Jannatul Mauya is an M.Phil. student in Bioinformatics at the University of Rajshahi and a Research Assistant in the Deep Statistical Learning and Research Lab (DSLR Lab) at Pabna University of Science and Technology. She completed both her B.Sc. (Hons.) and M.S. (Thesis) in Statistics at PUST, securing first merit position in both programmes.',
+        'Jannatul Mauya is an M.Phil. student in Bioinformatics at the University of Rajshahi and a Research Assistant in the Deep Statistical Learning and Research Laboratory (DSLR Lab) at Pabna University of Science and Technology. She completed both her B.Sc. (Hons.) and M.S. (Thesis) in Statistics at PUST, securing first merit position in both programmes.',
         'Her research interests include statistics, machine learning, deep learning, medical imaging and image processing, pattern processing, multivariate analysis and big-data analysis. Her work spans biomedical and health-related prediction, computer vision, missing-data methodology, food computing and agricultural image analysis.'
       ],
       researchInterests: [
@@ -919,7 +919,7 @@
         {
           period: 'February 2025–present',
           title: 'Research Assistant',
-          institution: 'Deep Statistical Learning and Research Lab, Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+          institution: 'Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
           location: 'Pabna-6600, Bangladesh'
         },
         {
@@ -942,7 +942,7 @@
       ],
       relationship: {
         title: 'Departmental senior & major research collaborator',
-        detail: 'Jannatul Mauya is one of Razu’s departmental seniors from PUST and a fellow member of the DSLR research environment. Their continuing collaboration spans signal processing, medical imaging, missing-data research, food-computing datasets, agricultural deep learning, AI-employment research and academic-performance modelling.'
+        detail: 'Jannatul Mauya is one of Razu’s departmental seniors from PUST and a continuing research collaborator. Their shared research spans signal processing, medical imaging, missing-data research, food-computing datasets, agricultural deep learning, AI-employment research and academic-performance modelling.'
       },
       relationshipPath: [
         'Departmental senior at PUST',
@@ -1049,22 +1049,19 @@
       name: 'Md. Abdur Rakib',
       group: 'Peer & Batchmate Research Collaborators',
       profilePage: 'network-abdur-rakib.html',
-      profileBadges: ['Batchmate', 'Research Collaborator', 'Co-author', 'NST Fellow'],
-      headline: 'Statistics Graduate · Machine Learning & Computer Vision Researcher · PUST',
-      roles: ['Batchmate', 'Research Collaborator', 'Co-author', 'Research Assistant'],
-      affiliation: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
-      description: 'Statistics graduate, DSLR Lab member and research collaborator of Md. Razu Ahmed with interests in machine learning, computer vision, explainable and deployable AI, health applications and agricultural image analysis.',
+      profileBadges: ['Research Assistant', 'Research Collaborator', 'Co-author', 'NST Fellow'],
+      headline: 'Research Assistant · DSLR Lab, PUST · Research Collaborator',
+      roles: ['Research Assistant', 'Research Collaborator', 'Co-author', 'Batchmate'],
+      affiliation: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+      description: 'Research Assistant at the Deep Statistical Learning and Research Laboratory (DSLR Lab) and research collaborator of Md. Razu Ahmed, with interests in machine learning, computer vision, explainable and deployable AI, health applications and agricultural image analysis.',
       portrait: 'assets/collaborators/abdur-rakib.JPG?v=20260924-rakib1',
       cardPortraitPosition: '50% 14%',
-      currentRoleLabel: 'Academic distinctions',
+      currentRoleLabel: 'Current research role',
       currentPositions: [
-        'Research Assistant, Deep Statistical Learning and Research Lab (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh · Current',
-        'National Science & Technology (NST) Fellowship recipient, Ministry of Science and Technology, Government of Bangladesh',
-        'Dean’s Honors Award recipient, Pabna University of Science and Technology',
-        'Sakura Science Exchange Program invited participant, University of Yamanashi, Japan · selected as 1 of 7 students in the PUST delegation'
+        'Research Assistant, Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh'
       ],
       biographyParagraphs: [
-        'Md. Abdur Rakib completed both his B.Sc. (Hons.) and M.S. (Thesis) in Statistics at Pabna University of Science and Technology (PUST), securing first position in departmental merit. He is a member of the Deep Statistical Learning and Research Laboratory (DSLR Lab) and has been active in research, student leadership, innovation and international academic exchange.',
+        'Md. Abdur Rakib is a Research Assistant at the Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), and a continuing research collaborator of Md. Razu Ahmed. He completed both his B.Sc. (Hons.) and M.S. (Thesis) in Statistics at PUST, securing first position in departmental merit. His previous Research Assistant appointment on an RTTC mental-health project ran from 1 January to 30 June 2026.',
         'His research focuses on machine learning and computer vision, with particular interest in explainable and deployable AI systems for health and agricultural applications. His experience includes survey-based research, predictive modelling, multimodal deep learning and image-based decision support.'
       ],
       researchInterests: [
@@ -1109,7 +1106,7 @@
         {
           period: 'Current',
           title: 'Research Assistant',
-          institution: 'Deep Statistical Learning and Research Lab (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST)',
+          institution: 'Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST)',
           location: 'Pabna-6600, Bangladesh'
         },
         {
@@ -1117,6 +1114,16 @@
           title: 'Research Assistant · RTTC Project',
           institution: 'Research and Technology Transfer Cell (RTTC), Pabna University of Science and Technology',
           detail: 'Project: “Clinical Prediction of Depression and Anxiety Symptom Severity among Psychiatric Patients at Pabna Mental Hospital.”'
+        },
+        {
+          period: 'Leadership & innovation',
+          title: 'Team Member & Chief Technology Officer (CTO)',
+          institution: 'HULT Prize · Stat4Change'
+        },
+        {
+          period: 'Professional development',
+          title: 'IT Support Service Course Partner',
+          institution: 'IT Support Service'
         },
         {
           period: 'International academic exposure',
@@ -1138,15 +1145,15 @@
         'PUST Merit Scholarship during B.Sc.: 1st rank in Years 2–4 and 3rd rank in Year 1; also received merit scholarship during M.S.'
       ],
       externalAffiliations: [
-        'Member, Deep Statistical Learning and Research Laboratory (DSLR Lab), PUST.',
+        'Research Assistant, Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST).',
         'HULT Prize · Stat4Change team member and Chief Technology Officer (CTO).',
         'IT Support Service Course Partner.',
-        'Statistical Field Survey Group Member, Department of Statistics, PUST.',
+        'Statistical Field Survey Group Member, Department of Statistics and Data Science, Pabna University of Science and Technology (PUST).',
         'Sakura Science Exchange Program participant, University of Yamanashi, Japan.'
       ],
       relationship: {
         title: 'Batchmate, field-survey teammate & research collaborator',
-        detail: 'Md. Abdur Rakib is Razu’s batchmate from PUST, a fellow DSLR Lab member and a continuing research collaborator. Their shared academic path includes the undergraduate statistical field survey, joint journal publications and conference contributions spanning chronic-kidney-disease prediction, AI-employment perceptions and facial-emotion recognition.'
+        detail: 'Md. Abdur Rakib is Razu’s batchmate from PUST and a continuing research collaborator. Their shared academic journey includes statistical field survey activities, joint journal publications, conference contributions, and collaborative research in machine learning and artificial intelligence.'
       },
       relationshipPath: [
         'Batchmates at PUST',
@@ -1206,7 +1213,8 @@
     },
     {
       id: 'bakar-shiddik', name: 'Abu Bakar Shiddik', group: 'Peer & Batchmate Research Collaborators',
-      roles: ['Co-author', 'Research Collaborator', 'DSLR Member'], affiliation: 'PUST research network',
+      roles: ['Research Assistant', 'Research Collaborator', 'Co-author'],
+      affiliation: 'Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
       description: 'Co-author and collaborator on AI-employment perceptions and related statistical research.',
       shared: ['AI and employment perceptions', 'Facial emotion recognition — ICRAST 2025'],
       portrait: 'assets/collaborators/abu-bakar-shiddik.jpeg?v=20260924-collab2',
@@ -1214,7 +1222,8 @@
     },
     {
       id: 'marufa', name: 'Marufa Yeasmin', group: 'Peer & Batchmate Research Collaborators',
-      roles: ['Co-author', 'Research Collaborator', 'DSLR Member'], affiliation: 'PUST research network',
+      roles: ['Research Assistant', 'Research Collaborator', 'Co-author'],
+      affiliation: 'Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
       description: 'Research collaborator in food-computing, dataset development and automated cafeteria analysis.',
       shared: ['PUST Cafeteria Food Image Dataset', 'RT-DETR cafeteria billing'],
       portrait: 'assets/collaborators/marufa.jpg?v=20260924-collab2',
@@ -1222,7 +1231,8 @@
     },
     {
       id: 'protiva-kundu', name: 'Protiva Rani Kundu', group: 'Peer & Batchmate Research Collaborators',
-      roles: ['Batchmate', 'Co-author', 'Research Collaborator', 'DSLR Member'], affiliation: 'PUST research network',
+      roles: ['Research Assistant', 'Research Collaborator', 'Co-author', 'Batchmate'],
+      affiliation: 'Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
       description: 'Batchmate and major peer collaborator in computer vision, cafeteria automation and dataset-centered research.',
       shared: ['PUST Cafeteria Food Image Dataset', 'RT-DETR cafeteria billing'],
       portrait: 'assets/collaborators/protiva-rani-kundu.jpg?v=20260924-collab2',
@@ -1230,7 +1240,8 @@
     },
     {
       id: 'mimosa-saha', name: 'Mimosa Saha', group: 'Junior Collaborators & Mentees',
-      roles: ['Junior Collaborator', 'Mentee', 'DSLR Member'], affiliation: 'PUST research network',
+      roles: ['Research Assistant', 'Junior Collaborator', 'Mentee'],
+      affiliation: 'Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
       description: 'Junior collaborator supported in research formulation, analysis and conference-oriented machine-learning work.',
       shared: ['Multiclass diabetes research — ICASDS 2025'],
       portrait: 'assets/collaborators/mimosa-saha.jpg?v=20260924-collab2',
@@ -1238,7 +1249,8 @@
     },
     {
       id: 'farzana-moly', name: 'Farzana Mehedi Moly', group: 'Junior Collaborators & Mentees',
-      roles: ['Junior Collaborator', 'Mentee', 'DSLR Member'], affiliation: 'PUST research network',
+      roles: ['Research Assistant', 'Junior Collaborator', 'Mentee'],
+      affiliation: 'Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
       description: 'Junior collaborator in missing-data methodology and hepatitis-C prediction research.',
       shared: ['HCV missing-data manuscript', 'HCV conference contribution — EFAST 2026'],
       portrait: 'assets/collaborators/farzana-mehedi-moly.jpg?v=20260924-collab2',
@@ -1246,7 +1258,8 @@
     },
     {
       id: 'obaidul-islam', name: 'Md. Obaidul Islam', group: 'Junior Collaborators & Mentees',
-      roles: ['Junior Collaborator', 'Mentee', 'DSLR Member'], affiliation: 'Department of Statistics and Data Science, PUST',
+      roles: ['Research Assistant', 'Junior Collaborator', 'Mentee'],
+      affiliation: 'Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
       description: 'Junior collaborator supported in survey-weighted analysis, machine-learning workflow development and conference dissemination.',
       shared: ['EFAST 2026 cesarean-delivery conference contribution'],
       portrait: 'assets/collaborators/obaidul-islam.png?v=20260924-collab2',
