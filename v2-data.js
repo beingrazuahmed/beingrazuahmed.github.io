@@ -1251,15 +1251,15 @@
   },
   {
     degree: 'Master of Science (M.S., Thesis) in Pure Mathematics',
-    institution: 'Department of Mathematics, Pabna University of Science and Technology (PUST), Bangladesh',
+    institution: 'Department of Mathematics, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
     year: '2023 · held in 2026',
     detail: 'Thesis: “A Unified Leakage-Aware and Interpretable AI Pipeline for Predicting Vehicle-Level CO₂ Emissions and Survey-Based Diabetes Risk Stratification.”'
   },
   {
     degree: 'Bachelor of Science (B.Sc.) in Mathematics',
-    institution: 'Department of Mathematics, Pabna University of Science and Technology (PUST), Bangladesh',
+    institution: 'Department of Mathematics, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
     year: '2021 · held in 2023',
-    detail: 'Project: “Exploring Travelling Wave Solutions of Nonlinear Evolution Equations in Mathematical Physics: The Propagation in a Magneto-Electro-Elastic Circular Rod.”'
+    detail: 'Mathematics Project: “Exploring Travelling Wave Solutions of Nonlinear Evolution Equations in Mathematical Physics: The Propagation in a Magneto-Electro-Elastic Circular Rod.”'
   },
   {
     degree: 'Higher Secondary Certificate (H.S.C.) · Science',
