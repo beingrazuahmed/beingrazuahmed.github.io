@@ -528,21 +528,22 @@
     {
       "id": "ashad-alam",
       "name": "Dr. Md. Ashad Alam",
-      "group": "Academic Guidance & Advisors",
+      "group": "International Research Collaborators",
       "profilePage": "network-ashad-alam.html",
       "profileBadges": [
-        "External Research Guidance",
-        "Research Collaborator"
+        "External Research Mentor",
+        "Research Collaborator",
+        "Causal Inference & Biomedical AI"
       ],
-      "headline": "Assistant Professor of Biomedical Sciences",
+      "headline": "Assistant Professor of Biomedical Sciences · Xavier Ochsner College of Medicine",
       "roles": [
-        "External Research Guidance",
+        "External Research Mentor",
         "Research Collaborator",
         "Assistant Professor"
       ],
       "affiliation": "Xavier Ochsner College of Medicine, Xavier University of Louisiana, New Orleans, LA 70112, USA",
-      "description": "Statistical machine-learning researcher working across biomedical informatics, genomics, bioinformatics and complex-disease modelling, with over 13 years of university teaching experience in the United States and Bangladesh.",
-      "portrait": "assets/collaborators/ashad-alam.jpg",
+      "description": "International research collaborator and external mentor in statistical machine learning, causal inference, genomics, bioinformatics and biomedical AI. His scholarly guidance supports Razu’s work on emerging research directions and a joint causal-inference review currently in preparation.",
+      "portrait": "assets/collaborators/ashad-alam.jpg?v=20260924-collab2",
       "currentRoleLabel": "Current appointments",
       "currentPositions": [
         "Assistant Professor of Biomedical Sciences, Xavier Ochsner College of Medicine, Xavier University of Louisiana · April 2026–present",
@@ -668,7 +669,7 @@
         {
           "label": "XULA Profile",
           "url": "https://www.xula.edu/directory//people/md-ashad-alam-phd.html",
-          "icon": "https://www.google.com/s2/favicons?sz=128&domain=xula.edu"
+          "icon": "data:image/webp;base64,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"
         },
         {
           "label": "LinkedIn",
@@ -690,7 +691,7 @@
         {
           "label": "Loop · Frontiers",
           "url": "https://loop.frontiersin.org/people/1001584/overview",
-          "icon": "https://www.google.com/s2/favicons?sz=128&domain=frontiersin.org"
+          "icon": "data:image/webp;base64,UklGRtwNAABXRUJQVlA4INANAABwMwCdASpgAGAAPjEUiEKiISEWrEXkIAMEtivZkADiMwt6X+QH5AfJtUX6N+A/yA5+cmXaH/A+0ntH/eB7gH6pdMn9ovUL+vP6oe9H6HPQA/sX9i6yT0Cf2A9LL9mvg1/ZD/v/6X4Df1q/8OCWbp/uvgn5DPZvt361mN/rQ/uPRD6cfov7n57/77wl4BHrz/JfNVx6AAPz/+y/6r8xfPr1IOpz3APy68YDx9PRvYH/Of/X/vvsJf83+j9Kn0h/2/8z8B380/r3+z/t3ta+0X9sPZ3/ZFoKYwLKhk+VgWujjgdHswYmM3o5iU2oDSRPOlr9yoaBN8HVodofDxFon/ay9gH0p6Ar6cvV7v9Ic/GjpCHbPsnsJnWty5Y9y+0uDQEJKHOeVgkXTtzh9MPss/SmsYTP92hNSYW66OhKLWis22wDoeMtzNP65Wy3Pb/kQ+sjHDgNQQL23M/Ccy3jIbg2V0AaOD4Ml+LSYt3Lhw28cpHO2OZYysqgQpoCCmc5PsUtjJWcNhsFH598VfxGRGJpPPooL3x4eAM8pV9SydKmFQk6pAAA/v/+zionvncxIjHDKwywG0CK/l5chEY0yOe8QptBKr+If8mSw9K9biGEkZ/cDd+7rfcrr3pUZNS/izlLi9X+2R/40k80EvpX/FPt/6G0JZzUSEh/CMQagaMfGtK/RYn8aPhBEhIJmJLlv6+U2XmoqQPFrLoMQ3x275Z0T+zXJO4RgjQWvW8tqubxV+dVM7QV12TFGf2oY6Ukdpfo4HVvdzddRf8vM9MonuySfW3BL5SvKN7//i/ptx3XYXLj0vSZTdNMArfeE5Ue14NX0SV1moa6fp5QIJP41kL4y6L/3kEVpCEPxDncqD4K1BNESBpJQZwUDoGO3q7//8GDK/WFXioc8PN7e3A+CyOuMicxCzqrsR5mdWRlaTtaWZH+evjC6phagBYU2e390VBvYj7jltZFD8YqM5T4DwqW5kYFm/g1PI9x5fmRVRQCKWkXhnivhqMPhAwYSE+vZEwwcVbWeAvy9BgHdSh/aX0Dff/ipC2mf9jxWNdGPi+Lr4mTS6VxRPxp35tduncFQVv1+ETOcdhwY7D7LdXLLPpm5hFlOLO/UGBfDba3GbQHfJa7LGRLxF3xqv7zKJqQQWYtlJ0ZE/QR8OLWT2FW4DhkH873W7rPznysFAFRfpJF3S0aDejACyb9UwPhyBN0r2Nr+DKUAuzsNZQbH4oeeyla8TSd5ryZMJmgXP5GiGYk5dv7pM2xnzFB5yxHtckvA81JxWbmXoQKT7g5QeFnIoVPrLN43dKC9epUEk7izJY2+EUwlg9nYOvhHp7JXP2YP0Gl1Gff7d/kjI028ZrYC4mbo1vfQfOuAlAeqm9b8+kx4wRwLrSq8EpzEfaFI6QLUxrL0LoWu+UPSs1Q/QBJsQSTPZnvgtM3CQ1rLfgAT7ACKg0nRP5n+3lXDWWPv7RatsKJnz2r1saygf+mJ+axahKIWs/IHCJJ6jVLWGad24f+IBq7rwBYs+ATqlCqeXv/x05MI/IW+uvrl8527F7Hd6axc/hwU9Ls7tkTeTvRRCcroN2o/fqCZp7jBsNqCFSI0GwGXI2EMP1IH/a2h5jRhsPCTOU0WxhHzISOAEh84ntSf0F5hiLC1JdAFDBvrSytYDZgcOwmrr9Qfg66BPe5xFuvpH5KFzpyZMG7cCceFzpPw7aH23KWYW2a+zreZsM8Dusu1rcnRP+tWH3MvqEC8MypQplW8t5I5toa8DWTkXAdXbLF0RZPWgHV4f39pSM7jGs3aSiwDGm5NuanoFczVkub9Ir1dOIuJLuxQFhfgq6VpuQor3Y5p4Uc23z+UwN5n+exCvwO9qc2TgMXe/cmHO8//Hb/4NayPQIeL57vyTnKJQjOzMpN6GDj3jHhlu+grhPc+Lf6QN86+Z4SIc71zgPNfLzur1PuWhhG4xBFm5GvP/kC4DNQ9327A4QoVCets3QfsjvUOhbazvG/G6oseLFD/hmncoHwufvvIh6Ff576vUa8DZP0zB3p9j+HTZsdrP9q/uXnD+YbUDQbYU/Q+joiM+CPMmSSgT6uZ4cJ/RoWt/I5yfrb8id5siuem18TSGaHKqDTllBzUYLAswW3O3ubWqL1wZ4/3BoBsIS2sYxrWzPayIFGXqCBzHMvFrC/+vU4nxuz60EGvAVZ+FZ/QL8NgN6p9AJrss+EGnvWcxZA9mxRbSrzKeYtrmxjveHVoxQHifQXTUmhPNzmWsAfI0cWhIf3znJrcl7IwNU0P6k9sdko+IMLGAJEdCu259OJpP4DJyqIQuOsFkPYfU3P6VbJITneqhuzm3s4fz0cvSPV8Z1yQsG9/wgTM0uulEspW7LSa5M0S85Y/ND4koev7ItSV1JW9MrbSO3TknOsDrkagFe5F1+Ni9zWEo/zitvCVF9TgA7Y5zr9UqsAG/Uy7JH481QXZ1vCwwVEtXBzxxVn0ZoxaEI5xtlrhsrAmS89EEzA2TLPqLxCfIQlx/+gy3pUvWp6/4ne6KGyCUM9j/KVnm0Vmj8XLJVYVpuTa2b8banOHPOIaad5v79W72xe3TOLtUAuZGszCNBroy4ycMRm963s2//tLJP7E3zBIE6h5buu+t8z46xXneeCVaXPddSptkvM4gB9cM1D1P9/LHBX3Jetn+eoTGz3kPZShqP+v0Z1QIcyRUCicx6OVirQkqteAVNAV9TcifI1FQTeG10XG/2kmkEMQIE5UA1Hr1ZBNR4D4QReqb+SkSpH4E45Ij1q4eUAOdKDw3wN8gZf6yVMoVLlOwZ/GLpGTTsxb8ejrJnnFM8LFy3nsXZ7V68dt0Zk/iSDyUTx1UDjndp8utpht+zDzLg9BVewPGHHmieSbB9EIrjovMC+yN/0hm9XlthlFx+059H/hZ5dG8X6HdEmf+DX4YwxgoVmH57LItZVyrNT90E2cxfiuFHsoIvt8XaQd4C+kSDQfWkh5xQaZj2CLy8BV9bdUl4qVwHyQlQps98c0qT2gosGcxyuDYPACRpAIOScicj627u6mHwyI8VgkA+FegEBEAIYcP43uQm3809sxKWxkabpbv98ujrAylB+7OIM3E7xCBa8aBpv9al+pxkdb3qz35z7afmMn8MIhvgAVTIk8obrfMNt6i/R88tEo/robpwi7WrBZ/uARYaYA/VgGRAeao0dJulxpH8e47tkEhr9b5b0f7+HfgIohr6+YFCHIGr2W08OTFQP5Nos6Roa5YqgBYVCso0YXMzrka/NYwI4nd4rhttOCiZtvh5iK2OSWNE5pdHwtyCXx1SLRBCAW12Og0idZ4rPzeqzDq0XPLlhzx51Zdrd4hmkDpnjMCBMJ39IWmFQ2xvJb/+zOROWzAHSQIDfou43+KS3fJGOlIDWoWhSAolueZY+2ofFKJoa54FyHqfPYwra4bPhXNfZBcK1xvxrh3HS4KbmwoYKcU/zeHDdcim6WLvX7e32K8Dd6v8uDz+x2VTxNAOAceP8p/461MbK9J3u8kx//4bA68CQlQfGfXAFuW9cMqFT2jIKWrCwIZV0U0Bg6tZUGifwx/9iFRIV2ux+Cr4Vui/f/7Imd4IpN0fuqWm5W/JGWjKFM7V6oMg+ZlnoNcG6+/siduL3/kKrBrfNDICkmWvU2gXFLax0NKgOnib5+U1Bn4/5HuS/g2oiyN+LmNTHWbzs85nWncYjHtpkXa7D7Y2rCNnIZ9bn3kswMHh9fUEtktzrsGyGP4VrRacdHgk5VQInwHpCW0Aalyd3Kn5RjKjErAua7Mc6/bBZo3pUGS+IaQCQwIFEgC4/MAF1JBWRfamTQueld/A+ViDpcC0eSavA5G9sgrQqp8RKtaJ+Ig74cykSP1b9OATELCn7Cv0+xXDNN3URX3mdig85yoHUJubgovdK4RAiyHdlYVrwaVTbDZ4kLYevd4CWxDtkzhxc5JKCV4NaFIOyGe3D3XUrUdwmMLNBq+amZMtSb6Llmd2Q0LdsyZpRWm3v6+kcIQfEeqcNu93NWDvqygjd6zuWtgxmsaogthuhEp2csH79cuDcMarcJaA1jWcQnO6EDBQmMF+qhAZ+i5sNU/I+UxP+rllmLUB5v81pxk55nUVsyKqgrtWr09Y/3Pi7/rVFGc6eQY6j9QIi1sw+wWtRMbSqhV5zbq8HNi21BvDaaB8X2vR+QotGiJ5yyjoXZCcyn4BV5xGwD94bnvcMNZ1ksI/tzkn+FIS0G1D0dIIF9N8fPAJmHwp13kjgbXY4TgNK0cv3UGukklOSxk/NzsFlPMPrU74u4zM9+VsRxZUmJG9M8OLSxY+bb1d29m7qc/Oqg3AM0Cy6bQMcZZqPNWbyCRM/ASMighLhS+c4KKq5GVprCQrUpLyv9yMLwV7RqxunFNiV02HB7aScQCyLsDZLsV1p9HsinYPVJwKWpJDhyjfpJrZfQmL5Mog/2d4ildlSy6dylxb0ZhvnlMRW6KBv2IIxZs5SBrDUweyDEEABJhJ19Q58ljrRjPu2cb3TbXuN7yQZfhSwfoOMQM22TyD4szhZ+Mzi/cILbVt2PSSId6i/X5gkpHjy3Uzisvkn6FdgnCjgtrR2JZ/I0VdUd0UXnFMi7Yvkivxw608HTjh5A3D2SPXylBoQnbVxZ/Dbgbmbr+s5yBqefijT6+Jbn6VFKPd5TQEQOapkhfxLa0i1BuuOAGxUD1Y3z3S8UeuMLXBRAAAAAA"
         },
         {
           "label": "Scopus",
@@ -708,7 +709,7 @@
       affiliation: 'Statistics and Data Science research network, PUST',
       description: 'Departmental senior and recurring research collaborator across signal processing, NLP and emerging causal research.',
       shared: ['FastICA source separation', 'Cross-domain sentiment classification', 'A Comprehensive Review of Causal Inference: Philosophical Issues to Adversarial Deep Learning Issues — in preparation'],
-      portrait: 'assets/collaborators/ruhul-amin.jpg', links: []
+      portrait: 'assets/collaborators/ruhul-amin.jpg?v=20260924-collab2', links: []
     },
     {
       id: 'jannatul-mauya', name: 'Jannatul Mauya', group: 'Departmental Seniors & Senior Collaborators',
@@ -716,63 +717,63 @@
       affiliation: 'Statistics and Data Science research network, PUST',
       description: 'Departmental senior and major collaborator across medical imaging, missing-data research, food computing and statistical learning.',
       shared: ['FastICA source separation', 'Diabetic-retinopathy grading', 'HCV missing-data research', 'PUST Cafeteria Food Image Dataset', 'Academic-performance study'],
-      portrait: 'assets/collaborators/jannatul-mauya.jpg', links: []
+      portrait: 'assets/collaborators/jannatul-mauya.jpeg?v=20260924-collab2', links: []
     },
     {
       id: 'abdur-rakib', name: 'Md. Abdur Rakib', group: 'Peer & Batchmate Research Collaborators',
       roles: ['Co-author', 'Research Collaborator', 'DSLR Member'], affiliation: 'PUST research network',
       description: 'Research collaborator on AI-employment perceptions and facial-emotion-recognition research.',
       shared: ['AI and employment perceptions', 'Facial emotion recognition — ICRAST 2025'],
-      portrait: 'assets/collaborators/abdur-rakib.jpg', links: []
+      portrait: 'assets/collaborators/abdur-rakib.JPG?v=20260924-collab2', links: []
     },
     {
       id: 'ziaul-haque', name: 'Muhammad Ziaul Haque', group: 'Peer & Batchmate Research Collaborators',
       roles: ['Batchmate', 'Co-author', 'Research Collaborator'], affiliation: 'PUST research network',
       description: 'Batchmate and co-author working with Razu on nationwide dengue forecasting and decision-oriented public-health research.',
       shared: ['Nationwide dengue admission forecasting', 'Beyond Burden dengue preparedness study'],
-      portrait: 'assets/collaborators/ziaul-haque.jpg', links: []
+      portrait: 'assets/collaborators/ziaul-haque.jpeg?v=20260924-collab2', links: []
     },
     {
       id: 'bakar-shiddik', name: 'Abu Bakar Shiddik', group: 'Peer & Batchmate Research Collaborators',
       roles: ['Co-author', 'Research Collaborator', 'DSLR Member'], affiliation: 'PUST research network',
       description: 'Co-author and collaborator on AI-employment perceptions and related statistical research.',
       shared: ['AI and employment perceptions', 'Facial emotion recognition — ICRAST 2025'],
-      portrait: 'assets/collaborators/abu-bakar-shiddik.jpg', links: []
+      portrait: 'assets/collaborators/abu-bakar-shiddik.jpeg?v=20260924-collab2', links: []
     },
     {
       id: 'marufa', name: 'Marufa Yeasmin', group: 'Peer & Batchmate Research Collaborators',
       roles: ['Co-author', 'Research Collaborator', 'DSLR Member'], affiliation: 'PUST research network',
       description: 'Research collaborator in food-computing, dataset development and automated cafeteria analysis.',
       shared: ['PUST Cafeteria Food Image Dataset', 'RT-DETR cafeteria billing'],
-      portrait: 'assets/collaborators/marufa.jpg', links: []
+      portrait: 'assets/collaborators/marufa.jpg?v=20260924-collab2', links: []
     },
     {
       id: 'protiva-kundu', name: 'Protiva Rani Kundu', group: 'Peer & Batchmate Research Collaborators',
       roles: ['Batchmate', 'Co-author', 'Research Collaborator', 'DSLR Member'], affiliation: 'PUST research network',
       description: 'Batchmate and major peer collaborator in computer vision, cafeteria automation and dataset-centered research.',
       shared: ['PUST Cafeteria Food Image Dataset', 'RT-DETR cafeteria billing'],
-      portrait: 'assets/collaborators/protiva-rani-kundu.jpg', links: []
+      portrait: 'assets/collaborators/protiva-rani-kundu.jpg?v=20260924-collab2', links: []
     },
     {
       id: 'mimosa-saha', name: 'Mimosa Saha', group: 'Junior Collaborators & Mentees',
       roles: ['Junior Collaborator', 'Mentee', 'DSLR Member'], affiliation: 'PUST research network',
       description: 'Junior collaborator supported in research formulation, analysis and conference-oriented machine-learning work.',
       shared: ['Multiclass diabetes research — ICASDS 2025'],
-      portrait: 'assets/collaborators/mimosa-saha.jpg', links: []
+      portrait: 'assets/collaborators/mimosa-saha.jpg?v=20260924-collab2', links: []
     },
     {
       id: 'farzana-moly', name: 'Farzana Mehedi Moly', group: 'Junior Collaborators & Mentees',
       roles: ['Junior Collaborator', 'Mentee', 'DSLR Member'], affiliation: 'PUST research network',
       description: 'Junior collaborator in missing-data methodology and hepatitis-C prediction research.',
       shared: ['HCV missing-data manuscript', 'HCV conference contribution — EFAST 2026'],
-      portrait: 'assets/collaborators/farzana-mehedi-moly.jpg', links: []
+      portrait: 'assets/collaborators/farzana-mehedi-moly.jpg?v=20260924-collab2', links: []
     },
     {
       id: 'obaidul-islam', name: 'Md. Obaidul Islam', group: 'Junior Collaborators & Mentees',
       roles: ['Junior Collaborator', 'Mentee', 'DSLR Member'], affiliation: 'Department of Statistics and Data Science, PUST',
       description: 'Junior collaborator supported in survey-weighted analysis, machine-learning workflow development and conference dissemination.',
       shared: ['EFAST 2026 cesarean-delivery conference contribution'],
-      portrait: 'assets/collaborators/obaidul-islam.jpg', links: []
+      portrait: 'assets/collaborators/obaidul-islam.png?v=20260924-collab2', links: []
     }
   ];
 
