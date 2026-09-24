@@ -783,7 +783,8 @@
       ],
       collaborationStats: [
         { value: '1', label: 'Published journal article' },
-        { value: '2', label: 'Submitted / under review' },
+        { value: '1', label: 'Under Revision' },
+        { value: '1', label: 'Awaiting Admin Processing' },
         { value: '1', label: 'Review in preparation' }
       ],
       sharedPublications: [
@@ -798,13 +799,13 @@
           title: 'Adaptive Probability Fusion of Lightweight Recurrent Networks for Cross-Domain Sentiment Classification',
           journal: 'Applied AI Letters',
           publisher: 'Wiley',
-          detail: 'Submitted / under review.'
+          detail: 'Under Revision.'
         },
         {
           title: 'Factors Associated with Undergraduates Academic Performance Among Public University Students: A Case Study',
           journal: 'International Journal of Educational Reform',
           publisher: 'SAGE',
-          detail: 'Submitted / under review.'
+          detail: 'Awaiting Admin Processing.'
         }
       ],
       sharedInPreparation: [
@@ -815,14 +816,14 @@
       ],
       shared: [
         'Sophisticated Audio Source Separation: A Statistical Exploration of Clarity and Precision With FastICA — published in Engineering Reports',
-        'Adaptive Probability Fusion of Lightweight Recurrent Networks for Cross-Domain Sentiment Classification — submitted / under review',
-        'Factors Associated with Undergraduates Academic Performance Among Public University Students: A Case Study — submitted / under review',
+        'Adaptive Probability Fusion of Lightweight Recurrent Networks for Cross-Domain Sentiment Classification — Under Revision',
+        'Factors Associated with Undergraduates Academic Performance Among Public University Students: A Case Study — Awaiting Admin Processing',
         'A Comprehensive Review of Causal Inference: Philosophical Issues to Adversarial Deep Learning Issues — in preparation'
       ],
       email: 'ruhul@metrouni.edu.bd',
       additionalEmail: 'ruhulstat6@gmail.com',
       links: [
-        { label: 'Metropolitan University', url: 'https://metrouni.edu.bd/sites/university/department-of-computer-science-engineering/faculty-members-cse/308' },
+        { label: 'Metropolitan University', url: 'https://metrouni.edu.bd/sites/university/department-of-computer-science-engineering/faculty-members-cse/308', icon: 'assets/institutions/metropolitan-university.webp?v=20260924-mu1' },
         { label: 'Google Scholar', url: 'https://scholar.google.com/citations?user=s8fYW38AAAAJ&hl=en' },
         { label: 'ORCID', url: 'https://orcid.org/0000-0002-1145-3385' },
         { label: 'ResearchGate', url: 'https://www.researchgate.net/profile/Ruhul-Amin-64' },
