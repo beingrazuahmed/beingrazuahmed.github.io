@@ -741,19 +741,19 @@
         'Biomedical Artificial Intelligence'
       ],
       education: [
-        {
-          degree: 'M.S. (Thesis) in Statistics',
-          institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
-          year: '',
-          detail: 'Thesis: Multi-Modal Osteoporosis Diagnosis: Clinical Risk Factors & Interpolated X-Ray Images with Machine Learning Approach.'
-        },
-        {
-          degree: 'B.Sc. in Statistics',
-          institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
-          year: '',
-          detail: 'Served as Class Representative (CR) throughout the B.Sc. and M.S. programmes.'
-        }
-      ],
+  {
+    degree: 'M.S. (Thesis) in Statistics',
+    institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+    year: '2021 · held in 2023',
+    detail: 'Thesis: “Multi-Modal Osteoporosis Diagnosis: Clinical Risk Factors & Interpolated X-Ray Images with Machine Learning Approach.”'
+  },
+  {
+    degree: 'B.Sc. in Statistics',
+    institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+    year: '2019 · held in 2021',
+    detail: 'Served as Class Representative (CR) throughout the B.Sc. and M.S. programmes.'
+  }
+],
       careerTimeline: [
         {
           period: 'Current',
@@ -1077,31 +1077,31 @@
         'Survey-Based Research'
       ],
       education: [
-        {
-          degree: 'Master of Science (M.S., Thesis) in Statistics',
-          institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
-          year: '',
-          detail: 'CGPA: 3.99/4.00. Thesis: “A Multimodal Deep Learning Framework for Skin Lesion Classification Using Smartphone Images and Clinical Metadata.”'
-        },
-        {
-          degree: 'Bachelor of Science (B.Sc. Hons.) in Statistics',
-          institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
-          year: '',
-          detail: 'CGPA: 3.90/4.00. Project: “Optimizing Facial Emotion Recognition through Statistical Dimensionality Reduction and CNN Integration.” Statistical Field Survey: “Measuring Attitudes towards AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology.”'
-        },
-        {
-          degree: 'Higher Secondary Certificate (H.S.C.)',
-          institution: 'Rangpur Government College, Rangpur, Bangladesh',
-          year: '',
-          detail: 'GPA: 4.92/5.00.'
-        },
-        {
-          degree: 'Secondary School Certificate (S.S.C.)',
-          institution: 'Rangpur Zilla School, Rangpur, Bangladesh',
-          year: '',
-          detail: 'GPA: 5.00/5.00.'
-        }
-      ],
+  {
+    degree: 'Master of Science (M.S., Thesis) in Statistics',
+    institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+    year: '2023 · held in 2026',
+    detail: 'CGPA: 3.99/4.00. Thesis: “A Multimodal Deep Learning Framework for Skin Lesion Classification Using Smartphone Images and Clinical Metadata.”'
+  },
+  {
+    degree: 'Bachelor of Science (B.Sc. Hons.) in Statistics',
+    institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+    year: '2021 · held in 2024',
+    detail: 'CGPA: 3.90/4.00. Project: “Optimizing Facial Emotion Recognition through Statistical Dimensionality Reduction and CNN Integration.” Statistical Field Survey: “Measuring Attitudes towards AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology.”'
+  },
+  {
+    degree: 'Higher Secondary Certificate (H.S.C.)',
+    institution: 'Rangpur Government College, Rangpur, Bangladesh',
+    year: '2016',
+    detail: 'GPA: 4.92/5.00.'
+  },
+  {
+    degree: 'Secondary School Certificate (S.S.C.)',
+    institution: 'Rangpur Zilla School, Rangpur, Bangladesh',
+    year: '2014',
+    detail: 'GPA: 5.00/5.00.'
+  }
+],
       careerTimeline: [
         {
           period: 'Current',
