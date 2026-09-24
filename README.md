@@ -5,15 +5,20 @@ Production repository for the public academic portfolio of Md. Razu Ahmed.
 ## Current architecture
 
 - `index.html` — main portfolio experience
-- `data.js` — canonical public research, conference, network, recognition and gallery records
+- `v2-data.js` — active Network profiles, academic records and composed page data
+- `v2-app.js` — active page rendering, navigation, profiles, search and interactions
+- `v2.css` + `v2-extra.css` — active responsive visual system
+- `data.js` — shared public research, conference, recognition and gallery records
 - `extra-data.js` — dashboard metrics, latest updates, ongoing work, research evolution and skills
-- `script.js` — dynamic rendering, filtering, gallery, dark mode and privacy-aware Ask Razu AI
-- `styles.css` + `enhancements.css` — responsive visual system
-- `dashboard.html` — research/impact dashboard
+- `coursework-data.js` — coursework and curriculum data
+- `collection-views.js` + `collection-views.css` — collection layouts and view controls
+- `network.html` + `network-*.html` — Network cards and individual academic profiles
+- `dashboard-live.html` — current research/impact dashboard
 - `search.html` — global portfolio search
 - `research.html?id=<record-id>` — dynamic public research detail page
 - `cv.html` — print-friendly public CV view
-- `privacy.html` — copyright, reuse and privacy policy
+- `copyright.html` — current copyright and reuse page
+- `script.js`, `styles.css`, `enhancements.css`, `dashboard.html`, `privacy.html` — legacy/supporting files; inspect actual page references before changing
 - `asset-manifest.json` — canonical binary-asset locations and privacy exclusions
 - `robots.txt`, `sitemap.xml`, `site.webmanifest`, `favicon.svg` — production/SEO support
 
@@ -35,6 +40,22 @@ Primary GitHub Pages URL:
 
 https://beingrazuahmed.github.io/
 
-A future Cloudflare Pages deployment may be added without changing the public data model.
+Production updates publish from `main` through GitHub Pages. Verify the Pages run
+for the exact commit before reporting that a change is live.
+
+## Maintenance with ChatGPT or Codex
+
+Read [AGENTS.md](AGENTS.md) and the [maintenance guide](docs/MAINTENANCE.md).
+Use the full current source; never replace a bundled file from a truncated chat
+excerpt. These local commands require Node.js and no package installation:
+
+```bash
+node scripts/portfolio.mjs check
+node scripts/portfolio.mjs people
+node scripts/portfolio.mjs person abdur-rakib
+```
+
+The guide explains connection diagnosis, complete-file editing, concurrent
+updates, asset cache refreshes and deployment verification.
 
 © 2026 Md. Razu Ahmed. All rights reserved.
