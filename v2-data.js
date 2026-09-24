@@ -1512,7 +1512,7 @@
 
   biography: 'Marufa Yeasmin completed her B.Sc. (Hons.) and M.S. (Thesis) in Statistics from Pabna University of Science and Technology. She has contributed to machine learning, computer vision and AI-driven research through collaborative publications, dataset development and statistical modelling projects.',
 
-  portrait: 'assets/collaborators/marufa.jpeg',
+  portrait: 'assets/collaborators/marufa.jpg',
   cardPortraitPosition: '50% 14%',
 
   currentPositions: [
