@@ -705,12 +705,133 @@
       ]
     },
     {
-      id: 'ruhul-amin', name: 'Ruhul Amin', group: 'Departmental Seniors & Senior Collaborators',
-      roles: ['Departmental Senior', 'Co-author', 'Research Collaborator', 'DSLR Member'],
-      affiliation: 'Statistics and Data Science research network, PUST',
-      description: 'Departmental senior and recurring research collaborator across signal processing, NLP and emerging causal research.',
-      shared: ['FastICA source separation', 'Cross-domain sentiment classification', 'A Comprehensive Review of Causal Inference: Philosophical Issues to Adversarial Deep Learning Issues — in preparation'],
-      portrait: 'assets/collaborators/ruhul-amin.jpg?v=20260924-collab2', links: []
+      id: 'ruhul-amin',
+      name: 'Ruhul Amin',
+      group: 'Departmental Seniors & Senior Collaborators',
+      profilePage: 'network-ruhul-amin.html',
+      profileBadges: ['Departmental Senior', 'Research Collaborator', 'Co-author', 'DSLR Lab Member'],
+      headline: 'Senior Lecturer · Computer Science & Engineering · Metropolitan University',
+      roles: ['Departmental Senior', 'Research Collaborator', 'Co-author', 'Senior Lecturer'],
+      affiliation: 'Department of Computer Science & Engineering, Metropolitan University, Sylhet-3104, Bangladesh',
+      description: 'Senior Lecturer in Computer Science & Engineering at Metropolitan University and a departmental senior of Md. Razu Ahmed from PUST. His research spans statistical machine learning, deep learning, pattern recognition, medical imaging, health informatics and intelligent biomedical applications.',
+      portrait: 'assets/collaborators/ruhul-amin.jpg?v=20260924-ruhul1',
+      currentRoleLabel: 'Current academic roles',
+      currentPositions: [
+        'Senior Lecturer, Department of Computer Science & Engineering, Metropolitan University, Sylhet-3104, Bangladesh',
+        'Member, Deep Statistical Learning & Research Laboratory (DSLR Lab), Pabna University of Science and Technology'
+      ],
+      biographyParagraphs: [
+        'Ruhul Amin is a Senior Lecturer in the Department of Computer Science & Engineering at Metropolitan University, Sylhet, Bangladesh. He completed both his B.Sc. and M.S. in Statistics at Pabna University of Science and Technology (PUST), where he joined the Deep Statistical Learning & Research Laboratory (DSLR Lab) in 2021 under the supervision of Prof. Dr. Md. Shamim Reza.',
+        'His research focuses on statistical machine learning, deep learning, pattern recognition, medical imaging, image processing, health informatics and data-driven biomedical applications. His work has addressed osteoporosis, sarcopenia, liver-disease diagnosis, diabetes, handwritten-digit recognition and related healthcare problems, with a broader interest in developing intelligent statistical and AI-based solutions for real-world clinical and biomedical settings.'
+      ],
+      researchInterests: [
+        'Statistical Machine Learning',
+        'Deep Learning',
+        'Pattern Recognition',
+        'Medical Imaging',
+        'Image Processing',
+        'Health Informatics',
+        'Big Data Analysis',
+        'Biomedical Artificial Intelligence'
+      ],
+      education: [
+        {
+          degree: 'M.S. (Thesis) in Statistics',
+          institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+          year: '',
+          detail: 'Thesis: Multi-Modal Osteoporosis Diagnosis: Clinical Risk Factors & Interpolated X-Ray Images with Machine Learning Approach.'
+        },
+        {
+          degree: 'B.Sc. in Statistics',
+          institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+          year: '',
+          detail: 'Served as Class Representative (CR) throughout the B.Sc. and M.S. programmes.'
+        }
+      ],
+      careerTimeline: [
+        {
+          period: 'Current',
+          title: 'Senior Lecturer',
+          institution: 'Department of Computer Science & Engineering, Metropolitan University',
+          location: 'Sylhet-3104, Bangladesh'
+        },
+        {
+          period: '26 January 2019–14 March 2021',
+          title: 'Research Assistant',
+          institution: 'One Health Center for Research and Action',
+          location: 'Chittagong, Bangladesh'
+        }
+      ],
+      awards: [
+        'National Science & Technology (NST) Fellowship, Ministry of Science and Technology, Government of the People’s Republic of Bangladesh, for research on “Osteoporosis Classification Using Customized Convolution Neural Network: A Case Study in Bangladesh.”',
+        'Innovative Research Project Award, Pabna University of Science and Technology, for “An Online Diagnosis of Osteoporosis Patients Grading Using Artificial Intelligence Tools: A Case Study in Pabna.”'
+      ],
+      externalAffiliations: [
+        'Reviewer for peer-reviewed journals published by Elsevier.',
+        'Reviewer for PLOS ONE.',
+        'Research presenter at the International Conference on the 4th Industrial Revolution (IC4IR) and Beyond, 2021.'
+      ],
+      relationship: {
+        title: 'Departmental senior & continuing research collaborator',
+        detail: 'Ruhul Amin is one of Razu’s departmental seniors from PUST and a fellow member of the DSLR research environment. Their collaboration began through shared statistical and machine-learning research and has developed into recurring co-authorship across signal processing, sentiment analysis, academic-performance research and an emerging causal-inference review.'
+      },
+      relationshipPath: [
+        'Departmental senior at PUST',
+        'DSLR Lab research connection',
+        'Joint FastICA journal publication',
+        'Continuing AI, statistical-learning & causal-inference collaboration'
+      ],
+      collaborationStats: [
+        { value: '1', label: 'Published journal article' },
+        { value: '2', label: 'Submitted / under review' },
+        { value: '1', label: 'Review in preparation' }
+      ],
+      sharedPublications: [
+        {
+          title: 'Sophisticated Audio Source Separation: A Statistical Exploration of Clarity and Precision With FastICA',
+          venue: 'Engineering Reports, 8(1), e70575 (2026)',
+          doi: 'https://doi.org/10.1002/eng2.70575'
+        }
+      ],
+      sharedEditorial: [
+        {
+          title: 'Adaptive Probability Fusion of Lightweight Recurrent Networks for Cross-Domain Sentiment Classification',
+          journal: 'Applied AI Letters',
+          publisher: 'Wiley',
+          detail: 'Submitted / under review.'
+        },
+        {
+          title: 'Factors Associated with Undergraduates Academic Performance Among Public University Students: A Case Study',
+          journal: 'International Journal of Educational Reform',
+          publisher: 'SAGE',
+          detail: 'Submitted / under review.'
+        }
+      ],
+      sharedInPreparation: [
+        {
+          title: 'A Comprehensive Review of Causal Inference: Philosophical Issues to Adversarial Deep Learning Issues',
+          detail: 'Collaborative review in preparation with Md. Razu Ahmed, Dr. Md. Ashad Alam and Jannatul Mauya.'
+        }
+      ],
+      shared: [
+        'Sophisticated Audio Source Separation: A Statistical Exploration of Clarity and Precision With FastICA — published in Engineering Reports',
+        'Adaptive Probability Fusion of Lightweight Recurrent Networks for Cross-Domain Sentiment Classification — submitted / under review',
+        'Factors Associated with Undergraduates Academic Performance Among Public University Students: A Case Study — submitted / under review',
+        'A Comprehensive Review of Causal Inference: Philosophical Issues to Adversarial Deep Learning Issues — in preparation'
+      ],
+      email: 'ruhul@metrouni.edu.bd',
+      additionalEmail: 'ruhulstat6@gmail.com',
+      links: [
+        { label: 'Metropolitan University', url: 'https://metrouni.edu.bd/sites/university/department-of-computer-science-engineering/faculty-members-cse/308' },
+        { label: 'Google Scholar', url: 'https://scholar.google.com/citations?user=s8fYW38AAAAJ&hl=en' },
+        { label: 'ORCID', url: 'https://orcid.org/0000-0002-1145-3385' },
+        { label: 'ResearchGate', url: 'https://www.researchgate.net/profile/Ruhul-Amin-64' },
+        { label: 'SciProfiles', url: 'https://sciprofiles.com/profile/2937238' },
+        { label: 'Portfolio', url: 'https://ruhul256.github.io/' },
+        { label: 'LinkedIn', url: 'https://www.linkedin.com/in/ruhul-amin-803104157' },
+        { label: 'Scopus', url: 'https://www.scopus.com/authid/detail.uri?authorId=59070517800' },
+        { label: 'AD Scientific Index', url: 'https://adscientificindex.com/scientist/ruhul-amin/5739933/' }
+      ]
     },
     {
       id: 'jannatul-mauya', name: 'Jannatul Mauya', group: 'Departmental Seniors & Senior Collaborators',
