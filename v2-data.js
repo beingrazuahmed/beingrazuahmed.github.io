@@ -1379,14 +1379,112 @@
   ]
 },
     {
-      id: 'bakar-shiddik', name: 'Abu Bakar Shiddik', group: 'Peer & Batchmate Research Collaborators',
-      roles: ['Research Assistant', 'Research Collaborator', 'Co-author'],
-      affiliation: 'Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
-      description: 'Co-author and collaborator on AI-employment perceptions and related statistical research.',
-      shared: ['AI and employment perceptions', 'Facial emotion recognition — ICRAST 2025'],
-      portrait: 'assets/collaborators/abu-bakar-shiddik.jpeg?v=20260924-collab2',
-      cardPortraitPosition: '50% 12%', links: []
+  id: 'abu-bakar-shiddik',
+  name: 'Abu Bakar Shiddik',
+  group: 'Peer & Batchmate Research Collaborators',
+  profileBadges: ['Batchmate', 'Co-author', 'Research Collaborator'],
+  headline: 'Trainee Assistant Officer (TAO) · Islami Bank PLC · Research Collaborator',
+
+  roles: [
+    'Trainee Assistant Officer (TAO)',
+    'Batchmate',
+    'Co-author',
+    'Research Collaborator',
+    'Statistical Field Survey Group Member',
+    'Former Research Assistant · DSLR Lab'
+  ],
+
+  affiliation: 'Islami Bank PLC, Paltan Branch, Dhaka, Bangladesh',
+
+  description: 'Abu Bakar Shiddik is a batchmate of Razu from Pabna University of Science and Technology and a continuing research collaborator. His contributions include statistical field survey activities, machine learning research, journal publications, conference contributions and collaborative research projects.',
+
+  biography: 'Abu Bakar Shiddik completed his Bachelor of Science (B.Sc. Hons.) in Statistics from Pabna University of Science and Technology. Alongside his professional career as a Trainee Assistant Officer at Islami Bank PLC, he has contributed to applied statistics, machine learning and data-driven research through collaborative works with Razu and other researchers.',
+
+  portrait: 'assets/collaborators/abu-bakar-shiddik.jpeg',
+  cardPortraitPosition: '50% 14%',
+
+  currentPositions: [
+    'Trainee Assistant Officer (TAO), Islami Bank PLC, Paltan Branch, Dhaka, Bangladesh'
+  ],
+
+  education: [
+    {
+      degree: 'Bachelor of Science (B.Sc. Hons.) in Statistics',
+      institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+      year: '2021 · held in 2024',
+      detail: 'B.Sc. Statistical Project: “Predicting the Risk of Developing Chronic Kidney Disease.” Statistical Field Survey: “Measuring Attitudes towards AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology.”'
+    }
+  ],
+
+  researchInterests: [
+    'Statistical Modelling',
+    'Machine Learning',
+    'Artificial Intelligence',
+    'Biomedical Data Science',
+    'Applied Statistics'
+  ],
+
+  relationship: {
+    title: 'Batchmate, co-author & research collaborator',
+    detail: 'Abu Bakar Shiddik is Razu’s batchmate from PUST and a continuing research collaborator involved in statistical field surveys, machine learning studies, journal publications and conference contributions.'
+  },
+
+  relationshipPath: [
+    'Batchmates at PUST',
+    'Statistical field survey collaboration',
+    'Joint research publications',
+    'Conference contributions'
+  ],
+
+  sharedPublications: [
+    {
+      title: 'Identification of Predisposing Risk Factors for Chronic Kidney Disease and Optimizing Disease Prediction Using a Stacking Machine Learning Algorithm',
+      venue: 'International Journal of Statistical Sciences, 25(2), 1–32 (2025)',
+      doi: 'https://doi.org/10.3329/ijss.v25i2.85732'
+    }
+  ],
+
+  sharedAccepted: [
+    {
+      title: 'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh',
+      venue: 'International Journal of Statistical Sciences, Volume 26, Issue 2 (2026)',
+      detail: 'Accepted 2 September 2026; forthcoming.'
+    }
+  ],
+
+  sharedConferences: [
+    {
+      event: '2nd International Conference on Recent Advances in Science and Technology 2025 (ICRAST 2025)',
+      venue: 'Faculty of Science, University of Rajshahi, Rajshahi, Bangladesh · 14–15 November 2025',
+      items: [
+        'Measuring Attitudes toward AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology · Paper ID 440',
+        'Facial Emotion Recognition with Dimensionality Reduction: A Comparative Study of PCA, FA, and Combined PCA–FA with a CNN Baseline · Paper ID 461'
+      ]
+    }
+  ],
+
+  sharedEditorial: [],
+
+  shared: [
+    'Chronic kidney disease prediction',
+    'AI employment perception study',
+    'Statistical field survey research',
+    'ICRAST 2025 conference contributions'
+  ],
+
+  email: 'shakhawathussain7920@gmail.com',
+
+  links: [
+    {
+      label: 'ResearchGate',
+      url: 'https://www.researchgate.net/profile/Abu-Shiddik'
     },
+    {
+      label: 'ORCID',
+      url: 'https://orcid.org/0009-0008-2799-9404'
+    }
+  ]
+},
     {
       id: 'marufa', name: 'Marufa Yeasmin', group: 'Peer & Batchmate Research Collaborators',
       roles: ['Research Assistant', 'Research Collaborator', 'Co-author'],
