@@ -526,17 +526,188 @@
       ]
     },
     {
-      id: 'ashad-alam', name: 'Dr. Md. Ashad Alam', group: 'Academic Guidance & Advisors',
-      roles: ['Senior Research Collaborator', 'Causal Inference Guidance'], affiliation: 'Academic research network',
-      description: 'Senior collaborator connected to current causal-inference research planning and methodological development.',
-      shared: ['Causal inference study — in preparation'], portrait: 'assets/collaborators/ashad-alam.jpg', links: []
+      "id": "ashad-alam",
+      "name": "Dr. Md. Ashad Alam",
+      "group": "Academic Guidance & Advisors",
+      "profilePage": "network-ashad-alam.html",
+      "profileBadges": [
+        "External Research Guidance",
+        "Research Collaborator"
+      ],
+      "headline": "Assistant Professor of Biomedical Sciences",
+      "roles": [
+        "External Research Guidance",
+        "Research Collaborator",
+        "Assistant Professor"
+      ],
+      "affiliation": "Xavier Ochsner College of Medicine, Xavier University of Louisiana, New Orleans, LA 70112, USA",
+      "description": "Statistical machine-learning researcher working across biomedical informatics, genomics, bioinformatics and complex-disease modelling, with over 13 years of university teaching experience in the United States and Bangladesh.",
+      "portrait": "assets/collaborators/ashad-alam.jpg",
+      "currentRoleLabel": "Current appointments",
+      "currentPositions": [
+        "Assistant Professor of Biomedical Sciences, Xavier Ochsner College of Medicine, Xavier University of Louisiana · April 2026–present",
+        "Senior Health Informatics Researcher, Ochsner Research, Ochsner Clinic Foundation · December 2022–present"
+      ],
+      "biographyParagraphs": [
+        "Dr. Md. Ashad Alam is an Assistant Professor of Biomedical Sciences at Xavier Ochsner College of Medicine, Xavier University of Louisiana, and a Senior Health Informatics Researcher at Ochsner Research. His work connects statistical machine learning, biomedical informatics, genomics and bioinformatics, with a focus on longitudinal disease trajectories and AI-driven cancer prediction using real-world data.",
+        "He earned a PhD in Statistical Science in Japan, with research focused on statistical machine learning, and completed two postdoctoral appointments at Tulane University in biomedical engineering and biostatistics and data science. His teaching experience spans more than 13 years across universities in the United States and Bangladesh. At Tulane, he also served as Graduate Program Co-Director and contributed to the development of MS- and PhD-level Biomedical Health Informatics programs within the School of Medicine."
+      ],
+      "researchInterests": [
+        "Statistical Machine Learning",
+        "Causal Inference",
+        "Genomics & Bioinformatics",
+        "Multi-omics Data Integration",
+        "Imaging Genetics",
+        "Adversarial Deep Learning",
+        "Robust Statistics",
+        "Kernel Methods",
+        "Longitudinal Disease Trajectories"
+      ],
+      "education": [
+        {
+          "degree": "PhD in Statistical Science",
+          "institution": "The Graduate University for Advanced Studies (SOKENDAI), Japan · Department of Statistical Science, The Institute of Statistical Mathematics",
+          "year": "October 2009–September 2014",
+          "detail": "Dissertation (2014): Kernel Choice for Unsupervised Kernel Methods."
+        },
+        {
+          "degree": "B.Sc. (Hons.) and M.Sc. in Statistics",
+          "institution": "Department of Statistics, University of Rajshahi, Bangladesh",
+          "year": "July 1998–June 2004",
+          "detail": "M.Sc. dissertation (2003): Comparison among Robust and Non-robust Estimators of Correlation Coefficient: A Bootstrap and Influence Function Based Approach."
+        }
+      ],
+      "researchTraining": [
+        {
+          "degree": "Postdoctoral Research · Biostatistics and Data Science",
+          "institution": "Tulane University School of Public Health and Tropical Medicine, New Orleans, USA",
+          "year": "January 2019–November 2020",
+          "detail": "Adversarial learning for multi-view data fusion to characterize complex diseases."
+        },
+        {
+          "degree": "Postdoctoral Research · Biomedical Engineering",
+          "institution": "Tulane University, New Orleans, USA",
+          "year": "November 2015–September 2017",
+          "detail": "Extraction and integration of biomarkers from multi-modality kernel-based genomic techniques."
+        }
+      ],
+      "careerTimeline": [
+        {
+          "period": "April 2026–present",
+          "title": "Assistant Professor of Biomedical Sciences",
+          "institution": "Xavier Ochsner College of Medicine, Xavier University of Louisiana",
+          "location": "New Orleans, LA 70112, USA"
+        },
+        {
+          "period": "December 2022–present",
+          "title": "Senior Health Informatics Researcher",
+          "institution": "Ochsner Research, Ochsner Clinic Foundation",
+          "detail": "Longitudinal disease trajectories and AI-driven cancer prediction using real-world data."
+        },
+        {
+          "period": "November 2020–April 2026",
+          "title": "Instructor of Statistics and Data Science",
+          "institution": "Tulane University",
+          "location": "New Orleans, LA 70112, USA",
+          "detail": "Also served as Graduate Program Co-Director, contributing to MS- and PhD-level Biomedical Health Informatics programs in the School of Medicine."
+        },
+        {
+          "period": "January 2019–November 2020",
+          "title": "Postdoctoral Researcher",
+          "institution": "Tulane University School of Public Health and Tropical Medicine",
+          "location": "New Orleans, Louisiana, USA"
+        },
+        {
+          "period": "October 2017–January 2019",
+          "title": "Professor",
+          "institution": "Hajee Mohammad Danesh Science and Technology University",
+          "location": "Bangladesh"
+        },
+        {
+          "period": "2015–2017",
+          "title": "Postdoctoral Researcher",
+          "institution": "Tulane University · Department of Biomedical Engineering",
+          "location": "New Orleans, Louisiana, USA"
+        }
+      ],
+      "awards": [
+        "NSF Travel Fund Award, 7th ACM International Conference on Bioinformatics, Computational Biology, and Health Informatics, Seattle, USA, 2016.",
+        "Outstanding Presentation Award for “Action Recognition for Robots Using Kernel Methods,” 1st UST–SOKENDAI Joint Seminar on Computer Science, UST, Daejeon, South Korea, 2014.",
+        "GUAS and ISM FY 2013 travel support for an international paper or poster presentation by young researchers, Institute of Statistical Mathematics, Tokyo, Japan.",
+        "ISM FY 2011 travel support for an international paper or poster presentation by young researchers, Institute of Statistical Mathematics, Tokyo, Japan.",
+        "Japanese Government Monbukagakusho (MEXT) Scholarship for doctoral study, October 2009–September 2014.",
+        "Merit-based Student Award, University of Rajshahi, Bangladesh, 2001.",
+        "Merit-based Hall Gold Medal, Shah Makhdum Hall, University of Rajshahi, Bangladesh, 2001."
+      ],
+      "relationship": {
+        "title": "External research guidance & ongoing collaboration",
+        "detail": "Md. Razu Ahmed and his senior collaborator Jannatul Mauya were introduced to Dr. Md. Ashad Alam through their senior collaborator Ruhul Amin. The introduction led to a scholarly meeting, research guidance and ongoing collaborative work. Dr. Alam provides external research guidance on causal inference, genomics, bioinformatics, statistical machine learning and emerging research directions. This collaboration includes a comprehensive review connecting the philosophical foundations of causal inference with modern adversarial deep-learning approaches."
+      },
+      "relationshipPath": [
+        "Introduction through Ruhul Amin, together with Jannatul Mauya",
+        "Scholarly meeting and research discussion",
+        "External guidance on methods and emerging research directions",
+        "Joint causal-inference review in preparation"
+      ],
+      "collaborationStats": [
+        {
+          "value": "1",
+          "label": "Review in preparation"
+        }
+      ],
+      "sharedInPreparation": [
+        {
+          "title": "A Comprehensive Review of Causal Inference: Philosophical Issues to Adversarial Deep Learning Issues",
+          "detail": "Joint review with Md. Razu Ahmed connecting philosophical foundations of causal inference with modern adversarial deep-learning approaches."
+        }
+      ],
+      "shared": [
+        "A Comprehensive Review of Causal Inference: Philosophical Issues to Adversarial Deep Learning Issues — in preparation"
+      ],
+      "links": [
+        {
+          "label": "XULA Profile",
+          "url": "https://www.xula.edu/directory//people/md-ashad-alam-phd.html",
+          "icon": "https://www.google.com/s2/favicons?sz=128&domain=xula.edu"
+        },
+        {
+          "label": "LinkedIn",
+          "url": "https://www.linkedin.com/in/md-ashad-alam-78445984/",
+          "icon": "https://www.google.com/s2/favicons?sz=128&domain=linkedin.com"
+        },
+        {
+          "label": "Google Scholar",
+          "url": "https://scholar.google.com/citations?user=pXkJNdYAAAAJ&hl=en"
+        },
+        {
+          "label": "ResearchGate",
+          "url": "https://www.researchgate.net/profile/Md-Ashad-Alam"
+        },
+        {
+          "label": "ORCID",
+          "url": "https://orcid.org/0000-0002-7622-0216"
+        },
+        {
+          "label": "Loop · Frontiers",
+          "url": "https://loop.frontiersin.org/people/1001584/overview",
+          "icon": "https://www.google.com/s2/favicons?sz=128&domain=frontiersin.org"
+        },
+        {
+          "label": "Scopus",
+          "url": "https://www.scopus.com/authid/detail.uri?authorId=56286229400"
+        },
+        {
+          "label": "SciProfiles",
+          "url": "https://sciprofiles.com/profile/668270"
+        }
+      ]
     },
     {
       id: 'ruhul-amin', name: 'Ruhul Amin', group: 'Departmental Seniors & Senior Collaborators',
       roles: ['Departmental Senior', 'Co-author', 'Research Collaborator', 'DSLR Member'],
       affiliation: 'Statistics and Data Science research network, PUST',
       description: 'Departmental senior and recurring research collaborator across signal processing, NLP and emerging causal research.',
-      shared: ['FastICA source separation', 'Cross-domain sentiment classification', 'Causal inference study — in preparation'],
+      shared: ['FastICA source separation', 'Cross-domain sentiment classification', 'A Comprehensive Review of Causal Inference: Philosophical Issues to Adversarial Deep Learning Issues — in preparation'],
       portrait: 'assets/collaborators/ruhul-amin.jpg', links: []
     },
     {

@@ -1464,7 +1464,7 @@
         <h5>${esc(item.title||'')}</h5>
         ${item.venue?`<p>${esc(item.venue)}</p>`:''}
         ${item.journal?`<p><strong>${esc(item.journal)}</strong>${item.publisher?` · ${esc(item.publisher)}`:''}</p>`:''}
-        ${item.detail?`<small>${esc(item.detail)}</small>`:''}
+        ${item.detail?`<small>${highlightRazuName(item.detail)}</small>`:''}
       </div>
       ${item.doi?mentorDoiLink(item.doi):''}
     </article>`).join('')}</div>`;
@@ -1523,7 +1523,7 @@
     if(!x)return `${pageHero('Academic Network Profile','Profile information is currently unavailable.')}<section class="section"><div class="container"><a class="btn ghost" href="network.html">← Back to Network</a></div></section>`;
 
     const supervisionPath=x.relationshipPath||['B.Sc. Statistical Field Survey','B.Sc. Statistical Project','M.S. Project','Continuing Research Collaboration'];
-    const hasSharedRecord=['sharedPublications','sharedAccepted','sharedDataset','sharedEditorial'].some(k=>(x[k]||[]).length);
+    const hasSharedRecord=['sharedPublications','sharedAccepted','sharedDataset','sharedEditorial','sharedInPreparation'].some(k=>(x[k]||[]).length);
     const hasTeachingLab=(x.taughtCourses||[]).length||x.labProfile;
 
     return `${pageHero('Academic Network Profile','A detailed academic profile and relationship context within this research network.')}
@@ -1558,6 +1558,7 @@
           <nav class="network-profile-nav" aria-label="Profile sections">
             <a href="#overview">Overview</a>
             <a href="#academic-profile">Academic Profile</a>
+            ${(x.careerTimeline||[]).length?'<a href="#career">Career</a>':''}
             ${hasTeachingLab?'<a href="#teaching-lab">Teaching & Lab</a>':''}
             ${hasSharedRecord?'<a href="#collaboration">Research Collaboration</a>':''}
             ${(x.sharedConferences||[]).length?'<a href="#conferences">Conferences</a>':''}
@@ -1569,7 +1570,7 @@
             <div class="network-overview-grid">
               <article class="network-profile-panel network-profile-panel-lead">
                 <h3>Profile</h3>
-                <p>${highlightRazuName(x.biography||x.description||'')}</p>
+                ${(x.biographyParagraphs||[x.biography||x.description||'']).map(paragraph=>`<p>${highlightRazuName(paragraph)}</p>`).join('')}
                 <div class="mentor-interest-list compact">${(x.researchInterests||[]).map(r=>`<span>${esc(r)}</span>`).join('')}</div>
               </article>
               <article class="network-profile-panel">
@@ -1588,12 +1589,16 @@
                 <div class="mentor-timeline compact">${(x.education||[]).map(e=>`<div class="mentor-timeline-item"><span>${esc(e.year||'')}</span><div><strong>${esc(e.degree||'')}</strong><p>${esc(e.institution||'')}</p>${e.detail?`<small>${esc(e.detail)}</small>`:''}</div></div>`).join('')}</div>
               </article>
               <article class="network-profile-panel">
-                <h3>Current appointments</h3>
-                <ul class="mentor-clean-list">${(x.currentPositions||[]).map(v=>`<li>${esc(v)}</li>`).join('')}</ul>
+                ${(x.researchTraining||[]).length?`<h3>Postdoctoral research</h3><div class="mentor-timeline compact">${x.researchTraining.map(e=>`<div class="mentor-timeline-item"><span>${esc(e.year||'')}</span><div><strong>${esc(e.degree||'')}</strong><p>${esc(e.institution||'')}</p>${e.detail?`<small>${esc(e.detail)}</small>`:''}</div></div>`).join('')}</div>`:`<h3>Current appointments</h3><ul class="mentor-clean-list">${(x.currentPositions||[]).map(v=>`<li>${esc(v)}</li>`).join('')}</ul>`}
               </article>
             </div>
             ${(x.careerHistory||[]).length?`<div class="network-profile-record-block"><div class="mentor-record-heading"><h3>Teaching & research experience</h3></div><ul class="mentor-clean-list">${x.careerHistory.map(v=>`<li>${esc(v)}</li>`).join('')}</ul></div>`:''}
           </section>
+
+          ${(x.careerTimeline||[]).length?`<section class="network-profile-section" id="career">
+            <div class="network-profile-section-head"><div><span class="section-kicker">Professional experience</span><h2>Teaching, research & academic leadership</h2></div></div>
+            <ol class="network-career-timeline">${x.careerTimeline.map(role=>`<li><div class="network-career-period">${esc(role.period)}</div><div class="network-career-copy"><h3>${esc(role.title)}</h3><p class="network-career-institution">${esc(role.institution)}</p>${role.location?`<p class="network-career-location">${esc(role.location)}</p>`:''}${role.detail?`<p>${esc(role.detail)}</p>`:''}</div></li>`).join('')}</ol>
+          </section>`:''}
 
           ${hasTeachingLab?`<section class="network-profile-section" id="teaching-lab">
             <div class="network-profile-section-head"><div><span class="section-kicker">Teaching & research environment</span><h2>Courses, laboratory & interdisciplinary work</h2></div></div>
@@ -1613,6 +1618,7 @@
               ${(x.sharedDataset||[]).length?`<div class="network-profile-record-block"><div class="mentor-record-heading"><h3>Public research dataset</h3><span>${x.sharedDataset.length}</span></div>${mentorWorkList(x.sharedDataset)}</div>`:''}
             </div>`:''}
             ${(x.sharedEditorial||[]).length?`<div class="network-profile-record-block"><div class="mentor-record-heading"><h3>Manuscripts in the editorial process</h3><span>${x.sharedEditorial.length}</span></div><p class="mentor-record-note">Shown for collaboration context only; these records are not presented as published outputs.</p>${mentorWorkList(x.sharedEditorial,'editorial')}</div>`:''}
+            ${(x.sharedInPreparation||[]).length?`<div class="network-profile-record-block network-preparation-record"><div class="mentor-record-heading"><h3>In preparation</h3><span>${x.sharedInPreparation.length} ${x.sharedInPreparation.length===1?'paper':'papers'}</span></div>${mentorWorkList(x.sharedInPreparation,'preparation')}</div>`:''}
           </section>`:''}
 
           ${(x.sharedConferences||[]).length?`<section class="network-profile-section" id="conferences">
