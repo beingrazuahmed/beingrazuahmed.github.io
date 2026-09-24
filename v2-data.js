@@ -1045,6 +1045,7 @@
       portrait: 'assets/collaborators/abdur-rakib.JPG?v=20260924-rakib1',
       currentRoleLabel: 'Academic distinctions',
       currentPositions: [
+        'Research Assistant, Deep Statistical Learning and Research Lab (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh · Current',
         'National Science & Technology (NST) Fellowship recipient, Ministry of Science and Technology, Government of Bangladesh',
         'Dean’s Honors Award recipient, Pabna University of Science and Technology',
         'Sakura Science Exchange Program invited participant, University of Yamanashi, Japan · selected as 1 of 7 students in the PUST delegation'
@@ -1092,6 +1093,12 @@
         }
       ],
       careerTimeline: [
+        {
+          period: 'Current',
+          title: 'Research Assistant',
+          institution: 'Deep Statistical Learning and Research Lab (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST)',
+          location: 'Pabna-6600, Bangladesh'
+        },
         {
           period: '1 January 2026–30 June 2026',
           title: 'Research Assistant · RTTC Project',
