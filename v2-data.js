@@ -85,7 +85,7 @@
       education: [
         { degree: 'Doctor of Philosophy (PhD)', institution: 'School of Mathematical Sciences, Department of Information Science, Peking University, Beijing, China', year: '2019', detail: 'Chinese Government Scholarship (CSC); Peking University International Students Academic Award, 2019.' },
         { degree: 'Master of Science (M.Sc., Thesis) in Statistics', institution: 'University of Rajshahi, Rajshahi-6205, Bangladesh', year: '2008', detail: 'First Class · 1st position out of 82 students.' },
-        { degree: 'Bachelor of Science (B.Sc.) in Statistics', institution: 'University of Rajshahi, Rajshahi-6205, Bangladesh', year: '2007', detail: 'First Class · 1st position out of 87 students.' }
+        { degree: 'Bachelor of Science (B.Sc. Hons.) in Statistics', institution: 'University of Rajshahi, Rajshahi-6205, Bangladesh', year: '2007', detail: 'First Class · 1st position out of 87 students.' }
       ],
       awards: [
         'K.M. Hossain Award, University of Rajshahi, for securing First Class First in the 2007 B.Sc. (Honours) examination in Statistics.',
@@ -196,9 +196,9 @@
       ],
       researchInterests: ['Complex Lifetime Models', 'Biostatistics', 'Machine Learning', 'Survival Analysis', 'Reliability Analysis'],
       education: [
-        { degree: 'PhD in Statistics', institution: 'Department of Statistics, Faculty of Science, University of Rajshahi, Rajshahi-6205, Bangladesh', year: '2016', detail: 'Thesis: Analysis of Complex Lifetime Models for Analysis of Product Failure Data.' },
+        { degree: 'Doctor of Philosophy (PhD) in Statistics', institution: 'Department of Statistics, Faculty of Science, University of Rajshahi, Rajshahi-6205, Bangladesh', year: '2016', detail: 'Thesis: Analysis of Complex Lifetime Models for Analysis of Product Failure Data.' },
         { degree: 'Master of Science (M.Sc., Thesis) in Statistics', institution: 'University of Rajshahi, Rajshahi-6205, Bangladesh', year: '2008', detail: 'First Class · 2nd position in order of merit (70% marks). Thesis: Product Failure Data Analysis.' },
-        { degree: 'Bachelor of Science (B.Sc.) in Statistics', institution: 'University of Rajshahi, Rajshahi-6205, Bangladesh', year: '2007', detail: 'First Class · 6th position in order of merit (67.60% marks).' }
+        { degree: 'Bachelor of Science (B.Sc. Hons.) in Statistics', institution: 'University of Rajshahi, Rajshahi-6205, Bangladesh', year: '2007', detail: 'First Class · 6th position in order of merit (67.60% marks).' }
       ],
       awards: [
         'Gold Medalist, Tapasi Rabeya Hall Talent Award 2007, University of Rajshahi.',
@@ -261,7 +261,7 @@
       ],
       researchInterests: ['Bioinformatics', 'Statistical Genetics', 'Genomics', 'Statistical Modelling', 'Machine Learning', 'Computational Biology'],
       education: [
-        { degree: 'PhD in Bioinformatics', institution: 'Keio University, Japan', year: '2005', detail: 'Awarded.' },
+        { degree: 'Doctor of Philosophy (PhD) in Bioinformatics', institution: 'Keio University, Japan', year: '2005', detail: 'Awarded.' },
         { degree: 'Postdoctoral Research in Bioinformatics', institution: 'University of Malaya (UM), Malaysia', year: '2008–2009', detail: 'Completed.' },
         { degree: 'JSPS Postdoctoral Research in Bioinformatics', institution: 'Niigata University, Japan', year: '2009–2011', detail: 'Completed.' },
         { degree: 'Visiting Professor', institution: 'Tokyo University of Science (TUS), Japan', year: 'Aug–Sep 2009', detail: 'Visiting academic appointment.' },
@@ -351,7 +351,7 @@
       ],
       education: [
         {
-          degree: 'PhD',
+          degree: 'Doctor of Philosophy (PhD)',
           institution: 'Graduate School of Chemical Science and Engineering, Hokkaido University, Japan',
           year: '',
           detail: 'Doctoral research under Professor Tamiki Komatsuzaki. Thesis: “Study on Multi-armed Bandit Algorithm for Sequential Experiments to Predict the Best Molecule with Dynamic Feature Selection.”'
@@ -457,7 +457,7 @@
         'Solar Cell Devices and Photovoltaic Systems'
       ],
       education: [
-        { degree: 'PhD in Electrical Engineering', institution: '', year: '2025', detail: 'Doctoral research produced 10 scholarly works, including 6 Q1-ranked journal articles and 4 IEEE Xplore international conference papers.' },
+        { degree: 'Doctor of Philosophy (PhD) in Electrical Engineering', institution: '', year: '2025', detail: 'Doctoral research produced 10 scholarly works, including 6 Q1-ranked journal articles and 4 IEEE Xplore international conference papers.' },
         { degree: 'M.Sc. Engg. in Electrical and Electronic Engineering', institution: 'Rajshahi University of Engineering and Technology (RUET), Rajshahi-6204, Bangladesh', year: '2016', detail: 'CGPA: 3.92 out of 4.00.' },
         { degree: 'B.Sc. Engg. in Electrical and Electronic Engineering', institution: 'Rajshahi University of Engineering and Technology (RUET), Rajshahi-6204, Bangladesh', year: '2012', detail: 'CGPA: 3.80 out of 4.00.' },
         { degree: 'Higher Secondary Certificate (H.S.C.)', institution: 'Rajshahi Govt. City College, Rajshahi, Bangladesh', year: '2007', detail: 'GPA: 5.00 out of 5.00.' },
@@ -572,16 +572,16 @@
       ],
       "education": [
         {
-          "degree": "PhD in Statistical Science",
+          "degree": "Doctor of Philosophy (PhD) in Statistical Science",
           "institution": "The Graduate University for Advanced Studies (SOKENDAI), Japan · Department of Statistical Science, The Institute of Statistical Mathematics",
           "year": "October 2009–September 2014",
           "detail": "Dissertation (2014): Kernel Choice for Unsupervised Kernel Methods."
         },
         {
-          "degree": "B.Sc. (Hons.) and M.Sc. in Statistics",
+          "degree": "Bachelor of Science (B.Sc. Hons.) and Master of Science (M.S., Thesis) in Statistics",
           "institution": "Department of Statistics, University of Rajshahi, Bangladesh",
           "year": "July 1998–June 2004",
-          "detail": "M.Sc. dissertation (2003): Comparison among Robust and Non-robust Estimators of Correlation Coefficient: A Bootstrap and Influence Function Based Approach."
+          "detail": "M.Sc. Thesis (2003): Comparison among Robust and Non-robust Estimators of Correlation Coefficient: A Bootstrap and Influence Function Based Approach."
         }
       ],
       "researchTraining": [
@@ -742,13 +742,13 @@
       ],
       education: [
   {
-    degree: 'M.S. (Thesis) in Statistics',
+    degree: 'Master of Science (M.S., Thesis) in Statistics',
     institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
     year: '2021 · held in 2023',
     detail: 'Thesis: “Multi-Modal Osteoporosis Diagnosis: Clinical Risk Factors & Interpolated X-Ray Images with Machine Learning Approach.”'
   },
   {
-    degree: 'B.Sc. in Statistics',
+    degree: 'Bachelor of Science (B.Sc. Hons.) in Statistics',
     institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
     year: '2019 · held in 2021',
     detail: 'Served as Class Representative (CR) throughout the B.Sc. and M.S. programmes.'
@@ -879,7 +879,7 @@
       ],
       education: [
         {
-          degree: 'M.Phil. in Bioinformatics',
+          degree: 'Master of Philosophy (M.Phil.) in Bioinformatics',
           institution: 'University of Rajshahi, Rajshahi-6205, Bangladesh',
           year: 'Current',
           detail: 'Ongoing M.Phil. study in Bioinformatics.'
