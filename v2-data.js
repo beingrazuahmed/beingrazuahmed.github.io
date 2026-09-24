@@ -1483,14 +1483,155 @@
   ]
 },
     {
-      id: 'marufa', name: 'Marufa Yeasmin', group: 'Peer & Batchmate Research Collaborators',
-      roles: ['Research Assistant', 'Research Collaborator', 'Co-author'],
-      affiliation: 'Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
-      description: 'Research collaborator in food-computing, dataset development and automated cafeteria analysis.',
-      shared: ['PUST Cafeteria Food Image Dataset', 'RT-DETR cafeteria billing'],
-      portrait: 'assets/collaborators/marufa.jpg?v=20260924-collab2',
-      cardPortraitPosition: '50% 18%', links: []
+  id: 'marufa-yeasmin',
+  name: 'Marufa Yeasmin',
+  group: 'Peer & Batchmate Research Collaborators',
+
+  profilePage: 'network-marufa-yeasmin.html',
+
+  profileBadges: [
+    'Research Assistant',
+    'Research Collaborator',
+    'Co-author',
+    'NST Fellow'
+  ],
+
+  headline: 'Research Assistant · Research Collaborator · Co-author · NST Fellow',
+
+  roles: [
+    'Research Assistant · DSLR Lab',
+    'Research Collaborator',
+    'Co-author',
+    'NST Fellow',
+    'Batchmate'
+  ],
+
+  affiliation: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+
+  description: 'Marufa Yeasmin is a Research Assistant at the Deep Statistical Learning and Research Laboratory (DSLR Lab), a batchmate, co-author and research collaborator of Razu from Pabna University of Science and Technology. Her research interests include applied statistics, data science, machine learning, deep learning, computer vision and AI-driven decision-making.',
+
+  biography: 'Marufa Yeasmin completed her B.Sc. (Hons.) and M.S. (Thesis) in Statistics from Pabna University of Science and Technology. She has contributed to machine learning, computer vision and AI-driven research through collaborative publications, dataset development and statistical modelling projects.',
+
+  portrait: 'assets/collaborators/marufa.jpeg',
+  cardPortraitPosition: '50% 14%',
+
+  currentPositions: [
+    'Research Assistant, Deep Statistical Learning and Research Laboratory (DSLR Lab), PUST'
+  ],
+
+  experience: [
+    {
+      title: 'Survey Enumerator',
+      organization: 'Bangladesh Bureau of Statistics (BBS) · Contract',
+      period: 'May 2022 – December 2024',
+      detail: 'Participated in national survey and census data collection activities conducted by Bangladesh Bureau of Statistics (BBS). Contributed to household listing, demographic data collection, economic and establishment-related data collection, verification and questionnaire-based academic survey research.'
+    }
+  ],
+
+  education: [
+    {
+      degree: 'Master of Science (M.S., Thesis) in Statistics',
+      institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+      year: '2023 · held in 2026',
+      detail: 'CGPA: 3.93/4.00. Thesis: “Automated Assessment of Food Detection and Calorie Estimation from Student Meal Images at PUST Cafeteria Using Deep Learning.”'
     },
+    {
+      degree: 'Bachelor of Science (B.Sc. Hons.) in Statistics',
+      institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+      year: '2021 · held in 2024',
+      detail: 'CGPA: 3.83/4.00. Project: “Handling Complex Censoring Mechanism in Reliability Data.” Survey: “Prevalence and Associated Factors of Smartphone Addiction on Family Relationship.”'
+    },
+    {
+      degree: 'Higher Secondary Certificate (H.S.C.) · Science',
+      institution: 'Naogaon Government College, Naogaon, Bangladesh',
+      year: '2016',
+      detail: 'GPA: 5.00/5.00 · Rajshahi Board.'
+    },
+    {
+      degree: 'Secondary School Certificate (S.S.C.) · Science',
+      institution: 'Dubalhati Raja Haranath High School, Naogaon, Bangladesh',
+      year: '2014',
+      detail: 'GPA: 5.00/5.00 · Rajshahi Board.'
+    }
+  ],
+
+  researchInterests: [
+    'Applied Statistics',
+    'Data Science',
+    'Machine Learning',
+    'Deep Learning',
+    'Computer Vision',
+    'AI-driven Decision Making'
+  ],
+
+  awards: [
+    'NST Fellowship',
+    'Dean’s Honors Award',
+    'JSR Award',
+    'Merit Scholarships during undergraduate and M.S. studies',
+    'Department 2nd Position in merit'
+  ],
+
+  activities: [
+    'PLOS ONE Peer Reviewer',
+    'HULT Prize (Stat4Change) Team Member · Chief Marketing Officer (CMO)',
+    'IT Support Service Course Partner',
+    'Class Representative (CR), Department of Statistics, PUST · B.Sc. and M.S.'
+  ],
+
+  relationship: {
+    title: 'Batchmate, co-author & research collaborator',
+    detail: 'Marufa Yeasmin is Razu’s batchmate from PUST and a continuing research collaborator. Their collaboration includes dataset development, machine learning research, statistical modelling and AI-based applications.'
+  },
+
+  sharedPublications: [
+    {
+      title: 'PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations',
+      venue: 'Data in Brief (2026)',
+      doi: 'https://doi.org/10.1016/j.dib.2026.113262'
+    }
+  ],
+
+  sharedDatasets: [
+    {
+      title: 'PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations (Version 2)',
+      repository: 'Mendeley Data',
+      doi: 'https://doi.org/10.17632/fn6yhzjz83.2'
+    }
+  ],
+
+  sharedUnderReview: [
+    {
+      title: 'Real-Time Food Detection for Automated Cafeteria Billing Using RT-DETR and GAN-Based Data Augmentation',
+      journal: 'Discover Artificial Intelligence (Springer)',
+      detail: 'Under Review.'
+    }
+  ],
+
+  shared: [
+    'PUST Cafeteria Food Image Dataset',
+    'Automated food detection and calorie estimation research',
+    'Machine learning and computer vision applications',
+    'Statistical modelling research'
+  ],
+
+  email: 'marufayeas4@gmail.com',
+
+  links: [
+    {
+      label: 'ORCID',
+      url: 'https://orcid.org/0009-0001-4685-1033'
+    },
+    {
+      label: 'ResearchGate',
+      url: 'https://www.researchgate.net/profile/Marufa-Yeasmin-2'
+    },
+    {
+      label: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/marufa-yeasmin-2700422b0/'
+    }
+  ]
+},
     {
       id: 'protiva-kundu', name: 'Protiva Rani Kundu', group: 'Peer & Batchmate Research Collaborators',
       roles: ['Research Assistant', 'Research Collaborator', 'Co-author', 'Batchmate'],
