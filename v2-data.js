@@ -715,7 +715,7 @@
       name: 'Ruhul Amin',
       group: 'Departmental Seniors & Senior Collaborators',
       profilePage: 'network-ruhul-amin.html',
-      profileBadges: ['Departmental Senior', 'Research Collaborator', 'Co-author', 'DSLR Lab Member'],
+      profileBadges: ['Departmental Senior', 'Research Collaborator', 'Co-author'],
       headline: 'Senior Lecturer · Computer Science & Engineering · Metropolitan University',
       roles: ['Departmental Senior', 'Research Collaborator', 'Co-author', 'Senior Lecturer'],
       affiliation: 'Department of Computer Science & Engineering, Metropolitan University, Sylhet-3104, Bangladesh',
