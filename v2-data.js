@@ -1204,13 +1204,180 @@
       ]
     },
     {
-      id: 'ziaul-haque', name: 'Muhammad Ziaul Haque', group: 'Peer & Batchmate Research Collaborators',
-      roles: ['Batchmate', 'Co-author', 'Research Collaborator'], affiliation: 'PUST research network',
-      description: 'Batchmate and co-author working with Razu on nationwide dengue forecasting and decision-oriented public-health research.',
-      shared: ['Nationwide dengue admission forecasting', 'Beyond Burden dengue preparedness study'],
-      portrait: 'assets/collaborators/ziaul-haque.jpeg?v=20260924-collab2',
-      cardPortraitPosition: '50% 14%', links: []
+  id: 'ziaul-haque',
+  name: 'Muhammad Ziaul Haque',
+  group: 'Peer & Batchmate Research Collaborators',
+  profilePage: 'network-ziaul-haque.html',
+  profileBadges: ['PhD Student', 'Research Collaborator', 'Co-author', 'Batchmate'],
+  headline: 'PhD Student · Mathematical Sciences · Research Collaborator',
+  roles: ['PhD Student', 'Research Collaborator', 'Co-author', 'Batchmate'],
+
+  affiliation: 'PhD Program in Mathematical Sciences, Sunway University, Malaysia',
+
+  description: 'Muhammad Ziaul Haque is a PhD student in Mathematical Sciences at Sunway University, Malaysia, and a batchmate, co-author and research collaborator of Md. Razu Ahmed. His research spans computational fluid dynamics, mathematical modelling, nonlinear dynamics, scientific machine learning and data-driven public-health forecasting.',
+
+  portrait: 'assets/collaborators/ziaul-haque.jpeg?v=20260924-collab2',
+  cardPortraitPosition: '50% 14%',
+
+  currentRoleLabel: 'Current research role',
+
+  currentPositions: [
+    'PhD Student, Mathematical Sciences, Sunway University, Malaysia',
+    'Research Assistant – CFD and Heat-Transfer Modelling, Department of Mathematics, Pabna University of Science and Technology (PUST)'
+  ],
+
+  biographyParagraphs: [
+    'Muhammad Ziaul Haque is a PhD student in Mathematical Sciences at Sunway University, Malaysia. He completed his M.S. (Thesis) in Pure Mathematics and B.Sc. in Mathematics from the Department of Mathematics, Pabna University of Science and Technology (PUST), Bangladesh. His academic journey combines mathematical analysis, computational modelling and artificial intelligence-driven research.',
+
+    'His research interests include computational fluid dynamics, heat and mass transfer, numerical methods for partial differential equations, nonlinear dynamics, scientific computing, scientific machine learning and explainable data-driven modelling. He has contributed to collaborative research in CFD simulation, nonlinear mathematical physics and nationwide dengue forecasting.'
+  ],
+
+  researchInterests: [
+    'Computational Fluid Dynamics',
+    'Heat & Mass Transfer',
+    'Numerical Methods for PDEs',
+    'Nonlinear Dynamics & Mathematical Modelling',
+    'Scientific Computing',
+    'Scientific Machine Learning',
+    'Explainable & Data-Driven Modelling'
+  ],
+
+  education: [
+    {
+      degree: 'PhD in Mathematical Sciences',
+      institution: 'Sunway University, Malaysia',
+      year: '2026–Present',
+      detail: 'Doctoral research in Mathematical Sciences.'
     },
+    {
+      degree: 'Master of Science (M.S., Thesis) in Pure Mathematics',
+      institution: 'Department of Mathematics, Pabna University of Science and Technology (PUST), Bangladesh',
+      year: '',
+      detail: 'Thesis: “A Unified Leakage-Aware and Interpretable AI Pipeline for Predicting Vehicle-Level CO₂ Emissions and Survey-Based Diabetes Risk Stratification.”'
+    },
+    {
+      degree: 'Bachelor of Science (B.Sc.) in Mathematics',
+      institution: 'Department of Mathematics, Pabna University of Science and Technology (PUST), Bangladesh',
+      year: '',
+      detail: 'Project: “Exploring Travelling Wave Solutions of Nonlinear Evolution Equations in Mathematical Physics: The Propagation in a Magneto-Electro-Elastic Circular Rod.”'
+    },
+    {
+      degree: 'Higher Secondary Certificate (H.S.C.) in Science',
+      institution: 'Trust College, Dhaka Board',
+      year: '2017',
+      detail: 'GPA: 5.00/5.00.'
+    },
+    {
+      degree: 'Secondary School Certificate (S.S.C.) in Science',
+      institution: 'Al-Amin Academy School and College, Cumilla Board',
+      year: '2015',
+      detail: 'GPA: 5.00/5.00.'
+    }
+  ],
+
+  careerTimeline: [
+    {
+      period: 'Present',
+      title: 'PhD Student · Mathematical Sciences',
+      institution: 'Sunway University, Malaysia'
+    },
+    {
+      period: 'January 2026–Present',
+      title: 'Research Assistant – CFD and Heat-Transfer Modelling',
+      institution: 'Department of Mathematics, Pabna University of Science and Technology (PUST)',
+      detail: 'Developing FEM/COMSOL models for MHD mixed convection and nanofluid heat-transfer systems, including mesh independence analysis, benchmark comparison and systematic parameter studies.'
+    },
+    {
+      period: 'July 2025–Present',
+      title: 'Selected Collaborative Research – Nonlinear Dynamics and Mathematical Physics',
+      institution: 'Under Prof. Dr. Md. Nur Alam',
+      detail: 'Investigating bifurcation structures, phase portraits, quasi-periodicity, chaos and travelling-wave/soliton behaviour in nonlinear evolution models.'
+    },
+    {
+      period: 'September 2024–April 2026',
+      title: 'Graduate Research Assistant – M.S. Thesis Research',
+      institution: 'Department of Mathematics, PUST',
+      detail: 'Research focused on vehicle-level CO₂ prediction and BRFSS diabetes-risk stratification using leakage-aware machine learning pipelines.'
+    },
+    {
+      period: '01 June 2023–20 May 2024',
+      title: 'Undergraduate Research Assistant – Nonlinear Dynamics',
+      institution: 'Department of Mathematics, PUST',
+      detail: 'Worked on travelling-wave solutions of nonlinear evolution equations using Bernoulli sub-ODE and F-expansion methods.'
+    },
+    {
+      period: 'August 2025–Present',
+      title: 'Dengue Surveillance and Forecasting Research',
+      institution: 'Collaborative Public Health Research',
+      detail: 'Built Bangladesh nationwide district-level datasets integrating DGHS admissions, CHIRPS rainfall, NASA POWER meteorology, Open-Meteo sunshine, population and spatial information.'
+    }
+  ],
+
+  awards: [
+    '13th National Undergraduate Mathematics Olympiad (2022): Ranked 7th in the Rajshahi Regional Round, Bangladesh Mathematical Society.'
+  ],
+
+  relationship: {
+    title: 'Batchmate, co-author & research collaborator',
+    detail: 'Muhammad Ziaul Haque is Razu’s batchmate from PUST and continuing research collaborator. Their collaboration includes mathematical modelling, CFD research, machine learning applications and nationwide dengue forecasting studies.'
+  },
+
+  relationshipPath: [
+    'Batchmates at PUST',
+    'Mathematics research collaboration',
+    'Joint manuscript development',
+    'Dengue forecasting collaboration'
+  ],
+
+  sharedPublications: [],
+
+  sharedAccepted: [],
+
+  sharedEditorial: [
+    {
+      title: 'Nationwide Evaluation of District-Informed Bottom-Up and Direct National Approaches for One-Week-Ahead Forecasting of Dengue Hospital Admissions in Bangladesh',
+      journal: 'BMC Public Health',
+      publisher: 'Springer Nature',
+      detail: 'Under Review.'
+    },
+    {
+      title: 'Beyond Burden: Testing the Incremental Decision Value of Operational Readiness for Dengue Preparedness in Bangladesh',
+      journal: 'Scientific Reports',
+      publisher: 'Springer Nature',
+      detail: 'Under Review.'
+    }
+  ],
+
+  shared: [
+    'Nationwide dengue admission forecasting',
+    'Beyond Burden dengue preparedness study'
+  ],
+
+  email: 'ziaulhaque3929@gmail.com',
+
+  links: [
+    {
+      label: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/muhammad-ziaul-haque-a768b9159'
+    },
+    {
+      label: 'ORCID',
+      url: 'https://orcid.org/0009-0005-2588-1777'
+    },
+    {
+      label: 'Google Scholar',
+      url: 'https://scholar.google.com/citations?user=F4rlEPMAAAAJ&hl=en'
+    },
+    {
+      label: 'Scopus',
+      url: 'https://www.scopus.com/authid/detail.uri?authorId=60751797200'
+    },
+    {
+      label: 'ResearchGate',
+      url: 'https://www.researchgate.net/profile/Muhammad-Haque-31'
+    }
+  ]
+},
     {
       id: 'bakar-shiddik', name: 'Abu Bakar Shiddik', group: 'Peer & Batchmate Research Collaborators',
       roles: ['Research Assistant', 'Research Collaborator', 'Co-author'],
