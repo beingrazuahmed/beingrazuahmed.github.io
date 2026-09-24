@@ -1382,7 +1382,15 @@
   id: 'abu-bakar-shiddik',
   name: 'Abu Bakar Shiddik',
   group: 'Peer & Batchmate Research Collaborators',
-  profileBadges: ['Batchmate', 'Co-author', 'Research Collaborator'],
+
+  profilePage: 'network-abu-bakar-shiddik.html',
+
+  profileBadges: [
+    'Batchmate',
+    'Co-author',
+    'Research Collaborator'
+  ],
+
   headline: 'Trainee Assistant Officer (TAO) · Islami Bank PLC · Research Collaborator',
 
   roles: [
@@ -1397,8 +1405,6 @@
   affiliation: 'Islami Bank PLC, Paltan Branch, Dhaka, Bangladesh',
 
   description: 'Abu Bakar Shiddik is a batchmate of Razu from Pabna University of Science and Technology and a continuing research collaborator. His contributions include statistical field survey activities, machine learning research, journal publications, conference contributions and collaborative research projects.',
-
-  biography: 'Abu Bakar Shiddik completed his Bachelor of Science (B.Sc. Hons.) in Statistics from Pabna University of Science and Technology. Alongside his professional career as a Trainee Assistant Officer at Islami Bank PLC, he has contributed to applied statistics, machine learning and data-driven research through collaborative works with Razu and other researchers.',
 
   portrait: 'assets/collaborators/abu-bakar-shiddik.jpeg',
   cardPortraitPosition: '50% 14%',
@@ -1429,13 +1435,6 @@
     detail: 'Abu Bakar Shiddik is Razu’s batchmate from PUST and a continuing research collaborator involved in statistical field surveys, machine learning studies, journal publications and conference contributions.'
   },
 
-  relationshipPath: [
-    'Batchmates at PUST',
-    'Statistical field survey collaboration',
-    'Joint research publications',
-    'Conference contributions'
-  ],
-
   sharedPublications: [
     {
       title: 'Identification of Predisposing Risk Factors for Chronic Kidney Disease and Optimizing Disease Prediction Using a Stacking Machine Learning Algorithm',
@@ -1462,8 +1461,6 @@
       ]
     }
   ],
-
-  sharedEditorial: [],
 
   shared: [
     'Chronic kidney disease prediction',
