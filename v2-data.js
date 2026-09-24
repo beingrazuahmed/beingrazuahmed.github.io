@@ -665,6 +665,7 @@
       "shared": [
         "A Comprehensive Review of Causal Inference: Philosophical Issues to Adversarial Deep Learning Issues — in preparation"
       ],
+      "email": "malam@tulane.edu",
       "links": [
         {
           "label": "XULA Profile",
