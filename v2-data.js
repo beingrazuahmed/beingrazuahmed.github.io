@@ -1243,37 +1243,37 @@
   ],
 
   education: [
-    {
-      degree: 'PhD in Mathematical Sciences',
-      institution: 'Sunway University, Malaysia',
-      year: '2026–Present',
-      detail: 'Doctoral research in Mathematical Sciences.'
-    },
-    {
-  degree: 'Master of Science (M.S., Thesis) in Pure Mathematics',
-  institution: 'Department of Mathematics, Pabna University of Science and Technology (PUST), Bangladesh',
-  year: 'Passing Year: 2023 | Examination Held: 2026',
-  detail: 'Thesis: “A Unified Leakage-Aware and Interpretable AI Pipeline for Predicting Vehicle-Level CO₂ Emissions and Survey-Based Diabetes Risk Stratification.”'
-},
-{
-  degree: 'Bachelor of Science (B.Sc.) in Mathematics',
-  institution: 'Department of Mathematics, Pabna University of Science and Technology (PUST), Bangladesh',
-  year: 'Passing Year: 2021 | Examination Held: 2023',
-  detail: 'Project: “Exploring Travelling Wave Solutions of Nonlinear Evolution Equations in Mathematical Physics: The Propagation in a Magneto-Electro-Elastic Circular Rod.”'
-},
-    {
-      degree: 'Higher Secondary Certificate (H.S.C.) in Science',
-      institution: 'Trust College, Dhaka Board',
-      year: '2017',
-      detail: 'GPA: 5.00/5.00.'
-    },
-    {
-      degree: 'Secondary School Certificate (S.S.C.) in Science',
-      institution: 'Al-Amin Academy School and College, Cumilla Board',
-      year: '2015',
-      detail: 'GPA: 5.00/5.00.'
-    }
-  ],
+  {
+    degree: 'PhD in Mathematical Sciences',
+    institution: 'Sunway University, Malaysia',
+    year: 'Current',
+    detail: 'Ongoing doctoral study in Mathematical Sciences.'
+  },
+  {
+    degree: 'Master of Science (M.S., Thesis) in Pure Mathematics',
+    institution: 'Department of Mathematics, Pabna University of Science and Technology (PUST), Bangladesh',
+    year: '2023 · held in 2026',
+    detail: 'Thesis: “A Unified Leakage-Aware and Interpretable AI Pipeline for Predicting Vehicle-Level CO₂ Emissions and Survey-Based Diabetes Risk Stratification.”'
+  },
+  {
+    degree: 'Bachelor of Science (B.Sc.) in Mathematics',
+    institution: 'Department of Mathematics, Pabna University of Science and Technology (PUST), Bangladesh',
+    year: '2021 · held in 2023',
+    detail: 'Project: “Exploring Travelling Wave Solutions of Nonlinear Evolution Equations in Mathematical Physics: The Propagation in a Magneto-Electro-Elastic Circular Rod.”'
+  },
+  {
+    degree: 'Higher Secondary Certificate (H.S.C.) · Science',
+    institution: 'Trust College · Dhaka Board, Bangladesh',
+    year: '2017',
+    detail: 'GPA: 5.00/5.00.'
+  },
+  {
+    degree: 'Secondary School Certificate (S.S.C.) · Science',
+    institution: 'Al-Amin Academy School and College · Cumilla Board, Bangladesh',
+    year: '2015',
+    detail: 'GPA: 5.00/5.00.'
+  }
+],
 
   careerTimeline: [
     {
