@@ -436,6 +436,7 @@
       showCardNote: false,
       biography: 'Dr. Md. Feroz Ali is an Associate Professor in the Department of Electrical and Electronic Engineering at Pabna University of Science and Technology (PUST), Bangladesh. He received his PhD in Electrical Engineering in 2025. During his doctoral research he produced ten scholarly works, including six Q1-ranked journal articles and four IEEE Xplore international conference papers. He began his academic career at PUST as a Lecturer and was subsequently promoted to Assistant Professor and then Associate Professor. He earned his M.Sc. Engg. and B.Sc. Engg. degrees in Electrical and Electronic Engineering from Rajshahi University of Engineering and Technology (RUET). His research spans renewable energy, microgrid planning and optimization, power systems, electrical machines and drives, power electronic converters, solar-cell devices and photovoltaic systems, with international collaborations across multiple countries.',
       portrait: 'assets/academic/instructors/feroz-ali.webp?v=20260923-feroz1',
+      cardPortraitPosition: '50% 4%',
       currentRoleLabel: 'Current academic roles',
       currentPositions: [
         'Associate Professor, Department of Electrical and Electronic Engineering, Pabna University of Science and Technology',
@@ -544,6 +545,7 @@
       "affiliation": "Xavier Ochsner College of Medicine, Xavier University of Louisiana, New Orleans, LA 70112, USA",
       "description": "International research collaborator and external mentor in statistical machine learning, causal inference, genomics, bioinformatics and biomedical AI. His scholarly guidance supports Razu’s work on emerging research directions and a joint causal-inference review currently in preparation.",
       "portrait": "assets/collaborators/ashad-alam.jpg?v=20260924-collab2",
+      cardPortraitPosition: '50% 35%',
       "currentRoleLabel": "Current appointments",
       "currentPositions": [
         "Assistant Professor of Biomedical Sciences, Xavier Ochsner College of Medicine, Xavier University of Louisiana · April 2026–present",
@@ -1199,7 +1201,8 @@
       roles: ['Co-author', 'Research Collaborator', 'DSLR Member'], affiliation: 'PUST research network',
       description: 'Co-author and collaborator on AI-employment perceptions and related statistical research.',
       shared: ['AI and employment perceptions', 'Facial emotion recognition — ICRAST 2025'],
-      portrait: 'assets/collaborators/abu-bakar-shiddik.jpeg?v=20260924-collab2', links: []
+      portrait: 'assets/collaborators/abu-bakar-shiddik.jpeg?v=20260924-collab2',
+      cardPortraitPosition: '50% 5%', links: []
     },
     {
       id: 'marufa', name: 'Marufa Yeasmin', group: 'Peer & Batchmate Research Collaborators',
@@ -1227,14 +1230,16 @@
       roles: ['Junior Collaborator', 'Mentee', 'DSLR Member'], affiliation: 'PUST research network',
       description: 'Junior collaborator in missing-data methodology and hepatitis-C prediction research.',
       shared: ['HCV missing-data manuscript', 'HCV conference contribution — EFAST 2026'],
-      portrait: 'assets/collaborators/farzana-mehedi-moly.jpg?v=20260924-collab2', links: []
+      portrait: 'assets/collaborators/farzana-mehedi-moly.jpg?v=20260924-collab2',
+      cardPortraitPosition: '50% 50%', links: []
     },
     {
       id: 'obaidul-islam', name: 'Md. Obaidul Islam', group: 'Junior Collaborators & Mentees',
       roles: ['Junior Collaborator', 'Mentee', 'DSLR Member'], affiliation: 'Department of Statistics and Data Science, PUST',
       description: 'Junior collaborator supported in survey-weighted analysis, machine-learning workflow development and conference dissemination.',
       shared: ['EFAST 2026 cesarean-delivery conference contribution'],
-      portrait: 'assets/collaborators/obaidul-islam.png?v=20260924-collab2', links: []
+      portrait: 'assets/collaborators/obaidul-islam.png?v=20260924-collab2',
+      profilePortraitPosition: '35% 50%', links: []
     }
   ];
 
