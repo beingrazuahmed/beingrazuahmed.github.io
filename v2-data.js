@@ -835,12 +835,202 @@
       ]
     },
     {
-      id: 'jannatul-mauya', name: 'Jannatul Mauya', group: 'Departmental Seniors & Senior Collaborators',
-      roles: ['Departmental Senior', 'Co-author', 'Research Collaborator', 'DSLR Member'],
-      affiliation: 'Statistics and Data Science research network, PUST',
-      description: 'Departmental senior and major collaborator across medical imaging, missing-data research, food computing and statistical learning.',
-      shared: ['FastICA source separation', 'Diabetic-retinopathy grading', 'HCV missing-data research', 'PUST Cafeteria Food Image Dataset', 'Academic-performance study'],
-      portrait: 'assets/collaborators/jannatul-mauya.jpeg?v=20260924-collab2', links: []
+      id: 'jannatul-mauya',
+      name: 'Jannatul Mauya',
+      group: 'Departmental Seniors & Senior Collaborators',
+      profilePage: 'network-jannatul-mauya.html',
+      profileBadges: ['Departmental Senior', 'Research Collaborator', 'Co-author', 'DSLR Lab Member'],
+      headline: 'M.Phil. Student in Bioinformatics · University of Rajshahi',
+      roles: ['Departmental Senior', 'Research Collaborator', 'Co-author', 'M.Phil. Student'],
+      affiliation: 'University of Rajshahi, Rajshahi-6205, Bangladesh · Departmental senior and DSLR Lab member, PUST',
+      description: 'M.Phil. student in Bioinformatics at the University of Rajshahi and a departmental senior of Md. Razu Ahmed from PUST. Her research interests span statistics, machine learning, deep learning, medical imaging, image processing, multivariate analysis and big-data analytics.',
+      portrait: 'assets/collaborators/jannatul-mauya.jpeg?v=20260924-mauya1',
+      currentRoleLabel: 'Current academic & research roles',
+      currentPositions: [
+        'M.Phil. Student in Bioinformatics, University of Rajshahi, Rajshahi-6205, Bangladesh',
+        'Research Assistant, Deep Statistical Learning and Research Lab, Department of Statistics and Data Science, Pabna University of Science and Technology · February 2025–present'
+      ],
+      biographyParagraphs: [
+        'Jannatul Mauya is an M.Phil. student in Bioinformatics at the University of Rajshahi and a Research Assistant in the Deep Statistical Learning and Research Lab (DSLR Lab) at Pabna University of Science and Technology. She completed both her B.Sc. (Hons.) and M.S. (Thesis) in Statistics at PUST, securing first merit position in both programmes.',
+        'Her research interests include statistics, machine learning, deep learning, medical imaging and image processing, pattern processing, multivariate analysis and big-data analysis. Her work spans biomedical and health-related prediction, computer vision, missing-data methodology, food computing and agricultural image analysis.'
+      ],
+      researchInterests: [
+        'Statistics',
+        'Machine Learning',
+        'Deep Learning',
+        'Medical Imaging',
+        'Image Processing',
+        'Pattern Processing',
+        'Multivariate Analysis',
+        'Big Data Analysis',
+        'Bioinformatics'
+      ],
+      education: [
+        {
+          degree: 'M.Phil. in Bioinformatics',
+          institution: 'University of Rajshahi, Rajshahi-6205, Bangladesh',
+          year: 'Current',
+          detail: 'Ongoing M.Phil. study in Bioinformatics.'
+        },
+        {
+          degree: 'Master of Science (M.S., Thesis) in Statistics',
+          institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+          year: '2022 · held in 2025',
+          detail: 'CGPA: 3.94/4.00 · Merit position: 1st. Thesis: “Automated Sugarcane Disease Detection from Leaf Images with Advanced Deep Learning Technique: A Study at the BSRI Data.” Supervisor: Prof. Dr. Md. Shamim Reza. Medium of instruction: English.'
+        },
+        {
+          degree: 'Bachelor of Science (B.Sc. Hons.) in Statistics',
+          institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+          year: '2020 · held in 2023',
+          detail: 'CGPA: 3.90/4.00 · Merit position: 1st. Statistical Project: “Assessing and Predicting Risk Factors for Heart Disease Using Machine Learning Algorithm.” Supervisor: Prof. Dr. Md. Shamim Reza. Medium of instruction: English.'
+        },
+        {
+          degree: 'Higher Secondary Certificate (H.S.C.) · Science',
+          institution: 'Ishwardi Women’s College, Pabna, Bangladesh',
+          year: '2015',
+          detail: 'GPA: 5.00/5.00.'
+        },
+        {
+          degree: 'Secondary School Certificate (S.S.C.) · Science',
+          institution: 'North Bengal Paper Mills High School, Bangladesh',
+          year: '2013',
+          detail: 'GPA: 5.00/5.00.'
+        }
+      ],
+      careerTimeline: [
+        {
+          period: 'Current',
+          title: 'M.Phil. Student in Bioinformatics',
+          institution: 'University of Rajshahi',
+          location: 'Rajshahi-6205, Bangladesh'
+        },
+        {
+          period: 'February 2025–present',
+          title: 'Research Assistant',
+          institution: 'Deep Statistical Learning and Research Lab, Department of Statistics and Data Science, PUST',
+          location: 'Pabna-6600, Bangladesh'
+        },
+        {
+          period: 'August 2025–November 2025',
+          title: 'Research Assistant · SP-3/23 Project',
+          institution: 'Space and Environment Research Center (SERC)',
+          location: 'Bangladesh'
+        },
+        {
+          period: 'B.Sc. & M.S. programmes',
+          title: 'Class Representative (CR)',
+          institution: 'Department of Statistics, Pabna University of Science and Technology',
+          detail: 'Represented students and facilitated communication with faculty throughout both degree programmes.'
+        }
+      ],
+      awards: [
+        'National Science and Technology (NST) Fellowship 2024–2025, Ministry of Science and Technology, Government of the People’s Republic of Bangladesh · Merit No. 47 · Serial No. 434.',
+        'Merit Scholarships received four times during undergraduate study and during the M.S. programme for academic performance.',
+        'EXIM Bank Scholarship for academic excellence.'
+      ],
+      relationship: {
+        title: 'Departmental senior & major research collaborator',
+        detail: 'Jannatul Mauya is one of Razu’s departmental seniors from PUST and a fellow member of the DSLR research environment. Their continuing collaboration spans signal processing, medical imaging, missing-data research, food-computing datasets, agricultural deep learning, AI-employment research and academic-performance modelling.'
+      },
+      relationshipPath: [
+        'Departmental senior at PUST',
+        'DSLR Lab research connection',
+        'Joint publications, dataset & conference work',
+        'Continuing statistical, biomedical-AI & machine-learning collaboration'
+      ],
+      collaborationStats: [
+        { value: '2', label: 'Published journal articles' },
+        { value: '1', label: 'Accepted / forthcoming' },
+        { value: '1', label: 'Public research dataset' },
+        { value: '3', label: 'Conference contributions' },
+        { value: '5', label: 'Manuscripts in editorial process' }
+      ],
+      sharedPublications: [
+        {
+          title: 'Sophisticated Audio Source Separation: A Statistical Exploration of Clarity and Precision With FastICA',
+          venue: 'Engineering Reports, 8(1), e70575 (2026)',
+          doi: 'https://doi.org/10.1002/eng2.70575'
+        },
+        {
+          title: 'PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations',
+          venue: 'Data in Brief, 69, Article 113262 (2026)',
+          doi: 'https://doi.org/10.1016/j.dib.2026.113262'
+        }
+      ],
+      sharedAccepted: [
+        {
+          title: 'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh',
+          venue: 'International Journal of Statistical Sciences, Volume 26, Issue 2 · forthcoming November 2026',
+          detail: 'Accepted 2 September 2026.'
+        }
+      ],
+      sharedDataset: [
+        {
+          title: 'PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations (Version 2)',
+          venue: 'Mendeley Data',
+          doi: 'https://doi.org/10.17632/fn6yhzjz83.2',
+          detail: 'Published 28 August 2026.'
+        }
+      ],
+      sharedConferences: [
+        {
+          event: 'International Conference on Emerging Frontiers in Advanced Sciences and Technologies 2026 (EFAST 2026)',
+          venue: 'Pabna University of Science and Technology · 27–28 June 2026 · Conference Proceedings · ISBN 978-984-37-0635-5',
+          items: [
+            'Ahmed, M. R., Mauya, J., & Reza, M. S. (2026). Automated Five-Stage Diabetic Retinopathy Grading Using a Leak-Safe and Explainable Deep-Handcrafted Fusion Framework · p. 173 · Paper ID 108.',
+            'Mauya, J., Ahmed, M. R., Ruhi, S., & Reza, M. S. (2026). A Multi-Scale Attention-Based Dense Residual Network for Sugarcane Leaf Disease Detection Using BSRI Data · p. 172 · Paper ID 107.',
+            'Moly, F. M., Ahmed, M. R., Mauya, J., & Reza, M. S. (2026). Comparative Analysis of Missing Value Imputation Methods with a Hybrid Approach for HCV Prediction Using Machine Learning · p. 174 · Paper ID 115.'
+          ]
+        }
+      ],
+      sharedEditorial: [
+        {
+          title: 'A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images',
+          journal: 'Measurement',
+          publisher: 'Elsevier',
+          detail: 'With Editor.'
+        },
+        {
+          title: 'Comparative Evaluation of Hybrid MICE–Median Missing-Value Reconstruction and Downstream Hepatitis C Prediction Using Machine Learning',
+          journal: 'BMC Medical Informatics and Decision Making',
+          publisher: 'Springer Nature',
+          detail: 'With Editor.'
+        },
+        {
+          title: 'Real-Time Food Detection for Automated Cafeteria Billing Using RT-DETR and GAN-Based Data Augmentation',
+          journal: 'Discover Artificial Intelligence',
+          publisher: 'Springer Nature',
+          detail: 'Under Review.'
+        },
+        {
+          title: 'Adaptive Probability Fusion of Lightweight Recurrent Networks for Cross-Domain Sentiment Classification',
+          journal: 'Applied AI Letters',
+          publisher: 'Wiley',
+          detail: 'Under Revision.'
+        },
+        {
+          title: 'Factors Associated with Undergraduates Academic Performance Among Public University Students: A Case Study',
+          journal: 'International Journal of Educational Reform',
+          publisher: 'SAGE',
+          detail: 'Awaiting Admin Processing.'
+        }
+      ],
+      shared: [
+        'Sophisticated Audio Source Separation: A Statistical Exploration of Clarity and Precision With FastICA — published in Engineering Reports',
+        'PUST Cafeteria Food Image Dataset — published in Data in Brief',
+        'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh — accepted / forthcoming',
+        'PUST Cafeteria Food Image Dataset Version 2 — Mendeley Data',
+        'EFAST 2026 — three joint conference contributions',
+        'Five manuscripts currently in the editorial process'
+      ],
+      email: 'jannatulmauya7711@gmail.com',
+      links: [
+        { label: 'ResearchGate', url: 'https://www.researchgate.net/profile/Jannatul-Mauya-4' },
+        { label: 'ORCID', url: 'https://orcid.org/0009-0005-7294-1306' },
+        { label: 'Google Scholar', url: 'https://scholar.google.com/citations?user=grfI1RgAAAAJ&hl=en' },
+        { label: 'Scopus', url: 'https://www.scopus.com/authid/detail.uri?authorId=58930921600' },
+        { label: 'LinkedIn', url: 'https://www.linkedin.com/in/jannatul-mauya-553692333/' }
+      ]
     },
     {
       id: 'abdur-rakib', name: 'Md. Abdur Rakib', group: 'Peer & Batchmate Research Collaborators',
