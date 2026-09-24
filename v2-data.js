@@ -718,7 +718,7 @@
       currentRoleLabel: 'Current academic roles',
       currentPositions: [
         'Senior Lecturer, Department of Computer Science & Engineering, Metropolitan University, Sylhet-3104, Bangladesh',
-        'Member, Deep Statistical Learning & Research Laboratory (DSLR Lab), Pabna University of Science and Technology'
+        'Member, Deep Statistical Learning & Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh'
       ],
       biographyParagraphs: [
         'Ruhul Amin is a Senior Lecturer in the Department of Computer Science & Engineering at Metropolitan University, Sylhet, Bangladesh. He completed both his B.Sc. and M.S. in Statistics at Pabna University of Science and Technology (PUST), where he joined the Deep Statistical Learning & Research Laboratory (DSLR Lab) in 2021 under the supervision of Prof. Dr. Md. Shamim Reza.',
@@ -848,7 +848,7 @@
       currentRoleLabel: 'Current academic & research roles',
       currentPositions: [
         'M.Phil. Student in Bioinformatics, University of Rajshahi, Rajshahi-6205, Bangladesh',
-        'Research Assistant, Deep Statistical Learning and Research Lab, Department of Statistics and Data Science, Pabna University of Science and Technology · February 2025–present'
+        'Research Assistant, Deep Statistical Learning and Research Lab, Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh · February 2025–present'
       ],
       biographyParagraphs: [
         'Jannatul Mauya is an M.Phil. student in Bioinformatics at the University of Rajshahi and a Research Assistant in the Deep Statistical Learning and Research Lab (DSLR Lab) at Pabna University of Science and Technology. She completed both her B.Sc. (Hons.) and M.S. (Thesis) in Statistics at PUST, securing first merit position in both programmes.',
@@ -907,7 +907,7 @@
         {
           period: 'February 2025–present',
           title: 'Research Assistant',
-          institution: 'Deep Statistical Learning and Research Lab, Department of Statistics and Data Science, PUST',
+          institution: 'Deep Statistical Learning and Research Lab, Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
           location: 'Pabna-6600, Bangladesh'
         },
         {
@@ -919,7 +919,7 @@
         {
           period: 'B.Sc. & M.S. programmes',
           title: 'Class Representative (CR)',
-          institution: 'Department of Statistics, Pabna University of Science and Technology',
+          institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
           detail: 'Represented students and facilitated communication with faculty throughout both degree programmes.'
         }
       ],
