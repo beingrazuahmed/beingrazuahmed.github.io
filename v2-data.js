@@ -1250,17 +1250,17 @@
       detail: 'Doctoral research in Mathematical Sciences.'
     },
     {
-      degree: 'Master of Science (M.S., Thesis) in Pure Mathematics',
-      institution: 'Department of Mathematics, Pabna University of Science and Technology (PUST), Bangladesh',
-      year: '',
-      detail: 'Thesis: “A Unified Leakage-Aware and Interpretable AI Pipeline for Predicting Vehicle-Level CO₂ Emissions and Survey-Based Diabetes Risk Stratification.”'
-    },
-    {
-      degree: 'Bachelor of Science (B.Sc.) in Mathematics',
-      institution: 'Department of Mathematics, Pabna University of Science and Technology (PUST), Bangladesh',
-      year: '',
-      detail: 'Project: “Exploring Travelling Wave Solutions of Nonlinear Evolution Equations in Mathematical Physics: The Propagation in a Magneto-Electro-Elastic Circular Rod.”'
-    },
+  degree: 'Master of Science (M.S., Thesis) in Pure Mathematics',
+  institution: 'Department of Mathematics, Pabna University of Science and Technology (PUST), Bangladesh',
+  year: 'Passing Year: 2023 | Examination Held: 2026',
+  detail: 'Thesis: “A Unified Leakage-Aware and Interpretable AI Pipeline for Predicting Vehicle-Level CO₂ Emissions and Survey-Based Diabetes Risk Stratification.”'
+},
+{
+  degree: 'Bachelor of Science (B.Sc.) in Mathematics',
+  institution: 'Department of Mathematics, Pabna University of Science and Technology (PUST), Bangladesh',
+  year: 'Passing Year: 2021 | Examination Held: 2023',
+  detail: 'Project: “Exploring Travelling Wave Solutions of Nonlinear Evolution Equations in Mathematical Physics: The Propagation in a Magneto-Electro-Elastic Circular Rod.”'
+},
     {
       degree: 'Higher Secondary Certificate (H.S.C.) in Science',
       institution: 'Trust College, Dhaka Board',
