@@ -391,6 +391,7 @@
       'seaborn':'assets/academic/logos/vendor/seaborn.svg',
       'librosa':'assets/academic/logos/vendor/librosa.svg',
       'pingouin':'assets/academic/logos/vendor/pingouin.svg',
+      'rstudio':'assets/academic/logos/vendor/rstudio.jpeg',
       'mir_eval':'assets/academic/logos/mir-eval-digital.svg',
       'pyreadstat':'assets/academic/logos/pyreadstat-digital.svg',
       'soundfile / pysoundfile':'assets/academic/logos/soundfile-digital.svg',
