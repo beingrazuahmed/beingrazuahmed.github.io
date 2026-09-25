@@ -305,11 +305,11 @@ window.PORTFOLIO_DATA = {
   ],
 
   engagements: [
-    { title: "10 Minute School", role: "Affiliate Partner", date: "December 2020–Present", venue: "" },
+    { title: "10 Minute School", role: "Affiliate Partner", date: "December 2020–Present", venue: "10 Minute School", evidenceAsset: "assets/gallery/10-minute-school-affiliate-partner-evidence.webp", evidenceHref: "gallery.html#10-minute-school-affiliate-evidence", evidenceLabel: "Affiliate Partner evidence" },
     { title: "Sikho", role: "Affiliate Partner", date: "May 2022–Present", venue: "" },
     { title: "Hult Prize 2024–2025 OnCampus Program", role: "Competitor · CEO & Team Leader, Stat4Change", date: "27 June 2025", venue: "Pabna University of Science and Technology" },
     { title: "Public Discussion: Global Nuclear Energy: Facts and Myths", role: "Participant", date: "31 October 2024", venue: "PUST · Energy of the Future Information Centre · ASE ROSATOM", asset: "assets/events/global-nuclear-energy-2024.jpg" },
-    { title: "International Agri-Art Festival 2020", role: "Campus Ambassador · Certificate of Excellence", date: "11–17 October 2020", venue: "Rajshahi University Agricultural Club" },
+    { title: "International Agri-Art Festival 2020", role: "Campus Ambassador · Certificate of Excellence", date: "11–17 October 2020", venue: "Rajshahi University Agricultural Club (RUAC)", evidenceAsset: "assets/gallery/ruac-international-agri-art-festival-2020-evidence.webp", evidenceHref: "gallery.html#ruac-agri-art-ambassador-evidence", evidenceLabel: "Campus Ambassador evidence" },
     { title: "5th Dutch-Bangla Bank Bangladesh Physics Olympiad 2015", role: "Divisional-Round Participant · Category C", date: "2015", venue: "Represented Rajshahi College" }
   ],
 
@@ -350,6 +350,8 @@ window.PORTFOLIO_DATA = {
   ],
 
   gallery: [
+    { id: "10-minute-school-affiliate-evidence", title: "10 Minute School — Affiliate Partner", category: "Professional Development", evidenceType: "Role Evidence", date: "December 2020–Present", issuer: "10 Minute School", caption: "Welcome graphic identifying Md. Razu Ahmed as an Affiliate Partner of 10 Minute School.", asset: "assets/gallery/10-minute-school-affiliate-partner-evidence.webp", href: "assets/gallery/10-minute-school-affiliate-partner-evidence.webp", related: "profile.html", verified: true, sourceFile: "User-provided 10 Minute School role evidence" },
+    { id: "ruac-agri-art-ambassador-evidence", title: "International Agri-Art Festival 2020 — Campus Ambassador", category: "Scientific Engagement", evidenceType: "Role Evidence", date: "11–17 October 2020", issuer: "Rajshahi University Agricultural Club (RUAC)", caption: "Campus Ambassador evidence identifying Md. Razu Ahmed as the Pabna University of Science and Technology representative for the International Agri-Art Festival.", asset: "assets/gallery/ruac-international-agri-art-festival-2020-evidence.webp", href: "assets/gallery/ruac-international-agri-art-festival-2020-evidence.webp", related: "profile.html", verified: true, sourceFile: "User-provided RUAC role evidence" },
     { id: "icrast-440-certificate-gallery", title: "ICRAST 2025 — Paper 440 Certificate of Achievement", category: "Conference", evidenceType: "Certificate", paperId: "440", date: "14–15 November 2025", issuer: "Faculty of Science, University of Rajshahi", caption: "Certificate issued to Md. Razu Ahmed for Paper ID 440, “Measuring Attitudes toward AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology,” at the 2nd ICRAST 2025.", asset: "assets/academic/conferences/icrast-2025-paper-440-certificate.jpeg", href: "assets/academic/conferences/icrast-2025-paper-440-certificate.jpeg", related: "conferences.html#icrast-2025", verified: true, sourceFile: "ICRAST Paper ID-440 Certificate(2).jpeg" },
     { title: "JSR Award — ICASDS 2025", category: "Award", caption: "Recognition for outstanding poster performance at ICASDS 2025.", asset: "assets/gallery/jsr-award-icasds-2025.jpg" },
     { title: "EFAST 2026 Oral Presentation", category: "Conference", caption: "Presenting Author for the diabetic-retinopathy grading study.", asset: "assets/gallery/efast-2026-oral.jpg" },
