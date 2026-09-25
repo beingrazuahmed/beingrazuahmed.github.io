@@ -2042,13 +2042,146 @@
       ]
     },
     {
-      id: 'farzana-moly', name: 'Farzana Mehedi Moly', group: 'Junior Collaborators & Mentees',
-      roles: ['Research Assistant', 'Junior Collaborator', 'Mentee'],
-      affiliation: 'Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
-      description: 'Junior collaborator in missing-data methodology and hepatitis-C prediction research.',
-      shared: ['HCV missing-data manuscript', 'HCV conference contribution — EFAST 2026'],
+      id: 'farzana-moly',
+      name: 'Farzana Mehedi Moly',
+      group: 'Junior Collaborators & Mentees',
+      profilePage: 'network-farzana-mehedi-moly.html',
+
+      profileBadges: [
+        'Research Assistant',
+        'Research Collaborator',
+        'Co-author',
+        'M.S. Thesis Student'
+      ],
+
+      headline: 'M.S. Thesis Student · Research Assistant · DSLR Lab, PUST',
+
+      roles: [
+        'Research Assistant',
+        'Research Collaborator',
+        'Co-author',
+        'Junior Collaborator'
+      ],
+
+      affiliation: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+
+      description: 'M.S. (Thesis) student in Statistics and Data Science, Research Assistant at the Deep Statistical Learning and Research Laboratory (DSLR Lab), and junior research collaborator of Md. Razu Ahmed, with work spanning deep learning, generative AI, Bangla image captioning, missing-data methodology and hepatitis-C prediction.',
+
       portrait: 'assets/collaborators/farzana-mehedi-moly.jpg?v=20260924-collab2',
-      cardPortraitPosition: '50% 30%', links: []
+      cardPortraitPosition: '50% 30%',
+
+      currentRoleLabel: 'Current academic & research roles',
+
+      currentPositions: [
+        'Master of Science (M.S., Thesis) student in Statistics and Data Science, Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Bangladesh',
+        'Research Assistant, Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Bangladesh'
+      ],
+
+      biographyParagraphs: [
+        'Farzana Mehedi Moly is currently an M.S. (Thesis) student in Statistics and Data Science at Pabna University of Science and Technology (PUST), a Research Assistant at the Deep Statistical Learning and Research Laboratory (DSLR Lab), and a continuing junior research collaborator of Md. Razu Ahmed. She completed her B.Sc. (Hons.) in Statistics at PUST in the 2022 academic year, with the examination held in 2025.',
+        'Her current thesis focuses on Bangla image captioning using generative adversarial networks and deep learning for university academic context understanding. Her collaborative research with Razu includes missing-value reconstruction and downstream hepatitis-C prediction using machine learning, with work presented at EFAST 2026 and a related manuscript under review. She has also applied for the National Science & Technology (NST) Fellowship.'
+      ],
+
+      researchInterests: [
+        'Applied Statistics',
+        'Machine Learning',
+        'Deep Learning',
+        'Generative Adversarial Networks (GANs)',
+        'Natural Language Processing',
+        'Bangla Image Captioning',
+        'Computer Vision',
+        'Missing-Data Methodology',
+        'Health Informatics',
+        'Hepatitis-C Prediction'
+      ],
+
+      education: [
+        {
+          degree: 'Master of Science (M.S., Thesis) in Statistics and Data Science',
+          institution: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+          year: 'Current',
+          detail: 'Thesis: “Bangla Image Captioning Using Generative Adversarial Networks and Deep Learning for University Academic Context Understanding.”'
+        },
+        {
+          degree: 'Bachelor of Science (B.Sc. Hons.) in Statistics',
+          institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+          year: '2022 · held in 2025',
+          detail: ''
+        }
+      ],
+
+      careerTimeline: [
+        {
+          period: 'Current',
+          title: 'M.S. (Thesis) Student in Statistics and Data Science',
+          institution: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST)',
+          location: 'Pabna, Bangladesh',
+          detail: 'Thesis research on Bangla image captioning using generative adversarial networks and deep learning for university academic context understanding.'
+        },
+        {
+          period: 'Current',
+          title: 'Research Assistant',
+          institution: 'Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST)',
+          location: 'Pabna, Bangladesh'
+        }
+      ],
+
+      awards: [],
+
+      externalAffiliations: [
+        'Research Assistant, Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST).',
+        'National Science & Technology (NST) Fellowship applicant.'
+      ],
+
+      relationship: {
+        title: 'Departmental junior, co-author & research collaborator',
+        detail: 'Farzana Mehedi Moly is Razu’s departmental junior at PUST and a continuing research collaborator. Their shared work includes missing-data methodology, hybrid MICE–Median reconstruction, hepatitis-C prediction using machine learning, an EFAST 2026 conference contribution, and a related journal manuscript under review.'
+      },
+
+      relationshipPath: [
+        'Departmental junior at PUST',
+        'Joint missing-data and HCV prediction research',
+        'EFAST 2026 conference contribution',
+        'BMC Medical Informatics and Decision Making manuscript under review'
+      ],
+
+      collaborationStats: [
+        { value: '1', label: 'Conference contribution' },
+        { value: '1', label: 'Manuscript under review' }
+      ],
+
+      sharedEditorial: [
+        {
+          title: 'Comparative Evaluation of Hybrid MICE–Median Missing-Value Reconstruction and Downstream Hepatitis C Prediction Using Machine Learning',
+          journal: 'BMC Medical Informatics and Decision Making',
+          publisher: 'Springer',
+          detail: 'Under Review · Q1 · SJR 2025 1.224 · H-Index 117 · CiteScore 8.5 · Impact Factor 5.5 · SNIP 2025 1.662 · Science Citation Index Expanded (SCIE) · ISSN / eISSN 1472-6947.'
+        }
+      ],
+
+      sharedConferences: [
+        {
+          event: 'International Conference on Emerging Frontiers in Advanced Sciences and Technologies 2026 (EFAST 2026)',
+          venue: 'Pabna University of Science and Technology, Pabna-6600, Bangladesh · 27–28 June 2026 · Conference Proceedings · ISBN 978-984-37-0635-5',
+          items: [
+            'Moly, F. M., Ahmed, M. R., Mauya, J., & Reza, M. S. (2026). Comparative Analysis of Missing Value Imputation Methods with a Hybrid Approach for HCV Prediction Using Machine Learning · p. 174 · Paper ID 115.'
+          ]
+        }
+      ],
+
+      shared: [
+        'EFAST 2026 Paper ID 115 — hybrid missing-value imputation and HCV prediction',
+        'Comparative Evaluation of Hybrid MICE–Median Missing-Value Reconstruction and Downstream Hepatitis C Prediction Using Machine Learning — under review'
+      ],
+
+      email: 'farzanamoly009@gmail.com',
+
+      links: [
+        {
+          label: 'LinkedIn',
+          url: 'https://www.linkedin.com/in/farzana-moly-a14230350/'
+        }
+      ]
     },
     {
       id: 'obaidul-islam', name: 'Md. Obaidul Islam', group: 'Junior Collaborators & Mentees',
