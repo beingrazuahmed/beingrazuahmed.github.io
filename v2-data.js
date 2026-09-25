@@ -1914,7 +1914,7 @@
           degree: 'Bachelor of Science (B.Sc. Hons.) in Statistics',
           institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
           year: '2022 · held in 2025',
-          detail: 'Statistical Project: “Interpretable Machine Learning to Identify Key Predictors of Maternal Quality of Life, Pabna District.” Applied machine-learning techniques in Python to identify key socio-demographic and health factors. Statistical Field Survey: “The Effects of Teacher Sizes and Academic Facilities on Students’ Academic Performances, PUST.” Conducted and analyzed the survey using MS Excel and SPSS.'
+          detail: 'CGPA: 3.36/4.00. Statistical Project: “Interpretable Machine Learning to Identify Key Predictors of Maternal Quality of Life, Pabna District.” Applied machine-learning techniques in Python to identify key socio-demographic and health factors. Statistical Field Survey: “The Effects of Teacher Sizes and Academic Facilities on Students’ Academic Performances, PUST.” Conducted and analyzed the survey using MS Excel and SPSS.'
         },
         {
           degree: 'Higher Secondary Certificate (H.S.C.)',
@@ -1952,7 +1952,10 @@
         }
       ],
 
-      awards: [],
+      awards: [
+        'Training Completion Certificate in Cyber Hygiene, The Asia Foundation & SAJIDA Foundation (APAC Cybersecurity Fund) · 13 September 2025.',
+        'Digital Skills Training for Students under the Enhancing Digital Government and Economy (EDGE) project, offered by the Department of CSE, Pabna University of Science and Technology (PUST) · Completed training in Microsoft Word, Excel and PowerPoint.'
+      ],
 
       externalAffiliations: [
         'Research Assistant, Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST).',
