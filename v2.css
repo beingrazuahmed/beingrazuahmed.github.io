@@ -10941,3 +10941,153 @@ body[data-person="ashad-alam"] .network-profile-statbar { grid-template-columns:
 .gallery-evidence-card[data-gallery-category="Scholarly Service"] .verified-corner-ribbon>span,
 .recognition-certificate-card[data-gallery-category="Scholarly Service"] .verified-corner-ribbon>span{background:linear-gradient(135deg,#168a72,#0c6654)!important;color:#fff!important}
 @media(max-width:760px){.gallery-evidence-card .gallery-evidence-media{height:250px!important;min-height:250px!important}}
+
+
+/* === Premium verified credentials + evidence archive · 2026-09-25 === */
+.recognition-credentials-section{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 8% 8%,color-mix(in srgb,var(--accent) 10%,transparent),transparent 30%),
+    radial-gradient(circle at 94% 12%,color-mix(in srgb,var(--accent-2) 8%,transparent),transparent 28%);
+}
+.credential-section-heading,.gallery-archive-head{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:22px
+}
+.credential-section-heading .section-head,.gallery-archive-head>div{margin-bottom:0}
+.credential-archive-link{
+  display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;
+  padding:10px 14px;border:1px solid var(--line);border-radius:999px;
+  background:color-mix(in srgb,var(--surface) 90%,transparent);
+  color:var(--accent-2);font-size:12px;font-weight:850;text-decoration:none;
+  box-shadow:0 8px 22px rgba(15,55,80,.06)
+}
+.credential-archive-link:hover,.credential-archive-link:focus-visible{
+  border-color:color-mix(in srgb,var(--accent) 42%,var(--line));transform:translateY(-1px);outline:none
+}
+.credential-summary-strip{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0 0 24px
+}
+.credential-summary-strip>div{
+  padding:14px 16px;border:1px solid var(--line);border-radius:16px;background:var(--surface);
+  box-shadow:0 8px 22px rgba(15,55,80,.05)
+}
+.credential-summary-strip strong{display:block;font-size:22px;line-height:1;color:var(--text)}
+.credential-summary-strip span{display:block;margin-top:6px;color:var(--muted);font-size:11px;font-weight:750}
+.credential-showcase-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch
+}
+.credential-card{
+  position:relative;overflow:hidden;display:flex;flex-direction:column;min-width:0;
+  border:1px solid var(--line);border-radius:22px;background:var(--surface);
+  box-shadow:0 16px 42px rgba(20,63,87,.08);
+  transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease
+}
+.credential-card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 38%,var(--line));box-shadow:0 22px 52px rgba(20,63,87,.12)}
+.credential-card::before{
+  content:"";position:absolute;inset:0 auto 0 0;width:4px;z-index:2;
+  background:linear-gradient(180deg,var(--accent),var(--accent-2))
+}
+.credential-card[data-credential-category="Award"]::before{background:linear-gradient(180deg,#d79b18,#ad6e00)}
+.credential-card[data-credential-category="Scientific Engagement"]::before{background:linear-gradient(180deg,#1b82b8,#0f5d89)}
+.credential-card[data-credential-category="Professional Development"]::before{background:linear-gradient(180deg,#cf555d,#9e343b)}
+.credential-card[data-credential-category="Conference"]::before{background:linear-gradient(180deg,#6d5bd0,#493ca4)}
+.credential-media-wrap{
+  position:relative;display:grid;place-items:center;min-height:245px;padding:16px;
+  background:linear-gradient(145deg,#f7fafc,#edf3f7);border-bottom:1px solid var(--line)
+}
+.credential-preview{
+  position:relative;display:grid;place-items:center;width:100%;height:215px;padding:0;
+  border:0;border-radius:14px;background:#fff;overflow:hidden;cursor:zoom-in;
+  box-shadow:0 6px 20px rgba(21,55,73,.10)
+}
+.credential-preview img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;background:#fff}
+.credential-preview-action{
+  position:absolute;left:50%;bottom:10px;transform:translate(-50%,8px);opacity:0;
+  padding:7px 10px;border-radius:999px;background:rgba(13,28,40,.88);color:#fff;
+  font-size:10px;font-weight:850;white-space:nowrap;transition:.18s ease
+}
+.credential-preview:hover .credential-preview-action,.credential-preview:focus-visible .credential-preview-action{opacity:1;transform:translate(-50%,0)}
+.credential-preview:focus-visible{outline:3px solid color-mix(in srgb,var(--accent) 42%,transparent);outline-offset:3px}
+.credential-verified-badge{
+  position:absolute;top:14px;right:14px;display:inline-flex;align-items:center;gap:6px;
+  padding:7px 9px;border:1px solid rgba(255,255,255,.82);border-radius:999px;
+  background:rgba(16,104,88,.94);color:#fff;font-size:9.5px;font-weight:900;
+  letter-spacing:.055em;text-transform:uppercase;box-shadow:0 7px 18px rgba(0,0,0,.13)
+}
+.credential-card[data-credential-category="Award"] .credential-verified-badge{background:rgba(173,110,0,.94)}
+.credential-card[data-credential-category="Scientific Engagement"] .credential-verified-badge{background:rgba(15,93,137,.94)}
+.credential-card[data-credential-category="Professional Development"] .credential-verified-badge{background:rgba(158,52,59,.94)}
+.credential-card[data-credential-category="Conference"] .credential-verified-badge{background:rgba(73,60,164,.94)}
+.credential-card-body{display:flex;flex-direction:column;flex:1;padding:17px 18px 18px 20px}
+.credential-card-topline{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.credential-type{color:var(--accent);font-size:9.5px;font-weight:900;letter-spacing:.085em;text-transform:uppercase}
+.credential-paper-id{font-size:9.5px;font-weight:850;color:var(--muted)}
+.credential-card h3{margin:0;font-size:17px;line-height:1.35}
+.credential-meta-list{display:grid;gap:8px;margin:15px 0 0}
+.credential-meta-list div{display:grid;grid-template-columns:48px minmax(0,1fr);gap:9px;align-items:start}
+.credential-meta-list dt{color:var(--muted);font-size:9px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+.credential-meta-list dd{margin:0;color:var(--text);font-size:11.5px;line-height:1.45}
+.credential-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.credential-tags span{
+  padding:5px 8px;border:1px solid var(--line);border-radius:999px;background:var(--surface-2);
+  color:var(--muted);font-size:9.5px;font-weight:750
+}
+.credential-card-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:16px}
+.credential-card-actions a,.credential-inline-link,.gallery-card-actions a{
+  display:inline-flex;align-items:center;min-height:32px;padding:6px 9px;border:1px solid var(--line);
+  border-radius:9px;color:var(--accent-2);font-size:10.5px;font-weight:850;text-decoration:none
+}
+.credential-card-actions a:hover,.credential-inline-link:hover,.gallery-card-actions a:hover{border-color:color-mix(in srgb,var(--accent) 42%,var(--line));background:var(--surface-2)}
+.credential-card-actions .credential-action-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.recognition-card-eyebrow{display:flex;justify-content:space-between;gap:10px;margin-bottom:10px;color:var(--muted);font-size:9.5px;font-weight:900;letter-spacing:.075em;text-transform:uppercase}
+.recognition-card-issuer{color:var(--text)!important;font-weight:750}
+.recognition-award-card,.recognition-training-card{display:flex;flex-direction:column}
+.recognition-award-card .credential-inline-link,.recognition-training-card .credential-inline-link{margin-top:auto;align-self:flex-start}
+.gallery-archive-head h2{margin:4px 0 7px;font-size:clamp(24px,3vw,38px)}
+.gallery-archive-head p{max-width:760px;margin:0;color:var(--muted);line-height:1.6}
+.gallery-evidence-filters{margin-bottom:18px}
+.gallery-evidence-card{position:relative;display:flex;flex-direction:column}
+.gallery-evidence-card .gallery-evidence-media{position:relative}
+.gallery-verified-chip{
+  position:absolute;top:12px;right:12px;display:inline-flex;align-items:center;gap:5px;
+  padding:6px 8px;border:1px solid rgba(255,255,255,.78);border-radius:999px;
+  background:rgba(21,107,89,.94);color:#fff;font-size:9px;font-weight:900;
+  letter-spacing:.055em;text-transform:uppercase;box-shadow:0 6px 16px rgba(0,0,0,.13)
+}
+.gallery-evidence-card[data-gallery-category="Award"] .gallery-verified-chip{background:rgba(173,110,0,.94)}
+.gallery-evidence-card[data-gallery-category="Conference"] .gallery-verified-chip{background:rgba(73,60,164,.94)}
+.gallery-evidence-card[data-gallery-category="Scientific Engagement"] .gallery-verified-chip{background:rgba(15,93,137,.94)}
+.gallery-evidence-card[data-gallery-category="Professional Development"] .gallery-verified-chip{background:rgba(158,52,59,.94)}
+.gallery-evidence-card[data-gallery-category="Scholarly Service"] .gallery-verified-chip{background:rgba(12,102,84,.94)}
+.gallery-card-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:12px}
+.evidence-lightbox[hidden]{display:none!important}
+.evidence-lightbox{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;padding:24px}
+.evidence-lightbox-backdrop{position:absolute;inset:0;background:rgba(5,14,22,.82);backdrop-filter:blur(10px)}
+.evidence-lightbox-dialog{
+  position:relative;z-index:1;width:min(1100px,96vw);max-height:94vh;overflow:auto;
+  border:1px solid rgba(255,255,255,.16);border-radius:22px;background:var(--surface);
+  box-shadow:0 34px 100px rgba(0,0,0,.38)
+}
+.evidence-lightbox-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:18px 20px;border-bottom:1px solid var(--line)}
+.evidence-lightbox-head h2{margin:3px 0 4px;font-size:20px}
+.evidence-lightbox-head p{margin:0;color:var(--muted);font-size:11.5px}
+.evidence-lightbox-close{
+  width:38px;height:38px;border:1px solid var(--line);border-radius:50%;
+  background:var(--surface-2);color:var(--text);font-size:24px;line-height:1;cursor:pointer
+}
+.evidence-lightbox-stage{display:grid;place-items:center;min-height:360px;max-height:68vh;padding:20px;background:#e9eef2}
+.evidence-lightbox-stage img{display:block;max-width:100%;max-height:64vh;object-fit:contain;background:#fff;box-shadow:0 8px 28px rgba(0,0,0,.16)}
+.evidence-lightbox-actions{display:flex;justify-content:flex-end;gap:9px;padding:14px 20px;border-top:1px solid var(--line)}
+body.evidence-lightbox-open{overflow:hidden}
+@media(max-width:1050px){.credential-showcase-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.credential-summary-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){
+  .credential-section-heading,.gallery-archive-head{align-items:flex-start;flex-direction:column}
+  .credential-showcase-grid{grid-template-columns:1fr}
+  .credential-summary-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .credential-media-wrap{min-height:230px}
+  .credential-preview{height:205px}
+  .evidence-lightbox{padding:10px}
+  .evidence-lightbox-stage{min-height:260px;padding:10px}
+}
+@media(max-width:460px){.credential-summary-strip{grid-template-columns:1fr}.credential-card-actions a{flex:1 1 auto;justify-content:center}}

@@ -1432,12 +1432,89 @@
       </div></section>`;
   }
 
+  function evidenceLightbox(){
+    return `<div class="evidence-lightbox" id="evidenceLightbox" hidden aria-hidden="true">
+      <div class="evidence-lightbox-backdrop" data-evidence-close></div>
+      <div class="evidence-lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="evidenceLightboxTitle">
+        <div class="evidence-lightbox-head">
+          <div><span class="section-kicker">Verified visual evidence</span><h2 id="evidenceLightboxTitle">Credential preview</h2><p id="evidenceLightboxMeta"></p></div>
+          <button type="button" class="evidence-lightbox-close" data-evidence-close aria-label="Close evidence viewer">×</button>
+        </div>
+        <div class="evidence-lightbox-stage"><img id="evidenceLightboxImage" src="" alt=""></div>
+        <div class="evidence-lightbox-actions"><a id="evidenceLightboxOpen" class="btn primary" href="#" target="_blank" rel="noopener noreferrer">Open original ↗</a><button type="button" class="btn" data-evidence-close>Close</button></div>
+      </div>
+    </div>`;
+  }
+
   function recognition(){
-    const verifiedCertificates=(D.gallery||[]).filter(g=>g.verified&&g.evidenceType==='Certificate');
-    return `${pageHero('Recognition','Awards, certificates & professional development.')}
-      <section class="section recognition-awards-section"><div class="container">${sectionHead('Honors & awards','Evidence-backed recognition')}<div class="grid grid-3">${(D.awards||[]).map(a=>`<article class="card"><h3>${esc(a.title||a.name||'')}</h3><p>${esc(a.issuer||a.organization||'')}</p><p>${esc(a.description||a.detail||'')}</p>${a.evidenceHref?`<a class="gallery-related-link" href="${esc(a.evidenceHref)}">${esc(a.evidenceLabel||'View evidence')} →</a>`:''}</article>`).join('')}</div></div></section>
-      ${verifiedCertificates.length?`<section class="section alt recognition-certificates-section"><div class="container">${sectionHead('Verified certificates','Documentary evidence','Selected documentary evidence for awards, workshops, academic engagement and conference participation.')}<div class="grid grid-3 recognition-certificate-grid">${verifiedCertificates.map(g=>`<article class="card recognition-certificate-card ${g.verified?'is-verified-document':''}" data-gallery-category="${esc(g.category||'')}">${g.verified?verifiedCornerRibbon():''}${g.asset?`<a href="${esc(g.href||g.asset)}" target="_blank" rel="noopener noreferrer"><img src="${esc(g.asset)}" alt="${esc(g.title)}" loading="lazy" decoding="async"></a>`:''}<div class="certificate-verified-row"><div class="gallery-evidence-meta"><span class="badge">Certificate</span>${g.paperId?`<span class="paper-id-chip">Paper ID ${esc(g.paperId)}</span>`:''}</div></div><h3>${esc(g.title)}</h3><p>${esc(g.issuer||'')}</p><p>${esc(g.caption||'')}</p>${g.sourceFile?`<small class="evidence-source-name">Source file · ${esc(g.sourceFile)}</small>`:''}<div class="recognition-certificate-links"><a href="${esc(g.href||g.asset)}" target="_blank" rel="noopener noreferrer">View certificate ↗</a>${g.related?`<a href="${esc(g.related)}">Conference record →</a>`:''}<a href="gallery.html#${esc(g.id||'')}">Gallery evidence →</a></div></article>`).join('')}</div></div></section>`:''}
-      <section class="section recognition-training-section"><div class="container">${sectionHead('Training & certifications','Professional development')}<div class="grid grid-3">${(D.training||[]).map(t=>`<article class="card"><div class="badge">${esc(t.date||t.year||'')}</div><h3>${esc(t.title||t.name||'')}</h3><p>${esc(t.provider||t.issuer||'')}</p><p>${esc(t.duration||t.detail||t.description||'')}</p>${t.evidenceHref?`<a class="gallery-related-link" href="${esc(t.evidenceHref)}">${esc(t.evidenceLabel||'View certificate')} →</a>`:''}</article>`).join('')}</div></div></section>`;
+    const verifiedCredentials=(D.gallery||[]).filter(g=>g.verified&&g.evidenceType==='Certificate');
+    const credentialCount=verifiedCredentials.length;
+    const awardCredentials=verifiedCredentials.filter(g=>g.category==='Award').length;
+    const professionalCredentials=verifiedCredentials.filter(g=>g.category==='Professional Development').length;
+    const academicCredentials=verifiedCredentials.filter(g=>g.category==='Conference'||g.category==='Scientific Engagement').length;
+    return `${pageHero('Recognition','Verified credentials, awards and professional development.')}
+      <section class="section recognition-credentials-section"><div class="container">
+        <div class="credential-section-heading">
+          <div>${sectionHead('Verified credentials',`${credentialCount} evidence-backed credentials`,'Certificates are presented as credentials first: clear preview, issuer, issue date, category and direct access to the original evidence.')}</div>
+          <a class="credential-archive-link" href="gallery.html">Open complete evidence archive <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="credential-summary-strip" aria-label="Credential summary">
+          <div><strong>${credentialCount}</strong><span>Verified credentials</span></div>
+          <div><strong>${professionalCredentials}</strong><span>Professional development</span></div>
+          <div><strong>${academicCredentials}</strong><span>Academic / scientific</span></div>
+          <div><strong>${awardCredentials}</strong><span>Award certificates</span></div>
+        </div>
+        <div class="credential-showcase-grid">
+          ${verifiedCredentials.map(g=>`<article class="credential-card" data-credential-category="${esc(g.category||'Credential')}">
+            <div class="credential-media-wrap">
+              <button type="button" class="credential-preview" data-evidence-lightbox="${esc(g.asset||'')}" data-evidence-title="${esc(g.title||'Verified credential')}" data-evidence-meta="${esc([g.issuer,g.date].filter(Boolean).join(' · '))}" aria-label="Preview ${esc(g.title||'credential')}">
+                <img src="${esc(g.asset||'')}" alt="${esc(g.title||'Verified credential')}" loading="lazy" decoding="async">
+                <span class="credential-preview-action">View full credential</span>
+              </button>
+              <span class="credential-verified-badge"><span aria-hidden="true">✓</span> Verified credential</span>
+            </div>
+            <div class="credential-card-body">
+              <div class="credential-card-topline">
+                <span class="credential-type">${esc(g.evidenceType||'Certificate')}</span>
+                ${g.paperId?`<span class="credential-paper-id">Paper ID ${esc(g.paperId)}</span>`:''}
+              </div>
+              <h3>${esc(g.title||'')}</h3>
+              <dl class="credential-meta-list">
+                <div><dt>Issuer</dt><dd>${esc(g.issuer||'Verified issuer')}</dd></div>
+                <div><dt>Issued</dt><dd>${esc(g.date||'Date recorded')}</dd></div>
+              </dl>
+              <div class="credential-tags"><span>${esc(g.category||'Credential')}</span><span>${esc(g.evidenceType||'Certificate')}</span></div>
+              <div class="credential-card-actions">
+                <a class="credential-action-primary" href="${esc(g.href||g.asset||'#')}" target="_blank" rel="noopener noreferrer">View Credential ↗</a>
+                <a href="gallery.html#${esc(g.id||'')}">Evidence record →</a>
+              </div>
+            </div>
+          </article>`).join('')}
+        </div>
+      </div></section>
+
+      <section class="section alt recognition-awards-section"><div class="container">
+        ${sectionHead('Honors & distinctions','Awards & recognition','Competitive and academic distinctions are separated from course and workshop certificates.')}
+        <div class="grid grid-3 recognition-award-grid">${(D.awards||[]).map(a=>`<article class="card recognition-award-card">
+          <div class="recognition-card-eyebrow"><span>Award / distinction</span><span>${esc(a.date||'')}</span></div>
+          <h3>${esc(a.title||a.name||'')}</h3>
+          <p class="recognition-card-issuer">${esc(a.issuer||a.organization||'')}</p>
+          <p>${esc(a.description||a.detail||'')}</p>
+          ${a.evidenceHref?`<a class="credential-inline-link" href="${esc(a.evidenceHref)}">${esc(a.evidenceLabel||'View evidence')} →</a>`:''}
+        </article>`).join('')}</div>
+      </div></section>
+
+      <section class="section recognition-training-section"><div class="container">
+        ${sectionHead('Professional development','Training & certifications','A compact record of research-methods, scholarly-practice, technical and workshop training.')}
+        <div class="grid grid-3 recognition-training-grid">${(D.training||[]).map(t=>`<article class="card recognition-training-card">
+          <div class="recognition-card-eyebrow"><span>${esc(t.group||'Professional development')}</span><span>${esc(t.date||t.year||'')}</span></div>
+          <h3>${esc(t.title||t.name||'')}</h3>
+          <p class="recognition-card-issuer">${esc(t.provider||t.issuer||'')}</p>
+          <p>${esc(t.duration||t.detail||t.description||'')}</p>
+          ${t.evidenceHref?`<a class="credential-inline-link" href="${esc(t.evidenceHref)}">${esc(t.evidenceLabel||'View certificate')} →</a>`:''}
+        </article>`).join('')}</div>
+      </div></section>
+      ${evidenceLightbox()}`;
   }
 
   function highlightRazuName(text=''){
@@ -1681,15 +1758,31 @@
 
   function resources(){return `${pageHero('Resources','Research toolkit, methods, notes and reproducibility resources.')}<section class="section"><div class="container">${sectionHead('Research toolkit','Software & environments')}<div class="grid grid-3">${(D.tools||[]).map(g=>`<article class="card tool-group"><h3>${esc(g.group)}</h3>${(g.items||[]).map(i=>`<div class="tool-item"><strong>${esc(i.name)}</strong><p>${esc(i.detail)}</p></div>`).join('')}</article>`).join('')}</div></div></section><section class="section alt"><div class="container">${sectionHead('Knowledge base','Planned research notes')}<div class="grid grid-3">${['Leakage-aware validation','Explainable AI & SHAP','Survey-weighted modelling','Missing-data analysis','Model calibration','Research reproducibility','Peer-review practice','Scientific writing'].map(x=>`<article class="card"><h3>${x}</h3><p>Evidence-grounded resource area. Published only when the underlying note or guide is ready.</p></article>`).join('')}</div></div></section>`;}
 
-  function gallery(){return `${pageHero('Gallery & Evidence','A curated visual archive of verified academic, research and professional records.')}<section class="section"><div class="container"><div class="filters">${['All','Award','Conference','Scientific Engagement','Professional Development','Scholarly Service'].map((x,i)=>`<button class="filter ${i===0?'active':''}" data-gallery-filter="${esc(x)}">${x}</button>`).join('')}</div><div class="grid grid-3 gallery-evidence-grid">${(D.gallery||[]).map(g=>`<article class="card gallery-evidence-card ${g.verified&&g.evidenceType==='Certificate'?'is-verified-certificate is-verified-document':''}" ${g.id?`id="${esc(g.id)}"`:''} data-gallery-category="${esc(g.category||'')}">
-      ${g.verified?verifiedCornerRibbon():''}
-      ${g.asset?`<a class="gallery-evidence-media" href="${esc(g.href||g.asset)}" target="${g.href&&g.href.startsWith('http')?'_blank':'_self'}" rel="noopener noreferrer"><img src="${esc(g.asset)}" alt="${esc(g.title||'Academic evidence')}" loading="lazy" decoding="async"></a>`:`<div class="portrait-placeholder">${esc(g.title||g.category||'Verified visual evidence')}</div>`}
-      <div class="gallery-evidence-meta"><span class="badge">${esc(g.category||'Evidence')}</span>${g.evidenceType?`<span class="badge gallery-evidence-type">${esc(g.evidenceType)}</span>`:''}${g.paperId?`<span class="paper-id-chip">Paper ID ${esc(g.paperId)}</span>`:''}</div>
-      ${g.issuer||g.date?`<div class="gallery-evidence-context">${g.issuer?`<span>${esc(g.issuer)}</span>`:''}${g.date?`<span>${esc(g.date)}</span>`:''}</div>`:''}
-      <h3>${esc(g.title||g.category||'')}</h3><p>${esc(g.caption||g.description||'')}</p>
-      ${g.sourceFile?`<small class="evidence-source-name">Source file · ${esc(g.sourceFile)}</small>`:''}
-      ${g.related?`<a class="gallery-related-link" href="${esc(g.related)}">View related record →</a>`:''}
-    </article>`).join('')}</div></div></section>`;}
+  function gallery(){
+    const records=D.gallery||[];
+    const verifiedCount=records.filter(g=>g.verified).length;
+    return `${pageHero('Gallery & Evidence','A documentary archive of verified credentials, awards, role evidence, conference records and scientific engagement.')}
+      <section class="section gallery-archive-section"><div class="container">
+        <div class="gallery-archive-head">
+          <div>
+            <span class="section-kicker">Documentary archive</span>
+            <h2>${verifiedCount} verified evidence records</h2>
+            <p>Credential cards belong in Recognition; this archive preserves the broader source material, including role evidence, flyers, award lists and conference records.</p>
+          </div>
+          <a class="credential-archive-link" href="recognition.html">View credential showcase <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="filters gallery-evidence-filters">${['All','Award','Conference','Scientific Engagement','Professional Development','Scholarly Service'].map((x,i)=>`<button class="filter ${i===0?'active':''}" data-gallery-filter="${esc(x)}">${x}</button>`).join('')}</div>
+        <div class="grid grid-3 gallery-evidence-grid">${records.map(g=>`<article class="card gallery-evidence-card" ${g.id?`id="${esc(g.id)}"`:''} data-gallery-category="${esc(g.category||'')}">
+          ${g.asset?`<a class="gallery-evidence-media" href="${esc(g.href||g.asset)}" target="_blank" rel="noopener noreferrer" data-evidence-lightbox="${esc(g.asset)}" data-evidence-title="${esc(g.title||'Academic evidence')}" data-evidence-meta="${esc([g.issuer,g.date].filter(Boolean).join(' · '))}"><img src="${esc(g.asset)}" alt="${esc(g.title||'Academic evidence')}" loading="lazy" decoding="async">${g.verified?`<span class="gallery-verified-chip"><span aria-hidden="true">✓</span> Verified</span>`:''}</a>`:`<div class="portrait-placeholder">${esc(g.title||g.category||'Verified visual evidence')}</div>`}
+          <div class="gallery-evidence-meta"><span class="badge">${esc(g.category||'Evidence')}</span>${g.evidenceType?`<span class="badge gallery-evidence-type">${esc(g.evidenceType)}</span>`:''}${g.paperId?`<span class="paper-id-chip">Paper ID ${esc(g.paperId)}</span>`:''}</div>
+          ${g.issuer||g.date?`<div class="gallery-evidence-context">${g.issuer?`<span>${esc(g.issuer)}</span>`:''}${g.date?`<span>${esc(g.date)}</span>`:''}</div>`:''}
+          <h3>${esc(g.title||g.category||'')}</h3><p>${esc(g.caption||g.description||'')}</p>
+          ${g.sourceFile?`<small class="evidence-source-name">Source file · ${esc(g.sourceFile)}</small>`:''}
+          <div class="gallery-card-actions">${g.href||g.asset?`<a href="${esc(g.href||g.asset)}" target="_blank" rel="noopener noreferrer">Open original ↗</a>`:''}${g.related?`<a href="${esc(g.related)}">Related record →</a>`:''}</div>
+        </article>`).join('')}</div>
+      </div></section>
+      ${evidenceLightbox()}`;
+  }
 
   function dashboardMetricSource(m={}){
     const profileUrl=(label)=>{
@@ -2040,6 +2133,52 @@
   function pageHero(title,lead){return `<section class="hero compact"><div class="container"><div class="eyebrow"><span class="live-dot"></span><span>MRA Research Intelligence</span><span class="clock" data-clock>Dhaka · UTC+06:00</span></div><h1>${esc(title)}</h1><p class="lede">${esc(lead)}</p></div></section>`;}
 
   function initInteractive(){
+    const evidenceLightbox=$('#evidenceLightbox');
+    if(evidenceLightbox){
+      const dialog=evidenceLightbox.querySelector('.evidence-lightbox-dialog');
+      const image=evidenceLightbox.querySelector('#evidenceLightboxImage');
+      const title=evidenceLightbox.querySelector('#evidenceLightboxTitle');
+      const meta=evidenceLightbox.querySelector('#evidenceLightboxMeta');
+      const openLink=evidenceLightbox.querySelector('#evidenceLightboxOpen');
+      let evidenceReturnFocus=null;
+      const closeEvidence=()=>{
+        evidenceLightbox.hidden=true;
+        evidenceLightbox.setAttribute('aria-hidden','true');
+        document.body.classList.remove('evidence-lightbox-open');
+        if(evidenceReturnFocus&&typeof evidenceReturnFocus.focus==='function')evidenceReturnFocus.focus({preventScroll:true});
+      };
+      const openEvidence=(trigger)=>{
+        const src=trigger.dataset.evidenceLightbox;
+        if(!src)return;
+        evidenceReturnFocus=trigger;
+        image.src=src;
+        image.alt=trigger.dataset.evidenceTitle||'Verified evidence';
+        title.textContent=trigger.dataset.evidenceTitle||'Verified evidence';
+        meta.textContent=trigger.dataset.evidenceMeta||'';
+        openLink.href=src;
+        evidenceLightbox.hidden=false;
+        evidenceLightbox.setAttribute('aria-hidden','false');
+        document.body.classList.add('evidence-lightbox-open');
+        requestAnimationFrame(()=>evidenceLightbox.querySelector('.evidence-lightbox-close')?.focus());
+      };
+      document.querySelectorAll('[data-evidence-lightbox]').forEach(trigger=>trigger.addEventListener('click',event=>{
+        if(event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+        event.preventDefault();
+        openEvidence(trigger);
+      }));
+      evidenceLightbox.querySelectorAll('[data-evidence-close]').forEach(button=>button.addEventListener('click',closeEvidence));
+      document.addEventListener('keydown',event=>{
+        if(event.key==='Escape'&&!evidenceLightbox.hidden)closeEvidence();
+        if(event.key==='Tab'&&!evidenceLightbox.hidden&&dialog){
+          const focusable=[...dialog.querySelectorAll('a[href],button:not([disabled])')].filter(el=>!el.hidden);
+          if(!focusable.length)return;
+          const first=focusable[0],last=focusable[focusable.length-1];
+          if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+          else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+        }
+      });
+    }
+
     $('#settingsBtn')?.addEventListener('click',()=>$('#settings').toggleAttribute('hidden'));
     $('#menuBtn')?.addEventListener('click',()=>$('#mobilePanel').toggleAttribute('hidden'));
     $('#searchBtn')?.addEventListener('click',()=>location.href='search.html');
