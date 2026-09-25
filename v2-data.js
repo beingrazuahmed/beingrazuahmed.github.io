@@ -1850,13 +1850,193 @@
       ]
     },
     {
-      id: 'mimosa-saha', name: 'Mimosa Saha', group: 'Junior Collaborators & Mentees',
-      roles: ['Research Assistant', 'Junior Collaborator', 'Mentee'],
-      affiliation: 'Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
-      description: 'Junior collaborator supported in research formulation, analysis and conference-oriented machine-learning work.',
-      shared: ['Multiclass diabetes research — ICASDS 2025'],
+      id: 'mimosa-saha',
+      name: 'Mimosa Saha',
+      group: 'Junior Collaborators & Mentees',
+      profilePage: 'network-mimosa-saha.html',
+
+      profileBadges: [
+        'Research Assistant',
+        'Research Collaborator',
+        'Co-author',
+        'M.S. Thesis Student'
+      ],
+
+      headline: 'M.S. Thesis Student · Research Assistant · DSLR Lab & RTTC, PUST',
+
+      roles: [
+        'Research Assistant',
+        'Research Collaborator',
+        'Co-author',
+        'Junior Collaborator'
+      ],
+
+      affiliation: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+
+      description: 'M.S. (Thesis) student in Statistics and Data Science, Research Assistant at PUST, and junior research collaborator of Md. Razu Ahmed, with work spanning interpretable machine learning, deep learning, medical imaging, survey analysis and public-health forecasting.',
+
       portrait: 'assets/collaborators/mimosa-saha.jpg?v=20260924-collab2',
-      cardPortraitPosition: '50% 18%', links: []
+      cardPortraitPosition: '50% 18%',
+
+      currentRoleLabel: 'Current academic & research roles',
+
+      currentPositions: [
+        'Master of Science (M.S., Thesis) student in Statistics and Data Science, Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Bangladesh',
+        'Research Assistant, Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Bangladesh',
+        'Research Assistant, Research and Technology Transfer Cell (RTTC), Pabna University of Science and Technology (PUST), Bangladesh'
+      ],
+
+      biographyParagraphs: [
+        'Mimosa Saha is currently an M.S. (Thesis) student in Statistics and Data Science at Pabna University of Science and Technology (PUST), a Research Assistant at the Deep Statistical Learning and Research Laboratory (DSLR Lab) and the Research and Technology Transfer Cell (RTTC), PUST, and a continuing junior research collaborator of Md. Razu Ahmed.',
+        'Her academic work includes interpretable machine learning for identifying predictors of maternal quality of life, survey-based analysis of academic performance, and deep-learning-based multi-label classification with attention-guided localization of thoracic findings from chest X-ray images. She has also collaborated in conference research, pre-conference methodological workshops and nationwide dengue forecasting research.'
+      ],
+
+      researchInterests: [
+        'Applied Statistics',
+        'Machine Learning',
+        'Interpretable Machine Learning',
+        'Deep Learning',
+        'Computer Vision',
+        'Medical Image Analysis',
+        'Chest X-ray Analysis',
+        'Survey-Based Research',
+        'Public Health Forecasting'
+      ],
+
+      education: [
+        {
+          degree: 'Master of Science (M.S., Thesis) in Statistics and Data Science',
+          institution: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+          year: 'Current',
+          detail: 'Thesis: “Deep Learning Based Multi-Label Classification with Attention Guided Localization of Thoracic Findings from Chest X-ray Images.”'
+        },
+        {
+          degree: 'Bachelor of Science (B.Sc. Hons.) in Statistics',
+          institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+          year: '2022 · held in 2025',
+          detail: 'Statistical Project: “Interpretable Machine Learning to Identify Key Predictors of Maternal Quality of Life, Pabna District.” Applied machine-learning techniques in Python to identify key socio-demographic and health factors. Statistical Field Survey: “The Effects of Teacher Sizes and Academic Facilities on Students’ Academic Performances, PUST.” Conducted and analyzed the survey using MS Excel and SPSS.'
+        },
+        {
+          degree: 'Higher Secondary Certificate (H.S.C.)',
+          institution: 'Rajbari Government Adorsho Mohila College, Rajbari, Bangladesh',
+          year: '2017',
+          detail: 'GPA: 4.00/5.00.'
+        },
+        {
+          degree: 'Secondary School Certificate (S.S.C.)',
+          institution: 'Sreepur Government M. C. Pilot Secondary School, Sreepur, Magura, Bangladesh',
+          year: '2015',
+          detail: 'GPA: 5.00/5.00.'
+        }
+      ],
+
+      careerTimeline: [
+        {
+          period: 'Current',
+          title: 'M.S. (Thesis) Student in Statistics and Data Science',
+          institution: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST)',
+          location: 'Pabna, Bangladesh',
+          detail: 'Thesis research on deep-learning-based multi-label classification and attention-guided localization of thoracic findings from chest X-ray images.'
+        },
+        {
+          period: 'Current',
+          title: 'Research Assistant',
+          institution: 'Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST)',
+          location: 'Pabna, Bangladesh'
+        },
+        {
+          period: 'Current',
+          title: 'Research Assistant',
+          institution: 'Research and Technology Transfer Cell (RTTC), Pabna University of Science and Technology (PUST)',
+          location: 'Pabna, Bangladesh'
+        }
+      ],
+
+      awards: [],
+
+      externalAffiliations: [
+        'Research Assistant, Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST).',
+        'Research Assistant, Research and Technology Transfer Cell (RTTC), Pabna University of Science and Technology (PUST).',
+        'ICASDS 2025 conference contributor and pre-conference methodological workshop participant.'
+      ],
+
+      relationship: {
+        title: 'Departmental junior, co-author, research collaborator & workshop partner',
+        detail: 'Mimosa Saha is Razu’s departmental junior at PUST and a continuing research collaborator. Their shared academic work includes the ICASDS 2025 multiclass diabetes study, two pre-conference methodological workshops, and nationwide dengue forecasting research.'
+      },
+
+      relationshipPath: [
+        'Departmental junior at PUST',
+        'Joint machine-learning research',
+        'ICASDS 2025 conference contribution',
+        'Two pre-conference methodological workshops',
+        'Nationwide dengue forecasting collaboration'
+      ],
+
+      collaborationStats: [
+        { value: '1', label: 'Conference contribution' },
+        { value: '2', label: 'Pre-conference workshops' },
+        { value: '1', label: 'Manuscript under review' }
+      ],
+
+      sharedEditorial: [
+        {
+          title: 'Nationwide Evaluation of District-Informed Bottom-Up and Direct National Approaches for One-Week-Ahead Forecasting of Dengue Hospital Admissions in Bangladesh',
+          journal: 'BMC Public Health',
+          publisher: 'Springer',
+          detail: 'Under Review · Q1 · SJR 2025 1.356 · H-Index 225 · CiteScore 5.9 · Impact Factor 4.4 · SNIP 2025 1.570 · Science Citation Index Expanded (SCIE) · E-ISSN 1471-2458.'
+        }
+      ],
+
+      sharedConferences: [
+        {
+          event: 'International Conference on Applied Statistics and Data Science 2025 (ICASDS 2025)',
+          venue: 'Institute of Statistical Research and Training (ISRT; now Institute of Applied Statistics and Data Science, IASDS), University of Dhaka, Dhaka, Bangladesh · 28–29 December 2025 · Programme and Abstract Book',
+          items: [
+            'Saha, M., Ahmed, M. R., & Reza, M. S. (2025). Predisposing Factor Identification and Multi-Class Grading of Diabetes Mellitus Using Machine Learning · p. 199 · Paper ID 315.'
+          ]
+        },
+        {
+          event: 'ICASDS 2025 Pre-Conference Methodological Workshops',
+          venue: 'Institute of Statistical Research and Training (ISRT; now Institute of Applied Statistics and Data Science, IASDS), University of Dhaka, Bangladesh · 27 December 2025',
+          items: [
+            'Causal Inference for Observational Data Analysis.',
+            'From Business Challenge to Deployment: An Industry-Standard Framework for Applied Machine Learning Projects.'
+          ]
+        }
+      ],
+
+      shared: [
+        'ICASDS 2025 Paper ID 315 — multi-class diabetes mellitus grading using machine learning',
+        'ICASDS 2025 pre-conference workshop — Causal Inference for Observational Data Analysis',
+        'ICASDS 2025 pre-conference workshop — From Business Challenge to Deployment',
+        'Nationwide dengue admission forecasting — BMC Public Health manuscript under review'
+      ],
+
+      email: 'mimosaha06@gmail.com',
+
+      links: [
+        {
+          label: 'LinkedIn',
+          url: 'https://www.linkedin.com/in/mimosaha06/'
+        },
+        {
+          label: 'ORCID',
+          url: 'https://orcid.org/0009-0009-6929-6667'
+        },
+        {
+          label: 'ResearchGate',
+          url: 'https://www.researchgate.net/profile/Mimosa-Saha-2'
+        },
+        {
+          label: 'Google Scholar',
+          url: 'https://scholar.google.com/citations?hl=en&user=WIhPj6oAAAAJ'
+        },
+        {
+          label: 'Scopus',
+          url: 'https://www.scopus.com/authid/detail.uri?authorId=60429382600'
+        }
+      ]
     },
     {
       id: 'farzana-moly', name: 'Farzana Mehedi Moly', group: 'Junior Collaborators & Mentees',
