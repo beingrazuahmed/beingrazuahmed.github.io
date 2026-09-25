@@ -2184,14 +2184,135 @@
       ]
     },
     {
-      id: 'obaidul-islam', name: 'Md. Obaidul Islam', group: 'Junior Collaborators & Mentees',
-      roles: ['Research Assistant', 'Junior Collaborator', 'Mentee'],
-      affiliation: 'Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
-      description: 'Junior collaborator supported in survey-weighted analysis, machine-learning workflow development and conference dissemination.',
-      shared: ['EFAST 2026 cesarean-delivery conference contribution'],
+      id: 'obaidul-islam',
+      name: 'Md. Obaidul Islam',
+      group: 'Junior Collaborators & Mentees',
+      profilePage: 'network-obaidul-islam.html',
+
+      profileBadges: [
+        'Research Assistant',
+        'Research Collaborator',
+        'Co-author',
+        'M.S. Student'
+      ],
+
+      headline: 'M.S. Student · Research Assistant · DSLR Lab, PUST',
+
+      roles: [
+        'Research Assistant',
+        'Research Collaborator',
+        'Co-author',
+        'Junior Collaborator'
+      ],
+
+      affiliation: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+
+      description: 'M.S. student in Statistics and Data Science, Research Assistant at the Deep Statistical Learning and Research Laboratory (DSLR Lab), and junior research collaborator of Md. Razu Ahmed, with interests spanning applied statistics, biostatistics, epidemiology, data science, machine learning, causal inference, and agricultural and environmental research.',
+
       portrait: 'assets/collaborators/obaidul-islam.png?v=20260924-collab2',
       cardPortraitPosition: '50% 18%',
-      profilePortraitPosition: '35% 50%', links: []
+      profilePortraitPosition: '35% 50%',
+
+      currentRoleLabel: 'Current academic & research roles',
+
+      currentPositions: [
+        'Master of Science (M.S.) student in Statistics and Data Science, Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Bangladesh',
+        'Research Assistant, Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Bangladesh'
+      ],
+
+      biographyParagraphs: [
+        'Md. Obaidul Islam is currently an M.S. student in Statistics and Data Science at Pabna University of Science and Technology (PUST), a Research Assistant at the Deep Statistical Learning and Research Laboratory (DSLR Lab), and a continuing junior research collaborator of Md. Razu Ahmed. He completed his B.Sc. (Hons.) in Statistics at PUST in the 2023 academic year, with the examination held in 2026.',
+        'His research interests include applied statistics and modelling, biostatistics and epidemiology, data science and machine learning, health and biomedical data science, time series and causal inference, agricultural and environmental research, and information science. His collaboration with Razu includes survey-weighted and explainable machine-learning research on cesarean delivery in Bangladesh and an explainable-AI crop disease project in preparation.'
+      ],
+
+      researchInterests: [
+        'Applied Statistics & Modeling',
+        'Biostatistics & Epidemiology',
+        'Data Science & Machine Learning',
+        'Health & Biomedical Data Science',
+        'Time Series & Causal Inference',
+        'Agricultural & Environmental Research',
+        'Information Science'
+      ],
+
+      education: [
+        {
+          degree: 'Master of Science (M.S.) in Statistics and Data Science',
+          institution: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+          year: 'Current',
+          detail: 'Currently pursuing the M.S. programme in Statistics and Data Science.'
+        },
+        {
+          degree: 'Bachelor of Science (B.Sc. Hons.) in Statistics',
+          institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+          year: '2023 · held in 2026',
+          detail: ''
+        }
+      ],
+
+      careerTimeline: [
+        {
+          period: 'Current',
+          title: 'M.S. Student in Statistics and Data Science',
+          institution: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST)',
+          location: 'Pabna, Bangladesh'
+        },
+        {
+          period: 'Current',
+          title: 'Research Assistant',
+          institution: 'Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST)',
+          location: 'Pabna, Bangladesh'
+        }
+      ],
+
+      awards: [],
+
+      externalAffiliations: [
+        'Research Assistant, Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST).'
+      ],
+
+      relationship: {
+        title: 'Departmental junior, co-author & research collaborator',
+        detail: 'Md. Obaidul Islam is Razu’s departmental junior at PUST and a continuing research collaborator. Their shared work includes survey-weighted statistical and explainable machine-learning analysis of socioeconomic determinants of cesarean delivery in Bangladesh, an EFAST 2026 conference contribution, and an explainable-AI crop disease project in preparation.'
+      },
+
+      relationshipPath: [
+        'Departmental junior at PUST',
+        'Joint survey-weighted and explainable-ML research',
+        'EFAST 2026 conference contribution',
+        'Explainable-AI agricultural research in preparation'
+      ],
+
+      collaborationStats: [
+        { value: '1', label: 'Conference contribution' },
+        { value: '1', label: 'Project in preparation' }
+      ],
+
+      sharedConferences: [
+        {
+          event: 'International Conference on Emerging Frontiers in Advanced Sciences and Technologies 2026 (EFAST 2026)',
+          venue: 'Pabna University of Science and Technology, Pabna-6600, Bangladesh · 27–28 June 2026 · Conference Proceedings · ISBN 978-984-37-0635-5',
+          items: [
+            'Islam, M. O., Ahmed, M. R., & Ruhi, S. (2026). Socioeconomic Determinants of Cesarean Section Delivery in Bangladesh: A Survey-Weighted Statistical and Explainable Machine Learning Analysis · p. 298 · Paper ID 238.'
+          ]
+        }
+      ],
+
+      sharedInPreparation: [
+        {
+          title: 'AgroLifecycle-Net: A Context-Aware Explainable AI Framework for Crop Disease Severity Estimation and Dynamic Intervention Timelines',
+          detail: 'In preparation.'
+        }
+      ],
+
+      shared: [
+        'EFAST 2026 Paper ID 238 — socioeconomic determinants of cesarean section delivery in Bangladesh',
+        'AgroLifecycle-Net — explainable AI for crop disease severity estimation and dynamic intervention timelines'
+      ],
+
+      email: 'obaidulislam0325@gmail.com',
+
+      links: []
     }
   ];
 
