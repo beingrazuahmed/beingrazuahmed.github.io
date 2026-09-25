@@ -305,6 +305,8 @@ window.PORTFOLIO_DATA = {
   ],
 
   engagements: [
+    { title: "10 Minute School", role: "Affiliate Partner", date: "December 2020–Present", venue: "" },
+    { title: "Sikho", role: "Affiliate Partner", date: "May 2022–Present", venue: "" },
     { title: "Hult Prize 2024–2025 OnCampus Program", role: "Competitor · CEO & Team Leader, Stat4Change", date: "27 June 2025", venue: "Pabna University of Science and Technology" },
     { title: "Public Discussion: Global Nuclear Energy: Facts and Myths", role: "Participant", date: "31 October 2024", venue: "PUST · Energy of the Future Information Centre · ASE ROSATOM", asset: "assets/events/global-nuclear-energy-2024.jpg" },
     { title: "International Agri-Art Festival 2020", role: "Campus Ambassador · Certificate of Excellence", date: "11–17 October 2020", venue: "Rajshahi University Agricultural Club" },

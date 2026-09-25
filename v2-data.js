@@ -2788,12 +2788,17 @@
   ];
 
   const engagement = [
+    'Affiliate Partner · 10 Minute School · December 2020–Present',
+    'Affiliate Partner · Sikho · May 2022–Present',
     'Directly involved in departmental academic and student programmes',
     'Member · Rajshahi Zilla Student Welfare Association, PUST',
     'Member · Association of Statistics, PUST',
     'Member · Debating Society of PUST (PUSTDS)',
     'Organizer / participant in departmental cultural and sporting activities',
-    'Campus Ambassador · Rajshahi University Agricultural Club (RUAC) at PUST'
+    'Competitor · Hult Prize 2024–2025 OnCampus Program · PUST · 27 June 2025',
+    'Participant · Public Discussion: “Global Nuclear Energy: Facts and Myths” · PUST / Energy of the Future Information Centre / ASE ROSATOM · 31 October 2024',
+    'Campus Ambassador · Rajshahi University Agricultural Club (RUAC) at PUST · International Agri-Art Festival 2020 · Certificate of Excellence · 11–17 October 2020',
+    'Divisional-Round Participant · 5th Dutch-Bangla Bank Bangladesh Physics Olympiad 2015 · Category C · represented Rajshahi College'
   ];
 
   const interests = ['Photography', 'Reading', 'Traveling', 'Gardening', 'Volunteering'];
