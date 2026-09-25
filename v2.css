@@ -10901,3 +10901,43 @@ body[data-person="ashad-alam"] .network-profile-statbar { grid-template-columns:
   .profile-evidence-grid{grid-template-columns:1fr}
   .profile-evidence-heading{align-items:flex-start;flex-direction:column}
 }
+
+
+/* === Gallery evidence framing + category ribbons · 2026-09-25 === */
+.gallery-evidence-card .gallery-evidence-media{
+  display:grid!important;
+  place-items:center!important;
+  height:300px!important;
+  min-height:300px!important;
+  margin:-1px -1px 16px!important;
+  padding:10px!important;
+  background:#fff!important;
+  border-radius:18px 18px 12px 12px!important;
+}
+.gallery-evidence-card .gallery-evidence-media img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-height:none!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  background:#fff!important;
+  transform:none!important;
+}
+.gallery-evidence-card .gallery-evidence-media:hover img,
+.gallery-evidence-card .gallery-evidence-media:focus-visible img{transform:scale(1.008)!important}
+#ruac-agri-art-ambassador-evidence .gallery-evidence-media img{object-position:center 12%!important}
+#10-minute-school-affiliate-evidence .gallery-evidence-media img{object-position:center!important}
+.profile-evidence-card img{object-fit:contain!important;object-position:center!important;padding:4px!important;background:#fff!important}
+.gallery-evidence-card[data-gallery-category="Award"] .verified-corner-ribbon>span,
+.recognition-certificate-card[data-gallery-category="Award"] .verified-corner-ribbon>span{background:linear-gradient(135deg,#d79b18,#ad6e00)!important;color:#fff!important}
+.gallery-evidence-card[data-gallery-category="Conference"] .verified-corner-ribbon>span,
+.recognition-certificate-card[data-gallery-category="Conference"] .verified-corner-ribbon>span{background:linear-gradient(135deg,#6d5bd0,#493ca4)!important;color:#fff!important}
+.gallery-evidence-card[data-gallery-category="Scientific Engagement"] .verified-corner-ribbon>span,
+.recognition-certificate-card[data-gallery-category="Scientific Engagement"] .verified-corner-ribbon>span{background:linear-gradient(135deg,#1b82b8,#0f5d89)!important;color:#fff!important}
+.gallery-evidence-card[data-gallery-category="Professional Development"] .verified-corner-ribbon>span,
+.recognition-certificate-card[data-gallery-category="Professional Development"] .verified-corner-ribbon>span{background:linear-gradient(135deg,#cf555d,#9e343b)!important;color:#fff!important}
+.gallery-evidence-card[data-gallery-category="Scholarly Service"] .verified-corner-ribbon>span,
+.recognition-certificate-card[data-gallery-category="Scholarly Service"] .verified-corner-ribbon>span{background:linear-gradient(135deg,#168a72,#0c6654)!important;color:#fff!important}
+@media(max-width:760px){.gallery-evidence-card .gallery-evidence-media{height:250px!important;min-height:250px!important}}
