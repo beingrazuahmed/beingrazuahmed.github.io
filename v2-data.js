@@ -147,7 +147,7 @@
       ],
       sharedEditorial: [
         { title: 'A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images', journal: 'Measurement', publisher: 'Elsevier' },
-        { title: 'Comparative Evaluation of Hybrid MICE–Median Missing-Value Reconstruction and Downstream Hepatitis C Prediction Using Machine Learning', journal: 'BMC Medical Informatics and Decision Making', publisher: 'BMC · Springer Nature' },
+        { title: 'Comparative Evaluation of Hybrid MICE–Median Missing-Value Reconstruction and Downstream Hepatitis C Prediction Using Machine Learning', journal: 'BMC Medical Informatics and Decision Making', publisher: 'BMC · Springer Nature', detail: 'Under Review.' },
         { title: 'Real-Time Food Detection for Automated Cafeteria Billing Using RT-DETR and GAN-Based Data Augmentation', journal: 'Discover Artificial Intelligence', publisher: 'Springer Nature' },
         { title: 'Adaptive Probability Fusion of Lightweight Recurrent Networks for Cross-Domain Sentiment Classification', journal: 'Applied AI Letters', publisher: 'Wiley' },
         { title: 'Factors Associated with Undergraduates Academic Performance Among Public University Students: A Case Study', journal: 'International Journal of Educational Reform', publisher: 'SAGE' }
@@ -1006,7 +1006,7 @@
           title: 'Comparative Evaluation of Hybrid MICE–Median Missing-Value Reconstruction and Downstream Hepatitis C Prediction Using Machine Learning',
           journal: 'BMC Medical Informatics and Decision Making',
           publisher: 'Springer Nature',
-          detail: 'With Editor.'
+          detail: 'Under Review.'
         },
         {
           title: 'Real-Time Food Detection for Automated Cafeteria Billing Using RT-DETR and GAN-Based Data Augmentation',

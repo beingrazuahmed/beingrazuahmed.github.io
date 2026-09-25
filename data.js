@@ -170,7 +170,7 @@ window.PORTFOLIO_DATA = {
       visual: "assets/manuscripts/dr-grading/workflow.png"
     },
     {
-      id: "hcv", status: "With Editor", role: "Second Author",
+      id: "hcv", status: "Under Review", role: "Second Author",
       title: "Comparative Evaluation of Hybrid MICE–Median Missing-Value Reconstruction and Downstream Hepatitis C Prediction Using Machine Learning",
       venue: "BMC Medical Informatics and Decision Making", publisher: "BMC · Springer Nature", tags: ["Missing Data", "HCV", "Machine Learning", "MICE"],
       summary: "A rigorous comparison of missing-data reconstruction strategies and their downstream impact on hepatitis-C prediction and severity estimation.",
