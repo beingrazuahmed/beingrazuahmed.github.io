@@ -1672,13 +1672,182 @@
   ]
 },
     {
-      id: 'protiva-kundu', name: 'Protiva Rani Kundu', group: 'Peer & Batchmate Research Collaborators',
-      roles: ['Research Assistant', 'Research Collaborator', 'Co-author', 'Batchmate'],
-      affiliation: 'Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
-      description: 'Batchmate and major peer collaborator in computer vision, cafeteria automation and dataset-centered research.',
-      shared: ['PUST Cafeteria Food Image Dataset', 'RT-DETR cafeteria billing'],
+      id: 'protiva-kundu',
+      name: 'Protiva Rani Kundu',
+      group: 'Peer & Batchmate Research Collaborators',
+      profilePage: 'network-protiva-rani-kundu.html',
+
+      profileBadges: [
+        'Research Assistant',
+        'Research Collaborator',
+        'Co-author',
+        'NST Fellow'
+      ],
+
+      headline: 'Research Assistant · DSLR Lab, PUST · Research Collaborator',
+
+      roles: [
+        'Research Assistant',
+        'Research Collaborator',
+        'Co-author',
+        'Batchmate'
+      ],
+
+      affiliation: 'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+
+      description: 'Research Assistant at the Deep Statistical Learning and Research Laboratory (DSLR Lab) and research collaborator of Md. Razu Ahmed, with research work spanning deep learning, computer vision, cafeteria automation and dataset-centered AI research.',
+
       portrait: 'assets/collaborators/protiva-rani-kundu.jpg?v=20260924-collab2',
-      cardPortraitPosition: '50% 12%', links: []
+      cardPortraitPosition: '50% 12%',
+
+      currentRoleLabel: 'Research roles',
+
+      currentPositions: [
+        'Research Assistant, Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh'
+      ],
+
+      biographyParagraphs: [
+        'Protiva Rani Kundu is a Research Assistant at the Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), and a continuing research collaborator of Md. Razu Ahmed. She completed her B.Sc. (Hons.) and M.S. (Thesis) in Statistics at PUST, secured 3rd position in departmental merit, and received the NST Fellowship, Dean’s Honors Award, PUST Students Innovation Award (1st place), and merit scholarships during her undergraduate and M.S. studies.',
+        'Her research work includes deep-learning-based Alzheimer’s disease detection, RT-DETR-based real-time cafeteria food detection, GAN-based platter image augmentation, and real-world food-image dataset development.'
+      ],
+
+      researchInterests: [
+        'Applied Statistics',
+        'Deep Learning',
+        'Computer Vision',
+        'Object Detection',
+        'Generative Adversarial Networks (GANs)',
+        'Medical Image Analysis',
+        'Food Computing',
+        'Survey-Based Research'
+      ],
+
+      education: [
+        {
+          degree: 'Master of Science (M.S., Thesis) in Statistics',
+          institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+          year: '2023 · held in 2026',
+          detail: 'CGPA: 3.90/4.00. Thesis: “Automated Billing System Using RTDETR for Real-time Cafeteria Food Detection and GAN-based Platter Image Augmentation.”'
+        },
+        {
+          degree: 'Bachelor of Science (B.Sc. Hons.) in Statistics',
+          institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
+          year: '2021 · held in 2024',
+          detail: 'CGPA: 3.81/4.00. Statistical Project: “Detection Of Alzheimer’s Disease with Deep learning models.” Statistical Field Survey: “Prevalence of Self-medication and related factors among residents of Pabna Sadar of Bangladesh.”'
+        },
+        {
+          degree: 'Higher Secondary Certificate (H.S.C.) · Science',
+          institution: 'Kushtia Government College, Kushtia, Bangladesh',
+          year: '2016',
+          detail: 'GPA: 4.92/5.00 · Jashore Board.'
+        },
+        {
+          degree: 'Secondary School Certificate (S.S.C.) · Science',
+          institution: 'Banwarinagar C.B. Pilot High School, Pabna, Bangladesh',
+          year: '2014',
+          detail: 'GPA: 5.00/5.00 · Rajshahi Board.'
+        }
+      ],
+
+      careerTimeline: [
+        {
+          period: 'Current',
+          title: 'Research Assistant',
+          institution: 'Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST)',
+          location: 'Pabna-6600, Bangladesh'
+        },
+        {
+          period: 'Research role',
+          title: 'Research Assistant',
+          institution: 'Research and Technology Transfer Cell (RTTC), Pabna University of Science and Technology (PUST)',
+          location: 'Pabna-6600, Bangladesh'
+        },
+        {
+          period: 'B.Sc. programme',
+          title: 'Class Representative (CR)',
+          institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST)',
+          detail: 'Served as Class Representative during the B.Sc. programme.'
+        }
+      ],
+
+      awards: [
+        'National Science & Technology (NST) Fellowship.',
+        'Dean’s Honors Award, Pabna University of Science and Technology.',
+        'PUST Students Innovation Award · 1st place.',
+        'Merit Scholarships during undergraduate studies and M.S. for outstanding academic performance.',
+        'Department 3rd Position in merit.'
+      ],
+
+      externalAffiliations: [
+        'Research Assistant, Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST).',
+        'Research Assistant, Research and Technology Transfer Cell (RTTC), Pabna University of Science and Technology (PUST).'
+      ],
+
+      relationship: {
+        title: 'Batchmate, co-author & research collaborator',
+        detail: 'Protiva Rani Kundu is Razu’s batchmate from PUST and a continuing research collaborator. Their shared work includes real-world food-image dataset development, a peer-reviewed Data in Brief publication, a public Mendeley Data release, and RT-DETR/GAN-based cafeteria automation research.'
+      },
+
+      relationshipPath: [
+        'Batchmates at PUST',
+        'Joint food-image dataset development',
+        'Data in Brief publication & Mendeley Data release',
+        'RT-DETR and GAN-based cafeteria automation research'
+      ],
+
+      collaborationStats: [
+        { value: '1', label: 'Published journal article' },
+        { value: '1', label: 'Public research dataset' },
+        { value: '1', label: 'Under review article' }
+      ],
+
+      sharedPublications: [
+        {
+          title: 'PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations',
+          venue: 'Data in Brief, Article 113262 (2026)',
+          doi: 'https://doi.org/10.1016/j.dib.2026.113262'
+        }
+      ],
+
+      sharedDataset: [
+        {
+          title: 'PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations (Version 2)',
+          venue: 'Mendeley Data',
+          doi: 'https://doi.org/10.17632/fn6yhzjz83.2'
+        }
+      ],
+
+      sharedEditorial: [
+        {
+          title: 'Real-Time Food Detection for Automated Cafeteria Billing Using RT-DETR and GAN-Based Data Augmentation',
+          journal: 'Discover Artificial Intelligence',
+          publisher: 'Springer',
+          detail: 'Under Review · Q1 · SJR 2025 1.184 · H-Index 27 · CiteScore 6.2 · SNIP 2025 2.661 · ISSN / eISSN 2731-0809.'
+        }
+      ],
+
+      shared: [
+        'PUST Cafeteria Food Image Dataset — Data in Brief publication',
+        'PUST Cafeteria Food Image Dataset (Version 2) — Mendeley Data',
+        'Real-Time Food Detection for Automated Cafeteria Billing Using RT-DETR and GAN-Based Data Augmentation — under review'
+      ],
+
+      email: 'protivakundu3@gmail.com',
+
+      links: [
+        {
+          label: 'LinkedIn',
+          url: 'https://www.linkedin.com/in/protiva-rani-1572b8215/'
+        },
+        {
+          label: 'ResearchGate',
+          url: 'https://www.researchgate.net/profile/Protiva-Kundu-2'
+        },
+        {
+          label: 'ORCID',
+          url: 'https://orcid.org/0009-0003-8210-5569'
+        }
+      ]
     },
     {
       id: 'mimosa-saha', name: 'Mimosa Saha', group: 'Junior Collaborators & Mentees',
