@@ -11490,3 +11490,95 @@ body.evidence-lightbox-open{overflow:hidden}
 @media (max-width:560px){
   .gallery-evidence-media,.credential-preview{padding:10px!important;border-radius:14px!important}
 }
+
+
+/* === PROFIX11 · evidence fidelity, balanced tool layout, Grammarly visibility · 2026-09-26 === */
+.gallery-evidence-grid{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:22px!important;
+  align-items:start!important;
+}
+.gallery-evidence-card{
+  height:auto!important;
+  min-width:0!important;
+  overflow:hidden!important;
+}
+.gallery-evidence-card .gallery-evidence-media,
+.gallery-evidence-card.is-verified-certificate .gallery-evidence-media{
+  position:relative!important;
+  display:grid!important;
+  place-items:center!important;
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  aspect-ratio:16/10!important;
+  margin:0 0 14px!important;
+  padding:14px!important;
+  overflow:hidden!important;
+  background:#fff!important;
+  border:1px solid var(--line)!important;
+  border-radius:16px 16px 10px 10px!important;
+  line-height:0!important;
+}
+.gallery-evidence-card[data-evidence-type="Recognition"] .gallery-evidence-media{
+  aspect-ratio:4/5!important;
+}
+#hsc-outstanding-result-medal-2016 .gallery-evidence-media{
+  aspect-ratio:1/1!important;
+}
+.gallery-evidence-card .gallery-evidence-media img,
+.gallery-evidence-card.is-verified-certificate .gallery-evidence-media img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  margin:0!important;
+  padding:0!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  background:#fff!important;
+  border-radius:9px!important;
+  image-rendering:auto!important;
+  transform:none!important;
+}
+.gallery-evidence-card .gallery-evidence-media:hover img,
+.gallery-evidence-card .gallery-evidence-media:focus-visible img{
+  transform:none!important;
+}
+.tool-bottom-grid-balanced{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:18px!important;
+  align-items:stretch!important;
+}
+.tool-bottom-grid-balanced .tool-group-modern{
+  min-height:100%!important;
+}
+.tech-logo-custom img[src*="grammarly.svg"]{
+  width:34px!important;
+  height:34px!important;
+  max-width:34px!important;
+  max-height:34px!important;
+  object-fit:contain!important;
+}
+@media(max-width:860px){
+  .gallery-evidence-grid{grid-template-columns:1fr!important;gap:20px!important}
+  .gallery-evidence-card .gallery-evidence-media,
+  .gallery-evidence-card.is-verified-certificate .gallery-evidence-media{
+    aspect-ratio:auto!important;
+    min-height:260px!important;
+  }
+  .gallery-evidence-card[data-evidence-type="Recognition"] .gallery-evidence-media{
+    aspect-ratio:4/5!important;
+    min-height:0!important;
+  }
+  #hsc-outstanding-result-medal-2016 .gallery-evidence-media{
+    aspect-ratio:1/1!important;
+    min-height:0!important;
+  }
+}
+@media(max-width:700px){
+  .tool-bottom-grid-balanced{grid-template-columns:1fr!important}
+}
