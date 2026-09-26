@@ -11217,9 +11217,9 @@ body.evidence-lightbox-open{overflow:hidden}
 }
 
 
-/* === Gallery grid lock · 2026-09-26 === */
+/* === Gallery selectable Grid / 3D views · 2026-09-26 === */
 .view-collection[data-collection="gallery"] .collection-view-switch{
-  display:none!important;
+  display:inline-flex!important;
 }
 .view-collection[data-collection="gallery"][data-view="grid"] .gallery-evidence-grid{
   display:grid!important;
