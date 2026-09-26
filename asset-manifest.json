@@ -116,7 +116,10 @@
     "assets/gallery/sicip-it-support-service-certificate-2026.webp",
     "assets/gallery/icasds-2025-jsr-poster-award-certificate.webp",
     "assets/gallery/icasds-2025-poster-presentation-certificate.webp",
-    "assets/gallery/hult-prize-2024-2025-oncampus-competitor-certificate.webp"
+    "assets/gallery/hult-prize-2024-2025-oncampus-competitor-certificate.webp",
+    "assets/gallery/bspc-reviewing-certificate-2026.jpg",
+    "assets/gallery/coursera-streamlit-project-certificate-2023.jpg",
+    "assets/gallery/coursera-ai-for-everyone-certificate-2020.jpg"
   ],
   "recognitionDocuments": [
     "assets/recognition/eaai-reviewing-certificate-2026.pdf",
@@ -128,5 +131,16 @@
     "assets/recognition/jsr-award-icasds-2025.pdf",
     "assets/academic/conferences/icasds-2025-poster-presentation-certificate.pdf",
     "assets/recognition/hult-prize-2024-2025-oncampus-competitor-certificate.pdf"
+  ],
+  "recognitionGallery": [
+    "assets/gallery/pusar-crest-2024.jpg",
+    "assets/gallery/graduation-farewell-crest-2024.jpg",
+    "assets/gallery/hsc-outstanding-result-medal-2016.jpg",
+    "assets/gallery/rajshahi-college-class-xi-gpa5-crest-2015.jpg",
+    "assets/gallery/ssc-gpa5-crest-2014.jpg",
+    "assets/gallery/jsc-gpa5-crest-2011.jpg"
+  ],
+  "writingToolLogos": [
+    "assets/academic/logos/vendor/grammarly.png"
   ]
 }
