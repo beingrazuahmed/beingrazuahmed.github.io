@@ -11582,3 +11582,161 @@ body.evidence-lightbox-open{overflow:hidden}
 @media(max-width:700px){
   .tool-bottom-grid-balanced{grid-template-columns:1fr!important}
 }
+
+
+/* === PROFIX12 · final gallery/credential layout · 2026-09-26 === */
+.gallery-evidence-grid{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:24px!important;
+  align-items:start!important;
+}
+.gallery-evidence-card{
+  display:flex!important;
+  flex-direction:column!important;
+  height:auto!important;
+  min-width:0!important;
+  overflow:hidden!important;
+}
+.gallery-evidence-card .gallery-evidence-media,
+.gallery-evidence-card.is-verified-certificate .gallery-evidence-media{
+  position:relative!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:100%!important;
+  height:320px!important;
+  min-height:0!important;
+  aspect-ratio:auto!important;
+  margin:0 0 14px!important;
+  padding:14px!important;
+  overflow:hidden!important;
+  background:#fff!important;
+  border:1px solid var(--line)!important;
+  border-radius:16px 16px 10px 10px!important;
+  line-height:0!important;
+}
+.gallery-evidence-card .gallery-evidence-media img,
+.gallery-evidence-card.is-verified-certificate .gallery-evidence-media img{
+  display:block!important;
+  width:auto!important;
+  height:auto!important;
+  max-width:100%!important;
+  max-height:292px!important;
+  margin:0!important;
+  padding:0!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  background:#fff!important;
+  border-radius:8px!important;
+  image-rendering:auto!important;
+  transform:none!important;
+}
+.gallery-evidence-card[data-evidence-type="Recognition"] .gallery-evidence-media{
+  height:360px!important;
+}
+.gallery-evidence-card[data-evidence-type="Recognition"] .gallery-evidence-media img{
+  max-height:332px!important;
+}
+#hsc-outstanding-result-medal-2016 .gallery-evidence-media{
+  height:340px!important;
+}
+#hsc-outstanding-result-medal-2016 .gallery-evidence-media img{
+  max-width:340px!important;
+  max-height:312px!important;
+}
+#bspc-reviewing-certificate-2026 .gallery-evidence-media img,
+#coursera-streamlit-project-2023 .gallery-evidence-media img,
+#coursera-ai-for-everyone-2020 .gallery-evidence-media img{
+  width:100%!important;
+  max-width:600px!important;
+}
+#rajshahi-college-class-xi-gpa5-crest-2015 .gallery-evidence-media img,
+#ssc-gpa5-crest-2014 .gallery-evidence-media img,
+#jsc-gpa5-crest-2011 .gallery-evidence-media img,
+#graduation-farewell-crest-2024 .gallery-evidence-media img{
+  max-width:375px!important;
+}
+#pusar-crest-2024 .gallery-evidence-media img{
+  max-width:400px!important;
+}
+.gallery-evidence-meta{margin-top:0!important}
+.gallery-evidence-card h3{line-height:1.34!important}
+.gallery-card-actions{margin-top:auto!important;padding-top:12px!important}
+.credential-preview{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  height:270px!important;
+  min-height:0!important;
+  aspect-ratio:auto!important;
+  padding:14px!important;
+  overflow:hidden!important;
+  background:#fff!important;
+}
+.credential-preview img{
+  display:block!important;
+  width:auto!important;
+  height:auto!important;
+  max-width:100%!important;
+  max-height:242px!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  image-rendering:auto!important;
+}
+.tech-logo-custom img[src*="grammarly.svg"]{
+  display:block!important;
+  width:34px!important;
+  height:34px!important;
+  max-width:34px!important;
+  max-height:34px!important;
+  object-fit:contain!important;
+}
+.tool-bottom-grid-balanced{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:18px!important;
+  align-items:stretch!important;
+}
+.tool-bottom-grid-balanced>.tool-group-modern{
+  min-width:0!important;
+  height:100%!important;
+}
+.view-collection[data-collection="gallery"][data-view="grid"] .gallery-evidence-grid{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+}
+@media(max-width:860px){
+  .gallery-evidence-grid,
+  .view-collection[data-collection="gallery"][data-view="grid"] .gallery-evidence-grid{
+    grid-template-columns:1fr!important;
+    gap:20px!important;
+  }
+  .gallery-evidence-card .gallery-evidence-media,
+  .gallery-evidence-card.is-verified-certificate .gallery-evidence-media{
+    height:300px!important;
+  }
+  .gallery-evidence-card[data-evidence-type="Recognition"] .gallery-evidence-media{
+    height:340px!important;
+  }
+}
+@media(max-width:700px){
+  .tool-bottom-grid-balanced{grid-template-columns:1fr!important}
+}
+@media(max-width:520px){
+  .gallery-evidence-card .gallery-evidence-media,
+  .gallery-evidence-card.is-verified-certificate .gallery-evidence-media{
+    height:250px!important;
+    padding:10px!important;
+  }
+  .gallery-evidence-card .gallery-evidence-media img,
+  .gallery-evidence-card.is-verified-certificate .gallery-evidence-media img{
+    max-height:228px!important;
+  }
+  .gallery-evidence-card[data-evidence-type="Recognition"] .gallery-evidence-media{
+    height:300px!important;
+  }
+  .gallery-evidence-card[data-evidence-type="Recognition"] .gallery-evidence-media img{
+    max-height:278px!important;
+  }
+}
