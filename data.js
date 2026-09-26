@@ -17,7 +17,7 @@ window.PORTFOLIO_DATA = {
     { label: "Accepted / Forthcoming", value: 1, note: "First-authored journal article" },
     { label: "Conference Contributions", value: 8, note: "3 presentations delivered" },
     { label: "Public Dataset", value: 1, note: "Mendeley Data" },
-    { label: "Completed Peer Reviews", value: 32, note: "Across 3 journals" }
+    { label: "Completed Peer Reviews", value: 33, note: "Across 3 journals" }
   ],
 
   interests: {
