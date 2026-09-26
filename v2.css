@@ -11269,3 +11269,93 @@ body.evidence-lightbox-open{overflow:hidden}
   .gallery-evidence-media{min-height:220px}
   .gallery-evidence-media img{height:220px}
 }
+
+
+/* 2026-09-26 gallery asset fidelity + recognition preview refresh */
+.gallery-evidence-card .gallery-evidence-media{
+  display:grid!important;
+  place-items:center!important;
+  height:300px!important;
+  min-height:300px!important;
+  padding:10px!important;
+  overflow:hidden!important;
+  background:#fff!important;
+}
+.gallery-evidence-card .gallery-evidence-media img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  image-rendering:auto!important;
+  background:#fff!important;
+}
+.recognition-certificate-card>a:first-child{
+  display:grid!important;
+  place-items:center!important;
+  min-height:220px!important;
+  overflow:hidden!important;
+  background:#fff!important;
+}
+.recognition-certificate-card>a:first-child img,
+.recognition-certificates-section .recognition-certificate-card>a:first-child img{
+  display:block!important;
+  width:100%!important;
+  height:220px!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  image-rendering:auto!important;
+  background:#fff!important;
+}
+.profile-evidence-card img{
+  object-fit:contain!important;
+  object-position:center!important;
+  image-rendering:auto!important;
+  background:#fff!important;
+}
+.evidence-lightbox-dialog{
+  width:min(1240px,97vw)!important;
+  max-height:96vh!important;
+}
+.evidence-lightbox-stage{
+  display:grid!important;
+  place-items:center!important;
+  min-height:min(72vh,780px)!important;
+  max-height:82vh!important;
+  padding:18px!important;
+  overflow:hidden!important;
+  background:#eef2f5!important;
+}
+.evidence-lightbox-stage img{
+  display:block!important;
+  width:auto!important;
+  max-width:100%!important;
+  height:auto!important;
+  max-height:78vh!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  image-rendering:auto!important;
+  background:#fff!important;
+}
+@media(max-width:760px){
+  .gallery-evidence-card .gallery-evidence-media{
+    height:260px!important;
+    min-height:260px!important;
+    padding:8px!important;
+  }
+  .recognition-certificate-card>a:first-child{
+    min-height:190px!important;
+  }
+  .recognition-certificate-card>a:first-child img,
+  .recognition-certificates-section .recognition-certificate-card>a:first-child img{
+    height:190px!important;
+  }
+  .evidence-lightbox-stage{
+    min-height:60vh!important;
+    max-height:72vh!important;
+    padding:10px!important;
+  }
+  .evidence-lightbox-stage img{
+    max-height:68vh!important;
+  }
+}
