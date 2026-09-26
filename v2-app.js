@@ -4,6 +4,18 @@
   const $ = (s, r=document) => r.querySelector(s);
   const $$ = (s, r=document) => [...r.querySelectorAll(s)];
   const esc = (v='') => String(v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+  const ASSET_REV='20260926-jpegfix9';
+  const versionedAsset=(value='')=>{
+    const raw=String(value||'').trim();
+    if(!raw||/^(?:https?:|data:|blob:|#)/i.test(raw)) return raw;
+    const shouldVersion=/^assets\/gallery\//i.test(raw)||/^assets\/academic\/logos\/vendor\/grammarly\.png(?:$|\?)/i.test(raw);
+    if(!shouldVersion) return raw;
+    const hashIndex=raw.indexOf('#');
+    const base=hashIndex>=0?raw.slice(0,hashIndex):raw;
+    const hash=hashIndex>=0?raw.slice(hashIndex):'';
+    const sep=base.includes('?')?'&':'?';
+    return base+sep+'v='+ASSET_REV+hash;
+  };
   const ext = (u,l) => `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(l)}</a>`;
   const verifiedEvidenceBadge = (label='Verified record') => `<span class="verified-evidence-badge" title="Documentary evidence linked to this portfolio record"><span class="verified-evidence-mark" aria-hidden="true">✓</span><span>${esc(label)}</span></span>`;
   const verifiedCornerRibbon = (label='VERIFIED') => `<span class="verified-corner-ribbon" aria-label="${esc(label)}"><span>${esc(label)}</span></span>`;
@@ -1468,8 +1480,8 @@
         <div class="credential-showcase-grid">
           ${verifiedCredentials.map(g=>`<article class="credential-card" data-credential-category="${esc(g.category||'Credential')}">
             <div class="credential-media-wrap">
-              <button type="button" class="credential-preview" data-evidence-lightbox="${esc(g.asset||'')}" data-evidence-original="${esc(g.href||g.asset||'')}" data-evidence-title="${esc(g.title||'Verified credential')}" data-evidence-meta="${esc([g.issuer,g.date].filter(Boolean).join(' · '))}" aria-label="Preview ${esc(g.title||'credential')}">
-                <img src="${esc(g.asset||'')}" alt="${esc(g.title||'Verified credential')}" loading="lazy" decoding="async">
+              <button type="button" class="credential-preview" data-evidence-lightbox="${esc(versionedAsset(g.asset||''))}" data-evidence-original="${esc(versionedAsset(g.href||g.asset||''))}" data-evidence-title="${esc(g.title||'Verified credential')}" data-evidence-meta="${esc([g.issuer,g.date].filter(Boolean).join(' · '))}" aria-label="Preview ${esc(g.title||'credential')}">
+                <img src="${esc(versionedAsset(g.asset||''))}" alt="${esc(g.title||'Verified credential')}" loading="lazy" decoding="async">
                 <span class="credential-preview-action">View full credential</span>
               </button>
               <span class="credential-verified-ribbon">Verified</span>
@@ -1774,12 +1786,12 @@
         </div>
         <div class="filters gallery-evidence-filters">${['All','Award','Conference','Scientific Engagement','Professional Development','Scholarly Service','Leadership & Engagement'].map((x,i)=>`<button class="filter ${i===0?'active':''}" data-gallery-filter="${esc(x)}">${x}</button>`).join('')}</div>
         <div class="grid grid-3 gallery-evidence-grid">${records.map(g=>`<article class="card gallery-evidence-card ${g.verified&&['Certificate','Poster','Workshop','Recognition'].includes(g.evidenceType)?'is-verified-certificate is-verified-document':''}" ${g.id?`id="${esc(g.id)}"`:''} data-gallery-category="${esc(g.category||'')}" data-evidence-type="${esc(g.evidenceType||'')}">
-          ${g.asset?`<a class="gallery-evidence-media" href="${esc(g.href||g.asset)}" target="_blank" rel="noopener noreferrer" data-evidence-lightbox="${esc(g.asset)}" data-evidence-original="${esc(g.href||g.asset)}" data-evidence-title="${esc(g.title||'Academic evidence')}" data-evidence-meta="${esc([g.issuer,g.date].filter(Boolean).join(' · '))}"><img src="${esc(g.asset)}" alt="${esc(g.title||'Academic evidence')}" loading="lazy" decoding="async">${g.verified?`<span class="gallery-verified-ribbon">Verified</span>`:''}</a>`:`<div class="portrait-placeholder">${esc(g.title||g.category||'Verified visual evidence')}</div>`}
+          ${g.asset?`<a class="gallery-evidence-media" href="${esc(versionedAsset(g.href||g.asset))}" target="_blank" rel="noopener noreferrer" data-evidence-lightbox="${esc(versionedAsset(g.asset))}" data-evidence-original="${esc(versionedAsset(g.href||g.asset))}" data-evidence-title="${esc(g.title||'Academic evidence')}" data-evidence-meta="${esc([g.issuer,g.date].filter(Boolean).join(' · '))}"><img src="${esc(versionedAsset(g.asset))}" alt="${esc(g.title||'Academic evidence')}" loading="lazy" decoding="async">${g.verified?`<span class="gallery-verified-ribbon">Verified</span>`:''}</a>`:`<div class="portrait-placeholder">${esc(g.title||g.category||'Verified visual evidence')}</div>`}
           <div class="gallery-evidence-meta"><span class="badge">${esc(g.category||'Evidence')}</span>${g.evidenceType?`<span class="badge gallery-evidence-type">${esc(g.evidenceType)}</span>`:''}${g.paperId?`<span class="paper-id-chip">Paper ID ${esc(g.paperId)}</span>`:''}${g.fileType?`<span class="paper-id-chip">${esc(g.fileType)}${g.documentPages&&g.documentPages>1?` · ${esc(g.documentPages)} pages`:''}</span>`:''}</div>
           ${g.issuer||g.date?`<div class="gallery-evidence-context">${g.issuer?`<span>${esc(g.issuer)}</span>`:''}${g.date?`<span>${esc(g.date)}</span>`:''}</div>`:''}
           <h3>${esc(g.title||g.category||'')}</h3><p>${esc(g.caption||g.description||'')}</p>
           ${g.sourceFile?`<small class="evidence-source-name">Source file · ${esc(g.sourceFile)}</small>`:''}
-          <div class="gallery-card-actions">${g.href||g.asset?`<a href="${esc(g.href||g.asset)}" target="_blank" rel="noopener noreferrer">${String(g.fileType||'').toUpperCase()==='PDF'?'Open PDF ↗':'Open original ↗'}</a>`:''}${g.related?`<a href="${esc(g.related)}">Related record →</a>`:''}</div>
+          <div class="gallery-card-actions">${g.href||g.asset?`<a href="${esc(versionedAsset(g.href||g.asset))}" target="_blank" rel="noopener noreferrer">${String(g.fileType||'').toUpperCase()==='PDF'?'Open PDF ↗':'Open original ↗'}</a>`:''}${g.related?`<a href="${esc(g.related)}">Related record →</a>`:''}</div>
         </article>`).join('')}</div>
       </div></section>
       ${evidenceLightbox()}`;
