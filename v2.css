@@ -11215,3 +11215,19 @@ body.evidence-lightbox-open{overflow:hidden}
     max-height:none!important;
   }
 }
+
+
+/* === Gallery grid lock · 2026-09-26 === */
+.view-collection[data-collection="gallery"] .collection-view-switch{
+  display:none!important;
+}
+.view-collection[data-collection="gallery"][data-view="grid"] .gallery-evidence-grid{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:22px!important;
+}
+@media(max-width:760px){
+  .view-collection[data-collection="gallery"][data-view="grid"] .gallery-evidence-grid{
+    grid-template-columns:1fr!important;
+  }
+}
