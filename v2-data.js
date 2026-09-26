@@ -2773,7 +2773,7 @@
     evidence: [
       { icon: 'publication', title: 'Research Writing', detail: 'Peer-reviewed articles, active manuscripts, technical documentation and scholarly correspondence prepared in English.' },
       { icon: 'conference', title: 'Conference Communication', detail: 'English used for research presentations, abstracts, posters and conference-facing academic communication.' },
-      { icon: 'review', title: 'Peer Review', detail: '32 completed invited peer reviews across international journals, requiring sustained critical reading and written scholarly feedback in English.' },
+      { icon: 'review', title: 'Peer Review', detail: '33 completed invited peer reviews across international journals, requiring sustained critical reading and written scholarly feedback in English.' },
       { icon: 'field', title: 'Field & Local Communication', detail: 'Bangla supports participant-facing communication, local academic engagement and field research in Bangladesh.' }
     ]
   };
@@ -2791,6 +2791,7 @@
     'Affiliate Partner · 10 Minute School · December 2020–Present',
     'Affiliate Partner · Sikho · May 2022–Present',
     'Directly involved in departmental academic and student programmes',
+    'Member · Public University Student\'s Association of Rajshahi (PUSAR)',
     'Member · Rajshahi Zilla Student Welfare Association, PUST',
     'Member · Association of Statistics, PUST',
     'Member · Debating Society of PUST (PUSTDS)',
