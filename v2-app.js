@@ -4,7 +4,7 @@
   const $ = (s, r=document) => r.querySelector(s);
   const $$ = (s, r=document) => [...r.querySelectorAll(s)];
   const esc = (v='') => String(v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
-  const ASSET_REV='20260926-profix10';
+  const ASSET_REV='20260926-profix11';
   const versionedAsset=(value='')=>{
     const raw=String(value||'').trim();
     if(!raw||/^(?:https?:|data:|blob:|#)/i.test(raw)) return raw;
@@ -558,6 +558,7 @@
     const env=pick('Research Computing, Development & System Tools');
     const version=pick('Version Control & Reproducibility');
     const productivity=pick('Productivity & Collaboration');
+    const writing=pick('Writing & Research Tools');
     const reference=pick('Reference & Research Management');
 
     return `<div class="tool-layout tool-layout-balanced">
@@ -567,6 +568,7 @@
       <div class="tool-bottom-grid tool-bottom-grid-balanced">
         ${version?toolGroupCard(version):''}
         ${productivity?toolGroupCard(productivity):''}
+        ${writing?toolGroupCard(writing):''}
         ${reference?toolGroupCard(reference):''}
       </div>
     </div>`;
@@ -1770,7 +1772,7 @@
       </div></section>`;
   }
 
-  function resources(){return `${pageHero('Resources','Research toolkit, methods, notes and reproducibility resources.')}<section class="section"><div class="container">${sectionHead('Research toolkit','Software & environments')}<div class="grid grid-3">${(D.tools||[]).map(g=>`<article class="card tool-group"><h3>${esc(g.group)}</h3>${(g.items||[]).map(i=>`<div class="tool-item"><strong>${esc(i.name)}</strong><p>${esc(i.detail)}</p></div>`).join('')}</article>`).join('')}</div></div></section><section class="section alt"><div class="container">${sectionHead('Knowledge base','Planned research notes')}<div class="grid grid-3">${['Leakage-aware validation','Explainable AI & SHAP','Survey-weighted modelling','Missing-data analysis','Model calibration','Research reproducibility','Peer-review practice','Scientific writing'].map(x=>`<article class="card"><h3>${x}</h3><p>Evidence-grounded resource area. Published only when the underlying note or guide is ready.</p></article>`).join('')}</div></div></section>`;}
+  function resources(){return `${pageHero('Resources','Research toolkit, methods, notes and reproducibility resources.')}<section class="section"><div class="container">${sectionHead('Research toolkit','Software, writing tools & environments','A structured view of the software, libraries, writing tools and reproducibility environments used across research workflows.')}${researchToolLayout()}${techMarquee()}${computationalEnvironmentPanel()}</div></section><section class="section alt"><div class="container">${sectionHead('Knowledge base','Planned research notes')}<div class="grid grid-3">${['Leakage-aware validation','Explainable AI & SHAP','Survey-weighted modelling','Missing-data analysis','Model calibration','Research reproducibility','Peer-review practice','Scientific writing'].map(x=>`<article class="card"><h3>${x}</h3><p>Evidence-grounded resource area. Published only when the underlying note or guide is ready.</p></article>`).join('')}</div></div></section>`;}
 
   function gallery(){
     const records=D.gallery||[];
