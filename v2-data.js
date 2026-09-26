@@ -2383,6 +2383,9 @@
       { name: 'Microsoft 365 / Office', short: 'Microsoft 365 / Office', brand: 'microsoft365', detail: 'Microsoft Word for manuscripts and technical documents; Excel for tabular work and research data handling; PowerPoint for conference, teaching and research presentations.' },
       { name: 'Google Workspace', short: 'Google Workspace', brand: 'google', detail: 'Docs, Sheets, Slides, Drive and Forms for collaborative research, survey workflows and team documentation.' }
     ]},
+    { group: 'Writing & Research Tools', icon: 'publication', items: [
+      { name: 'Grammarly', short: 'Grammarly', brand: 'grammarly', category: 'Writing Assistant', detail: 'Academic writing refinement, grammar checking, clarity improvement and proofreading support.' }
+    ]},
     { group: 'Reference & Research Management', icon: 'publication', items: [
       { name: 'Mendeley', short: 'Mendeley', brand: 'mendeley', detail: 'Reference management, scholarly literature organization, research-PDF library management, citation and bibliography workflows, and preparation of publication-ready references.' }
     ]}
