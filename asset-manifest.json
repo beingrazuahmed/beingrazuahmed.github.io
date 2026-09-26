@@ -117,7 +117,7 @@
     "assets/gallery/icasds-2025-jsr-poster-award-certificate.webp",
     "assets/gallery/icasds-2025-poster-presentation-certificate.webp",
     "assets/gallery/hult-prize-2024-2025-oncampus-competitor-certificate.webp",
-    "assets/gallery/bspc-reviewing-certificate-2026.webp",
+    "assets/gallery/bspc-reviewing-certificate-2026.jpg",
     "assets/gallery/coursera-streamlit-project-certificate-2023.webp",
     "assets/gallery/coursera-ai-for-everyone-certificate-2020.webp"
   ],
@@ -132,16 +132,9 @@
     "assets/academic/conferences/icasds-2025-poster-presentation-certificate.pdf",
     "assets/recognition/hult-prize-2024-2025-oncampus-competitor-certificate.pdf"
   ],
-  "recognitionGallery": [
-    "assets/gallery/pusar-crest-2024.webp",
-    "assets/gallery/graduation-farewell-crest-2024.webp",
-    "assets/gallery/hsc-outstanding-result-medal-2016.webp",
-    "assets/gallery/rajshahi-college-class-xi-gpa5-crest-2015.webp",
-    "assets/gallery/ssc-gpa5-crest-2014.webp",
-    "assets/gallery/jsc-gpa5-crest-2011.webp"
-  ],
+  "recognitionGallery": [],
   "writingToolLogos": [
     "assets/academic/logos/vendor/grammarly.svg"
   ],
-  "cacheVersion": "20260926-profix12"
+  "cacheVersion": "20260926-mediafix13"
 }
