@@ -411,7 +411,8 @@
       'microsoft copilot':'assets/academic/logos/vendor/copilot.png',
       'quillbot':'https://www.google.com/s2/favicons?sz=128&domain=quillbot.com',
       'c':'https://skillicons.dev/icons?i=c&theme=light',
-      'graphviz':'assets/academic/logos/vendor/graphviz-digital.svg'
+      'graphviz':'assets/academic/logos/vendor/graphviz-digital.svg',
+      'grammarly':'assets/academic/logos/vendor/grammarly.png'
     };
     const horizontalLogoKeys=new Set(['xgboost']);
     const devicons={
