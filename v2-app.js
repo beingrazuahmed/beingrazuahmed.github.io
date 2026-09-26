@@ -4,7 +4,7 @@
   const $ = (s, r=document) => r.querySelector(s);
   const $$ = (s, r=document) => [...r.querySelectorAll(s)];
   const esc = (v='') => String(v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
-  const ASSET_REV='20260926-profix11';
+  const ASSET_REV='20260926-profix12';
   const versionedAsset=(value='')=>{
     const raw=String(value||'').trim();
     if(!raw||/^(?:https?:|data:|blob:|#)/i.test(raw)) return raw;
