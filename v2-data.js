@@ -1545,7 +1545,7 @@
       degree: 'Bachelor of Science (B.Sc. Hons.) in Statistics',
       institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
       year: '2021 · held in 2024',
-      detail: 'CGPA: 3.83/4.00. Project: “Handling Complex Censoring Mechanism in Reliability Data.” Statistical Field Survey: “Prevalence and Associated Factors of Smartphone Addiction on Family Relationship.”'
+      detail: 'CGPA: 3.83/4.00. Statistical Project: “Handling Complex Censoring Mechanism in Reliability Data.” Statistical Field Survey: “Prevalence and Associated Factors of Smartphone Addiction on Family Relationship.”'
     },
     {
       degree: 'Higher Secondary Certificate (H.S.C.) · Science',
@@ -2860,7 +2860,7 @@
       { value: String((base.manuscripts || []).length), label: 'Editorial Process' },
       { value: String((extra.ongoing || []).length), label: 'In Preparation' },
       { value: '8', label: 'Conference Contributions' },
-      { value: '32', label: 'Completed Peer Reviews' },
+      { value: '33', label: 'Completed Peer Reviews' },
       { value: '1', label: 'Public Dataset' }
     ],
     compass,
