@@ -11091,3 +11091,30 @@ body.evidence-lightbox-open{overflow:hidden}
   .evidence-lightbox-stage{min-height:260px;padding:10px}
 }
 @media(max-width:460px){.credential-summary-strip{grid-template-columns:1fr}.credential-card-actions a{flex:1 1 auto;justify-content:center}}
+
+
+/* === Category-colour verified ribbons · 2026-09-26 === */
+.credential-media-wrap,.gallery-evidence-media{overflow:hidden!important}
+.credential-verified-ribbon,.gallery-verified-ribbon{
+  position:absolute;z-index:7;top:18px;right:-38px;width:150px;
+  padding:7px 0;text-align:center;transform:rotate(45deg);
+  background:linear-gradient(135deg,#168a72,#0c6654);color:#fff;
+  font-size:9px;font-weight:950;letter-spacing:.12em;text-transform:uppercase;
+  border-top:1px solid rgba(255,255,255,.42);border-bottom:1px solid rgba(0,0,0,.12);
+  box-shadow:0 7px 18px rgba(0,0,0,.18);pointer-events:none
+}
+.credential-card[data-credential-category="Award"] .credential-verified-ribbon,
+.gallery-evidence-card[data-gallery-category="Award"] .gallery-verified-ribbon{background:linear-gradient(135deg,#e5ad2f,#a86b00)}
+.credential-card[data-credential-category="Conference"] .credential-verified-ribbon,
+.gallery-evidence-card[data-gallery-category="Conference"] .gallery-verified-ribbon{background:linear-gradient(135deg,#7a66df,#4937a8)}
+.credential-card[data-credential-category="Scientific Engagement"] .credential-verified-ribbon,
+.gallery-evidence-card[data-gallery-category="Scientific Engagement"] .gallery-verified-ribbon{background:linear-gradient(135deg,#2193c8,#0b5f91)}
+.credential-card[data-credential-category="Professional Development"] .credential-verified-ribbon,
+.gallery-evidence-card[data-gallery-category="Professional Development"] .gallery-verified-ribbon{background:linear-gradient(135deg,#e56b73,#a93640)}
+.credential-card[data-credential-category="Scholarly Service"] .credential-verified-ribbon,
+.gallery-evidence-card[data-gallery-category="Scholarly Service"] .gallery-verified-ribbon{background:linear-gradient(135deg,#22a888,#08705b)}
+.credential-card[data-credential-category="Leadership & Engagement"] .credential-verified-ribbon,
+.gallery-evidence-card[data-gallery-category="Leadership & Engagement"] .gallery-verified-ribbon{background:linear-gradient(135deg,#d54bb6,#8a2876)}
+@media(max-width:520px){
+  .credential-verified-ribbon,.gallery-verified-ribbon{top:15px;right:-42px;width:148px;font-size:8.5px}
+}

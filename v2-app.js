@@ -785,7 +785,7 @@
 
     <section class="section"><div class="container">
       ${sectionHead('Scholarly service','Peer review & academic contribution','Invited peer-review activity across international journals.')}
-      <div class="grid grid-4 service-grid-v3"><article class="card metric metric-card"><strong>32</strong><span>Completed invited reviews</span></article><article class="card editorial-card"><h3>PLOS ONE</h3><p>25 completed reviews</p></article><article class="card editorial-card"><h3>Biomedical Signal Processing and Control</h3><p>6 completed reviews</p></article><article class="card editorial-card"><h3>Engineering Applications of Artificial Intelligence</h3><p>1 completed review</p></article></div>
+      <div class="grid grid-4 service-grid-v3"><article class="card metric metric-card"><strong>32</strong><span>Completed invited reviews</span></article><article class="card editorial-card"><h3>PLOS ONE</h3><p>25 completed reviews</p></article><article class="card editorial-card"><h3>Biomedical Signal Processing and Control</h3><p>6 completed reviews</p></article><article class="card editorial-card"><h3>Engineering Applications of Artificial Intelligence</h3><p>1 completed review</p><a class="credential-inline-link" href="gallery.html#eaai-reviewing-certificate-2026">View reviewing certificate →</a></article></div>
     </div></section>
 
     <section class="section alt"><div class="container">
@@ -1447,7 +1447,7 @@
   }
 
   function recognition(){
-    const verifiedCredentials=(D.gallery||[]).filter(g=>g.verified&&g.evidenceType==='Certificate');
+    const verifiedCredentials=(D.gallery||[]).filter(g=>g.verified&&/certificate/i.test(String(g.evidenceType||'')));
     const credentialCount=verifiedCredentials.length;
     const awardCredentials=verifiedCredentials.filter(g=>g.category==='Award').length;
     const professionalCredentials=verifiedCredentials.filter(g=>g.category==='Professional Development').length;
@@ -1467,11 +1467,11 @@
         <div class="credential-showcase-grid">
           ${verifiedCredentials.map(g=>`<article class="credential-card" data-credential-category="${esc(g.category||'Credential')}">
             <div class="credential-media-wrap">
-              <button type="button" class="credential-preview" data-evidence-lightbox="${esc(g.asset||'')}" data-evidence-title="${esc(g.title||'Verified credential')}" data-evidence-meta="${esc([g.issuer,g.date].filter(Boolean).join(' · '))}" aria-label="Preview ${esc(g.title||'credential')}">
+              <button type="button" class="credential-preview" data-evidence-lightbox="${esc(g.asset||'')}" data-evidence-original="${esc(g.href||g.asset||'')}" data-evidence-title="${esc(g.title||'Verified credential')}" data-evidence-meta="${esc([g.issuer,g.date].filter(Boolean).join(' · '))}" aria-label="Preview ${esc(g.title||'credential')}">
                 <img src="${esc(g.asset||'')}" alt="${esc(g.title||'Verified credential')}" loading="lazy" decoding="async">
                 <span class="credential-preview-action">View full credential</span>
               </button>
-              <span class="credential-verified-badge"><span aria-hidden="true">✓</span> Verified credential</span>
+              <span class="credential-verified-ribbon">Verified</span>
             </div>
             <div class="credential-card-body">
               <div class="credential-card-topline">
@@ -1483,9 +1483,9 @@
                 <div><dt>Issuer</dt><dd>${esc(g.issuer||'Verified issuer')}</dd></div>
                 <div><dt>Issued</dt><dd>${esc(g.date||'Date recorded')}</dd></div>
               </dl>
-              <div class="credential-tags"><span>${esc(g.category||'Credential')}</span><span>${esc(g.evidenceType||'Certificate')}</span></div>
+              <div class="credential-tags"><span>${esc(g.category||'Credential')}</span><span>${esc(g.evidenceType||'Certificate')}</span>${g.fileType?`<span>${esc(g.fileType)}</span>`:''}${g.documentPages&&g.documentPages>1?`<span>${esc(g.documentPages)} pages</span>`:''}</div>
               <div class="credential-card-actions">
-                <a class="credential-action-primary" href="${esc(g.href||g.asset||'#')}" target="_blank" rel="noopener noreferrer">View Credential ↗</a>
+                <a class="credential-action-primary" href="${esc(g.href||g.asset||'#')}" target="_blank" rel="noopener noreferrer">${String(g.fileType||'').toUpperCase()==='PDF'?'View Official PDF ↗':'View Credential ↗'}</a>
                 <a href="gallery.html#${esc(g.id||'')}">Evidence record →</a>
               </div>
             </div>
@@ -1771,14 +1771,14 @@
           </div>
           <a class="credential-archive-link" href="recognition.html">View credential showcase <span aria-hidden="true">→</span></a>
         </div>
-        <div class="filters gallery-evidence-filters">${['All','Award','Conference','Scientific Engagement','Professional Development','Scholarly Service'].map((x,i)=>`<button class="filter ${i===0?'active':''}" data-gallery-filter="${esc(x)}">${x}</button>`).join('')}</div>
+        <div class="filters gallery-evidence-filters">${['All','Award','Conference','Scientific Engagement','Professional Development','Scholarly Service','Leadership & Engagement'].map((x,i)=>`<button class="filter ${i===0?'active':''}" data-gallery-filter="${esc(x)}">${x}</button>`).join('')}</div>
         <div class="grid grid-3 gallery-evidence-grid">${records.map(g=>`<article class="card gallery-evidence-card" ${g.id?`id="${esc(g.id)}"`:''} data-gallery-category="${esc(g.category||'')}">
-          ${g.asset?`<a class="gallery-evidence-media" href="${esc(g.href||g.asset)}" target="_blank" rel="noopener noreferrer" data-evidence-lightbox="${esc(g.asset)}" data-evidence-title="${esc(g.title||'Academic evidence')}" data-evidence-meta="${esc([g.issuer,g.date].filter(Boolean).join(' · '))}"><img src="${esc(g.asset)}" alt="${esc(g.title||'Academic evidence')}" loading="lazy" decoding="async">${g.verified?`<span class="gallery-verified-chip"><span aria-hidden="true">✓</span> Verified</span>`:''}</a>`:`<div class="portrait-placeholder">${esc(g.title||g.category||'Verified visual evidence')}</div>`}
-          <div class="gallery-evidence-meta"><span class="badge">${esc(g.category||'Evidence')}</span>${g.evidenceType?`<span class="badge gallery-evidence-type">${esc(g.evidenceType)}</span>`:''}${g.paperId?`<span class="paper-id-chip">Paper ID ${esc(g.paperId)}</span>`:''}</div>
+          ${g.asset?`<a class="gallery-evidence-media" href="${esc(g.href||g.asset)}" target="_blank" rel="noopener noreferrer" data-evidence-lightbox="${esc(g.asset)}" data-evidence-original="${esc(g.href||g.asset)}" data-evidence-title="${esc(g.title||'Academic evidence')}" data-evidence-meta="${esc([g.issuer,g.date].filter(Boolean).join(' · '))}"><img src="${esc(g.asset)}" alt="${esc(g.title||'Academic evidence')}" loading="lazy" decoding="async">${g.verified?`<span class="gallery-verified-ribbon">Verified</span>`:''}</a>`:`<div class="portrait-placeholder">${esc(g.title||g.category||'Verified visual evidence')}</div>`}
+          <div class="gallery-evidence-meta"><span class="badge">${esc(g.category||'Evidence')}</span>${g.evidenceType?`<span class="badge gallery-evidence-type">${esc(g.evidenceType)}</span>`:''}${g.paperId?`<span class="paper-id-chip">Paper ID ${esc(g.paperId)}</span>`:''}${g.fileType?`<span class="paper-id-chip">${esc(g.fileType)}${g.documentPages&&g.documentPages>1?` · ${esc(g.documentPages)} pages`:''}</span>`:''}</div>
           ${g.issuer||g.date?`<div class="gallery-evidence-context">${g.issuer?`<span>${esc(g.issuer)}</span>`:''}${g.date?`<span>${esc(g.date)}</span>`:''}</div>`:''}
           <h3>${esc(g.title||g.category||'')}</h3><p>${esc(g.caption||g.description||'')}</p>
           ${g.sourceFile?`<small class="evidence-source-name">Source file · ${esc(g.sourceFile)}</small>`:''}
-          <div class="gallery-card-actions">${g.href||g.asset?`<a href="${esc(g.href||g.asset)}" target="_blank" rel="noopener noreferrer">Open original ↗</a>`:''}${g.related?`<a href="${esc(g.related)}">Related record →</a>`:''}</div>
+          <div class="gallery-card-actions">${g.href||g.asset?`<a href="${esc(g.href||g.asset)}" target="_blank" rel="noopener noreferrer">${String(g.fileType||'').toUpperCase()==='PDF'?'Open PDF ↗':'Open original ↗'}</a>`:''}${g.related?`<a href="${esc(g.related)}">Related record →</a>`:''}</div>
         </article>`).join('')}</div>
       </div></section>
       ${evidenceLightbox()}`;
@@ -2155,7 +2155,9 @@
         image.alt=trigger.dataset.evidenceTitle||'Verified evidence';
         title.textContent=trigger.dataset.evidenceTitle||'Verified evidence';
         meta.textContent=trigger.dataset.evidenceMeta||'';
-        openLink.href=src;
+        const original=trigger.dataset.evidenceOriginal||src;
+        openLink.href=original;
+        openLink.textContent=/\.pdf(?:$|\?)/i.test(original)?'Open official PDF ↗':'Open original ↗';
         evidenceLightbox.hidden=false;
         evidenceLightbox.setAttribute('aria-hidden','false');
         document.body.classList.add('evidence-lightbox-open');
