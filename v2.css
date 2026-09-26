@@ -11118,3 +11118,49 @@ body.evidence-lightbox-open{overflow:hidden}
 @media(max-width:520px){
   .credential-verified-ribbon,.gallery-verified-ribbon{top:15px;right:-42px;width:148px;font-size:8.5px}
 }
+
+
+/* === Evidence gallery quality + category ribbon colors · 2026-09-26 === */
+.gallery-evidence-card.is-verified-certificate .gallery-evidence-media{
+  background:#fff!important;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px;
+}
+.gallery-evidence-card.is-verified-certificate .gallery-evidence-media img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  max-height:340px!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  background:#fff!important;
+  image-rendering:auto;
+}
+@media (max-width:760px){
+  .gallery-evidence-card.is-verified-certificate .gallery-evidence-media img{
+    max-height:280px!important;
+  }
+}
+.gallery-evidence-card[data-gallery-category="Award"] .gallery-verified-ribbon,
+.gallery-evidence-card[data-gallery-category="Award"] .verified-corner-ribbon>span{
+  background:linear-gradient(90deg,#d6a100,#f0c94d)!important;
+  color:#1e1e1e!important;
+}
+.gallery-evidence-card[data-gallery-category="Conference"] .gallery-verified-ribbon,
+.gallery-evidence-card[data-gallery-category="Conference"] .verified-corner-ribbon>span{
+  background:linear-gradient(90deg,#1565c0,#42a5f5)!important;
+}
+.gallery-evidence-card[data-gallery-category="Scientific Engagement"] .gallery-verified-ribbon,
+.gallery-evidence-card[data-gallery-category="Scientific Engagement"] .verified-corner-ribbon>span{
+  background:linear-gradient(90deg,#00796b,#26a69a)!important;
+}
+.gallery-evidence-card[data-gallery-category="Professional Development"] .gallery-verified-ribbon,
+.gallery-evidence-card[data-gallery-category="Professional Development"] .verified-corner-ribbon>span{
+  background:linear-gradient(90deg,#6a1b9a,#ab47bc)!important;
+}
+.gallery-evidence-card[data-gallery-category="Scholarly Service"] .gallery-verified-ribbon,
+.gallery-evidence-card[data-gallery-category="Scholarly Service"] .verified-corner-ribbon>span{
+  background:linear-gradient(90deg,#455a64,#78909c)!important;
+}
