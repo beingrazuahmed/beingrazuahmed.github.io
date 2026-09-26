@@ -4,11 +4,11 @@
   const $ = (s, r=document) => r.querySelector(s);
   const $$ = (s, r=document) => [...r.querySelectorAll(s)];
   const esc = (v='') => String(v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
-  const ASSET_REV='20260926-jpegfix9';
+  const ASSET_REV='20260926-profix10';
   const versionedAsset=(value='')=>{
     const raw=String(value||'').trim();
     if(!raw||/^(?:https?:|data:|blob:|#)/i.test(raw)) return raw;
-    const shouldVersion=/^assets\/gallery\//i.test(raw)||/^assets\/academic\/logos\/vendor\/grammarly\.png(?:$|\?)/i.test(raw);
+    const shouldVersion=/^assets\/gallery\//i.test(raw)||/^assets\/academic\/logos\/vendor\//i.test(raw);
     if(!shouldVersion) return raw;
     const hashIndex=raw.indexOf('#');
     const base=hashIndex>=0?raw.slice(0,hashIndex):raw;
@@ -424,7 +424,7 @@
       'quillbot':'https://www.google.com/s2/favicons?sz=128&domain=quillbot.com',
       'c':'https://skillicons.dev/icons?i=c&theme=light',
       'graphviz':'assets/academic/logos/vendor/graphviz-digital.svg',
-      'grammarly':'assets/academic/logos/vendor/grammarly.png'
+      'grammarly':'assets/academic/logos/vendor/grammarly.svg'
     };
     const horizontalLogoKeys=new Set(['xgboost']);
     const devicons={
@@ -465,7 +465,8 @@
 
     if(customAssets[key]){
       const horizontal=horizontalLogoKeys.has(key)?' tech-logo-horizontal':'';
-      return `<span class="tech-logo tech-logo-digital tech-logo-custom${horizontal}"><img src="${customAssets[key]}" alt="" loading="lazy" decoding="async" data-tech-fallback="${fallback}"></span>`;
+      const assetSrc=/^(?:https?:|data:|blob:)/i.test(customAssets[key])?customAssets[key]:versionedAsset(customAssets[key]);
+      return `<span class="tech-logo tech-logo-digital tech-logo-custom${horizontal}"><img src="${esc(assetSrc)}" alt="" loading="lazy" decoding="async" data-tech-fallback="${fallback}"></span>`;
     }
 
     if(key==='tensorflow / keras'){
@@ -1199,7 +1200,7 @@
     <section class="section"><div class="container">${sectionHead('Research profile','Academic identity')}<div class="grid grid-2"><article class="card quote-card"><h3>${esc(D.brand?.headline)}</h3><p>${esc(D.profile?.intro||D.research?.identity||'')}</p></article><article class="card"><h3>Research principles</h3>${tags((D.research?.principles||[]).map(x=>x.title))}</article></div></div></section>
     <section class="section alt"><div class="container">${sectionHead('Academic communication','Languages & Medium of Instruction (MOI)','Native Bangla proficiency, English-medium university education and evidence-based scholarly communication.')} ${languagePanel(true)}<div class="language-cta"><a class="btn primary" href="languages.html">Explore Language & MOI Profile</a></div></div></section>
     <section class="section"><div class="container">${sectionHead('Professional strengths','Evidence-aligned working style')}<div class="grid grid-3">${(D.strengths||[]).map(s=>`<article class="card"><h3>${esc(s.title)}</h3><p>${esc(s.detail)}</p></article>`).join('')}</div></div></section>
-    <section class="section alt"><div class="container">${sectionHead('Beyond research','Personal interests & engagement')}<div class="grid grid-2 profile-beyond-grid"><article class="card profile-interests-card"><h3>Personal interests</h3>${tags(D.personalInterests)}</article><article class="card profile-engagement-card"><h3>Leadership, memberships & extra-curricular engagement</h3><ul class="profile-engagement-list">${(D.engagement||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>${engagementEvidence.length?`<div class="profile-engagement-evidence"><div class="profile-evidence-heading"><span class="section-kicker">Verified visual evidence</span><a href="gallery.html">Open Gallery & Evidence →</a></div><div class="profile-evidence-grid">${engagementEvidence.map(e=>`<a class="profile-evidence-card" href="${esc(e.evidenceHref||e.evidenceAsset)}"><img src="${esc(e.evidenceAsset)}" alt="${esc(e.evidenceLabel||e.title||'Engagement evidence')}" loading="lazy" decoding="async"><span><strong>${esc(e.title||'')}</strong><small>${esc(e.evidenceLabel||e.role||'Evidence')}</small></span></a>`).join('')}</div></div>`:''}</article></div></div></section>`;}
+    <section class="section alt"><div class="container">${sectionHead('Beyond research','Personal interests & engagement')}<div class="grid grid-2 profile-beyond-grid"><article class="card profile-interests-card"><h3>Personal interests</h3>${tags(D.personalInterests)}</article><article class="card profile-engagement-card"><h3>Leadership, memberships & extra-curricular engagement</h3><ul class="profile-engagement-list">${(D.engagement||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>${engagementEvidence.length?`<div class="profile-engagement-evidence"><div class="profile-evidence-heading"><span class="section-kicker">Verified visual evidence</span><a href="gallery.html">Open Gallery & Evidence →</a></div><div class="profile-evidence-grid">${engagementEvidence.map(e=>`<a class="profile-evidence-card" href="${esc(e.evidenceHref||e.evidenceAsset)}"><img src="${esc(versionedAsset(e.evidenceAsset))}" alt="${esc(e.evidenceLabel||e.title||'Engagement evidence')}" loading="lazy" decoding="async"><span><strong>${esc(e.title||'')}</strong><small>${esc(e.evidenceLabel||e.role||'Evidence')}</small></span></a>`).join('')}</div></div>`:''}</article></div></div></section>`;}
 
   function languages(){const lp=D.languageProfile||{};return `${pageHero('Languages & Academic Communication','Native Bangla proficiency, English-medium university education, and evidence-backed scholarly communication across research, conferences and peer review.')}
     <section class="section language-page-intro"><div class="container">
@@ -1478,7 +1479,7 @@
           <div><strong>${awardCredentials}</strong><span>Award certificates</span></div>
         </div>
         <div class="credential-showcase-grid">
-          ${verifiedCredentials.map(g=>`<article class="credential-card" data-credential-category="${esc(g.category||'Credential')}">
+          ${verifiedCredentials.map(g=>`<article class="credential-card" data-credential-id="${esc(g.id||'')}" data-credential-category="${esc(g.category||'Credential')}">
             <div class="credential-media-wrap">
               <button type="button" class="credential-preview" data-evidence-lightbox="${esc(versionedAsset(g.asset||''))}" data-evidence-original="${esc(versionedAsset(g.href||g.asset||''))}" data-evidence-title="${esc(g.title||'Verified credential')}" data-evidence-meta="${esc([g.issuer,g.date].filter(Boolean).join(' · '))}" aria-label="Preview ${esc(g.title||'credential')}">
                 <img src="${esc(versionedAsset(g.asset||''))}" alt="${esc(g.title||'Verified credential')}" loading="lazy" decoding="async">
@@ -1498,7 +1499,7 @@
               </dl>
               <div class="credential-tags"><span>${esc(g.category||'Credential')}</span><span>${esc(g.evidenceType||'Certificate')}</span>${g.fileType?`<span>${esc(g.fileType)}</span>`:''}${g.documentPages&&g.documentPages>1?`<span>${esc(g.documentPages)} pages</span>`:''}</div>
               <div class="credential-card-actions">
-                <a class="credential-action-primary" href="${esc(g.href||g.asset||'#')}" target="_blank" rel="noopener noreferrer">${String(g.fileType||'').toUpperCase()==='PDF'?'View Official PDF ↗':'View Credential ↗'}</a>
+                <a class="credential-action-primary" href="${esc(versionedAsset(g.href||g.asset||'#'))}" target="_blank" rel="noopener noreferrer">${String(g.fileType||'').toUpperCase()==='PDF'?'View Official PDF ↗':'View Credential ↗'}</a>
                 <a href="gallery.html#${esc(g.id||'')}">Evidence record →</a>
               </div>
             </div>

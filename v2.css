@@ -11415,3 +11415,78 @@ body.evidence-lightbox-open{overflow:hidden}
   .evidence-lightbox-stage{min-height:280px;max-height:72vh;padding:10px}
   .evidence-lightbox-stage img{max-height:68vh}
 }
+
+
+/* PROFIX10: professional evidence layout + intrinsic-quality guards */
+.gallery-evidence-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:24px!important;
+  align-items:start!important;
+}
+.gallery-evidence-card{
+  display:flex!important;
+  flex-direction:column!important;
+  min-width:0;
+  height:100%;
+  overflow:hidden;
+}
+.gallery-evidence-media{
+  display:grid!important;
+  place-items:center!important;
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  aspect-ratio:4/3;
+  padding:14px!important;
+  overflow:hidden!important;
+  background:#fff!important;
+  border:1px solid var(--line)!important;
+  border-radius:16px!important;
+}
+.gallery-evidence-media img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  image-rendering:auto;
+}
+.gallery-evidence-card[data-evidence-type="Recognition"] .gallery-evidence-media{aspect-ratio:3/4}
+#hsc-outstanding-result-medal-2016 .gallery-evidence-media{aspect-ratio:1/1}
+#bspc-reviewing-certificate-2026 .gallery-evidence-media img{max-width:480px!important}
+#hsc-outstanding-result-medal-2016 .gallery-evidence-media img{max-width:400px!important}
+#rajshahi-college-class-xi-gpa5-crest-2015 .gallery-evidence-media img,
+#ssc-gpa5-crest-2014 .gallery-evidence-media img,
+#jsc-gpa5-crest-2011 .gallery-evidence-media img,
+#graduation-farewell-crest-2024 .gallery-evidence-media img{max-width:400px!important}
+#pusar-crest-2024 .gallery-evidence-media img{max-width:480px!important}
+.gallery-evidence-meta{margin-top:14px!important}
+.gallery-evidence-card h3{line-height:1.32!important}
+.credential-card{overflow:hidden}
+.credential-preview{
+  display:grid!important;
+  place-items:center!important;
+  min-height:0!important;
+  height:auto!important;
+  aspect-ratio:4/3;
+  padding:14px!important;
+  background:#fff!important;
+}
+.credential-preview img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  image-rendering:auto;
+}
+.credential-card[data-credential-id="bspc-reviewing-certificate-2026"] .credential-preview img{max-width:480px!important}
+.profile-evidence-card img{object-fit:contain!important;background:#fff!important}
+.tech-logo-custom img{object-fit:contain!important}
+@media (max-width:860px){
+  .gallery-evidence-grid{grid-template-columns:1fr!important;gap:20px!important}
+}
+@media (max-width:560px){
+  .gallery-evidence-media,.credential-preview{padding:10px!important;border-radius:14px!important}
+}
