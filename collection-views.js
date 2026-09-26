@@ -26,8 +26,8 @@
     const storageKey = 'mra-collection-view-' + id;
     let savedView;
     try { savedView = localStorage.getItem(storageKey); } catch (_) { /* Device storage is optional. */ }
-    const lockedGrid = id === 'gallery';
-    let view = lockedGrid ? 'grid' : (!reducedMotion() && savedView === 'showcase' ? 'showcase' : 'grid');
+    const defaultGrid = id === 'gallery';
+    let view = defaultGrid ? 'grid' : (!reducedMotion() && savedView === 'showcase' ? 'showcase' : 'grid');
     let current = items[0];
 
     const collection = document.createElement('div');
@@ -112,8 +112,8 @@
     }
 
     function setView(next, remember = true) {
-      view = lockedGrid ? 'grid' : (next === 'showcase' ? 'showcase' : 'grid');
-      if (remember) {
+      view = next === 'showcase' ? 'showcase' : 'grid';
+      if (remember && id !== 'gallery') {
         try { localStorage.setItem(storageKey, view); } catch (_) { /* Browsing still works without storage. */ }
       }
       update(true);
