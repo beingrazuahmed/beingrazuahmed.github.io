@@ -132,7 +132,14 @@
     "assets/academic/conferences/icasds-2025-poster-presentation-certificate.pdf",
     "assets/recognition/hult-prize-2024-2025-oncampus-competitor-certificate.pdf"
   ],
-  "recognitionGallery": [],
+  "recognitionGallery": [
+    "assets/gallery/originals/pusar-crest-2024-original.png",
+    "assets/gallery/originals/graduation-farewell-crest-2024-original.png",
+    "assets/gallery/originals/hsc-outstanding-result-medal-2016-original.png",
+    "assets/gallery/originals/rajshahi-college-class-xi-gpa5-crest-2015-original.png",
+    "assets/gallery/originals/ssc-gpa5-crest-2014-original.png",
+    "assets/gallery/originals/jsc-gpa5-crest-2011-original.png"
+  ],
   "writingToolLogos": [
     "assets/academic/logos/vendor/grammarly.svg"
   ],
