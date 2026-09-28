@@ -2894,6 +2894,7 @@
     conferences: base.conferences || [],
     awards: base.awards || [],
     training: base.training || [],
+    workshopsAndSeminars: base.workshopsAndSeminars || [],
     education,
     academicProjects: coursework.projects || [],
     instructorLinks: coursework.instructorLinks || [],
