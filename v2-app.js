@@ -24,7 +24,7 @@
   const nav = [
     ['home','Home','index.html'],['profile','Profile','profile.html'],['languages','Languages','languages.html'],['research','Research','research.html'],
     ['publications','Publications','publications.html'],['projects','Projects','projects.html'],['academic','Academic','academic.html?v=20260919-logosvg17'],
-    ['experience','Experience','experience.html'],['conferences','Conferences','conferences.html?v=20260919-logosvg17'],['recognition','Recognition','recognition.html'],
+    ['experience','Experience','experience.html'],['conferences','Conferences','conferences.html?v=20260928-workshops1'],['workshops','Workshops & Seminars','workshops.html'],['recognition','Recognition','recognition.html'],
     ['network','Network & Impact','network.html'],['resources','Resources','resources.html'],['gallery','Gallery','gallery.html'],['dashboard','Dashboard','dashboard-live.html?v=20260923-dashboardlive56']
   ];
 
@@ -230,7 +230,7 @@
 
   function footer(){
     const el=$('#site-footer'); if(!el) return;
-    el.innerHTML=`<footer class="footer"><div class="container footer-grid"><div><div class="brand"><span class="monogram">MRA</span><span>Md. Razu Ahmed</span></div><p>${esc(D.brand?.tagline||'')}</p><p class="tiny">Public portfolio · Privacy-safe by design · Last updated ${esc(D.lastUpdated||'')}</p></div><div><strong>Navigate</strong><p><a href="search.html">Search</a><br><a href="languages.html">Languages & MOI</a><br><a href="dashboard-live.html?v=20260923-dashboardlive56">Dashboard</a><br><a href="cv.html">CV</a><br><a href="copyright.html">Copyright & Reuse</a></p></div><div><strong>Connect</strong><p><a href="mailto:razuahmed038@gmail.com">Email</a><br><a href="https://github.com/beingrazuahmed" target="_blank" rel="noopener">GitHub</a><br><a href="contact.html">Collaborate</a></p></div></div><div class="container tiny">© 2026 Md. Razu Ahmed. All rights reserved.</div></footer>`;
+    el.innerHTML=`<footer class="footer"><div class="container footer-grid"><div><div class="brand"><span class="monogram">MRA</span><span>Md. Razu Ahmed</span></div><p>${esc(D.brand?.tagline||'')}</p><p class="tiny">Public portfolio · Privacy-safe by design · Last updated ${esc(D.lastUpdated||'')}</p></div><div><strong>Navigate</strong><p><a href="search.html">Search</a><br><a href="languages.html">Languages & MOI</a><br><a href="workshops.html">Workshops & Seminars</a><br><a href="dashboard-live.html?v=20260923-dashboardlive56">Dashboard</a><br><a href="cv.html">CV</a><br><a href="copyright.html">Copyright & Reuse</a></p></div><div><strong>Connect</strong><p><a href="mailto:razuahmed038@gmail.com">Email</a><br><a href="https://github.com/beingrazuahmed" target="_blank" rel="noopener">GitHub</a><br><a href="contact.html">Collaborate</a></p></div></div><div class="container tiny">© 2026 Md. Razu Ahmed. All rights reserved.</div></footer>`;
   }
 
   function clock(){
@@ -1375,12 +1375,76 @@
 
   function experience(){return `${pageHero('Experience','Research roles, mentorship and collaborative support.')}<section class="section"><div class="container">${sectionHead('Research experience','Roles & contribution')}<div class="timeline">${(D.experience||[]).map(x=>`<div class="timeline-item"><strong>${esc(x.period||x.date||'')}</strong><h3>${esc(x.title||x.role||'')}</h3><p><strong>${esc(x.organization||x.institution||'')}</strong></p><p>${esc(x.description||x.detail||'')}</p></div>`).join('')}</div></div></section><section class="section alt"><div class="container">${sectionHead('Mentorship','Collaborative research support')}<p class="section-copy">Research mentorship and collaborative support are presented separately from formal academic supervision, with emphasis on study formulation, analysis workflows, validation and manuscript development.</p><div class="grid grid-3">${(D.people||[]).filter(x=>(x.roles||[]).includes('Mentee')).map(personCard).join('')}</div></div></section>`;}
 
+  function workshops(){
+    const records=D.workshopsAndSeminars||[];
+    const workshops=records.filter(x=>String(x.type||'').toLowerCase().includes('workshop'));
+    const seminars=records.filter(x=>!String(x.type||'').toLowerCase().includes('workshop'));
+    const eventLogo=workshops.find(x=>x.eventLogo)?.eventLogo||'';
+    const hostLogo=workshops.find(x=>x.hostLogo)?.hostLogo||'';
+    const resourceList=w=>(w.resourcePersons||[]).length
+      ? `<div class="workshop-resource-list">${w.resourcePersons.map(r=>`<div><strong>${esc(r.name||'')}</strong>${r.role?`<span>${esc(r.role)}</span>`:''}${r.affiliation?`<small>${esc(r.affiliation)}</small>`:''}</div>`).join('')}</div>`
+      : '';
+    const evidenceLinks=w=>`<div class="workshop-actions">
+      ${w.certificateHref?`<a class="btn small" href="${esc(versionedAsset(w.certificateHref))}" target="_blank" rel="noopener noreferrer">Workshop Certificate ↗</a>`:''}
+      ${w.handoverPhoto?`<a class="btn small ghost" href="${esc(versionedAsset(w.handoverPhoto))}" target="_blank" rel="noopener noreferrer">Certificate Handover Photo ↗</a>`:''}
+      ${w.flyerAsset?`<a class="btn small ghost" href="${esc(versionedAsset(w.flyerAsset))}" target="_blank" rel="noopener noreferrer">Official Event Flyer ↗</a>`:''}
+      ${w.handoverGalleryHref||w.certificateGalleryHref||w.flyerGalleryHref?`<a class="workshop-gallery-link" href="${esc(w.handoverGalleryHref||w.certificateGalleryHref||w.flyerGalleryHref)}">Gallery evidence →</a>`:''}
+    </div>`;
+    const workshopCard=w=>`<article class="card workshop-card" id="${esc(w.id||'')}">
+      <div class="workshop-card-topline"><span class="badge">${esc(w.session||w.type||'Workshop')}</span><span>${esc([w.date,w.time].filter(Boolean).join(' · '))}</span></div>
+      <h3>${esc(w.title||'')}</h3>
+      <p class="workshop-host"><strong>Host:</strong> ${esc(w.host||'')}</p>
+      ${resourceList(w)}
+      <p class="workshop-description">${esc(w.description||'')}</p>
+      ${tags(w.skills||[])}
+      ${w.evidenceNote?`<p class="workshop-evidence-note"><span aria-hidden="true">✓</span>${esc(w.evidenceNote)}</p>`:''}
+      <div class="workshop-evidence-preview">
+        ${w.certificateAsset?`<a href="${esc(versionedAsset(w.certificateHref||w.certificateAsset))}" target="_blank" rel="noopener noreferrer" data-evidence-lightbox="${esc(versionedAsset(w.certificateAsset))}" data-evidence-original="${esc(versionedAsset(w.certificateHref||w.certificateAsset))}" data-evidence-title="${esc(w.title||'Workshop certificate')}" data-evidence-meta="${esc([w.event,w.date].filter(Boolean).join(' · '))}"><img src="${esc(versionedAsset(w.certificateAsset))}" alt="${esc((w.title||'Workshop')+' certificate')}" loading="lazy" decoding="async"><span>Certificate</span></a>`:''}
+        ${w.handoverPhoto?`<a href="${esc(versionedAsset(w.handoverPhoto))}" target="_blank" rel="noopener noreferrer" data-evidence-lightbox="${esc(versionedAsset(w.handoverPhoto))}" data-evidence-original="${esc(versionedAsset(w.handoverPhoto))}" data-evidence-title="${esc((w.session||'Workshop')+' certificate handover')}" data-evidence-meta="${esc([w.event,w.date].filter(Boolean).join(' · '))}"><img src="${esc(versionedAsset(w.handoverPhoto))}" alt="${esc((w.session||'Workshop')+' certificate handover photo')}" loading="lazy" decoding="async"><span>Handover</span></a>`:''}
+      </div>
+      ${evidenceLinks(w)}
+    </article>`;
+    const seminarCard=w=>`<article class="card seminar-card" id="${esc(w.id||'')}">
+      <div class="workshop-card-topline"><span class="badge">${esc(w.type||'Seminar')}</span><span>${esc(w.date||'')}</span></div>
+      <h3>${esc(w.title||'')}</h3>
+      <p class="workshop-host"><strong>Organized with:</strong> ${esc(w.host||'')}</p>
+      ${w.venue?`<p class="workshop-venue"><strong>Venue:</strong> ${esc(w.venue)}</p>`:''}
+      <p class="workshop-description">${esc(w.description||'')}</p>
+      ${tags(w.skills||[])}
+      ${w.evidenceNote?`<p class="workshop-evidence-note"><span aria-hidden="true">✓</span>${esc(w.evidenceNote)}</p>`:''}
+      <div class="workshop-evidence-preview seminar-evidence-preview">
+        ${w.flyerAsset?`<a href="${esc(versionedAsset(w.flyerAsset))}" target="_blank" rel="noopener noreferrer" data-evidence-lightbox="${esc(versionedAsset(w.flyerAsset))}" data-evidence-original="${esc(versionedAsset(w.flyerAsset))}" data-evidence-title="${esc(w.title||'Event flyer')}" data-evidence-meta="${esc([w.host,w.date].filter(Boolean).join(' · '))}"><img src="${esc(versionedAsset(w.flyerAsset))}" alt="${esc((w.title||'Seminar')+' event flyer')}" loading="lazy" decoding="async"><span>Official flyer</span></a>`:''}
+        ${w.certificateAsset?`<a href="${esc(versionedAsset(w.certificateHref||w.certificateAsset))}" target="_blank" rel="noopener noreferrer" data-evidence-lightbox="${esc(versionedAsset(w.certificateAsset))}" data-evidence-original="${esc(versionedAsset(w.certificateHref||w.certificateAsset))}" data-evidence-title="${esc((w.title||'Seminar')+' participation certificate')}" data-evidence-meta="${esc([w.host,w.date].filter(Boolean).join(' · '))}"><img src="${esc(versionedAsset(w.certificateAsset))}" alt="${esc((w.title||'Seminar')+' participation certificate')}" loading="lazy" decoding="async"><span>Certificate</span></a>`:''}
+      </div>
+      ${evidenceLinks(w)}
+    </article>`;
+    return `${pageHero('Workshops & Seminars','Evidence-linked professional development, methodological workshops and scientific engagement.')}
+      <section class="section workshop-overview-section"><div class="container">
+        ${sectionHead('Professional development','ICASDS 2025 Pre-Conference Workshops','Two intensive pre-conference sessions at the University of Dhaka, presented with resource-person details, learning focus and documentary evidence.')}
+        <div class="workshop-event-strip">
+          <div class="workshop-event-logos">
+            ${eventLogo?`<img src="${esc(versionedAsset(eventLogo))}" alt="ICASDS 2025 logo" loading="eager" decoding="async">`:''}
+            ${hostLogo?`<img src="${esc(versionedAsset(hostLogo))}" alt="University of Dhaka logo" loading="eager" decoding="async">`:''}
+          </div>
+          <div><span class="section-kicker">27 December 2025 · University of Dhaka</span><h2>ICASDS 2025 Pre-Conference Workshops</h2><p>Hosted by the Institute of Statistical Research and Training (ISRT; now IASDS), University of Dhaka.</p></div>
+          <a class="btn ghost" href="conferences.html#icasds-2025">View ICASDS conference record →</a>
+        </div>
+        <div class="workshop-grid">${workshops.map(workshopCard).join('')}</div>
+      </div></section>
+      <section class="section alt seminar-section"><div class="container">
+        ${sectionHead('Seminars & scientific discussions','Public-facing scientific engagement','Selected seminars and public discussions are separated from formal training while retaining direct evidence links.')}
+        <div class="seminar-grid">${seminars.map(seminarCard).join('')}</div>
+      </div></section>
+      ${evidenceLightbox()}`;
+  }
+
   function conferences(){
     const groups=D.conferences||[];
     const conferencePapers=groups.flatMap(g=>g.papers||g.items||[]);
     const presentedWorks=conferencePapers.filter(p=>(p.role||'').includes('Presenting Author')||p.presentedBy==='Md. Razu Ahmed');
     const conferenceAwards=conferencePapers.filter(p=>(p.role||'').includes('Award')).length;
     const authorLine=s=>esc(s||'').split('Md. Razu Ahmed').join('<strong class="conference-self-author">Md. Razu Ahmed</strong>');
+    const icasdsWorkshops=(D.workshopsAndSeminars||[]).filter(w=>String(w.id||'').startsWith('icasds-2025-workshop-'));
     return `${pageHero('Conferences','Research dissemination, conference publications, presentations and documentary evidence.')}
       <section class="section conference-profile-section"><div class="container">
         ${sectionHead('Conference portfolio','Research dissemination & scholarly communication','Conference activity is organized by event, authorship role and source evidence so each contribution remains easy to verify and explore.')}
@@ -1420,6 +1484,10 @@
                 ${p.citation&&p.citationIEEE?`<details class="citation-details conference-list-citation"><summary>APA & IEEE citation</summary>${dualAcademicCitation(p.citation,p.citationIEEE)}</details>`:''}
               </article>`).join('')}
             </div>
+            ${g.id==='icasds-2025'&&icasdsWorkshops.length?`<section class="conference-workshop-links" aria-label="ICASDS 2025 associated pre-conference workshops">
+              <div><div class="section-kicker">Associated professional development</div><h4>Pre-Conference Workshops · 27 December 2025</h4><p>Full workshop details, resource persons, learning topics and certificate-handover evidence are available in the dedicated Workshops & Seminars section.</p></div>
+              <div class="conference-workshop-link-grid">${icasdsWorkshops.map(w=>`<a href="workshops.html#${esc(w.id||'')}"><span>${esc(w.session||'Workshop')}</span><strong>${esc(w.title||'')}</strong><small>Open workshop record →</small></a>`).join('')}</div>
+            </section>`:''}
             ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAST 2025 source documents">
               <div class="conference-source-hub-head">
                 <div><div class="section-kicker">Source documents</div><h4>ICRAST 2025 evidence library</h4><p>Paper 440 and Paper 461 remain separate records, with the exact certificate, brochure, proceedings and presentation files linked below.</p></div>
@@ -1788,7 +1856,7 @@
           </div>
           <a class="credential-archive-link" href="recognition.html">View credential showcase <span aria-hidden="true">→</span></a>
         </div>
-        <div class="filters gallery-evidence-filters">${['All','Award','Conference','Academic Documentation','Scientific Engagement','Professional Development','Scholarly Service','Leadership & Engagement'].map((x,i)=>`<button class="filter ${i===0?'active':''}" data-gallery-filter="${esc(x)}">${x}</button>`).join('')}</div>
+        <div class="filters gallery-evidence-filters">${['All','Award','Conference','Workshops & Seminars','Academic Documentation','Scientific Engagement','Professional Development','Scholarly Service','Leadership & Engagement'].map((x,i)=>`<button class="filter ${i===0?'active':''}" data-gallery-filter="${esc(x)}">${x}</button>`).join('')}</div>
         <div class="grid grid-3 gallery-evidence-grid">${records.map(g=>`<article class="card gallery-evidence-card ${g.verified&&['Certificate','Poster','Workshop','Recognition'].includes(g.evidenceType)?'is-verified-certificate is-verified-document':''}" ${g.id?`id="${esc(g.id)}"`:''} data-gallery-category="${esc(g.category||'')}" data-evidence-type="${esc(g.evidenceType||'')}">
           ${g.asset?`<a class="gallery-evidence-media" href="${esc(versionedAsset(g.href||g.asset))}" target="_blank" rel="noopener noreferrer" data-evidence-lightbox="${esc(versionedAsset(g.asset))}" data-evidence-original="${esc(versionedAsset(g.href||g.asset))}" data-evidence-title="${esc(g.title||'Academic evidence')}" data-evidence-meta="${esc([g.issuer,g.date].filter(Boolean).join(' · '))}"><img src="${esc(versionedAsset(g.asset))}" alt="${esc(g.title||'Academic evidence')}" loading="lazy" decoding="async">${g.verified?`<span class="gallery-verified-ribbon">Verified</span>`:''}</a>`:`<div class="portrait-placeholder">${esc(g.title||g.category||'Verified visual evidence')}</div>`}
           <div class="gallery-evidence-meta"><span class="badge">${esc(g.category||'Evidence')}</span>${g.evidenceType?`<span class="badge gallery-evidence-type">${esc(g.evidenceType)}</span>`:''}${g.paperId?`<span class="paper-id-chip">Paper ID ${esc(g.paperId)}</span>`:''}${g.fileType?`<span class="paper-id-chip">${esc(g.fileType)}${g.documentPages&&g.documentPages>1?` · ${esc(g.documentPages)} pages`:''}</span>`:''}</div>
@@ -1881,6 +1949,7 @@
       academic:{count:98,connect:144,speed:.064,anchors:9,dust:62},
       publications:{count:86,connect:140,speed:.058,anchors:7,dust:50},
       conferences:{count:84,connect:140,speed:.058,anchors:7,dust:50},
+      workshops:{count:86,connect:140,speed:.058,anchors:7,dust:50},
       resources:{count:82,connect:138,speed:.056,anchors:7,dust:48},
       recognition:{count:82,connect:138,speed:.056,anchors:7,dust:48},
       experience:{count:88,connect:140,speed:.060,anchors:7,dust:52},
@@ -2150,6 +2219,15 @@
   function pageHero(title,lead){return `<section class="hero compact"><div class="container"><div class="eyebrow"><span class="live-dot"></span><span>MRA Research Intelligence</span><span class="clock" data-clock>Dhaka · UTC+06:00</span></div><h1>${esc(title)}</h1><p class="lede">${esc(lead)}</p></div></section>`;}
 
   function initInteractive(){
+    const galleryFilterButtons=$('[data-gallery-filter]');
+    if(galleryFilterButtons.length){
+      const cards=$('.gallery-evidence-card');
+      const applyGalleryFilter=category=>{
+        galleryFilterButtons.forEach(btn=>btn.classList.toggle('active',(btn.dataset.galleryFilter||'All')===category));
+        cards.forEach(card=>{card.hidden=category!=='All'&&(card.dataset.galleryCategory||'')!==category;});
+      };
+      galleryFilterButtons.forEach(btn=>btn.addEventListener('click',()=>applyGalleryFilter(btn.dataset.galleryFilter||'All')));
+    }
     const evidenceLightbox=$('#evidenceLightbox');
     if(evidenceLightbox){
       const dialog=evidenceLightbox.querySelector('.evidence-lightbox-dialog');
@@ -2318,7 +2396,7 @@
     footer();
     const main=$('#page-content');
     if(!main)return;
-    const map={home,profile,languages,research,publications,projects,academic,experience,conferences,recognition,network,'network-profile':networkProfile,resources,gallery,dashboard,'ask-razu':askRazu,contact,copyright:copyrightPage};
+    const map={home,profile,languages,research,publications,projects,academic,experience,conferences,workshops,recognition,network,'network-profile':networkProfile,resources,gallery,dashboard,'ask-razu':askRazu,contact,copyright:copyrightPage};
     main.innerHTML=(map[page]||home)();
 
     // Start date/time immediately after the page hero exists. This remains live even if a later UI control fails.
