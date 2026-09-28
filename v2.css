@@ -11740,3 +11740,80 @@ body.evidence-lightbox-open{overflow:hidden}
     max-height:278px!important;
   }
 }
+
+
+/* === Workshops & Seminars · 2026-09-28 === */
+.workshop-overview-section{position:relative}
+.workshop-event-strip{
+  display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:24px;align-items:center;
+  padding:22px 24px;margin:26px 0 28px;border:1px solid var(--line);border-radius:22px;
+  background:color-mix(in srgb,var(--surface) 92%,var(--surface-2));box-shadow:var(--card-shadow)
+}
+.workshop-event-strip h2{margin:4px 0 6px;font-size:clamp(1.25rem,2vw,1.75rem)}
+.workshop-event-strip p{margin:0;color:var(--muted);line-height:1.6}
+.workshop-event-logos{display:flex;align-items:center;gap:12px}
+.workshop-event-logos img{
+  width:66px;height:66px;object-fit:contain;padding:7px;background:#fff;border:1px solid var(--line);
+  border-radius:16px;box-shadow:0 8px 24px rgba(15,23,42,.06)
+}
+.workshop-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.workshop-card,.seminar-card{display:flex;flex-direction:column;gap:14px;overflow:hidden}
+.workshop-card-topline{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;color:var(--muted);font-size:.82rem}
+.workshop-card h3,.seminar-card h3{margin:0;font-size:clamp(1.15rem,1.8vw,1.45rem);line-height:1.35}
+.workshop-host,.workshop-venue,.workshop-description{margin:0;line-height:1.65}
+.workshop-host,.workshop-venue{color:var(--muted)}
+.workshop-resource-list{display:grid;gap:9px;padding:14px;border:1px solid var(--line);border-radius:16px;background:var(--surface-2)}
+.workshop-resource-list div{display:grid;gap:2px}
+.workshop-resource-list strong{font-size:.94rem}
+.workshop-resource-list span,.workshop-resource-list small{color:var(--muted);line-height:1.45}
+.workshop-evidence-note{
+  display:flex;gap:9px;align-items:flex-start;margin:0;padding:12px 14px;border-left:3px solid var(--accent);
+  background:var(--surface-2);border-radius:0 12px 12px 0;font-size:.9rem;line-height:1.55
+}
+.workshop-evidence-note>span{font-weight:800;color:var(--accent)}
+.workshop-evidence-preview{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:auto}
+.workshop-evidence-preview a{
+  position:relative;display:block;min-height:165px;overflow:hidden;border:1px solid var(--line);
+  border-radius:16px;background:var(--surface-2)
+}
+.workshop-evidence-preview img{width:100%;height:165px;display:block;object-fit:cover;transition:transform .25s ease}
+.workshop-evidence-preview a:hover img{transform:scale(1.025)}
+.workshop-evidence-preview a>span{
+  position:absolute;left:10px;bottom:10px;padding:5px 9px;border-radius:999px;background:var(--surface);
+  border:1px solid var(--line);font-size:.72rem;font-weight:800;box-shadow:0 5px 16px rgba(15,23,42,.09)
+}
+.workshop-actions{display:flex;flex-wrap:wrap;align-items:center;gap:9px}
+.workshop-gallery-link{font-size:.86rem;font-weight:750}
+.seminar-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:22px}
+.seminar-card{max-width:980px}
+.seminar-evidence-preview{max-width:680px}
+.conference-workshop-links{
+  margin-top:22px;padding:20px;border:1px solid var(--line);border-radius:18px;background:var(--surface-2)
+}
+.conference-workshop-links h4{margin:4px 0 6px;font-size:1.08rem}
+.conference-workshop-links p{margin:0;color:var(--muted);line-height:1.55}
+.conference-workshop-link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}
+.conference-workshop-link-grid a{
+  display:grid;gap:5px;padding:14px;border:1px solid var(--line);border-radius:14px;background:var(--surface);
+  text-decoration:none;transition:transform .2s ease,border-color .2s ease
+}
+.conference-workshop-link-grid a:hover{transform:translateY(-2px);border-color:var(--accent)}
+.conference-workshop-link-grid span,.conference-workshop-link-grid small{color:var(--muted)}
+.conference-workshop-link-grid strong{line-height:1.4}
+body[data-page="workshops"] .mra-constellation{opacity:.52}
+@media(max-width:900px){
+  .workshop-event-strip{grid-template-columns:1fr}
+  .workshop-event-strip>.btn{justify-self:start}
+  .workshop-grid,.conference-workshop-link-grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .workshop-event-strip{padding:18px}
+  .workshop-event-logos img{width:56px;height:56px}
+  .workshop-evidence-preview{grid-template-columns:1fr}
+  .workshop-evidence-preview a,.workshop-evidence-preview img{height:190px}
+  .workshop-card-topline{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){
+  .workshop-evidence-preview img,.conference-workshop-link-grid a{transition:none}
+  .workshop-evidence-preview a:hover img,.conference-workshop-link-grid a:hover{transform:none}
+}
