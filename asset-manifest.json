@@ -69,7 +69,8 @@
     "assets/academic/conferences/icrast-2025-paper-440-certificate.jpeg"
   ],
   "events": [
-    "assets/events/global-nuclear-energy-2024.jpg"
+    "assets/gallery/global-nuclear-energy-public-discussion-flyer.webp",
+    "assets/gallery/global-nuclear-energy-certificate.webp"
   ],
   "recognition": [
     "assets/recognition/"
@@ -150,5 +151,13 @@
   ],
   "engagementEvidenceGallery": [
     "assets/gallery/originals/bangladesh-scouts-upazila-rally-certificate-2011.jpg"
+  ],
+  "workshops": [
+    "assets/gallery/icasds-workshop-applied-machine-learning-certificate.webp",
+    "assets/gallery/icasds-workshop-causal-inference-certificate.webp",
+    "assets/academic/conferences/icasds-2025/workshops/icasds-2025-workshop-i-certificate-handover.jpg",
+    "assets/academic/conferences/icasds-2025/workshops/icasds-2025-workshop-iv-certificate-handover.jpg",
+    "assets/academic/conferences/icasds-2025/logos/icasds-2025-logo.jpg",
+    "assets/academic/conferences/icasds-2025/logos/university-of-dhaka-logo.jpeg"
   ]
 }
