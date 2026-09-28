@@ -143,5 +143,12 @@
   "writingToolLogos": [
     "assets/academic/logos/vendor/grammarly.svg"
   ],
-  "cacheVersion": "20260926-mediafix13"
+  "cacheVersion": "20260928-moi-scouts1",
+  "academicEvidenceGallery": [
+    "assets/gallery/originals/bsc-medium-of-instruction-english-pust-2024.jpg",
+    "assets/gallery/originals/ms-medium-of-instruction-english-pust-2025.jpg"
+  ],
+  "engagementEvidenceGallery": [
+    "assets/gallery/originals/bangladesh-scouts-upazila-rally-certificate-2011.jpg"
+  ]
 }

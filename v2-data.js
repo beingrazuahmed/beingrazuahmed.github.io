@@ -2697,6 +2697,9 @@
       year: 'Exam Year 2022 · Examination held 2025',
       detail: 'CGPA 3.49/4.00 · Ranked 5th in the project-based (non-thesis) track',
       moi: 'Medium of Instruction (MOI): English',
+      evidenceAsset: 'assets/gallery/originals/ms-medium-of-instruction-english-pust-2025.jpg',
+      evidenceHref: 'gallery.html#ms-medium-of-instruction-english-pust-2025',
+      evidenceLabel: 'Official English MOI document',
       icon: 'graduation'
     },
     {
@@ -2706,6 +2709,9 @@
       year: 'Exam Year 2021 · Examination held 2024',
       detail: 'CGPA 2.87/4.00',
       moi: 'Medium of Instruction (MOI): English',
+      evidenceAsset: 'assets/gallery/originals/bsc-medium-of-instruction-english-pust-2024.jpg',
+      evidenceHref: 'gallery.html#bsc-medium-of-instruction-english-pust-2024',
+      evidenceLabel: 'Official English MOI document',
       icon: 'graduation'
     },
     {
@@ -2771,6 +2777,10 @@
         { label: 'Higher Secondary Certificate (HSC)', value: 'Bangla', stage: 'Rajshahi Board · Higher Secondary' },
         { label: 'Bachelor of Science (B.Sc. Hons.) in Statistics', value: 'English', stage: 'PUST · Undergraduate' },
         { label: 'Master of Science (M.S.) in Statistics', value: 'English', stage: 'PUST · Postgraduate' }
+      ],
+      documents: [
+        { label: 'B.Sc. (Hons.) in Statistics · Official English MOI', asset: 'assets/gallery/originals/bsc-medium-of-instruction-english-pust-2024.jpg', href: 'assets/gallery/originals/bsc-medium-of-instruction-english-pust-2024.jpg', galleryHref: 'gallery.html#bsc-medium-of-instruction-english-pust-2024', meta: 'PUST · issued 2024' },
+        { label: 'M.S. in Statistics · Official English MOI', asset: 'assets/gallery/originals/ms-medium-of-instruction-english-pust-2025.jpg', href: 'assets/gallery/originals/ms-medium-of-instruction-english-pust-2025.jpg', galleryHref: 'gallery.html#ms-medium-of-instruction-english-pust-2025', meta: 'PUST · issued 2025' }
       ]
     },
     evidence: [
@@ -2802,6 +2812,7 @@
     'Competitor · Hult Prize 2024–2025 OnCampus Program · PUST · 27 June 2025',
     'Participant · Public Discussion: “Global Nuclear Energy: Facts and Myths” · PUST / Energy of the Future Information Centre / ASE ROSATOM · 31 October 2024',
     'Campus Ambassador · Rajshahi University Agricultural Club (RUAC) at PUST · International Agri-Art Festival 2020 · Certificate of Excellence · 11–17 October 2020',
+    'Participant · Bangladesh Scouts · 2nd Upazila Scout Rally 2011 · Baya School and College ground, Paba, Rajshahi · 22–25 January 2011',
     'Divisional-Round Participant · 5th Dutch-Bangla Bank Bangladesh Physics Olympiad 2015 · Category C · represented Rajshahi College'
   ];
 
@@ -2841,7 +2852,7 @@
 
   window.MRA_V2 = {
     version: '3.0',
-    lastUpdated: '23 September 2026',
+    lastUpdated: '28 September 2026',
     brand: {
       monogram: 'MRA',
       name: 'Md. Razu Ahmed',

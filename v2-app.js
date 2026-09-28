@@ -4,7 +4,7 @@
   const $ = (s, r=document) => r.querySelector(s);
   const $$ = (s, r=document) => [...r.querySelectorAll(s)];
   const esc = (v='') => String(v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
-  const ASSET_REV='20260926-mediafix13';
+  const ASSET_REV='20260928-moi-scouts1';
   const versionedAsset=(value='')=>{
     const raw=String(value||'').trim();
     if(!raw||/^(?:https?:|data:|blob:|#)/i.test(raw)) return raw;
@@ -362,6 +362,7 @@
             ${e.board?`<div class="education-detail-row">${uiIcon('board')}<div><span>Education Board</span><strong>${esc(e.board)}</strong></div></div>`:''}
             ${e.moi?`<div class="education-detail-row education-moi-row">${uiIcon('language')}<div><span>Medium of Instruction (MOI)</span><strong>${esc(e.moi.replace('Medium of Instruction (MOI): ','')||e.moi)}</strong></div></div>`:''}
           </div>
+          ${e.evidenceHref?`<a class="credential-inline-link education-evidence-link" href="${esc(e.evidenceHref)}">${esc(e.evidenceLabel||'View MOI evidence')} →</a>`:''}
         </div>
       </div>
     </article>`;
@@ -619,7 +620,7 @@
       <div class="grid grid-2 language-grid">${(D.languages||[]).map(languageCard).join('')}</div>
       <div class="moi-panel">
         <div class="moi-main"><div class="moi-icon">${uiIcon('graduation')}</div><div><div class="section-kicker">Formal education language record</div><h3>${esc(lp.moi?.title||'Medium of Instruction')}</h3><p>${esc(lp.moi?.summary||'')}</p></div></div>
-        <div class="moi-degrees">${(lp.moi?.degrees||[]).map(x=>`<div class="moi-degree"><div><span>${esc(x.label)}</span>${x.stage?`<small>${esc(x.stage)}</small>`:''}</div><strong>${esc(x.value)}</strong></div>`).join('')}</div>
+        <div class="moi-degrees">${(lp.moi?.degrees||[]).map(x=>`<div class="moi-degree"><div><span>${esc(x.label)}</span>${x.stage?`<small>${esc(x.stage)}</small>`:''}</div><strong>${esc(x.value)}</strong></div>`).join('')}${(lp.moi?.documents||[]).length?`<div class="moi-document-links">${(lp.moi.documents||[]).map(d=>`<a class="credential-inline-link" href="${esc(versionedAsset(d.href||d.asset||''))}" target="_blank" rel="noopener noreferrer">${esc(d.label||'Official MOI document')} →</a>`).join('')}</div>`:''}</div>
       </div>
       ${compact?'':`<div class="grid grid-2 language-evidence-grid">${(lp.evidence||[]).map(languageEvidenceCard).join('')}</div>`}
     </div>`;
@@ -1787,7 +1788,7 @@
           </div>
           <a class="credential-archive-link" href="recognition.html">View credential showcase <span aria-hidden="true">→</span></a>
         </div>
-        <div class="filters gallery-evidence-filters">${['All','Award','Conference','Scientific Engagement','Professional Development','Scholarly Service','Leadership & Engagement'].map((x,i)=>`<button class="filter ${i===0?'active':''}" data-gallery-filter="${esc(x)}">${x}</button>`).join('')}</div>
+        <div class="filters gallery-evidence-filters">${['All','Award','Conference','Academic Documentation','Scientific Engagement','Professional Development','Scholarly Service','Leadership & Engagement'].map((x,i)=>`<button class="filter ${i===0?'active':''}" data-gallery-filter="${esc(x)}">${x}</button>`).join('')}</div>
         <div class="grid grid-3 gallery-evidence-grid">${records.map(g=>`<article class="card gallery-evidence-card ${g.verified&&['Certificate','Poster','Workshop','Recognition'].includes(g.evidenceType)?'is-verified-certificate is-verified-document':''}" ${g.id?`id="${esc(g.id)}"`:''} data-gallery-category="${esc(g.category||'')}" data-evidence-type="${esc(g.evidenceType||'')}">
           ${g.asset?`<a class="gallery-evidence-media" href="${esc(versionedAsset(g.href||g.asset))}" target="_blank" rel="noopener noreferrer" data-evidence-lightbox="${esc(versionedAsset(g.asset))}" data-evidence-original="${esc(versionedAsset(g.href||g.asset))}" data-evidence-title="${esc(g.title||'Academic evidence')}" data-evidence-meta="${esc([g.issuer,g.date].filter(Boolean).join(' · '))}"><img src="${esc(versionedAsset(g.asset))}" alt="${esc(g.title||'Academic evidence')}" loading="lazy" decoding="async">${g.verified?`<span class="gallery-verified-ribbon">Verified</span>`:''}</a>`:`<div class="portrait-placeholder">${esc(g.title||g.category||'Verified visual evidence')}</div>`}
           <div class="gallery-evidence-meta"><span class="badge">${esc(g.category||'Evidence')}</span>${g.evidenceType?`<span class="badge gallery-evidence-type">${esc(g.evidenceType)}</span>`:''}${g.paperId?`<span class="paper-id-chip">Paper ID ${esc(g.paperId)}</span>`:''}${g.fileType?`<span class="paper-id-chip">${esc(g.fileType)}${g.documentPages&&g.documentPages>1?` · ${esc(g.documentPages)} pages`:''}</span>`:''}</div>
