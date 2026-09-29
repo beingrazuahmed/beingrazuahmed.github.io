@@ -1631,7 +1631,10 @@
         ${item.journal?`<p><strong>${esc(item.journal)}</strong>${item.publisher?` · ${esc(item.publisher)}`:''}</p>`:''}
         ${item.detail?`<small>${highlightRazuName(item.detail)}</small>`:''}
       </div>
-      ${item.doi?mentorDoiLink(item.doi):''}
+      <div class="mentor-work-actions">
+        ${item.doi?mentorDoiLink(item.doi):''}
+        ${item.scopus?`<a class="mentor-doi-link mentor-doi-link-icononly" href="${esc(item.scopus)}" target="_blank" rel="noopener noreferrer" aria-label="Open Scopus record" title="Open Scopus record"><span class="mentor-doi-icon"><img src="assets/academic/logos/scopus-circle.png" alt="" loading="lazy" decoding="async"></span></a>`:''}
+      </div>
     </article>`).join('')}</div>`;
   }
 
