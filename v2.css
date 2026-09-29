@@ -10142,6 +10142,7 @@ body[data-page="dashboard"] .dashboard-source-date{
 .mentor-work-item-compact h5{margin:0;font-size:10.8px;line-height:1.42}
 .mentor-work-item-compact p{margin:4px 0 0;color:var(--muted);font-size:9.8px;line-height:1.4}
 .mentor-work-item-compact small{display:block;margin-top:4px;color:var(--muted);font-size:9.2px}
+.mentor-work-actions{display:flex;align-items:center;justify-content:flex-end;gap:6px;flex-wrap:wrap}
 .mentor-doi-link{display:inline-flex;align-items:center;gap:5px;padding:5px 7px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--text);font-size:9.5px;font-weight:850;text-decoration:none;white-space:nowrap}
 .mentor-doi-icon{display:grid;place-items:center;width:22px;height:22px;overflow:hidden;border-radius:6px;background:#fff}
 .mentor-doi-icon img{width:18px;height:18px;object-fit:contain}
