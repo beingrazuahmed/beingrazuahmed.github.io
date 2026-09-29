@@ -40,6 +40,7 @@
         { label: 'Mendeley Data', url: 'https://doi.org/10.17632/fn6yhzjz83.2' }
       ],
       discovery: [
+        { label: 'Scopus', url: 'https://www.scopus.com/pages/publications/105051233565' },
         { label: 'Google Scholar', url: 'https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=PUST+Cafeteria+Food+Image+Dataset%3A+Real-World+Bangladeshi+Meal-Platter+Images+with+Bounding-Box+and+Polygon+Annotations&btnG=' },
         { label: 'Semantic Scholar', url: 'https://www.semanticscholar.org/paper/PUST-Cafeteria-Food-Image-Dataset%3A-Real-World-with-Yeasmin-Ahmed/07a90c12567b3985f246f7ef158068e447818609' }
       ],
@@ -146,7 +147,7 @@
         }
       ],
       sharedEditorial: [
-        { title: 'A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images', journal: 'Measurement', publisher: 'Elsevier' },
+        { title: 'A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images', journal: 'Measurement', publisher: 'Elsevier', detail: 'Under Review.' },
         { title: 'Comparative Evaluation of Hybrid MICE–Median Missing-Value Reconstruction and Downstream Hepatitis C Prediction Using Machine Learning', journal: 'BMC Medical Informatics and Decision Making', publisher: 'BMC · Springer Nature', detail: 'Under Review.' },
         { title: 'Real-Time Food Detection for Automated Cafeteria Billing Using RT-DETR and GAN-Based Data Augmentation', journal: 'Discover Artificial Intelligence', publisher: 'Springer Nature' },
         { title: 'Adaptive Probability Fusion of Lightweight Recurrent Networks for Cross-Domain Sentiment Classification', journal: 'Applied AI Letters', publisher: 'Wiley' },
@@ -1662,6 +1663,10 @@
       url: 'https://orcid.org/0009-0001-4685-1033'
     },
     {
+      label: 'Scopus',
+      url: 'https://www.scopus.com/authid/detail.uri?authorId=60913322700'
+    },
+    {
       label: 'ResearchGate',
       url: 'https://www.researchgate.net/profile/Marufa-Yeasmin-2'
     },
@@ -1846,6 +1851,10 @@
         {
           label: 'ORCID',
           url: 'https://orcid.org/0009-0003-8210-5569'
+        },
+        {
+          label: 'Scopus',
+          url: 'https://www.scopus.com/authid/detail.uri?authorId=60912858200'
         }
       ]
     },
@@ -2852,7 +2861,7 @@
 
   window.MRA_V2 = {
     version: '3.0',
-    lastUpdated: '28 September 2026',
+    lastUpdated: '29 September 2026',
     brand: {
       monogram: 'MRA',
       name: 'Md. Razu Ahmed',
