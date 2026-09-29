@@ -88,6 +88,7 @@ window.PORTFOLIO_DATA = {
       issn: "2352-3409",
       doi: "https://doi.org/10.1016/j.dib.2026.113262",
       sciencedirect: "https://www.sciencedirect.com/science/article/pii/S2352340926008097",
+      scopus: "https://www.scopus.com/pages/publications/105051233565",
       researchgate: "https://www.researchgate.net/publication/414270604_PUST_Cafeteria_Food_Image_Dataset_Real-World_Bangladeshi_Meal-Platter_Images_with_Bounding-Box_and_Polygon_Annotations",
       googleScholar: "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=PUST+Cafeteria+Food+Image+Dataset%3A+Real-World+Bangladeshi+Meal-Platter+Images+with+Bounding-Box+and+Polygon+Annotations&btnG=",
       dataset: "https://doi.org/10.17632/fn6yhzjz83.2",
@@ -162,7 +163,7 @@ window.PORTFOLIO_DATA = {
 
   manuscripts: [
     {
-      id: "dr", status: "With Editor", role: "First Author",
+      id: "dr", status: "Under Review", role: "First Author",
       title: "A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images",
       venue: "Measurement", publisher: "Elsevier", tags: ["Medical Imaging", "Deep Learning", "Feature Fusion", "Explainable AI"],
       summary: "A five-stage leak-safe validation framework combining deep representations, handcrafted descriptors and explainable modelling for diabetic-retinopathy grading.",
