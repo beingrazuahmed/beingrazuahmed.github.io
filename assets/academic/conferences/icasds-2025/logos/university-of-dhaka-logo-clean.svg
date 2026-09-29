@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 384" role="img" aria-labelledby="title desc">
+  <title id="title">University of Dhaka logo</title>
+  <desc id="desc">University of Dhaka crest rendered on a clean white background.</desc>
+  <defs>
+    <filter id="remove-dark-background" x="-2%" y="-2%" width="104%" height="104%" color-interpolation-filters="sRGB">
+      <feColorMatrix in="SourceGraphic" type="matrix"
+        values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                .3333 .3333 .3333 0 0" result="luma-alpha"/>
+      <feComponentTransfer in="luma-alpha">
+        <feFuncA type="linear" slope="28" intercept="-.55"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="384" height="384" fill="#ffffff"/>
+  <image href="university-of-dhaka-logo.jpeg" x="0" y="0" width="384" height="384" preserveAspectRatio="xMidYMid meet" filter="url(#remove-dark-background)"/>
+</svg>
