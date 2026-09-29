@@ -111,7 +111,7 @@
       sharedPublications: [
         { title: 'Sophisticated Audio Source Separation: A Statistical Exploration of Clarity and Precision With FastICA', venue: 'Engineering Reports, 8(1), e70575 (2026)', doi: 'https://doi.org/10.1002/eng2.70575' },
         { title: 'Identification of Predisposing Risk Factors for Chronic Kidney Disease and Optimizing Disease Prediction Using a Stacking Machine Learning Algorithm', venue: 'International Journal of Statistical Sciences, 25(2), 1–32 (2025)', doi: 'https://doi.org/10.3329/ijss.v25i2.85732' },
-        { title: 'PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations', venue: 'Data in Brief, 69, Article 113262 (2026)', doi: 'https://doi.org/10.1016/j.dib.2026.113262' }
+        { title: 'PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations', venue: 'Data in Brief, 69, Article 113262 (2026)', doi: 'https://doi.org/10.1016/j.dib.2026.113262', scopus: 'https://www.scopus.com/pages/publications/105051233565' }
       ],
       sharedAccepted: [
         { title: 'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh', venue: 'International Journal of Statistical Sciences, 26(2), forthcoming November 2026', detail: 'Accepted 2 September 2026.' }
@@ -967,7 +967,7 @@
         {
           title: 'PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations',
           venue: 'Data in Brief, 69, Article 113262 (2026)',
-          doi: 'https://doi.org/10.1016/j.dib.2026.113262'
+          doi: 'https://doi.org/10.1016/j.dib.2026.113262', scopus: 'https://www.scopus.com/pages/publications/105051233565'
         }
       ],
       sharedAccepted: [
@@ -1628,7 +1628,7 @@
     {
       title: 'PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations',
       venue: 'Data in Brief (2026)',
-      doi: 'https://doi.org/10.1016/j.dib.2026.113262'
+      doi: 'https://doi.org/10.1016/j.dib.2026.113262', scopus: 'https://www.scopus.com/pages/publications/105051233565'
     }
   ],
 
@@ -1810,7 +1810,7 @@
         {
           title: 'PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations',
           venue: 'Data in Brief, Article 113262 (2026)',
-          doi: 'https://doi.org/10.1016/j.dib.2026.113262'
+          doi: 'https://doi.org/10.1016/j.dib.2026.113262', scopus: 'https://www.scopus.com/pages/publications/105051233565'
         }
       ],
 
