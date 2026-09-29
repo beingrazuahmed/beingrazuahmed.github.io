@@ -385,7 +385,7 @@ window.PORTFOLIO_DATA = {
       handoverPhoto: "assets/academic/conferences/icasds-2025/workshops/icasds-2025-workshop-i-certificate-handover.jpg",
       handoverGalleryHref: "gallery.html#icasds-2025-workshop-i-certificate-handover",
       eventLogo: "assets/academic/conferences/icasds-2025/logos/icasds-2025-logo.jpg",
-      hostLogo: "assets/academic/conferences/icasds-2025/logos/university-of-dhaka-logo.jpeg"
+      hostLogo: "assets/academic/conferences/icasds-2025/logos/university-of-dhaka-logo-clean.svg"
     },
     {
       id: "icasds-2025-workshop-iv",
@@ -411,7 +411,7 @@ window.PORTFOLIO_DATA = {
       handoverPhoto: "assets/academic/conferences/icasds-2025/workshops/icasds-2025-workshop-iv-certificate-handover.jpg",
       handoverGalleryHref: "gallery.html#icasds-2025-workshop-iv-certificate-handover",
       eventLogo: "assets/academic/conferences/icasds-2025/logos/icasds-2025-logo.jpg",
-      hostLogo: "assets/academic/conferences/icasds-2025/logos/university-of-dhaka-logo.jpeg"
+      hostLogo: "assets/academic/conferences/icasds-2025/logos/university-of-dhaka-logo-clean.svg"
     },
     {
       id: "rosatom-global-nuclear-energy-2024",
