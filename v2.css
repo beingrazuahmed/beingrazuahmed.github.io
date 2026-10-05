@@ -12011,3 +12011,99 @@ body[data-page="workshops"] .mra-constellation{opacity:.52}
   .efast-presentation-frame-wrap{height:420px}
   .efast-presentation-card-head{flex-direction:column}
 }
+
+
+
+/* === ICRAST 2025 presentation showcase · 2026-10-05 === */
+.icrast-presentation-showcase{
+  margin:18px 0 22px;
+  padding:18px;
+  border:1px solid color-mix(in srgb,var(--accent) 18%,var(--line));
+  border-radius:18px;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--surface-2) 82%,var(--surface)),var(--surface));
+}
+.icrast-presentation-showcase-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:14px;
+}
+.icrast-presentation-showcase-head h4{margin:4px 0 5px;font-size:20px}
+.icrast-presentation-showcase-head p{margin:0;color:var(--muted);font-size:12px;line-height:1.55}
+.icrast-presentation-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+}
+.icrast-presentation-card{
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:var(--surface);
+  box-shadow:0 12px 28px rgba(20,58,84,.055);
+}
+.icrast-presentation-card.is-featured{
+  border-color:color-mix(in srgb,#8c2f39 40%,var(--line));
+  box-shadow:0 14px 34px rgba(140,47,57,.10);
+}
+.icrast-presentation-card-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:10px;
+  padding:12px 13px;
+  border-bottom:1px solid var(--line);
+  background:color-mix(in srgb,var(--surface-2) 76%,var(--surface));
+}
+.icrast-presentation-card-head>div{display:flex;flex-wrap:wrap;gap:6px}
+.icrast-presentation-card-head>strong{
+  flex:0 0 auto;
+  color:var(--accent-2);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+.icrast-presentation-frame-wrap{
+  position:relative;
+  height:390px;
+  background:#f7f9fb;
+  border-bottom:1px solid var(--line);
+}
+.icrast-presentation-frame{
+  display:block;
+  width:100%;
+  height:100%;
+  border:0;
+  background:#fff;
+}
+.icrast-presentation-card-body{padding:14px}
+.icrast-presentation-card-body h5{
+  margin:0 0 7px;
+  color:var(--text);
+  font-size:14px;
+  line-height:1.5;
+}
+.icrast-presentation-card-body p{
+  margin:0;
+  color:var(--muted);
+  font-size:11.5px;
+  line-height:1.5;
+}
+.icrast-presentation-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:12px;
+}
+@media(max-width:980px){
+  .icrast-presentation-grid{grid-template-columns:1fr}
+  .icrast-presentation-frame-wrap{height:500px}
+}
+@media(max-width:680px){
+  .icrast-presentation-showcase{padding:13px}
+  .icrast-presentation-showcase-head{flex-direction:column}
+  .icrast-presentation-frame-wrap{height:420px}
+  .icrast-presentation-card-head{flex-direction:column}
+}
