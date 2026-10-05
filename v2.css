@@ -11818,3 +11818,99 @@ body[data-page="workshops"] .mra-constellation{opacity:.52}
   .workshop-evidence-preview img,.conference-workshop-link-grid a{transition:none}
   .workshop-evidence-preview a:hover img,.conference-workshop-link-grid a:hover{transform:none}
 }
+
+
+
+/* === ICASDS 2025 poster highlights · 2026-10-05 === */
+.icasds-poster-showcase{
+  margin:18px 0 22px;
+  padding:18px;
+  border:1px solid color-mix(in srgb,var(--accent) 18%,var(--line));
+  border-radius:18px;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--surface-2) 82%,var(--surface)),var(--surface));
+}
+.icasds-poster-showcase-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:14px;
+}
+.icasds-poster-showcase-head h4{margin:4px 0 5px;font-size:20px}
+.icasds-poster-showcase-head p{margin:0;color:var(--muted);font-size:12px;line-height:1.55}
+.icasds-poster-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+}
+.icasds-poster-card{
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:var(--surface);
+  box-shadow:0 12px 28px rgba(20,58,84,.055);
+}
+.icasds-poster-card.is-featured{
+  border-color:color-mix(in srgb,#12a17b 42%,var(--line));
+  box-shadow:0 14px 34px rgba(17,125,98,.10);
+}
+.icasds-poster-card-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:10px;
+  padding:12px 13px;
+  border-bottom:1px solid var(--line);
+  background:color-mix(in srgb,var(--surface-2) 76%,var(--surface));
+}
+.icasds-poster-card-head>div{display:flex;flex-wrap:wrap;gap:6px}
+.icasds-poster-card-head>strong{
+  flex:0 0 auto;
+  color:var(--accent-2);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+.icasds-poster-frame-wrap{
+  position:relative;
+  height:560px;
+  background:#f7f9fb;
+  border-bottom:1px solid var(--line);
+}
+.icasds-poster-frame{
+  display:block;
+  width:100%;
+  height:100%;
+  border:0;
+  background:#fff;
+}
+.icasds-poster-card-body{padding:14px}
+.icasds-poster-card-body h5{
+  margin:0 0 7px;
+  color:var(--text);
+  font-size:14px;
+  line-height:1.5;
+}
+.icasds-poster-card-body p{
+  margin:0;
+  color:var(--muted);
+  font-size:11.5px;
+  line-height:1.5;
+}
+.icasds-poster-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:12px;
+}
+@media(max-width:980px){
+  .icasds-poster-grid{grid-template-columns:1fr}
+  .icasds-poster-frame-wrap{height:620px}
+}
+@media(max-width:680px){
+  .icasds-poster-showcase{padding:13px}
+  .icasds-poster-showcase-head{flex-direction:column}
+  .icasds-poster-frame-wrap{height:500px}
+  .icasds-poster-card-head{flex-direction:column}
+}
