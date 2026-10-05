@@ -1494,6 +1494,24 @@
                 <div><div class='section-kicker'>Source documents</div><h4>ICASDS 2025 evidence library</h4><p>The official flyer, both paper-specific proceedings records, both conference posters, and the Paper 341 presentation and JSR award certificates are linked directly here. PDF-only records are shown as document cards instead of blank Gallery previews.</p></div>
                 <span class='paper-id-chip'>2 papers · 7 source records</span>
               </div>
+              <section class='icasds-poster-showcase' aria-label='ICASDS 2025 poster highlights'>
+                <div class='icasds-poster-showcase-head'>
+                  <div><div class='section-kicker'>Poster highlights</div><h4>ICASDS 2025 Conference Posters</h4><p>Both conference posters are previewed directly from the uploaded PDF files. Open either poster for the full-resolution document.</p></div>
+                  <span class='paper-id-chip'>2 poster contributions</span>
+                </div>
+                <div class='icasds-poster-grid'>
+                  <article class='icasds-poster-card is-featured'>
+                    <div class='icasds-poster-card-head'><div><span class='paper-id-chip'>Paper ID 341</span><span class='badge'>Poster Presentation</span><span class='badge'>Presenting Author</span><span class='badge'>JSR Award</span></div><strong>Featured poster</strong></div>
+                    <div class='icasds-poster-frame-wrap'><object class='icasds-poster-frame' data='assets/academic/conferences/icasds-2025/documents/icasds-2025-poster-341.pdf#page=1&view=FitH' type='application/pdf' aria-label='Preview of ICASDS 2025 Paper 341 poster'><a href='assets/academic/conferences/icasds-2025/documents/icasds-2025-poster-341.pdf' target='_blank' rel='noopener noreferrer'>Open Paper 341 poster PDF ↗</a></object></div>
+                    <div class='icasds-poster-card-body'><h5>A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images</h5><p><strong>Md. Razu Ahmed</strong>, Md. Shamim Reza · p. 200</p><div class='icasds-poster-actions'><a class='btn small' href='assets/academic/conferences/icasds-2025/documents/icasds-2025-poster-341.pdf' target='_blank' rel='noopener noreferrer'>Open Poster PDF ↗</a><a class='btn small ghost' href='assets/academic/conferences/icasds-2025/documents/icasds-2025-paper-341-proceedings.pdf' target='_blank' rel='noopener noreferrer'>Proceedings ↗</a><a class='btn small ghost' href='assets/academic/conferences/icasds-2025-poster-presentation-certificate.pdf' target='_blank' rel='noopener noreferrer'>Certificate ↗</a><a class='btn small ghost' href='assets/recognition/jsr-award-icasds-2025.pdf' target='_blank' rel='noopener noreferrer'>JSR Award ↗</a></div></div>
+                  </article>
+                  <article class='icasds-poster-card'>
+                    <div class='icasds-poster-card-head'><div><span class='paper-id-chip'>Paper ID 315</span><span class='badge'>Poster</span><span class='badge'>Co-author</span></div><strong>Co-authored poster</strong></div>
+                    <div class='icasds-poster-frame-wrap'><object class='icasds-poster-frame' data='assets/academic/conferences/icasds-2025/documents/icasds-2025-poster-315.pdf#page=1&view=FitH' type='application/pdf' aria-label='Preview of ICASDS 2025 Paper 315 poster'><a href='assets/academic/conferences/icasds-2025/documents/icasds-2025-poster-315.pdf' target='_blank' rel='noopener noreferrer'>Open Paper 315 poster PDF ↗</a></object></div>
+                    <div class='icasds-poster-card-body'><h5>Predisposing Factor Identification and Multi-Class Grading of Diabetes Mellitus Using Machine Learning</h5><p>Mimosa Saha, <strong>Md. Razu Ahmed</strong>, Md. Shamim Reza · p. 199</p><div class='icasds-poster-actions'><a class='btn small' href='assets/academic/conferences/icasds-2025/documents/icasds-2025-poster-315.pdf' target='_blank' rel='noopener noreferrer'>Open Poster PDF ↗</a><a class='btn small ghost' href='assets/academic/conferences/icasds-2025/documents/icasds-2025-paper-315-proceedings.pdf' target='_blank' rel='noopener noreferrer'>Proceedings ↗</a></div></div>
+                  </article>
+                </div>
+              </section>
               <div class='conference-source-grid'>
                 <article class='conference-source-card source-visual source-brochure'>
                   <a href='assets/academic/conferences/icasds-2025/documents/icasds-2025-flyer.pdf' target='_blank' rel='noopener noreferrer'><span class='conference-source-preview'><img src='assets/academic/conferences/icasds-2025/media/icasds-2025-flyer.jpg' alt='ICASDS 2025 official conference flyer' loading='lazy' decoding='async'></span><span class='conference-source-copy'><small>Conference document</small><strong>ICASDS 2025 Official Flyer</strong><span>University of Dhaka · 28–29 December 2025</span></span></a>
