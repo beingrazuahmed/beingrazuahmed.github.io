@@ -106,7 +106,8 @@
         { value: '1', label: 'Accepted / forthcoming article' },
         { value: '1', label: 'Public research dataset' },
         { value: '7', label: 'Conference contributions' },
-        { value: '5', label: 'Manuscripts in editorial process' }
+        { value: '5', label: 'Manuscripts in editorial process' },
+        { value: '1', label: 'Project in preparation' }
       ],
       sharedPublications: [
         { title: 'Sophisticated Audio Source Separation: A Statistical Exploration of Clarity and Precision With FastICA', venue: 'Engineering Reports, 8(1), e70575 (2026)', doi: 'https://doi.org/10.1002/eng2.70575' },
@@ -153,6 +154,9 @@
         { title: 'Adaptive Probability Fusion of Lightweight Recurrent Networks for Cross-Domain Sentiment Classification', journal: 'Applied AI Letters', publisher: 'Wiley' },
         { title: 'Factors Associated with Undergraduates Academic Performance Among Public University Students: A Case Study', journal: 'International Journal of Educational Reform', publisher: 'SAGE' }
       ],
+      sharedInPreparation: [
+        { title: 'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction', detail: 'Collaborative heart-disease manuscript in preparation to submit with Md. Razu Ahmed, Prof. Dr. Sabba Ruhi, Prof. Dr. Md. Aminul Hoque and Jannatul Mauya.' }
+      ],
       shared: [
         'FastICA source separation',
         'CKD prediction',
@@ -162,7 +166,8 @@
         'PUST Cafeteria Food Image Dataset',
         'Cafeteria billing and food detection',
         'Cross-domain sentiment classification',
-        'Undergraduate academic-performance research'
+        'Undergraduate academic-performance research',
+        'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction — in preparation to submit'
       ],
       email: 'shamim.reza@pust.ac.bd',
       additionalEmail: 'mshamim.pust@gmail.com',
@@ -214,7 +219,8 @@
       relationshipPath: ['Research collaboration', 'EFAST 2026', '2 conference contributions'],
       collaborationStats: [
         { value: '1', label: 'Shared conference event' },
-        { value: '2', label: 'Conference contributions' }
+        { value: '2', label: 'Conference contributions' },
+        { value: '1', label: 'Project in preparation' }
       ],
       sharedConferences: [
         {
@@ -226,9 +232,13 @@
           ]
         }
       ],
+      sharedInPreparation: [
+        { title: 'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction', detail: 'Collaborative heart-disease manuscript in preparation to submit with Md. Razu Ahmed, Prof. Dr. Md. Shamim Reza, Prof. Dr. Md. Aminul Hoque and Jannatul Mauya.' }
+      ],
       shared: [
         'Sugarcane leaf disease detection — EFAST 2026',
-        'Cesarean-section determinants in Bangladesh — EFAST 2026'
+        'Cesarean-section determinants in Bangladesh — EFAST 2026',
+        'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction — in preparation to submit'
       ],
       email: 'sabba.ruhi@pust.ac.bd',
       additionalEmail: 'sabba.ruhi@gmail.com',
@@ -303,6 +313,10 @@
         'Bioinformatics & Interdisciplinary Research Advice',
         'Ongoing Research Collaboration'
       ],
+      collaborationStats: [
+        { value: '1', label: 'Accepted / forthcoming article' },
+        { value: '1', label: 'Project in preparation' }
+      ],
       sharedAccepted: [
         {
           title: 'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh',
@@ -310,8 +324,12 @@
           detail: 'Accepted 2 September 2026.'
         }
       ],
+      sharedInPreparation: [
+        { title: 'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction', detail: 'Collaborative heart-disease manuscript in preparation to submit with Md. Razu Ahmed, Prof. Dr. Md. Shamim Reza, Prof. Dr. Sabba Ruhi and Jannatul Mauya.' }
+      ],
       shared: [
-        'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh — accepted / forthcoming'
+        'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh — accepted / forthcoming',
+        'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction — in preparation to submit'
       ],
       email: 'aminul@ru.ac.bd',
       additionalEmail: 'mdaminulh@gmail.com',
@@ -826,6 +844,9 @@
           detail: 'Collaborative review in preparation with Md. Razu Ahmed, Dr. Md. Ashad Alam and Jannatul Mauya.'
         }
       ],
+      sharedInPreparation: [
+        { title: 'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction', detail: 'Collaborative heart-disease manuscript in preparation to submit with Md. Razu Ahmed, Prof. Dr. Md. Shamim Reza, Prof. Dr. Sabba Ruhi and Prof. Dr. Md. Aminul Hoque.' }
+      ],
       shared: [
         'Sophisticated Audio Source Separation: A Statistical Exploration of Clarity and Precision With FastICA — published in Engineering Reports',
         'Adaptive Probability Fusion of Lightweight Recurrent Networks for Cross-Domain Sentiment Classification — Under Revision',
@@ -956,7 +977,8 @@
         { value: '1', label: 'Accepted / forthcoming' },
         { value: '1', label: 'Public research dataset' },
         { value: '3', label: 'Conference contributions' },
-        { value: '5', label: 'Manuscripts in editorial process' }
+        { value: '5', label: 'Manuscripts in editorial process' },
+        { value: '1', label: 'Project in preparation' }
       ],
       sharedPublications: [
         {
@@ -1034,7 +1056,8 @@
         'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh — accepted / forthcoming',
         'PUST Cafeteria Food Image Dataset Version 2 — Mendeley Data',
         'EFAST 2026 — three joint conference contributions',
-        'Five manuscripts currently in the editorial process'
+        'Five manuscripts currently in the editorial process',
+        'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction — in preparation to submit'
       ],
       email: 'jannatulmauya7711@gmail.com',
       links: [
