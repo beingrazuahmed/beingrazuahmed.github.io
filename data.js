@@ -251,6 +251,8 @@ window.PORTFOLIO_DATA = {
           presentation: "Poster Presentation",
           role: "Poster Presentation · Presenting Author · JSR Award",
           presentedBy: "Md. Razu Ahmed",
+          citation: "Ahmed, M. R., & Reza, M. S. (2025). A deep learning and handcrafted feature fusion framework for automated diabetic retinopathy grading from retinal fundus images. In Programme and Abstract Book, International Conference on Applied Statistics and Data Science 2025 (ICASDS 2025) (p. 200). Institute of Statistical Research and Training, University of Dhaka.",
+          citationIEEE: "M. R. Ahmed and M. S. Reza, “A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images,” in Programme and Abstract Book, International Conference on Applied Statistics and Data Science 2025 (ICASDS 2025), Dhaka, Bangladesh, Dec. 28–29, 2025, p. 200.",
           evidence: [
             { type:"Certificate", label:"Poster Presentation Certificate", asset:"assets/gallery/icasds-2025-poster-presentation-certificate.webp", href:"assets/academic/conferences/icasds-2025-poster-presentation-certificate.pdf", note:"Md. Razu Ahmed · Presenting Author · Paper ID 341 · Certificate ID ICASDS-253412", galleryHref:"gallery.html#icasds-2025-poster-presentation-certificate", format:"PDF", verified:true, sourceFile:"341(1).pdf" },
             { type:"Award Certificate", label:"JSR Poster Competition Award Certificate", asset:"assets/gallery/icasds-2025-jsr-poster-award-certificate.webp", href:"assets/recognition/jsr-award-icasds-2025.pdf", note:"Md. Razu Ahmed · Paper ID 341 · Certificate ID ICASDS-253411", galleryHref:"gallery.html#icasds-2025-jsr-award-certificate", format:"PDF", verified:true, sourceFile:"ICASDS-253411(1).pdf" },
@@ -265,6 +267,8 @@ window.PORTFOLIO_DATA = {
           authors: "Mimosa Saha, Md. Razu Ahmed, Md. Shamim Reza",
           page: "p. 199",
           role: "Co-author",
+          citation: "Saha, M., Ahmed, M. R., & Reza, M. S. (2025). Predisposing factor identification and multi-class grading of diabetes mellitus using machine learning. In Programme and Abstract Book, International Conference on Applied Statistics and Data Science 2025 (ICASDS 2025) (p. 199). Institute of Statistical Research and Training, University of Dhaka.",
+          citationIEEE: "M. Saha, M. R. Ahmed, and M. S. Reza, “Predisposing Factor Identification and Multi-Class Grading of Diabetes Mellitus Using Machine Learning,” in Programme and Abstract Book, International Conference on Applied Statistics and Data Science 2025 (ICASDS 2025), Dhaka, Bangladesh, Dec. 28–29, 2025, p. 199.",
           evidence: [
             { type:"Proceedings", label:"Programme & Abstract Book · Paper 315", href:"assets/academic/conferences/icasds-2025/documents/icasds-2025-paper-315-proceedings.pdf", note:"Paper ID 315 · p. 199 · ICASDS 2025", format:"PDF", sourceFile:"icasds-2025-paper-315-proceedings.pdf" },
             { type:"Poster", label:"Conference Poster · Paper 315", href:"assets/academic/conferences/icasds-2025/documents/icasds-2025-poster-315.pdf", note:"Paper ID 315 · ICASDS 2025 poster", format:"PDF", sourceFile:"icasds-2025-poster-315.pdf" }
