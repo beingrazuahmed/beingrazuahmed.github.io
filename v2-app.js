@@ -1489,6 +1489,38 @@
               <div><div class="section-kicker">Associated professional development</div><h4>Pre-Conference Workshops · 27 December 2025</h4><p>Full workshop details, resource persons, learning topics and certificate-handover evidence are available in the dedicated Workshops & Seminars section.</p></div>
               <div class="conference-workshop-link-grid">${icasdsWorkshops.map(w=>`<a href="workshops.html#${esc(w.id||'')}"><span>${esc(w.session||'Workshop')}</span><strong>${esc(w.title||'')}</strong><small>Open workshop record →</small></a>`).join('')}</div>
             </section>`:''}
+            ${g.id==='icasds-2025'?`<section class='conference-source-hub' aria-label='ICASDS 2025 source documents'>
+              <div class='conference-source-hub-head'>
+                <div><div class='section-kicker'>Source documents</div><h4>ICASDS 2025 evidence library</h4><p>The official flyer, both paper-specific proceedings records, both conference posters, and the Paper 341 presentation and JSR award certificates are linked directly here. PDF-only records are shown as document cards instead of blank Gallery previews.</p></div>
+                <span class='paper-id-chip'>2 papers · 7 source records</span>
+              </div>
+              <div class='conference-source-grid'>
+                <article class='conference-source-card source-visual source-brochure'>
+                  <a href='assets/academic/conferences/icasds-2025/documents/icasds-2025-flyer.pdf' target='_blank' rel='noopener noreferrer'><span class='conference-source-preview'><img src='assets/academic/conferences/icasds-2025/media/icasds-2025-flyer.jpg' alt='ICASDS 2025 official conference flyer' loading='lazy' decoding='async'></span><span class='conference-source-copy'><small>Conference document</small><strong>ICASDS 2025 Official Flyer</strong><span>University of Dhaka · 28–29 December 2025</span></span></a>
+                </article>
+                <article class='conference-source-card source-visual source-certificate is-verified-document'>
+                  ${verifiedCornerRibbon()}
+                  <a href='assets/academic/conferences/icasds-2025-poster-presentation-certificate.pdf' target='_blank' rel='noopener noreferrer'><span class='conference-source-preview'><img src='assets/gallery/icasds-2025-poster-presentation-certificate.webp' alt='ICASDS 2025 Paper 341 poster presentation certificate' loading='lazy' decoding='async'></span><span class='conference-source-copy'><small>Certificate · Paper 341</small><strong>Poster Presentation Certificate</strong><span>Md. Razu Ahmed · Presenting Author</span></span></a>
+                </article>
+                <article class='conference-source-card source-visual source-certificate is-verified-document'>
+                  ${verifiedCornerRibbon()}
+                  <a href='assets/recognition/jsr-award-icasds-2025.pdf' target='_blank' rel='noopener noreferrer'><span class='conference-source-preview'><img src='assets/gallery/icasds-2025-jsr-poster-award-certificate.webp' alt='ICASDS 2025 JSR poster competition award certificate' loading='lazy' decoding='async'></span><span class='conference-source-copy'><small>Award certificate · Paper 341</small><strong>JSR Poster Competition Award</strong><span>Paper ID 341 · Certificate ID ICASDS-253411</span></span></a>
+                </article>
+                <article class='conference-source-card source-pdf'>
+                  <a href='assets/academic/conferences/icasds-2025/documents/icasds-2025-paper-341-proceedings.pdf' target='_blank' rel='noopener noreferrer'><span class='conference-source-pdfmark'>PDF</span><span class='conference-source-copy'><small>Proceedings · Paper 341</small><strong>Programme & Abstract Book</strong><span>Paper ID 341 · p. 200</span></span></a>
+                </article>
+                <article class='conference-source-card source-pdf'>
+                  <a href='assets/academic/conferences/icasds-2025/documents/icasds-2025-poster-341.pdf' target='_blank' rel='noopener noreferrer'><span class='conference-source-pdfmark'>PDF</span><span class='conference-source-copy'><small>Poster · Paper 341</small><strong>Conference Poster</strong><span>Diabetic-retinopathy grading study</span></span></a>
+                </article>
+                <article class='conference-source-card source-pdf'>
+                  <a href='assets/academic/conferences/icasds-2025/documents/icasds-2025-paper-315-proceedings.pdf' target='_blank' rel='noopener noreferrer'><span class='conference-source-pdfmark'>PDF</span><span class='conference-source-copy'><small>Proceedings · Paper 315</small><strong>Programme & Abstract Book</strong><span>Paper ID 315 · p. 199</span></span></a>
+                </article>
+                <article class='conference-source-card source-pdf'>
+                  <a href='assets/academic/conferences/icasds-2025/documents/icasds-2025-poster-315.pdf' target='_blank' rel='noopener noreferrer'><span class='conference-source-pdfmark'>PDF</span><span class='conference-source-copy'><small>Poster · Paper 315</small><strong>Conference Poster</strong><span>Diabetes-mellitus grading study</span></span></a>
+                </article>
+              </div>
+              <div class='conference-source-actions'><a class='btn small ghost' href='gallery.html#jsr-award-icasds-2025-evidence'>View JSR awardees-list evidence →</a></div>
+            </section>`:''}
             ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAST 2025 source documents">
               <div class="conference-source-hub-head">
                 <div><div class="section-kicker">Source documents</div><h4>ICRAST 2025 evidence library</h4><p>Paper 440 and Paper 461 remain separate records, with the exact certificate, brochure, proceedings and presentation files linked below.</p></div>
