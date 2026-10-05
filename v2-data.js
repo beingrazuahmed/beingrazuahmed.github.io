@@ -227,8 +227,8 @@
           event: 'International Conference on Emerging Frontiers in Advanced Sciences and Technologies 2026 (EFAST 2026)',
           venue: 'Pabna University of Science and Technology · 27–28 June 2026 · Conference Proceedings · ISBN 978-984-37-0635-5',
           items: [
-            'Mauya, J., Ahmed, M. R., Ruhi, S., & Reza, M. S. (2026). A Multi-Scale Attention-Based Dense Residual Network for Sugarcane Leaf Disease Detection Using BSRI Data · p. 172',
-            'Islam, M. O., Ahmed, M. R., & Ruhi, S. (2026). Socioeconomic Determinants of Cesarean Section Delivery in Bangladesh: A Survey-Weighted Statistical and Explainable Machine Learning Analysis · p. 298'
+            'Mauya, J., Ahmed, M. R., Ruhi, S., & Reza, M. S. (2026). A Multi-Scale Attention-Based Dense Residual Network for Sugarcane Leaf Disease Detection Using BSRI Data · p. 172 · Paper ID 107.',
+            'Islam, M. O., Ahmed, M. R., & Ruhi, S. (2026). Socioeconomic Determinants of Cesarean Section Delivery in Bangladesh: A Survey-Weighted Statistical and Explainable Machine Learning Analysis · p. 298 · Paper ID 238.'
           ]
         }
       ],
