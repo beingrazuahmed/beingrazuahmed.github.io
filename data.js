@@ -223,12 +223,74 @@ window.PORTFOLIO_DATA = {
   conferences: [
     {
       id: "efast-2026", event: "EFAST 2026", full: "International Conference on Emerging Frontiers in Advanced Sciences and Technologies 2026",
-      host: "Pabna University of Science and Technology, Pabna, Bangladesh", date: "27–28 June 2026", meta: "Conference Proceedings · ISBN 978-984-37-0635-5",
+      host: "Pabna University of Science and Technology (PUST), Bangladesh · Universiti Malaysia Perlis (UniMAP), Malaysia",
+      organizer: "Faculty of Science, and Life & Earth Science, Pabna University of Science and Technology · Centre of Excellence for Advance Computing, Universiti Malaysia Perlis (UniMAP)",
+      venue: "Pabna University of Science and Technology, Pabna, Bangladesh",
+      date: "27–28 June 2026",
+      meta: "Conference Proceedings · ISBN 978-984-37-0635-5",
+      eventLogo: "assets/academic/conferences/efast-2026/logos/efast-2026-logo.jpeg",
+      hostLogo: "assets/academic/education/pust-logo.png",
+      partnerLogo: "assets/academic/conferences/efast-2026/logos/unimap-logo.png",
+      flyerAsset: "assets/academic/conferences/efast-2026/media/efast-2026-flyer.jpeg",
+      flyerUrl: "assets/academic/conferences/efast-2026/media/efast-2026-flyer.jpeg",
+      flyerLabel: "EFAST 2026 conference flyer",
+      coverHref: "assets/academic/conferences/efast-2026/media/efast-2026-cover.pdf",
       papers: [
-        { paperId: "108", title: "Automated Five-Stage Diabetic Retinopathy Grading Using a Leak-Safe and Explainable Deep-Handcrafted Fusion Framework", authors: "Md. Razu Ahmed, Jannatul Mauya, Md. Shamim Reza", page: "p. 173", role: "Oral Presentation · Presenting Author", evidence: [{ type:"Certificate", label:"Oral Presentation Certificate", asset:"assets/academic/conferences/efast-2026-paper-108-oral-presentation-certificate.jpg", href:"assets/academic/conferences/efast-2026-paper-108-oral-presentation-certificate.jpg", note:"Md. Razu Ahmed · Presenting Author · Paper ID 108 · EFAST 2026", galleryHref:"gallery.html#efast-2026-paper-108-oral-certificate", verified:true, sourceFile:"EFAST 2026 (Paper ID-108) Certificate(1).jpg" }] },
-        { title: "A Multi-Scale Attention-Based Dense Residual Network for Sugarcane Leaf Disease Detection Using BSRI Data", authors: "Jannatul Mauya, Md. Razu Ahmed, Sabba Ruhi, Md. Shamim Reza", page: "p. 172", role: "Co-author" },
-        { title: "Comparative Analysis of Missing Value Imputation Methods with a Hybrid Approach for HCV Prediction Using Machine Learning", authors: "Farzana Mehedi Moly, Md. Razu Ahmed, Jannatul Mauya, Md. Shamim Reza", page: "p. 174", role: "Co-author" },
-        { title: "Socioeconomic Determinants of Cesarean Section Delivery in Bangladesh: A Survey-Weighted Statistical and Explainable Machine Learning Analysis", authors: "Md. Obaidul Islam, Md. Razu Ahmed, Sabba Ruhi", page: "p. 298", role: "Co-author · Public conference contribution" }
+        {
+          paperId: "108",
+          title: "Automated Five-Stage Diabetic Retinopathy Grading Using a Leak-Safe and Explainable Deep-Handcrafted Fusion Framework",
+          authors: "Md. Razu Ahmed, Jannatul Mauya, Md. Shamim Reza",
+          page: "p. 173",
+          presentation: "Oral Presentation",
+          role: "Oral Presentation · Presenting Author",
+          presentedBy: "Md. Razu Ahmed",
+          citation: "Ahmed, M. R., Mauya, J., & Reza, M. S. (2026). Automated five-stage diabetic retinopathy grading using a leak-safe and explainable deep-handcrafted fusion framework. In Conference Proceedings, International Conference on Emerging Frontiers in Advanced Sciences and Technologies 2026 (EFAST 2026) (p. 173). Pabna University of Science and Technology.",
+          citationIEEE: "M. R. Ahmed, J. Mauya, and M. S. Reza, “Automated Five-Stage Diabetic Retinopathy Grading Using a Leak-Safe and Explainable Deep-Handcrafted Fusion Framework,” in Conference Proceedings, International Conference on Emerging Frontiers in Advanced Sciences and Technologies 2026 (EFAST 2026), Pabna, Bangladesh, Jun. 27–28, 2026, p. 173.",
+          evidence: [
+            { type:"Certificate", label:"Oral Presentation Certificate", asset:"assets/academic/conferences/efast-2026-paper-108-oral-presentation-certificate.jpg", href:"assets/academic/conferences/efast-2026-paper-108-oral-presentation-certificate.jpg", note:"Md. Razu Ahmed · Presenting Author · Paper ID 108 · EFAST 2026", galleryHref:"gallery.html#efast-2026-paper-108-oral-certificate", verified:true, sourceFile:"EFAST 2026 (Paper ID-108) Certificate(1).jpg" },
+            { type:"Presentation", label:"Presentation Deck · Paper 108", href:"assets/academic/conferences/efast-2026/presentations/efast-2026-paper-108-presentation.pdf", note:"Paper ID 108 · EFAST 2026 presentation deck", format:"PDF", sourceFile:"efast-2026-paper-108-presentation.pdf" },
+            { type:"Proceedings", label:"Conference Proceedings · Paper 108", href:"assets/academic/conferences/efast-2026/proceedings/efast-2026-paper-108-proceedings.pdf", note:"Paper ID 108 · p. 173 · EFAST 2026", format:"PDF", sourceFile:"efast-2026-paper-108-proceedings.pdf" }
+          ]
+        },
+        {
+          paperId: "107",
+          title: "A Multi-Scale Attention-Based Dense Residual Network for Sugarcane Leaf Disease Detection Using BSRI Data",
+          authors: "Jannatul Mauya, Md. Razu Ahmed, Sabba Ruhi, Md. Shamim Reza",
+          page: "p. 172",
+          role: "Co-author",
+          citation: "Mauya, J., Ahmed, M. R., Ruhi, S., & Reza, M. S. (2026). A multi-scale attention-based dense residual network for sugarcane leaf disease detection using BSRI data. In Conference Proceedings, International Conference on Emerging Frontiers in Advanced Sciences and Technologies 2026 (EFAST 2026) (p. 172). Pabna University of Science and Technology.",
+          citationIEEE: "J. Mauya, M. R. Ahmed, S. Ruhi, and M. S. Reza, “A Multi-Scale Attention-Based Dense Residual Network for Sugarcane Leaf Disease Detection Using BSRI Data,” in Conference Proceedings, International Conference on Emerging Frontiers in Advanced Sciences and Technologies 2026 (EFAST 2026), Pabna, Bangladesh, Jun. 27–28, 2026, p. 172.",
+          evidence: [
+            { type:"Presentation", label:"Presentation Deck · Paper 107", href:"assets/academic/conferences/efast-2026/presentations/efast-2026-paper-107-presentation.pdf", note:"Paper ID 107 · EFAST 2026 presentation deck", format:"PDF", sourceFile:"efast-2026-paper-107-presentation.pdf" },
+            { type:"Proceedings", label:"Conference Proceedings · Paper 107", href:"assets/academic/conferences/efast-2026/proceedings/efast-2026-paper-107-proceedings.pdf", note:"Paper ID 107 · p. 172 · EFAST 2026", format:"PDF", sourceFile:"efast-2026-paper-107-proceedings.pdf" }
+          ]
+        },
+        {
+          paperId: "115",
+          title: "Comparative Analysis of Missing Value Imputation Methods with a Hybrid Approach for HCV Prediction Using Machine Learning",
+          authors: "Farzana Mehedi Moly, Md. Razu Ahmed, Jannatul Mauya, Md. Shamim Reza",
+          page: "p. 174",
+          role: "Co-author",
+          citation: "Moly, F. M., Ahmed, M. R., Mauya, J., & Reza, M. S. (2026). Comparative analysis of missing value imputation methods with a hybrid approach for HCV prediction using machine learning. In Conference Proceedings, International Conference on Emerging Frontiers in Advanced Sciences and Technologies 2026 (EFAST 2026) (p. 174). Pabna University of Science and Technology.",
+          citationIEEE: "F. M. Moly, M. R. Ahmed, J. Mauya, and M. S. Reza, “Comparative Analysis of Missing Value Imputation Methods with a Hybrid Approach for HCV Prediction Using Machine Learning,” in Conference Proceedings, International Conference on Emerging Frontiers in Advanced Sciences and Technologies 2026 (EFAST 2026), Pabna, Bangladesh, Jun. 27–28, 2026, p. 174.",
+          evidence: [
+            { type:"Presentation", label:"Presentation Deck · Paper 115", href:"assets/academic/conferences/efast-2026/presentations/efast-2026-paper-115-presentation.pdf", note:"Paper ID 115 · EFAST 2026 presentation deck", format:"PDF", sourceFile:"efast-2026-paper-115-presentation.pdf" },
+            { type:"Proceedings", label:"Conference Proceedings · Paper 115", href:"assets/academic/conferences/efast-2026/proceedings/efast-2026-paper-115-proceedings.pdf", note:"Paper ID 115 · p. 174 · EFAST 2026", format:"PDF", sourceFile:"efast-2026-paper-115-proceedings.pdf" }
+          ]
+        },
+        {
+          paperId: "238",
+          title: "Socioeconomic Determinants of Cesarean Section Delivery in Bangladesh: A Survey-Weighted Statistical and Explainable Machine Learning Analysis",
+          authors: "Md. Obaidul Islam, Md. Razu Ahmed, Sabba Ruhi",
+          page: "p. 298",
+          role: "Co-author · Public conference contribution",
+          citation: "Islam, M. O., Ahmed, M. R., & Ruhi, S. (2026). Socioeconomic determinants of cesarean section delivery in Bangladesh: A survey-weighted statistical and explainable machine learning analysis. In Conference Proceedings, International Conference on Emerging Frontiers in Advanced Sciences and Technologies 2026 (EFAST 2026) (p. 298). Pabna University of Science and Technology.",
+          citationIEEE: "M. O. Islam, M. R. Ahmed, and S. Ruhi, “Socioeconomic Determinants of Cesarean Section Delivery in Bangladesh: A Survey-Weighted Statistical and Explainable Machine Learning Analysis,” in Conference Proceedings, International Conference on Emerging Frontiers in Advanced Sciences and Technologies 2026 (EFAST 2026), Pabna, Bangladesh, Jun. 27–28, 2026, p. 298.",
+          evidence: [
+            { type:"Presentation", label:"Presentation Deck · Paper 238", href:"assets/academic/conferences/efast-2026/presentations/efast-2026-paper-238-presentation.pdf", note:"Paper ID 238 · EFAST 2026 presentation deck", format:"PDF", sourceFile:"efast-2026-paper-238-presentation.pdf" },
+            { type:"Proceedings", label:"Conference Proceedings · Paper 238", href:"assets/academic/conferences/efast-2026/proceedings/efast-2026-paper-238-proceedings.pdf", note:"Paper ID 238 · p. 298 · EFAST 2026", format:"PDF", sourceFile:"efast-2026-paper-238-proceedings.pdf" }
+          ]
+        }
       ]
     },
     {
@@ -554,6 +616,7 @@ window.PORTFOLIO_DATA = {
     { id: "icasds-2025-flyer", title: "ICASDS 2025 — Official Conference Flyer", category: "Conference", evidenceType: "Conference Document", date: "28–29 December 2025", issuer: "ICASDS 2025 · ISRT, University of Dhaka", caption: "Official conference flyer for the International Conference on Applied Statistics and Data Science 2025.", asset: "assets/academic/conferences/icasds-2025/media/icasds-2025-flyer.jpg", href: "assets/academic/conferences/icasds-2025/documents/icasds-2025-flyer.pdf", fileType: "PDF", related: "conferences.html#icasds-2025", verified: true, sourceFile: "icasds-2025-flyer.pdf" },
     { id: "hult-prize-oncampus-competitor-2025", title: "Hult Prize 2024–2025 OnCampus Program — Competitor Certificate", category: "Professional Development", evidenceType: "Certificate", date: "27 June 2025", issuer: "Hult Prize Foundation · Pabna University of Science and Technology", caption: "Certificate recognizing Md. Razu Ahmed’s participation as a Competitor in the 2024–2025 Hult Prize OnCampus Program at PUST.", asset: "assets/gallery/hult-prize-2024-2025-oncampus-competitor-certificate.webp", href: "assets/recognition/hult-prize-2024-2025-oncampus-competitor-certificate.pdf", fileType: "PDF", documentPages: 1, related: "profile.html", verified: true, sourceFile: "Md. Razu Ahmed HULT Certificate(1).pdf" },
     { id: "icrast-440-certificate-gallery", title: "ICRAST 2025 — Paper 440 Oral Presentation & Certificate of Achievement", category: "Conference", evidenceType: "Certificate", paperId: "440", date: "14–15 November 2025", issuer: "Faculty of Science, University of Rajshahi", caption: "Unified evidence for Md. Razu Ahmed’s oral presentation as Presenting Author of Paper ID 440, “Measuring Attitudes toward AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology,” together with the Certificate of Achievement issued at the 2nd ICRAST 2025.", asset: "assets/academic/conferences/icrast-2025/icrast-2025-paper-440-certificate.png", href: "assets/academic/conferences/icrast-2025/icrast-2025-paper-440-certificate.pdf", fileType: "PDF", documentPages: 1, related: "conferences.html#icrast-2025", verified: true, sourceFile: "icrast-2025-paper-440-certificate.pdf" },
+    { id: "efast-2026-flyer", title: "EFAST 2026 — Conference Flyer", category: "Conference", evidenceType: "Conference Document", date: "27–28 June 2026", issuer: "EFAST 2026 · Pabna University of Science and Technology · Universiti Malaysia Perlis", caption: "Official conference flyer for the International Conference on Emerging Frontiers in Advanced Sciences and Technologies 2026.", asset: "assets/academic/conferences/efast-2026/media/efast-2026-flyer.jpeg", href: "assets/academic/conferences/efast-2026/media/efast-2026-flyer.jpeg", fileType: "JPEG", documentPages: 1, related: "conferences.html#efast-2026", verified: true, sourceFile: "efast-2026-flyer.jpeg" },
     { id: "efast-2026-paper-108-oral-certificate", title: "EFAST 2026 — Paper 108 Oral Presentation Certificate", category: "Conference", evidenceType: "Certificate", paperId: "108", date: "27–28 June 2026", issuer: "EFAST 2026 · Pabna University of Science and Technology · Universiti Malaysia Perlis", caption: "Certificate recognizing Md. Razu Ahmed’s oral presentation of “Automated Five-Stage Diabetic Retinopathy Grading Using a Leak-Safe and Explainable Deep-Handcrafted Fusion Framework” at EFAST 2026.", asset: "assets/academic/conferences/efast-2026-paper-108-oral-presentation-certificate.jpg", href: "assets/academic/conferences/efast-2026-paper-108-oral-presentation-certificate.jpg", fileType: "JPG", documentPages: 1, related: "conferences.html#efast-2026", verified: true, sourceFile: "EFAST 2026 (Paper ID-108) Certificate(1).jpg" },
   ],
 
