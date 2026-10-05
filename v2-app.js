@@ -1586,9 +1586,27 @@
               </div>
               <div class='conference-source-actions'><a class='btn small ghost' href='gallery.html#jsr-award-icasds-2025-evidence'>View JSR awardees-list evidence →</a></div>
             </section>`:''}
-            ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAST 2025 source documents">
+                        ${g.id==='icrast-2025'?`<section class='icrast-presentation-showcase' aria-label='ICRAST 2025 presentation highlights'>
+              <div class='icrast-presentation-showcase-head'>
+                <div><div class='section-kicker'>Presentation highlight</div><h4>ICRAST 2025 Research Presentation</h4><p>Paper 440 is previewed directly from the uploaded presentation PDF, with its proceedings and certificate linked alongside the co-authored Paper 461 contribution.</p></div>
+                <span class='paper-id-chip'>2 conference contributions</span>
+              </div>
+              <div class='icrast-presentation-grid'>
+                <article class='icrast-presentation-card is-featured'>
+                  <div class='icrast-presentation-card-head'><div><span class='paper-id-chip'>Paper ID 440</span><span class='badge'>Oral Presentation</span><span class='badge'>Presenting Author</span></div><strong>Featured presentation</strong></div>
+                  <div class='icrast-presentation-frame-wrap'><object class='icrast-presentation-frame' data='assets/academic/conferences/icrast-2025-documents/icrast-2025-paper-440-presentation.pdf#page=1&view=FitH' type='application/pdf' aria-label='Preview of ICRAST 2025 Paper 440 presentation'><a href='assets/academic/conferences/icrast-2025-documents/icrast-2025-paper-440-presentation.pdf' target='_blank' rel='noopener noreferrer'>Open Paper 440 presentation PDF ↗</a></object></div>
+                  <div class='icrast-presentation-card-body'><h5>Measuring Attitudes toward AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology</h5><p><strong>Md. Razu Ahmed</strong>, Md. Abdur Rakib, Abu Bakar Shiddik, Md. Shamim Reza · p. 120</p><div class='icrast-presentation-actions'><a class='btn small' href='assets/academic/conferences/icrast-2025-documents/icrast-2025-paper-440-presentation.pdf' target='_blank' rel='noopener noreferrer'>Open Presentation ↗</a><a class='btn small ghost' href='assets/academic/conferences/icrast-2025-documents/icrast-2025-paper-440-proceedings.pdf' target='_blank' rel='noopener noreferrer'>Proceedings ↗</a><a class='btn small ghost' href='assets/academic/conferences/icrast-2025/icrast-2025-paper-440-certificate.pdf' target='_blank' rel='noopener noreferrer'>Certificate ↗</a></div></div>
+                </article>
+                <article class='icrast-presentation-card'>
+                  <div class='icrast-presentation-card-head'><div><span class='paper-id-chip'>Paper ID 461</span><span class='badge'>Oral Presentation</span><span class='badge'>Co-author</span></div><strong>Co-authored contribution</strong></div>
+                  <div class='icrast-presentation-frame-wrap'><object class='icrast-presentation-frame' data='assets/academic/conferences/icrast-2025-documents/icrast-2025-paper-461-proceedings.pdf#page=1&view=FitH' type='application/pdf' aria-label='Preview of ICRAST 2025 Paper 461 proceedings'><a href='assets/academic/conferences/icrast-2025-documents/icrast-2025-paper-461-proceedings.pdf' target='_blank' rel='noopener noreferrer'>Open Paper 461 proceedings PDF ↗</a></object></div>
+                  <div class='icrast-presentation-card-body'><h5>Facial Emotion Recognition with Dimensionality Reduction: A Comparative Study of PCA, FA, and Combined PCA–FA with a CNN Baseline</h5><p>Md. Abdur Rakib, <strong>Md. Razu Ahmed</strong>, Abu Bakar Shiddik, Md. Shamim Reza · p. 126 · Presented by Md. Abdur Rakib</p><div class='icrast-presentation-actions'><a class='btn small' href='assets/academic/conferences/icrast-2025-documents/icrast-2025-paper-461-proceedings.pdf' target='_blank' rel='noopener noreferrer'>Open Proceedings ↗</a><a class='btn small ghost' href='assets/academic/conferences/icrast-2025-brochure.jpg' target='_blank' rel='noopener noreferrer'>Conference Brochure ↗</a></div></div>
+                </article>
+              </div>
+            </section>`:''}
+${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAST 2025 source documents">
               <div class="conference-source-hub-head">
-                <div><div class="section-kicker">Source documents</div><h4>ICRAST 2025 evidence library</h4><p>Paper 440 and Paper 461 remain separate records, with the exact certificate, brochure, proceedings and presentation files linked below.</p></div>
+                <div><div class="section-kicker">Source documents</div><h4>ICRAST 2025 evidence library</h4><p>Paper 440 and Paper 461 remain separate verified records. The Paper 440 presentation deck is previewed above, while the certificate, brochure and paper-specific proceedings files are linked below.</p></div>
                 <span class="paper-id-chip">2 papers · 5 source records</span>
               </div>
               <div class="conference-source-grid">
