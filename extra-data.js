@@ -1,9 +1,9 @@
 window.PORTFOLIO_EXTRA = {
-  lastUpdated: "29 September 2026",
+  lastUpdated: "5 October 2026",
   impactMetrics: [
     { label: "Google Scholar citations", value: 2, source: "Google Scholar", date: "15 September 2026" },
     { label: "ResearchGate citations", value: 5, source: "ResearchGate", date: "15 September 2026" },
-    { label: "Research Interest Score", value: 9.8, source: "ResearchGate", date: "23 September 2026" },
+    { label: "Research Interest Score", value: 10.0, source: "ResearchGate", date: "5 October 2026" },
     { label: "h-index", value: 1, source: "Google Scholar / ResearchGate", date: "15 September 2026" },
     { label: "Usage", value: 184, source: "Mendeley Data", date: "23 September 2026" },
     { label: "Views", value: 106, source: "Mendeley Data", date: "23 September 2026" },
@@ -27,8 +27,8 @@ window.PORTFOLIO_EXTRA = {
     { title: "AgroLifecycle-Net: A Context-Aware Explainable AI Framework for Crop Disease Severity Estimation and Dynamic Intervention Timelines", status: "In Preparation", domain: "Agricultural AI", methods: "Context-aware explainable AI · disease severity estimation · dynamic intervention timelines", summary: "A context-aware explainable AI framework for estimating crop-disease severity and modelling dynamic intervention timelines.", note: "In preparation." },
     {"title": "A Comprehensive Review of Causal Inference: Philosophical Issues to Adversarial Deep Learning Issues", "status": "In Preparation", "domain": "Causal Inference", "methods": "Causal inference · adversarial deep learning · review methodology", "summary": "A collaborative review connecting the philosophical foundations of causal inference with modern adversarial deep-learning approaches.", "note": "In preparation with Dr. Md. Ashad Alam, Ruhul Amin and Jannatul Mauya.", "profileHref": "network-ashad-alam.html#collaboration"},
     { title: "Intergenerational Father–Son Health Study", status: "In Preparation", domain: "Public Health", methods: "Statistical and machine-learning analysis", note: "Dataset comprises 409 father–son dyad records; analysis plan is being refined." },
-    { title: "Heart Disease Causal Discovery and Machine Learning", status: "In Preparation", domain: "Biomedical Data Science", methods: "Causal discovery · machine learning", note: "Working title and detailed analysis plan remain provisional." },
-    { title: "Multiclass Diabetes Prediction", status: "In Preparation", domain: "Disease Prediction", methods: "Multiclass machine learning", note: "Planning-stage project; final title and modelling pipeline not yet frozen." },
+    { title: "BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction", status: "In Preparation to Submit", domain: "Biomedical Data Science", methods: "Bootstrap stability · consensus feature selection · multiple causal discovery algorithms · interpretable heart disease prediction", note: "In preparation to submit with Prof. Dr. Md. Shamim Reza, Prof. Dr. Sabba Ruhi, Prof. Dr. Md. Aminul Hoque and Jannatul Mauya." },
+    { title: "Prediabetes-Centered Multiclass Diabetes Classification in BRFSS 2023: An Integrated Explainable Machine Learning and Adjusted Association Analysis", status: "In Preparation", domain: "Disease Prediction", methods: "Multiclass classification · explainable machine learning · adjusted association analysis · BRFSS 2023", note: "In preparation." },
     { title: "Breast Cancer Prognosis and Survival Modelling", status: "In Preparation", domain: "Survival Analysis", methods: "Prognostic modelling · survival analysis", note: "Planning-stage project; final title and methods remain provisional." }
   ],
   evolution: [
