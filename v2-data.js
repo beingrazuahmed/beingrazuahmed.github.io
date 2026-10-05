@@ -2455,10 +2455,19 @@
       stack: ['PyTorch 2.10.0+cu128', 'CUDA 12.8', 'Ultralytics 8.4.152']
     },
     {
-      title: 'Classical tabular ML workflow',
-      context: 'Python-based predictive modelling and visualization',
-      system: 'Windows 11 · Python 3.12.4',
-      stack: ['NumPy 2.0.2', 'pandas 2.3.3', 'scikit-learn 1.8.0', 'XGBoost 3.2.0', 'Matplotlib 3.10.0']
+      title: 'BS-CCFS heart disease prediction',
+      context: 'Bootstrap-stable consensus feature selection across multiple causal discovery algorithms for interpretable heart disease prediction · fixed random seed 42 where applicable',
+      system: 'Kaggle Notebook · Python 3.12.13',
+      stack: [
+        'scikit-learn 1.6.1 · preprocessing, imputation, feature selection, modelling & evaluation',
+        'XGBoost 3.2.0 · gradient-boosting classification',
+        'LightGBM 4.6.0 · gradient-boosting classification',
+        'CatBoost 1.2.10 · gradient-boosting classification & SHAP-based interpretation',
+        'causal-learn 0.1.4.8 · PC & FCI causal discovery',
+        'NOTEARS 3.0 · continuous-optimization-based causal discovery',
+        'SHAP 0.51.0 · model interpretation',
+        'SciPy 1.16.3 · statistical testing'
+      ]
     },
     {
       title: 'Ordinal statistical modelling',
@@ -2885,7 +2894,7 @@
 
   window.MRA_V2 = {
     version: '3.0',
-    lastUpdated: '29 September 2026',
+    lastUpdated: '5 October 2026',
     brand: {
       monogram: 'MRA',
       name: 'Md. Razu Ahmed',
