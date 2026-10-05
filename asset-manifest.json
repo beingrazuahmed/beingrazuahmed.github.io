@@ -75,7 +75,20 @@
     "assets/academic/conferences/icasds-2025/documents/icasds-2025-poster-315.pdf",
     "assets/academic/conferences/icasds-2025/documents/icasds-2025-poster-341.pdf",
     "assets/academic/conferences/icasds-2025/logos/icasds-2025-logo.jpg",
-    "assets/academic/conferences/icasds-2025/logos/university-of-dhaka-logo-clean.svg"
+    "assets/academic/conferences/icasds-2025/logos/university-of-dhaka-logo-clean.svg",
+    "assets/academic/conferences/efast-2026/presentations/efast-2026-paper-107-presentation.pdf",
+    "assets/academic/conferences/efast-2026/presentations/efast-2026-paper-108-presentation.pdf",
+    "assets/academic/conferences/efast-2026/presentations/efast-2026-paper-115-presentation.pdf",
+    "assets/academic/conferences/efast-2026/presentations/efast-2026-paper-238-presentation.pdf",
+    "assets/academic/conferences/efast-2026/proceedings/efast-2026-paper-107-proceedings.pdf",
+    "assets/academic/conferences/efast-2026/proceedings/efast-2026-paper-108-proceedings.pdf",
+    "assets/academic/conferences/efast-2026/proceedings/efast-2026-paper-115-proceedings.pdf",
+    "assets/academic/conferences/efast-2026/proceedings/efast-2026-paper-238-proceedings.pdf",
+    "assets/academic/conferences/efast-2026/media/efast-2026-cover.pdf",
+    "assets/academic/conferences/efast-2026/media/efast-2026-flyer.jpeg",
+    "assets/academic/conferences/efast-2026/logos/efast-2026-logo.jpeg",
+    "assets/academic/conferences/efast-2026/logos/unimap-logo.png",
+    "assets/academic/education/pust-logo.png"
   ],
   "events": [
     "assets/gallery/global-nuclear-energy-public-discussion-flyer.webp",
@@ -156,7 +169,7 @@
   "writingToolLogos": [
     "assets/academic/logos/vendor/grammarly.svg"
   ],
-  "cacheVersion": "20261005-icasdsposters1",
+  "cacheVersion": "20261005-efast1",
   "academicEvidenceGallery": [
     "assets/gallery/originals/bsc-medium-of-instruction-english-pust-2024.jpg",
     "assets/gallery/originals/ms-medium-of-instruction-english-pust-2025.jpg"
