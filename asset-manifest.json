@@ -66,11 +66,12 @@
     "assets/academic/conferences/efast-2026-paper-108-oral-presentation-certificate.jpg",
     "assets/gallery/icasds-2025-poster-presentation-certificate.webp",
     "assets/gallery/icasds-2025-jsr-poster-award-certificate.webp",
-    "assets/academic/conferences/icrast-2025-paper-440-certificate.jpeg"
+    "assets/academic/conferences/icrast-2025/icrast-2025-paper-440-certificate.png"
   ],
   "events": [
     "assets/gallery/global-nuclear-energy-public-discussion-flyer.webp",
-    "assets/gallery/global-nuclear-energy-certificate.webp"
+    "assets/academic/workshops/rosatom/global-nuclear-energy-certificate.png",
+    "assets/academic/workshops/rosatom/global-nuclear-energy-certificate.pdf"
   ],
   "recognition": [
     "assets/recognition/"
@@ -114,7 +115,7 @@
     "assets/gallery/elsevier-research-design-certificate-2026.webp",
     "assets/gallery/nature-publication-ethics-certificate-2026.webp",
     "assets/gallery/nature-focus-on-peer-review-certificate-2026.webp",
-    "assets/gallery/sicip-it-support-service-certificate-2026.webp",
+    "assets/certificates/it-support-service/it-support-service-certificate.png",
     "assets/gallery/icasds-2025-jsr-poster-award-certificate.webp",
     "assets/gallery/icasds-2025-poster-presentation-certificate.webp",
     "assets/gallery/hult-prize-2024-2025-oncampus-competitor-certificate.webp",
@@ -128,10 +129,11 @@
     "assets/recognition/elsevier-research-design-certificate-2026.pdf",
     "assets/recognition/nature-publication-ethics-certificate-2026.pdf",
     "assets/recognition/nature-focus-on-peer-review-certificate-2026.pdf",
-    "assets/recognition/sicip-it-support-service-certificate-2026.pdf",
+    "assets/certificates/it-support-service/it-support-service-certificate.pdf",
     "assets/recognition/jsr-award-icasds-2025.pdf",
     "assets/academic/conferences/icasds-2025-poster-presentation-certificate.pdf",
-    "assets/recognition/hult-prize-2024-2025-oncampus-competitor-certificate.pdf"
+    "assets/recognition/hult-prize-2024-2025-oncampus-competitor-certificate.pdf",
+    "assets/recognition/physics-olympiad-2015/bangladesh-physics-olympiad-2015.pdf"
   ],
   "recognitionGallery": [
     "assets/gallery/originals/pusar-crest-2024-original.png",
@@ -139,12 +141,13 @@
     "assets/gallery/originals/hsc-outstanding-result-medal-2016-original.png",
     "assets/gallery/originals/rajshahi-college-class-xi-gpa5-crest-2015-original.png",
     "assets/gallery/originals/ssc-gpa5-crest-2014-original.png",
-    "assets/gallery/originals/jsc-gpa5-crest-2011-original.png"
+    "assets/gallery/originals/jsc-gpa5-crest-2011-original.png",
+    "assets/recognition/physics-olympiad-2015/bangladesh-physics-olympiad-2015.png"
   ],
   "writingToolLogos": [
     "assets/academic/logos/vendor/grammarly.svg"
   ],
-  "cacheVersion": "20260928-moi-scouts1",
+  "cacheVersion": "20261005-certmeta1",
   "academicEvidenceGallery": [
     "assets/gallery/originals/bsc-medium-of-instruction-english-pust-2024.jpg",
     "assets/gallery/originals/ms-medium-of-instruction-english-pust-2025.jpg"
@@ -159,6 +162,7 @@
     "assets/academic/conferences/icasds-2025/workshops/icasds-2025-workshop-iv-certificate-handover.jpg",
     "assets/academic/conferences/icasds-2025/logos/icasds-2025-logo.jpg",
     "assets/academic/conferences/icasds-2025/logos/university-of-dhaka-logo.jpeg",
-    "assets/academic/conferences/icasds-2025/logos/university-of-dhaka-logo-clean.svg"
+    "assets/academic/conferences/icasds-2025/logos/university-of-dhaka-logo-clean.svg",
+    "assets/academic/workshops/rosatom/global-nuclear-energy-certificate.png"
   ]
 }
