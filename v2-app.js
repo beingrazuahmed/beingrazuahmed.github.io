@@ -1456,9 +1456,9 @@
           <article><strong>${conferenceAwards}</strong><span>Conference award</span><small>JSR poster recognition</small></article>
         </div>
         <div class="conference-groups conference-groups-professional">
-          ${groups.map((g,gi)=>`<article class="card conference-group-card ${g.id==='icrast-2025'?'conference-group-featured':''}" id="${esc(g.id||'conference-'+gi)}"><span class="conference-record-number" aria-hidden="true">${String(gi+1).padStart(2,'0')}</span>
+          ${groups.map((g,gi)=>`<article class="card conference-group-card ${['icrast-2025','icasds-2025'].includes(g.id)?'conference-group-featured':''}" id="${esc(g.id||'conference-'+gi)}"><span class="conference-record-number" aria-hidden="true">${String(gi+1).padStart(2,'0')}</span>
             <div class="conference-group-head">
-              <div class="conference-group-identity">${g.id==='icrast-2025'?'<img class="conference-event-logo" src="assets/academic/conferences/icrast-2025-faculty-science-logo-original.jpeg?v=20260919-icrast-logo25" alt="Faculty of Science, University of Rajshahi logo" loading="eager" decoding="async">':`<span class="conference-event-monogram" aria-hidden="true">${esc((g.event||'CONF').replace(/\s+\d{4}$/,''))}</span>`}<div><div class="section-kicker">${esc(g.event||'Conference')}</div><h3>${esc(g.full||g.event||'')}</h3></div></div>
+              <div class="conference-group-identity">${g.id==='icasds-2025'?'<img class="conference-event-logo" src="assets/academic/conferences/icasds-2025/logos/icasds-2025-logo.jpg" alt="ICASDS 2025 logo" loading="eager" decoding="async"><img class="conference-brand-logo-exact" src="assets/academic/conferences/icasds-2025/logos/university-of-dhaka-logo-clean.svg" alt="University of Dhaka logo" loading="eager" decoding="async">':g.id==='icrast-2025'?'<img class="conference-event-logo" src="assets/academic/conferences/icrast-2025-faculty-science-logo-original.jpeg?v=20260919-icrast-logo25" alt="Faculty of Science, University of Rajshahi logo" loading="eager" decoding="async">':`<span class="conference-event-monogram" aria-hidden="true">${esc((g.event||'CONF').replace(/\s+\d{4}$/,''))}</span>`}<div><div class="section-kicker">${esc(g.event||'Conference')}</div><h3>${esc(g.full||g.event||'')}</h3></div></div>
               <div class="conference-group-actions">
                 ${g.url?`<a class="btn small" href="${esc(g.url)}" target="_blank" rel="noopener noreferrer">Official homepage ↗</a>`:''}
                 ${g.flyerUrl?`<a class="btn small ghost" href="${esc(g.flyerUrl)}" target="_blank" rel="noopener noreferrer">Official flyer / CFP ↗</a>`:''}
@@ -1471,7 +1471,7 @@
               <span><strong>Record</strong>${esc(g.meta||'')}</span>
             </div>
             <div class="conference-paper-list">
-              ${(g.papers||g.items||[]).map(p=>`<article class="conference-paper-item ${p.paperId==='440'?'is-presented-paper':''}">
+              ${(g.papers||g.items||[]).map(p=>`<article class="conference-paper-item ${['440','341'].includes(String(p.paperId||''))?'is-presented-paper':''}">
                 <div class="conference-paper-meta">
                   ${p.paperId?`<span class="paper-id-chip">Paper ID ${esc(p.paperId)}</span>`:''}
                   ${p.presentation?`<span class="badge">${esc(p.presentation)}</span>`:''}
