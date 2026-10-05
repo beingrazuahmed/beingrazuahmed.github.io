@@ -2574,6 +2574,7 @@
       ],
       platforms: [
         { name: 'ChatGPT', short: 'ChatGPT', brand: 'openai' },
+        { name: 'Meta AI', short: 'Meta AI', brand: 'meta-ai' },
         { name: 'Claude', short: 'Claude', brand: 'anthropic' },
         { name: 'Gemini', short: 'Gemini', brand: 'googlegemini' },
         { name: 'DeepSeek', short: 'DeepSeek', brand: 'deepseek' },
@@ -2644,7 +2645,7 @@
           citation: 'Ahmed, M. R., Rakib, M. A., Shiddik, A. B., & Reza, M. S. (2025). Measuring attitudes toward AI’s impact on the job market in Bangladesh: A study at Pabna University of Science and Technology. In Book of Abstracts, 2nd International Conference on Recent Advances in Science and Technology (ICRAST 2025) (p. 120). Faculty of Science, University of Rajshahi.',
           citationIEEE: 'M. R. Ahmed, M. A. Rakib, A. B. Shiddik, and M. S. Reza, “Measuring Attitudes toward AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology,” in Book of Abstracts, 2nd International Conference on Recent Advances in Science and Technology (ICRAST 2025), Rajshahi, Bangladesh, Nov. 14–15, 2025, p. 120.',
           evidence: [
-            { type:'certificate', label:'Certificate of Achievement', asset:'assets/academic/conferences/icrast-2025-paper-440-certificate.jpeg', href:'assets/academic/conferences/icrast-2025-paper-440-certificate.jpeg', note:'Md. Razu Ahmed · Paper ID 440 · ICRAST 2025', galleryHref:'gallery.html#icrast-440-certificate-gallery', verified:true, sourceFile:'ICRAST Paper ID-440 Certificate(2).jpeg' },
+            { type:'certificate', label:'Certificate of Achievement', asset:'assets/academic/conferences/icrast-2025/icrast-2025-paper-440-certificate.png', href:'assets/academic/conferences/icrast-2025/icrast-2025-paper-440-certificate.pdf', note:'Md. Razu Ahmed · Paper ID 440 · ICRAST 2025', galleryHref:'gallery.html#icrast-440-certificate-gallery', format:'PDF', verified:true, sourceFile:'icrast-2025-paper-440-certificate.pdf' },
             { type:'proceedings', label:'Book of Abstracts · Paper 440', href:'assets/academic/conferences/icrast-2025-documents/icrast-2025-paper-440-proceedings.pdf', note:'Paper ID 440 · p. 120 · Book of Abstracts', format:'PDF', sourceFile:'Paper ID 440 proceedings icrast.pdf' },
             { type:'slides', label:'Presentation deck · Paper 440', href:'assets/academic/conferences/icrast-2025-documents/icrast-2025-paper-440-presentation.pdf', note:'Paper ID 440 · Md. Razu Ahmed (presenting) · 14 November 2025', format:'PDF', sourceFile:'Paper ID 440 - ICRAST 2025 slide.pdf' },
             { type:'brochure', label:'Conference brochure', asset:'assets/academic/conferences/icrast-2025-brochure.jpg', href:'assets/academic/conferences/icrast-2025-brochure.jpg', officialHref:'https://www.ru.ac.bd/wp-content/uploads/2025/08/CFP.pdf', note:'2nd ICRAST 2025 · Faculty of Science, University of Rajshahi', sourceFile:'icrast brocher.jpg' }
