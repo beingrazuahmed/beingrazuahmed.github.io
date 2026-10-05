@@ -67,7 +67,15 @@
     "assets/gallery/icasds-2025-poster-presentation-certificate.webp",
     "assets/gallery/icasds-2025-jsr-poster-award-certificate.webp",
     "assets/academic/conferences/icrast-2025/icrast-2025-paper-440-certificate.png",
-    "assets/academic/conferences/icrast-2025/icrast-2025-paper-440-certificate.pdf"
+    "assets/academic/conferences/icrast-2025/icrast-2025-paper-440-certificate.pdf",
+    "assets/academic/conferences/icasds-2025/media/icasds-2025-flyer.jpg",
+    "assets/academic/conferences/icasds-2025/documents/icasds-2025-flyer.pdf",
+    "assets/academic/conferences/icasds-2025/documents/icasds-2025-paper-315-proceedings.pdf",
+    "assets/academic/conferences/icasds-2025/documents/icasds-2025-paper-341-proceedings.pdf",
+    "assets/academic/conferences/icasds-2025/documents/icasds-2025-poster-315.pdf",
+    "assets/academic/conferences/icasds-2025/documents/icasds-2025-poster-341.pdf",
+    "assets/academic/conferences/icasds-2025/logos/icasds-2025-logo.jpg",
+    "assets/academic/conferences/icasds-2025/logos/university-of-dhaka-logo-clean.svg"
   ],
   "events": [
     "assets/gallery/global-nuclear-energy-public-discussion-flyer.webp",
@@ -148,7 +156,7 @@
   "writingToolLogos": [
     "assets/academic/logos/vendor/grammarly.svg"
   ],
-  "cacheVersion": "20261005-researchupdate1",
+  "cacheVersion": "20261005-icasds1",
   "academicEvidenceGallery": [
     "assets/gallery/originals/bsc-medium-of-instruction-english-pust-2024.jpg",
     "assets/gallery/originals/ms-medium-of-instruction-english-pust-2025.jpg"
