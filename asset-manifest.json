@@ -88,7 +88,12 @@
     "assets/academic/conferences/efast-2026/media/efast-2026-flyer.jpeg",
     "assets/academic/conferences/efast-2026/logos/efast-2026-logo.jpeg",
     "assets/academic/conferences/efast-2026/logos/unimap-logo.png",
-    "assets/academic/education/pust-logo.png"
+    "assets/academic/education/pust-logo.png",
+    "assets/academic/conferences/icrast-2025-brochure.jpg",
+    "assets/academic/conferences/icrast-2025-faculty-science-logo-original.jpeg",
+    "assets/academic/conferences/icrast-2025-documents/icrast-2025-paper-440-presentation.pdf",
+    "assets/academic/conferences/icrast-2025-documents/icrast-2025-paper-440-proceedings.pdf",
+    "assets/academic/conferences/icrast-2025-documents/icrast-2025-paper-461-proceedings.pdf"
   ],
   "events": [
     "assets/gallery/global-nuclear-energy-public-discussion-flyer.webp",
@@ -169,7 +174,7 @@
   "writingToolLogos": [
     "assets/academic/logos/vendor/grammarly.svg"
   ],
-  "cacheVersion": "20261005-efast1",
+  "cacheVersion": "20261005-icrast2",
   "academicEvidenceGallery": [
     "assets/gallery/originals/bsc-medium-of-instruction-english-pust-2024.jpg",
     "assets/gallery/originals/ms-medium-of-instruction-english-pust-2025.jpg"
