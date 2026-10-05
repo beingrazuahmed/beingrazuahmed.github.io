@@ -415,6 +415,7 @@
       'microsoft office':'assets/academic/logos/vendor/microsoft365.svg',
       'google workspace':'assets/academic/logos/vendor/google-g.svg',
       'chatgpt':'assets/academic/logos/vendor/chatgpt.png',
+      'meta ai':'https://meta.ai/images/meta-ai-orbit-logo-gradient-3d_light.svg',
       'claude':'assets/academic/logos/vendor/claude.png',
       'gemini':'assets/academic/logos/vendor/gemini.svg',
       'deepseek':'assets/academic/logos/vendor/deepseek.png',
@@ -1015,7 +1016,7 @@
         <div class="academic-progression-line" aria-label="Academic research progression"><span>Field Survey</span><i aria-hidden="true">→</i><span>ICRAST Presentation</span><i aria-hidden="true">→</i><span>Journal Article</span></div>
         <div class="field-survey-conference-actions">
           <a class="btn small" href="conferences.html?v=20260919-logosvg17#icrast-2025">View Full Conference Profile</a>
-          <a class="btn small ghost academic-certificate-link" href="assets/academic/conferences/icrast-2025-paper-440-certificate.jpeg" target="_blank" rel="noopener noreferrer">Certificate ↗</a>
+          <a class="btn small ghost academic-certificate-link" href="assets/academic/conferences/icrast-2025/icrast-2025-paper-440-certificate.pdf" target="_blank" rel="noopener noreferrer">Certificate PDF ↗</a>
           <a class="btn small ghost" href="assets/academic/conferences/icrast-2025-documents/icrast-2025-paper-440-proceedings.pdf" target="_blank" rel="noopener noreferrer">Proceedings PDF ↗</a>
           <a class="btn small ghost" href="assets/academic/conferences/icrast-2025-documents/icrast-2025-paper-440-presentation.pdf" target="_blank" rel="noopener noreferrer">Presentation PDF ↗</a>
         </div>
@@ -1496,7 +1497,7 @@
               <div class="conference-source-grid">
                 <article class="conference-source-card source-visual source-certificate is-verified-document">
                   ${verifiedCornerRibbon()}
-                  <a href="assets/academic/conferences/icrast-2025-paper-440-certificate.jpeg" target="_blank" rel="noopener noreferrer" aria-label="Open verified ICRAST 2025 Paper 440 certificate"><span class="conference-source-preview"><img src="assets/academic/conferences/icrast-2025-paper-440-certificate.jpeg" alt="ICRAST 2025 Paper 440 certificate" loading="lazy" decoding="async"></span><span class="conference-source-copy"><small>Certificate · Paper 440</small><strong>Certificate of Achievement</strong><span>Md. Razu Ahmed · Presenting Author</span></span></a>
+                  <a href="assets/academic/conferences/icrast-2025/icrast-2025-paper-440-certificate.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open verified ICRAST 2025 Paper 440 certificate PDF"><span class="conference-source-preview"><img src="assets/academic/conferences/icrast-2025/icrast-2025-paper-440-certificate.png" alt="ICRAST 2025 Paper 440 certificate" loading="lazy" decoding="async"></span><span class="conference-source-copy"><small>Certificate · Paper 440</small><strong>Certificate of Achievement</strong><span>Md. Razu Ahmed · Presenting Author</span></span></a>
                 </article>
                 <article class="conference-source-card source-pdf">
                   <a href="assets/academic/conferences/icrast-2025-documents/icrast-2025-paper-440-proceedings.pdf" target="_blank" rel="noopener noreferrer"><span class="conference-source-pdfmark">PDF</span><span class="conference-source-copy"><small>Proceedings · Paper 440</small><strong>Book of Abstracts</strong><span>Paper ID 440 · p. 120</span></span></a>
