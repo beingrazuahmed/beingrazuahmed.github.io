@@ -3029,7 +3029,7 @@
         endDate: '2026-07-03',
         title: 'Research Assistant',
         organization: 'International Research Collaboration Bangladesh (IRCB)',
-        logo: 'assets/academic/organizations/ircb-logo.svg',
+        logo: 'assets/academic/organizations/ircb-logo.png',
         description: 'Supported collaborative research activities across project coordination, stakeholder engagement, methodological planning, research data management, and manuscript preparation.',
         responsibilityLabels: [
           "Project Coordination & Delivery",
