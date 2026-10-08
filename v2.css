@@ -12152,3 +12152,27 @@ body.mobile-nav-open{overflow:hidden}
 @media (max-width:760px){
   .mobile-panel{inset:68px 10px 10px!important;max-height:calc(100dvh - 78px);border-radius:18px;padding:12px}
 }
+
+
+/* === Conference Google Drive proceedings link (2026-10-08) === */
+.conference-drive-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  white-space:normal;
+}
+.conference-drive-logo{
+  width:19px;
+  height:17px;
+  flex:0 0 auto;
+}
+.conference-drive-link>span:last-child{
+  margin-left:1px;
+  font-weight:900;
+}
+@media (max-width:760px){
+  .conference-group-actions .conference-drive-link{
+    width:100%;
+    justify-content:flex-start;
+  }
+}
