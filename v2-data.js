@@ -3024,7 +3024,9 @@
       },
       {
         id: 'ircb-research-assistant',
-        period: 'April 2026 – July 2026',
+        period: '20 April 2026 – 3 July 2026',
+        startDate: '2026-04-20',
+        endDate: '2026-07-03',
         title: 'Research Assistant',
         organization: 'International Research Collaboration Bangladesh (IRCB)',
         logo: 'assets/academic/organizations/ircb-logo.svg',
