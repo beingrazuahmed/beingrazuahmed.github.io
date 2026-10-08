@@ -2982,7 +2982,50 @@
           tags: ['Research meetings','Methodological feedback','Scientific writing','Publication ethics','Submission readiness']
         }
       ],
-      workflow: ['Formulate','Synthesize','Design','Prepare','Model & validate','Interpret','Communicate','Refine & submit'],
+      workflow: [
+        {
+          id: 'problem-framing',
+          icon: 'target',
+          title: 'Problem Framing',
+          description: 'Define the research question, objectives, scope and feasible contribution.',
+          outcome: 'Focused research direction'
+        },
+        {
+          id: 'evidence-review',
+          icon: 'book',
+          title: 'Evidence & Literature',
+          description: 'Synthesize prior studies, map research gaps and build an evidence-informed rationale.',
+          outcome: 'Critical literature foundation'
+        },
+        {
+          id: 'study-design',
+          icon: 'blueprint',
+          title: 'Study Design',
+          description: 'Refine variables, sampling decisions, analytical strategy and reproducibility plans.',
+          outcome: 'Defensible methodological plan'
+        },
+        {
+          id: 'data-analysis',
+          icon: 'chart',
+          title: 'Data & Modelling',
+          description: 'Support data preparation, statistical or AI modelling, validation and diagnostic checks.',
+          outcome: 'Transparent analytical workflow'
+        },
+        {
+          id: 'scientific-writing',
+          icon: 'document',
+          title: 'Interpretation & Writing',
+          description: 'Strengthen interpretation, scientific narratives, figures, tables and manuscripts.',
+          outcome: 'Clear scientific communication'
+        },
+        {
+          id: 'submission-readiness',
+          icon: 'check',
+          title: 'Review & Submission',
+          description: 'Refine ethics reporting, presentation, journal fit, supplements and reviewer responses.',
+          outcome: 'Submission-ready materials'
+        }
+      ],
       principles: [
         'Support thinking and methodological independence rather than replacing the researcher’s own scholarly judgment.',
         'Keep analytical decisions transparent, reproducible and aligned with the research question.',
