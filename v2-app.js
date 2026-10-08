@@ -1435,7 +1435,7 @@
       <section class="section mentorship-people-section"><div class="container">
         ${sectionHead('Junior research network','Collaborators connected to this support role','Selected junior researchers and early-career collaborators are shown here with links to their full academic-network profiles.')}
         <div class="grid grid-3 mentorship-people-grid">${juniors.map(personCard).join('')}</div>
-        <div class="section-action"><a class="section-text-link" href="network.html#junior-collaborators-mentees">Explore the full research network ↗</a></div>
+        <div class="section-action"><a class="section-text-link" href="network.html">Explore the full research network ↗</a></div>
       </div></section>`;
   }
 
