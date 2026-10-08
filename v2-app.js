@@ -2355,7 +2355,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
           <a href="publications.html">Publications <span aria-hidden="true">↗</span></a>
           <a href="cv.html">Academic CV <span aria-hidden="true">↗</span></a>
         </nav>
-        <div class="contact-intro-meta"><span class="contact-location-meta">${lineIcon('location')} BASED IN BANGLADESH</span><span aria-hidden="true" class="contact-meta-separator"></span><span>RESEARCH-FOCUSED ENQUIRIES</span></div>
+        <div class="contact-intro-meta"><span class="contact-location-meta">${lineIcon('location')} DHAKA, BANGLADESH</span><span aria-hidden="true" class="contact-meta-separator"></span><span>RESEARCH-FOCUSED ENQUIRIES</span></div>
       </div>
       <aside class="contact-direct-card" aria-label="Direct academic contact">
         <div class="contact-direct-card-top"><span>DIRECT CONTACT</span><span class="contact-direct-identity">ACADEMIC ENQUIRIES</span></div>
