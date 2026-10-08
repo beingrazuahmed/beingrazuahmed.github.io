@@ -237,6 +237,8 @@ window.PORTFOLIO_DATA = {
       coverHref: "assets/academic/conferences/efast-2026/media/efast-2026-cover.pdf",
       proceedingsEbookUrl: "https://drive.google.com/file/d/1wyWax-P-MAePa4C5xI1YTfXSEDtRDJ4_/view",
       proceedingsEbookLabel: "E-Book of EFAST Conference Proceedings",
+      handoverPhoto: "assets/academic/conferences/efast-2026/media/efast-2026-certificate-handover-group-photo.jpg",
+      handoverPhotoLabel: "Certificate Handover Group Photo",
       papers: [
         {
           paperId: "108",
