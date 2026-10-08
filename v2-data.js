@@ -2917,7 +2917,7 @@
 
   window.MRA_V2 = {
     version: '3.0',
-    lastUpdated: '5 October 2026',
+    lastUpdated: '8 October 2026',
     brand: {
       monogram: 'MRA',
       name: 'Md. Razu Ahmed',
@@ -2963,7 +2963,25 @@
     education,
     academicProjects: coursework.projects || [],
     instructorLinks: coursework.instructorLinks || [],
-    experience: base.experience || [],
+    experience: [
+      {
+        id: 'ircb-research-assistant',
+        period: 'April 2026 – July 2026',
+        title: 'Research Assistant',
+        organization: 'International Research Collaboration Bangladesh (IRCB)',
+        logo: 'assets/academic/organizations/ircb-logo.svg',
+        description: 'Research coordination, stakeholder communication, study planning, data management and manuscript development in collaborative research projects.',
+        responsibilities: [
+        "Coordinate collaborative research projects through work planning, task allocation, progress monitoring, documentation, and follow-up on agreed deliverables.",
+        "Liaise with clients, research collaborators, and project stakeholders to clarify requirements, communicate progress, and maintain effective professional relationships.",
+        "Participate in research meetings and methodological discussions to refine study objectives, analytical strategies, timelines, and implementation plans.",
+        "Support the supervision and coordination of research activities, including data preparation, analytical procedures, documentation, and completion of assigned project tasks.",
+        "Contribute to manuscript development through literature synthesis, methodological writing, results presentation, revision, and submission preparation.",
+        "Manage research data through collection, cleaning, organization, validation, documentation, and maintenance of project files and analytical outputs."
+]
+      },
+      ...(base.experience || []).filter(x => x.id !== 'ircb-research-assistant')
+    ],
     mentorshipSupport: {
       title: 'Research Mentorship & Collaborative Support',
       roleType: 'Collaborative research support role',
