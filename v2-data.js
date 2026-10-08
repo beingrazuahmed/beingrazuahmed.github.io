@@ -3000,9 +3000,9 @@
         "logo": "assets/academic/education/pust-logo.png",
         "logoKind": "institution",
         "imageAlt": "Pabna University of Science and Technology (PUST) crest",
-        "supportingImage": "assets/academic/organizations/dslr-lab-plaque.svg",
-        "supportingImageAlt": "Photograph of the Deep Statistical Learning and Research (DSLR) Lab plaque at PUST",
-        "supportingImageCaption": "DSLR Lab · PUST",
+        "supportingImage": "assets/academic/organizations/dslr-lab-plaque-fhd.svg",
+        "supportingImageAlt": "High-definition DSLR Lab plaque design displaying the Department of Statistics and Data Science at PUST",
+        "supportingImageCaption": "DSLR Lab · Statistics and Data Science · PUST",
         "ongoing": true,
         "description": "Interdisciplinary research in statistical learning, explainable AI, biomedical and public-health analytics, with contributions across reproducible modelling, research collaboration, scientific communication, and prototype development.",
         "responsibilityLabels": [
