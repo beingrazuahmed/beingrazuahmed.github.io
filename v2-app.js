@@ -738,7 +738,7 @@
               <div class="hero-status-line"><span class="live-dot"></span><strong>Portfolio online</strong><span class="clock" data-clock>Dhaka · UTC+06:00</span></div>
               <div class="hero-opportunity"><span class="hero-collab-dot"></span><strong>Open to PhD opportunities</strong><span>Research collaborations · academic partnerships</span></div>
               <div class="cta-row hero-actions"><a class="btn primary hero-primary" href="research.html">Explore Research <span aria-hidden="true">↗</span></a><a class="btn" href="cv.html">View CV</a><a class="btn hero-collab" href="contact.html">Collaborate</a></div>
-              <div class="hero-secondary-links"><a href="ask-razu.html">Ask Razu AI</a><span>·</span><a href="dashboard-live.html?v=20260923-dashboardlive56">Research Dashboard</a></div>
+              <div class="hero-secondary-links"><a href="ask-razu.html">Ask Razu AI</a><span>·</span><a href="dashboard-live.html?v=20260923-dashboardlive56">Research Dashboard</a><span>·</span><a href="experience.html#ircb-research-assistant">Research Experience</a></div>
               <div class="hero-impact" aria-label="Research profile highlights">
                 <div class="impact-chip"><strong>3</strong><span>Published / Online</span></div>
                 <div class="impact-chip"><strong>1</strong><span>Accepted / Forthcoming</span></div>
@@ -1448,7 +1448,15 @@
     return `${pageHero('Experience','Research roles, mentorship and collaborative support.')}
       <section class="section"><div class="container">
         ${sectionHead('Research experience','Roles & contribution')}
-        <div class="timeline">${(D.experience||[]).map(x=>`<div class="timeline-item"><strong>${esc(x.period||x.date||'')}</strong><h3>${esc(x.title||x.role||'')}</h3><p><strong>${esc(x.organization||x.institution||'')}</strong></p><p>${esc(x.description||x.detail||'')}</p></div>`).join('')}</div>
+        <div class="timeline experience-timeline">${(D.experience||[]).map(x=>`<div class="timeline-item"><article class="experience-role-card" id="${esc(x.id||'')}">
+          <div class="experience-role-head">
+            ${x.logo?`<div class="experience-logo-frame"><img src="${esc(x.logo)}" alt="${esc(x.organization||'')} logo" loading="lazy" decoding="async"></div>`:''}
+            <div class="experience-role-identity"><span class="experience-role-eyebrow">Professional Research Experience</span><h3>${esc(x.title||x.role||'')}</h3><p class="experience-organization">${esc(x.organization||x.institution||'')}</p></div>
+            <span class="experience-date">${esc(x.period||x.date||'')}</span>
+          </div>
+          ${x.description||x.detail?`<p class="experience-role-summary">${esc(x.description||x.detail)}</p>`:''}
+          ${Array.isArray(x.responsibilities)&&x.responsibilities.length?`<h4 class="experience-responsibilities-title">Responsibilities & contributions</h4><ol class="experience-responsibilities">${x.responsibilities.map(item=>`<li>${esc(item)}</li>`).join('')}</ol>`:''}
+        </article></div>`).join('')}</div>
       </div></section>
       <section class="section alt mentorship-role-section" id="research-mentorship-support"><div class="container">
         <div class="mentorship-role-hero">
