@@ -1,22 +1,114 @@
 :root[data-text="large"] body{font-size:18.5px}:root[data-motion="reduced"] *, :root[data-motion="reduced"] *::before,:root[data-motion="reduced"] *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.hero.compact{padding:54px 0 34px}.hero.compact h1{font-size:clamp(2.8rem,6vw,5rem)}.network-group+.network-group{margin-top:56px}.curriculum-grid{margin-top:24px}.card ul{padding-left:1.15rem}.card li+li{margin-top:.45rem}.person-card h4{margin-top:18px}.output-card[hidden]{display:none!important}.page-status{display:inline-flex;align-items:center;gap:8px}.page-status::before{content:"";width:8px;height:8px;border-radius:50%;background:#22c55e}.portrait-placeholder.avatar{min-height:58px;padding:7px;font-size:10px}.gallery-media{aspect-ratio:16/10;border-radius:16px;background:var(--surface-2);border:1px solid var(--line);display:grid;place-items:center;color:var(--muted);overflow:hidden}.gallery-media img{width:100%;height:100%;object-fit:cover}.scholar-strip{display:flex;flex-wrap:wrap;gap:8px}.scholar-strip a{padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface-2);font-size:13px;font-weight:800}.hero .lede+.lede{margin-top:6px}.card p:last-child{margin-bottom:0}.card h3+p{margin-top:10px}.section .btn{display:inline-flex;align-items:center;justify-content:center}.privacy-note{padding:12px 14px;border-radius:14px;background:var(--surface-2);border:1px solid var(--line);font-size:14px;color:var(--muted)}
 
-/* IRCB research-assistant role — experience page and interactive CV */
-.experience-timeline{margin-top:12px}
-.experience-timeline .timeline-item{padding-bottom:26px}
-.experience-role-card{background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:22px;padding:clamp(20px,3vw,32px);box-shadow:0 12px 32px rgba(12,43,64,.055);scroll-margin-top:105px}
-.experience-role-head{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-.experience-logo-frame{flex:0 0 100px;width:100px;height:100px;border-radius:20px;overflow:hidden;background:#005b06;border:1px solid color-mix(in srgb,var(--accent) 15%,var(--line));box-shadow:0 7px 20px rgba(0,60,10,.12)}
-.experience-logo-frame img{width:100%;height:100%;display:block;object-fit:cover}
-.experience-role-identity{flex:1 1 245px;min-width:0}
-.experience-role-eyebrow{display:block;color:var(--accent);font-size:11px;text-transform:uppercase;letter-spacing:.13em;font-weight:800;margin-bottom:6px}
-.experience-role-identity h3{font-size:clamp(1.3rem,2.7vw,1.7rem);line-height:1.22;margin:0 0 6px}
-.experience-organization{margin:0;color:var(--muted);font-size:15px;font-weight:650;line-height:1.5}
-.experience-date{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;padding:9px 13px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);font-size:12px;font-weight:800;color:var(--text);white-space:nowrap}
-.experience-role-summary{margin:20px 0 0;line-height:1.75;color:var(--muted);max-width:95ch}
-.experience-responsibilities-title{font-size:14px;font-weight:850;margin:24px 0 11px}
-.experience-responsibilities{list-style:none;counter-reset:ircb-duty;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0;padding:0}
-.experience-responsibilities li{counter-increment:ircb-duty;display:grid;grid-template-columns:29px minmax(0,1fr);gap:11px;align-content:start;background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:16px;font-size:13px;line-height:1.7;color:var(--text)}
-.experience-responsibilities li::before{content:counter(ircb-duty,decimal-leading-zero);display:grid;place-items:center;width:28px;height:28px;border-radius:9px;background:color-mix(in srgb,var(--accent) 13%,var(--surface));color:var(--accent);font-size:11px;font-weight:850;line-height:1}
-.experience-cv-link{display:inline-flex;align-items:center;gap:6px;margin-top:20px;font-size:13px;font-weight:750;color:var(--accent)}
-@media(max-width:780px){.experience-responsibilities{grid-template-columns:1fr}.experience-date{margin-left:0}.experience-logo-frame{flex-basis:78px;width:78px;height:78px;border-radius:16px}.experience-role-head{gap:13px}}
-@media(max-width:480px){.experience-role-card{padding:17px;border-radius:18px}.experience-role-head{align-items:flex-start}.experience-role-identity{flex-basis:calc(100% - 95px)}.experience-date{margin-top:4px}.experience-responsibilities li{padding:13px}.experience-timeline{padding-left:17px}.experience-timeline .timeline-item{padding-left:13px}}
+/* Professional research experience: restrained editorial timeline */
+.experience-timeline{margin-top:18px}
+.experience-timeline .timeline-item{padding-bottom:30px}
+.experience-timeline .timeline-item:before{top:27px}
+.experience-role-card{
+  position:relative;overflow:hidden;background:var(--surface);color:var(--text);
+  border:1px solid var(--line);border-radius:20px;scroll-margin-top:105px;
+  box-shadow:0 10px 28px rgba(10,37,64,.045)
+}
+.experience-role-head{
+  display:grid;grid-template-columns:82px minmax(0,1fr) auto;gap:22px;align-items:center;
+  padding:27px clamp(22px,3vw,34px) 25px;
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(120deg,color-mix(in srgb,var(--accent) 4%,var(--surface)),var(--surface) 70%)
+}
+.experience-logo-frame{
+  width:82px;height:82px;min-width:0;display:block;overflow:hidden;
+  border:1px solid color-mix(in srgb,var(--accent) 12%,var(--line));
+  border-radius:15px;background:#005d09
+}
+.experience-logo-frame img{width:100%;height:100%;display:block;object-fit:contain}
+.experience-role-identity{min-width:0}
+.experience-role-eyebrow{
+  display:block;font-size:11px;line-height:1.4;font-weight:750;text-transform:uppercase;
+  letter-spacing:.105em;color:var(--muted);margin-bottom:7px
+}
+.experience-role-identity h3{
+  margin:0 0 7px;font-size:clamp(1.4rem,2.3vw,1.82rem);
+  line-height:1.22;font-weight:800;letter-spacing:-.025em;color:var(--text)
+}
+.experience-organization{
+  margin:0;max-width:42rem;color:var(--muted);
+  font-size:14px;line-height:1.5;font-weight:600
+}
+.experience-date{
+  white-space:nowrap;align-self:start;justify-self:end;
+  margin-top:6px;font-size:12px;line-height:1.5;
+  font-weight:750;letter-spacing:.015em;color:var(--muted)
+}
+.experience-role-body{padding:27px clamp(22px,3vw,34px) 30px}
+.experience-role-summary{
+  max-width:90ch;margin:0 0 29px;color:var(--text);
+  font-size:15px;line-height:1.8;font-weight:430
+}
+.experience-responsibilities-heading{
+  display:flex;align-items:baseline;justify-content:space-between;gap:16px;
+  padding-bottom:12px
+}
+.experience-responsibilities-heading h4{
+  margin:0;color:var(--text);font-size:15px;line-height:1.4;
+  font-weight:800;letter-spacing:-.01em
+}
+.experience-responsibilities{
+  list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  column-gap:clamp(22px,3.6vw,48px);row-gap:0;
+  margin:0;padding:0
+}
+.experience-responsibilities li{
+  display:grid;grid-template-columns:26px minmax(0,1fr);gap:10px;
+  align-items:start;padding:18px 0 19px;border-top:1px solid var(--line);
+  min-width:0
+}
+.experience-duty-index{
+  display:block;padding-top:3px;font-size:12px;line-height:1.5;
+  font-weight:800;letter-spacing:.05em;color:var(--accent)
+}
+.experience-duty-content{min-width:0}
+.experience-duty-content h5{
+  color:var(--text);font-weight:780;font-size:14px;line-height:1.45;
+  margin:0 0 7px;letter-spacing:-.006em
+}
+.experience-duty-content p{
+  color:var(--muted);font-size:13.5px;line-height:1.75;
+  margin:0;max-width:64ch
+}
+.experience-cv-link{
+  display:inline-flex;align-items:center;gap:7px;
+  margin-top:23px;color:var(--accent);font-size:13px;line-height:1.4;font-weight:750;
+  text-decoration:none
+}
+.experience-cv-link:hover{text-decoration:underline;text-underline-offset:3px}
+.cv-experience-list{display:grid;gap:24px}
+@media(max-width:900px){
+  .experience-role-head{grid-template-columns:76px minmax(0,1fr);gap:17px}
+  .experience-logo-frame{width:76px;height:76px}
+  .experience-date{grid-column:2;justify-self:start;align-self:auto;margin:-5px 0 0}
+}
+@media(max-width:700px){
+  .experience-responsibilities{grid-template-columns:1fr}
+  .experience-role-head{padding:22px 20px 20px}
+  .experience-role-body{padding:22px 20px 25px}
+  .experience-role-summary{margin-bottom:24px}
+  .experience-responsibilities li{padding:15px 0 16px}
+}
+@media(max-width:460px){
+  .experience-timeline{padding-left:17px}
+  .experience-timeline .timeline-item{padding-left:13px}
+  .experience-role-card{border-radius:16px}
+  .experience-role-head{grid-template-columns:63px minmax(0,1fr);gap:13px;padding:17px 16px}
+  .experience-logo-frame{width:63px;height:63px;border-radius:12px}
+  .experience-role-identity h3{font-size:1.27rem}
+  .experience-role-eyebrow{font-size:9.5px;letter-spacing:.07em}
+  .experience-organization{font-size:12.5px}
+  .experience-date{font-size:11.5px}
+  .experience-role-body{padding:19px 17px 22px}
+  .experience-role-summary{font-size:14px;line-height:1.75}
+  .experience-duty-content p{font-size:13px;line-height:1.7}
+}
+@media print{
+  .experience-role-card{box-shadow:none;break-inside:avoid;overflow:visible}
+  .experience-responsibilities li{break-inside:avoid}
+}
