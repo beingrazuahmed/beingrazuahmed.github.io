@@ -248,7 +248,7 @@
 
   function footer(){
     const el=$('#site-footer'); if(!el) return;
-    el.innerHTML=`<footer class="footer"><div class="container footer-grid"><div><div class="brand"><span class="monogram">MRA</span><span>Md. Razu Ahmed</span></div><p>${esc(D.brand?.tagline||'')}</p><p class="tiny">Public portfolio · Privacy-safe by design · Last updated ${esc(D.lastUpdated||'')}</p></div><div><strong>Navigate</strong><p><a href="search.html">Search</a><br><a href="languages.html">Languages & MOI</a><br><a href="workshops.html">Workshops & Seminars</a><br><a href="dashboard-live.html?v=20260923-dashboardlive56">Dashboard</a><br><a href="cv.html">CV</a><br><a href="copyright.html">Copyright & Reuse</a></p></div><div><strong>Connect</strong><p><a href="mailto:razuahmed038@gmail.com">Email</a><br><a href="https://github.com/beingrazuahmed" target="_blank" rel="noopener">GitHub</a><br><a href="contact.html">Collaborate</a></p></div></div><div class="container tiny">© 2026 Md. Razu Ahmed. All rights reserved.</div></footer>`;
+    el.innerHTML=`<footer class="footer"><div class="container footer-grid"><div><div class="brand"><span class="monogram">MRA</span><span>Md. Razu Ahmed</span></div><p>${esc(D.brand?.tagline||'')}</p><p class="tiny">Public portfolio · Privacy-safe by design · Last updated ${esc(D.lastUpdated||'')}</p></div><div><strong>Navigate</strong><p><a href="explore.html">Explore all sections</a><br><a href="search.html">Search</a><br><a href="languages.html">Languages & MOI</a><br><a href="workshops.html">Workshops & Seminars</a><br><a href="dashboard-live.html?v=20260923-dashboardlive56">Dashboard</a><br><a href="cv.html">CV</a><br><a href="copyright.html">Copyright & Reuse</a></p></div><div><strong>Connect</strong><p><a href="mailto:razuahmed038@gmail.com">Email</a><br><a href="https://github.com/beingrazuahmed" target="_blank" rel="noopener">GitHub</a><br><a href="contact.html">Collaborate</a></p></div></div><div class="container tiny">© 2026 Md. Razu Ahmed. All rights reserved.</div></footer>`;
   }
 
   function clock(){
@@ -712,8 +712,7 @@
                 <span class="hero-name-accent">Ahmed</span>
               </h1>
               <div class="hero-subline hero-role-line">Statistician <span>·</span> Data Scientist <span>·</span> Researcher <span>·</span> Peer Reviewer</div>
-              <p class="hero-intro">I am a statistician, data scientist, and interdisciplinary data researcher working across statistical learning, artificial intelligence, public health, and biomedical data science. My work develops rigorous, reproducible, and interpretable analytical workflows that combine statistical methodology with machine learning to address real-world research questions.</p>
-              <div class="hero-status-line"><span class="live-dot"></span><strong>Portfolio online</strong><span class="clock" data-clock>Dhaka · UTC+06:00</span></div>
+              <p class="hero-intro">I connect rigorous statistics with explainable machine learning to address questions in biomedical, public-health and computational research. My focus is reproducible methods, interpretable results and useful scientific evidence.</p>
               <div class="hero-opportunity"><span class="hero-collab-dot"></span><strong>Open to PhD opportunities</strong><span>Research collaborations · academic partnerships</span></div>
               <div class="cta-row hero-actions"><a class="btn primary hero-primary" href="research.html">Explore Research <span aria-hidden="true">↗</span></a><a class="btn" href="cv.html">View CV</a><a class="btn hero-collab" href="contact.html">Collaborate</a></div>
               <div class="hero-secondary-links"><a href="ask-razu.html">Ask Razu AI</a><span>·</span><a href="dashboard-live.html?v=20260923-dashboardlive56">Research Dashboard</a></div>
@@ -741,6 +740,22 @@
               <div class="portrait-caption portrait-caption-editorial"><span class="hero-name-node small" aria-hidden="true"></span><span>MRA Research Intelligence</span></div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section editorial-research-section" aria-labelledby="editorial-research-title">
+      <div class="container">
+        <div class="editorial-research-head">
+          <div><span class="editorial-kicker">METHODS & APPLICATIONS</span>
+            <h2 id="editorial-research-title">Research with method at its core.</h2>
+            <p>Statistical reasoning, interpretable machine learning, and practical scientific questions form a connected research approach.</p></div>
+          <a class="editorial-inline-link" href="research.html">Read research statement <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="editorial-research-grid">
+          <a class="editorial-research-pillar" href="research.html"><span class="editorial-pillar-id">01 / FOUNDATION</span><span class="editorial-pillar-symbol" aria-hidden="true">Σ</span><strong>Statistical methodology</strong><span>Design, inference, uncertainty and rigorous validation.</span><span class="editorial-pillar-link">Explore research <span aria-hidden="true">→</span></span></a>
+          <a class="editorial-research-pillar" href="projects.html"><span class="editorial-pillar-id">02 / COMPUTATION</span><span class="editorial-pillar-symbol" aria-hidden="true">ƒ</span><strong>Interpretable AI</strong><span>Machine learning, model assessment and explainable workflows.</span><span class="editorial-pillar-link">View projects <span aria-hidden="true">→</span></span></a>
+          <a class="editorial-research-pillar" href="publications.html"><span class="editorial-pillar-id">03 / IMPACT</span><span class="editorial-pillar-symbol" aria-hidden="true">↗</span><strong>Applied research</strong><span>Biomedical, public-health and computational science applications.</span><span class="editorial-pillar-link">See research outputs <span aria-hidden="true">→</span></span></a>
         </div>
       </div>
     </section>
@@ -2243,7 +2258,43 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   function copyrightPage(){return `${pageHero('Copyright & Reuse','Responsible reuse of portfolio content, research figures and evidence.')}<section class="section"><div class="container"><article class="card"><h3>Portfolio content</h3><p>Unless an individual publication, dataset, image or certificate states otherwise, portfolio text and original interface design are © 2026 Md. Razu Ahmed. Published articles and datasets retain the licenses specified by their publishers or repositories.</p><h3>Research figures</h3><p>Reuse should follow the license and attribution requirements of the associated publication. Do not detach figures from their scientific context.</p><h3>Certificates & third-party materials</h3><p>Certificates, journal logos, institutional logos and event materials remain the property of their respective issuers and are displayed as academic evidence.</p></article></div></section>`;}
 
 
-  function pageHero(title,lead){return `<section class="hero compact"><div class="container"><div class="eyebrow"><span class="live-dot"></span><span>MRA Research Intelligence</span><span class="clock" data-clock>Dhaka · UTC+06:00</span></div><h1>${esc(title)}</h1><p class="lede">${esc(lead)}</p></div></section>`;}
+  function explore(){
+    const collections=[
+      {kicker:'RESEARCH',title:'Research & scholarly work',links:[
+        ['Research statement','Research interests, methodology and scientific direction','research.html'],
+        ['Publications','Published articles, datasets and manuscript pipeline','publications.html'],
+        ['Projects & prototypes','Technical implementations and applied research','projects.html'],
+        ['Research dashboard','Portfolio metrics and scholarly activity','dashboard-live.html']
+      ]},
+      {kicker:'ACADEMIC',title:'Academic experience',links:[
+        ['About & profile','Professional biography and academic background','profile.html'],
+        ['Academic journey','Education, milestones and supporting evidence','academic.html'],
+        ['Experience & mentorship','Teaching roles and collaborative research support','experience.html'],
+        ['Languages & MOI','Language proficiency and instructional background','languages.html']
+      ]},
+      {kicker:'EVIDENCE',title:'Events, achievements & records',links:[
+        ['Conferences','Paper presentations and conference participation','conferences.html'],
+        ['Workshops & seminars','Training events, seminars and certificates','workshops.html'],
+        ['Recognition','Academic awards and professional acknowledgements','recognition.html'],
+        ['Gallery','A curated archive of documentary evidence','gallery.html']
+      ]},
+      {kicker:'CONNECT',title:'People & collaboration',links:[
+        ['Research network','Mentors, collaborators and junior researchers','network.html'],
+        ['Resources','Academic resources and materials','resources.html'],
+        ['Ask Razu AI','Interactive portfolio assistant','ask-razu.html'],
+        ['Contact & collaboration','Research partnerships and PhD opportunities','contact.html'],
+        ['Curriculum vitae','Complete academic CV','cv.html']
+      ]}
+    ];
+    return pageHero('Explore the portfolio','A clear directory of research, experience, academic milestones, professional recognition and collaboration.')
+      +'<section class="section editorial-explore"><div class="container"><div class="editorial-explore-intro"><span class="editorial-kicker">PORTFOLIO DIRECTORY</span><h2>Find what matters.</h2><p>Each collection is organized around a specific academic purpose. Select an area to continue.</p></div>'
+      +collections.map((g,i)=>'<section class="editorial-explore-group" aria-labelledby="explore-group-'+i+'"><div class="editorial-explore-group-head"><span>'+g.kicker+'</span><h3 id="explore-group-'+i+'">'+g.title+'</h3></div><div class="editorial-explore-grid">'
+        +g.links.map(([title,description,href])=>'<a class="editorial-explore-link" href="'+href+'"><span><strong>'+title+'</strong><small>'+description+'</small></span><span class="editorial-explore-arrow" aria-hidden="true">↗</span></a>').join('')
+        +'</div></section>').join('')
+      +'</div></section>';
+  }
+
+  function pageHero(title,lead){return `<section class="hero compact editorial-page-hero"><div class="container"><div class="editorial-page-overline"><span class="editorial-overline-line" aria-hidden="true"></span> RESEARCH & ACADEMIC PORTFOLIO <span class="editorial-overline-separator">/</span> ${esc(page==='network-profile'?'NETWORK':page.toUpperCase())}</div><h1>${esc(title)}</h1><p class="lede">${esc(lead)}</p></div></section>`;}
 
   function initInteractive(){
     const galleryFilterButtons=$$('[data-gallery-filter]');
@@ -2436,7 +2487,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     footer();
     const main=$('#page-content');
     if(!main)return;
-    const map={home,profile,languages,research,publications,projects,academic,experience,conferences,workshops,recognition,network,'network-profile':networkProfile,resources,gallery,dashboard,'ask-razu':askRazu,contact,copyright:copyrightPage};
+    const map={home,explore,profile,languages,research,publications,projects,academic,experience,conferences,workshops,recognition,network,'network-profile':networkProfile,resources,gallery,dashboard,'ask-razu':askRazu,contact,copyright:copyrightPage};
     main.innerHTML=(map[page]||home)();
 
     // Start date/time immediately after the page hero exists. This remains live even if a later UI control fails.
