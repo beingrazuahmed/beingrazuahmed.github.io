@@ -2967,6 +2967,33 @@
       {
         "id": "dslr-lab-research-assistant",
         "period": "May 2023 – Present",
+        "periodContext": "Research involvement",
+        "appointments": [
+          {
+            "title": "Research Assistant",
+            "startDate": "2026-05-14",
+            "startLabel": "14 May 2026",
+            "endDate": null,
+            "endLabel": "Present",
+            "current": true
+          },
+          {
+            "title": "Graduate Research Assistant",
+            "startDate": "2024-11-17",
+            "startLabel": "17 November 2024",
+            "endDate": "2026-05-13",
+            "endLabel": "13 May 2026",
+            "current": false
+          },
+          {
+            "title": "Undergraduate Research Assistant",
+            "startDate": "2023-05-13",
+            "startLabel": "13 May 2023",
+            "endDate": "2024-11-09",
+            "endLabel": "9 November 2024",
+            "current": false
+          }
+        ],
         "title": "Research Assistant",
         "organization": "Deep Statistical Learning and Research (DSLR) Lab",
         "affiliation": "Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Bangladesh",
