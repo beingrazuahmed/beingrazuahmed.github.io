@@ -235,6 +235,8 @@ window.PORTFOLIO_DATA = {
       flyerUrl: "assets/academic/conferences/efast-2026/media/efast-2026-flyer.jpeg",
       flyerLabel: "EFAST 2026 conference flyer",
       coverHref: "assets/academic/conferences/efast-2026/media/efast-2026-cover.pdf",
+      proceedingsEbookUrl: "https://drive.google.com/file/d/1wyWax-P-MAePa4C5xI1YTfXSEDtRDJ4_/view",
+      proceedingsEbookLabel: "E-Book of EFAST Conference Proceedings",
       papers: [
         {
           paperId: "108",
