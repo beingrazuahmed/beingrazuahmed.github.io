@@ -37,8 +37,8 @@
         <nav class="nav" id="primaryNav" aria-label="Primary">${nav.map(([k,l,h])=>`<a href="${h}" ${(page===k||(page==='network-profile'&&k==='network'))?'aria-current="page"':''}>${l}</a>`).join('')}</nav>
         <button class="nav-scroll-btn right" id="navScrollRight" type="button" aria-label="Scroll navigation right">›</button>
       </div>
-      <div class="nav-actions"><a class="btn ghost desktop-only" href="ask-razu.html">Ask Razu AI</a><button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button><button class="icon-btn" id="settingsBtn" aria-label="Appearance settings">◐</button><button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open navigation menu" aria-controls="mobilePanel" aria-expanded="false">☰</button></div>
-    </div></div><button class="mobile-menu-backdrop" id="mobileMenuBackdrop" type="button" tabindex="-1" aria-label="Close navigation menu" hidden></button><nav class="mobile-panel" id="mobilePanel" aria-label="Mobile navigation" hidden>${nav.map(([k,l,h])=>`<a href="${h}">${l}</a>`).join('')}<a href="ask-razu.html">Ask Razu AI</a><a href="cv.html">CV</a></nav>`;
+      <div class="nav-actions"><a class="btn ghost desktop-only" href="ask-razu.html">Ask Razu AI</a><button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button><button class="icon-btn" id="settingsBtn" aria-label="Appearance settings">◐</button><details class="mobile-nav-native" id="mobileNav"><summary class="icon-btn menu-btn" id="menuBtn" aria-label="Open navigation menu"><span class="mobile-menu-open-icon" aria-hidden="true">☰</span><span class="mobile-menu-close-icon" aria-hidden="true">×</span></summary><nav class="mobile-panel" id="mobilePanel" aria-label="Mobile navigation">${nav.map(([k,l,h])=>`<a href="${h}" ${(page===k||(page==='network-profile'&&k==='network'))?'aria-current="page"':''}>${l}</a>`).join('')}<a href="ask-razu.html">Ask Razu AI</a><a href="cv.html">CV</a></nav></details></div>
+    </div></div>`;
 
     const navEl = $('#primaryNav');
     const leftBtn = $('#navScrollLeft');
@@ -2530,29 +2530,28 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
       });
     }
 
+    const mobileNav=$('#mobileNav');
     const menuBtn=$('#menuBtn');
     const mobilePanel=$('#mobilePanel');
-    const mobileBackdrop=$('#mobileMenuBackdrop');
     const setMobileMenu=open=>{
-      if(!menuBtn||!mobilePanel)return;
+      if(!mobileNav)return;
       const shouldOpen=Boolean(open)&&window.innerWidth<=1080;
-      mobilePanel.hidden=!shouldOpen;
-      if(mobileBackdrop)mobileBackdrop.hidden=!shouldOpen;
-      menuBtn.setAttribute('aria-expanded',String(shouldOpen));
-      menuBtn.setAttribute('aria-label',shouldOpen?'Close navigation menu':'Open navigation menu');
+      mobileNav.open=shouldOpen;
+      menuBtn?.setAttribute('aria-expanded',String(shouldOpen));
+      menuBtn?.setAttribute('aria-label',shouldOpen?'Close navigation menu':'Open navigation menu');
       document.body.classList.toggle('mobile-nav-open',shouldOpen);
     };
+    mobileNav?.addEventListener('toggle',()=>{
+      const open=mobileNav.open&&window.innerWidth<=1080;
+      menuBtn?.setAttribute('aria-expanded',String(open));
+      menuBtn?.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');
+      document.body.classList.toggle('mobile-nav-open',open);
+    });
 
     $('#settingsBtn')?.addEventListener('click',()=>{
       setMobileMenu(false);
       $('#settings').toggleAttribute('hidden');
     });
-    menuBtn?.addEventListener('click',event=>{
-      event.preventDefault();
-      event.stopPropagation();
-      setMobileMenu(mobilePanel?.hidden!==false);
-    });
-    mobileBackdrop?.addEventListener('click',()=>setMobileMenu(false));
     mobilePanel?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setMobileMenu(false)));
     $('#searchBtn')?.addEventListener('click',()=>{
       setMobileMenu(false);
