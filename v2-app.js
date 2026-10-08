@@ -738,7 +738,7 @@
               <div class="hero-status-line"><span class="live-dot"></span><strong>Portfolio online</strong><span class="clock" data-clock>Dhaka · UTC+06:00</span></div>
               <div class="hero-opportunity"><span class="hero-collab-dot"></span><strong>Open to PhD opportunities</strong><span>Research collaborations · academic partnerships</span></div>
               <div class="cta-row hero-actions"><a class="btn primary hero-primary" href="research.html">Explore Research <span aria-hidden="true">↗</span></a><a class="btn" href="cv.html">View CV</a><a class="btn hero-collab" href="contact.html">Collaborate</a></div>
-              <div class="hero-secondary-links"><a href="ask-razu.html">Ask Razu AI</a><span>·</span><a href="dashboard-live.html?v=20260923-dashboardlive56">Research Dashboard</a><span>·</span><a href="experience.html#ircb-research-assistant">Research Experience</a></div>
+              <div class="hero-secondary-links"><a href="ask-razu.html">Ask Razu AI</a><span>·</span><a href="dashboard-live.html?v=20260923-dashboardlive56">Research Dashboard</a><span>·</span><a href="experience.html#dslr-lab-research-assistant">DSLR Lab</a><span>·</span><a href="experience.html#ircb-research-assistant">Research Experience</a></div>
               <div class="hero-impact" aria-label="Research profile highlights">
                 <div class="impact-chip"><strong>3</strong><span>Published / Online</span></div>
                 <div class="impact-chip"><strong>1</strong><span>Accepted / Forthcoming</span></div>
@@ -1451,13 +1451,14 @@
         <div class="timeline experience-timeline">${(D.experience||[]).map(x=>`<div class="timeline-item">
         <article class="experience-role-card" id="${esc(x.id||'')}">
           <div class="experience-role-head">
-            ${x.logo?`<div class="experience-logo-frame"><img src="${esc(x.logo)}" alt="${esc(x.organization||x.institution||'')} logo" loading="lazy" decoding="async"></div>`:''}
+            ${x.logo?`<div class="experience-logo-frame${x.logoKind==='plaque'?' is-plaque':''}"><img src="${esc(x.logo)}" alt="${esc(x.imageAlt||((x.organization||x.institution||'')+' logo'))}" loading="lazy" decoding="async"></div>`:''}
             <div class="experience-role-identity">
               <span class="experience-role-eyebrow">Research &amp; Professional Experience</span>
               <h3>${esc(x.title||x.role||'')}</h3>
               <p class="experience-organization">${esc(x.organization||x.institution||'')}</p>
+              ${x.affiliation?`<p class="experience-affiliation">${esc(x.affiliation)}</p>`:''}
             </div>
-            <div class="experience-date"><span>${esc(x.period||x.date||'')}</span></div>
+            <div class="experience-date"><span>${esc(x.period||x.date||'')}</span>${x.ongoing?'<span class="experience-ongoing">Ongoing</span>':''}</div>
           </div>
           <div class="experience-role-body">
             ${x.description||x.detail?`<p class="experience-role-summary">${esc(x.description||x.detail)}</p>`:''}
