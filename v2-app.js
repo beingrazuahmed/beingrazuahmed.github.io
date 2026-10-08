@@ -25,7 +25,7 @@
     ['home','Home','index.html'],['profile','Profile','profile.html'],['languages','Languages','languages.html'],['research','Research','research.html'],
     ['publications','Publications','publications.html'],['projects','Projects','projects.html'],['academic','Academic','academic.html?v=20260919-logosvg17'],
     ['experience','Experience','experience.html'],['conferences','Conferences','conferences.html?v=20260928-workshops1'],['workshops','Workshops & Seminars','workshops.html'],['recognition','Recognition','recognition.html'],
-    ['network','Network & Impact','network.html'],['resources','Resources','resources.html'],['gallery','Gallery','gallery.html'],['dashboard','Dashboard','dashboard-live.html?v=20260923-dashboardlive56']
+    ['network','Network & Impact','network.html'],['resources','Resources','resources.html'],['gallery','Gallery','gallery.html'],['dashboard','Dashboard','dashboard-live.html?v=20260923-dashboardlive56'],['contact','Contact','contact.html']
   ];
 
   function header(){
@@ -2311,7 +2311,56 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
 
   function projects(){return `${pageHero('Projects & Prototypes','Research prototypes, analytical projects and reproducible workflows.')}<section class="section"><div class="container">${sectionHead('Featured prototype','Diabetic-retinopathy grading research prototype')}<article class="card quote-card"><h3>Deep learning + handcrafted feature fusion</h3><p>Research prototype combining DenseNet121 representations, SIFT-BoVW features, XGBoost and Grad-CAM++ for explainable diabetic-retinopathy grading. Intended for research and decision-support exploration, not clinical diagnosis.</p></article></div></section><section class="section alt"><div class="container">${sectionHead('Active projects','Current directions')}<div class="grid grid-3">${(D.ongoing||[]).map(x=>`<article class="card"><span class="badge">In preparation</span><h3>${esc(x.title)}</h3><p>${esc(x.objective||x.summary||x.description||'')}</p>${tags(x.methods||x.tags||[])}</article>`).join('')}</div></div></section>`;}
 
-  function contact(){return `${pageHero('Collaboration','Interested in working together?')}<section class="section"><div class="container"><div class="grid grid-2"><article class="card"><h3>Research collaboration</h3><p>Open selectively to interdisciplinary projects, PhD opportunities, academic partnerships, public-health and biomedical data-science collaborations, explainable AI and statistically rigorous machine-learning research.</p><a class="btn primary" href="mailto:razuahmed038@gmail.com">Email Md. Razu Ahmed</a></article><article class="card"><h3>Academic presence</h3><p>${(D.profiles||[]).map(p=>p.url?ext(p.url,p.label||p.name):'').filter(Boolean).join(' · ')}</p></article></div></div></section>`;}
+  function contact(){
+  const email=D.profile?.email||'razuahmed038@gmail.com',affiliation=D.profile?.affiliation||'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST)',portrait=D.profile?.image||'assets/profile/razu-portrait.JPG';
+  const groups=[
+    {type:'academic',num:'01',title:'Research & academic profiles',desc:'Author identifiers, scholarly records and publication discovery.'},
+    {type:'professional',num:'02',title:'Professional platforms',desc:'Code, projects and academic-professional connections.'},
+    {type:'social',num:'03',title:'Community channels',desc:'Additional public channels for connecting and following updates.'}
+  ];
+  const platformCards=groups.map(g=>{
+    const links=(D.profiles||[]).filter(p=>p.type===g.type&&p.url).map(p=>`<a class="contact-platform-link" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer"><span>${esc(p.label||p.name)}</span><span aria-hidden="true">↗</span></a>`).join('');
+    return `<article class="contact-platform-card"><div class="contact-platform-card-head"><span class="contact-platform-index">${g.num}</span><h3>${esc(g.title)}</h3><p>${esc(g.desc)}</p></div><div class="contact-platform-links">${links||'<p>No public links listed.</p>'}</div></article>`;
+  }).join('');
+  const pathways=[
+    {n:'01',category:'METHODS',title:'Statistics & research methodology',desc:'Study design, statistical modelling and rigorous analytical workflows for interdisciplinary questions.',topics:['Statistical inference','Survey & observational data','Time-series modelling']},
+    {n:'02',category:'APPLICATIONS',title:'Biomedical & public-health AI',desc:'Interpretable machine learning for health data, medical imaging and data-driven public-health questions.',topics:['Explainable AI','Predictive modelling','Medical image analysis']},
+    {n:'03',category:'PARTNERSHIPS',title:'Reproducible research partnerships',desc:'Joint projects with clear research questions, appropriate validation and transparent scientific reporting.',topics:['Collaborative research','Research software','PhD & academic opportunities']}
+  ];
+  const pathwayCards=pathways.map(p=>`<article class="contact-focus-card"><div class="contact-focus-top"><span class="contact-focus-index">${p.n}</span><span class="contact-focus-category">${esc(p.category)}</span></div><h3>${esc(p.title)}</h3><p>${esc(p.desc)}</p><ul class="contact-focus-tags">${p.topics.map(t=>`<li>${esc(t)}</li>`).join('')}</ul></article>`).join('');
+  return `<div class="contact-page">
+    <section class="contact-intro" aria-labelledby="contact-title"><div class="container contact-intro-grid">
+      <div class="contact-intro-copy">
+        <span class="contact-eyebrow"><span class="contact-eyebrow-line"></span> CONTACT &amp; COLLABORATION</span>
+        <h1 id="contact-title">Better research begins with <em>conversation.</em></h1>
+        <p class="contact-intro-lede">I welcome thoughtful enquiries about collaborative research, doctoral opportunities and interdisciplinary projects where statistical rigour, explainable AI and reproducible methods can make a meaningful contribution.</p>
+        <div class="contact-intro-actions"><a class="btn primary contact-action-primary" href="mailto:${esc(email)}">Get in touch <span aria-hidden="true">↗</span></a><a class="btn ghost contact-action-secondary" href="#collaboration-areas">Explore collaboration areas <span aria-hidden="true">↓</span></a></div>
+        <div class="contact-intro-meta"><span>BASED IN BANGLADESH</span><span aria-hidden="true" class="contact-meta-separator"></span><span>SELECTIVE RESEARCH COLLABORATION</span></div>
+      </div>
+      <aside class="contact-direct-card" aria-label="Direct academic contact">
+        <div class="contact-direct-card-top"><span>DIRECT CONTACT</span><span class="contact-direct-mark" aria-hidden="true">MRA<span></span></span></div>
+        <div class="contact-person"><img src="${esc(portrait)}" alt="Portrait of Md. Razu Ahmed" loading="eager" decoding="async"><div><strong>Md. Razu Ahmed</strong><span>Statistician · Data Scientist · Researcher</span></div></div>
+        <div class="contact-detail-item"><span class="contact-detail-label">PREFERRED CONTACT</span><a class="contact-email-address" href="mailto:${esc(email)}">${esc(email)} <span aria-hidden="true">↗</span></a><p>For research enquiries, please reach out directly by email.</p></div>
+        <div class="contact-detail-item contact-detail-affiliation"><span class="contact-detail-label">RESEARCH AFFILIATION</span><p>${esc(affiliation)}</p></div>
+        <div class="contact-direct-foot"><span class="contact-direct-dot" aria-hidden="true"></span> Open selectively to relevant research partnerships</div>
+      </aside>
+    </div></section>
+    <section class="contact-focus-section" id="collaboration-areas" aria-labelledby="contact-focus-heading"><div class="container">
+      <div class="contact-section-heading"><div><span class="contact-section-kicker">01 / AREAS OF INTEREST</span><h2 id="contact-focus-heading">Where our work can intersect.</h2></div><p>Research-led collaborations grounded in sound methodology, clear objectives and outcomes that can be independently evaluated.</p></div>
+      <div class="contact-focus-grid">${pathwayCards}</div>
+    </div></section>
+    <section class="contact-presence-section" id="academic-profiles" aria-labelledby="contact-presence-heading"><div class="container">
+      <div class="contact-section-heading"><div><span class="contact-section-kicker">02 / ACADEMIC PRESENCE</span><h2 id="contact-presence-heading">Find my work and connect.</h2></div><p>Explore my publications, researcher identifiers, code repositories and professional channels.</p></div>
+      <div class="contact-platform-grid">${platformCards}</div>
+    </div></section>
+    <section class="contact-next-section" aria-labelledby="contact-next-heading"><div class="container contact-next-grid">
+      <div class="contact-next-copy"><span class="contact-section-kicker">03 / STARTING A CONVERSATION</span><h2 id="contact-next-heading">A clear first message makes collaboration easier.</h2><p>A brief outline is enough to begin. It helps to include:</p>
+        <ol class="contact-brief-list"><li><span>01</span><p><strong>Research question</strong><small>The scientific problem and why it matters.</small></p></li><li><span>02</span><p><strong>Proposed collaboration</strong><small>The expertise, contribution or partnership you have in mind.</small></p></li><li><span>03</span><p><strong>Context &amp; timeline</strong><small>Any relevant background, scope, intended outputs or deadlines.</small></p></li></ol>
+      </div>
+      <aside class="contact-invitation"><span class="contact-invitation-kicker">LET'S CONNECT</span><h3>Have a research idea worth exploring?</h3><p>Share a short proposal or introduce your research interests. I would be pleased to consider opportunities aligned with my areas of work.</p><a class="contact-invitation-button" href="mailto:${esc(email)}">Send an academic enquiry <span aria-hidden="true">↗</span></a><div class="contact-invitation-links"><a href="cv.html">Academic CV ↗</a><a href="publications.html">Research publications ↗</a></div></aside>
+    </div></section>
+  </div>`;
+}
 
   function copyrightPage(){return `${pageHero('Copyright & Reuse','Responsible reuse of portfolio content, research figures and evidence.')}<section class="section"><div class="container"><article class="card"><h3>Portfolio content</h3><p>Unless an individual publication, dataset, image or certificate states otherwise, portfolio text and original interface design are © 2026 Md. Razu Ahmed. Published articles and datasets retain the licenses specified by their publishers or repositories.</p><h3>Research figures</h3><p>Reuse should follow the license and attribution requirements of the associated publication. Do not detach figures from their scientific context.</p><h3>Certificates & third-party materials</h3><p>Certificates, journal logos, institutional logos and event materials remain the property of their respective issuers and are displayed as academic evidence.</p></article></div></section>`;}
 
