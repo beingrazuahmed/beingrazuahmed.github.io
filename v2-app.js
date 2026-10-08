@@ -1426,6 +1426,25 @@
       };
       return `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">${paths[name]||paths.formulation}</svg>`;
     };
+    const journeyStages=Array.isArray(support.workflow)?support.workflow:[];
+    const journeyIcon=key=>{
+      const icons={
+        target:'<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3"/>',
+        book:'<path d="M12 6c-2.5-1.6-5.7-2-9-1v14c3.3-1 6.5-.6 9 1 2.5-1.6 5.7-2 9-1V5c-3.3-1-6.5-.6-9 1Z"/><path d="M12 6v14"/>',
+        blueprint:'<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 4v16m-4-8h16M12 8h4m-4 8h16"/>',
+        chart:'<path d="M4 19h16M5 16l4-5 4 3 6-8"/><path d="M5 16V5"/>',
+        document:'<path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 12h6m-6 4h6"/>',
+        check:'<path d="M12 3l8 4v5c0 4.5-3 7-8 9-5-2-8-4.5-8-9V7z"/><path d="m8 12 3 3 5-6"/>'
+      };
+      return '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">'+(icons[key]||icons.target)+'</svg>';
+    };
+    const journeyCard=(stage,index)=>'<article class="mentor-journey-card" id="mentor-stage-'+esc(stage.id||String(index+1))+'">'
+      +'<div class="mentor-journey-card-top"><span class="mentor-journey-card-icon">'+journeyIcon(stage.icon)+'</span>'
+      +'<span class="mentor-journey-card-number">STAGE '+String(index+1).padStart(2,'0')+'</span></div>'
+      +'<h4>'+esc(stage.title||'Research stage')+'</h4>'
+      +'<p>'+esc(stage.description||'')+'</p>'
+      +'<div class="mentor-journey-card-output"><span class="mentor-journey-output-marker" aria-hidden="true">✓</span>'
+      +'<div><small>Key outcome</small><strong>'+esc(stage.outcome||'Research guidance')+'</strong></div></div></article>';
     return `${pageHero('Experience','Research roles, mentorship and collaborative support.')}
       <section class="section"><div class="container">
         ${sectionHead('Research experience','Roles & contribution')}
@@ -1457,22 +1476,51 @@
           </article>`).join('')}
         </div>
 
-        <div class="mentorship-workflow-panel">
-          <div class="mentorship-workflow-head">
-            <div><span class="section-kicker">Support workflow</span><h3>From research question to submission readiness</h3></div>
-            <p>Guidance is adapted to the collaborator’s project stage and is intended to strengthen methodological independence, not substitute for formal supervision.</p>
+
+        <section class="mentor-journey" id="mentorship-workflow" aria-labelledby="mentor-journey-title">
+          <div class="mentor-journey-intro">
+            <div class="mentor-journey-intro-main">
+              <div class="mentor-journey-eyebrow"><span class="mentor-journey-eyebrow-mark" aria-hidden="true"></span> RESEARCH MENTORSHIP FRAMEWORK</div>
+              <h3 id="mentor-journey-title">Research Support <span>Journey</span></h3>
+              <p>From shaping a meaningful research question to developing rigorous, clearly communicated, submission-ready work. Each stage emphasizes collaborative guidance, methodological clarity and research independence.</p>
+            </div>
+            <div class="mentor-journey-counter" aria-label="${journeyStages.length} stages in the research support journey">
+              <strong>${String(journeyStages.length).padStart(2,'0')}</strong>
+              <span>CONNECTED STAGES</span>
+              <div class="mentor-journey-counter-line" aria-hidden="true"><span></span></div>
+            </div>
           </div>
-          <div class="mentorship-workflow">
-            ${(support.workflow||[]).map((x,i)=>`<div class="mentorship-workflow-step"><span>${String(i+1).padStart(2,'0')}</span><strong>${esc(x)}</strong></div>`).join('')}
+          <div class="mentor-journey-phase" aria-label="Phase 1: Research foundations">
+            <div class="mentor-journey-phase-header">
+              <div class="mentor-journey-phase-index">01<span class="mentor-journey-phase-connector" aria-hidden="true"></span></div>
+              <div class="mentor-journey-phase-heading"><small>PHASE ONE</small><h4>Research foundations</h4><p>Discover, evaluate and design a defensible study.</p></div>
+            </div>
+            <div class="mentor-journey-grid">
+              ${journeyStages.slice(0,3).map((stage,index)=>journeyCard(stage,index)).join('')}
+            </div>
           </div>
-        </div>
+          <div class="mentor-journey-bridge" aria-hidden="true"><span></span><i>↓</i><span></span></div>
+          <div class="mentor-journey-phase" aria-label="Phase 2: Analysis and dissemination">
+            <div class="mentor-journey-phase-header">
+              <div class="mentor-journey-phase-index">02<span class="mentor-journey-phase-connector" aria-hidden="true"></span></div>
+              <div class="mentor-journey-phase-heading"><small>PHASE TWO</small><h4>Analysis & dissemination</h4><p>Execute, interpret and prepare credible research outputs.</p></div>
+            </div>
+            <div class="mentor-journey-grid">
+              ${journeyStages.slice(3,6).map((stage,index)=>journeyCard(stage,index+3)).join('')}
+            </div>
+          </div>
+          <div class="mentor-journey-footer">
+            <div class="mentor-journey-footnote"><span class="mentor-journey-loop-icon" aria-hidden="true">↻</span><p><strong>Iterative by design.</strong> The stages may overlap or be revisited as questions, data and research findings evolve.</p></div>
+            <a class="mentor-journey-network-link" href="#junior-research-network">Meet junior collaborators <span aria-hidden="true">↗</span></a>
+          </div>
+        </section>
 
         <div class="mentorship-principles">
           <div><span class="section-kicker">Working principles</span><h3>Responsible collaborative support</h3></div>
           <ul>${(support.principles||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
         </div>
       </div></section>
-      <section class="section mentorship-people-section"><div class="container">
+      <section class="section mentorship-people-section" id="junior-research-network"><div class="container">
         ${sectionHead('Junior research network','Collaborators connected to this support role','Selected junior researchers and early-career collaborators are shown here with links to their full academic-network profiles.')}
         <div class="grid grid-3 mentorship-people-grid">${juniors.map(personCard).join('')}</div>
         <div class="section-action"><a class="section-text-link" href="network.html">Explore the full research network ↗</a></div>
