@@ -37,8 +37,34 @@
         <nav class="nav" id="primaryNav" aria-label="Primary">${nav.map(([k,l,h])=>`<a href="${h}" ${(page===k||(page==='network-profile'&&k==='network'))?'aria-current="page"':''}>${l}</a>`).join('')}</nav>
         <button class="nav-scroll-btn right" id="navScrollRight" type="button" aria-label="Scroll navigation right">›</button>
       </div>
-      <div class="nav-actions"><a class="btn ghost desktop-only" href="ask-razu.html">Ask Razu AI</a><button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button><button class="icon-btn" id="settingsBtn" aria-label="Appearance settings">◐</button><details class="mobile-nav-native" id="mobileNav"><summary class="icon-btn menu-btn" id="menuBtn" aria-label="Open navigation menu"><span class="mobile-menu-open-icon" aria-hidden="true">☰</span><span class="mobile-menu-close-icon" aria-hidden="true">×</span></summary><nav class="mobile-panel" id="mobilePanel" aria-label="Mobile navigation">${nav.map(([k,l,h])=>`<a href="${h}" ${(page===k||(page==='network-profile'&&k==='network'))?'aria-current="page"':''}>${l}</a>`).join('')}<a href="ask-razu.html">Ask Razu AI</a><a href="cv.html">CV</a></nav></details></div>
-    </div></div>`;
+      <div class="nav-actions"><a class="btn ghost desktop-only" href="ask-razu.html">Ask Razu AI</a><button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button><button class="icon-btn" id="settingsBtn" aria-label="Appearance settings">◐</button><button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open navigation menu" aria-controls="mobilePanel" aria-expanded="false"><span class="mobile-menu-open-icon" aria-hidden="true">☰</span><span class="mobile-menu-close-icon" aria-hidden="true">×</span></button></div>
+    </div></div><nav class="mobile-panel" id="mobilePanel" aria-label="Mobile navigation">${nav.map(([k,l,h])=>`<a href="${h}" ${(page===k||(page==='network-profile'&&k==='network'))?'aria-current="page"':''}>${l}</a>`).join('')}<a href="ask-razu.html">Ask Razu AI</a><a href="cv.html">CV</a></nav>`;
+
+    const menuBtn = $('#menuBtn');
+    const mobilePanel = $('#mobilePanel');
+    const setHeaderMobileMenu = open => {
+      if(!menuBtn || !mobilePanel) return;
+      const shouldOpen = Boolean(open) && window.innerWidth <= 1080;
+      mobilePanel.classList.toggle('mobile-open', shouldOpen);
+      menuBtn.setAttribute('aria-expanded', String(shouldOpen));
+      menuBtn.setAttribute('aria-label', shouldOpen ? 'Close navigation menu' : 'Open navigation menu');
+      document.body.classList.toggle('mobile-nav-open', shouldOpen);
+    };
+    window.__mraSetMobileMenu = setHeaderMobileMenu;
+    menuBtn?.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopPropagation();
+      setHeaderMobileMenu(!mobilePanel?.classList.contains('mobile-open'));
+    });
+    mobilePanel?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setHeaderMobileMenu(false)));
+    document.addEventListener('click', event => {
+      if(!mobilePanel?.classList.contains('mobile-open')) return;
+      if(el.contains(event.target)) return;
+      setHeaderMobileMenu(false);
+    });
+    window.addEventListener('resize', () => {
+      if(window.innerWidth > 1080) setHeaderMobileMenu(false);
+    }, {passive:true});
 
     const navEl = $('#primaryNav');
     const leftBtn = $('#navScrollLeft');
@@ -2530,42 +2556,22 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
       });
     }
 
-    const mobileNav=$('#mobileNav');
-    const menuBtn=$('#menuBtn');
-    const mobilePanel=$('#mobilePanel');
-    const setMobileMenu=open=>{
-      if(!mobileNav)return;
-      const shouldOpen=Boolean(open)&&window.innerWidth<=1080;
-      mobileNav.open=shouldOpen;
-      menuBtn?.setAttribute('aria-expanded',String(shouldOpen));
-      menuBtn?.setAttribute('aria-label',shouldOpen?'Close navigation menu':'Open navigation menu');
-      document.body.classList.toggle('mobile-nav-open',shouldOpen);
-    };
-    mobileNav?.addEventListener('toggle',()=>{
-      const open=mobileNav.open&&window.innerWidth<=1080;
-      menuBtn?.setAttribute('aria-expanded',String(open));
-      menuBtn?.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');
-      document.body.classList.toggle('mobile-nav-open',open);
-    });
+    const closeHeaderMobileMenu=()=>window.__mraSetMobileMenu?.(false);
 
     $('#settingsBtn')?.addEventListener('click',()=>{
-      setMobileMenu(false);
+      closeHeaderMobileMenu();
       $('#settings').toggleAttribute('hidden');
     });
-    mobilePanel?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setMobileMenu(false)));
     $('#searchBtn')?.addEventListener('click',()=>{
-      setMobileMenu(false);
+      closeHeaderMobileMenu();
       location.href='search.html';
     });
-    window.addEventListener('resize',()=>{
-      if(window.innerWidth>1080)setMobileMenu(false);
-    },{passive:true});
     document.addEventListener('keydown',e=>{
       if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();location.href='search.html'}
       if(e.key==='/'&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName)){e.preventDefault();location.href='search.html'}
       if(e.key.toLowerCase()==='h'&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName))location.href='index.html';
-      if(e.key.toLowerCase()==='t'&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName)){setMobileMenu(false);$('#settings').toggleAttribute('hidden');}
-      if(e.key==='Escape'){$('#settings')?.setAttribute('hidden','');setMobileMenu(false);}
+      if(e.key.toLowerCase()==='t'&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName)){closeHeaderMobileMenu();$('#settings').toggleAttribute('hidden');}
+      if(e.key==='Escape'){$('#settings')?.setAttribute('hidden','');closeHeaderMobileMenu();}
     });
     const portraitStage=$('#heroPortraitStage');
     const portraitFrame=portraitStage?.querySelector('.portrait-frame-editorial');
