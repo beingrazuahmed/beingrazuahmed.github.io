@@ -42,9 +42,19 @@
 
     const menuBtn = $('#menuBtn');
     const mobilePanel = $('#mobilePanel');
+    if(mobilePanel && mobilePanel.parentElement !== document.body){
+      document.body.appendChild(mobilePanel);
+    }
+    const syncMobileMenuTop = () => {
+      const topbar = document.querySelector('.topbar');
+      const bottom = topbar ? Math.max(0, Math.round(topbar.getBoundingClientRect().bottom)) : 66;
+      document.documentElement.style.setProperty('--mobile-nav-top', bottom + 'px');
+    };
+    syncMobileMenuTop();
     const setHeaderMobileMenu = open => {
       if(!menuBtn || !mobilePanel) return;
       const shouldOpen = Boolean(open) && window.innerWidth <= 1080;
+      syncMobileMenuTop();
       mobilePanel.classList.toggle('mobile-open', shouldOpen);
       menuBtn.setAttribute('aria-expanded', String(shouldOpen));
       menuBtn.setAttribute('aria-label', shouldOpen ? 'Close navigation menu' : 'Open navigation menu');
@@ -63,7 +73,11 @@
       setHeaderMobileMenu(false);
     });
     window.addEventListener('resize', () => {
+      syncMobileMenuTop();
       if(window.innerWidth > 1080) setHeaderMobileMenu(false);
+    }, {passive:true});
+    window.addEventListener('orientationchange', () => {
+      setTimeout(syncMobileMenuTop, 80);
     }, {passive:true});
 
     const navEl = $('#primaryNav');
