@@ -2952,6 +2952,43 @@
     academicProjects: coursework.projects || [],
     instructorLinks: coursework.instructorLinks || [],
     experience: base.experience || [],
+    mentorshipSupport: {
+      title: 'Research Mentorship & Collaborative Support',
+      roleType: 'Collaborative research support role',
+      summary: 'Provide structured research guidance to junior researchers and early-career collaborators across study formulation, analytical workflow development, scientific communication and publication readiness.',
+      areas: [
+        {
+          icon: 'formulation',
+          title: 'Research Formulation & Study Design',
+          detail: 'Guide topic formulation, literature synthesis, research-question refinement, study design, data preparation and selection of appropriate statistical approaches.',
+          tags: ['Topic formulation','Literature synthesis','Study design','Data preparation','Statistical analysis']
+        },
+        {
+          icon: 'analysis',
+          title: 'Statistical, ML & DL Workflow Guidance',
+          detail: 'Advise on preprocessing, feature engineering, model development, validation, interpretation and reproducible implementation across statistical, machine-learning and deep-learning studies.',
+          tags: ['Preprocessing','Feature engineering','Model development','Validation','Interpretation','Reproducibility']
+        },
+        {
+          icon: 'writing',
+          title: 'Scientific Writing & Research Outputs',
+          detail: 'Support the development and refinement of manuscripts, conference papers, abstracts, figures, tables, presentations, supplementary materials and responses to reviewer comments.',
+          tags: ['Manuscripts','Conference papers','Abstracts','Figures & tables','Presentations','Reviewer responses']
+        },
+        {
+          icon: 'discussion',
+          title: 'Methodological Discussion & Submission Readiness',
+          detail: 'Facilitate research meetings and methodological discussions, providing constructive feedback on analytical workflows, scientific writing, publication ethics and submission readiness.',
+          tags: ['Research meetings','Methodological feedback','Scientific writing','Publication ethics','Submission readiness']
+        }
+      ],
+      workflow: ['Formulate','Synthesize','Design','Prepare','Model & validate','Interpret','Communicate','Refine & submit'],
+      principles: [
+        'Support thinking and methodological independence rather than replacing the researcher’s own scholarly judgment.',
+        'Keep analytical decisions transparent, reproducible and aligned with the research question.',
+        'Separate collaborative research support from formal academic supervision unless an official supervisory role exists.'
+      ]
+    },
     service: base.service || [],
     engagements: base.engagements || [],
     profiles: base.profiles || [],
