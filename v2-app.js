@@ -1464,10 +1464,10 @@
             <div class="experience-role-intro${x.supportingImage?' has-supporting-image':''}">
               ${x.description||x.detail?`<p class="experience-role-summary">${esc(x.description||x.detail)}</p>`:''}
               ${x.supportingImage?`<figure class="experience-supporting-figure">
-                <a class="experience-supporting-link" href="${esc(x.supportingImage)}" target="_blank" rel="noopener noreferrer" aria-label="View full-size DSLR Lab plaque photograph">
+                <a class="experience-supporting-link" href="${esc(x.supportingImage)}" target="_blank" rel="noopener noreferrer" aria-label="View full-size DSLR Lab plaque image">
                   <img src="${esc(x.supportingImage)}" alt="${esc(x.supportingImageAlt||'Research laboratory photograph')}" loading="lazy" decoding="async">
                 </a>
-                <figcaption><span class="experience-supporting-caption-kicker">Laboratory photograph</span><span>${esc(x.supportingImageCaption||'Research laboratory')}</span></figcaption>
+                <figcaption><span class="experience-supporting-caption-kicker">Lab plaque · HD</span><span>${esc(x.supportingImageCaption||'Research laboratory')}</span></figcaption>
               </figure>`:''}
             </div>
             ${Array.isArray(x.appointments)&&x.appointments.length?`<section class="experience-appointments" aria-label="DSLR Lab research appointment progression">
