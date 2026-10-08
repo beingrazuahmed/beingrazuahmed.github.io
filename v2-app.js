@@ -1374,7 +1374,70 @@
     </div></section>`;
   }
 
-  function experience(){return `${pageHero('Experience','Research roles, mentorship and collaborative support.')}<section class="section"><div class="container">${sectionHead('Research experience','Roles & contribution')}<div class="timeline">${(D.experience||[]).map(x=>`<div class="timeline-item"><strong>${esc(x.period||x.date||'')}</strong><h3>${esc(x.title||x.role||'')}</h3><p><strong>${esc(x.organization||x.institution||'')}</strong></p><p>${esc(x.description||x.detail||'')}</p></div>`).join('')}</div></div></section><section class="section alt"><div class="container">${sectionHead('Mentorship','Collaborative research support')}<p class="section-copy">Research mentorship and collaborative support are presented separately from formal academic supervision, with emphasis on study formulation, analysis workflows, validation and manuscript development.</p><div class="grid grid-3">${(D.people||[]).filter(x=>(x.roles||[]).includes('Mentee')).map(personCard).join('')}</div></div></section>`;}
+  function experience(){
+    const support=D.mentorshipSupport||{};
+    const juniors=(D.people||[]).filter(x=>x.group==='Junior Collaborators & Mentees');
+    const supportIcon=name=>{
+      const paths={
+        formulation:'<path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/><path d="m15.5 16.5 3-3"/>',
+        analysis:'<path d="M4 19V9M10 19V5M16 19v-8M22 19H2"/><path d="m4 8 6-4 6 6 5-4"/>',
+        writing:'<path d="M5 4h10l4 4v12H5z"/><path d="M15 4v5h5M8 13h8M8 16h6"/>',
+        discussion:'<path d="M4 5h16v10H9l-5 4z"/><path d="M8 9h8M8 12h5"/>'
+      };
+      return `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">${paths[name]||paths.formulation}</svg>`;
+    };
+    return `${pageHero('Experience','Research roles, mentorship and collaborative support.')}
+      <section class="section"><div class="container">
+        ${sectionHead('Research experience','Roles & contribution')}
+        <div class="timeline">${(D.experience||[]).map(x=>`<div class="timeline-item"><strong>${esc(x.period||x.date||'')}</strong><h3>${esc(x.title||x.role||'')}</h3><p><strong>${esc(x.organization||x.institution||'')}</strong></p><p>${esc(x.description||x.detail||'')}</p></div>`).join('')}</div>
+      </div></section>
+      <section class="section alt mentorship-role-section" id="research-mentorship-support"><div class="container">
+        <div class="mentorship-role-hero">
+          <div class="mentorship-role-copy">
+            <span class="section-kicker">Collaborative research role</span>
+            <h2>${esc(support.title||'Research Mentorship & Collaborative Support')}</h2>
+            <p>${esc(support.summary||'')}</p>
+            <div class="mentorship-role-badges">
+              <span>Junior researchers</span><span>Early-career collaborators</span><span>Methods + writing</span><span>Publication readiness</span>
+            </div>
+          </div>
+          <div class="mentorship-role-metrics" aria-label="Research mentorship summary">
+            <div><strong>${juniors.length}</strong><span>Junior collaborators & mentees</span></div>
+            <div><strong>${(support.areas||[]).length}</strong><span>Core support domains</span></div>
+            <div><strong>${(support.workflow||[]).length}</strong><span>Research workflow stages</span></div>
+          </div>
+        </div>
+
+        <div class="mentorship-support-grid">
+          ${(support.areas||[]).map((area,i)=>`<article class="card mentorship-support-card">
+            <div class="mentorship-support-card-top"><span class="mentorship-support-icon">${supportIcon(area.icon)}</span><span class="mentorship-support-index">${String(i+1).padStart(2,'0')}</span></div>
+            <h3>${esc(area.title||'')}</h3>
+            <p>${esc(area.detail||'')}</p>
+            <div class="mentorship-support-tags">${(area.tags||[]).map(x=>`<span>${esc(x)}</span>`).join('')}</div>
+          </article>`).join('')}
+        </div>
+
+        <div class="mentorship-workflow-panel">
+          <div class="mentorship-workflow-head">
+            <div><span class="section-kicker">Support workflow</span><h3>From research question to submission readiness</h3></div>
+            <p>Guidance is adapted to the collaborator’s project stage and is intended to strengthen methodological independence, not substitute for formal supervision.</p>
+          </div>
+          <div class="mentorship-workflow">
+            ${(support.workflow||[]).map((x,i)=>`<div class="mentorship-workflow-step"><span>${String(i+1).padStart(2,'0')}</span><strong>${esc(x)}</strong></div>`).join('')}
+          </div>
+        </div>
+
+        <div class="mentorship-principles">
+          <div><span class="section-kicker">Working principles</span><h3>Responsible collaborative support</h3></div>
+          <ul>${(support.principles||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+        </div>
+      </div></section>
+      <section class="section mentorship-people-section"><div class="container">
+        ${sectionHead('Junior research network','Collaborators connected to this support role','Selected junior researchers and early-career collaborators are shown here with links to their full academic-network profiles.')}
+        <div class="grid grid-3 mentorship-people-grid">${juniors.map(personCard).join('')}</div>
+        <div class="section-action"><a class="section-text-link" href="network.html#junior-collaborators-mentees">Explore the full research network ↗</a></div>
+      </div></section>`;
+  }
 
   function workshops(){
     const records=D.workshopsAndSeminars||[];
