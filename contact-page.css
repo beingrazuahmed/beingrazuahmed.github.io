@@ -258,3 +258,13 @@
  .contact-page .contact-intro-meta{font-size:9px}
 }
 @media(prefers-reduced-motion:reduce){.contact-page .contact-focus-card:hover{transform:none}}
+
+/* Online enquiry submission: unobtrusive progress and confirmation states. */
+.contact-page .contact-anti-bot{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important;pointer-events:none!important}
+.contact-page .contact-enquiry-form .contact-invitation-button[disabled]{cursor:wait;opacity:.67;transform:none}
+.contact-page .contact-submission-status{margin:0;padding:12px 14px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;background:var(--surface-2);color:var(--text);font-size:12px;line-height:1.65}
+.contact-page .contact-submission-status[hidden]{display:none!important}
+.contact-page .contact-submission-status[data-state="success"]{border-left-color:#15803d}
+.contact-page .contact-submission-status[data-state="error"]{border-left-color:#b45309}
+.contact-page .contact-form-note{margin:0;color:var(--muted);font-size:11.5px;line-height:1.7}
+.contact-page .contact-enquiry-form :is(input,select,textarea){font-size:max(14px,1rem)}

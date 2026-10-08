@@ -270,7 +270,7 @@
 
   function footer(){
     const el=$('#site-footer'); if(!el) return;
-    el.innerHTML=`<footer class="footer"><div class="container footer-grid"><div><div class="brand"><span class="monogram">MRA</span><span>Md. Razu Ahmed</span></div><p>${esc(D.brand?.tagline||'')}</p><p class="tiny">Public portfolio · Privacy-safe by design · Last updated ${esc(D.lastUpdated||'')}</p></div><div><strong>Navigate</strong><p><a href="search.html">Search</a><br><a href="languages.html">Languages & MOI</a><br><a href="workshops.html">Workshops & Seminars</a><br><a href="dashboard-live.html?v=20260923-dashboardlive56">Dashboard</a><br><a href="cv.html">CV</a><br><a href="copyright.html">Copyright & Reuse</a></p></div><div><strong>Connect</strong><p><a href="mailto:razuahmed038@gmail.com">Email</a><br><a href="https://github.com/beingrazuahmed" target="_blank" rel="noopener">GitHub</a><br><a href="contact.html">Collaborate</a></p></div></div><div class="container tiny">© 2026 Md. Razu Ahmed. All rights reserved.</div></footer>`;
+    el.innerHTML=`<footer class="footer"><div class="container footer-grid"><div><div class="brand"><span class="monogram">MRA</span><span>Md. Razu Ahmed</span></div><p>${esc(D.brand?.tagline||'')}</p><p class="tiny">Public portfolio · Privacy-safe by design · Last updated ${esc(D.lastUpdated||'')}</p></div><div><strong>Navigate</strong><p><a href="search.html">Search</a><br><a href="languages.html">Languages & MOI</a><br><a href="workshops.html">Workshops & Seminars</a><br><a href="dashboard-live.html?v=20260923-dashboardlive56">Dashboard</a><br><a href="cv.html">CV</a><br><a href="copyright.html">Copyright & Reuse</a></p></div><div><strong>Connect</strong><p><a href="mailto:razuahmed038@gmail.com">Email</a><br><a href="https://github.com/beingrazuahmed" target="_blank" rel="noopener">GitHub</a><br><a href="contact.html">Collaborate</a></p></div></div><div class="container footer-traffic-line"><span class="footer-traffic-label">SITE ACTIVITY</span><img class="footer-traffic-badge" src="https://vbr.nathanchung.dev/badge?page_id=beingrazuahmed.github.io.site&text=Page_Views&color=1b75bb&lcolor=263548&style=flat-square" alt="Total site page views since October 2026" width="144" height="20" decoding="async" referrerpolicy="no-referrer"><span class="footer-traffic-note">Page views since Oct 2026 · Includes repeat visits</span></div><div class="container tiny">© 2026 Md. Razu Ahmed. All rights reserved.</div></footer>`;
   }
 
   function clock(){
@@ -2316,14 +2316,11 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   const brands={'Google Scholar':'google-scholar','ORCID':'orcid','Scopus':'scopus','Web of Science':'web-of-science','ResearchGate':'researchgate','Semantic Scholar':'semantic-scholar','SciProfiles':'sciprofiles','LinkedIn':'linkedin','GitHub':'github','Kaggle':'kaggle','Academia.edu':'academia','X':'x','Instagram':'instagram','Facebook':'facebook'};
   // Match Academic and Network profile logos. Prefer shared local assets and
   // the same brand favicons already used by the portfolio's scholarly profiles.
-  const sharedBrands=new Set(['Google Scholar','ORCID','Scopus','ResearchGate','Semantic Scholar','SciProfiles']);
-  const latestBrands={
-    'Web of Science':'assets/academic/journals/engineering-reports/web-of-science.webp',
-    'LinkedIn':'https://www.google.com/s2/favicons?sz=128&domain=linkedin.com'
-  };
+  // Use crisp local brand vectors. Shared academic assets stay consistent.
+  const academicShared={'Scopus':'assets/academic/logos/scopus-circle.png','Web of Science':'assets/academic/journals/engineering-reports/web-of-science.webp','SciProfiles':'https://www.google.com/s2/favicons?sz=128&domain=sciprofiles.com'};
   const icon=name=>{
     const id=brands[name];
-    const src=sharedBrands.has(name)?publicationBrandMeta(name).src:(latestBrands[name]||(id?'assets/academic/logos/contact/'+id+'.svg':''));
+    const src=academicShared[name]||(id?'assets/academic/logos/contact/'+id+'.svg':'');
     return src?'<span class="contact-brand-mark contact-brand-'+esc(id||'default')+'"><img src="'+esc(src)+'" alt="" aria-hidden="true" width="30" height="30" loading="lazy" decoding="async"></span>':'<span class="contact-brand-mark contact-brand-fallback" aria-hidden="true">'+esc(String(name||'?').slice(0,2).toUpperCase())+'</span>';
   };
   const lineIcon=kind=>{const paths={mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',location:'<path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/>',stats:'<path d="M4 20V11m6 9V5m6 15v-8m5 8H3"/><path d="m4 8 6-4 6 5 4-3"/>',health:'<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l8.13 8.13a1 1 0 0 0 1.42 0l8.13-8.13a5.5 5.5 0 0 0 0-7.78Z"/><path d="M5 12h4l2-3 2 6 2-3h4"/>',partnership:'<circle cx="7" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><path d="M2 20v-2a5 5 0 0 1 10 0v2m0 0v-2a5 5 0 0 1 10 0v2"/><path d="M10 12h4"/>'};return '<svg class="contact-line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.65" aria-hidden="true" focusable="false">'+(paths[kind]||paths.mail)+'</svg>';};
@@ -2352,7 +2349,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         <span class="contact-eyebrow"><span class="contact-eyebrow-line"></span> ACADEMIC CONTACT &amp; COLLABORATION</span>
         <h1 id="contact-title">Advancing research through <em>collaboration.</em></h1>
         <p class="contact-intro-lede">I welcome research partnerships, doctoral opportunities and interdisciplinary projects at the intersection of statistics, machine learning and explainable AI. I value rigorous methods, transparent analysis and meaningful scientific outcomes.</p>
-        <div class="contact-intro-actions"><a class="btn primary contact-action-primary" href="mailto:${esc(email)}">${lineIcon('mail')} Get in touch <span aria-hidden="true">↗</span></a><a class="btn ghost contact-action-secondary" href="#collaboration-areas">Explore collaboration areas <span aria-hidden="true">↓</span></a></div>
+        <div class="contact-intro-actions"><a class="btn primary contact-action-primary" href="#contactEnquiryForm">${lineIcon('mail')} Send an enquiry <span aria-hidden="true">↗</span></a><a class="btn ghost contact-action-secondary" href="#collaboration-areas">Explore collaboration areas <span aria-hidden="true">↓</span></a></div>
         <nav class="contact-reference-rail" aria-label="Research contact quick links">
           <a href="#academic-profiles">Scholarly profiles <span aria-hidden="true">↗</span></a>
           <a href="publications.html">Publications <span aria-hidden="true">↗</span></a>
@@ -2381,14 +2378,14 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         <ol class="contact-brief-list"><li><span>01</span><p><strong>Research question</strong><small>The scientific problem and why it matters.</small></p></li><li><span>02</span><p><strong>Proposed collaboration</strong><small>The expertise, contribution or partnership you have in mind.</small></p></li><li><span>03</span><p><strong>Context &amp; timeline</strong><small>Any relevant background, scope, intended outputs or deadlines.</small></p></li></ol>
       </div>
       <aside class="contact-invitation contact-enquiry-card">
-<div class="contact-enquiry-heading"><span class="contact-invitation-kicker">ACADEMIC ENQUIRY</span><h3>Start a conversation.</h3><p>Prepare a focused introduction and open it in your email application.</p></div>
-<form id="contactEnquiryForm" class="contact-enquiry-form" aria-label="Compose an academic enquiry">
+<div class="contact-enquiry-heading"><span class="contact-invitation-kicker">ACADEMIC ENQUIRY</span><h3>Start a conversation.</h3><p>Send your research enquiry through this page. Your message is forwarded to my academic email using an external form service.</p></div>
+<form id="contactEnquiryForm" class="contact-enquiry-form" aria-label="Send an academic enquiry" action="https://formsubmit.co/razuahmed038@gmail.com" method="POST">
 <div class="contact-form-row"><label>Full name <span aria-hidden="true">*</span><input name="name" type="text" autocomplete="name" placeholder="Your name" maxlength="100" required></label>
 <label>Email address <span aria-hidden="true">*</span><input name="email" type="email" autocomplete="email" placeholder="you@institution.edu" maxlength="150" required></label></div>
 <label>Enquiry topic <span aria-hidden="true">*</span><select name="topic" required><option value="">Choose a topic</option><option value="Research collaboration">Research collaboration</option><option value="PhD or academic opportunity">PhD or academic opportunity</option><option value="Interdisciplinary project">Interdisciplinary project</option><option value="Publication or dataset enquiry">Publication or dataset enquiry</option><option value="Other academic enquiry">Other academic enquiry</option></select></label>
 <label>Brief message <span aria-hidden="true">*</span><textarea name="message" rows="4" minlength="15" maxlength="2000" placeholder="Share your research idea, collaboration scope and any relevant timeline…" required></textarea></label>
-<button class="contact-invitation-button" type="submit">${lineIcon('mail')} Prepare email <span aria-hidden="true">↗</span></button>
-<p class="contact-form-note">This opens your email application with a draft. No message is sent or stored on this website.</p></form>
+<div class="contact-anti-bot" aria-hidden="true"><label>Leave this field blank<input type="text" name="_honey" autocomplete="off" tabindex="-1"></label></div><button class="contact-invitation-button" type="submit">${lineIcon('mail')} Send enquiry <span aria-hidden="true">↗</span></button><p id="contactSubmissionStatus" class="contact-submission-status" role="status" aria-live="polite" hidden></p>
+<p class="contact-form-note">Messages are processed by FormSubmit.co and forwarded to my email. This website does not retain submissions. Please avoid including confidential or sensitive research data.</p></form>
 <div class="contact-invitation-links"><a href="cv.html">Academic CV ↗</a><a href="publications.html">Research publications ↗</a></div></aside>
     </div></section>
   </div>`;
