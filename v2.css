@@ -12176,3 +12176,47 @@ body.mobile-nav-open{overflow:hidden}
     justify-content:flex-start;
   }
 }
+
+
+/* === Conference source photo layout fix (2026-10-08) === */
+/* Newly added conference photographs should have the same visual weight as
+   the certificate cards instead of falling into a single 12-column track. */
+.conference-source-card.source-photo{
+  grid-column:span 6!important;
+  order:1!important;
+  border-color:color-mix(in srgb,var(--accent) 24%,var(--line))!important;
+}
+.conference-source-card.source-photo .conference-source-preview{
+  aspect-ratio:1536/1116!important;
+  min-height:0!important;
+  background:color-mix(in srgb,var(--surface-2) 38%,#fff)!important;
+}
+.conference-source-card.source-photo .conference-source-preview img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  object-position:center!important;
+}
+.conference-source-card.source-photo .conference-source-copy{
+  min-height:112px;
+  padding:18px 20px 20px!important;
+}
+@media(max-width:980px){
+  .conference-source-card.source-photo{
+    grid-column:span 12!important;
+  }
+}
+@media(max-width:680px){
+  .conference-source-card.source-photo{
+    grid-column:auto!important;
+  }
+  .conference-source-card.source-photo .conference-source-preview{
+    aspect-ratio:auto!important;
+  }
+  .conference-source-card.source-photo .conference-source-preview img{
+    height:auto!important;
+    max-height:none!important;
+  }
+}
