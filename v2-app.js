@@ -1448,15 +1448,30 @@
     return `${pageHero('Experience','Research roles, mentorship and collaborative support.')}
       <section class="section"><div class="container">
         ${sectionHead('Research experience','Roles & contribution')}
-        <div class="timeline experience-timeline">${(D.experience||[]).map(x=>`<div class="timeline-item"><article class="experience-role-card" id="${esc(x.id||'')}">
+        <div class="timeline experience-timeline">${(D.experience||[]).map(x=>`<div class="timeline-item">
+        <article class="experience-role-card" id="${esc(x.id||'')}">
           <div class="experience-role-head">
-            ${x.logo?`<div class="experience-logo-frame"><img src="${esc(x.logo)}" alt="${esc(x.organization||'')} logo" loading="lazy" decoding="async"></div>`:''}
-            <div class="experience-role-identity"><span class="experience-role-eyebrow">Professional Research Experience</span><h3>${esc(x.title||x.role||'')}</h3><p class="experience-organization">${esc(x.organization||x.institution||'')}</p></div>
-            <span class="experience-date">${esc(x.period||x.date||'')}</span>
+            ${x.logo?`<div class="experience-logo-frame"><img src="${esc(x.logo)}" alt="${esc(x.organization||x.institution||'')} logo" loading="lazy" decoding="async"></div>`:''}
+            <div class="experience-role-identity">
+              <span class="experience-role-eyebrow">Research &amp; Professional Experience</span>
+              <h3>${esc(x.title||x.role||'')}</h3>
+              <p class="experience-organization">${esc(x.organization||x.institution||'')}</p>
+            </div>
+            <div class="experience-date"><span>${esc(x.period||x.date||'')}</span></div>
           </div>
-          ${x.description||x.detail?`<p class="experience-role-summary">${esc(x.description||x.detail)}</p>`:''}
-          ${Array.isArray(x.responsibilities)&&x.responsibilities.length?`<h4 class="experience-responsibilities-title">Responsibilities & contributions</h4><ol class="experience-responsibilities">${x.responsibilities.map(item=>`<li>${esc(item)}</li>`).join('')}</ol>`:''}
-        </article></div>`).join('')}</div>
+          <div class="experience-role-body">
+            ${x.description||x.detail?`<p class="experience-role-summary">${esc(x.description||x.detail)}</p>`:''}
+            ${Array.isArray(x.responsibilities)&&x.responsibilities.length?`<div class="experience-responsibilities-heading"><h4>Key responsibilities</h4></div>
+              <ol class="experience-responsibilities">${x.responsibilities.map((item,i)=>`<li>
+                <span class="experience-duty-index" aria-hidden="true">${String(i+1).padStart(2,'0')}</span>
+                <div class="experience-duty-content">
+                  ${x.responsibilityLabels&&x.responsibilityLabels[i]?`<h5>${esc(x.responsibilityLabels[i])}</h5>`:''}
+                  <p>${esc(item)}</p>
+                </div>
+              </li>`).join('')}</ol>`:''}
+          </div>
+        </article>
+      </div>`).join('')}</div>
       </div></section>
       <section class="section alt mentorship-role-section" id="research-mentorship-support"><div class="container">
         <div class="mentorship-role-hero">
