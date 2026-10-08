@@ -1451,7 +1451,7 @@
         <div class="timeline experience-timeline">${(D.experience||[]).map(x=>`<div class="timeline-item">
         <article class="experience-role-card" id="${esc(x.id||'')}">
           <div class="experience-role-head">
-            ${x.logo?`<div class="experience-logo-frame${x.logoKind==='plaque'?' is-plaque':''}"><img src="${esc(x.logo)}" alt="${esc(x.imageAlt||((x.organization||x.institution||'')+' logo'))}" loading="lazy" decoding="async"></div>`:''}
+            ${x.logo?`<div class="experience-logo-frame${x.logoKind==='institution'?' is-institution':x.logoKind==='plaque'?' is-plaque':''}"><img src="${esc(x.logo)}" alt="${esc(x.imageAlt||((x.organization||x.institution||'')+' logo'))}" loading="lazy" decoding="async"></div>`:''}
             <div class="experience-role-identity">
               <span class="experience-role-eyebrow">Research &amp; Professional Experience</span>
               <h3>${esc(x.title||x.role||'')}</h3>
@@ -1461,7 +1461,15 @@
             <div class="experience-date"><span>${esc(x.period||x.date||'')}</span>${x.ongoing?'<span class="experience-ongoing">Ongoing</span>':''}</div>
           </div>
           <div class="experience-role-body">
-            ${x.description||x.detail?`<p class="experience-role-summary">${esc(x.description||x.detail)}</p>`:''}
+            <div class="experience-role-intro${x.supportingImage?' has-supporting-image':''}">
+              ${x.description||x.detail?`<p class="experience-role-summary">${esc(x.description||x.detail)}</p>`:''}
+              ${x.supportingImage?`<figure class="experience-supporting-figure">
+                <a class="experience-supporting-link" href="${esc(x.supportingImage)}" target="_blank" rel="noopener noreferrer" aria-label="View full-size DSLR Lab plaque photograph">
+                  <img src="${esc(x.supportingImage)}" alt="${esc(x.supportingImageAlt||'Research laboratory photograph')}" loading="lazy" decoding="async">
+                </a>
+                <figcaption><span class="experience-supporting-caption-kicker">Laboratory photograph</span><span>${esc(x.supportingImageCaption||'Research laboratory')}</span></figcaption>
+              </figure>`:''}
+            </div>
             ${Array.isArray(x.responsibilities)&&x.responsibilities.length?`<div class="experience-responsibilities-heading"><h4>Key responsibilities</h4></div>
               <ol class="experience-responsibilities">${x.responsibilities.map((item,i)=>`<li>
                 <span class="experience-duty-index" aria-hidden="true">${String(i+1).padStart(2,'0')}</span>
