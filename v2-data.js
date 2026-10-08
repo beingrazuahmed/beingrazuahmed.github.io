@@ -2289,7 +2289,19 @@
           degree: 'Bachelor of Science (B.Sc. Hons.) in Statistics',
           institution: 'Department of Statistics (now Department of Statistics and Data Science), Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
           year: '2023 · held in 2026',
-          detail: ''
+          detail: 'CGPA 3.15/4.00'
+        },
+        {
+          degree: 'Higher Secondary Certificate (HSC)',
+          institution: 'Rajshahi Court College',
+          year: '2019',
+          detail: 'GPA 4.17/5.00'
+        },
+        {
+          degree: 'Secondary School Certificate (SSC)',
+          institution: 'Madinatul Ulum Kamil Madrasah',
+          year: '2017',
+          detail: 'GPA 4.39/5.00'
         }
       ],
 
