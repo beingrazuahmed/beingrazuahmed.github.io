@@ -2473,9 +2473,9 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   function pageHero(title,lead){return `<section class="hero compact"><div class="container"><div class="eyebrow"><span class="live-dot"></span><span>MRA Research Intelligence</span><span class="clock" data-clock>Dhaka · UTC+06:00</span></div><h1>${esc(title)}</h1><p class="lede">${esc(lead)}</p></div></section>`;}
 
   function initInteractive(){
-    const galleryFilterButtons=$('[data-gallery-filter]');
+    const galleryFilterButtons=$$('[data-gallery-filter]');
     if(galleryFilterButtons.length){
-      const cards=$('.gallery-evidence-card');
+      const cards=$$('.gallery-evidence-card');
       const applyGalleryFilter=category=>{
         galleryFilterButtons.forEach(btn=>btn.classList.toggle('active',(btn.dataset.galleryFilter||'All')===category));
         cards.forEach(card=>{card.hidden=category!=='All'&&(card.dataset.galleryCategory||'')!==category;});
