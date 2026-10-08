@@ -270,7 +270,27 @@
 
   function footer(){
     const el=$('#site-footer'); if(!el) return;
-    el.innerHTML=`<footer class="footer"><div class="container footer-grid"><div><div class="brand"><span class="monogram">MRA</span><span>Md. Razu Ahmed</span></div><p>${esc(D.brand?.tagline||'')}</p><p class="tiny">Public portfolio · Privacy-safe by design · Last updated ${esc(D.lastUpdated||'')}</p></div><div><strong>Navigate</strong><p><a href="search.html">Search</a><br><a href="languages.html">Languages & MOI</a><br><a href="workshops.html">Workshops & Seminars</a><br><a href="dashboard-live.html?v=20260923-dashboardlive56">Dashboard</a><br><a href="cv.html">CV</a><br><a href="copyright.html">Copyright & Reuse</a></p></div><div><strong>Connect</strong><p><a href="mailto:razuahmed038@gmail.com">Email</a><br><a href="https://github.com/beingrazuahmed" target="_blank" rel="noopener">GitHub</a><br><a href="contact.html">Collaborate</a></p></div></div><div class="container footer-traffic-line"><span class="footer-traffic-label">SITE ACTIVITY</span><img class="footer-traffic-badge" src="https://vbr.nathanchung.dev/badge?page_id=beingrazuahmed.github.io.site&text=Page_Views&color=1b75bb&lcolor=263548&style=flat-square" alt="Total site page views since October 2026" width="144" height="20" decoding="async" referrerpolicy="no-referrer"><span class="footer-traffic-note">Page views since Oct 2026 · Includes repeat visits</span></div><div class="container tiny">© 2026 Md. Razu Ahmed. All rights reserved.</div></footer>`;
+    el.innerHTML=`<footer class="footer"><div class="container footer-grid"><div><div class="brand"><span class="monogram">MRA</span><span>Md. Razu Ahmed</span></div><p>${esc(D.brand?.tagline||'')}</p><p class="tiny">Public portfolio · Privacy-safe by design · Last updated ${esc(D.lastUpdated||'')}</p></div><div><strong>Navigate</strong><p><a href="search.html">Search</a><br><a href="languages.html">Languages & MOI</a><br><a href="workshops.html">Workshops & Seminars</a><br><a href="dashboard-live.html?v=20260923-dashboardlive56">Dashboard</a><br><a href="cv.html">CV</a><br><a href="copyright.html">Copyright & Reuse</a></p></div><div><strong>Connect</strong><p><a href="mailto:razuahmed038@gmail.com">Email</a><br><a href="https://github.com/beingrazuahmed" target="_blank" rel="noopener">GitHub</a><br><a href="contact.html">Collaborate</a></p></div></div><div class="container footer-flagcounter-wrap">
+  <div class="footer-flagcounter-card">
+    <div class="footer-flagcounter-head">
+      <span class="footer-flagcounter-title">🌍 Global Visitors</span>
+      <span class="footer-flagcounter-subtitle">Country-wise visitors to this research portfolio</span>
+    </div>
+    <a class="footer-flagcounter-link"
+       href="https://info.flagcounter.com/SCyQ"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="View global visitor statistics">
+      <img class="footer-flagcounter-image"
+           src="https://s01.flagcounter.com/count2/SCyQ/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
+           alt="Flag Counter showing global visitors by country"
+           loading="eager"
+           decoding="async"
+           referrerpolicy="no-referrer">
+    </a>
+  </div>
+</div>
+<div class="container tiny">© 2026 Md. Razu Ahmed. All rights reserved.</div></footer>`;
   }
 
   function clock(){
