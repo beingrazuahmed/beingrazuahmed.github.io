@@ -2264,298 +2264,57 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
 
   function copyrightPage(){return `${pageHero('Copyright & Reuse','Responsible reuse of portfolio content, research figures and evidence.')}<section class="section"><div class="container"><article class="card"><h3>Portfolio content</h3><p>Unless an individual publication, dataset, image or certificate states otherwise, portfolio text and original interface design are © 2026 Md. Razu Ahmed. Published articles and datasets retain the licenses specified by their publishers or repositories.</p><h3>Research figures</h3><p>Reuse should follow the license and attribution requirements of the associated publication. Do not detach figures from their scientific context.</p><h3>Certificates & third-party materials</h3><p>Certificates, journal logos, institutional logos and event materials remain the property of their respective issuers and are displayed as academic evidence.</p></article></div></section>`;}
 
+  // Research Constellation 2.0: a composed research map, not a random particle field.
+  // The SVG is deliberately confined to the page hero and does not require
+  // animation frames, pointer listeners, or a continuously running canvas.
   function initResearchConstellation(){
-    if(document.getElementById('mraResearchConstellation')) return;
+    const oldCanvas=document.getElementById('mraResearchConstellation');
+    if(oldCanvas)oldCanvas.remove();
+    document.body.classList.remove('has-mra-constellation');
 
-    const host=document.body;
-    host.classList.add('has-mra-constellation');
-
-    const canvas=document.createElement('canvas');
-    canvas.id='mraResearchConstellation';
-    canvas.className='mra-constellation mra-constellation-global';
-    canvas.setAttribute('aria-hidden','true');
-    canvas.setAttribute('role','presentation');
-    host.prepend(canvas);
-
-    const ctx=canvas.getContext('2d',{alpha:true});
-    if(!ctx){canvas.remove();return;}
-
-    const root=document.documentElement;
     const pageName=document.body.dataset.page||'home';
-    const profiles={
-      home:{count:112,connect:148,speed:.074,anchors:10,dust:72},
-      research:{count:102,connect:146,speed:.070,anchors:9,dust:64},
-      network:{count:108,connect:148,speed:.070,anchors:9,dust:68},
-      projects:{count:94,connect:144,speed:.064,anchors:8,dust:58},
-      profile:{count:90,connect:142,speed:.062,anchors:8,dust:54},
-      academic:{count:98,connect:144,speed:.064,anchors:9,dust:62},
-      publications:{count:86,connect:140,speed:.058,anchors:7,dust:50},
-      conferences:{count:84,connect:140,speed:.058,anchors:7,dust:50},
-      workshops:{count:86,connect:140,speed:.058,anchors:7,dust:50},
-      resources:{count:82,connect:138,speed:.056,anchors:7,dust:48},
-      recognition:{count:82,connect:138,speed:.056,anchors:7,dust:48},
-      experience:{count:88,connect:140,speed:.060,anchors:7,dust:52},
-      languages:{count:82,connect:138,speed:.056,anchors:7,dust:48},
-      default:{count:86,connect:140,speed:.058,anchors:7,dust:50}
-    };
-    const profile=profiles[pageName]||profiles.default;
-    const motionMedia=window.matchMedia('(prefers-reduced-motion: reduce)');
+    const isHome=pageName==='home';
+    if(!['home','research','network'].includes(pageName))return;
+    const hero=isHome?document.querySelector('.hero-shell'):document.querySelector('.hero.compact');
+    if(!hero||hero.querySelector('.research-network-visual'))return;
 
-    let width=0,height=0,dpr=1,nodes=[],dust=[],raf=0,last=0,isVisible=!document.hidden;
-    const pointer={x:0,y:0,active:false};
-    const reduced=()=>root.dataset.motion==='reduced'||motionMedia.matches;
+    const nodes=[
+      {id:'statistics',title:'STATISTICS',x:126,y:176,labelX:148,labelY:165,anchor:'start'},
+      {id:'data',title:'DATA SCIENCE',x:347,y:99,labelX:368,labelY:87,anchor:'start'},
+      {id:'ml',title:'MACHINE LEARNING',x:630,y:171,labelX:613,labelY:143,anchor:'middle'},
+      {id:'xai',title:'EXPLAINABLE AI',x:768,y:355,labelX:745,labelY:332,anchor:'end'},
+      {id:'model',title:'COMPUTATIONAL MODELLING',x:584,y:508,labelX:564,labelY:488,anchor:'end'},
+      {id:'biomed',title:'BIOMEDICAL RESEARCH',x:311,y:534,labelX:290,labelY:562,anchor:'middle'},
+      {id:'public',title:'PUBLIC HEALTH',x:119,y:378,labelX:141,labelY:405,anchor:'start'}
+    ];
+    const links=[
+      ['statistics','data'],['statistics','public'],['statistics','biomed'],
+      ['data','ml'],['data','public'],['data','model'],
+      ['ml','xai'],['ml','model'],['public','biomed'],
+      ['biomed','model'],['biomed','xai'],['xai','model']
+    ];
+    const lookup=Object.fromEntries(nodes.map(n=>[n.id,n]));
+    const edges=links.map(([a,b],i)=>{
+      const from=lookup[a],to=lookup[b];
+      return '<path class="research-network-edge'+(i%4===0?' is-highlighted':'')+'" d="M'+from.x+' '+from.y+' L'+to.x+' '+to.y+'"/>';
+    }).join('');
+    const vertices=nodes.map((n,i)=>'<g class="research-network-node'+(n.id==='data'?' is-core':'')+'" transform="translate('+n.x+' '+n.y+')">'
+      +'<circle class="research-network-node-halo" r="'+(n.id==='data'?22:15)+'"/>'
+      +'<circle class="research-network-node-ring" r="'+(n.id==='data'?10:7)+'"/>'
+      +'<circle class="research-network-node-center" r="'+(n.id==='data'?4:3)+'"/>'
+      +'</g><text class="research-network-label" x="'+n.labelX+'" y="'+n.labelY+'" text-anchor="'+n.anchor+'">'+n.title+'</text>').join('');
 
-    function random(min,max){return min+Math.random()*(max-min);}
-
-    function seed(){
-      const mobile=width<720;
-      const tablet=width<1050;
-      const density=mobile?.42:(tablet?.70:1);
-      const count=Math.max(26,Math.round(profile.count*density));
-      const dustCount=Math.max(14,Math.round(profile.dust*density));
-      const anchorCount=Math.max(3,Math.round(profile.anchors*(mobile?.6:1)));
-
-      nodes=Array.from({length:count},(_,i)=>({
-        x:random(0,width),
-        y:random(0,height),
-        vx:random(-profile.speed,profile.speed),
-        vy:random(-profile.speed*.78,profile.speed*.78),
-        r:i<anchorCount?random(2.15,2.8):random(.85,1.65),
-        anchor:i<anchorCount,
-        phase:random(0,Math.PI*2),
-        pulseSeed:random(0,1)
-      }));
-
-      dust=Array.from({length:dustCount},()=>({
-        x:random(0,width),
-        y:random(0,height),
-        vx:random(-.025,.025),
-        vy:random(-.018,.018),
-        r:random(.45,1.05),
-        alpha:random(.08,.24),
-        phase:random(0,Math.PI*2)
-      }));
-    }
-
-    function resize(){
-      dpr=Math.min(window.devicePixelRatio||1,1.65);
-      width=Math.max(1,window.innerWidth);
-      height=Math.max(1,window.innerHeight);
-      canvas.width=Math.round(width*dpr);
-      canvas.height=Math.round(height*dpr);
-      canvas.style.width=width+'px';
-      canvas.style.height=height+'px';
-      ctx.setTransform(dpr,0,0,dpr,0,0);
-      seed();
-    }
-
-    function readCssRgb(name,fallback){
-      const raw=getComputedStyle(root).getPropertyValue(name).trim();
-      if(/^#[0-9a-f]{3}$/i.test(raw)){
-        return raw.slice(1).split('').map(x=>parseInt(x+x,16));
-      }
-      if(/^#[0-9a-f]{6}$/i.test(raw)){
-        return [parseInt(raw.slice(1,3),16),parseInt(raw.slice(3,5),16),parseInt(raw.slice(5,7),16)];
-      }
-      const match=raw.match(/rgba?\(\s*([\d.]+)[,\s]+([\d.]+)[,\s]+([\d.]+)/i);
-      return match?[+match[1],+match[2],+match[3]]:fallback;
-    }
-
-    function blendRgb(a,b,t){
-      return a.map((v,i)=>Math.round(v+(b[i]-v)*t));
-    }
-
-    function palette(){
-      const dark=root.dataset.mode==='dark';
-      const accent=readCssRgb('--accent',dark?[89,194,255]:[25,150,230]);
-      const accent2=readCssRgb('--accent-2',dark?[183,228,255]:[15,76,129]);
-      const text=readCssRgb('--text',dark?[238,247,255]:[16,32,51]);
-      const muted=readCssRgb('--muted',dark?[157,177,197]:[93,108,124]);
-
-      // Pull the constellation directly from the active portfolio theme so
-      // Scientific, Executive, Quantum and Monochrome all get a visible,
-      // coherent network in both light and dark modes.
-      return dark
-        ? {
-            line:blendRgb(accent,accent2,.22),
-            node:blendRgb(accent,accent2,.08),
-            anchor:blendRgb(accent2,[255,255,255],.18),
-            dust:blendRgb(accent,muted,.42),
-            lineAlpha:.094,anchorLineAlpha:.170,nodeAlpha:.31,anchorAlpha:.52,
-            ringAlpha:.125,haloAlpha:.036,dustBoost:1.02,pulseAlpha:.46
-          }
-        : {
-            line:blendRgb(accent2,accent,.24),
-            node:blendRgb(accent,accent2,.18),
-            anchor:blendRgb(accent2,text,.28),
-            dust:blendRgb(accent2,muted,.34),
-            lineAlpha:.155,anchorLineAlpha:.245,nodeAlpha:.43,anchorAlpha:.62,
-            ringAlpha:.155,haloAlpha:.050,dustBoost:1.36,pulseAlpha:.58
-          };
-    }
-
-    function wrap(p){
-      if(p.x<-24)p.x=width+24;
-      else if(p.x>width+24)p.x=-24;
-      if(p.y<-24)p.y=height+24;
-      else if(p.y>height+24)p.y=-24;
-    }
-
-    function advanceNode(n){
-      n.x+=n.vx;
-      n.y+=n.vy;
-
-      if(pointer.active){
-        const dx=n.x-pointer.x,dy=n.y-pointer.y;
-        const dist=Math.hypot(dx,dy);
-        const range=170;
-        if(dist>0&&dist<range){
-          const force=(1-dist/range)*(n.anchor?.060:.040);
-          n.x+=(dx/dist)*force;
-          n.y+=(dy/dist)*force;
-        }
-      }
-      wrap(n);
-    }
-
-    function advanceDust(p){
-      p.x+=p.vx;
-      p.y+=p.vy;
-      wrap(p);
-    }
-
-    function draw(time,advance){
-      ctx.clearRect(0,0,width,height);
-      const colors=palette();
-      const mobile=width<720;
-      const connect=profile.connect*(mobile?.76:1);
-
-      if(advance){
-        nodes.forEach(advanceNode);
-        dust.forEach(advanceDust);
-      }
-
-      // Fine ambient particles add depth without competing with content.
-      dust.forEach(p=>{
-        const shimmer=reduced()?1:(.82+.18*Math.sin(time*.00042+p.phase));
-        ctx.beginPath();
-        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-        ctx.fillStyle=`rgba(${colors.dust[0]},${colors.dust[1]},${colors.dust[2]},${Math.min(.42,p.alpha*shimmer*colors.dustBoost).toFixed(3)})`;
-        ctx.fill();
-      });
-
-      // Network web.
-      for(let i=0;i<nodes.length;i++){
-        const a=nodes[i];
-        for(let j=i+1;j<nodes.length;j++){
-          const b=nodes[j];
-          const dx=a.x-b.x,dy=a.y-b.y,dist=Math.hypot(dx,dy);
-          if(dist>=connect) continue;
-
-          const strength=1-dist/connect;
-          const anchorLink=a.anchor||b.anchor;
-          const alpha=(anchorLink?colors.anchorLineAlpha:colors.lineAlpha)*strength;
-
-          ctx.beginPath();
-          ctx.moveTo(a.x,a.y);
-          ctx.lineTo(b.x,b.y);
-          ctx.strokeStyle=`rgba(${colors.line[0]},${colors.line[1]},${colors.line[2]},${alpha.toFixed(3)})`;
-          ctx.lineWidth=anchorLink?.9:.64;
-          ctx.stroke();
-
-          // Sparse moving signal pulse along selected links.
-          if(!reduced()&&((i*19+j*13)%67===0)){
-            const t=((time*.000026)+a.pulseSeed)%1;
-            const px=a.x+(b.x-a.x)*t;
-            const py=a.y+(b.y-a.y)*t;
-            ctx.beginPath();
-            ctx.arc(px,py,1.25,0,Math.PI*2);
-            ctx.fillStyle=`rgba(${colors.anchor[0]},${colors.anchor[1]},${colors.anchor[2]},${colors.pulseAlpha})`;
-            ctx.fill();
-          }
-        }
-      }
-
-      // Nodes.
-      nodes.forEach(n=>{
-        const pulse=(n.anchor&&!reduced()) ? .92+.10*Math.sin(time*.00062+n.phase) : 1;
-        const col=n.anchor?colors.anchor:colors.node;
-
-        if(n.anchor){
-          ctx.beginPath();
-          ctx.arc(n.x,n.y,(n.r+4.6)*pulse,0,Math.PI*2);
-          ctx.strokeStyle=`rgba(${col[0]},${col[1]},${col[2]},${colors.ringAlpha})`;
-          ctx.lineWidth=.8;
-          ctx.stroke();
-
-          ctx.beginPath();
-          ctx.arc(n.x,n.y,(n.r+8.5)*pulse,0,Math.PI*2);
-          ctx.fillStyle=`rgba(${col[0]},${col[1]},${col[2]},${(colors.ringAlpha*.25).toFixed(3)})`;
-          ctx.fill();
-        }
-
-        ctx.beginPath();
-        ctx.arc(n.x,n.y,n.r*pulse,0,Math.PI*2);
-        ctx.fillStyle=`rgba(${col[0]},${col[1]},${col[2]},${n.anchor?colors.anchorAlpha:colors.nodeAlpha})`;
-        ctx.fill();
-      });
-
-      // Very light pointer halo keeps the motion responsive but restrained.
-      if(pointer.active&&!reduced()){
-        const gradient=ctx.createRadialGradient(pointer.x,pointer.y,0,pointer.x,pointer.y,150);
-        gradient.addColorStop(0,`rgba(${colors.node[0]},${colors.node[1]},${colors.node[2]},${colors.haloAlpha})`);
-        gradient.addColorStop(1,`rgba(${colors.node[0]},${colors.node[1]},${colors.node[2]},0)`);
-        ctx.fillStyle=gradient;
-        ctx.beginPath();
-        ctx.arc(pointer.x,pointer.y,150,0,Math.PI*2);
-        ctx.fill();
-      }
-    }
-
-    function loop(time){
-      if(!isVisible){raf=0;return;}
-      const shouldAdvance=time-last>14;
-      if(shouldAdvance) last=time;
-      draw(time,shouldAdvance);
-      raf=requestAnimationFrame(loop);
-    }
-
-    function restart(){
-      cancelAnimationFrame(raf);
-      raf=0;
-      if(!isVisible) return;
-      if(reduced()){draw(0,false);return;}
-      raf=requestAnimationFrame(loop);
-    }
-
-    function onPointerMove(e){
-      pointer.x=e.clientX;
-      pointer.y=e.clientY;
-      pointer.active=true;
-    }
-
-    function onPointerLeave(){pointer.active=false;}
-
-    let resizeTimer=0;
-    window.addEventListener('resize',()=>{
-      clearTimeout(resizeTimer);
-      resizeTimer=setTimeout(()=>{resize();restart();},100);
-    },{passive:true});
-    window.addEventListener('pointermove',onPointerMove,{passive:true});
-    document.addEventListener('mouseleave',onPointerLeave,{passive:true});
-    window.addEventListener('blur',onPointerLeave,{passive:true});
-
-    document.addEventListener('visibilitychange',()=>{
-      isVisible=!document.hidden;
-      if(isVisible) restart();
-      else{cancelAnimationFrame(raf);raf=0;}
-    });
-
-    new MutationObserver(restart).observe(root,{attributes:true,attributeFilter:['data-mode','data-motion','data-theme']});
-    if(typeof motionMedia.addEventListener==='function') motionMedia.addEventListener('change',restart);
-
-    resize();
-    restart();
+    const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    svg.setAttribute('class','research-network-visual '+(isHome?'research-network-home':'research-network-compact'));
+    svg.setAttribute('viewBox','0 0 900 620');
+    svg.setAttribute('preserveAspectRatio','xMidYMid meet');
+    svg.setAttribute('aria-hidden','true');
+    svg.setAttribute('focusable','false');
+    svg.innerHTML='<g class="research-network-guide"><circle cx="440" cy="307" r="254"/>'
+      +'<circle cx="440" cy="307" r="174"/></g>'
+      +'<g class="research-network-links">'+edges+'</g>'
+      +'<g class="research-network-vertices">'+vertices+'</g>';
+    hero.insertBefore(svg,hero.firstChild);
   }
 
   function pageHero(title,lead){return `<section class="hero compact"><div class="container"><div class="eyebrow"><span class="live-dot"></span><span>MRA Research Intelligence</span><span class="clock" data-clock>Dhaka · UTC+06:00</span></div><h1>${esc(title)}</h1><p class="lede">${esc(lead)}</p></div></section>`;}
