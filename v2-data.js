@@ -2970,7 +2970,15 @@
         title: 'Research Assistant',
         organization: 'International Research Collaboration Bangladesh (IRCB)',
         logo: 'assets/academic/organizations/ircb-logo.svg',
-        description: 'Research coordination, stakeholder communication, study planning, data management and manuscript development in collaborative research projects.',
+        description: 'Supported collaborative research activities across project coordination, stakeholder engagement, methodological planning, research data management, and manuscript preparation.',
+        responsibilityLabels: [
+          "Project Coordination & Delivery",
+          "Stakeholder Communication",
+          "Study Planning & Methodology",
+          "Research Operations",
+          "Manuscript Development",
+          "Research Data Management"
+        ],
         responsibilities: [
         "Coordinate collaborative research projects through work planning, task allocation, progress monitoring, documentation, and follow-up on agreed deliverables.",
         "Liaise with clients, research collaborators, and project stakeholders to clarify requirements, communicate progress, and maintain effective professional relationships.",
