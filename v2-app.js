@@ -1984,26 +1984,79 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   function gallery(){
     const records=D.gallery||[];
     const verifiedCount=records.filter(g=>g.verified).length;
-    return `${pageHero('Gallery & Evidence','A documentary archive of verified credentials, awards, role evidence, conference records and scientific engagement.')}
+    const groups=[
+      {
+        id:'conferences',
+        kicker:'Research dissemination',
+        title:'Conferences & Presentations',
+        description:'Presentation certificates, conference photographs, flyers and other event-specific evidence are kept together here.',
+        categories:['Conference']
+      },
+      {
+        id:'training',
+        kicker:'Professional development',
+        title:'Training, Workshops & Certifications',
+        description:'Courses, technical training, workshops and structured professional-development credentials.',
+        categories:['Professional Development','Workshops & Seminars']
+      },
+      {
+        id:'awards',
+        kicker:'Recognition',
+        title:'Awards & Academic Recognition',
+        description:'Awards, competition recognition, academic-performance crests and other formal recognition records.',
+        categories:['Award']
+      },
+      {
+        id:'academic-engagement',
+        kicker:'Academic record',
+        title:'Academic & Scientific Engagement',
+        description:'Academic documentation, public scientific activities, olympiad participation and related evidence.',
+        categories:['Academic Documentation','Scientific Engagement']
+      },
+      {
+        id:'service-leadership',
+        kicker:'Service & engagement',
+        title:'Scholarly Service & Leadership',
+        description:'Peer-review service, organizational participation, leadership and community-facing academic engagement.',
+        categories:['Scholarly Service','Leadership & Engagement']
+      }
+    ];
+    const recordsFor=group=>records.filter(item=>group.categories.includes(item.category));
+    const galleryCard=g=>`<article class="card gallery-evidence-card ${g.verified&&['Certificate','Poster','Workshop','Recognition'].includes(g.evidenceType)?'is-verified-certificate is-verified-document':''}" ${g.id?`id="${esc(g.id)}"`:''} data-gallery-category="${esc(g.category||'')}" data-evidence-type="${esc(g.evidenceType||'')}">
+      ${g.asset?`<a class="gallery-evidence-media" href="${esc(versionedAsset(g.asset))}" target="_blank" rel="noopener noreferrer" data-evidence-lightbox="${esc(versionedAsset(g.asset))}" data-evidence-original="${esc(versionedAsset(g.asset))}" data-evidence-title="${esc(g.title||'Academic evidence')}" data-evidence-meta="${esc([g.issuer,g.date].filter(Boolean).join(' · '))}"><img src="${esc(versionedAsset(g.asset))}" alt="${esc(g.title||'Academic evidence')}" loading="lazy" decoding="async">${g.verified?`<span class="gallery-verified-ribbon">Verified</span>`:''}</a>`:`<div class="portrait-placeholder">${esc(g.title||g.category||'Verified visual evidence')}</div>`}
+      <div class="gallery-evidence-meta"><span class="badge">${esc(g.category||'Evidence')}</span>${g.evidenceType?`<span class="badge gallery-evidence-type">${esc(g.evidenceType)}</span>`:''}${g.paperId?`<span class="paper-id-chip">Paper ID ${esc(g.paperId)}</span>`:''}${g.fileType?`<span class="paper-id-chip">${esc(g.fileType)}${g.documentPages&&g.documentPages>1?` · ${esc(g.documentPages)} pages`:''}</span>`:''}</div>
+      ${g.issuer||g.date?`<div class="gallery-evidence-context">${g.issuer?`<span>${esc(g.issuer)}</span>`:''}${g.date?`<span>${esc(g.date)}</span>`:''}</div>`:''}
+      <h3>${esc(g.title||g.category||'')}</h3><p>${esc(g.caption||g.description||'')}</p>
+      ${g.sourceFile?`<small class="evidence-source-name">Source file · ${esc(g.sourceFile)}</small>`:''}
+      <div class="gallery-card-actions">${g.asset&&g.href&&g.asset!==g.href?`<span class="gallery-version-group"><a href="${esc(versionedAsset(g.asset))}" target="_blank" rel="noopener noreferrer">View image ↗</a><a href="${esc(versionedAsset(g.href))}" target="_blank" rel="noopener noreferrer">${String(g.fileType||'').toUpperCase()==='PDF'?'Open PDF ↗':'Open document ↗'}</a></span>`:(g.href||g.asset)?`<a href="${esc(versionedAsset(g.href||g.asset))}" target="_blank" rel="noopener noreferrer">${String(g.fileType||'').toUpperCase()==='PDF'?'Open PDF ↗':'Open original ↗'}</a>`:''}${g.related?`<a href="${esc(g.related)}">Related record →</a>`:''}</div>
+    </article>`;
+    const groupSection=(group,index)=>{
+      const items=recordsFor(group);
+      if(!items.length)return '';
+      return `<section class="section gallery-collection-section ${index%2?'alt':''}" id="gallery-group-${esc(group.id)}"><div class="container">
+        <div class="gallery-collection-head">
+          <div><span class="section-kicker">${esc(group.kicker)}</span><h2>${esc(group.title)}</h2><p>${esc(group.description)}</p></div>
+          <div class="gallery-collection-meta"><strong>${items.length}</strong><span>verified records</span></div>
+        </div>
+        <div class="gallery-subcategory-row">${group.categories.map(cat=>`<span>${esc(cat)} · ${records.filter(x=>x.category===cat).length}</span>`).join('')}</div>
+        <div class="grid grid-3 gallery-evidence-grid">${items.map(galleryCard).join('')}</div>
+      </div></section>`;
+    };
+    return `${pageHero('Gallery & Evidence','A structured documentary archive of verified conference records, credentials, awards, academic documents and scholarly engagement.')}
       <section class="section gallery-archive-section"><div class="container">
         <div class="gallery-archive-head">
           <div>
             <span class="section-kicker">Documentary archive</span>
             <h2>${verifiedCount} verified evidence records</h2>
-            <p>Credential cards belong in Recognition; this archive preserves the broader source material, including role evidence, flyers, award lists and conference records.</p>
+            <p>The archive is now organized into focused collections instead of one mixed stream. Each record remains directly connected to its original evidence and related portfolio section.</p>
           </div>
           <a class="credential-archive-link" href="recognition.html">View credential showcase <span aria-hidden="true">→</span></a>
         </div>
-        <div class="filters gallery-evidence-filters">${['All','Award','Conference','Workshops & Seminars','Academic Documentation','Scientific Engagement','Professional Development','Scholarly Service','Leadership & Engagement'].map((x,i)=>`<button class="filter ${i===0?'active':''}" data-gallery-filter="${esc(x)}">${x}</button>`).join('')}</div>
-        <div class="grid grid-3 gallery-evidence-grid">${records.map(g=>`<article class="card gallery-evidence-card ${g.verified&&['Certificate','Poster','Workshop','Recognition'].includes(g.evidenceType)?'is-verified-certificate is-verified-document':''}" ${g.id?`id="${esc(g.id)}"`:''} data-gallery-category="${esc(g.category||'')}" data-evidence-type="${esc(g.evidenceType||'')}">
-          ${g.asset?`<a class="gallery-evidence-media" href="${esc(versionedAsset(g.asset))}" target="_blank" rel="noopener noreferrer" data-evidence-lightbox="${esc(versionedAsset(g.asset))}" data-evidence-original="${esc(versionedAsset(g.asset))}" data-evidence-title="${esc(g.title||'Academic evidence')}" data-evidence-meta="${esc([g.issuer,g.date].filter(Boolean).join(' · '))}"><img src="${esc(versionedAsset(g.asset))}" alt="${esc(g.title||'Academic evidence')}" loading="lazy" decoding="async">${g.verified?`<span class="gallery-verified-ribbon">Verified</span>`:''}</a>`:`<div class="portrait-placeholder">${esc(g.title||g.category||'Verified visual evidence')}</div>`}
-          <div class="gallery-evidence-meta"><span class="badge">${esc(g.category||'Evidence')}</span>${g.evidenceType?`<span class="badge gallery-evidence-type">${esc(g.evidenceType)}</span>`:''}${g.paperId?`<span class="paper-id-chip">Paper ID ${esc(g.paperId)}</span>`:''}${g.fileType?`<span class="paper-id-chip">${esc(g.fileType)}${g.documentPages&&g.documentPages>1?` · ${esc(g.documentPages)} pages`:''}</span>`:''}</div>
-          ${g.issuer||g.date?`<div class="gallery-evidence-context">${g.issuer?`<span>${esc(g.issuer)}</span>`:''}${g.date?`<span>${esc(g.date)}</span>`:''}</div>`:''}
-          <h3>${esc(g.title||g.category||'')}</h3><p>${esc(g.caption||g.description||'')}</p>
-          ${g.sourceFile?`<small class="evidence-source-name">Source file · ${esc(g.sourceFile)}</small>`:''}
-          <div class="gallery-card-actions">${g.asset&&g.href&&g.asset!==g.href?`<span class="gallery-version-group"><a href="${esc(versionedAsset(g.asset))}" target="_blank" rel="noopener noreferrer">View image ↗</a><a href="${esc(versionedAsset(g.href))}" target="_blank" rel="noopener noreferrer">${String(g.fileType||'').toUpperCase()==='PDF'?'Open PDF ↗':'Open document ↗'}</a></span>`:(g.href||g.asset)?`<a href="${esc(versionedAsset(g.href||g.asset))}" target="_blank" rel="noopener noreferrer">${String(g.fileType||'').toUpperCase()==='PDF'?'Open PDF ↗':'Open original ↗'}</a>`:''}${g.related?`<a href="${esc(g.related)}">Related record →</a>`:''}</div>
-        </article>`).join('')}</div>
+        <nav class="gallery-collection-index" aria-label="Gallery collections">
+          ${groups.map(group=>{const count=recordsFor(group).length;return count?`<a href="#gallery-group-${esc(group.id)}"><span>${esc(group.kicker)}</span><strong>${esc(group.title)}</strong><small>${count} records</small><i aria-hidden="true">↓</i></a>`:''}).join('')}
+        </nav>
       </div></section>
+      <div class="gallery-group-stack">${groups.map(groupSection).join('')}</div>
       ${evidenceLightbox()}`;
   }
 
