@@ -160,7 +160,7 @@
 .experience-supporting-link img{
   display:block;
   width:100%;height:auto;
-  aspect-ratio:220 / 149;
+  aspect-ratio:16 / 9;
   object-fit:contain;
   background:#f0cf90;
   transition:transform 180ms ease
