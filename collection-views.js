@@ -15,7 +15,13 @@
       ['#page-content .recognition-awards-section .grid', 'awards', 'Honors and awards'],
       ['#page-content .recognition-training-section .grid', 'training', 'Training and certifications']
     ],
-    gallery: [['#page-content .section .grid', 'gallery', 'Gallery and evidence']]
+    gallery: [
+      ['#gallery-group-conferences .gallery-evidence-grid', 'gallery-conferences', 'Conferences & Presentations'],
+      ['#gallery-group-training .gallery-evidence-grid', 'gallery-training', 'Training, Workshops & Certifications'],
+      ['#gallery-group-awards .gallery-evidence-grid', 'gallery-awards', 'Awards & Academic Recognition'],
+      ['#gallery-group-academic-engagement .gallery-evidence-grid', 'gallery-academic-engagement', 'Academic & Scientific Engagement'],
+      ['#gallery-group-service-leadership .gallery-evidence-grid', 'gallery-service-leadership', 'Scholarly Service & Leadership']
+    ]
   };
 
   function install(selector, id, label) {
