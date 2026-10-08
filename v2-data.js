@@ -3000,7 +3000,7 @@
         "logo": "assets/academic/education/pust-logo.png",
         "logoKind": "institution",
         "imageAlt": "Pabna University of Science and Technology (PUST) crest",
-        "supportingImage": "assets/academic/organizations/dslr-lab-plaque-20261008-fhd.webp",
+        "supportingImage": "assets/academic/organizations/dslr-lab-plaque-fhd.png",
         "supportingImageAlt": "Enhanced Full HD DSLR Lab plaque with Department of Statistics and Data Science at PUST",
         "supportingImageCaption": "DSLR Lab · Statistics and Data Science · PUST",
         "ongoing": true,
