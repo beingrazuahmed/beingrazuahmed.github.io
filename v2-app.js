@@ -1458,7 +1458,7 @@
               <p class="experience-organization">${esc(x.organization||x.institution||'')}</p>
               ${x.affiliation?`<p class="experience-affiliation">${esc(x.affiliation)}</p>`:''}
             </div>
-            <div class="experience-date"><span>${esc(x.period||x.date||'')}</span>${x.ongoing?'<span class="experience-ongoing">Ongoing</span>':''}</div>
+            <div class="experience-date">${x.periodContext?`<small class="experience-period-context">${esc(x.periodContext)}</small>`:''}<span>${esc(x.period||x.date||'')}</span>${x.ongoing?'<span class="experience-ongoing">Ongoing</span>':''}</div>
           </div>
           <div class="experience-role-body">
             <div class="experience-role-intro${x.supportingImage?' has-supporting-image':''}">
@@ -1470,6 +1470,25 @@
                 <figcaption><span class="experience-supporting-caption-kicker">Laboratory photograph</span><span>${esc(x.supportingImageCaption||'Research laboratory')}</span></figcaption>
               </figure>`:''}
             </div>
+            ${Array.isArray(x.appointments)&&x.appointments.length?`<section class="experience-appointments" aria-label="DSLR Lab research appointment progression">
+              <div class="experience-appointments-heading">
+                <h4>Research appointment progression</h4>
+                <p>Three appointments at the DSLR Lab</p>
+              </div>
+              <ol class="experience-appointment-list">
+                ${x.appointments.map(a=>`<li class="experience-appointment${a.current?' is-current':''}">
+                  <span class="experience-appointment-marker" aria-hidden="true"></span>
+                  <div class="experience-appointment-details">
+                    <div class="experience-appointment-top"><strong>${esc(a.title||'')}</strong>
+                    ${a.current?'<span class="experience-appointment-current">Current appointment</span>':''}</div>
+                    <p class="experience-appointment-dates"><time datetime="${esc(a.startDate||'')}">${esc(a.startLabel||a.startDate||'')}</time>
+                      <span aria-hidden="true">–</span>
+                      ${a.endDate?`<time datetime="${esc(a.endDate)}">${esc(a.endLabel||a.endDate)}</time>`:`<span>${esc(a.endLabel||'Present')}</span>`}
+                    </p>
+                  </div>
+                </li>`).join('')}
+              </ol>
+            </section>`:''}
             ${Array.isArray(x.responsibilities)&&x.responsibilities.length?`<div class="experience-responsibilities-heading"><h4>Key responsibilities</h4></div>
               <ol class="experience-responsibilities">${x.responsibilities.map((item,i)=>`<li>
                 <span class="experience-duty-index" aria-hidden="true">${String(i+1).padStart(2,'0')}</span>
