@@ -193,3 +193,75 @@
   .experience-role-intro.has-supporting-image{break-inside:avoid}
   .experience-supporting-link img{transform:none!important}
 }
+
+/* Research appointment progression — one lab, three verified appointments */
+.experience-period-context{
+  display:block;margin:0 0 3px;
+  font-size:10px;font-weight:600;line-height:1.5;
+  color:var(--muted);letter-spacing:.03em
+}
+.experience-appointments{
+  margin:24px 0 28px;padding:24px clamp(18px,2.5vw,28px);
+  border:1px solid var(--line);
+  border-radius:17px;
+  background:color-mix(in srgb,var(--surface-2) 53%,var(--surface))
+}
+.experience-appointments-heading{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:8px 22px;flex-wrap:wrap;margin-bottom:21px
+}
+.experience-appointments-heading h4{
+  color:var(--text);margin:0;font-size:16px;font-weight:780;
+  letter-spacing:-.012em;line-height:1.45
+}
+.experience-appointments-heading p{
+  margin:0;color:var(--muted);font-size:12px;line-height:1.5
+}
+.experience-appointment-list{
+  list-style:none;margin:0;padding:0 0 0 3px;
+}
+.experience-appointment{
+  position:relative;display:grid;grid-template-columns:22px minmax(0,1fr);
+  gap:14px;align-items:start;margin:0;padding:0 0 21px
+}
+.experience-appointment:last-child{padding-bottom:0}
+.experience-appointment:not(:last-child)::before{
+  content:"";position:absolute;left:6px;top:14px;bottom:0;width:1px;
+  background:var(--line);pointer-events:none
+}
+.experience-appointment-marker{
+  display:block;position:relative;z-index:1;width:13px;height:13px;
+  border:2px solid color-mix(in srgb,var(--muted) 52%,var(--line));
+  border-radius:50%;background:var(--surface);margin-top:3px
+}
+.experience-appointment.is-current .experience-appointment-marker{
+  border-color:var(--accent);background:var(--accent);
+  box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 13%,transparent)
+}
+.experience-appointment-details{min-width:0}
+.experience-appointment-top{display:flex;align-items:center;gap:9px 18px;flex-wrap:wrap}
+.experience-appointment-top strong{
+  color:var(--text);font-size:14px;font-weight:780;line-height:1.45
+}
+.experience-appointment-current{
+  color:var(--accent);font-size:11px;font-weight:700;
+  line-height:1.35;letter-spacing:.012em
+}
+.experience-appointment-dates{
+  display:flex;align-items:baseline;gap:5px;flex-wrap:wrap;
+  color:var(--muted);margin:5px 0 0;
+  font-size:12px;line-height:1.65;font-variant-numeric:tabular-nums
+}
+@media(max-width:560px){
+  .experience-appointments{margin:20px 0 23px;padding:18px 15px;border-radius:13px}
+  .experience-appointments-heading{display:block;margin-bottom:20px}
+  .experience-appointments-heading h4{font-size:14px}
+  .experience-appointments-heading p{margin-top:4px}
+  .experience-appointment{grid-template-columns:18px minmax(0,1fr);gap:11px;padding-bottom:19px}
+  .experience-appointment-top strong{font-size:13px}
+  .experience-appointment-dates{font-size:11.5px}
+}
+@media print{
+  .experience-appointments{background:transparent}
+  .experience-appointment{break-inside:avoid}
+}
