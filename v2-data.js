@@ -2148,7 +2148,7 @@
         },
         {
           degree: 'Secondary School Certificate (SSC)',
-          year: '2014',
+          year: '2016',
           detail: 'GPA 5.00'
         }
       ],
