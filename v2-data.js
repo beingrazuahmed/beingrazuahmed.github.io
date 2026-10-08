@@ -1121,13 +1121,13 @@
     detail: 'CGPA: 3.90/4.00. Project: “Optimizing Facial Emotion Recognition through Statistical Dimensionality Reduction and CNN Integration.” Statistical Field Survey: “Measuring Attitudes towards AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology.”'
   },
   {
-    degree: 'Higher Secondary Certificate (H.S.C.)',
+    degree: 'Higher Secondary Certificate (H.S.C.) · Science',
     institution: 'Rangpur Government College, Rangpur, Bangladesh',
     year: '2016',
     detail: 'GPA: 4.92/5.00.'
   },
   {
-    degree: 'Secondary School Certificate (S.S.C.)',
+    degree: 'Secondary School Certificate (S.S.C.) · Science',
     institution: 'Rangpur Zilla School, Rangpur, Bangladesh',
     year: '2014',
     detail: 'GPA: 5.00/5.00.'
@@ -1956,13 +1956,13 @@
           detail: 'CGPA: 3.36/4.00. Statistical Project: “Interpretable Machine Learning to Identify Key Predictors of Maternal Quality of Life, Pabna District.” Applied machine-learning techniques in Python to identify key socio-demographic and health factors. Statistical Field Survey: “The Effects of Teacher Sizes and Academic Facilities on Students’ Academic Performances, PUST.” Conducted and analyzed the survey using MS Excel and SPSS.'
         },
         {
-          degree: 'Higher Secondary Certificate (H.S.C.)',
+          degree: 'Higher Secondary Certificate (H.S.C.) · Science',
           institution: 'Rajbari Government Adorsho Mohila College, Rajbari, Bangladesh',
           year: '2017',
           detail: 'GPA: 4.00/5.00.'
         },
         {
-          degree: 'Secondary School Certificate (S.S.C.)',
+          degree: 'Secondary School Certificate (S.S.C.) · Science',
           institution: 'Sreepur Government M. C. Pilot Secondary School, Sreepur, Magura, Bangladesh',
           year: '2015',
           detail: 'GPA: 5.00/5.00.'
@@ -2148,13 +2148,13 @@
           detail: 'CGPA 3.66'
         },
         {
-          degree: 'Higher Secondary Certificate (HSC)',
+          degree: 'Higher Secondary Certificate (HSC) · Science',
           institution: 'Baliakandi Govt. College',
           year: '2018',
           detail: 'GPA 4.58'
         },
         {
-          degree: 'Secondary School Certificate (SSC)',
+          degree: 'Secondary School Certificate (SSC) · Science',
           year: '2016',
           detail: 'GPA 5.00'
         }
@@ -2299,13 +2299,13 @@
           detail: 'CGPA 3.15/4.00'
         },
         {
-          degree: 'Higher Secondary Certificate (HSC)',
+          degree: 'Higher Secondary Certificate (HSC) · Science',
           institution: 'Rajshahi Court College',
           year: '2019',
           detail: 'GPA 4.17/5.00'
         },
         {
-          degree: 'Secondary School Certificate (SSC)',
+          degree: 'Secondary School Certificate (SSC) · Science',
           institution: 'Madinatul Ulum Kamil Madrasah',
           year: '2017',
           detail: 'GPA 4.39/5.00'
