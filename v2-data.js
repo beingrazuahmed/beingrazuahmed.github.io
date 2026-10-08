@@ -873,19 +873,20 @@
       group: 'Departmental Seniors & Senior Collaborators',
       profilePage: 'network-jannatul-mauya.html',
       profileBadges: ['M.Phil. Student', 'Research Assistant', 'Research Collaborator', 'Departmental Senior'],
-      headline: 'M.Phil. Student in Bioinformatics · University of Rajshahi',
+      headline: 'M.Phil. Student in Bioinformatics · Research Assistant, Data Science Research Lab',
       roles: ['M.Phil. Student', 'Research Assistant', 'Research Collaborator', 'Co-author', 'Departmental Senior'],
-      affiliation: 'University of Rajshahi, Rajshahi-6205, Bangladesh',
-      description: 'M.Phil. student in Bioinformatics at the University of Rajshahi and a departmental senior of Md. Razu Ahmed from PUST. Her research interests span statistics, machine learning, deep learning, medical imaging, image processing, multivariate analysis and big-data analytics.',
+      affiliation: 'Data Science Research Lab, Department of Statistics and Data Science, University of Rajshahi, Rajshahi-6205, Bangladesh',
+      description: 'M.Phil. student in Bioinformatics and Research Assistant at the Data Science Research Lab, Department of Statistics and Data Science, University of Rajshahi. She also serves as a Research Assistant at DSLR Lab, PUST, and is a departmental senior of Md. Razu Ahmed. Her research interests span statistics, machine learning, deep learning, medical imaging, image processing, multivariate analysis and big-data analytics.',
       portrait: 'assets/collaborators/jannatul-mauya.jpeg?v=20260924-mauya1',
       cardPortraitPosition: '50% 18%',
       currentRoleLabel: 'Current academic & research roles',
       currentPositions: [
         'M.Phil. Student in Bioinformatics, University of Rajshahi, Rajshahi-6205, Bangladesh',
+        'Research Assistant, Data Science Research Lab, Department of Statistics and Data Science, University of Rajshahi, Rajshahi-6205, Bangladesh',
         'Research Assistant, Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh · February 2025–present'
       ],
       biographyParagraphs: [
-        'Jannatul Mauya is an M.Phil. student in Bioinformatics at the University of Rajshahi and a Research Assistant in the Deep Statistical Learning and Research Laboratory (DSLR Lab) at Pabna University of Science and Technology. She completed both her B.Sc. (Hons.) and M.S. (Thesis) in Statistics at PUST, securing first merit position in both programmes.',
+        'Jannatul Mauya is an M.Phil. student in Bioinformatics and a Research Assistant at the Data Science Research Lab, Department of Statistics and Data Science, University of Rajshahi. She is also a Research Assistant in the Deep Statistical Learning and Research Laboratory (DSLR Lab) at Pabna University of Science and Technology. She completed both her B.Sc. (Hons.) and M.S. (Thesis) in Statistics at PUST, securing first merit position in both programmes.',
         'Her research interests include statistics, machine learning, deep learning, medical imaging and image processing, pattern processing, multivariate analysis and big-data analysis. Her work spans biomedical and health-related prediction, computer vision, missing-data methodology, food computing and agricultural image analysis.'
       ],
       researchInterests: [
@@ -936,6 +937,12 @@
           period: 'Current',
           title: 'M.Phil. Student in Bioinformatics',
           institution: 'University of Rajshahi',
+          location: 'Rajshahi-6205, Bangladesh'
+        },
+        {
+          period: 'Current',
+          title: 'Research Assistant',
+          institution: 'Data Science Research Lab, Department of Statistics and Data Science, University of Rajshahi, Rajshahi-6205, Bangladesh',
           location: 'Rajshahi-6205, Bangladesh'
         },
         {
