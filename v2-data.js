@@ -2965,6 +2965,34 @@
     instructorLinks: coursework.instructorLinks || [],
     experience: [
       {
+        "id": "dslr-lab-research-assistant",
+        "period": "May 2023 – Present",
+        "title": "Research Assistant",
+        "organization": "Deep Statistical Learning and Research (DSLR) Lab",
+        "affiliation": "Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Bangladesh",
+        "logo": "assets/academic/organizations/dslr-lab-plaque.svg",
+        "logoKind": "plaque",
+        "imageAlt": "Photograph of the Deep Statistical Learning and Research (DSLR) Lab plaque at PUST",
+        "ongoing": true,
+        "description": "Interdisciplinary research in statistical learning, explainable AI, biomedical and public-health analytics, with contributions across reproducible modelling, research collaboration, scientific communication, and prototype development.",
+        "responsibilityLabels": [
+          "Interdisciplinary Research",
+          "Analytical Workflow Development",
+          "Survey & Observational Research",
+          "Reproducibility & Scientific Communication",
+          "Research Collaboration & Outputs",
+          "Research Software Prototyping"
+        ],
+        "responsibilities": [
+          "Conduct interdisciplinary research in statistical modelling, machine learning, deep learning, explainable AI, public-health analytics, health informatics, and medical-image analysis.",
+          "Develop end-to-end analytical workflows encompassing data preparation, feature engineering, model development, validation, interpretation, and performance evaluation.",
+          "Support survey-based and observational studies through study design, sampling, questionnaire development, data management, and statistical analysis.",
+          "Build reproducible research workflows in Python and Jupyter Notebook and prepare publication-quality figures, tables, supplementary materials, technical documentation, and manuscripts.",
+          "Collaborate with supervisors and research teams throughout the research lifecycle, contributing to methodological development, analysis, interpretation, manuscript revision, and submission; outputs include three published/online peer-reviewed journal articles, one accepted/forthcoming article, eight conference contributions, one publicly deposited research dataset, and multiple ongoing interdisciplinary studies.",
+          "Developed a Flask-based prototype for automated diabetic-retinopathy grading by integrating Python model inference with an HTML- and CSS-based user interface."
+        ]
+      },
+      {
         id: 'ircb-research-assistant',
         period: 'April 2026 – July 2026',
         title: 'Research Assistant',
