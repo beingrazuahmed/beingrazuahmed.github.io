@@ -12864,3 +12864,122 @@ body.mobile-nav-open{overflow:hidden}
     font-size:12.5px;
   }
 }
+
+
+/* === Ariful-style mobile menu final override (2026-10-08) === */
+/* Keep the mobile navigation mechanism intentionally simple:
+   a button toggles .mobile-open on one fixed panel, matching the reliable
+   pattern used by Ariful's portfolio. */
+.menu-btn{
+  display:none!important;
+}
+.mobile-panel{
+  display:none!important;
+}
+.mobile-menu-open-icon,
+.mobile-menu-close-icon{
+  pointer-events:none;
+}
+.mobile-menu-close-icon{
+  display:none;
+}
+@media (max-width:1080px){
+  .nav-scroll-zone{
+    display:none!important;
+  }
+  .menu-btn{
+    display:inline-flex!important;
+    position:relative;
+    z-index:141!important;
+    width:44px;
+    min-width:44px;
+    height:44px;
+    min-height:44px;
+    padding:0!important;
+    align-items:center;
+    justify-content:center;
+    touch-action:manipulation;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .menu-btn[aria-expanded="true"]{
+    border-color:color-mix(in srgb,var(--accent) 48%,var(--line));
+    background:color-mix(in srgb,var(--accent) 8%,var(--surface));
+    color:var(--accent-2);
+  }
+  .menu-btn[aria-expanded="true"] .mobile-menu-open-icon{
+    display:none;
+  }
+  .menu-btn[aria-expanded="true"] .mobile-menu-close-icon{
+    display:inline;
+    font-size:25px;
+    line-height:1;
+  }
+  .mobile-panel.mobile-open{
+    display:flex!important;
+    position:fixed!important;
+    top:66px!important;
+    right:0!important;
+    bottom:auto!important;
+    left:0!important;
+    z-index:135!important;
+    width:100%!important;
+    max-width:none!important;
+    max-height:calc(100dvh - 66px)!important;
+    margin:0!important;
+    padding:14px 18px 20px!important;
+    flex-direction:column!important;
+    gap:7px!important;
+    overflow-y:auto!important;
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
+    border:0!important;
+    border-top:1px solid var(--line)!important;
+    border-bottom:1px solid var(--line)!important;
+    border-radius:0!important;
+    background:color-mix(in srgb,var(--surface) 97%,var(--bg))!important;
+    box-shadow:0 16px 34px rgba(5,25,42,.16)!important;
+    -webkit-backdrop-filter:blur(20px);
+    backdrop-filter:blur(20px);
+  }
+  .mobile-panel.mobile-open a{
+    display:flex!important;
+    align-items:center;
+    justify-content:center;
+    width:100%!important;
+    min-height:44px!important;
+    padding:10px 12px!important;
+    border:1px solid transparent!important;
+    border-radius:10px!important;
+    background:transparent!important;
+    color:var(--text)!important;
+    font-size:13px!important;
+    font-weight:800!important;
+    line-height:1.25!important;
+    text-align:center!important;
+    text-decoration:none!important;
+  }
+  .mobile-panel.mobile-open a:hover,
+  .mobile-panel.mobile-open a:focus-visible,
+  .mobile-panel.mobile-open a[aria-current="page"]{
+    border-color:color-mix(in srgb,var(--accent) 24%,var(--line))!important;
+    background:var(--surface-2)!important;
+    color:var(--accent-2)!important;
+    outline:none!important;
+  }
+  body.mobile-nav-open{
+    overflow:hidden!important;
+  }
+  body.mobile-nav-open .topbar{
+    z-index:140!important;
+  }
+}
+@media (max-width:600px){
+  .mobile-panel.mobile-open{
+    padding:10px 12px 16px!important;
+  }
+  .mobile-panel.mobile-open a{
+    min-height:42px!important;
+    padding:9px 10px!important;
+    font-size:12.5px!important;
+  }
+}
