@@ -2268,54 +2268,174 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   // The SVG is deliberately confined to the page hero and does not require
   // animation frames, pointer listeners, or a continuously running canvas.
   function initResearchConstellation(){
-    const oldCanvas=document.getElementById('mraResearchConstellation');
-    if(oldCanvas)oldCanvas.remove();
-    document.body.classList.remove('has-mra-constellation');
-
-    const pageName=document.body.dataset.page||'home';
-    const isHome=pageName==='home';
-    if(!['home','research','network'].includes(pageName))return;
-    const hero=isHome?document.querySelector('.hero-shell'):document.querySelector('.hero.compact');
-    if(!hero||hero.querySelector('.research-network-visual'))return;
-
-    const nodes=[
-      {id:'statistics',title:'STATISTICS',x:126,y:176,labelX:148,labelY:165,anchor:'start'},
-      {id:'data',title:'DATA SCIENCE',x:347,y:99,labelX:368,labelY:87,anchor:'start'},
-      {id:'ml',title:'MACHINE LEARNING',x:630,y:171,labelX:613,labelY:143,anchor:'middle'},
-      {id:'xai',title:'EXPLAINABLE AI',x:768,y:355,labelX:745,labelY:332,anchor:'end'},
-      {id:'model',title:'COMPUTATIONAL MODELLING',x:584,y:508,labelX:564,labelY:488,anchor:'end'},
-      {id:'biomed',title:'BIOMEDICAL RESEARCH',x:311,y:534,labelX:290,labelY:562,anchor:'middle'},
-      {id:'public',title:'PUBLIC HEALTH',x:119,y:378,labelX:141,labelY:405,anchor:'start'}
-    ];
-    const links=[
-      ['statistics','data'],['statistics','public'],['statistics','biomed'],
-      ['data','ml'],['data','public'],['data','model'],
-      ['ml','xai'],['ml','model'],['public','biomed'],
-      ['biomed','model'],['biomed','xai'],['xai','model']
-    ];
-    const lookup=Object.fromEntries(nodes.map(n=>[n.id,n]));
-    const edges=links.map(([a,b],i)=>{
-      const from=lookup[a],to=lookup[b];
-      return '<path class="research-network-edge'+(i%4===0?' is-highlighted':'')+'" d="M'+from.x+' '+from.y+' L'+to.x+' '+to.y+'"/>';
-    }).join('');
-    const vertices=nodes.map((n,i)=>'<g class="research-network-node'+(n.id==='data'?' is-core':'')+'" transform="translate('+n.x+' '+n.y+')">'
-      +'<circle class="research-network-node-halo" r="'+(n.id==='data'?22:15)+'"/>'
-      +'<circle class="research-network-node-ring" r="'+(n.id==='data'?10:7)+'"/>'
-      +'<circle class="research-network-node-center" r="'+(n.id==='data'?4:3)+'"/>'
-      +'</g><text class="research-network-label" x="'+n.labelX+'" y="'+n.labelY+'" text-anchor="'+n.anchor+'">'+n.title+'</text>').join('');
-
-    const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
-    svg.setAttribute('class','research-network-visual '+(isHome?'research-network-home':'research-network-compact'));
-    svg.setAttribute('viewBox','0 0 900 620');
-    svg.setAttribute('preserveAspectRatio','xMidYMid meet');
-    svg.setAttribute('aria-hidden','true');
-    svg.setAttribute('focusable','false');
-    svg.innerHTML='<g class="research-network-guide"><circle cx="440" cy="307" r="254"/>'
-      +'<circle cx="440" cy="307" r="174"/></g>'
-      +'<g class="research-network-links">'+edges+'</g>'
-      +'<g class="research-network-vertices">'+vertices+'</g>';
-    hero.classList.add('research-network-enabled');
-    hero.insertBefore(svg,hero.firstChild);
+    if(document.getElementById('mraResearchConstellation'))return;
+    const host=document.body;
+    const root=document.documentElement;
+    const page=host.dataset.page||'home';
+    const mobileQuery=window.matchMedia('(max-width: 720px)');
+    const reducedQuery=window.matchMedia('(prefers-reduced-motion: reduce)');
+    const canvas=document.createElement('canvas');
+    canvas.id='mraResearchConstellation';
+    canvas.className='mra-constellation mra-constellation-global';
+    canvas.setAttribute('aria-hidden','true');
+    canvas.setAttribute('role','presentation');
+    host.classList.add('has-mra-constellation');
+    host.prepend(canvas);
+    const ctx=canvas.getContext('2d',{alpha:true,desynchronized:true});
+    if(!ctx){canvas.remove();host.classList.remove('has-mra-constellation');return;}
+  
+    let w=1,h=1,dpr=1,points=[],links=[],raf=0,last=0,resizeTimer=0;
+    let visible=!document.hidden;
+    const cursor={x:-1000,y:-1000,active:false};
+    const still=()=>mobileQuery.matches||reducedQuery.matches||root.dataset.motion==='reduced'||root.dataset.motion==='off';
+    const rgba=(rgb,a)=>'rgba('+rgb.join(',')+','+Math.max(0,Math.min(1,a)).toFixed(3)+')';
+    const mix=(a,b,t)=>a.map((v,i)=>Math.round(v*(1-t)+b[i]*t));
+    function token(name,fallback){
+      const s=getComputedStyle(root).getPropertyValue(name).trim();
+      if(/^#[0-9a-f]{6}$/i.test(s))return [1,3,5].map(i=>parseInt(s.slice(i,i+2),16));
+      if(/^#[0-9a-f]{3}$/i.test(s))return [1,2,3].map(i=>parseInt(s[i]+s[i],16));
+      const m=s.match(/rgba?\(\s*([\d.]+)[,\s]+([\d.]+)[,\s]+([\d.]+)/);
+      return m?[+m[1],+m[2],+m[3]]:fallback;
+    }
+    function colors(){
+      const dark=root.dataset.mode==='dark';
+      const main=token('--accent',dark?[89,194,255]:[28,143,210]);
+      const second=token('--accent-2',dark?[183,228,255]:[18,88,143]);
+      return {
+        line:mix(main,second,dark?.28:.43),
+        point:mix(main,second,.20),
+        core:mix(second,dark?[255,255,255]:[10,49,81],.12),
+        dark
+      };
+    }
+    // Stable jittered lattice prevents clumping and broken-looking random strands.
+    function seed(){
+      const count=w<720?22:w<1100?38:page==='home'?68:['research','network'].includes(page)?62:51;
+      const cols=Math.max(4,Math.ceil(Math.sqrt(count*w/h)));
+      const rows=Math.ceil(count/cols);
+      let randomState=83117;
+      const rand=()=>{randomState=(1664525*randomState+1013904223)>>>0;return randomState/4294967296;};
+      points=[];
+      for(let i=0;i<count;i++){
+        const col=i%cols,row=Math.floor(i/cols);
+        const x=(col+.5+(rand()-.5)*.62)*(w/cols);
+        const y=(row+.5+(rand()-.5)*.66)*(h/rows);
+        const hub=i%12===0;
+        points.push({
+          x:Math.max(10,Math.min(w-10,x)),
+          y:Math.max(10,Math.min(h-10,y)),
+          vx:(rand()-.5)*(hub?.115:.22),
+          vy:(rand()-.5)*(hub?.09:.17),
+          radius:hub?2.35:0.95+rand()*.62,
+          hub,phase:rand()*Math.PI*2
+        });
+      }
+      const cutoff=Math.max(118,Math.min(205,(w/cols)*1.92));
+      // Link only each node's nearest neighbors to avoid a tangled spiderweb.
+      const made=new Set();links=[];
+      for(let i=0;i<points.length;i++){
+        const nearest=[];
+        for(let j=0;j<points.length;j++){
+          if(j===i)continue;
+          const dx=points[i].x-points[j].x,dy=points[i].y-points[j].y;
+          const d=Math.hypot(dx,dy);
+          if(d<cutoff)nearest.push({j,d});
+        }
+        nearest.sort((a,b)=>a.d-b.d);
+        for(const n of nearest.slice(0,3)){
+          const a=Math.min(i,n.j),b=Math.max(i,n.j),key=a+':'+b;
+          if(!made.has(key)){links.push({a,b,d:n.d});made.add(key);}
+        }
+      }
+    }
+    function resize(){
+      dpr=Math.min(window.devicePixelRatio||1,1.6);
+      w=Math.max(1,window.innerWidth);
+      h=Math.max(1,window.innerHeight);
+      canvas.width=Math.round(w*dpr);
+      canvas.height=Math.round(h*dpr);
+      canvas.style.width=w+'px';
+      canvas.style.height=h+'px';
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      seed();
+    }
+    function draw(time){
+      const paint=colors();
+      ctx.clearRect(0,0,w,h);
+      for(const l of links){
+        const a=points[l.a],b=points[l.b];
+        const length=Math.hypot(a.x-b.x,a.y-b.y);
+        const limit=Math.max(118,Math.min(205,w/Math.max(4,Math.ceil(Math.sqrt(points.length*w/h)))*1.92));
+        if(length>limit*1.1)continue;
+        const strength=Math.max(0,1-length/(limit*1.15));
+        ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);
+        ctx.strokeStyle=rgba(paint.line,(paint.dark?.34:.27)*(.25+.75*strength));
+        ctx.lineWidth=a.hub||b.hub?.78:.58;
+        ctx.stroke();
+      }
+      for(const p of points){
+        const breathe=still()?1:1+Math.sin(time*.0006+p.phase)*.08;
+        if(p.hub){
+          ctx.beginPath();ctx.arc(p.x,p.y,7.8*breathe,0,Math.PI*2);
+          ctx.fillStyle=rgba(paint.point,paint.dark?.058:.047);ctx.fill();
+          ctx.beginPath();ctx.arc(p.x,p.y,4.2*breathe,0,Math.PI*2);
+          ctx.strokeStyle=rgba(paint.point,paint.dark?.21:.16);ctx.lineWidth=.85;ctx.stroke();
+        }
+        ctx.beginPath();ctx.arc(p.x,p.y,p.radius*breathe,0,Math.PI*2);
+        ctx.fillStyle=rgba(p.hub?paint.core:paint.point,p.hub?(paint.dark?.78:.67):(paint.dark?.57:.51));
+        ctx.fill();
+      }
+      // Fine web response near the pointer without large glowing cursor halos.
+      if(cursor.active&&!still()){
+        for(const p of points){
+          const dist=Math.hypot(p.x-cursor.x,p.y-cursor.y);
+          if(dist>122)continue;
+          ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(cursor.x,cursor.y);
+          ctx.strokeStyle=rgba(paint.line,(paint.dark?.14:.115)*(1-dist/122));
+          ctx.lineWidth=.55;ctx.stroke();
+        }
+      }
+    }
+    function advance(step){
+      for(const p of points){
+        p.x+=p.vx*step;p.y+=p.vy*step;
+        if(p.x<5||p.x>w-5)p.vx*=-1;
+        if(p.y<5||p.y>h-5)p.vy*=-1;
+        p.x=Math.max(5,Math.min(w-5,p.x));
+        p.y=Math.max(5,Math.min(h-5,p.y));
+      }
+    }
+    function frame(t){
+      if(!visible||still()){raf=0;return;}
+      if(t-last>=32){
+        const step=Math.min(2,(t-last)/33||1);
+        advance(step);draw(t);last=t;
+      }
+      raf=requestAnimationFrame(frame);
+    }
+    function refresh(){
+      cancelAnimationFrame(raf);raf=0;last=0;
+      draw(0);
+      if(visible&&!still())raf=requestAnimationFrame(frame);
+    }
+    window.addEventListener('resize',()=>{
+      clearTimeout(resizeTimer);
+      resizeTimer=setTimeout(()=>{resize();refresh();},110);
+    },{passive:true});
+    window.addEventListener('pointermove',e=>{
+      if(still())return;
+      cursor.x=e.clientX;cursor.y=e.clientY;cursor.active=true;
+    },{passive:true});
+    window.addEventListener('blur',()=>{cursor.active=false;});
+    document.addEventListener('mouseleave',()=>{cursor.active=false;});
+    document.addEventListener('visibilitychange',()=>{
+      visible=!document.hidden;
+      if(visible)refresh();else{cancelAnimationFrame(raf);raf=0;}
+    });
+    new MutationObserver(refresh).observe(root,{attributes:true,attributeFilter:['data-mode','data-theme','data-motion']});
+    if(typeof reducedQuery.addEventListener==='function')reducedQuery.addEventListener('change',refresh);
+    if(typeof mobileQuery.addEventListener==='function')mobileQuery.addEventListener('change',refresh);
+    resize();refresh();
   }
 
   function pageHero(title,lead){return `<section class="hero compact"><div class="container"><div class="eyebrow"><span class="live-dot"></span><span>MRA Research Intelligence</span><span class="clock" data-clock>Dhaka · UTC+06:00</span></div><h1>${esc(title)}</h1><p class="lede">${esc(lead)}</p></div></section>`;}
