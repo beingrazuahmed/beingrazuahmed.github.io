@@ -93,3 +93,74 @@
 @media(max-width:670px){.contact-platform-grid{grid-template-columns:1fr}.contact-platform-card:first-child{grid-row:auto}.contact-platform-card{padding:23px}.contact-intro{padding:50px 0 65px}.contact-intro h1{font-size:clamp(2.4rem,9vw,3.7rem)}.contact-intro-meta{gap:9px}.contact-section-heading h2{font-size:clamp(1.9rem,7vw,2.6rem)}}
 @media(max-width:430px){.contact-intro-actions{display:grid;grid-template-columns:1fr;gap:10px}.contact-intro-actions .btn{width:100%}.contact-direct-card{padding:24px 19px;border-radius:19px}.contact-person{gap:12px}.contact-person img{width:64px;height:64px;flex-basis:64px}.contact-person strong{font-size:16px}.contact-platform-card:first-child .contact-platform-links{grid-template-columns:1fr}.contact-focus-card{padding:23px}.contact-focus-section,.contact-presence-section,.contact-next-section{padding:66px 0}.contact-invitation{padding:30px 23px}.contact-intro-meta{font-size:9px;letter-spacing:.04em}}
 @media(prefers-reduced-motion:reduce){.contact-focus-card,.contact-platform-link,.contact-invitation-button{transition:none!important}.contact-focus-card:hover,.contact-invitation-button:hover{transform:none}}
+
+/* Contact refinements: verified local brand marks, concise platform cards and an honest email-draft form */
+.contact-page .contact-line-icon{display:inline-block;width:19px;height:19px;flex:0 0 auto;vertical-align:middle}
+.contact-page .contact-location-meta{display:inline-flex;align-items:center;gap:7px}
+.contact-page .contact-location-meta .contact-line-icon{width:15px;height:15px;color:var(--accent)}
+.contact-page .contact-action-primary .contact-line-icon{width:18px;height:18px}
+.contact-page .contact-focus-index{width:52px;height:52px}
+.contact-page .contact-focus-index .contact-line-icon{width:26px;height:26px;stroke-width:1.7}
+.contact-page .contact-platform-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;gap:19px}
+.contact-page .contact-platform-card:first-child{grid-column:1/-1;grid-row:auto}
+.contact-page .contact-platform-card{padding:clamp(25px,3vw,33px);border-radius:21px}
+.contact-page .contact-platform-card-head{min-height:48px;margin-bottom:25px;padding-left:57px}
+.contact-page .contact-platform-card h3{font-size:19px}
+.contact-page .contact-platform-card:first-child .contact-platform-links{grid-template-columns:repeat(4,minmax(0,1fr))}
+.contact-page .contact-platform-card:not(:first-child) .contact-platform-links{grid-template-columns:repeat(2,minmax(0,1fr))}
+.contact-page .contact-platform-links{gap:11px}
+.contact-page .contact-platform-link{display:grid;grid-template-columns:40px minmax(0,1fr) 14px;align-items:center;gap:11px;min-height:66px;padding:10px 13px;border-radius:13px;text-decoration:none;box-shadow:0 2px 5px rgba(10,35,60,.02);transition:background-color .16s ease,border-color .16s ease,transform .16s ease}
+.contact-page .contact-platform-link:hover{transform:translateY(-2px)}
+.contact-page .contact-brand-mark{display:grid;place-items:center;width:40px;height:40px;flex:0 0 40px;overflow:hidden;border:1px solid rgba(25,50,90,.09);border-radius:11px;background:#fff;color:#22629c;font-weight:850;font-size:13px;letter-spacing:-.025em}
+.contact-page .contact-brand-mark img{display:block;width:24px;height:24px;max-width:80%;max-height:80%;object-fit:contain;filter:none}
+.contact-page .contact-brand-linkedin img,.contact-page .contact-brand-sciprofiles img{width:27px;height:27px}
+.contact-page .contact-platform-identity{min-width:0;display:block;overflow:hidden}
+.contact-page .contact-platform-identity strong{display:block;margin:0;color:var(--text);font-size:12.6px;font-weight:800;line-height:1.35;overflow-wrap:anywhere}
+.contact-page .contact-platform-identity small{display:block;margin-top:3px;color:var(--muted);font-size:10.5px;font-weight:500;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.contact-page .contact-platform-arrow{color:var(--accent);font-size:15px;font-weight:780;justify-self:end;align-self:start;margin-top:6px}
+.contact-page .contact-platform-link:hover .contact-platform-identity strong{color:var(--accent)}
+.contact-page .contact-enquiry-card{padding:clamp(27px,3.4vw,43px)}
+.contact-page .contact-enquiry-heading{position:relative}
+.contact-page .contact-enquiry-heading h3{max-width:20ch;margin:15px 0 8px;font-size:clamp(25px,2.8vw,33px)}
+.contact-page .contact-enquiry-heading p{margin:0 0 25px;color:var(--muted);font-size:13px;line-height:1.72}
+.contact-page .contact-enquiry-form{position:relative;display:grid;gap:17px}
+.contact-page .contact-enquiry-form label{display:grid;gap:7px;min-width:0;color:var(--text);font-size:12px;line-height:1.4;font-weight:760}
+.contact-page .contact-enquiry-form label>span{display:inline;color:var(--accent);font-weight:700}
+.contact-page .contact-form-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.contact-page .contact-enquiry-form :is(input,select,textarea){width:100%;min-width:0;min-height:46px;margin:0;padding:11px 12px;border:1px solid color-mix(in srgb,var(--accent) 11%,var(--line));border-radius:11px;background:var(--surface);color:var(--text);font:inherit;font-size:12.5px;font-weight:540;line-height:1.5;box-shadow:none;outline:none;transition:border-color .15s ease,box-shadow .15s ease}
+.contact-page .contact-enquiry-form textarea{min-height:111px;resize:vertical}
+.contact-page .contact-enquiry-form :is(input,select,textarea)::placeholder{color:var(--muted);opacity:.72;font-weight:450}
+.contact-page .contact-enquiry-form :is(input,select,textarea):focus-visible{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 12%,transparent);outline:0}
+.contact-page .contact-enquiry-form select{cursor:pointer}
+.contact-page .contact-enquiry-form select option{background:var(--surface);color:var(--text)}
+.contact-page .contact-enquiry-form .contact-invitation-button{appearance:none;cursor:pointer;justify-content:center;gap:11px;margin-top:4px;min-height:50px;font-family:inherit}
+.contact-page .contact-enquiry-form .contact-invitation-button span:last-child{margin-left:auto}
+.contact-page .contact-enquiry-form .contact-invitation-button .contact-line-icon{width:19px;height:19px}
+.contact-page .contact-form-note{margin:-3px 0 0;color:var(--muted);font-size:11px;line-height:1.65}
+.contact-page .contact-invitation-links{margin-top:22px;padding-top:19px;border-top:1px solid var(--line)}
+@media(max-width:1120px){
+ .contact-page .contact-platform-card:first-child .contact-platform-links{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .contact-page .contact-platform-card:not(:first-child) .contact-platform-links{grid-template-columns:1fr}
+}
+@media(max-width:850px){
+ .contact-page .contact-platform-grid{grid-template-columns:1fr}
+ .contact-page .contact-platform-card:first-child{grid-column:auto}
+ .contact-page .contact-platform-card:first-child .contact-platform-links{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .contact-page .contact-platform-card:not(:first-child) .contact-platform-links{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .contact-page .contact-next-grid{align-items:start}
+}
+@media(max-width:500px){
+ .contact-page .contact-platform-card:first-child .contact-platform-links,.contact-page .contact-platform-card:not(:first-child) .contact-platform-links{grid-template-columns:1fr}
+ .contact-page .contact-platform-card{padding:22px 20px}
+ .contact-page .contact-platform-link{min-height:62px}
+ .contact-page .contact-form-row{grid-template-columns:1fr}
+ .contact-page .contact-enquiry-card{padding:28px 21px}
+ .contact-page .contact-enquiry-form{gap:14px}
+}
+@media(prefers-reduced-motion:reduce){
+ .contact-page .contact-platform-link{transition:none}
+ .contact-page .contact-platform-link:hover{transform:none}
+}
+/* Keep required markers on the same label line rather than a separate grid row. */
+.contact-page .contact-enquiry-form label{display:block}
+.contact-page .contact-enquiry-form label :is(input,select,textarea){display:block;margin-top:8px}

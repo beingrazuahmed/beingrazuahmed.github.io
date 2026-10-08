@@ -2313,13 +2313,20 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
 
   function contact(){
   const email=D.profile?.email||'razuahmed038@gmail.com',affiliation=D.profile?.affiliation||'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST)',portrait=D.profile?.image||'assets/profile/razu-portrait.JPG';
+  const brands={'Google Scholar':'google-scholar','ORCID':'orcid','Scopus':'scopus','Web of Science':'web-of-science','ResearchGate':'researchgate','Semantic Scholar':'semantic-scholar','SciProfiles':'sciprofiles','LinkedIn':'linkedin','GitHub':'github','Kaggle':'kaggle','Academia.edu':'academia','X':'x','Instagram':'instagram','Facebook':'facebook'};
+  const icon=name=>{const id=brands[name];return id?'<span class="contact-brand-mark contact-brand-'+esc(id)+'"><img src="assets/academic/logos/contact/'+esc(id)+'.svg" alt="" aria-hidden="true" width="24" height="24" loading="lazy" decoding="async"></span>':'<span class="contact-brand-mark contact-brand-fallback" aria-hidden="true">'+esc(String(name||'?').slice(0,2).toUpperCase())+'</span>';};
+  const lineIcon=kind=>{const paths={mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',location:'<path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/>',stats:'<path d="M4 20V11m6 9V5m6 15v-8m5 8H3"/><path d="m4 8 6-4 6 5 4-3"/>',health:'<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l8.13 8.13a1 1 0 0 0 1.42 0l8.13-8.13a5.5 5.5 0 0 0 0-7.78Z"/><path d="M5 12h4l2-3 2 6 2-3h4"/>',partnership:'<circle cx="7" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><path d="M2 20v-2a5 5 0 0 1 10 0v2m0 0v-2a5 5 0 0 1 10 0v2"/><path d="M10 12h4"/>'};return '<svg class="contact-line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.65" aria-hidden="true" focusable="false">'+(paths[kind]||paths.mail)+'</svg>';};
   const groups=[
     {type:'academic',num:'01',title:'Research & academic profiles',desc:'Author identifiers, scholarly records and publication discovery.'},
     {type:'professional',num:'02',title:'Professional platforms',desc:'Code, projects and academic-professional connections.'},
     {type:'social',num:'03',title:'Community channels',desc:'Additional public channels for connecting and following updates.'}
   ];
   const platformCards=groups.map(g=>{
-    const links=(D.profiles||[]).filter(p=>p.type===g.type&&p.url).map(p=>`<a class="contact-platform-link" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer"><span>${esc(p.label||p.name)}</span><span aria-hidden="true">↗</span></a>`).join('');
+    const links=(D.profiles||[]).filter(p=>p.type===g.type&&p.url).map(p=>{
+      const label=p.label||p.name||'Profile';
+      const host=String(p.url).replace(/^https?:\/\//i,'').replace(/^www\./i,'').split('/')[0];
+      return '<a class="contact-platform-link" href="'+esc(p.url)+'" target="_blank" rel="noopener noreferrer">'+icon(label)+'<span class="contact-platform-identity"><strong>'+esc(label)+'</strong><small>'+esc(host)+'</small></span><span class="contact-platform-arrow" aria-hidden="true">↗</span></a>';
+    }).join('');
     return `<article class="contact-platform-card"><div class="contact-platform-card-head"><span class="contact-platform-index">${g.num}</span><h3>${esc(g.title)}</h3><p>${esc(g.desc)}</p></div><div class="contact-platform-links">${links||'<p>No public links listed.</p>'}</div></article>`;
   }).join('');
   const pathways=[
@@ -2327,15 +2334,15 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     {n:'02',category:'APPLICATIONS',title:'Biomedical & public-health AI',desc:'Interpretable machine learning for health data, medical imaging and data-driven public-health questions.',topics:['Explainable AI','Predictive modelling','Medical image analysis']},
     {n:'03',category:'PARTNERSHIPS',title:'Reproducible research partnerships',desc:'Joint projects with clear research questions, appropriate validation and transparent scientific reporting.',topics:['Collaborative research','Research software','PhD & academic opportunities']}
   ];
-  const pathwayCards=pathways.map(p=>`<article class="contact-focus-card"><div class="contact-focus-top"><span class="contact-focus-index">${p.n}</span><span class="contact-focus-category">${esc(p.category)}</span></div><h3>${esc(p.title)}</h3><p>${esc(p.desc)}</p><ul class="contact-focus-tags">${p.topics.map(t=>`<li>${esc(t)}</li>`).join('')}</ul></article>`).join('');
+  const pathwayCards=pathways.map(p=>`<article class="contact-focus-card"><div class="contact-focus-top"><span class="contact-focus-index" aria-hidden="true">${lineIcon(p.n==='01'?'stats':p.n==='02'?'health':'partnership')}</span><span class="contact-focus-category">${esc(p.category)}</span></div><h3>${esc(p.title)}</h3><p>${esc(p.desc)}</p><ul class="contact-focus-tags">${p.topics.map(t=>`<li>${esc(t)}</li>`).join('')}</ul></article>`).join('');
   return `<div class="contact-page">
     <section class="contact-intro" aria-labelledby="contact-title"><div class="container contact-intro-grid">
       <div class="contact-intro-copy">
         <span class="contact-eyebrow"><span class="contact-eyebrow-line"></span> CONTACT &amp; COLLABORATION</span>
         <h1 id="contact-title">Better research begins with <em>conversation.</em></h1>
         <p class="contact-intro-lede">I welcome thoughtful enquiries about collaborative research, doctoral opportunities and interdisciplinary projects where statistical rigour, explainable AI and reproducible methods can make a meaningful contribution.</p>
-        <div class="contact-intro-actions"><a class="btn primary contact-action-primary" href="mailto:${esc(email)}">Get in touch <span aria-hidden="true">↗</span></a><a class="btn ghost contact-action-secondary" href="#collaboration-areas">Explore collaboration areas <span aria-hidden="true">↓</span></a></div>
-        <div class="contact-intro-meta"><span>BASED IN BANGLADESH</span><span aria-hidden="true" class="contact-meta-separator"></span><span>SELECTIVE RESEARCH COLLABORATION</span></div>
+        <div class="contact-intro-actions"><a class="btn primary contact-action-primary" href="mailto:${esc(email)}">${lineIcon('mail')} Get in touch <span aria-hidden="true">↗</span></a><a class="btn ghost contact-action-secondary" href="#collaboration-areas">Explore collaboration areas <span aria-hidden="true">↓</span></a></div>
+        <div class="contact-intro-meta"><span class="contact-location-meta">${lineIcon('location')} BASED IN BANGLADESH</span><span aria-hidden="true" class="contact-meta-separator"></span><span>SELECTIVE RESEARCH COLLABORATION</span></div>
       </div>
       <aside class="contact-direct-card" aria-label="Direct academic contact">
         <div class="contact-direct-card-top"><span>DIRECT CONTACT</span><span class="contact-direct-mark" aria-hidden="true">MRA<span></span></span></div>
@@ -2357,7 +2364,16 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
       <div class="contact-next-copy"><span class="contact-section-kicker">03 / STARTING A CONVERSATION</span><h2 id="contact-next-heading">A clear first message makes collaboration easier.</h2><p>A brief outline is enough to begin. It helps to include:</p>
         <ol class="contact-brief-list"><li><span>01</span><p><strong>Research question</strong><small>The scientific problem and why it matters.</small></p></li><li><span>02</span><p><strong>Proposed collaboration</strong><small>The expertise, contribution or partnership you have in mind.</small></p></li><li><span>03</span><p><strong>Context &amp; timeline</strong><small>Any relevant background, scope, intended outputs or deadlines.</small></p></li></ol>
       </div>
-      <aside class="contact-invitation"><span class="contact-invitation-kicker">LET'S CONNECT</span><h3>Have a research idea worth exploring?</h3><p>Share a short proposal or introduce your research interests. I would be pleased to consider opportunities aligned with my areas of work.</p><a class="contact-invitation-button" href="mailto:${esc(email)}">Send an academic enquiry <span aria-hidden="true">↗</span></a><div class="contact-invitation-links"><a href="cv.html">Academic CV ↗</a><a href="publications.html">Research publications ↗</a></div></aside>
+      <aside class="contact-invitation contact-enquiry-card">
+<div class="contact-enquiry-heading"><span class="contact-invitation-kicker">ACADEMIC ENQUIRY</span><h3>Start a conversation.</h3><p>Prepare a focused introduction and open it in your email application.</p></div>
+<form id="contactEnquiryForm" class="contact-enquiry-form" aria-label="Compose an academic enquiry">
+<div class="contact-form-row"><label>Full name <span aria-hidden="true">*</span><input name="name" type="text" autocomplete="name" placeholder="Your name" maxlength="100" required></label>
+<label>Email address <span aria-hidden="true">*</span><input name="email" type="email" autocomplete="email" placeholder="you@institution.edu" maxlength="150" required></label></div>
+<label>Enquiry topic <span aria-hidden="true">*</span><select name="topic" required><option value="">Choose a topic</option><option value="Research collaboration">Research collaboration</option><option value="PhD or academic opportunity">PhD or academic opportunity</option><option value="Interdisciplinary project">Interdisciplinary project</option><option value="Publication or dataset enquiry">Publication or dataset enquiry</option><option value="Other academic enquiry">Other academic enquiry</option></select></label>
+<label>Brief message <span aria-hidden="true">*</span><textarea name="message" rows="4" minlength="15" maxlength="2000" placeholder="Share your research idea, collaboration scope and any relevant timeline…" required></textarea></label>
+<button class="contact-invitation-button" type="submit">${lineIcon('mail')} Prepare email <span aria-hidden="true">↗</span></button>
+<p class="contact-form-note">This opens your email application with a draft. No message is sent or stored on this website.</p></form>
+<div class="contact-invitation-links"><a href="cv.html">Academic CV ↗</a><a href="publications.html">Research publications ↗</a></div></aside>
     </div></section>
   </div>`;
 }
