@@ -112,3 +112,51 @@
   .experience-role-card{box-shadow:none;break-inside:avoid;overflow:visible}
   .experience-responsibilities li{break-inside:avoid}
 }
+
+/* DSLR Lab: preserve the wide archival plaque within the research timeline */
+.experience-role-head:has(.experience-logo-frame.is-plaque){
+  grid-template-columns:156px minmax(0,1fr) auto;
+  align-items:center
+}
+.experience-logo-frame.is-plaque{
+  width:156px;height:auto;aspect-ratio:240/163;
+  border-radius:11px;background:#f0d09a;
+  border-color:color-mix(in srgb,#ae7e39 28%,var(--line))
+}
+.experience-logo-frame.is-plaque img{object-fit:contain}
+.experience-affiliation{
+  margin:7px 0 0;font-size:12.5px;line-height:1.65;
+  font-weight:450;color:var(--muted);max-width:65ch
+}
+.experience-date:has(.experience-ongoing){display:grid;gap:8px}
+.experience-ongoing{
+  display:inline-flex;align-items:center;gap:6px;
+  width:max-content;color:var(--muted);font-size:11px;font-weight:700
+}
+.experience-ongoing::before{
+  content:"";width:7px;height:7px;display:block;border-radius:50%;
+  background:#259b6d
+}
+@media(max-width:1050px){
+  .experience-role-head:has(.experience-logo-frame.is-plaque){
+    grid-template-columns:140px minmax(0,1fr)
+  }
+  .experience-logo-frame.is-plaque{width:140px}
+  .experience-role-head:has(.experience-logo-frame.is-plaque) .experience-date{
+    grid-column:2;justify-self:start
+  }
+}
+@media(max-width:600px){
+  .experience-role-head:has(.experience-logo-frame.is-plaque){
+    grid-template-columns:100px minmax(0,1fr);gap:14px
+  }
+  .experience-logo-frame.is-plaque{width:100px;align-self:start}
+  .experience-affiliation{font-size:11.8px;line-height:1.55}
+}
+@media(max-width:400px){
+  .experience-role-head:has(.experience-logo-frame.is-plaque){
+    grid-template-columns:1fr
+  }
+  .experience-logo-frame.is-plaque{width:145px}
+  .experience-role-head:has(.experience-logo-frame.is-plaque) .experience-date{grid-column:1}
+}
