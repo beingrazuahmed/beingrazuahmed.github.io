@@ -21,78 +21,100 @@
   const verifiedCornerRibbon = (label='VERIFIED') => `<span class="verified-corner-ribbon" aria-label="${esc(label)}"><span>${esc(label)}</span></span>`;
   const page = document.body.dataset.page || 'home';
 
-  // Seven destinations, with the complete academic record in Explore.
   const nav = [
-    ['home','Home','index.html'],
-    ['profile','About','profile.html'],
-    ['research','Research','research.html'],
-    ['publications','Publications','publications.html'],
-    ['projects','Projects','projects.html'],
-    ['experience','Experience','experience.html'],
-    ['explore','Explore','explore.html']
-  ];
-  const extendedPages=new Set(['languages','academic','conferences','workshops','recognition','network','network-profile','resources','gallery','dashboard']);
-  const activeNavKey=extendedPages.has(page)?'explore':page;
-  const mobileGroups=[
-    {label:'OVERVIEW',items:[['home','Home','index.html'],['profile','About / Profile','profile.html'],['explore','Explore all sections','explore.html']]},
-    {label:'RESEARCH & WORK',items:[['research','Research','research.html'],['publications','Publications','publications.html'],['projects','Projects','projects.html'],['experience','Experience & mentorship','experience.html'],['dashboard','Research dashboard','dashboard-live.html']]},
-    {label:'ACADEMIC & EVIDENCE',items:[['academic','Academic journey','academic.html'],['conferences','Conferences','conferences.html'],['workshops','Workshops & Seminars','workshops.html'],['recognition','Recognition','recognition.html'],['gallery','Gallery','gallery.html']]},
-    {label:'MORE & CONNECT',items:[['network','Research network','network.html'],['languages','Languages & MOI','languages.html'],['resources','Resources','resources.html'],['contact','Contact','contact.html'],['cv','Curriculum vitae','cv.html'],['ask-razu','Ask Razu AI','ask-razu.html']]}
+    ['home','Home','index.html'],['profile','Profile','profile.html'],['languages','Languages','languages.html'],['research','Research','research.html'],
+    ['publications','Publications','publications.html'],['projects','Projects','projects.html'],['academic','Academic','academic.html?v=20260919-logosvg17'],
+    ['experience','Experience','experience.html'],['conferences','Conferences','conferences.html?v=20260928-workshops1'],['workshops','Workshops & Seminars','workshops.html'],['recognition','Recognition','recognition.html'],
+    ['network','Network & Impact','network.html'],['resources','Resources','resources.html'],['gallery','Gallery','gallery.html'],['dashboard','Dashboard','dashboard-live.html?v=20260923-dashboardlive56']
   ];
 
   function header(){
-    const el=$('#site-header');if(!el)return;
-    const primaryLinks=nav.map(([key,label,url])=>'<a href="'+url+'"'+(activeNavKey===key?' aria-current="page"':'')+'>'+label+'</a>').join('');
-    const mobileLinks=mobileGroups.map(group=>'<section class="mobile-menu-group" aria-label="'+group.label+'">'
-      +'<h2 class="mobile-menu-heading">'+group.label+'</h2>'
-      +group.items.map(([key,label,url])=>'<a href="'+url+'"'+(page===key||(page==='network-profile'&&key==='network')?' aria-current="page"':'')+'>'+label+'</a>').join('')
-      +'</section>').join('');
-    el.innerHTML='<div class="topbar"><div class="container nav-shell">'
-      +'<a class="brand" href="index.html" aria-label="Md. Razu Ahmed — homepage"><span class="monogram">MRA</span><span class="brand-name"><span class="brand-primary">Md. Razu</span><span class="brand-accent">Ahmed</span></span></a>'
-      +'<div class="nav-scroll-zone"><nav class="nav" id="primaryNav" aria-label="Primary">'+primaryLinks+'</nav></div>'
-      +'<div class="nav-actions"><a class="btn ghost desktop-only editorial-contact-link" href="contact.html">Contact <span aria-hidden="true">↗</span></a>'
-      +'<button class="icon-btn" id="searchBtn" type="button" aria-label="Search">⌕</button>'
-      +'<button class="icon-btn" id="settingsBtn" type="button" aria-label="Appearance settings">◐</button>'
-      +'<button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open navigation menu" aria-controls="mobilePanel" aria-expanded="false"><span class="mobile-menu-open-icon" aria-hidden="true">☰</span><span class="mobile-menu-close-icon" aria-hidden="true">×</span></button></div>'
-      +'</div></div><nav class="mobile-panel" id="mobilePanel" aria-label="Mobile navigation">'+mobileLinks+'</nav>';
+    const el = $('#site-header'); if(!el) return;
+    el.innerHTML = `<div class="topbar"><div class="container nav-shell">
+      <a class="brand" href="index.html"><span class="monogram">MRA</span><span class="brand-name"><span class="brand-primary">Md. Razu</span><span class="brand-accent">Ahmed</span></span></a>
+      <div class="nav-scroll-zone">
+        <button class="nav-scroll-btn left" id="navScrollLeft" type="button" aria-label="Scroll navigation left">‹</button>
+        <nav class="nav" id="primaryNav" aria-label="Primary">${nav.map(([k,l,h])=>`<a href="${h}" ${(page===k||(page==='network-profile'&&k==='network'))?'aria-current="page"':''}>${l}</a>`).join('')}</nav>
+        <button class="nav-scroll-btn right" id="navScrollRight" type="button" aria-label="Scroll navigation right">›</button>
+      </div>
+      <div class="nav-actions"><a class="btn ghost desktop-only" href="ask-razu.html">Ask Razu AI</a><button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button><button class="icon-btn" id="settingsBtn" aria-label="Appearance settings">◐</button><button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open navigation menu" aria-controls="mobilePanel" aria-expanded="false"><span class="mobile-menu-open-icon" aria-hidden="true">☰</span><span class="mobile-menu-close-icon" aria-hidden="true">×</span></button></div>
+    </div></div><nav class="mobile-panel" id="mobilePanel" aria-label="Mobile navigation">${nav.map(([k,l,h])=>`<a href="${h}" ${(page===k||(page==='network-profile'&&k==='network'))?'aria-current="page"':''}>${l}</a>`).join('')}<a href="ask-razu.html">Ask Razu AI</a><a href="cv.html">CV</a></nav>`;
 
-    const menuBtn=$('#menuBtn');
-    const mobilePanel=$('#mobilePanel');
-    if(mobilePanel&&mobilePanel.parentElement!==document.body)document.body.appendChild(mobilePanel);
-    const syncMobileMenuTop=()=>{
-      const topbar=$('.topbar');
-      const bottom=topbar?Math.max(0,Math.round(topbar.getBoundingClientRect().bottom)):66;
-      document.documentElement.style.setProperty('--mobile-nav-top',bottom+'px');
-    };
-    const setHeaderMobileMenu=open=>{
-      if(!menuBtn||!mobilePanel)return;
-      const shouldOpen=Boolean(open)&&window.innerWidth<=1080;
-      syncMobileMenuTop();
-      mobilePanel.classList.toggle('mobile-open',shouldOpen);
-      menuBtn.setAttribute('aria-expanded',String(shouldOpen));
-      menuBtn.setAttribute('aria-label',shouldOpen?'Close navigation menu':'Open navigation menu');
-      document.body.classList.toggle('mobile-nav-open',shouldOpen);
+    const menuBtn = $('#menuBtn');
+    const mobilePanel = $('#mobilePanel');
+    if(mobilePanel && mobilePanel.parentElement !== document.body){
+      document.body.appendChild(mobilePanel);
+    }
+    const syncMobileMenuTop = () => {
+      const topbar = document.querySelector('.topbar');
+      const bottom = topbar ? Math.max(0, Math.round(topbar.getBoundingClientRect().bottom)) : 66;
+      document.documentElement.style.setProperty('--mobile-nav-top', bottom + 'px');
     };
     syncMobileMenuTop();
-    window.__mraSetMobileMenu=setHeaderMobileMenu;
-    menuBtn?.addEventListener('click',event=>{
+    const setHeaderMobileMenu = open => {
+      if(!menuBtn || !mobilePanel) return;
+      const shouldOpen = Boolean(open) && window.innerWidth <= 1080;
+      syncMobileMenuTop();
+      mobilePanel.classList.toggle('mobile-open', shouldOpen);
+      menuBtn.setAttribute('aria-expanded', String(shouldOpen));
+      menuBtn.setAttribute('aria-label', shouldOpen ? 'Close navigation menu' : 'Open navigation menu');
+      document.body.classList.toggle('mobile-nav-open', shouldOpen);
+    };
+    window.__mraSetMobileMenu = setHeaderMobileMenu;
+    menuBtn?.addEventListener('click', event => {
       event.preventDefault();
       event.stopPropagation();
-      setHeaderMobileMenu(!mobilePanel.classList.contains('mobile-open'));
+      setHeaderMobileMenu(!mobilePanel?.classList.contains('mobile-open'));
     });
-    mobilePanel?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setHeaderMobileMenu(false)));
-    document.addEventListener('click',event=>{
-      if(!mobilePanel?.classList.contains('mobile-open'))return;
-      if(el.contains(event.target)||mobilePanel.contains(event.target))return;
+    mobilePanel?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setHeaderMobileMenu(false)));
+    document.addEventListener('click', event => {
+      if(!mobilePanel?.classList.contains('mobile-open')) return;
+      if(el.contains(event.target)) return;
       setHeaderMobileMenu(false);
     });
-    document.addEventListener('keydown',event=>{
-      if(event.key==='Escape')setHeaderMobileMenu(false);
-    });
-    window.addEventListener('resize',()=>{
+    window.addEventListener('resize', () => {
       syncMobileMenuTop();
-      if(window.innerWidth>1080)setHeaderMobileMenu(false);
-    },{passive:true});
+      if(window.innerWidth > 1080) setHeaderMobileMenu(false);
+    }, {passive:true});
+    window.addEventListener('orientationchange', () => {
+      setTimeout(syncMobileMenuTop, 80);
+    }, {passive:true});
+
+    const navEl = $('#primaryNav');
+    const leftBtn = $('#navScrollLeft');
+    const rightBtn = $('#navScrollRight');
+    if(navEl && leftBtn && rightBtn){
+      const step = () => Math.max(260, Math.round(navEl.clientWidth * 0.65));
+      const updateNavControls = () => {
+        const maxScroll = Math.max(0, navEl.scrollWidth - navEl.clientWidth);
+        const overflowing = maxScroll > 4;
+        leftBtn.disabled = !overflowing || navEl.scrollLeft <= 4;
+        rightBtn.disabled = !overflowing || navEl.scrollLeft >= maxScroll - 4;
+        leftBtn.setAttribute('aria-disabled', String(leftBtn.disabled));
+        rightBtn.setAttribute('aria-disabled', String(rightBtn.disabled));
+      };
+      leftBtn.addEventListener('click', () => navEl.scrollBy({left:-step(), behavior:'smooth'}));
+      rightBtn.addEventListener('click', () => navEl.scrollBy({left:step(), behavior:'smooth'}));
+      navEl.addEventListener('scroll', updateNavControls, {passive:true});
+      navEl.addEventListener('wheel', (e) => {
+        if(navEl.scrollWidth <= navEl.clientWidth) return;
+        if(Math.abs(e.deltaY) > Math.abs(e.deltaX)){
+          e.preventDefault();
+          navEl.scrollLeft += e.deltaY;
+        }
+      }, {passive:false});
+      navEl.tabIndex = 0;
+      navEl.addEventListener('keydown', (e) => {
+        if(e.key === 'ArrowRight'){ e.preventDefault(); navEl.scrollBy({left:step(),behavior:'smooth'}); }
+        if(e.key === 'ArrowLeft'){ e.preventDefault(); navEl.scrollBy({left:-step(),behavior:'smooth'}); }
+      });
+      window.addEventListener('resize', updateNavControls, {passive:true});
+      const active = navEl.querySelector('[aria-current="page"]');
+      requestAnimationFrame(() => {
+        if(active) active.scrollIntoView({behavior:'auto', inline:'center', block:'nearest'});
+        updateNavControls();
+      });
+    }
   }
 
   function settings(){
@@ -248,7 +270,7 @@
 
   function footer(){
     const el=$('#site-footer'); if(!el) return;
-    el.innerHTML=`<footer class="footer"><div class="container footer-grid"><div><div class="brand"><span class="monogram">MRA</span><span>Md. Razu Ahmed</span></div><p>${esc(D.brand?.tagline||'')}</p><p class="tiny">Public portfolio · Privacy-safe by design · Last updated ${esc(D.lastUpdated||'')}</p></div><div><strong>Navigate</strong><p><a href="explore.html">Explore all sections</a><br><a href="search.html">Search</a><br><a href="languages.html">Languages & MOI</a><br><a href="workshops.html">Workshops & Seminars</a><br><a href="dashboard-live.html?v=20260923-dashboardlive56">Dashboard</a><br><a href="cv.html">CV</a><br><a href="copyright.html">Copyright & Reuse</a></p></div><div><strong>Connect</strong><p><a href="mailto:razuahmed038@gmail.com">Email</a><br><a href="https://github.com/beingrazuahmed" target="_blank" rel="noopener">GitHub</a><br><a href="contact.html">Collaborate</a></p></div></div><div class="container tiny">© 2026 Md. Razu Ahmed. All rights reserved.</div></footer>`;
+    el.innerHTML=`<footer class="footer"><div class="container footer-grid"><div><div class="brand"><span class="monogram">MRA</span><span>Md. Razu Ahmed</span></div><p>${esc(D.brand?.tagline||'')}</p><p class="tiny">Public portfolio · Privacy-safe by design · Last updated ${esc(D.lastUpdated||'')}</p></div><div><strong>Navigate</strong><p><a href="search.html">Search</a><br><a href="languages.html">Languages & MOI</a><br><a href="workshops.html">Workshops & Seminars</a><br><a href="dashboard-live.html?v=20260923-dashboardlive56">Dashboard</a><br><a href="cv.html">CV</a><br><a href="copyright.html">Copyright & Reuse</a></p></div><div><strong>Connect</strong><p><a href="mailto:razuahmed038@gmail.com">Email</a><br><a href="https://github.com/beingrazuahmed" target="_blank" rel="noopener">GitHub</a><br><a href="contact.html">Collaborate</a></p></div></div><div class="container tiny">© 2026 Md. Razu Ahmed. All rights reserved.</div></footer>`;
   }
 
   function clock(){
@@ -712,7 +734,8 @@
                 <span class="hero-name-accent">Ahmed</span>
               </h1>
               <div class="hero-subline hero-role-line">Statistician <span>·</span> Data Scientist <span>·</span> Researcher <span>·</span> Peer Reviewer</div>
-              <p class="hero-intro">I connect rigorous statistics with explainable machine learning to address questions in biomedical, public-health and computational research. My focus is reproducible methods, interpretable results and useful scientific evidence.</p>
+              <p class="hero-intro">I am a statistician, data scientist, and interdisciplinary data researcher working across statistical learning, artificial intelligence, public health, and biomedical data science. My work develops rigorous, reproducible, and interpretable analytical workflows that combine statistical methodology with machine learning to address real-world research questions.</p>
+              <div class="hero-status-line"><span class="live-dot"></span><strong>Portfolio online</strong><span class="clock" data-clock>Dhaka · UTC+06:00</span></div>
               <div class="hero-opportunity"><span class="hero-collab-dot"></span><strong>Open to PhD opportunities</strong><span>Research collaborations · academic partnerships</span></div>
               <div class="cta-row hero-actions"><a class="btn primary hero-primary" href="research.html">Explore Research <span aria-hidden="true">↗</span></a><a class="btn" href="cv.html">View CV</a><a class="btn hero-collab" href="contact.html">Collaborate</a></div>
               <div class="hero-secondary-links"><a href="ask-razu.html">Ask Razu AI</a><span>·</span><a href="dashboard-live.html?v=20260923-dashboardlive56">Research Dashboard</a></div>
@@ -740,22 +763,6 @@
               <div class="portrait-caption portrait-caption-editorial"><span class="hero-name-node small" aria-hidden="true"></span><span>MRA Research Intelligence</span></div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section editorial-research-section" aria-labelledby="editorial-research-title">
-      <div class="container">
-        <div class="editorial-research-head">
-          <div><span class="editorial-kicker">METHODS & APPLICATIONS</span>
-            <h2 id="editorial-research-title">Research with method at its core.</h2>
-            <p>Statistical reasoning, interpretable machine learning, and practical scientific questions form a connected research approach.</p></div>
-          <a class="editorial-inline-link" href="research.html">Read research statement <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="editorial-research-grid">
-          <a class="editorial-research-pillar" href="research.html"><span class="editorial-pillar-id">01 / FOUNDATION</span><span class="editorial-pillar-symbol" aria-hidden="true">Σ</span><strong>Statistical methodology</strong><span>Design, inference, uncertainty and rigorous validation.</span><span class="editorial-pillar-link">Explore research <span aria-hidden="true">→</span></span></a>
-          <a class="editorial-research-pillar" href="projects.html"><span class="editorial-pillar-id">02 / COMPUTATION</span><span class="editorial-pillar-symbol" aria-hidden="true">ƒ</span><strong>Interpretable AI</strong><span>Machine learning, model assessment and explainable workflows.</span><span class="editorial-pillar-link">View projects <span aria-hidden="true">→</span></span></a>
-          <a class="editorial-research-pillar" href="publications.html"><span class="editorial-pillar-id">03 / IMPACT</span><span class="editorial-pillar-symbol" aria-hidden="true">↗</span><strong>Applied research</strong><span>Biomedical, public-health and computational science applications.</span><span class="editorial-pillar-link">See research outputs <span aria-hidden="true">→</span></span></a>
         </div>
       </div>
     </section>
@@ -2257,44 +2264,61 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
 
   function copyrightPage(){return `${pageHero('Copyright & Reuse','Responsible reuse of portfolio content, research figures and evidence.')}<section class="section"><div class="container"><article class="card"><h3>Portfolio content</h3><p>Unless an individual publication, dataset, image or certificate states otherwise, portfolio text and original interface design are © 2026 Md. Razu Ahmed. Published articles and datasets retain the licenses specified by their publishers or repositories.</p><h3>Research figures</h3><p>Reuse should follow the license and attribution requirements of the associated publication. Do not detach figures from their scientific context.</p><h3>Certificates & third-party materials</h3><p>Certificates, journal logos, institutional logos and event materials remain the property of their respective issuers and are displayed as academic evidence.</p></article></div></section>`;}
 
+  // Research Constellation 2.0: a composed research map, not a random particle field.
+  // The SVG is deliberately confined to the page hero and does not require
+  // animation frames, pointer listeners, or a continuously running canvas.
+  function initResearchConstellation(){
+    const oldCanvas=document.getElementById('mraResearchConstellation');
+    if(oldCanvas)oldCanvas.remove();
+    document.body.classList.remove('has-mra-constellation');
 
-  function explore(){
-    const collections=[
-      {kicker:'RESEARCH',title:'Research & scholarly work',links:[
-        ['Research statement','Research interests, methodology and scientific direction','research.html'],
-        ['Publications','Published articles, datasets and manuscript pipeline','publications.html'],
-        ['Projects & prototypes','Technical implementations and applied research','projects.html'],
-        ['Research dashboard','Portfolio metrics and scholarly activity','dashboard-live.html']
-      ]},
-      {kicker:'ACADEMIC',title:'Academic experience',links:[
-        ['About & profile','Professional biography and academic background','profile.html'],
-        ['Academic journey','Education, milestones and supporting evidence','academic.html'],
-        ['Experience & mentorship','Teaching roles and collaborative research support','experience.html'],
-        ['Languages & MOI','Language proficiency and instructional background','languages.html']
-      ]},
-      {kicker:'EVIDENCE',title:'Events, achievements & records',links:[
-        ['Conferences','Paper presentations and conference participation','conferences.html'],
-        ['Workshops & seminars','Training events, seminars and certificates','workshops.html'],
-        ['Recognition','Academic awards and professional acknowledgements','recognition.html'],
-        ['Gallery','A curated archive of documentary evidence','gallery.html']
-      ]},
-      {kicker:'CONNECT',title:'People & collaboration',links:[
-        ['Research network','Mentors, collaborators and junior researchers','network.html'],
-        ['Resources','Academic resources and materials','resources.html'],
-        ['Ask Razu AI','Interactive portfolio assistant','ask-razu.html'],
-        ['Contact & collaboration','Research partnerships and PhD opportunities','contact.html'],
-        ['Curriculum vitae','Complete academic CV','cv.html']
-      ]}
+    const pageName=document.body.dataset.page||'home';
+    const isHome=pageName==='home';
+    if(!['home','research','network'].includes(pageName))return;
+    const hero=isHome?document.querySelector('.hero-shell'):document.querySelector('.hero.compact');
+    if(!hero||hero.querySelector('.research-network-visual'))return;
+
+    const nodes=[
+      {id:'statistics',title:'STATISTICS',x:126,y:176,labelX:148,labelY:165,anchor:'start'},
+      {id:'data',title:'DATA SCIENCE',x:347,y:99,labelX:368,labelY:87,anchor:'start'},
+      {id:'ml',title:'MACHINE LEARNING',x:630,y:171,labelX:613,labelY:143,anchor:'middle'},
+      {id:'xai',title:'EXPLAINABLE AI',x:768,y:355,labelX:745,labelY:332,anchor:'end'},
+      {id:'model',title:'COMPUTATIONAL MODELLING',x:584,y:508,labelX:564,labelY:488,anchor:'end'},
+      {id:'biomed',title:'BIOMEDICAL RESEARCH',x:311,y:534,labelX:290,labelY:562,anchor:'middle'},
+      {id:'public',title:'PUBLIC HEALTH',x:119,y:378,labelX:141,labelY:405,anchor:'start'}
     ];
-    return pageHero('Explore the portfolio','A clear directory of research, experience, academic milestones, professional recognition and collaboration.')
-      +'<section class="section editorial-explore"><div class="container"><div class="editorial-explore-intro"><span class="editorial-kicker">PORTFOLIO DIRECTORY</span><h2>Find what matters.</h2><p>Each collection is organized around a specific academic purpose. Select an area to continue.</p></div>'
-      +collections.map((g,i)=>'<section class="editorial-explore-group" aria-labelledby="explore-group-'+i+'"><div class="editorial-explore-group-head"><span>'+g.kicker+'</span><h3 id="explore-group-'+i+'">'+g.title+'</h3></div><div class="editorial-explore-grid">'
-        +g.links.map(([title,description,href])=>'<a class="editorial-explore-link" href="'+href+'"><span><strong>'+title+'</strong><small>'+description+'</small></span><span class="editorial-explore-arrow" aria-hidden="true">↗</span></a>').join('')
-        +'</div></section>').join('')
-      +'</div></section>';
+    const links=[
+      ['statistics','data'],['statistics','public'],['statistics','biomed'],
+      ['data','ml'],['data','public'],['data','model'],
+      ['ml','xai'],['ml','model'],['public','biomed'],
+      ['biomed','model'],['biomed','xai'],['xai','model']
+    ];
+    const lookup=Object.fromEntries(nodes.map(n=>[n.id,n]));
+    const edges=links.map(([a,b],i)=>{
+      const from=lookup[a],to=lookup[b];
+      return '<path class="research-network-edge'+(i%4===0?' is-highlighted':'')+'" d="M'+from.x+' '+from.y+' L'+to.x+' '+to.y+'"/>';
+    }).join('');
+    const vertices=nodes.map((n,i)=>'<g class="research-network-node'+(n.id==='data'?' is-core':'')+'" transform="translate('+n.x+' '+n.y+')">'
+      +'<circle class="research-network-node-halo" r="'+(n.id==='data'?22:15)+'"/>'
+      +'<circle class="research-network-node-ring" r="'+(n.id==='data'?10:7)+'"/>'
+      +'<circle class="research-network-node-center" r="'+(n.id==='data'?4:3)+'"/>'
+      +'</g><text class="research-network-label" x="'+n.labelX+'" y="'+n.labelY+'" text-anchor="'+n.anchor+'">'+n.title+'</text>').join('');
+
+    const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    svg.setAttribute('class','research-network-visual '+(isHome?'research-network-home':'research-network-compact'));
+    svg.setAttribute('viewBox','0 0 900 620');
+    svg.setAttribute('preserveAspectRatio','xMidYMid meet');
+    svg.setAttribute('aria-hidden','true');
+    svg.setAttribute('focusable','false');
+    svg.innerHTML='<g class="research-network-guide"><circle cx="440" cy="307" r="254"/>'
+      +'<circle cx="440" cy="307" r="174"/></g>'
+      +'<g class="research-network-links">'+edges+'</g>'
+      +'<g class="research-network-vertices">'+vertices+'</g>';
+    hero.classList.add('research-network-enabled');
+    hero.insertBefore(svg,hero.firstChild);
   }
 
-  function pageHero(title,lead){return `<section class="hero compact editorial-page-hero"><div class="container"><div class="editorial-page-overline"><span class="editorial-overline-line" aria-hidden="true"></span> RESEARCH & ACADEMIC PORTFOLIO <span class="editorial-overline-separator">/</span> ${esc(page==='network-profile'?'NETWORK':page.toUpperCase())}</div><h1>${esc(title)}</h1><p class="lede">${esc(lead)}</p></div></section>`;}
+  function pageHero(title,lead){return `<section class="hero compact"><div class="container"><div class="eyebrow"><span class="live-dot"></span><span>MRA Research Intelligence</span><span class="clock" data-clock>Dhaka · UTC+06:00</span></div><h1>${esc(title)}</h1><p class="lede">${esc(lead)}</p></div></section>`;}
 
   function initInteractive(){
     const galleryFilterButtons=$$('[data-gallery-filter]');
@@ -2487,7 +2511,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     footer();
     const main=$('#page-content');
     if(!main)return;
-    const map={home,explore,profile,languages,research,publications,projects,academic,experience,conferences,workshops,recognition,network,'network-profile':networkProfile,resources,gallery,dashboard,'ask-razu':askRazu,contact,copyright:copyrightPage};
+    const map={home,profile,languages,research,publications,projects,academic,experience,conferences,workshops,recognition,network,'network-profile':networkProfile,resources,gallery,dashboard,'ask-razu':askRazu,contact,copyright:copyrightPage};
     main.innerHTML=(map[page]||home)();
 
     // Start date/time immediately after the page hero exists. This remains live even if a later UI control fails.
@@ -2501,6 +2525,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
       document.documentElement.dataset.motion=document.documentElement.dataset.motion||'balanced';
     }
 
+    try{initResearchConstellation();}catch(err){console.error('MRA constellation failed to initialize:',err);}
     try{initInteractive();}catch(err){console.error('MRA interactive controls failed to initialize:',err);}
   }
   render();
