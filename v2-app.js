@@ -2314,6 +2314,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
       +'<circle cx="440" cy="307" r="174"/></g>'
       +'<g class="research-network-links">'+edges+'</g>'
       +'<g class="research-network-vertices">'+vertices+'</g>';
+    hero.classList.add('research-network-enabled');
     hero.insertBefore(svg,hero.firstChild);
   }
 
