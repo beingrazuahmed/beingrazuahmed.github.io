@@ -2314,12 +2314,23 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   function contact(){
   const email=D.profile?.email||'razuahmed038@gmail.com',affiliation=D.profile?.affiliation||'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST)',portrait=D.profile?.image||'assets/profile/razu-portrait.JPG';
   const brands={'Google Scholar':'google-scholar','ORCID':'orcid','Scopus':'scopus','Web of Science':'web-of-science','ResearchGate':'researchgate','Semantic Scholar':'semantic-scholar','SciProfiles':'sciprofiles','LinkedIn':'linkedin','GitHub':'github','Kaggle':'kaggle','Academia.edu':'academia','X':'x','Instagram':'instagram','Facebook':'facebook'};
-  const icon=name=>{const id=brands[name];return id?'<span class="contact-brand-mark contact-brand-'+esc(id)+'"><img src="assets/academic/logos/contact/'+esc(id)+'.svg" alt="" aria-hidden="true" width="24" height="24" loading="lazy" decoding="async"></span>':'<span class="contact-brand-mark contact-brand-fallback" aria-hidden="true">'+esc(String(name||'?').slice(0,2).toUpperCase())+'</span>';};
+  // Match Academic and Network profile logos. Prefer shared local assets and
+  // the same brand favicons already used by the portfolio's scholarly profiles.
+  const sharedBrands=new Set(['Google Scholar','ORCID','Scopus','ResearchGate','Semantic Scholar','SciProfiles']);
+  const latestBrands={
+    'Web of Science':'assets/academic/journals/engineering-reports/web-of-science.webp',
+    'LinkedIn':'https://www.google.com/s2/favicons?sz=128&domain=linkedin.com'
+  };
+  const icon=name=>{
+    const id=brands[name];
+    const src=sharedBrands.has(name)?publicationBrandMeta(name).src:(latestBrands[name]||(id?'assets/academic/logos/contact/'+id+'.svg':''));
+    return src?'<span class="contact-brand-mark contact-brand-'+esc(id||'default')+'"><img src="'+esc(src)+'" alt="" aria-hidden="true" width="30" height="30" loading="lazy" decoding="async"></span>':'<span class="contact-brand-mark contact-brand-fallback" aria-hidden="true">'+esc(String(name||'?').slice(0,2).toUpperCase())+'</span>';
+  };
   const lineIcon=kind=>{const paths={mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',location:'<path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/>',stats:'<path d="M4 20V11m6 9V5m6 15v-8m5 8H3"/><path d="m4 8 6-4 6 5 4-3"/>',health:'<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l8.13 8.13a1 1 0 0 0 1.42 0l8.13-8.13a5.5 5.5 0 0 0 0-7.78Z"/><path d="M5 12h4l2-3 2 6 2-3h4"/>',partnership:'<circle cx="7" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><path d="M2 20v-2a5 5 0 0 1 10 0v2m0 0v-2a5 5 0 0 1 10 0v2"/><path d="M10 12h4"/>'};return '<svg class="contact-line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.65" aria-hidden="true" focusable="false">'+(paths[kind]||paths.mail)+'</svg>';};
   const groups=[
-    {type:'academic',num:'01',title:'Research & academic profiles',desc:'Author identifiers, scholarly records and publication discovery.'},
-    {type:'professional',num:'02',title:'Professional platforms',desc:'Code, projects and academic-professional connections.'},
-    {type:'social',num:'03',title:'Community channels',desc:'Additional public channels for connecting and following updates.'}
+    {type:'academic',num:'01',title:'Scholarly profiles',desc:'Public research identifiers, indexes and discovery services.'},
+    {type:'professional',num:'02',title:'Professional network',desc:'Research code, technical projects and professional connections.'},
+    {type:'social',num:'03',title:'Social platforms',desc:'Additional channels for following and connecting.'}
   ];
   const platformCards=groups.map(g=>{
     const links=(D.profiles||[]).filter(p=>p.type===g.type&&p.url).map(p=>{
@@ -2338,26 +2349,31 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   return `<div class="contact-page">
     <section class="contact-intro" aria-labelledby="contact-title"><div class="container contact-intro-grid">
       <div class="contact-intro-copy">
-        <span class="contact-eyebrow"><span class="contact-eyebrow-line"></span> CONTACT &amp; COLLABORATION</span>
-        <h1 id="contact-title">Better research begins with <em>conversation.</em></h1>
-        <p class="contact-intro-lede">I welcome thoughtful enquiries about collaborative research, doctoral opportunities and interdisciplinary projects where statistical rigour, explainable AI and reproducible methods can make a meaningful contribution.</p>
+        <span class="contact-eyebrow"><span class="contact-eyebrow-line"></span> ACADEMIC CONTACT &amp; COLLABORATION</span>
+        <h1 id="contact-title">Advancing research through <em>collaboration.</em></h1>
+        <p class="contact-intro-lede">I welcome research partnerships, doctoral opportunities and interdisciplinary projects at the intersection of statistics, machine learning and explainable AI. I value rigorous methods, transparent analysis and meaningful scientific outcomes.</p>
         <div class="contact-intro-actions"><a class="btn primary contact-action-primary" href="mailto:${esc(email)}">${lineIcon('mail')} Get in touch <span aria-hidden="true">↗</span></a><a class="btn ghost contact-action-secondary" href="#collaboration-areas">Explore collaboration areas <span aria-hidden="true">↓</span></a></div>
-        <div class="contact-intro-meta"><span class="contact-location-meta">${lineIcon('location')} BASED IN BANGLADESH</span><span aria-hidden="true" class="contact-meta-separator"></span><span>SELECTIVE RESEARCH COLLABORATION</span></div>
+        <nav class="contact-reference-rail" aria-label="Research contact quick links">
+          <a href="#academic-profiles">Scholarly profiles <span aria-hidden="true">↗</span></a>
+          <a href="publications.html">Publications <span aria-hidden="true">↗</span></a>
+          <a href="cv.html">Academic CV <span aria-hidden="true">↗</span></a>
+        </nav>
+        <div class="contact-intro-meta"><span class="contact-location-meta">${lineIcon('location')} BASED IN BANGLADESH</span><span aria-hidden="true" class="contact-meta-separator"></span><span>RESEARCH-FOCUSED ENQUIRIES</span></div>
       </div>
       <aside class="contact-direct-card" aria-label="Direct academic contact">
-        <div class="contact-direct-card-top"><span>DIRECT CONTACT</span><span class="contact-direct-mark" aria-hidden="true">MRA<span></span></span></div>
+        <div class="contact-direct-card-top"><span>DIRECT CONTACT</span><span class="contact-direct-identity">ACADEMIC ENQUIRIES</span></div>
         <div class="contact-person"><img src="${esc(portrait)}" alt="Portrait of Md. Razu Ahmed" loading="eager" decoding="async"><div><strong>Md. Razu Ahmed</strong><span>Statistician · Data Scientist · Researcher</span></div></div>
         <div class="contact-detail-item"><span class="contact-detail-label">PREFERRED CONTACT</span><a class="contact-email-address" href="mailto:${esc(email)}">${esc(email)} <span aria-hidden="true">↗</span></a><p>For research enquiries, please reach out directly by email.</p></div>
-        <div class="contact-detail-item contact-detail-affiliation"><span class="contact-detail-label">RESEARCH AFFILIATION</span><p>${esc(affiliation)}</p></div>
+        <div class="contact-detail-item contact-detail-affiliation"><span class="contact-detail-label">RESEARCH AFFILIATION</span><div class="contact-affiliation-row"><img src="assets/academic/education/pust-logo.png" alt="" loading="lazy" decoding="async"><p>${esc(affiliation)}</p></div></div>
         <div class="contact-direct-foot"><span class="contact-direct-dot" aria-hidden="true"></span> Open selectively to relevant research partnerships</div>
       </aside>
     </div></section>
     <section class="contact-focus-section" id="collaboration-areas" aria-labelledby="contact-focus-heading"><div class="container">
-      <div class="contact-section-heading"><div><span class="contact-section-kicker">01 / AREAS OF INTEREST</span><h2 id="contact-focus-heading">Where our work can intersect.</h2></div><p>Research-led collaborations grounded in sound methodology, clear objectives and outcomes that can be independently evaluated.</p></div>
+      <div class="contact-section-heading"><div><span class="contact-section-kicker">01 / AREAS OF INTEREST</span><h2 id="contact-focus-heading">Opportunities for collaboration.</h2></div><p>Areas where statistical methodology and responsible AI can support well-defined scientific questions.</p></div>
       <div class="contact-focus-grid">${pathwayCards}</div>
     </div></section>
     <section class="contact-presence-section" id="academic-profiles" aria-labelledby="contact-presence-heading"><div class="container">
-      <div class="contact-section-heading"><div><span class="contact-section-kicker">02 / ACADEMIC PRESENCE</span><h2 id="contact-presence-heading">Find my work and connect.</h2></div><p>Explore my publications, researcher identifiers, code repositories and professional channels.</p></div>
+      <div class="contact-section-heading"><div><span class="contact-section-kicker">02 / ACADEMIC PRESENCE</span><h2 id="contact-presence-heading">Research profiles &amp; academic identity.</h2></div><p>Scholar identifiers, scholarly discovery services, professional platforms and public channels in one place.</p></div>
       <div class="contact-platform-grid">${platformCards}</div>
     </div></section>
     <section class="contact-next-section" aria-labelledby="contact-next-heading"><div class="container contact-next-grid">
