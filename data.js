@@ -554,9 +554,38 @@ window.PORTFOLIO_DATA = {
   ],
 
   service: [
-    { journal: "PLOS ONE", reviews: 25, since: "March 2026", recognition: "Completed invited reviews" },
-    { journal: "Biomedical Signal Processing and Control", reviews: 8, since: "July 2026", recognition: "Eight completed reviews; updated reviewing certificate received", evidenceAsset: "assets/gallery/bspc-reviewing-certificate-2026.webp", evidenceHref: "gallery.html#bspc-reviewing-certificate-2026", evidenceLabel: "Certificate of Reviewing · PDF" },
-    { journal: "Engineering Applications of Artificial Intelligence", reviews: 1, since: "September 2026", recognition: "Certificate of Reviewing received", evidenceAsset: "assets/gallery/eaai-reviewing-certificate-2026.webp", evidenceHref: "gallery.html#eaai-reviewing-certificate-2026", evidenceLabel: "Certificate of Reviewing · PDF" }
+    {
+      id: "plos-one", journal: "PLOS ONE", publisher: "Public Library of Science (PLOS)",
+      label: "PLOS", initials: "PLOS", reviews: 25, since: "March 2026",
+      startDate: "2026-03-13", startLabel: "13 March 2026", role: "Peer Reviewer",
+      journalUrl: "https://journals.plos.org/plosone/", issn: "1932-6203",
+      scope: "Completed 25 invited manuscript reviews, evaluating study design, statistical methodology, analytical validity, interpretation, reporting quality, and authors’ responses to reviewer comments.",
+      recognition: "Completed invited reviews"
+    },
+    {
+      id: "bspc", journal: "Biomedical Signal Processing and Control", publisher: "Elsevier",
+      label: "BSPC", initials: "BSPC", reviews: 8, since: "July 2026",
+      startDate: "2026-07-22", startLabel: "22 July 2026", role: "Peer Reviewer",
+      journalUrl: "https://www.sciencedirect.com/journal/biomedical-signal-processing-and-control", issn: "1746-8094",
+      scope: "Completed 8 invited manuscript reviews, assessing biomedical signal-processing and machine-learning methods, validation strategies, interpretation of results, and scientific reporting.",
+      recognition: "Received Certificates of Reviewing recognizing 8 completed reviews.",
+      evidenceAsset: "assets/gallery/bspc-reviewing-certificate-2026.webp",
+      evidenceHref: "gallery.html#bspc-reviewing-certificate-2026",
+      evidencePdf: "assets/recognition/bspc-reviewing-certificate-2026.pdf",
+      evidenceLabel: "Certificate of Reviewing · PDF"
+    },
+    {
+      id: "eaai", journal: "Engineering Applications of Artificial Intelligence", publisher: "Elsevier",
+      label: "EAAI", initials: "EAAI", reviews: 1, since: "September 2026",
+      startDate: "2026-09-14", startLabel: "14 September 2026", role: "Peer Reviewer",
+      journalUrl: "https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence", issn: "0952-1976",
+      scope: "Completed 1 invited manuscript review, assessing machine-learning and biomedical signal-processing methods, validation strategies, interpretation of results, and scientific reporting.",
+      recognition: "Received a Certificate of Reviewing for the completed review.",
+      evidenceAsset: "assets/gallery/eaai-reviewing-certificate-2026.webp",
+      evidenceHref: "gallery.html#eaai-reviewing-certificate-2026",
+      evidencePdf: "assets/recognition/eaai-reviewing-certificate-2026.pdf",
+      evidenceLabel: "Certificate of Reviewing · PDF"
+    }
   ],
 
   education: [

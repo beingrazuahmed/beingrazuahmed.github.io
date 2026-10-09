@@ -851,6 +851,7 @@
     <section class="section"><div class="container">
       ${sectionHead('Scholarly service','Peer review & academic contribution','Invited peer-review activity across international journals.')}
       <div class="grid grid-4 service-grid-v3"><article class="card metric metric-card"><strong>34</strong><span>Completed invited reviews</span></article><article class="card editorial-card"><h3>PLOS ONE</h3><p>25 completed reviews</p></article><article class="card editorial-card"><h3>Biomedical Signal Processing and Control</h3><p>8 completed reviews</p><a class="credential-inline-link" href="gallery.html#bspc-reviewing-certificate-2026">View reviewing certificate →</a></article><article class="card editorial-card"><h3>Engineering Applications of Artificial Intelligence</h3><p>1 completed review</p><a class="credential-inline-link" href="gallery.html#eaai-reviewing-certificate-2026">View reviewing certificate →</a></article></div>
+      <div class="section-action"><a class="section-text-link" href="experience.html#editorial-peer-review">Explore editorial appointments, journal details &amp; review certificates ↗</a></div>
     </div></section>
 
     <section class="section alt"><div class="container">
@@ -1507,6 +1508,54 @@
           </div>
         </article>
       </div>`).join('')}</div>
+      </div></section>
+      <section class="section editorial-service-section" id="editorial-peer-review" aria-labelledby="editorial-service-title"><div class="container">
+        <div class="editorial-service-intro">
+          <div class="editorial-service-heading">
+            <span class="section-kicker">Editorial service · since March 2026</span>
+            <h2 id="editorial-service-title">Editorial &amp; Peer Review Service</h2>
+            <p>Ongoing invited reviewer appointments for three international journals, with recorded dates, journal details, review activity, and available certificates.</p>
+          </div>
+          <div class="editorial-service-overview" aria-label="Scholarly reviewing summary">
+            <div><strong>${(D.service||[]).reduce((sum,x)=>sum+Number(x.reviews||0),0)}</strong><span>Completed reviews</span></div>
+            <div><strong>${(D.service||[]).length}</strong><span>Journals served</span></div>
+          </div>
+        </div>
+        <div class="editorial-journal-grid">
+          ${(D.service||[]).map((record,index)=>`
+            <article class="editorial-journal-card" id="reviewer-${esc(record.id||index)}">
+              <div class="editorial-journal-head">
+                <div class="editorial-journal-emblem editorial-journal-emblem--${esc(record.id||'generic')}" aria-label="${esc(record.journal||'Journal')} identity">
+                  <span class="editorial-journal-emblem-kind">JOURNAL</span>
+                  <span class="editorial-journal-emblem-letters">${esc(record.initials||record.label||'J')}</span>
+                  <span class="editorial-journal-emblem-publisher">${esc(record.publisher||'Academic journal')}</span>
+                </div>
+                <div class="editorial-journal-identity">
+                  <span class="editorial-journal-index">0${index+1} · Editorial service</span>
+                  <h3>${esc(record.journal||'Academic Journal')}</h3>
+                  <span class="editorial-journal-publisher">${esc(record.publisher||'')}</span>
+                </div>
+              </div>
+              <div class="editorial-journal-position">
+                <div><strong>${esc(record.role||'Peer Reviewer')}</strong><span><time datetime="${esc(record.startDate||'')}">${esc(record.startLabel||record.since||'')}</time> – Present</span></div>
+                <span class="editorial-journal-current"><span aria-hidden="true">●</span> Ongoing</span>
+              </div>
+              <p class="editorial-journal-scope">${esc(record.scope||'Invited manuscript review and scholarly evaluation.')}</p>
+              ${record.recognition&&record.evidenceHref?`<p class="editorial-journal-recognition">${uiIcon('review')}<span>${esc(record.recognition)}</span></p>`:''}
+              <div class="editorial-journal-footer">
+                <dl class="editorial-journal-facts"><div><dt>ISSN</dt><dd>${esc(record.issn||'')}</dd></div><div><dt>Completed</dt><dd><strong>${esc(record.reviews||0)}</strong> ${Number(record.reviews)===1?'review':'reviews'}</dd></div></dl>
+                <div class="editorial-journal-actions">
+                  ${record.journalUrl?`<a class="editorial-journal-action journal-site" href="${esc(record.journalUrl)}" target="_blank" rel="noopener noreferrer">Journal website <span aria-hidden="true">↗</span></a>`:''}
+                  ${record.evidenceHref?`<a class="editorial-journal-action" href="${esc(record.evidenceHref)}">Certificate <span aria-hidden="true">↗</span></a>`:''}
+                </div>
+              </div>
+            </article>
+          `).join('')}
+        </div>
+        <div class="editorial-service-note">
+          <div><strong>Scholarly service is independent of publication status.</strong><p>Review counts reflect completed invited reviews, not editorial-board membership or the number of manuscripts under review. Certificate links are shown only where supporting documents are available.</p></div>
+          <a href="recognition.html">See verified certificates <span aria-hidden="true">↗</span></a>
+        </div>
       </div></section>
       <section class="section alt mentorship-role-section" id="research-mentorship-support"><div class="container">
         <div class="mentorship-role-hero">
