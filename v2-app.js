@@ -1574,7 +1574,7 @@
             <div class="editorial-reviewer-identity-label"><strong>Scholarly profiles</strong><span>ORCID &amp; Web of Science</span></div>
             <div class="editorial-reviewer-links">
               ${reviewerProfiles.map(profile=>`<a class="editorial-reviewer-profile" href="${esc(profile.url)}" target="_blank" rel="noopener noreferrer" aria-label="Open Md. Razu Ahmed's ${esc(profile.label)} profile">
-                <span class="editorial-reviewer-brand"><img src="${profile.label==='ORCID'?'assets/academic/logos/contact/orcid.svg':'assets/academic/logos/contact/web-of-science.svg'}" alt="" loading="lazy" width="27" height="27"></span>
+                <span class="editorial-reviewer-brand ${profile.label==='Web of Science'?'is-web-of-science':''}"><img src="${profile.label==='ORCID'?'assets/academic/logos/contact/orcid.svg':'assets/academic/journals/engineering-reports/web-of-science.webp'}" alt="" loading="lazy" decoding="async" width="34" height="34"></span>
                 <span><strong>${esc(profile.label)}</strong><small>View public profile ↗</small></span>
               </a>`).join('')}
             </div>

@@ -526,6 +526,7 @@ body[data-page="network-profile"] .network-brand-link .mentor-profile-link-icon.
 .editorial-reviewer-profile:hover{border-color:var(--accent);transform:translateY(-2px)}
 .editorial-reviewer-brand{display:grid;place-items:center;width:39px;height:39px;flex:none;border:1px solid #e9edf0;border-radius:10px;background:#fff}
 .editorial-reviewer-brand img{width:26px;height:26px;object-fit:contain}
+.editorial-reviewer-brand.is-web-of-science img{width:34px;height:34px;max-width:34px;max-height:34px;object-fit:contain}
 .editorial-reviewer-profile strong,.editorial-reviewer-profile small{display:block;line-height:1.45}
 .editorial-reviewer-profile strong{font-size:12.5px;color:var(--text)}
 .editorial-reviewer-profile small{font-size:10.5px;color:var(--accent);font-weight:700}
