@@ -559,3 +559,19 @@ body[data-page="network-profile"] .network-brand-link .mentor-profile-link-icon.
 .gallery-evidence-card#elsevier-certified-peer-reviewer-2026 .gallery-evidence-media{height:230px;background:#fff}
 .gallery-evidence-card#elsevier-certified-peer-reviewer-2026 .original-certificate-preview{height:230px;aspect-ratio:auto}
 .gallery-evidence-card#elsevier-certified-peer-reviewer-2026 .original-certificate-preview canvas,.gallery-evidence-card#elsevier-certified-peer-reviewer-2026 .original-certificate-preview iframe{max-height:230px}
+
+/* Keep the certificate canvas in normal flow; the pre-existing course CTA also uses span. */
+.editorial-course-media>span.original-certificate-preview{
+  position:relative;inset:auto;bottom:auto;left:auto;right:auto;
+  display:flex;width:100%;height:auto;max-height:195px;
+  padding:0;margin:0;background:#fff;color:inherit;
+  border:0;border-radius:2px;font-size:inherit;font-weight:inherit;
+  line-height:normal;text-align:initial;
+}
+.editorial-course-media>span.original-certificate-preview iframe,
+.editorial-course-media>span.original-certificate-preview canvas{
+  display:block;width:100%;max-width:100%;height:auto;object-fit:contain;
+}
+.editorial-course-media>span.original-certificate-preview iframe{aspect-ratio:4/3}
+.editorial-course-media>span.original-certificate-preview iframe[hidden],
+.editorial-course-media>span.original-certificate-preview canvas[hidden]{display:none!important}
