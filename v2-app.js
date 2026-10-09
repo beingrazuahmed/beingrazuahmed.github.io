@@ -1950,14 +1950,67 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     return esc(text).replace(/Md\. Razu Ahmed|Ahmed, M\. R\.|Razu/g,match=>`<strong class="razu-name">${match}</strong>`);
   }
 
-  function mentorProfileLink(link={}){
-    const meta=publicationBrandMeta(link.label||'');
-    const iconSrc=link.icon||meta.src;
-    return `<a class="mentor-profile-link ${esc(meta.cls||'')}" href="${esc(link.url||'#')}" target="_blank" rel="noopener noreferrer" title="${esc(link.label||'Academic profile')}">
-      <span class="mentor-profile-link-icon"><img src="${esc(iconSrc)}" alt="" loading="lazy" decoding="async"></span>
-      <span>${esc(link.label||'Profile')}</span>
-    </a>`;
+  function networkBadgeIcon(link={}) {
+  const label=String(link.label||'Profile').trim();
+  const key=label.toLowerCase();
+  const brands={
+    'google scholar':'google-scholar',
+    'orcid':'orcid',
+    'scopus':'scopus',
+    'researchgate':'researchgate',
+    'linkedin':'linkedin',
+    'sciprofiles':'sciprofiles',
+    'semantic scholar':'semantic-scholar',
+    'github':'github',
+    'academia.edu':'academia',
+    'kaggle':'kaggle'
+  };
+  const institutional={
+    'pust profile':'assets/academic/education/pust-logo.png',
+    'ru profile':'assets/academic/journals/ijss/ru-logo.webp',
+    'metropolitan university':'assets/institutions/metropolitan-university.webp',
+    'banglajol host page':'assets/academic/journals/ijss/banglajol.png'
+  };
+  const brand=brands[key];
+  const src=String(link.icon||(brand?'assets/academic/logos/contact/'+brand+'.svg':institutional[key]||'')).trim();
+  if(src){
+    const isCrest=!brand;
+    return {
+      cls:isCrest?'network-icon-crest':'network-icon-brand',
+      markup:`<img src="${esc(src)}" alt="" width="26" height="26" loading="lazy" decoding="async">`
+    };
   }
+  if(key==='email'||key==='personal email'){
+    return {
+      cls:'network-icon-mail',
+      markup:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>'
+    };
+  }
+  const abbreviations={'ad scientific index':'AD','khulna university':'KU','staans lab blog':'SB'};
+  if(abbreviations[key]){
+    return {cls:'network-icon-initials',markup:`<span aria-hidden="true">${abbreviations[key]}</span>`};
+  }
+  const journal=key.includes('journal')||key.includes('banglajol');
+  return {
+    cls:'network-icon-generic',
+    markup:journal
+      ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4.5h14v15H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>'
+      : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>'
+  };
+}
+
+  function mentorProfileLink(link={}) {
+  const href=String(link.url||'').trim();
+  if(!href)return '';
+  const label=String(link.label||'Academic profile').trim();
+  const badge=networkBadgeIcon(link);
+  const isEmail=/^mailto:/i.test(href);
+  const attrs=isEmail?'':' target="_blank" rel="noopener noreferrer"';
+  return `<a class="mentor-profile-link network-brand-link" href="${esc(href)}"${attrs} title="${esc(label)}" aria-label="${esc(isEmail?'Compose email: '+label:'Open '+label)}">
+    <span class="mentor-profile-link-icon ${esc(badge.cls)}" aria-hidden="true">${badge.markup}</span>
+    <span class="network-brand-label">${esc(label)}</span>
+  </a>`;
+}
 
   function mentorDoiLink(url=''){
     if(!url)return '';

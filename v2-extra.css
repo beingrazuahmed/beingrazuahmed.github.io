@@ -309,3 +309,62 @@
   .footer-collaboration-copy{flex-basis:calc(100% - 45px)}
   .footer-collaboration-link{margin-left:44px}
 }
+
+
+/* Network identities — crisp local SVG brand marks and accessible profile links. */
+body[data-page="network-profile"] .network-profile-links-premium,
+.network-premium-profilelinks{align-items:stretch;flex-wrap:wrap;overflow:visible;gap:9px}
+body[data-page="network-profile"] .network-profile-links-premium .mentor-profile-link.network-brand-link,
+.network-premium-profilelinks .mentor-profile-link.network-brand-link{
+  display:inline-flex;align-items:center;gap:10px;flex:0 0 auto;min-height:47px;
+  padding:7px 12px 7px 7px;border:1px solid var(--line);
+  border-radius:12px;background:var(--surface);color:var(--text);
+  font-size:11.5px;font-weight:760;line-height:1.4;text-decoration:none;
+  transition:border-color .16s ease,background-color .16s ease,transform .16s ease;
+}
+body[data-page="network-profile"] .network-profile-links-premium .network-brand-link:hover,
+.network-premium-profilelinks .network-brand-link:hover{
+  transform:translateY(-1px);border-color:color-mix(in srgb,var(--accent) 43%,var(--line));
+  background:color-mix(in srgb,var(--accent) 4%,var(--surface));color:var(--accent);
+}
+body[data-page="network-profile"] .network-profile-links-premium .network-brand-link:focus-visible,
+.network-premium-profilelinks .network-brand-link:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+body[data-page="network-profile"] .network-profile-links-premium .network-brand-link .mentor-profile-link-icon,
+.network-premium-profilelinks .network-brand-link .mentor-profile-link-icon{
+  width:33px;height:33px;flex:0 0 33px;display:grid;place-items:center;
+  border:1px solid color-mix(in srgb,var(--accent) 10%,var(--line));
+  border-radius:9px;background:#fff;color:#24619f;overflow:hidden;
+}
+body[data-page="network-profile"] .network-profile-links-premium .network-brand-link .mentor-profile-link-icon img,
+.network-premium-profilelinks .network-brand-link .mentor-profile-link-icon img{
+  display:block;max-width:27px;max-height:27px;width:24px;height:24px;object-fit:contain;
+  filter:none;border-radius:0;
+}
+body[data-page="network-profile"] .network-profile-links-premium .network-brand-link .network-icon-crest img,
+.network-premium-profilelinks .network-brand-link .network-icon-crest img{width:28px;height:28px;max-width:28px;max-height:28px}
+body[data-page="network-profile"] .network-profile-links-premium .network-brand-link .mentor-profile-link-icon svg,
+.network-premium-profilelinks .network-brand-link .mentor-profile-link-icon svg{
+  display:block;width:20px;height:20px;stroke:#22629c;flex:none;
+}
+body[data-page="network-profile"] .network-profile-links-premium .network-brand-link .network-icon-initials,
+.network-premium-profilelinks .network-brand-link .network-icon-initials{
+  background:color-mix(in srgb,var(--accent) 6%,#fff);
+}
+body[data-page="network-profile"] .network-profile-links-premium .network-brand-link .network-icon-initials span,
+.network-premium-profilelinks .network-brand-link .network-icon-initials span{
+  color:#235f99;font-size:11px;font-weight:850;letter-spacing:-.025em;
+}
+body[data-page="network-profile"] .network-profile-links-premium .network-brand-label,
+.network-premium-profilelinks .network-brand-label{min-width:0;overflow-wrap:anywhere}
+@media(max-width:620px){
+ body[data-page="network-profile"] .network-profile-links-premium .mentor-profile-link.network-brand-link{
+   flex:1 1 148px;min-width:0
+ }
+ .network-premium-profilelinks .mentor-profile-link.network-brand-link{flex:0 1 auto}
+}
+@media(prefers-reduced-motion:reduce){
+ body[data-page="network-profile"] .network-profile-links-premium .network-brand-link,
+ .network-premium-profilelinks .network-brand-link{transition:none}
+ body[data-page="network-profile"] .network-profile-links-premium .network-brand-link:hover,
+ .network-premium-profilelinks .network-brand-link:hover{transform:none}
+}
