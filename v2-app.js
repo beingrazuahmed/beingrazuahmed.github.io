@@ -1951,52 +1951,48 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   }
 
   function networkBadgeIcon(link={}) {
-  const label=String(link.label||'Profile').trim();
-  const key=label.toLowerCase();
+  const key=String(link.label||'Profile').trim().toLowerCase();
   const brands={
-    'google scholar':'google-scholar',
-    'orcid':'orcid',
-    'scopus':'scopus',
-    'researchgate':'researchgate',
-    'linkedin':'linkedin',
-    'sciprofiles':'sciprofiles',
-    'semantic scholar':'semantic-scholar',
-    'github':'github',
-    'academia.edu':'academia',
-    'kaggle':'kaggle'
+    'email':'assets/academic/logos/contact/gmail.svg',
+    'gmail':'assets/academic/logos/contact/gmail.svg',
+    'personal email':'assets/academic/logos/vendor/personal-email-blue.png',
+    'google scholar':'assets/academic/logos/contact/google-scholar.svg',
+    'orcid':'assets/academic/logos/contact/orcid.svg',
+    'scopus':'assets/academic/logos/scopus-circle.png',
+    'researchgate':'assets/academic/logos/contact/researchgate.svg',
+    'linkedin':'assets/academic/logos/contact/linkedin.svg',
+    'sciprofiles':'assets/academic/logos/contact/sciprofiles.svg',
+    'semantic scholar':'assets/academic/logos/contact/semantic-scholar.svg',
+    'github':'assets/academic/logos/contact/github.svg',
+    'academia.edu':'assets/academic/logos/contact/academia.svg',
+    'kaggle':'assets/academic/logos/contact/kaggle.svg',
+    'ad scientific index':'assets/academic/logos/contact/ad-scientific-index.svg'
   };
-  const institutional={
+  const institutions={
     'pust profile':'assets/academic/education/pust-logo.png',
     'ru profile':'assets/academic/journals/ijss/ru-logo.webp',
     'metropolitan university':'assets/institutions/metropolitan-university.webp',
     'banglajol host page':'assets/academic/journals/ijss/banglajol.png'
   };
-  const brand=brands[key];
-  const src=String(link.icon||(brand?'assets/academic/logos/contact/'+brand+'.svg':institutional[key]||'')).trim();
-  if(src){
-    const isCrest=!brand;
+  // Brand labels always use the same site-owned asset; custom logos remain
+  // supported for institutional links supplied in individual profile records.
+  const source=brands[key]||String(link.icon||institutions[key]||'').trim();
+  if(source){
+    const crest=!!(link.icon||institutions[key])&&!brands[key];
+    const kind=key==='scopus'?' is-scopus':key==='ad scientific index'?' is-ad-scientific':key==='email'||key==='gmail'?' is-gmail':key==='personal email'?' is-personal-email':'';
     return {
-      cls:isCrest?'network-icon-crest':'network-icon-brand',
-      markup:`<img src="${esc(src)}" alt="" width="26" height="26" loading="lazy" decoding="async">`
+      cls:(crest?'network-icon-crest':'network-icon-brand')+kind,
+      markup:`<img src="${esc(source)}" alt="" width="26" height="26" loading="lazy" decoding="async">`
     };
   }
-  if(key==='email'||key==='personal email'){
-    return {
-      cls:'network-icon-mail',
-      markup:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>'
-    };
-  }
-  const abbreviations={'ad scientific index':'AD','khulna university':'KU','staans lab blog':'SB'};
-  if(abbreviations[key]){
-    return {cls:'network-icon-initials',markup:`<span aria-hidden="true">${abbreviations[key]}</span>`};
-  }
-  const journal=key.includes('journal')||key.includes('banglajol');
-  return {
-    cls:'network-icon-generic',
-    markup:journal
-      ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4.5h14v15H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>'
-      : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>'
-  };
+  const isUniversity=key==='khulna university'||key.includes('university')||key.includes('institution');
+  const isPublication=key.includes('journal')||key.includes('blog')||key.includes('publication');
+  const icon=isUniversity
+    ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9 12 4l9 5M4.5 10h15M5 20h14M7 11v7M12 11v7M17 11v7"/></svg>'
+    :isPublication
+    ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5c2.4-.8 5.1-.8 8 .5 2.9-1.3 5.6-1.3 8-.5V19c-2.4-.8-5.1-.8-8 .5-2.9-1.3-5.6-1.3-8-.5zM12 6v13.5"/></svg>'
+    : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>';
+  return {cls:'network-icon-generic',markup:icon};
 }
 
   function mentorProfileLink(link={}) {
@@ -2221,7 +2217,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         ${x.description?`<p class="network-description">${highlightRazuName(x.description)}</p>`:''}
         ${x.heroNote && x.showCardNote !== false?`<div class="network-person-relationship-note"><span>Academic relationship</span><p>${highlightRazuName(x.heroNote)}</p></div>`:''}
         ${x.shared?.length?`<details class="network-shared"><summary>Shared works <span>${x.shared.length}</span></summary><ul>${x.shared.map(s=>`<li>${esc(s)}</li>`).join('')}</ul></details>`:''}
-        ${x.profilePage?`<div class="network-person-profile-action"><a class="btn ghost" href="${esc(x.profilePage)}">View Full Profile →</a></div>`:(x.links||[]).length?`<div class="link-row network-links">${(x.links||[]).map(l=>ext(l.url,l.label)).join(' · ')}</div>`:''}
+        ${x.profilePage?`<div class="network-person-profile-action"><a class="btn ghost" href="${esc(x.profilePage)}">View Full Profile →</a></div>`:(x.links||[]).length?`<div class="network-card-profile-links" aria-label="Academic and professional links">${(x.links||[]).map(mentorProfileLink).join('')}</div>`:''}
       </div>
     </article>`;
   }
@@ -2377,7 +2373,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   // Match Academic and Network profile logos. Prefer shared local assets and
   // the same brand favicons already used by the portfolio's scholarly profiles.
   // Use crisp local brand vectors. Shared academic assets stay consistent.
-  const academicShared={'Scopus':'assets/academic/logos/scopus-circle.png','Web of Science':'assets/academic/journals/engineering-reports/web-of-science.webp','SciProfiles':'https://www.google.com/s2/favicons?sz=128&domain=sciprofiles.com'};
+  const academicShared={'Scopus':'assets/academic/logos/scopus-circle.png','Web of Science':'assets/academic/journals/engineering-reports/web-of-science.webp','SciProfiles':'assets/academic/logos/contact/sciprofiles.svg'};
   const icon=name=>{
     const id=brands[name];
     const src=academicShared[name]||(id?'assets/academic/logos/contact/'+id+'.svg':'');

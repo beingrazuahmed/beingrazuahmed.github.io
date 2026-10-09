@@ -368,3 +368,35 @@ body[data-page="network-profile"] .network-profile-links-premium .network-brand-
  body[data-page="network-profile"] .network-profile-links-premium .network-brand-link:hover,
  .network-premium-profilelinks .network-brand-link:hover{transform:none}
 }
+
+/* Uniform Network profile identity icons — institutional, email and academic brands. */
+body[data-page="network-profile"] .network-brand-link .mentor-profile-link-icon.is-scopus img,
+.network-premium-profilelinks .network-brand-link .mentor-profile-link-icon.is-scopus img{
+  width:26px;height:26px;max-width:26px;max-height:26px;border-radius:50%;object-fit:contain;
+}
+body[data-page="network-profile"] .network-brand-link .mentor-profile-link-icon.is-ad-scientific img,
+.network-premium-profilelinks .network-brand-link .mentor-profile-link-icon.is-ad-scientific img{
+  width:27px;height:27px;max-width:27px;max-height:27px;border-radius:6px;object-fit:contain;
+}
+body[data-page="network-profile"] .network-brand-link .mentor-profile-link-icon.is-gmail img,
+.network-premium-profilelinks .network-brand-link .mentor-profile-link-icon.is-gmail img{
+  width:26px;height:22px;max-width:26px;max-height:24px;object-fit:contain;
+}
+body[data-page="network-profile"] .network-brand-link .mentor-profile-link-icon.is-personal-email img,
+.network-premium-profilelinks .network-brand-link .mentor-profile-link-icon.is-personal-email img{
+  width:26px;height:26px;max-width:26px;max-height:26px;object-fit:contain;
+}
+
+/* Network cards without separate detail pages use the same brand-aware chips. */
+.network-card-profile-links{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin-top:auto;padding-top:15px}
+.network-card-profile-links .mentor-profile-link.network-brand-link{display:inline-flex;align-items:center;gap:7px;max-width:100%;
+ min-height:36px;padding:5px 9px 5px 5px;border:1px solid var(--line);border-radius:10px;background:var(--surface);
+ color:var(--text);font-size:10.5px;font-weight:730;text-decoration:none;line-height:1.45}
+.network-card-profile-links .mentor-profile-link-icon{display:grid;place-items:center;flex:0 0 25px;width:25px;height:25px;
+ border-radius:7px;overflow:hidden;background:#fff;color:var(--accent)}
+.network-card-profile-links .mentor-profile-link-icon img{display:block;width:21px;height:21px;max-width:23px;max-height:23px;object-fit:contain}
+.network-card-profile-links .mentor-profile-link-icon svg{width:19px;height:19px;stroke:currentColor}
+.network-card-profile-links .network-icon-crest img{width:23px;height:23px}
+.network-card-profile-links .network-brand-label{min-width:0;overflow-wrap:anywhere}
+.network-card-profile-links .mentor-profile-link:hover{color:var(--accent);border-color:var(--accent)}
+.network-card-profile-links .mentor-profile-link:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
