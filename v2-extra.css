@@ -786,3 +786,95 @@ body[data-page="network-profile"] .network-profile-nav a[aria-current="location"
 }
 @media(prefers-reduced-motion:reduce){.sectional-jump-nav a,.sectional-jump-nav a::after{transition:none!important}}
 @media print{.sectional-jump-nav{display:none!important}}
+
+
+/* PLOS ONE horizontal wordmark: no magnification that clips its complete title. */
+#reviewer-plos-one .editorial-journal-head{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  align-items:start;
+  justify-items:start;
+  gap:12px;
+}
+#reviewer-plos-one .editorial-journal-artwork--logo{
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:initial;
+  width:min(100%,310px);
+  max-width:100%;
+  height:102px;
+  min-height:0;
+  padding:8px 12px;
+  margin:0;
+  overflow:hidden;
+  background:#fff!important;
+  border-radius:12px;
+}
+#reviewer-plos-one .editorial-journal-artwork--logo img{
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  object-position:center;
+  transform:none!important;
+}
+#reviewer-plos-one .editorial-journal-identity{min-width:0;width:100%}
+.editorial-reviewer-record-links{
+  margin:13px 20px 0;
+  padding:11px 12px 12px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:color-mix(in srgb,var(--accent) 3%,var(--surface));
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.editorial-reviewer-record-label{
+  color:var(--muted);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.045em;
+  text-transform:uppercase;
+}
+.editorial-reviewer-record-actions{display:flex;gap:8px;flex-wrap:wrap}
+.editorial-reviewer-record-actions a{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  min-height:30px;
+  padding:6px 9px;
+  border:1px solid var(--line);
+  border-radius:9px;
+  background:var(--surface);
+  color:var(--text);
+  font-size:11px;
+  line-height:1.2;
+  font-weight:750;
+  text-decoration:none;
+  transition:border-color .16s ease,background .16s ease;
+}
+.editorial-reviewer-record-actions a:hover,
+.editorial-reviewer-record-actions a:focus-visible{
+  border-color:var(--accent);
+  background:color-mix(in srgb,var(--accent) 5%,var(--surface));
+}
+.editorial-reviewer-record-actions a img{
+  display:block;width:19px;height:19px;object-fit:contain;
+  background:#fff;border-radius:3px;
+}
+@media(max-width:420px){
+  #reviewer-plos-one .editorial-journal-artwork--logo{
+    width:min(100%,285px);
+    height:94px;
+    padding:7px 10px;
+  }
+  #reviewer-plos-one .editorial-journal-artwork--logo img{transform:none!important}
+  .editorial-reviewer-record-links{margin:11px 16px 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .editorial-reviewer-record-actions a{transition:none}
+}

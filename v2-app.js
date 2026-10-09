@@ -1572,6 +1572,15 @@
               </div>
               <p class="editorial-journal-scope">${esc(record.scope||'Invited manuscript review and scholarly evaluation.')}</p>
               ${record.recognition&&record.evidenceHref?`<p class="editorial-journal-recognition">${uiIcon('review')}<span>${esc(record.recognition)}</span></p>`:''}
+              ${reviewerProfiles.length?`<div class="editorial-reviewer-record-links" aria-label="Researcher profile links for ${esc(record.journal||'journal')}">
+                <span class="editorial-reviewer-record-label">Reviewer recognition profiles</span>
+                <div class="editorial-reviewer-record-actions">
+                  ${reviewerProfiles.map(profile=>`<a href="${esc(profile.url)}" target="_blank" rel="noopener noreferrer" title="Researcher profile; specific journal review credits depend on public visibility" aria-label="Open ${esc(profile.label)} researcher profile">
+                    <img src="${profile.label==='ORCID'?'assets/academic/logos/contact/orcid.svg':'assets/academic/journals/engineering-reports/web-of-science.webp'}" alt="" width="19" height="19" loading="lazy" decoding="async">
+                    <span>${esc(profile.label)}</span><span aria-hidden="true">↗</span>
+                  </a>`).join('')}
+                </div>
+              </div>`:''}
               <div class="editorial-journal-footer">
                 <dl class="editorial-journal-facts"><div><dt>ISSN</dt><dd>${esc(record.issn||'')}</dd></div><div><dt>Completed</dt><dd><strong>${esc(record.reviews||0)}</strong> ${Number(record.reviews)===1?'review':'reviews'}</dd></div></dl>
                 <div class="editorial-journal-actions">
