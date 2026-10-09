@@ -850,7 +850,7 @@
 
     <section class="section"><div class="container">
       ${sectionHead('Scholarly service','Peer review & academic contribution','Invited peer-review activity across international journals.')}
-      <div class="grid grid-4 service-grid-v3"><article class="card metric metric-card"><strong>34</strong><span>Completed invited reviews</span></article><article class="card editorial-card"><h3>PLOS ONE</h3><p>25 completed reviews</p></article><article class="card editorial-card"><h3>Biomedical Signal Processing and Control</h3><p>8 completed reviews</p></article><article class="card editorial-card"><h3>Engineering Applications of Artificial Intelligence</h3><p>1 completed review</p><a class="credential-inline-link" href="gallery.html#eaai-reviewing-certificate-2026">View reviewing certificate →</a></article></div>
+      <div class="grid grid-4 service-grid-v3"><article class="card metric metric-card"><strong>34</strong><span>Completed invited reviews</span></article><article class="card editorial-card"><h3>PLOS ONE</h3><p>25 completed reviews</p></article><article class="card editorial-card"><h3>Biomedical Signal Processing and Control</h3><p>8 completed reviews</p><a class="credential-inline-link" href="gallery.html#bspc-reviewing-certificate-2026">View reviewing certificate →</a></article><article class="card editorial-card"><h3>Engineering Applications of Artificial Intelligence</h3><p>1 completed review</p><a class="credential-inline-link" href="gallery.html#eaai-reviewing-certificate-2026">View reviewing certificate →</a></article></div>
     </div></section>
 
     <section class="section alt"><div class="container">
@@ -2341,7 +2341,14 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
 
     const sourceHtml=sources.map(s=>{
       const meta=publicationBrandMeta(s.label);
-      const icon=`<span class="dashboard-source-icon ${esc(meta.cls||'')}"><img src="${esc(meta.src)}" alt="" loading="lazy" decoding="async"></span>`;
+      // Dashboard research sources use crisp, local academic identity vectors
+      // rather than small remotely supplied site favicons.
+      const academicLogo={
+        'Google Scholar':'assets/academic/logos/contact/google-scholar.svg',
+        'ResearchGate':'assets/academic/logos/contact/researchgate.svg'
+      }[s.label];
+      const iconSrc=academicLogo||meta.src;
+      const icon=`<span class="dashboard-source-icon ${esc(meta.cls||'')}"><img src="${esc(iconSrc)}" alt="" width="22" height="22" loading="lazy" decoding="async"></span>`;
       return s.url
         ? `<a class="dashboard-source-link" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer" title="Open ${esc(s.label)} profile">${icon}<span>${esc(s.label)}</span></a>`
         : `<span class="dashboard-source-link is-static">${icon}<span>${esc(s.label)}</span></span>`;
