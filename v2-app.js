@@ -1279,12 +1279,20 @@
     </div></section>`;}
 
   function research(){return `${pageHero('Research','Rigorous, interpretable and reproducible data-driven research.')}
-    <section class="section"><div class="container">${sectionHead('Research statement','Methodological foundation')}<article class="card quote-card"><p>${esc(D.research?.statement||'')}</p></article></div></section>
-    <section class="section alt"><div class="container">${sectionHead('Research philosophy','How I evaluate scientific usefulness')}<div class="grid grid-3">${(D.research?.principles||[]).map(x=>`<article class="card"><h3>${esc(x.title)}</h3><p>${esc(x.detail)}</p></article>`).join('')}</div></div></section>
-    <section class="section"><div class="container">${sectionHead('Research map','Methods × applications')}<div class="grid grid-2"><article class="card"><h3>Methods</h3>${tags(D.research?.methods)}</article><article class="card"><h3>Applications</h3>${tags(D.research?.applications)}</article></div></div></section>
-    <section class="section alt research-open-data-section"><div class="container">${sectionHead('Published dataset','Open research data','A citable public data release connected to the peer-reviewed Data in Brief article.')}${compactDatasetResearchCard((D.datasets||[])[0])}</div></section>
-    <section class="section"><div class="container">${sectionHead('Evolution','Research trajectory')}<div class="timeline">${(D.research?.evolution||[]).map(e=>`<div class="timeline-item"><strong>${esc(e.period||e.year||'')}</strong><h3>${esc(e.title||'')}</h3><p>${esc(e.detail||e.description||'')}</p></div>`).join('')}</div></div></section>
-    <section class="section"><div class="container">${sectionHead('Current directions','Ongoing & in preparation')}<div class="grid grid-3">${(D.ongoing||[]).map(x=>`<article class="card"><div class="badge">In preparation</div><h3>${esc(x.title)}</h3><p>${esc(x.objective||x.summary||x.description||'')}</p>${tags(x.methods||x.tags||[])}</article>`).join('')}</div></div></section>`;}
+    <nav class="academic-jump-nav sectional-jump-nav" data-section-jump-nav aria-label="Research page sections"><div class="container academic-jump-nav-inner">
+      <a href="#research-statement">Overview</a>
+      <a href="#research-philosophy">Philosophy</a>
+      <a href="#research-map">Methods & Applications</a>
+      <a href="#research-dataset">Open Dataset</a>
+      <a href="#research-evolution">Evolution</a>
+      <a href="#research-directions">Current Directions</a>
+    </div></nav>
+    <section class="section" id="research-statement"><div class="container">${sectionHead('Research statement','Methodological foundation')}<article class="card quote-card"><p>${esc(D.research?.statement||'')}</p></article></div></section>
+    <section class="section alt" id="research-philosophy"><div class="container">${sectionHead('Research philosophy','How I evaluate scientific usefulness')}<div class="grid grid-3">${(D.research?.principles||[]).map(x=>`<article class="card"><h3>${esc(x.title)}</h3><p>${esc(x.detail)}</p></article>`).join('')}</div></div></section>
+    <section class="section" id="research-map"><div class="container">${sectionHead('Research map','Methods × applications')}<div class="grid grid-2"><article class="card"><h3>Methods</h3>${tags(D.research?.methods)}</article><article class="card"><h3>Applications</h3>${tags(D.research?.applications)}</article></div></div></section>
+    <section class="section alt research-open-data-section" id="research-dataset"><div class="container">${sectionHead('Published dataset','Open research data','A citable public data release connected to the peer-reviewed Data in Brief article.')}${compactDatasetResearchCard((D.datasets||[])[0])}</div></section>
+    <section class="section" id="research-evolution"><div class="container">${sectionHead('Evolution','Research trajectory')}<div class="timeline">${(D.research?.evolution||[]).map(e=>`<div class="timeline-item"><strong>${esc(e.period||e.year||'')}</strong><h3>${esc(e.title||'')}</h3><p>${esc(e.detail||e.description||'')}</p></div>`).join('')}</div></div></section>
+    <section class="section" id="research-directions"><div class="container">${sectionHead('Current directions','Ongoing & in preparation')}<div class="grid grid-3">${(D.ongoing||[]).map(x=>`<article class="card"><div class="badge">In preparation</div><h3>${esc(x.title)}</h3><p>${esc(x.objective||x.summary||x.description||'')}</p>${tags(x.methods||x.tags||[])}</article>`).join('')}</div></div></section>`;}
 
   function publications(){
     const all=D.outputs||[];
@@ -1296,7 +1304,7 @@
     <section class="section publication-directory"><div class="container">
       <div class="publication-controls">
         <div class="search-wrap"><input class="search-input" id="pubSearch" placeholder="Search title, journal, publisher, method or topic…"></div>
-        <nav class="publication-section-nav" id="pubSectionNav" aria-label="Publication sections">
+        <nav class="publication-section-nav" data-section-jump-nav id="pubSectionNav" aria-label="Publication sections">
           <a href="#published-articles" data-publication-jump="published">Published Articles</a>
           <a href="#published-dataset" data-publication-jump="dataset">Published Dataset</a>
           <a href="#accepted-forthcoming" data-publication-jump="accepted">Accepted / Forthcoming</a>
@@ -1771,7 +1779,11 @@
     };
     const icasdsWorkshops=(D.workshopsAndSeminars||[]).filter(w=>String(w.id||'').startsWith('icasds-2025-workshop-'));
     return `${pageHero('Conferences','Research dissemination, conference publications, presentations and documentary evidence.')}
-      <section class="section conference-profile-section"><div class="container">
+    <nav class="academic-jump-nav sectional-jump-nav" data-section-jump-nav aria-label="Conference page sections"><div class="container academic-jump-nav-inner">
+      <a href="#conference-overview">Overview</a>
+      ${groups.map((g,gi)=>`<a href="#${esc(g.id||'conference-'+gi)}">${esc(g.event||g.full||'Conference '+(gi+1))}</a>`).join('')}
+    </div></nav>
+      <section class="section conference-profile-section" id="conference-overview"><div class="container">
         ${sectionHead('Conference portfolio','Research dissemination & scholarly communication','Conference activity is organized by event, authorship role and source evidence so each contribution remains easy to verify and explore.')}
         <div class="conference-profile-stats" aria-label="Conference portfolio summary">
           <article><strong>${groups.length}</strong><span>Conference events</span><small>2025–2026</small></article>
@@ -1987,7 +1999,12 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     const professionalCredentials=verifiedCredentials.filter(g=>g.category==='Professional Development').length;
     const academicCredentials=verifiedCredentials.filter(g=>g.category==='Conference'||g.category==='Scientific Engagement').length;
     return `${pageHero('Recognition','Verified credentials, awards and professional development.')}
-      <section class="section recognition-credentials-section"><div class="container">
+    <nav class="academic-jump-nav sectional-jump-nav" data-section-jump-nav aria-label="Recognition page sections"><div class="container academic-jump-nav-inner">
+      <a href="#recognition-credentials">Verified Credentials</a>
+      <a href="#recognition-awards">Awards</a>
+      <a href="#recognition-training">Training & Certifications</a>
+    </div></nav>
+      <section class="section recognition-credentials-section" id="recognition-credentials"><div class="container">
         <div class="credential-section-heading">
           <div>${sectionHead('Verified credentials',`${credentialCount} evidence-backed credentials`,'Certificates are presented as credentials first: clear preview, issuer, issue date, category and direct access to the original evidence.')}</div>
           <a class="credential-archive-link" href="gallery.html">Open complete evidence archive <span aria-hidden="true">→</span></a>
@@ -2027,7 +2044,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         </div>
       </div></section>
 
-      <section class="section alt recognition-awards-section"><div class="container">
+      <section class="section alt recognition-awards-section" id="recognition-awards"><div class="container">
         ${sectionHead('Honors & distinctions','Awards & recognition','Competitive and academic distinctions are separated from course and workshop certificates.')}
         <div class="grid grid-3 recognition-award-grid">${(D.awards||[]).map(a=>`<article class="card recognition-award-card">
           <div class="recognition-card-eyebrow"><span>Award / distinction</span><span>${esc(a.date||'')}</span></div>
@@ -2038,7 +2055,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         </article>`).join('')}</div>
       </div></section>
 
-      <section class="section recognition-training-section"><div class="container">
+      <section class="section recognition-training-section" id="recognition-training"><div class="container">
         ${sectionHead('Professional development','Training & certifications','A compact record of research-methods, scholarly-practice, technical and workshop training.')}
         <div class="grid grid-3 recognition-training-grid">${(D.training||[]).map(t=>`<article class="card recognition-training-card">
           <div class="recognition-card-eyebrow"><span>${esc(t.group||'Professional development')}</span><span>${esc(t.date||t.year||'')}</span></div>
@@ -2221,7 +2238,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
             </div>
           </div>
 
-          <nav class="network-profile-nav" aria-label="Profile sections">
+          <nav class="network-profile-nav" data-section-jump-nav aria-label="Profile sections">
             <a href="#overview">Overview</a>
             <a href="#academic-profile">Academic Profile</a>
             ${(x.careerTimeline||[]).length?'<a href="#career">Career</a>':''}
@@ -2343,6 +2360,11 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   }
 
   function resources(){return `${pageHero('Resources','Research toolkit, scholarly articles and freely readable academic notes.')}
+    <nav class="academic-jump-nav sectional-jump-nav" data-section-jump-nav aria-label="Resources page sections"><div class="container academic-jump-nav-inner">
+      <a href="#knowledge-library">Blog & Notes</a>
+      <a href="#research-toolkit">Research Toolkit</a>
+      <a href="#resource-latest-notes">Latest Notes</a>
+    </div></nav>
     <section class="section knowledge-resource-hub" id="knowledge-library"><div class="container">
       <div class="knowledge-hub-heading"><div><div class="section-kicker">Knowledge library</div><h2>Research Blog & Academic Notes</h2><p>Read original research-methods commentary and exam-friendly learning materials. Browse a topic, then open its full reading page.</p></div></div>
       <div class="knowledge-hub-grid">
@@ -2350,8 +2372,8 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         <a class="knowledge-hub-card" href="notes.html"><span class="knowledge-hub-symbol" aria-hidden="true">▤</span><h3>Academic Notes</h3><p>Concise study notes for regression, sampling, experimental design and interpretable machine learning, with print-to-PDF support.</p><span class="knowledge-hub-cta">Browse study notes ↗</span></a>
       </div>
     </div></section>
-    <section class="section alt"><div class="container">${sectionHead('Research toolkit','Software, writing tools & environments','A structured view of the software, libraries, writing tools and reproducibility environments used across research workflows.')}${researchToolLayout()}${techMarquee()}${computationalEnvironmentPanel()}</div></section>
-    <section class="section knowledge-preview-section"><div class="container">${sectionHead('Learning resources','Recently added academic notes','Study the key concepts and open the complete explanations.')}${window.MRA_KNOWLEDGE?window.MRA_KNOWLEDGE.preview('note',3):''}<div class="knowledge-section-links"><a href="notes.html">Browse all academic notes ↗</a></div></div></section>`;}
+    <section class="section alt" id="research-toolkit"><div class="container">${sectionHead('Research toolkit','Software, writing tools & environments','A structured view of the software, libraries, writing tools and reproducibility environments used across research workflows.')}${researchToolLayout()}${techMarquee()}${computationalEnvironmentPanel()}</div></section>
+    <section class="section knowledge-preview-section" id="resource-latest-notes"><div class="container">${sectionHead('Learning resources','Recently added academic notes','Study the key concepts and open the complete explanations.')}${window.MRA_KNOWLEDGE?window.MRA_KNOWLEDGE.preview('note',3):''}<div class="knowledge-section-links"><a href="notes.html">Browse all academic notes ↗</a></div></div></section>`;}
 
   function gallery(){
     const records=D.gallery||[];
@@ -2424,7 +2446,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
           </div>
           <a class="credential-archive-link" href="recognition.html">View credential showcase <span aria-hidden="true">→</span></a>
         </div>
-        <nav class="gallery-collection-index" aria-label="Gallery collections">
+        <nav class="gallery-collection-index" data-section-jump-nav aria-label="Gallery collections">
           ${groups.map(group=>{const count=recordsFor(group).length;return count?`<a href="#gallery-group-${esc(group.id)}"><span>${esc(group.kicker)}</span><strong>${esc(group.title)}</strong><small>${count} records</small><i aria-hidden="true">↓</i></a>`:''}).join('')}
         </nav>
       </div></section>
@@ -2839,16 +2861,16 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   function initSectionJumpNavigation(){
     const nav=$('[data-section-jump-nav]');
     if(!nav)return;
-    const scroller=nav.querySelector('.academic-jump-nav-inner');
+    const scroller=nav.querySelector('.academic-jump-nav-inner')||nav;
     const sections=[...nav.querySelectorAll('a[href^="#"]')].map(link=>{
       const id=link.getAttribute('href').slice(1);
       return {link,id,target:document.getElementById(id)};
     }).filter(x=>x.target);
     if(!sections.length)return;
-    const prefersReduced=()=>document.documentElement.dataset.motion==='reduced'||window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const offset=()=>Math.ceil(nav.getBoundingClientRect().height)+18;
+    const prefersReduced=()=>['reduced','off'].includes(document.documentElement.dataset.motion)||window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const offset=()=>nav.classList.contains('academic-jump-nav')||nav.classList.contains('network-profile-nav')?Math.ceil(nav.getBoundingClientRect().height)+18:90;
     const centerLink=link=>{
-      if(!scroller)return;
+      if(!scroller||scroller.scrollWidth<=scroller.clientWidth+8)return;
       const a=link.getBoundingClientRect(),b=scroller.getBoundingClientRect();
       if(a.left>=b.left+8&&a.right<=b.right-8)return;
       const x=scroller.scrollLeft+a.left-b.left-(b.width-a.width)/2;
@@ -2873,7 +2895,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     sections.forEach(item=>item.link.addEventListener('click',e=>{
       if(e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
       e.preventDefault();
-      history.pushState(null,'','#'+encodeURIComponent(item.id));
+      if(location.hash!=='#'+encodeURIComponent(item.id))history.pushState(null,'','#'+encodeURIComponent(item.id));
       activate(item,true);
       navigate(item.target,true);
     }));
@@ -2900,7 +2922,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     const syncHash=()=>{
       const target=findHashTarget();
       if(target){
-        const item=sections.find(x=>x.target===target);
+        const item=sections.find(x=>x.target===target||x.target.contains(target));
         if(item)activate(item,true);
         navigate(target,false);
       }
