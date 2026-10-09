@@ -1434,7 +1434,7 @@
     const support=D.mentorshipSupport||{};
     const juniors=(D.people||[]).filter(x=>x.group==='Junior Collaborators & Mentees');
     const reviewerProfiles=(D.profiles||[]).filter(x=>x.label==='ORCID'||x.label==='Web of Science');
-    const peerReviewCourses=['elsevier-certified-peer-reviewer-2026','nature-focus-on-peer-review-2026']
+    const peerReviewCourses=['elsevier-certified-peer-reviewer-2026','elsevier-becoming-peer-reviewer-2026','nature-focus-on-peer-review-2026']
       .map(id=>(D.gallery||[]).find(x=>x.id===id)).filter(Boolean);
     const supportIcon=name=>{
       const paths={
@@ -2738,76 +2738,89 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   function pageHero(title,lead){return `<section class="hero compact"><div class="container"><div class="eyebrow"><span class="live-dot"></span><span>MRA Research Intelligence</span><span class="clock" data-clock>Dhaka · UTC+06:00</span></div><h1>${esc(title)}</h1><p class="lede">${esc(lead)}</p></div></section>`;}
 
 
+  // Render authentic page-one previews from the original uploaded PDFs.
+  // The native PDF iframe remains visible if the optional PDF.js renderer is unavailable.
   function upgradeOriginalElsevierCertificate(){
-    const original='assets/recognition/elsevier-certified-peer-reviewer-2026.pdf';
-    const selectors=[
-      'a.editorial-course-media[href*="elsevier-certified-peer-reviewer-2026.pdf"] img',
-      '.credential-card[data-credential-id="elsevier-certified-peer-reviewer-2026"] .credential-preview img',
-      '#elsevier-certified-peer-reviewer-2026 .gallery-evidence-media img'
+    const records=[
+      {id:'elsevier-certified-peer-reviewer-2026',url:'assets/recognition/elsevier-certified-peer-reviewer-2026.pdf',name:'Certified Peer Reviewer Course'},
+      {id:'elsevier-becoming-peer-reviewer-2026',url:'assets/recognition/elsevier-becoming-peer-reviewer-2026.pdf',name:'Becoming a Peer Reviewer'}
     ];
-    const imageNodes=selectors.map(s=>document.querySelector(s)).filter(Boolean);
-    if(!imageNodes.length)return;
     const previews=[];
-    imageNodes.forEach(img=>{
-      const oldButton=img.closest('button.credential-preview');
-      if(oldButton){
-        const replacement=document.createElement('a');
-        replacement.className=oldButton.className;
-        replacement.href=original;
-        replacement.target='_blank';
-        replacement.rel='noopener noreferrer';
-        replacement.setAttribute('aria-label','Open original Elsevier certificate PDF');
-        while(oldButton.firstChild)replacement.appendChild(oldButton.firstChild);
-        oldButton.replaceWith(replacement);
-      }
-      const anchor=img.closest('a');
-      if(anchor){
-        anchor.href=original;
-        anchor.target='_blank';
-        anchor.rel='noopener noreferrer';
-        anchor.removeAttribute('data-evidence-lightbox');
-        anchor.removeAttribute('data-evidence-original');
-      }
-      const wrap=document.createElement('span');
-      wrap.className='original-certificate-preview';
-      const frame=document.createElement('iframe');
-      frame.src=original+'#page=1&view=Fit&toolbar=0&navpanes=0&scrollbar=0';
-      frame.title='Page one of the original Elsevier Certified Peer Reviewer Course certificate';
-      frame.setAttribute('aria-hidden','true');
-      frame.tabIndex=-1;
-      frame.loading='lazy';
-      const canvas=document.createElement('canvas');
-      canvas.hidden=true;
-      canvas.setAttribute('aria-hidden','true');
-      wrap.append(frame,canvas);
-      img.replaceWith(wrap);
-      previews.push({wrap,frame,canvas});
+    records.forEach(record=>{
+      const selectors=[
+        'a.editorial-course-media[href*="'+record.id+'.pdf"] img',
+        '.credential-card[data-credential-id="'+record.id+'"] .credential-preview img',
+        '#'+record.id+' .gallery-evidence-media img'
+      ];
+      selectors.map(s=>document.querySelector(s)).filter(Boolean).forEach(img=>{
+        const original=record.url;
+        const oldButton=img.closest('button.credential-preview');
+        if(oldButton){
+          const replacement=document.createElement('a');
+          replacement.className=oldButton.className;
+          replacement.href=original;
+          replacement.target='_blank';
+          replacement.rel='noopener noreferrer';
+          replacement.setAttribute('aria-label','Open original '+record.name+' certificate PDF');
+          while(oldButton.firstChild)replacement.appendChild(oldButton.firstChild);
+          oldButton.replaceWith(replacement);
+        }
+        const anchor=img.closest('a');
+        if(anchor){
+          anchor.href=original;
+          anchor.target='_blank';
+          anchor.rel='noopener noreferrer';
+          anchor.removeAttribute('data-evidence-lightbox');
+          anchor.removeAttribute('data-evidence-original');
+          if(anchor.classList.contains('gallery-evidence-media'))anchor.classList.add('gallery-original-certificate');
+        }
+        const wrap=document.createElement('span');
+        wrap.className='original-certificate-preview';
+        const frame=document.createElement('iframe');
+        frame.src=original+'#page=1&view=Fit&toolbar=0&navpanes=0&scrollbar=0';
+        frame.title='Page one of original Elsevier '+record.name+' certificate';
+        frame.setAttribute('aria-hidden','true');
+        frame.tabIndex=-1;
+        frame.loading='lazy';
+        const canvas=document.createElement('canvas');
+        canvas.hidden=true;
+        canvas.setAttribute('aria-hidden','true');
+        wrap.append(frame,canvas);
+        img.replaceWith(wrap);
+        previews.push({wrap,frame,canvas,url:original});
+      });
     });
-    const script=document.createElement('script');
-    script.src='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
-    script.async=true;
-    script.onload=async()=>{
-      const lib=window.pdfjsLib;
-      if(!lib)return;
+    if(!previews.length)return;
+    const loadPdfJs=()=>new Promise((resolve,reject)=>{
+      if(window.pdfjsLib){resolve(window.pdfjsLib);return;}
+      const script=document.createElement('script');
+      script.src='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+      script.async=true;
+      script.onload=()=>window.pdfjsLib?resolve(window.pdfjsLib):reject(Error('PDF viewer unavailable'));
+      script.onerror=()=>reject(Error('PDF viewer script blocked'));
+      document.head.appendChild(script);
+    });
+    loadPdfJs().then(async lib=>{
       lib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-      try{
-        const doc=await lib.getDocument(original).promise;
-        await Promise.all(previews.map(async target=>{
-          try{
-            const page=await doc.getPage(1);
-            const base=page.getViewport({scale:1});
-            const width=Math.max(440,Math.min(1200,Math.ceil((target.wrap.clientWidth||340)*Math.min(window.devicePixelRatio||1,2))));
-            const view=page.getViewport({scale:width/base.width});
-            target.canvas.width=Math.ceil(view.width);
-            target.canvas.height=Math.ceil(view.height);
-            await page.render({canvasContext:target.canvas.getContext('2d',{alpha:false}),viewport:view}).promise;
-            target.canvas.hidden=false;
-            target.frame.hidden=true;
-          }catch(err){console.warn('Using native certificate PDF preview:',err);}
-        }));
-      }catch(err){console.warn('Original certificate browser preview remains active:',err);}
-    };
-    document.head.appendChild(script);
+      const documents=new Map();
+      await Promise.all(previews.map(async target=>{
+        try{
+          if(!documents.has(target.url))documents.set(target.url,lib.getDocument(target.url).promise);
+          const documentPdf=await documents.get(target.url);
+          const page=await documentPdf.getPage(1);
+          const base=page.getViewport({scale:1});
+          const width=Math.max(440,Math.min(1200,Math.ceil((target.wrap.clientWidth||340)*Math.min(window.devicePixelRatio||1,2))));
+          const view=page.getViewport({scale:width/base.width});
+          target.canvas.width=Math.ceil(view.width);
+          target.canvas.height=Math.ceil(view.height);
+          await page.render({canvasContext:target.canvas.getContext('2d',{alpha:false}),viewport:view}).promise;
+          target.canvas.hidden=false;
+          target.frame.hidden=true;
+        }catch(err){
+          console.warn('Using original certificate PDF preview fallback:',err);
+        }
+      }));
+    }).catch(err=>console.warn('Using original certificate browser PDF preview:',err));
   }
 
   function initInteractive(){

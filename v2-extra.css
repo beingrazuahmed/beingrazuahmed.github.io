@@ -576,3 +576,15 @@ body[data-page="network-profile"] .network-brand-link .mentor-profile-link-icon.
 .editorial-course-media>span.original-certificate-preview iframe{aspect-ratio:4/3}
 .editorial-course-media>span.original-certificate-preview iframe[hidden],
 .editorial-course-media>span.original-certificate-preview canvas[hidden]{display:none!important}
+
+/* Authentic PDF certificate previews in the reviewer-training gallery and cards. */
+.gallery-evidence-media.gallery-original-certificate{height:230px;background:#fff}
+.gallery-original-certificate .original-certificate-preview{height:230px;aspect-ratio:auto}
+.gallery-original-certificate .original-certificate-preview iframe,
+.gallery-original-certificate .original-certificate-preview canvas{max-height:230px;object-fit:contain}
+.gallery-original-certificate .gallery-verified-ribbon{z-index:2}
+@media(min-width:1051px){
+  .editorial-course-list>.editorial-course-card:last-child:nth-child(odd){
+    grid-column:1/-1;width:calc((100% - 16px)/2);max-width:100%;justify-self:center;
+  }
+}
