@@ -1333,7 +1333,7 @@
     const conferencePapers=conferenceGroups.flatMap(g=>g.papers||g.items||[]);
     const conferencePresentations=conferencePapers.filter(p=>(p.role||'').includes('Presenting Author')||p.presentedBy==='Md. Razu Ahmed');
     return `${pageHero('Academic','Education, curriculum, fieldwork, supervised projects and research training.')}
-    <nav class="academic-jump-nav" aria-label="Academic page sections"><div class="container academic-jump-nav-inner">
+    <nav class="academic-jump-nav" data-section-jump-nav aria-label="Academic page sections"><div class="container academic-jump-nav-inner">
       <a href="#academic-education">Education</a>
       <a href="#academic-curriculum">Curriculum</a>
       <a href="#academic-achievement">A+ Research</a>
@@ -1465,7 +1465,17 @@
       +'<div class="mentor-journey-card-output"><span class="mentor-journey-output-marker" aria-hidden="true">✓</span>'
       +'<div><small>Key outcome</small><strong>'+esc(stage.outcome||'Research guidance')+'</strong></div></div></article>';
     return `${pageHero('Experience','Research roles, mentorship and collaborative support.')}
-      <section class="section"><div class="container">
+      <nav class="academic-jump-nav experience-jump-nav" data-section-jump-nav aria-label="Experience page sections"><div class="container academic-jump-nav-inner">
+        <a href="#experience-roles">Research Roles</a>
+        <a href="#dslr-lab-research-assistant">DSLR Lab</a>
+        <a href="#ircb-research-assistant">IRCB</a>
+        <a href="#editorial-peer-review">Peer Review</a>
+        <a href="#reviewer-credentials">Reviewer Training</a>
+        <a href="#research-mentorship-support">Mentorship</a>
+        <a href="#mentorship-workflow">Support Journey</a>
+        <a href="#junior-research-network">Research Network</a>
+      </div></nav>
+      <section class="section" id="experience-roles"><div class="container">
         ${sectionHead('Research experience','Roles & contribution')}
         <div class="timeline experience-timeline">${(D.experience||[]).map(x=>`<div class="timeline-item">
         <article class="experience-role-card" id="${esc(x.id||'')}">
@@ -1564,7 +1574,7 @@
             </article>
           `).join('')}
         </div>
-        <section class="editorial-credentials-section" aria-labelledby="editorial-credentials-heading">
+        <section class="editorial-credentials-section" id="reviewer-credentials" aria-labelledby="editorial-credentials-heading">
           <div class="editorial-credentials-heading">
             <span class="section-kicker">Public profiles &amp; continuing development</span>
             <h3 id="editorial-credentials-heading">Reviewer identity &amp; peer-review training</h3>
@@ -2823,8 +2833,90 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     }).catch(err=>console.warn('Using original certificate browser PDF preview:',err));
   }
 
+
+  /* Shared jump navigation: works with content rendered after the initial HTML loads.
+     Keeps hash links useful for deep links, keyboard users and long mobile pages. */
+  function initSectionJumpNavigation(){
+    const nav=$('[data-section-jump-nav]');
+    if(!nav)return;
+    const scroller=nav.querySelector('.academic-jump-nav-inner');
+    const sections=[...nav.querySelectorAll('a[href^="#"]')].map(link=>{
+      const id=link.getAttribute('href').slice(1);
+      return {link,id,target:document.getElementById(id)};
+    }).filter(x=>x.target);
+    if(!sections.length)return;
+    const prefersReduced=()=>document.documentElement.dataset.motion==='reduced'||window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const offset=()=>Math.ceil(nav.getBoundingClientRect().height)+18;
+    const centerLink=link=>{
+      if(!scroller)return;
+      const a=link.getBoundingClientRect(),b=scroller.getBoundingClientRect();
+      if(a.left>=b.left+8&&a.right<=b.right-8)return;
+      const x=scroller.scrollLeft+a.left-b.left-(b.width-a.width)/2;
+      scroller.scrollTo({left:Math.max(0,x),behavior:prefersReduced()?'auto':'smooth'});
+    };
+    let currentId='';
+    const activate=(item,center=false)=>{
+      if(!item)return;
+      const changed=item.id!==currentId;
+      currentId=item.id;
+      sections.forEach(x=>{
+        if(x===item)x.link.setAttribute('aria-current','location');
+        else x.link.removeAttribute('aria-current');
+      });
+      if(center&&changed)centerLink(item.link);
+    };
+    const navigate=(target,smooth)=>{
+      if(!target)return;
+      const y=window.scrollY+target.getBoundingClientRect().top-offset();
+      window.scrollTo({top:Math.max(0,y),behavior:smooth&&!prefersReduced()?'smooth':'auto'});
+    };
+    sections.forEach(item=>item.link.addEventListener('click',e=>{
+      if(e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+      e.preventDefault();
+      history.pushState(null,'','#'+encodeURIComponent(item.id));
+      activate(item,true);
+      navigate(item.target,true);
+    }));
+    let frame=0;
+    const watch=()=>{
+      frame=0;
+      const edge=offset()+28;
+      let item=sections[0];
+      for(const candidate of sections){
+        if(candidate.target.getBoundingClientRect().top<=edge)item=candidate;
+        else break;
+      }
+      activate(item,false);
+    };
+    const schedule=()=>{if(!frame)frame=requestAnimationFrame(watch);};
+    window.addEventListener('scroll',schedule,{passive:true});
+    window.addEventListener('resize',schedule,{passive:true});
+    const findHashTarget=()=>{
+      if(!location.hash)return null;
+      let id=location.hash.slice(1);
+      try{id=decodeURIComponent(id);}catch(error){return null;}
+      return document.getElementById(id);
+    };
+    const syncHash=()=>{
+      const target=findHashTarget();
+      if(target){
+        const item=sections.find(x=>x.target===target);
+        if(item)activate(item,true);
+        navigate(target,false);
+      }
+      else schedule();
+    };
+    window.addEventListener('hashchange',syncHash);
+    window.addEventListener('popstate',syncHash);
+    requestAnimationFrame(()=>{
+      if(findHashTarget())syncHash();
+      else watch();
+    });
+  }
+
   function initInteractive(){
     upgradeOriginalElsevierCertificate();
+    initSectionJumpNavigation();
     const galleryFilterButtons=$$('[data-gallery-filter]');
     if(galleryFilterButtons.length){
       const cards=$$('.gallery-evidence-card');

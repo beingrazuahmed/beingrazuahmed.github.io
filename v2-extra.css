@@ -625,3 +625,102 @@ body[data-page="network-profile"] .network-brand-link .mentor-profile-link-icon.
   }
   #reviewer-plos-one .editorial-journal-publisher-logo.is-plos img{transform:scale(2.05)}
 }
+
+
+/* Academic + Experience section navigation · anchored and accessible (2026-10-09) */
+body[data-page="academic"] .academic-jump-nav,
+body[data-page="experience"] .experience-jump-nav{
+  position:sticky;
+  top:0;
+  z-index:40;
+  border-top:0;
+  border-bottom:1px solid color-mix(in srgb,var(--accent) 12%,var(--line));
+  background:color-mix(in srgb,var(--bg) 92%,transparent);
+  -webkit-backdrop-filter:blur(15px);
+  backdrop-filter:blur(15px);
+  box-shadow:0 8px 22px rgba(25,58,82,.035);
+}
+body[data-page="experience"] .experience-jump-nav-inner,
+body[data-page="experience"] .experience-jump-nav .academic-jump-nav-inner{
+  max-width:1240px;gap:2px;padding-top:0;padding-bottom:0;
+  overscroll-behavior-x:contain;
+}
+body[data-page="experience"] .experience-jump-nav a{
+  position:relative;
+  display:inline-flex;align-items:center;
+  padding:15px 13px 14px;
+  border:0;border-radius:0;
+  background:transparent;color:var(--muted);
+  font-size:12px;font-weight:760;letter-spacing:.005em;
+  text-decoration:none;white-space:nowrap;
+  transition:color .18s ease,background .18s ease;
+}
+body[data-page="experience"] .experience-jump-nav a::after{
+  content:"";position:absolute;left:13px;right:13px;bottom:0;height:2px;
+  border-radius:999px;background:var(--accent);
+  transform:scaleX(0);transform-origin:center;
+  transition:transform .18s ease;
+}
+body[data-page="experience"] .experience-jump-nav a:hover,
+body[data-page="experience"] .experience-jump-nav a:focus-visible{
+  color:var(--text);background:color-mix(in srgb,var(--accent) 4%,transparent);
+  transform:none;
+}
+body[data-page="experience"] .experience-jump-nav a:hover::after,
+body[data-page="experience"] .experience-jump-nav a:focus-visible::after{transform:scaleX(1)}
+body[data-page="academic"] .academic-jump-nav a[aria-current="location"],
+body[data-page="experience"] .experience-jump-nav a[aria-current="location"]{
+  color:var(--accent-2);
+  background:color-mix(in srgb,var(--accent) 5%,transparent);
+}
+body[data-page="academic"] .academic-jump-nav a[aria-current="location"]::after,
+body[data-page="experience"] .experience-jump-nav a[aria-current="location"]::after{transform:scaleX(1)}
+body[data-page="academic"] .academic-jump-nav a:focus-visible,
+body[data-page="experience"] .experience-jump-nav a:focus-visible{
+  outline:2px solid var(--accent);outline-offset:-3px;
+}
+/* Complete the Academic offsets (Conferences was missing) and cover nested Experience landmarks. */
+body[data-page="academic"] [id^="academic-"],
+body[data-page="experience"] #experience-roles,
+body[data-page="experience"] #dslr-lab-research-assistant,
+body[data-page="experience"] #ircb-research-assistant,
+body[data-page="experience"] #editorial-peer-review,
+body[data-page="experience"] #reviewer-credentials,
+body[data-page="experience"] #research-mentorship-support,
+body[data-page="experience"] #mentorship-workflow,
+body[data-page="experience"] #junior-research-network{
+  scroll-margin-top:82px;
+}
+@media(max-width:900px){
+  body[data-page="academic"] .academic-jump-nav,
+  body[data-page="experience"] .experience-jump-nav{top:0}
+}
+@media(max-width:760px){
+  body[data-page="experience"] .experience-jump-nav .academic-jump-nav-inner{
+    padding-inline:14px;scrollbar-width:none;
+  }
+  body[data-page="experience"] .experience-jump-nav a{
+    padding:12px 10px 11px;font-size:11.5px;
+  }
+  body[data-page="experience"] .experience-jump-nav a::after{
+    left:10px;right:10px;
+  }
+  body[data-page="academic"] [id^="academic-"],
+  body[data-page="experience"] #experience-roles,
+  body[data-page="experience"] #dslr-lab-research-assistant,
+  body[data-page="experience"] #ircb-research-assistant,
+  body[data-page="experience"] #editorial-peer-review,
+  body[data-page="experience"] #reviewer-credentials,
+  body[data-page="experience"] #research-mentorship-support,
+  body[data-page="experience"] #mentorship-workflow,
+  body[data-page="experience"] #junior-research-network{scroll-margin-top:76px}
+}
+@media(prefers-reduced-motion:reduce){
+  body[data-page="academic"] .academic-jump-nav a,
+  body[data-page="experience"] .experience-jump-nav a,
+  body[data-page="experience"] .experience-jump-nav a::after{transition:none!important}
+}
+@media print{
+  body[data-page="academic"] .academic-jump-nav,
+  body[data-page="experience"] .experience-jump-nav{display:none!important}
+}
