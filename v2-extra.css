@@ -788,29 +788,31 @@ body[data-page="network-profile"] .network-profile-nav a[aria-current="location"
 @media print{.sectional-jump-nav{display:none!important}}
 
 
-/* PLOS ONE horizontal wordmark: no magnification that clips its complete title. */
+/* PLOS ONE: balanced two-column journal header, preserving the complete official wordmark.
+   The original 800x220 file has unused white space to its right; left-aligned cover
+   crop trims only that empty region, not the name or PLOS graphic. */
 #reviewer-plos-one .editorial-journal-head{
-  display:grid;
-  grid-template-columns:minmax(0,1fr);
-  align-items:start;
-  justify-items:start;
-  gap:12px;
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:flex-start;
+  gap:18px;
 }
 #reviewer-plos-one .editorial-journal-artwork--logo{
   box-sizing:border-box;
   display:flex;
   align-items:center;
   justify-content:center;
-  flex:initial;
-  width:min(100%,310px);
-  max-width:100%;
-  height:102px;
+  flex:0 0 180px;
+  width:180px;
+  max-width:180px;
+  height:92px;
   min-height:0;
-  padding:8px 12px;
+  padding:8px 10px;
   margin:0;
+  border-radius:12px;
   overflow:hidden;
   background:#fff!important;
-  border-radius:12px;
 }
 #reviewer-plos-one .editorial-journal-artwork--logo img{
   display:block;
@@ -818,11 +820,30 @@ body[data-page="network-profile"] .network-profile-nav a[aria-current="location"
   height:100%;
   max-width:100%;
   max-height:100%;
-  object-fit:contain;
-  object-position:center;
+  object-fit:cover;
+  object-position:left center;
   transform:none!important;
 }
-#reviewer-plos-one .editorial-journal-identity{min-width:0;width:100%}
+#reviewer-plos-one .editorial-journal-identity{
+  flex:1 1 auto;
+  min-width:0;
+  width:auto;
+}
+@media(max-width:480px){
+  #reviewer-plos-one .editorial-journal-head{gap:12px}
+  #reviewer-plos-one .editorial-journal-artwork--logo{
+    flex:0 0 clamp(120px,35vw,155px);
+    width:clamp(120px,35vw,155px);
+    max-width:155px;
+    height:76px;
+    padding:6px 8px;
+  }
+  #reviewer-plos-one .editorial-journal-artwork--logo img{
+    object-fit:cover;
+    object-position:left center;
+    transform:none!important;
+  }
+}
 .editorial-reviewer-record-links{
   margin:13px 20px 0;
   padding:11px 12px 12px;
