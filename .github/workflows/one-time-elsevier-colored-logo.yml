@@ -1,0 +1,124 @@
+name: Replace black Elsevier image with colored publisher logo (one-time)
+on:
+  push:
+    paths:
+      - .github/workflows/one-time-elsevier-colored-logo.yml
+
+permissions:
+  contents: write
+
+jobs:
+  replace-elsevier-logo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout public portfolio
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Retrieve Elsevier-hosted colored logo and prepare optimized local image
+        run: |
+          set -euo pipefail
+          curl --fail --location --silent --show-error --retry 3 \
+            'https://images.ctfassets.net/zlnfaxb2lcqx/72P01CCLp50WUFMHAOKoYU/ab29c1aa5d27748a2e6f5f09d002e70a/elsevier_logo_wide.png?w=1200' \
+            -o /tmp/elsevier-publisher-original.png
+          python3 -m pip install --quiet --user Pillow || python3 -m pip install --quiet Pillow
+          python3 - <<'PY'
+          from pathlib import Path
+          from PIL import Image,ImageChops,ImageOps
+          source=Image.open('/tmp/elsevier-publisher-original.png')
+          source=ImageOps.exif_transpose(source).convert('RGBA')
+          white=Image.new('RGBA',source.size,'white')
+          white.alpha_composite(source)
+          rgb=white.convert('RGB')
+          diff=ImageChops.difference(rgb,Image.new('RGB',rgb.size,'white'))
+          thresholded=diff.convert('L').point(lambda p:255 if p>26 else 0)
+          bbox=thresholded.getbbox()
+          assert bbox,'Official Elsevier image has no visible logo'
+          logo=rgb.crop(bbox)
+          sample=logo.resize((240,240))
+          orange=sum(r>150 and r>g*1.30 and g>=b for r,g,b in sample.getdata())
+          assert orange>90, f'Expected the official orange wordmark; orange pixels={orange}'
+          maxw,maxh=680,540
+          logo.thumbnail((maxw,maxh),Image.Resampling.LANCZOS)
+          pad=max(12,int(min(logo.size)*0.04))
+          canvas=Image.new('RGB',(logo.width+2*pad,logo.height+2*pad),'white')
+          canvas.paste(logo,(pad,pad))
+          path=Path('assets/academic/journals/publishers/elsevier-logo-color.png')
+          canvas.save(path,optimize=True)
+          print(f'Official-colored Elsevier logo source={source.size}, final={canvas.size}, orange sample pixels={orange}, bytes={path.stat().st_size}')
+          PY
+      - name: Connect colored logo to both Elsevier editorial appointments
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          file=Path('data.js')
+          content=file.read_text(encoding='utf-8')
+          old='assets/academic/journals/publishers/elsevier-logo.jpeg'
+          new='assets/academic/journals/publishers/elsevier-logo-color.png'
+          assert content.count(old)==2, f'Expected the two Elsevier journal logos; got {content.count(old)}'
+          file.write_text(content.replace(old,new),encoding='utf-8')
+          styles=Path('v2-extra.css')
+          css=styles.read_text(encoding='utf-8')
+          assert '/* Elsevier colored logo: preserve original mark and wordmark */' not in css
+          css+='''
+
+          /* Elsevier colored logo: preserve original mark and wordmark */
+          .editorial-journal-publisher-logo.is-elsevier{
+            width:112px;min-height:100px;padding:6px;background:#fff!important;
+          }
+          .editorial-journal-publisher-logo.is-elsevier img{
+            display:block;width:100%;height:86px;max-height:none;object-fit:contain;object-position:center;
+          }
+          :root[data-mode="dark"] .editorial-journal-publisher-logo.is-elsevier{
+            background:#fff!important;
+          }
+          @media(max-width:420px){
+            .editorial-journal-publisher-logo.is-elsevier{width:99px;min-height:85px;padding:5px}
+            .editorial-journal-publisher-logo.is-elsevier img{height:72px}
+          }
+          '''
+          styles.write_text(css,encoding='utf-8')
+          n=0
+          for file in Path('.').glob('*.html'):
+            raw=file.read_text(encoding='utf-8')
+            upd=re.sub(r'(?<=src="data\.js\?v=)[A-Za-z0-9_.-]+','20261009-elsevier-orange',raw)
+            upd=re.sub(r'(?<=href="v2-extra\.css\?v=)[A-Za-z0-9_.-]+','20261009-elsevier-orange',upd)
+            if upd!=raw:
+              file.write_text(upd,encoding='utf-8')
+              n+=1
+          assert n>=30, f'Expected 30+ consumer pages, got {n}'
+          print(f'Updated data and CSS asset versions on {n} pages')
+          PY
+          git rm -f .github/workflows/one-time-elsevier-colored-logo.yml
+      - name: Validate changes and publish (scoped)
+        run: |
+          set -euo pipefail
+          node --check data.js
+          python3 - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          src=Path('data.js').read_text(encoding='utf-8')
+          css=Path('v2-extra.css').read_text(encoding='utf-8')
+          path=Path('assets/academic/journals/publishers/elsevier-logo-color.png')
+          assert src.count(str(path))==2
+          assert 'assets/academic/journals/publishers/elsevier-logo.jpeg' not in src
+          with Image.open(path) as im:
+            assert im.format=='PNG'
+            assert im.width>=80 and im.height>=80
+            print('Validated colored logo',im.size)
+          assert '/* Elsevier colored logo: preserve original mark and wordmark */' in css
+          for p in ['experience.html','index.html','recognition.html']:
+            text=Path(p).read_text(encoding='utf-8')
+            assert 'data.js?v=20261009-elsevier-orange' in text
+            assert 'v2-extra.css?v=20261009-elsevier-orange' in text
+          print('Elsevier-only asset, mapping and HTML validation passed')
+          PY
+          git diff --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git diff --cached --check
+          git commit -m 'Replace black Elsevier mark with Elsevier-hosted colored logo'
+          git push origin HEAD:main
