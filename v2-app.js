@@ -28,20 +28,33 @@
     ['network','Network & Impact','network.html'],['resources','Resources','resources.html'],['gallery','Gallery','gallery.html'],['dashboard','Dashboard','dashboard-live.html?v=20260923-dashboardlive56'],['contact','Contact','contact.html']
   ];
 
+  const primaryNavKeys = new Set(['home','profile','research','publications','experience','network','contact']);
+  const navMoreGroups = [
+    {label:'Academic record',keys:['academic','conferences','workshops','recognition','languages']},
+    {label:'Research & resources',keys:['projects','resources','gallery','dashboard']}
+  ];
+
   function header(){
     const el = $('#site-header'); if(!el) return;
     el.innerHTML = `<div class="topbar"><div class="container nav-shell">
       <a class="brand" href="index.html"><span class="monogram">MRA</span><span class="brand-name"><span class="brand-primary">Md. Razu</span><span class="brand-accent">Ahmed</span></span></a>
       <div class="nav-scroll-zone">
         <button class="nav-scroll-btn left" id="navScrollLeft" type="button" aria-label="Scroll navigation left">‹</button>
-        <nav class="nav" id="primaryNav" aria-label="Primary">${nav.map(([k,l,h])=>`<a href="${h}" ${(page===k||(page==='network-profile'&&k==='network'))?'aria-current="page"':''}>${l}</a>`).join('')}</nav>
+        <nav class="nav" id="primaryNav" aria-label="Primary">${nav.filter(([k])=>primaryNavKeys.has(k)).map(([k,l,h])=>`<a href="${h}" ${(page===k||(page==='network-profile'&&k==='network'))?'aria-current="page"':''}>${l}</a>`).join('')}</nav>
         <button class="nav-scroll-btn right" id="navScrollRight" type="button" aria-label="Scroll navigation right">›</button>
       </div>
-      <div class="nav-actions"><a class="btn ghost desktop-only" href="ask-razu.html">Ask Razu AI</a><button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button><button class="icon-btn" id="settingsBtn" aria-label="Appearance settings">◐</button><button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open navigation menu" aria-controls="mobilePanel" aria-expanded="false"><span class="mobile-menu-open-icon" aria-hidden="true">☰</span><span class="mobile-menu-close-icon" aria-hidden="true">×</span></button></div>
+      <div class="nav-actions"><details class="nav-more" id="navMore"><summary aria-label="More portfolio sections">More <span aria-hidden="true">⌄</span></summary><div class="nav-more-panel"><div class="nav-more-header"><strong>Explore the portfolio</strong><span>Research · Academic record · Resources</span></div><div class="nav-more-grid">${navMoreGroups.map(g=>`<section class="nav-more-group"><h3>${esc(g.label)}</h3>${g.keys.map(key=>nav.find(([k])=>k===key)).filter(Boolean).map(([k,l,h])=>`<a href="${h}" ${page===k?'aria-current="page"':''}>${l}<span aria-hidden="true">↗</span></a>`).join('')}</section>`).join('')}</div><div class="nav-more-footer"><a href="cv.html">Academic CV ↗</a><a href="ask-razu.html">Ask Razu AI ↗</a></div></div></details><a class="btn ghost desktop-only" href="ask-razu.html">Ask Razu AI</a><button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button><button class="icon-btn" id="settingsBtn" aria-label="Appearance settings">◐</button><button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open navigation menu" aria-controls="mobilePanel" aria-expanded="false"><span class="mobile-menu-open-icon" aria-hidden="true">☰</span><span class="mobile-menu-close-icon" aria-hidden="true">×</span></button></div>
     </div></div><nav class="mobile-panel" id="mobilePanel" aria-label="Mobile navigation">${nav.map(([k,l,h])=>`<a href="${h}" ${(page===k||(page==='network-profile'&&k==='network'))?'aria-current="page"':''}>${l}</a>`).join('')}<a href="ask-razu.html">Ask Razu AI</a><a href="cv.html">CV</a></nav>`;
 
     const menuBtn = $('#menuBtn');
     const mobilePanel = $('#mobilePanel');
+    const moreMenu = $('#navMore');
+    document.addEventListener('pointerdown',event=>{
+      if(moreMenu?.open&&!moreMenu.contains(event.target))moreMenu.open=false;
+    });
+    document.addEventListener('keydown',event=>{
+      if(event.key==='Escape'&&moreMenu?.open){moreMenu.open=false;moreMenu.querySelector('summary')?.focus();}
+    });
     if(mobilePanel && mobilePanel.parentElement !== document.body){
       document.body.appendChild(mobilePanel);
     }
@@ -119,10 +132,15 @@
 
   function settings(){
     document.body.insertAdjacentHTML('beforeend', `<aside class="settings appearance-panel" id="settings" hidden aria-label="Appearance settings">
-      <div class="appearance-panel-head"><div><span class="appearance-eyebrow">Interface</span><strong>Appearance</strong><p>Choose a color system, display mode and motion level.</p></div><button class="appearance-close" id="appearanceClose" type="button" aria-label="Close appearance settings">×</button></div>
+      <div class="appearance-panel-head"><div><span class="appearance-eyebrow">Interface</span><strong>Appearance</strong><p>Select your preferred academic palette, display mode and reading comfort.</p></div><button class="appearance-close" id="appearanceClose" type="button" aria-label="Close appearance settings">×</button></div>
       <div class="appearance-group">
-        <label for="themeSel">Color theme</label>
-        <select id="themeSel"><option value="scientific">Scientific Horizon</option><option value="executive">Executive Intelligence</option><option value="quantum">Quantum Research</option><option value="mono">Minimal Monochrome</option></select>
+        <span class="appearance-label">Color theme</span>
+        <div class="palette-choice-grid" role="group" aria-label="Choose a color theme">
+          <button type="button" data-theme-choice="midnight" aria-pressed="false"><span class="palette-choice-preview palette-choice-midnight" aria-hidden="true"><i></i><i></i><i></i></span><strong>Midnight</strong><small>Sapphire</small></button>
+          <button type="button" data-theme-choice="forest" aria-pressed="false"><span class="palette-choice-preview palette-choice-forest" aria-hidden="true"><i></i><i></i><i></i></span><strong>Executive</strong><small>Forest</small></button>
+          <button type="button" data-theme-choice="editorial" aria-pressed="false"><span class="palette-choice-preview palette-choice-editorial" aria-hidden="true"><i></i><i></i><i></i></span><strong>Editorial</strong><small>Monochrome</small></button>
+        </div>
+        <select id="themeSel" class="appearance-native-select" aria-label="Color theme fallback"><option value="midnight">Midnight Sapphire</option><option value="forest">Executive Forest</option><option value="editorial">Editorial Monochrome</option></select>
       </div>
       <div class="appearance-group">
         <span class="appearance-label">Display mode</span>
@@ -174,7 +192,8 @@
     const storedScale=store.getItem('mra-text-scale')||(legacyText==='large'?'110':'100');
 
     const systemMode=window.matchMedia('(prefers-color-scheme: dark)');
-    const validThemes=new Set(['scientific','executive','quantum','mono']);
+    const validThemes=new Set(['midnight','forest','editorial']);
+    const legacyThemes={scientific:'midnight',executive:'forest',quantum:'midnight',mono:'editorial'};
     const validModes=new Set(['system','light','dark']);
     const validMotion=new Set(['balanced','reduced']);
 
@@ -190,11 +209,14 @@
     };
 
     const apply=()=>{
-      let theme=store.getItem('mra-theme')||'scientific';
+      let theme=store.getItem('mra-theme')||'midnight';
+      theme=legacyThemes[theme]||theme;
       let mode=store.getItem('mra-mode')||'system';
       let motion=store.getItem('mra-motion')||'balanced';
-      if(!validThemes.has(theme)) theme='scientific';
+      if(!validThemes.has(theme)) theme='midnight';
       if(!validModes.has(mode)) mode='system';
+      // Migrate older theme preferences without changing mode or reading settings.
+      if(store.getItem('mra-theme')!==theme)store.setItem('mra-theme',theme);
       if(!validMotion.has(motion)) motion='balanced';
 
       const resolved=mode==='system'?(systemMode.matches?'dark':'light'):mode;
@@ -206,6 +228,11 @@
 
       const themeSel=$('#themeSel'), modeSel=$('#modeSel'), motionSel=$('#motionSel');
       if(themeSel) themeSel.value=theme;
+      $('#settings [data-theme-choice]').forEach(btn=>{
+        const active=btn.dataset.themeChoice===theme;
+        btn.setAttribute('aria-pressed',String(active));
+        btn.classList.toggle('is-active',active);
+      });
       if(modeSel) modeSel.value=mode;
       if(motionSel) motionSel.value=motion;
 
@@ -221,6 +248,10 @@
     };
 
     $('#themeSel')?.addEventListener('change',e=>{store.setItem('mra-theme',e.target.value);apply();});
+    $('#settings [data-theme-choice]').forEach(btn=>btn.addEventListener('click',()=>{
+      store.setItem('mra-theme',btn.dataset.themeChoice);
+      apply();
+    }));
     $('#modeSel')?.addEventListener('change',e=>{store.setItem('mra-mode',e.target.value);apply();});
     $('#motionSel')?.addEventListener('change',e=>{store.setItem('mra-motion',e.target.value);apply();});
     $$('#modeSegmented [data-mode-choice]').forEach(btn=>btn.addEventListener('click',()=>{
