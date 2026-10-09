@@ -34,11 +34,11 @@
       <a class="brand" href="index.html"><span class="monogram">MRA</span><span class="brand-name"><span class="brand-primary">Md. Razu</span><span class="brand-accent">Ahmed</span></span></a>
       <div class="nav-scroll-zone">
         <button class="nav-scroll-btn left" id="navScrollLeft" type="button" aria-label="Scroll navigation left">‹</button>
-        <nav class="nav" id="primaryNav" aria-label="Primary">${nav.map(([k,l,h])=>`<a href="${h}" ${(page===k||(page==='network-profile'&&k==='network'))?'aria-current="page"':''}>${l}</a>`).join('')}</nav>
+        <nav class="nav" id="primaryNav" aria-label="Primary">${nav.map(([k,l,h])=>`<a href="${h}" ${(page===k||(page==='network-profile'&&k==='network')||(['blogs','notes','reading'].includes(page)&&k==='resources'))?'aria-current="page"':''}>${l}</a>`).join('')}</nav>
         <button class="nav-scroll-btn right" id="navScrollRight" type="button" aria-label="Scroll navigation right">›</button>
       </div>
       <div class="nav-actions"><a class="btn ghost desktop-only" href="ask-razu.html">Ask Razu AI</a><button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button><button class="icon-btn" id="settingsBtn" aria-label="Appearance settings">◐</button><button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open navigation menu" aria-controls="mobilePanel" aria-expanded="false"><span class="mobile-menu-open-icon" aria-hidden="true">☰</span><span class="mobile-menu-close-icon" aria-hidden="true">×</span></button></div>
-    </div></div><nav class="mobile-panel" id="mobilePanel" aria-label="Mobile navigation">${nav.map(([k,l,h])=>`<a href="${h}" ${(page===k||(page==='network-profile'&&k==='network'))?'aria-current="page"':''}>${l}</a>`).join('')}<a href="blogs.html" ${page==='blogs'?'aria-current="page"':''}>Research Blog</a><a href="notes.html" ${page==='notes'?'aria-current="page"':''}>Academic Notes</a><a href="ask-razu.html">Ask Razu AI</a><a href="cv.html">CV</a></nav>`;
+    </div></div><nav class="mobile-panel" id="mobilePanel" aria-label="Mobile navigation">${nav.map(([k,l,h])=>`<a href="${h}" ${(page===k||(page==='network-profile'&&k==='network')||(['blogs','notes','reading'].includes(page)&&k==='resources'))?'aria-current="page"':''}>${l}</a>`).join('')}<a href="blogs.html" ${page==='blogs'?'aria-current="page"':''}>Research Blog</a><a href="notes.html" ${page==='notes'?'aria-current="page"':''}>Academic Notes</a><a href="ask-razu.html">Ask Razu AI</a><a href="cv.html">CV</a></nav>`;
 
     const menuBtn = $('#menuBtn');
     const mobilePanel = $('#mobilePanel');
