@@ -1525,15 +1525,16 @@
           ${(D.service||[]).map((record,index)=>`
             <article class="editorial-journal-card" id="reviewer-${esc(record.id||index)}">
               <div class="editorial-journal-head">
-                <div class="editorial-journal-emblem editorial-journal-emblem--${esc(record.id||'generic')}" aria-label="${esc(record.journal||'Journal')} identity">
-                  <span class="editorial-journal-emblem-kind">JOURNAL</span>
-                  <span class="editorial-journal-emblem-letters">${esc(record.initials||record.label||'J')}</span>
-                  <span class="editorial-journal-emblem-publisher">${esc(record.publisher||'Academic journal')}</span>
-                </div>
+                <a class="editorial-journal-artwork editorial-journal-artwork--${esc(record.artworkType||'cover')}" href="${esc(record.journalUrl||'#editorial-peer-review')}" target="_blank" rel="noopener noreferrer" aria-label="Open the ${esc(record.journal||'journal')} website">
+                  ${record.artwork?`<img src="${esc(record.artwork)}" alt="${esc(record.journal||'Journal')} ${record.artworkType==='logo'?'logo':'cover'}" loading="lazy" decoding="async" width="105" height="140">`:`<span class="editorial-journal-artwork-fallback">${esc(record.initials||record.label||'J')}</span>`}
+                </a>
                 <div class="editorial-journal-identity">
                   <span class="editorial-journal-index">0${index+1} · Editorial service</span>
                   <h3>${esc(record.journal||'Academic Journal')}</h3>
-                  <span class="editorial-journal-publisher">${esc(record.publisher||'')}</span>
+                  <div class="editorial-journal-publisher-line">
+                    ${record.publisherLogo?`<span class="editorial-journal-publisher-logo ${record.publisher==='Elsevier'?'is-elsevier':'is-plos'}"><img src="${esc(record.publisherLogo)}" alt="${esc(record.publisher||'Publisher')} logo" loading="lazy" decoding="async" width="90" height="40"></span>`:''}
+                    <span class="editorial-journal-publisher">${esc(record.publisher||'')}</span>
+                  </div>
                 </div>
               </div>
               <div class="editorial-journal-position">
