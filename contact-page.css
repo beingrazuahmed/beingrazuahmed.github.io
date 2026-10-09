@@ -268,3 +268,31 @@
 .contact-page .contact-submission-status[data-state="error"]{border-left-color:#b45309}
 .contact-page .contact-form-note{margin:0;color:var(--muted);font-size:11.5px;line-height:1.7}
 .contact-page .contact-enquiry-form :is(input,select,textarea){font-size:max(14px,1rem)}
+
+/* Contact choices: equal access to on-page messaging and the visitor's own email app. */
+.contact-page .contact-direct-card .contact-email-tools{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin-top:14px}
+.contact-page .contact-email-compose,.contact-page .contact-email-copy{
+  display:inline-flex;align-items:center;justify-content:center;min-height:39px;
+  border-radius:9px;padding:9px 12px;border:1px solid var(--line);
+  font:inherit;font-size:11.5px;font-weight:760;text-decoration:none;
+  color:var(--text);background:var(--surface);cursor:pointer
+}
+.contact-page .contact-email-compose{background:var(--accent);color:#fff;border-color:var(--accent)}
+.contact-page .contact-email-compose:hover{filter:brightness(1.07)}
+.contact-page .contact-email-copy:hover{border-color:var(--accent);color:var(--accent)}
+.contact-page .contact-copy-status{font-size:11px;line-height:1.6;color:var(--muted);margin:10px 0 0}
+.contact-page .contact-copy-status[hidden]{display:none}
+.contact-page .contact-copy-status[data-state="success"]{color:var(--accent)}
+.contact-page .contact-email-alternative{
+  display:flex;align-items:center;justify-content:center;gap:6px 12px;flex-wrap:wrap;
+  text-align:center;color:var(--muted);font-size:11.5px;line-height:1.6;margin-top:0
+}
+.contact-page .contact-email-alternative a{color:var(--accent);font-weight:780;text-decoration:underline;text-underline-offset:3px}
+.contact-page .contact-form-note a{color:var(--accent);text-underline-offset:3px}
+.contact-page .contact-action-secondary{white-space:normal;text-align:center}
+.contact-page .contact-email-compose:focus-visible,.contact-page .contact-email-copy:focus-visible,
+.contact-page .contact-email-alternative a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media(max-width:450px){
+ .contact-page .contact-email-tools{display:grid;grid-template-columns:1fr 1fr}
+ .contact-page .contact-email-compose,.contact-page .contact-email-copy{font-size:11px;padding:10px 8px}
+}

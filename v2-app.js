@@ -270,24 +270,11 @@
 
   function footer(){
     const el=$('#site-footer'); if(!el) return;
-    el.innerHTML=`<footer class="footer"><div class="container footer-grid"><div><div class="brand"><span class="monogram">MRA</span><span>Md. Razu Ahmed</span></div><p>${esc(D.brand?.tagline||'')}</p><p class="tiny">Public portfolio · Privacy-safe by design · Last updated ${esc(D.lastUpdated||'')}</p></div><div><strong>Navigate</strong><p><a href="search.html">Search</a><br><a href="languages.html">Languages & MOI</a><br><a href="workshops.html">Workshops & Seminars</a><br><a href="dashboard-live.html?v=20260923-dashboardlive56">Dashboard</a><br><a href="cv.html">CV</a><br><a href="copyright.html">Copyright & Reuse</a></p></div><div><strong>Connect</strong><p><a href="mailto:razuahmed038@gmail.com">Email</a><br><a href="https://github.com/beingrazuahmed" target="_blank" rel="noopener">GitHub</a><br><a href="contact.html">Collaborate</a></p></div></div><div class="container footer-flagcounter-wrap">
-  <div class="footer-flagcounter-card">
-    <div class="footer-flagcounter-head">
-      <span class="footer-flagcounter-title">🌍 Global Visitors</span>
-      <span class="footer-flagcounter-subtitle">Country-wise visitors to this research portfolio</span>
-    </div>
-    <a class="footer-flagcounter-link"
-       href="https://info.flagcounter.com/SCyQ"
-       target="_blank"
-       rel="noopener noreferrer"
-       aria-label="View global visitor statistics">
-      <img class="footer-flagcounter-image"
-           src="https://s01.flagcounter.com/count2/SCyQ/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
-           alt="Flag Counter showing global visitors by country"
-           loading="eager"
-           decoding="async"
-           referrerpolicy="no-referrer">
-    </a>
+    el.innerHTML=`<footer class="footer"><div class="container footer-grid"><div><div class="brand"><span class="monogram">MRA</span><span>Md. Razu Ahmed</span></div><p>${esc(D.brand?.tagline||'')}</p><p class="tiny">Public portfolio · Privacy-safe by design · Last updated ${esc(D.lastUpdated||'')}</p></div><div><strong>Navigate</strong><p><a href="search.html">Search</a><br><a href="languages.html">Languages & MOI</a><br><a href="workshops.html">Workshops & Seminars</a><br><a href="dashboard-live.html?v=20260923-dashboardlive56">Dashboard</a><br><a href="cv.html">CV</a><br><a href="copyright.html">Copyright & Reuse</a><br><a href="privacy.html">Privacy</a></p></div><div><strong>Connect</strong><p><a href="mailto:razuahmed038@gmail.com">Email</a><br><a href="https://github.com/beingrazuahmed" target="_blank" rel="noopener">GitHub</a><br><a href="contact.html">Collaborate</a></p></div></div><div class="container footer-collaboration-wrap">
+  <div class="footer-collaboration-note">
+    <span class="footer-collaboration-symbol" aria-hidden="true">✦</span>
+    <div class="footer-collaboration-copy"><strong>Research collaboration, worldwide.</strong><span>Open to thoughtful academic enquiries and interdisciplinary partnerships.</span></div>
+    <a class="footer-collaboration-link" href="contact.html">Get in touch <span aria-hidden="true">↗</span></a>
   </div>
 </div>
 <div class="container tiny">© 2026 Md. Razu Ahmed. All rights reserved.</div></footer>`;
@@ -2369,9 +2356,9 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         <span class="contact-eyebrow"><span class="contact-eyebrow-line"></span> ACADEMIC CONTACT &amp; COLLABORATION</span>
         <h1 id="contact-title">Advancing research through <em>collaboration.</em></h1>
         <p class="contact-intro-lede">I welcome research partnerships, doctoral opportunities and interdisciplinary projects at the intersection of statistics, machine learning and explainable AI. I value rigorous methods, transparent analysis and meaningful scientific outcomes.</p>
-        <div class="contact-intro-actions"><a class="btn primary contact-action-primary" href="#contactEnquiryForm">${lineIcon('mail')} Send an enquiry <span aria-hidden="true">↗</span></a><a class="btn ghost contact-action-secondary" href="#collaboration-areas">Explore collaboration areas <span aria-hidden="true">↓</span></a></div>
+        <div class="contact-intro-actions"><a class="btn primary contact-action-primary" href="#contactEnquiryForm">${lineIcon('mail')} Send an enquiry <span aria-hidden="true">↗</span></a><a class="btn ghost contact-action-secondary" href="mailto:${esc(email)}?subject=Research%20collaboration%20enquiry">${lineIcon('mail')} Open email app <span aria-hidden="true">↗</span></a></div>
         <nav class="contact-reference-rail" aria-label="Research contact quick links">
-          <a href="#academic-profiles">Scholarly profiles <span aria-hidden="true">↗</span></a>
+          <a href="#collaboration-areas">Collaboration areas <span aria-hidden="true">↓</span></a><a href="#academic-profiles">Scholarly profiles <span aria-hidden="true">↗</span></a>
           <a href="publications.html">Publications <span aria-hidden="true">↗</span></a>
           <a href="cv.html">Academic CV <span aria-hidden="true">↗</span></a>
         </nav>
@@ -2380,7 +2367,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
       <aside class="contact-direct-card" aria-label="Direct academic contact">
         <div class="contact-direct-card-top"><span>DIRECT CONTACT</span><span class="contact-direct-identity">ACADEMIC ENQUIRIES</span></div>
         <div class="contact-person"><img src="${esc(portrait)}" alt="Portrait of Md. Razu Ahmed" loading="eager" decoding="async"><div><strong>Md. Razu Ahmed</strong><span>Statistician · Data Scientist · Researcher</span></div></div>
-        <div class="contact-detail-item"><span class="contact-detail-label">PREFERRED CONTACT</span><a class="contact-email-address" href="mailto:${esc(email)}">${esc(email)} <span aria-hidden="true">↗</span></a><p>For research enquiries, please reach out directly by email.</p></div>
+        <div class="contact-detail-item"><span class="contact-detail-label">DIRECT EMAIL</span><a class="contact-email-address" href="mailto:${esc(email)}">${esc(email)} <span aria-hidden="true">↗</span></a><p>For formal correspondence, attachments, and follow-up discussions.</p><div class="contact-email-tools"><a class="contact-email-compose" href="mailto:${esc(email)}?subject=Academic%20enquiry">Compose email ↗</a><button id="contactCopyEmail" class="contact-email-copy" data-email="${esc(email)}" type="button">Copy address</button></div><p id="contactCopyStatus" class="contact-copy-status" role="status" aria-live="polite" hidden></p></div>
         <div class="contact-detail-item contact-detail-affiliation"><span class="contact-detail-label">RESEARCH AFFILIATION</span><div class="contact-affiliation-row"><img src="assets/academic/education/pust-logo.png" alt="" loading="lazy" decoding="async"><p>${esc(affiliation)}</p></div></div>
         <div class="contact-direct-foot"><span class="contact-direct-dot" aria-hidden="true"></span> Open selectively to relevant research partnerships</div>
       </aside>
@@ -2398,14 +2385,14 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         <ol class="contact-brief-list"><li><span>01</span><p><strong>Research question</strong><small>The scientific problem and why it matters.</small></p></li><li><span>02</span><p><strong>Proposed collaboration</strong><small>The expertise, contribution or partnership you have in mind.</small></p></li><li><span>03</span><p><strong>Context &amp; timeline</strong><small>Any relevant background, scope, intended outputs or deadlines.</small></p></li></ol>
       </div>
       <aside class="contact-invitation contact-enquiry-card">
-<div class="contact-enquiry-heading"><span class="contact-invitation-kicker">ACADEMIC ENQUIRY</span><h3>Start a conversation.</h3><p>Send your research enquiry through this page. Your message is forwarded to my academic email using an external form service.</p></div>
+<div class="contact-enquiry-heading"><span class="contact-invitation-kicker">MESSAGE VIA WEBSITE</span><h3>Send an academic enquiry.</h3><p>Complete the form without leaving the site. Alternatively, use your preferred email app for formal correspondence or attachments.</p></div>
 <form id="contactEnquiryForm" class="contact-enquiry-form" aria-label="Send an academic enquiry" action="https://formsubmit.co/razuahmed038@gmail.com" method="POST">
 <div class="contact-form-row"><label>Full name <span aria-hidden="true">*</span><input name="name" type="text" autocomplete="name" placeholder="Your name" maxlength="100" required></label>
 <label>Email address <span aria-hidden="true">*</span><input name="email" type="email" autocomplete="email" placeholder="you@institution.edu" maxlength="150" required></label></div>
 <label>Enquiry topic <span aria-hidden="true">*</span><select name="topic" required><option value="">Choose a topic</option><option value="Research collaboration">Research collaboration</option><option value="PhD or academic opportunity">PhD or academic opportunity</option><option value="Interdisciplinary project">Interdisciplinary project</option><option value="Publication or dataset enquiry">Publication or dataset enquiry</option><option value="Other academic enquiry">Other academic enquiry</option></select></label>
 <label>Brief message <span aria-hidden="true">*</span><textarea name="message" rows="4" minlength="15" maxlength="2000" placeholder="Share your research idea, collaboration scope and any relevant timeline…" required></textarea></label>
-<div class="contact-anti-bot" aria-hidden="true"><label>Leave this field blank<input type="text" name="_honey" autocomplete="off" tabindex="-1"></label></div><button class="contact-invitation-button" type="submit">${lineIcon('mail')} Send enquiry <span aria-hidden="true">↗</span></button><p id="contactSubmissionStatus" class="contact-submission-status" role="status" aria-live="polite" hidden></p>
-<p class="contact-form-note">Messages are processed by FormSubmit.co and forwarded to my email. This website does not retain submissions. Please avoid including confidential or sensitive research data.</p></form>
+<div class="contact-anti-bot" aria-hidden="true"><label>Leave this field blank<input type="text" name="_honey" autocomplete="off" tabindex="-1"></label></div><button class="contact-invitation-button" type="submit">${lineIcon('mail')} Send enquiry <span aria-hidden="true">↗</span></button><div class="contact-email-alternative"><span>Prefer your email application?</span><a href="mailto:${esc(email)}?subject=Academic%20enquiry">Compose an email instead ↗</a></div><p id="contactSubmissionStatus" class="contact-submission-status" role="status" aria-live="polite" hidden></p>
+<p class="contact-form-note">Enquiries are handled by FormSubmit.co, an external delivery service. This portfolio does not store form submissions. Please avoid sharing confidential or sensitive research data. <a href="privacy.html">Privacy information ↗</a></p></form>
 <div class="contact-invitation-links"><a href="cv.html">Academic CV ↗</a><a href="publications.html">Research publications ↗</a></div></aside>
     </div></section>
   </div>`;
