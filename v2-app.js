@@ -2433,7 +2433,8 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   const academicShared={'Scopus':'assets/academic/logos/scopus-circle.png','Web of Science':'assets/academic/journals/engineering-reports/web-of-science.webp','SciProfiles':'assets/academic/logos/contact/sciprofiles.svg'};
   const icon=name=>{
     const id=brands[name];
-    const src=academicShared[name]||(id?'assets/academic/logos/contact/'+id+'.svg':'');
+    const brandSrc=academicShared[name]||(id?'assets/academic/logos/contact/'+id+'.svg':'');
+    const src=id==='instagram'?brandSrc+'?v=20261009-instagram-gradient1':brandSrc;
     return src?'<span class="contact-brand-mark contact-brand-'+esc(id||'default')+'"><img src="'+esc(src)+'" alt="" aria-hidden="true" width="30" height="30" loading="lazy" decoding="async"></span>':'<span class="contact-brand-mark contact-brand-fallback" aria-hidden="true">'+esc(String(name||'?').slice(0,2).toUpperCase())+'</span>';
   };
   const lineIcon=kind=>{const paths={mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',location:'<path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/>',stats:'<path d="M4 20V11m6 9V5m6 15v-8m5 8H3"/><path d="m4 8 6-4 6 5 4-3"/>',health:'<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l8.13 8.13a1 1 0 0 0 1.42 0l8.13-8.13a5.5 5.5 0 0 0 0-7.78Z"/><path d="M5 12h4l2-3 2 6 2-3h4"/>',partnership:'<circle cx="7" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><path d="M2 20v-2a5 5 0 0 1 10 0v2m0 0v-2a5 5 0 0 1 10 0v2"/><path d="M10 12h4"/>'};return '<svg class="contact-line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.65" aria-hidden="true" focusable="false">'+(paths[kind]||paths.mail)+'</svg>';};

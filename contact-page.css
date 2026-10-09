@@ -296,3 +296,6 @@
  .contact-page .contact-email-tools{display:grid;grid-template-columns:1fr 1fr}
  .contact-page .contact-email-compose,.contact-page .contact-email-copy{font-size:11px;padding:10px 8px}
 }
+
+/* Instagram's full-gradient camera logo needs an unobstructed contact tile. */
+.contact-page .contact-brand-instagram img{width:29px;height:29px;max-width:29px;max-height:29px;object-fit:contain}
