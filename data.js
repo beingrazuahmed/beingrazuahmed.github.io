@@ -564,7 +564,7 @@ window.PORTFOLIO_DATA = {
     },
     {
       id: "bspc", journal: "Biomedical Signal Processing and Control", publisher: "Elsevier",
-      label: "BSPC", initials: "BSPC", artwork: "assets/academic/journals/bspc/bspc-cover.jpeg", artworkType: "cover", publisherLogo: "assets/academic/journals/publishers/elsevier-logo.jpeg", reviews: 8, since: "July 2026",
+      label: "BSPC", initials: "BSPC", artwork: "assets/academic/journals/bspc/bspc-cover.jpeg", artworkType: "cover", publisherLogo: "assets/academic/journals/publishers/elsevier-logo-color.png", reviews: 8, since: "July 2026",
       startDate: "2026-07-22", startLabel: "22 July 2026", role: "Peer Reviewer",
       journalUrl: "https://www.sciencedirect.com/journal/biomedical-signal-processing-and-control", issn: "1746-8094",
       scope: "Completed 8 invited manuscript reviews, assessing biomedical signal-processing and machine-learning methods, validation strategies, interpretation of results, and scientific reporting.",
@@ -576,7 +576,7 @@ window.PORTFOLIO_DATA = {
     },
     {
       id: "eaai", journal: "Engineering Applications of Artificial Intelligence", publisher: "Elsevier",
-      label: "EAAI", initials: "EAAI", artwork: "assets/academic/journals/eaai/eaai-cover.jpg", artworkType: "cover", publisherLogo: "assets/academic/journals/publishers/elsevier-logo.jpeg", reviews: 1, since: "September 2026",
+      label: "EAAI", initials: "EAAI", artwork: "assets/academic/journals/eaai/eaai-cover.jpg", artworkType: "cover", publisherLogo: "assets/academic/journals/publishers/elsevier-logo-color.png", reviews: 1, since: "September 2026",
       startDate: "2026-09-14", startLabel: "14 September 2026", role: "Peer Reviewer",
       journalUrl: "https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence", issn: "0952-1976",
       scope: "Completed 1 invited manuscript review, assessing machine-learning and biomedical signal-processing methods, validation strategies, interpretation of results, and scientific reporting.",

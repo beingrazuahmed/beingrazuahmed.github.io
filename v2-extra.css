@@ -495,3 +495,19 @@ body[data-page="network-profile"] .network-brand-link .mentor-profile-link-icon.
   .editorial-journal-card,.editorial-journal-action,.editorial-journal-artwork{transition:none}
   .editorial-journal-card:hover{transform:none}
 }
+
+
+/* Elsevier colored logo: preserve original mark and wordmark */
+.editorial-journal-publisher-logo.is-elsevier{
+  width:112px;min-height:100px;padding:6px;background:#fff!important;
+}
+.editorial-journal-publisher-logo.is-elsevier img{
+  display:block;width:100%;height:86px;max-height:none;object-fit:contain;object-position:center;
+}
+:root[data-mode="dark"] .editorial-journal-publisher-logo.is-elsevier{
+  background:#fff!important;
+}
+@media(max-width:420px){
+  .editorial-journal-publisher-logo.is-elsevier{width:99px;min-height:85px;padding:5px}
+  .editorial-journal-publisher-logo.is-elsevier img{height:72px}
+}
