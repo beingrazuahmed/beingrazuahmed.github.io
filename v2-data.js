@@ -2636,7 +2636,6 @@
       ],
       platforms: [
         { name: 'ChatGPT', short: 'ChatGPT', brand: 'openai' },
-        { name: 'Meta AI', short: 'Meta AI', brand: 'meta-ai' },
         { name: 'Claude', short: 'Claude', brand: 'anthropic' },
         { name: 'Gemini', short: 'Gemini', brand: 'googlegemini' },
         { name: 'DeepSeek', short: 'DeepSeek', brand: 'deepseek' },
@@ -2644,7 +2643,8 @@
         { name: 'Perplexity', short: 'Perplexity', brand: 'perplexity' },
         { name: 'Gemini Notebook', short: 'Gemini Notebook', brand: 'googlegemini' },
         { name: 'QuillBot', short: 'QuillBot', brand: 'quillbot' },
-        { name: 'Microsoft Copilot', short: 'Copilot', brand: 'microsoftcopilot' }
+        { name: 'Microsoft Copilot', short: 'Copilot', brand: 'microsoftcopilot' },
+        { name: 'Meta AI', short: 'Meta AI', brand: 'meta-ai' }
       ],
       principle: 'AI-assisted outputs are independently checked against the underlying data, code, source literature and domain context before being used in research or scholarly communication.',
       note: 'Prompt engineering is presented here as an applied research-workflow capability, not as a substitute for statistical, computational or subject-matter expertise.'
@@ -2858,7 +2858,7 @@
     evidence: [
       { icon: 'publication', title: 'Research Writing', detail: 'Peer-reviewed articles, active manuscripts, technical documentation and scholarly correspondence prepared in English.' },
       { icon: 'conference', title: 'Conference Communication', detail: 'English used for research presentations, abstracts, posters and conference-facing academic communication.' },
-      { icon: 'review', title: 'Peer Review', detail: '33 completed invited peer reviews across international journals, requiring sustained critical reading and written scholarly feedback in English.' },
+      { icon: 'review', title: 'Peer Review', detail: '34 completed invited peer reviews across international journals, requiring sustained critical reading and written scholarly feedback in English.' },
       { icon: 'field', title: 'Field & Local Communication', detail: 'Bangla supports participant-facing communication, local academic engagement and field research in Bangladesh.' }
     ]
   };
@@ -2946,7 +2946,7 @@
       { value: String((base.manuscripts || []).length), label: 'Editorial Process' },
       { value: String((extra.ongoing || []).length), label: 'In Preparation' },
       { value: '8', label: 'Conference Contributions' },
-      { value: '33', label: 'Completed Peer Reviews' },
+      { value: '34', label: 'Completed Peer Reviews' },
       { value: '1', label: 'Public Dataset' }
     ],
     compass,

@@ -1,13 +1,13 @@
 window.PORTFOLIO_EXTRA = {
-  lastUpdated: "5 October 2026",
+  lastUpdated: "9 October 2026",
   impactMetrics: [
     { label: "Google Scholar citations", value: 2, source: "Google Scholar", date: "15 September 2026" },
     { label: "ResearchGate citations", value: 5, source: "ResearchGate", date: "15 September 2026" },
     { label: "Research Interest Score", value: 10.0, source: "ResearchGate", date: "5 October 2026" },
     { label: "h-index", value: 1, source: "Google Scholar / ResearchGate", date: "15 September 2026" },
-    { label: "Usage", value: 184, source: "Mendeley Data", date: "23 September 2026" },
-    { label: "Views", value: 106, source: "Mendeley Data", date: "23 September 2026" },
-    { label: "Downloads", value: 78, source: "Mendeley Data", date: "23 September 2026" }
+    { label: "Usage", value: 260, source: "Mendeley Data", date: "9 October 2026" },
+    { label: "Views", value: 143, source: "Mendeley Data", date: "9 October 2026" },
+    { label: "Downloads", value: 117, source: "Mendeley Data", date: "9 October 2026" }
   ],
   latestUpdates: [
     { date: "27 Sep 2026", type: "Manuscript", title: "Measurement manuscript moved to Under Review", detail: "A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images advanced from With Editor to Under Review at Measurement (Elsevier)." },
