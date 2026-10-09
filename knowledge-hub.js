@@ -139,6 +139,8 @@
     document.title=item.title+" | "+(kind==="note"?"Academic Notes":"Research Blog")+" | Md. Razu Ahmed";
     const description=document.querySelector('meta[name="description"]');
     if(description)description.setAttribute("content",item.excerpt);
+    const canonical=document.querySelector('link[rel="canonical"]');
+    if(canonical)canonical.setAttribute("href",location.origin+location.pathname+"?type="+encodeURIComponent(kind)+"&slug="+encodeURIComponent(slug));
     const related=ALL.filter(x=>x.slug!==item.slug).filter(x=>x.kind===item.kind).slice(0,2);
     const backlink=kind==="note"?"notes.html":"blogs.html";
     return '<section class="knowledge-reading-hero"><div class="container knowledge-reading-title">'+
