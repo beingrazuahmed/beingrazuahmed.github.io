@@ -546,3 +546,16 @@ body[data-page="network-profile"] .network-brand-link .mentor-profile-link-icon.
 @media(max-width:1050px){.editorial-course-list{grid-template-columns:1fr}.editorial-course-card{min-height:190px;grid-template-columns:minmax(130px,30%) minmax(0,1fr)}}
 @media(max-width:620px){.editorial-reviewer-identity{align-items:stretch}.editorial-reviewer-links{width:100%}.editorial-reviewer-profile{flex:1;min-width:138px}.editorial-course-card{grid-template-columns:1fr}.editorial-course-media{border-right:0;border-bottom:1px solid var(--line);max-height:230px}.editorial-course-media img{max-height:196px}.editorial-course-content{padding:19px}}
 @media(prefers-reduced-motion:reduce){.editorial-reviewer-profile{transition:none}.editorial-reviewer-profile:hover{transform:none}}
+
+/* Original Elsevier credential preview: actual PDF page one, no custom cover artwork. */
+.original-certificate-preview{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;width:100%;aspect-ratio:4/3;background:#fff}
+.original-certificate-preview iframe,.original-certificate-preview canvas{display:block;width:100%;height:100%;border:0;background:#fff;object-fit:contain;pointer-events:none}
+.original-certificate-preview canvas{height:auto}
+.original-certificate-preview iframe[hidden],.original-certificate-preview canvas[hidden]{display:none!important}
+.editorial-course-media .original-certificate-preview{max-height:195px;box-shadow:0 2px 9px rgba(0,0,0,.09)}
+.editorial-course-media>.original-certificate-preview+span{z-index:2}
+.credential-preview .original-certificate-preview{height:100%;aspect-ratio:auto}
+.credential-preview .original-certificate-preview iframe,.credential-preview .original-certificate-preview canvas{max-height:100%}
+.gallery-evidence-card#elsevier-certified-peer-reviewer-2026 .gallery-evidence-media{height:230px;background:#fff}
+.gallery-evidence-card#elsevier-certified-peer-reviewer-2026 .original-certificate-preview{height:230px;aspect-ratio:auto}
+.gallery-evidence-card#elsevier-certified-peer-reviewer-2026 .original-certificate-preview canvas,.gallery-evidence-card#elsevier-certified-peer-reviewer-2026 .original-certificate-preview iframe{max-height:230px}
