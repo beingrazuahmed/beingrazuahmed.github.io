@@ -511,3 +511,38 @@ body[data-page="network-profile"] .network-brand-link .mentor-profile-link-icon.
   .editorial-journal-publisher-logo.is-elsevier{width:99px;min-height:85px;padding:5px}
   .editorial-journal-publisher-logo.is-elsevier img{height:72px}
 }
+
+
+/* Peer-review identity and course credentials · theme-aware additions */
+.editorial-credentials-section{margin:30px 0 26px;padding:clamp(22px,3.3vw,37px);border:1px solid var(--line);border-radius:22px;background:color-mix(in srgb,var(--surface) 94%,var(--accent) 6%);box-shadow:0 10px 30px color-mix(in srgb,var(--accent) 5%,transparent)}
+.editorial-credentials-heading h3{margin:5px 0 8px;font-size:clamp(1.45rem,2.4vw,1.95rem);color:var(--text);letter-spacing:-.035em;line-height:1.2}
+.editorial-credentials-heading p{margin:0 0 20px;max-width:90ch;color:var(--muted);font-size:13px;line-height:1.75}
+.editorial-reviewer-identity{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:15px 18px;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+.editorial-reviewer-identity-label{display:flex;flex-direction:column;gap:2px}
+.editorial-reviewer-identity-label strong{font-size:13px;color:var(--text)}
+.editorial-reviewer-identity-label span{font-size:11px;color:var(--muted)}
+.editorial-reviewer-links{display:flex;flex-wrap:wrap;gap:12px}
+.editorial-reviewer-profile{display:flex;align-items:center;gap:10px;padding:8px 13px 8px 9px;min-width:173px;border:1px solid var(--line);border-radius:13px;background:var(--bg);text-decoration:none;transition:border-color .2s,transform .2s}
+.editorial-reviewer-profile:hover{border-color:var(--accent);transform:translateY(-2px)}
+.editorial-reviewer-brand{display:grid;place-items:center;width:39px;height:39px;flex:none;border:1px solid #e9edf0;border-radius:10px;background:#fff}
+.editorial-reviewer-brand img{width:26px;height:26px;object-fit:contain}
+.editorial-reviewer-profile strong,.editorial-reviewer-profile small{display:block;line-height:1.45}
+.editorial-reviewer-profile strong{font-size:12.5px;color:var(--text)}
+.editorial-reviewer-profile small{font-size:10.5px;color:var(--accent);font-weight:700}
+.editorial-course-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:19px}
+.editorial-course-card{display:grid;grid-template-columns:minmax(120px,37%) minmax(0,1fr);gap:0;overflow:hidden;border:1px solid var(--line);border-radius:17px;background:var(--surface);min-height:224px}
+.editorial-course-media{position:relative;display:flex;align-items:center;justify-content:center;padding:10px;background:#f4f7fa;border-right:1px solid var(--line);min-width:0}
+.editorial-course-media img{display:block;width:100%;max-height:195px;object-fit:contain;box-shadow:0 2px 9px rgba(0,0,0,.09)}
+.editorial-course-media>span{position:absolute;bottom:7px;left:10px;right:10px;text-align:center;background:rgba(15,32,48,.88);border-radius:7px;color:#fff;font-weight:700;font-size:10px;padding:6px}
+.editorial-course-content{min-width:0;padding:19px 17px;display:flex;flex-direction:column;align-items:flex-start}
+.editorial-course-type{font-size:10px;text-transform:uppercase;letter-spacing:.07em;font-weight:800;color:var(--accent)}
+.editorial-course-content h4{font-size:16px;line-height:1.35;letter-spacing:-.018em;margin:8px 0 6px;color:var(--text)}
+.editorial-course-issuer{font-size:12px;line-height:1.5;color:var(--text);font-weight:700;margin:0}
+.editorial-course-date{font-size:11px;line-height:1.5;color:var(--muted);margin:4px 0 14px}
+.editorial-course-actions{display:flex;flex-wrap:wrap;gap:10px 14px;margin-top:auto;align-items:center}
+.editorial-course-actions a{color:var(--accent);font-weight:800;font-size:11px;text-decoration:none}
+.editorial-course-actions a:hover{text-decoration:underline;text-underline-offset:3px}
+.editorial-course-actions a.editorial-course-pdf{padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface-2)}
+@media(max-width:1050px){.editorial-course-list{grid-template-columns:1fr}.editorial-course-card{min-height:190px;grid-template-columns:minmax(130px,30%) minmax(0,1fr)}}
+@media(max-width:620px){.editorial-reviewer-identity{align-items:stretch}.editorial-reviewer-links{width:100%}.editorial-reviewer-profile{flex:1;min-width:138px}.editorial-course-card{grid-template-columns:1fr}.editorial-course-media{border-right:0;border-bottom:1px solid var(--line);max-height:230px}.editorial-course-media img{max-height:196px}.editorial-course-content{padding:19px}}
+@media(prefers-reduced-motion:reduce){.editorial-reviewer-profile{transition:none}.editorial-reviewer-profile:hover{transform:none}}

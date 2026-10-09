@@ -1433,6 +1433,9 @@
   function experience(){
     const support=D.mentorshipSupport||{};
     const juniors=(D.people||[]).filter(x=>x.group==='Junior Collaborators & Mentees');
+    const reviewerProfiles=(D.profiles||[]).filter(x=>x.label==='ORCID'||x.label==='Web of Science');
+    const peerReviewCourses=['elsevier-certified-peer-reviewer-2026','nature-focus-on-peer-review-2026']
+      .map(id=>(D.gallery||[]).find(x=>x.id===id)).filter(Boolean);
     const supportIcon=name=>{
       const paths={
         formulation:'<path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/><path d="m15.5 16.5 3-3"/>',
@@ -1561,6 +1564,40 @@
             </article>
           `).join('')}
         </div>
+        <section class="editorial-credentials-section" aria-labelledby="editorial-credentials-heading">
+          <div class="editorial-credentials-heading">
+            <span class="section-kicker">Public profiles &amp; continuing development</span>
+            <h3 id="editorial-credentials-heading">Reviewer identity &amp; peer-review training</h3>
+            <p>Find my public scholarly profiles and completed peer-review training. Course completion is distinct from journal reviewer appointments and the review counts above.</p>
+          </div>
+          <div class="editorial-reviewer-identity" aria-label="Public reviewer and researcher profiles">
+            <div class="editorial-reviewer-identity-label"><strong>Scholarly profiles</strong><span>ORCID &amp; Web of Science</span></div>
+            <div class="editorial-reviewer-links">
+              ${reviewerProfiles.map(profile=>`<a class="editorial-reviewer-profile" href="${esc(profile.url)}" target="_blank" rel="noopener noreferrer" aria-label="Open Md. Razu Ahmed's ${esc(profile.label)} profile">
+                <span class="editorial-reviewer-brand"><img src="${profile.label==='ORCID'?'assets/academic/logos/contact/orcid.svg':'assets/academic/logos/contact/web-of-science.svg'}" alt="" loading="lazy" width="27" height="27"></span>
+                <span><strong>${esc(profile.label)}</strong><small>View public profile ↗</small></span>
+              </a>`).join('')}
+            </div>
+          </div>
+          <div class="editorial-course-list">
+            ${peerReviewCourses.map(course=>`<article class="editorial-course-card">
+              <a class="editorial-course-media" href="${esc(course.href)}" target="_blank" rel="noopener noreferrer" aria-label="Open original PDF: ${esc(course.title)}">
+                <img src="${esc(versionedAsset(course.asset))}" alt="Preview of ${esc(course.title)}" loading="lazy" decoding="async">
+                <span>View official PDF ↗</span>
+              </a>
+              <div class="editorial-course-content">
+                <span class="editorial-course-type">Peer-review training · Certificate</span>
+                <h4>${esc(course.title)}</h4>
+                <p class="editorial-course-issuer">${esc(course.issuer)}</p>
+                <p class="editorial-course-date">Issued ${esc(course.date)}</p>
+                <div class="editorial-course-actions">
+                  <a class="editorial-course-pdf" href="${esc(course.href)}" target="_blank" rel="noopener noreferrer">Open original PDF ↗</a>
+                  <a href="gallery.html#${esc(course.id)}">Evidence record →</a>
+                </div>
+              </div>
+            </article>`).join('')}
+          </div>
+        </section>
         <div class="editorial-service-note">
           <div><strong>Scholarly service is independent of publication status.</strong><p>Review counts reflect completed invited reviews, not editorial-board membership or the number of manuscripts under review. Certificate links are shown only where supporting documents are available.</p></div>
           <a href="recognition.html">See verified certificates <span aria-hidden="true">↗</span></a>
