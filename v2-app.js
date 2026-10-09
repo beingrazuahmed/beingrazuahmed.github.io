@@ -38,7 +38,7 @@
         <button class="nav-scroll-btn right" id="navScrollRight" type="button" aria-label="Scroll navigation right">›</button>
       </div>
       <div class="nav-actions"><a class="btn ghost desktop-only" href="ask-razu.html">Ask Razu AI</a><button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button><button class="icon-btn" id="settingsBtn" aria-label="Appearance settings">◐</button><button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open navigation menu" aria-controls="mobilePanel" aria-expanded="false"><span class="mobile-menu-open-icon" aria-hidden="true">☰</span><span class="mobile-menu-close-icon" aria-hidden="true">×</span></button></div>
-    </div></div><nav class="mobile-panel" id="mobilePanel" aria-label="Mobile navigation">${nav.map(([k,l,h])=>`<a href="${h}" ${(page===k||(page==='network-profile'&&k==='network'))?'aria-current="page"':''}>${l}</a>`).join('')}<a href="ask-razu.html">Ask Razu AI</a><a href="cv.html">CV</a></nav>`;
+    </div></div><nav class="mobile-panel" id="mobilePanel" aria-label="Mobile navigation">${nav.map(([k,l,h])=>`<a href="${h}" ${(page===k||(page==='network-profile'&&k==='network'))?'aria-current="page"':''}>${l}</a>`).join('')}<a href="blogs.html" ${page==='blogs'?'aria-current="page"':''}>Research Blog</a><a href="notes.html" ${page==='notes'?'aria-current="page"':''}>Academic Notes</a><a href="ask-razu.html">Ask Razu AI</a><a href="cv.html">CV</a></nav>`;
 
     const menuBtn = $('#menuBtn');
     const mobilePanel = $('#mobilePanel');
@@ -270,7 +270,7 @@
 
   function footer(){
     const el=$('#site-footer'); if(!el) return;
-    el.innerHTML=`<footer class="footer"><div class="container footer-grid"><div><div class="brand"><span class="monogram">MRA</span><span>Md. Razu Ahmed</span></div><p>${esc(D.brand?.tagline||'')}</p><p class="tiny">Public portfolio · Privacy-safe by design · Last updated ${esc(D.lastUpdated||'')}</p></div><div><strong>Navigate</strong><p><a href="search.html">Search</a><br><a href="languages.html">Languages & MOI</a><br><a href="workshops.html">Workshops & Seminars</a><br><a href="dashboard-live.html?v=20260923-dashboardlive56">Dashboard</a><br><a href="cv.html">CV</a><br><a href="copyright.html">Copyright & Reuse</a><br><a href="privacy.html">Privacy</a></p></div><div><strong>Connect</strong><p><a href="mailto:razuahmed038@gmail.com">Email</a><br><a href="https://github.com/beingrazuahmed" target="_blank" rel="noopener">GitHub</a><br><a href="contact.html">Collaborate</a></p></div></div><div class="container footer-collaboration-wrap">
+    el.innerHTML=`<footer class="footer"><div class="container footer-grid"><div><div class="brand"><span class="monogram">MRA</span><span>Md. Razu Ahmed</span></div><p>${esc(D.brand?.tagline||'')}</p><p class="tiny">Public portfolio · Privacy-safe by design · Last updated ${esc(D.lastUpdated||'')}</p></div><div><strong>Navigate</strong><p><a href="search.html">Search</a><br><a href="blogs.html">Research Blog</a><br><a href="notes.html">Academic Notes</a><br><a href="languages.html">Languages & MOI</a><br><a href="workshops.html">Workshops & Seminars</a><br><a href="dashboard-live.html?v=20260923-dashboardlive56">Dashboard</a><br><a href="cv.html">CV</a><br><a href="copyright.html">Copyright & Reuse</a><br><a href="privacy.html">Privacy</a></p></div><div><strong>Connect</strong><p><a href="mailto:razuahmed038@gmail.com">Email</a><br><a href="https://github.com/beingrazuahmed" target="_blank" rel="noopener">GitHub</a><br><a href="contact.html">Collaborate</a></p></div></div><div class="container footer-collaboration-wrap">
   <div class="footer-collaboration-note">
     <span class="footer-collaboration-symbol" aria-hidden="true">✦</span>
     <div class="footer-collaboration-copy"><strong>Research collaboration, worldwide.</strong><span>Open to thoughtful academic enquiries and interdisciplinary partnerships.</span></div>
@@ -846,6 +846,14 @@
       <div class="grid grid-4 home-network-preview">${(D.people||[]).slice(0,4).map(personCard).join('')}</div>
       <div class="home-network-secondary">${(D.people||[]).slice(4,8).map(homeNetworkMiniCard).join('')}</div>
       <div class="section-action"><a class="section-text-link" href="network.html">Explore full research network ↗</a></div>
+    </div></section>
+
+    <section class="section alt knowledge-home-section" id="knowledge-studio"><div class="container">
+      ${sectionHead('Knowledge studio','Research writing & study notes','Accessible explanations, methodological discussions and original learning resources.')}
+      <div class="knowledge-hub-grid">
+        <a class="knowledge-hub-card" href="blogs.html"><span class="knowledge-hub-symbol" aria-hidden="true">✒</span><h3>Research Blog</h3><p>Insights into leakage-aware modelling, explainable AI and sound statistical research practice.</p><span class="knowledge-hub-cta">Read research articles ↗</span></a>
+        <a class="knowledge-hub-card" href="notes.html"><span class="knowledge-hub-symbol" aria-hidden="true">▤</span><h3>Academic Notes</h3><p>Short, focused guides for statistics, experimental design and research modelling, ready to read or save as PDF.</p><span class="knowledge-hub-cta">Explore study notes ↗</span></a>
+      </div>
     </div></section>
 
     <section class="section"><div class="container">
@@ -2287,7 +2295,16 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
       </div></section>`;
   }
 
-  function resources(){return `${pageHero('Resources','Research toolkit, methods, notes and reproducibility resources.')}<section class="section"><div class="container">${sectionHead('Research toolkit','Software, writing tools & environments','A structured view of the software, libraries, writing tools and reproducibility environments used across research workflows.')}${researchToolLayout()}${techMarquee()}${computationalEnvironmentPanel()}</div></section><section class="section alt"><div class="container">${sectionHead('Knowledge base','Planned research notes')}<div class="grid grid-3">${['Leakage-aware validation','Explainable AI & SHAP','Survey-weighted modelling','Missing-data analysis','Model calibration','Research reproducibility','Peer-review practice','Scientific writing'].map(x=>`<article class="card"><h3>${x}</h3><p>Evidence-grounded resource area. Published only when the underlying note or guide is ready.</p></article>`).join('')}</div></div></section>`;}
+  function resources(){return `${pageHero('Resources','Research toolkit, scholarly articles and freely readable academic notes.')}
+    <section class="section knowledge-resource-hub" id="knowledge-library"><div class="container">
+      <div class="knowledge-hub-heading"><div><div class="section-kicker">Knowledge library</div><h2>Research Blog & Academic Notes</h2><p>Read original research-methods commentary and exam-friendly learning materials. Browse a topic, then open its full reading page.</p></div></div>
+      <div class="knowledge-hub-grid">
+        <a class="knowledge-hub-card" href="blogs.html"><span class="knowledge-hub-symbol" aria-hidden="true">✒</span><h3>Research Blog</h3><p>Machine-learning validation, statistical inference, responsible explainable AI and practical research methodology.</p><span class="knowledge-hub-cta">Explore articles ↗</span></a>
+        <a class="knowledge-hub-card" href="notes.html"><span class="knowledge-hub-symbol" aria-hidden="true">▤</span><h3>Academic Notes</h3><p>Concise study notes for regression, sampling, experimental design and interpretable machine learning, with print-to-PDF support.</p><span class="knowledge-hub-cta">Browse study notes ↗</span></a>
+      </div>
+    </div></section>
+    <section class="section alt"><div class="container">${sectionHead('Research toolkit','Software, writing tools & environments','A structured view of the software, libraries, writing tools and reproducibility environments used across research workflows.')}${researchToolLayout()}${techMarquee()}${computationalEnvironmentPanel()}</div></section>
+    <section class="section knowledge-preview-section"><div class="container">${sectionHead('Learning resources','Recently added academic notes','Study the key concepts and open the complete explanations.')}${window.MRA_KNOWLEDGE?window.MRA_KNOWLEDGE.preview('note',3):''}<div class="knowledge-section-links"><a href="notes.html">Browse all academic notes ↗</a></div></div></section>`;}
 
   function gallery(){
     const records=D.gallery||[];
@@ -2869,12 +2886,13 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.06}); document.querySelectorAll('.card,.timeline-item').forEach(e=>{e.classList.add('reveal');io.observe(e)});
   }
 
+  function knowledgeView(){return window.MRA_KNOWLEDGE?window.MRA_KNOWLEDGE.render(page):'<section class="section"><div class="container"><h1>Library unavailable</h1><p>Please refresh to load the learning resources.</p></div></section>';}
   function render(){
     header();
     footer();
     const main=$('#page-content');
     if(!main)return;
-    const map={home,profile,languages,research,publications,projects,academic,experience,conferences,workshops,recognition,network,'network-profile':networkProfile,resources,gallery,dashboard,'ask-razu':askRazu,contact,copyright:copyrightPage};
+    const map={home,profile,languages,research,publications,projects,academic,experience,conferences,workshops,recognition,network,'network-profile':networkProfile,resources,blogs:knowledgeView,notes:knowledgeView,reading:knowledgeView,gallery,dashboard,'ask-razu':askRazu,contact,copyright:copyrightPage};
     main.innerHTML=(map[page]||home)();
 
     // Start date/time immediately after the page hero exists. This remains live even if a later UI control fails.
