@@ -2779,12 +2779,13 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   function pageHero(title,lead){return `<section class="hero compact"><div class="container"><div class="eyebrow"><span class="live-dot"></span><span>MRA Research Intelligence</span><span class="clock" data-clock>Dhaka · UTC+06:00</span></div><h1>${esc(title)}</h1><p class="lede">${esc(lead)}</p></div></section>`;}
 
 
-  // Render authentic page-one previews from the original uploaded PDFs.
+  // Render authentic page-one previews from the original uploaded certificates, including the updated BSPC reviewing certificate.
   // The native PDF iframe remains visible if the optional PDF.js renderer is unavailable.
   function upgradeOriginalElsevierCertificate(){
     const records=[
       {id:'elsevier-certified-peer-reviewer-2026',url:'assets/recognition/elsevier-certified-peer-reviewer-2026.pdf',name:'Certified Peer Reviewer Course'},
-      {id:'elsevier-becoming-peer-reviewer-2026',url:'assets/recognition/elsevier-becoming-peer-reviewer-2026.pdf',name:'Becoming a Peer Reviewer'}
+      {id:'elsevier-becoming-peer-reviewer-2026',url:'assets/recognition/elsevier-becoming-peer-reviewer-2026.pdf',name:'Becoming a Peer Reviewer'},
+      {id:'bspc-reviewing-certificate-2026',url:'assets/recognition/bspc-reviewing-certificate-2026.pdf?v=20261012-bspc-10-reviews',name:'Biomedical Signal Processing and Control Certificate of Reviewing'}
     ];
     const previews=[];
     records.forEach(record=>{
