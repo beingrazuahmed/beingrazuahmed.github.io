@@ -5,9 +5,9 @@ window.PORTFOLIO_EXTRA = {
     { label: "ResearchGate citations", value: 5, source: "ResearchGate", date: "15 September 2026" },
     { label: "Research Interest Score", value: 10.0, source: "ResearchGate", date: "5 October 2026" },
     { label: "h-index", value: 1, source: "Google Scholar / ResearchGate", date: "15 September 2026" },
-    { label: "Usage", value: 260, source: "Mendeley Data", date: "9 October 2026" },
-    { label: "Views", value: 143, source: "Mendeley Data", date: "9 October 2026" },
-    { label: "Downloads", value: 117, source: "Mendeley Data", date: "9 October 2026" }
+    { label: "Usage", value: 321, source: "Mendeley Data", date: "13 October 2026" },
+    { label: "Views", value: 168, source: "Mendeley Data", date: "13 October 2026" },
+    { label: "Downloads", value: 153, source: "Mendeley Data", date: "13 October 2026" }
   ],
   latestUpdates: [
     { date: "13 Oct 2026", type: "Conference Submission", title: "ICPS 2026 abstract submitted — Paper ID 238", detail: "Submitted “Causal Consensus Feature Selection with Bootstrap Stability for Interpretable Heart Disease Prediction” to the 2nd International Conference of Physical Sciences (ICPS 2026), organized by the School of Physical Sciences at SUST. Second author; acceptance decision pending.", href: "conferences.html#icps-2026-submission" },
