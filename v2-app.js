@@ -1826,6 +1826,17 @@
               <div class="conference-submission-affiliations">${(submission.affiliations||[]).map(aff=>`<p>${esc(aff)}</p>`).join('')}</div>
               ${submission.correspondingAuthor?`<p class="conference-submission-correspondence"><strong>Corresponding author:</strong> ${esc(submission.correspondingAuthor)}${submission.correspondingEmail?` · <a href="mailto:${esc(submission.correspondingEmail)}">${esc(submission.correspondingEmail)}</a>`:''}</p>`:''}
             </div>
+            ${submission.flyerAsset?`<section class="conference-submission-flyer" aria-label="Official conference flyer">
+              <a class="conference-submission-flyer-preview" href="${esc(versionedAsset(submission.flyerAsset))}" target="_blank" rel="noopener noreferrer" aria-label="Open full official ICPS 2026 conference flyer">
+                <img src="${esc(versionedAsset(submission.flyerAsset))}" alt="Official ICPS 2026 conference flyer showing conference dates, venue, submission schedule, and research themes" loading="lazy" decoding="async">
+              </a>
+              <div class="conference-submission-flyer-info">
+                <span class="section-kicker">Official conference document</span>
+                <h4>${esc(submission.flyerLabel||'Conference flyer')}</h4>
+                <p>Conference dates, venue, important deadlines and thematic areas from the organizing committee. This flyer is conference information, not evidence of abstract acceptance.</p>
+                <a class="btn small ghost" href="${esc(versionedAsset(submission.flyerAsset))}" target="_blank" rel="noopener noreferrer">View full flyer ↗</a>
+              </div>
+            </section>`:''}
             <div class="conference-submission-footer">
               <span><strong>Expected acceptance notice:</strong> ${esc(submission.acceptanceNotice||'To be announced')}</span>
               ${submission.officialUrl?`<a class="btn small" href="${esc(submission.officialUrl)}" target="_blank" rel="noopener noreferrer">Conference website ↗</a>`:''}

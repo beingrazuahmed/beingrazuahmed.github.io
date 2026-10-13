@@ -975,3 +975,41 @@ body[data-page="conferences"] #conference-upcoming{scroll-margin-top:86px}
   .conference-submission-head{align-items:flex-start}
   .conference-submission-brands{width:100%;justify-content:flex-start}
 }
+
+/* ICPS 2026 official flyer: original aspect ratio, lightweight preview, clear source label. */
+.conference-submission-flyer{
+  display:grid;grid-template-columns:minmax(0,130px) minmax(0,1fr);
+  gap:19px;align-items:center;padding:18px 24px;
+  background:color-mix(in srgb,var(--accent) 2%,var(--surface));
+  border-top:1px solid var(--line);
+}
+.conference-submission-flyer-preview{
+  display:block;min-width:0;overflow:hidden;border:1px solid var(--line);
+  border-radius:11px;background:#fff;box-shadow:0 5px 15px rgba(15,42,67,.06);
+}
+.conference-submission-flyer-preview img{
+  display:block;width:100%;height:auto;max-height:175px;
+  object-fit:contain;object-position:top center;
+}
+.conference-submission-flyer-info{min-width:0}
+.conference-submission-flyer-info h4{
+  margin:4px 0 7px;font-size:15px;line-height:1.4;letter-spacing:-.01em;
+}
+.conference-submission-flyer-info p{
+  margin:0 0 12px;font-size:12px;line-height:1.6;color:var(--muted);
+  max-width:72ch;
+}
+.conference-submission-flyer-info .btn{min-height:34px}
+@media(max-width:600px){
+  .conference-submission-flyer{
+    grid-template-columns:minmax(0,95px) minmax(0,1fr);
+    gap:13px;padding:15px 16px;
+  }
+  .conference-submission-flyer-preview img{max-height:143px}
+  .conference-submission-flyer-info h4{font-size:13.5px}
+  .conference-submission-flyer-info p{font-size:11px}
+}
+@media(max-width:380px){
+  .conference-submission-flyer{grid-template-columns:minmax(0,1fr)}
+  .conference-submission-flyer-preview{max-width:140px}
+}

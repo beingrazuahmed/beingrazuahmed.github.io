@@ -184,7 +184,7 @@
   "writingToolLogos": [
     "assets/academic/logos/vendor/grammarly.svg"
   ],
-  "cacheVersion": "20261008-efast-certificate-unified1",
+  "cacheVersion": "20261013-icps-original-logos-flyer2",
   "academicEvidenceGallery": [
     "assets/gallery/originals/bsc-medium-of-instruction-english-pust-2024.jpg",
     "assets/gallery/originals/ms-medium-of-instruction-english-pust-2025.jpg"
@@ -201,5 +201,10 @@
     "assets/academic/conferences/icasds-2025/logos/university-of-dhaka-logo.jpeg",
     "assets/academic/conferences/icasds-2025/logos/university-of-dhaka-logo-clean.svg",
     "assets/academic/workshops/rosatom/global-nuclear-energy-certificate.png"
+  ],
+  "upcomingConferenceAssets": [
+    "assets/academic/conferences/icps-2026/logos/icps-2026-official-logo.webp",
+    "assets/academic/conferences/icps-2026/logos/sust-official-logo.webp",
+    "assets/academic/conferences/icps-2026/media/icps-2026-official-flyer.jpg"
   ]
 }
