@@ -1775,6 +1775,7 @@
 
   function conferences(){
     const groups=D.conferences||[];
+    const upcomingSubmissions=D.upcomingConferenceSubmissions||[];
     const conferencePapers=groups.flatMap(g=>g.papers||g.items||[]);
     const presentedWorks=conferencePapers.filter(p=>(p.role||'').includes('Presenting Author')||p.presentedBy==='Md. Razu Ahmed');
     const conferenceAwards=conferencePapers.filter(p=>(p.role||'').includes('Award')).length;
@@ -1792,9 +1793,44 @@
     const icasdsWorkshops=(D.workshopsAndSeminars||[]).filter(w=>String(w.id||'').startsWith('icasds-2025-workshop-'));
     return `${pageHero('Conferences','Research dissemination, conference publications, presentations and documentary evidence.')}
     <nav class="academic-jump-nav sectional-jump-nav" data-section-jump-nav aria-label="Conference page sections"><div class="container academic-jump-nav-inner">
-      <a href="#conference-overview">Overview</a>
+      ${upcomingSubmissions.length?`<a href="#conference-upcoming">Upcoming &amp; Submitted</a>`:''}
+      <a href="#conference-overview">Completed Conferences</a>
       ${groups.map((g,gi)=>`<a href="#${esc(g.id||'conference-'+gi)}">${esc(g.event||g.full||'Conference '+(gi+1))}</a>`).join('')}
     </div></nav>
+      ${upcomingSubmissions.length?`<section class="section conference-upcoming-section" id="conference-upcoming" aria-label="Upcoming conferences and submitted abstracts"><div class="container">
+        ${sectionHead('Upcoming & submitted','Upcoming conferences & submitted abstracts','Submissions awaiting decisions are recorded separately from accepted papers, completed presentations and conference awards.')}
+        <div class="conference-submission-grid">
+          ${upcomingSubmissions.map(submission=>`<article class="card conference-submission-card" id="${esc(submission.id||'upcoming-submission')}">
+            <div class="conference-submission-head">
+              <div class="conference-submission-mark" aria-hidden="true">${esc(submission.event||'ICPS')}</div>
+              <div class="conference-submission-heading">
+                <span class="section-kicker">${esc(submission.event||'Upcoming conference')}</span>
+                <h3>${esc(submission.full||'Conference')}</h3>
+                <p>${esc(submission.theme||'')}</p>
+              </div>
+              <span class="conference-submission-status">${esc(submission.status||'Submitted')} · ${esc(submission.decisionStatus||'Decision pending')}</span>
+            </div>
+            <div class="conference-submission-meta">
+              <div><span>Dates</span><strong>${esc(submission.date||'')}</strong></div>
+              <div><span>Venue</span><strong>${esc(submission.venue||'')}</strong></div>
+              <div><span>Organized by</span><strong>${esc(submission.organizer||'')}</strong></div>
+              <div><span>Format</span><strong>${esc(submission.format||'')}</strong></div>
+            </div>
+            <div class="conference-submission-abstract">
+              <div class="conference-submission-chips"><span class="paper-id-chip">Submitted paper ID ${esc(submission.paperId||'')}</span><span class="badge">${esc(submission.role||'Co-author')}</span><span class="badge">Awaiting decision</span></div>
+              <h4>${esc(submission.title||'Submitted abstract')}</h4>
+              <p class="conference-authors">${authorLine(submission.authors)}</p>
+              <div class="conference-submission-affiliations">${(submission.affiliations||[]).map(aff=>`<p>${esc(aff)}</p>`).join('')}</div>
+              ${submission.correspondingAuthor?`<p class="conference-submission-correspondence"><strong>Corresponding author:</strong> ${esc(submission.correspondingAuthor)}${submission.correspondingEmail?` · <a href="mailto:${esc(submission.correspondingEmail)}">${esc(submission.correspondingEmail)}</a>`:''}</p>`:''}
+            </div>
+            <div class="conference-submission-footer">
+              <span><strong>Expected acceptance notice:</strong> ${esc(submission.acceptanceNotice||'To be announced')}</span>
+              ${submission.officialUrl?`<a class="btn small" href="${esc(submission.officialUrl)}" target="_blank" rel="noopener noreferrer">Conference website ↗</a>`:''}
+            </div>
+            <p class="conference-submission-note">${esc(submission.note||'Abstract submitted. Decision pending.')}</p>
+          </article>`).join('')}
+        </div>
+      </div></section>`:''}
       <section class="section conference-profile-section" id="conference-overview"><div class="container">
         ${sectionHead('Conference portfolio','Research dissemination & scholarly communication','Conference activity is organized by event, authorship role and source evidence so each contribution remains easy to verify and explore.')}
         <div class="conference-profile-stats" aria-label="Conference portfolio summary">

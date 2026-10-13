@@ -220,6 +220,35 @@ window.PORTFOLIO_DATA = {
     }
   ],
 
+
+  upcomingConferenceSubmissions: [
+    {
+      id: "icps-2026-submission",
+      event: "ICPS 2026",
+      full: "2nd International Conference of Physical Sciences",
+      theme: "Fundamental Insights to Global Impact",
+      organizer: "School of Physical Sciences, Shahjalal University of Science and Technology (SUST)",
+      venue: "Shahjalal University of Science and Technology, Sylhet, Bangladesh",
+      date: "10–12 December 2026",
+      format: "Hybrid (in-person and online)",
+      officialUrl: "https://icps2026.sust.edu/",
+      acceptanceNotice: "2 November 2026 (scheduled)",
+      status: "Abstract Submitted",
+      decisionStatus: "Decision Pending",
+      paperId: "238",
+      role: "Second Author",
+      title: "Causal Consensus Feature Selection with Bootstrap Stability for Interpretable Heart Disease Prediction",
+      authors: "Jannatul Mauya¹, Md. Razu Ahmed², Md. Shamim Reza², Sabba Ruhi², and Md. Aminul Hoque¹,*",
+      affiliations: [
+        "¹ Department of Statistics and Data Science, University of Rajshahi, Rajshahi-6205, Bangladesh",
+        "² Department of Statistics and Data Science, Pabna University of Science and Technology, Pabna-6600, Bangladesh"
+      ],
+      correspondingAuthor: "Md. Aminul Hoque",
+      correspondingEmail: "aminul@ru.ac.bd",
+      note: "This is a submitted abstract, not an accepted or presented conference contribution."
+    }
+  ],
+
   conferences: [
     {
       id: "efast-2026", event: "EFAST 2026", full: "International Conference on Emerging Frontiers in Advanced Sciences and Technologies 2026",

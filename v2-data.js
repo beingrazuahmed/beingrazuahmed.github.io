@@ -2964,6 +2964,7 @@
     datasets: base.datasets || [],
     manuscripts: base.manuscripts || [],
     conferences: base.conferences || [],
+    upcomingConferenceSubmissions: base.upcomingConferenceSubmissions || [],
     awards: base.awards || [],
     training: base.training || [],
     workshopsAndSeminars: base.workshopsAndSeminars || [],
