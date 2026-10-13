@@ -22,7 +22,7 @@
   const page = document.body.dataset.page || 'home';
 
   const nav = [
-    ['home','Home','index.html'],['profile','Profile','profile.html'],['languages','Languages','languages.html'],['research','Research','research.html'],
+    ['home','Home','index.html'],['activity','Latest Activity','latest-activity.html'],['profile','Profile','profile.html'],['languages','Languages','languages.html'],['research','Research','research.html'],
     ['publications','Publications','publications.html'],['projects','Projects','projects.html'],['academic','Academic','academic.html?v=20260919-logosvg17'],
     ['experience','Experience','experience.html'],['conferences','Conferences','conferences.html?v=20260928-workshops1'],['workshops','Workshops & Seminars','workshops.html'],['recognition','Recognition','recognition.html'],
     ['network','Network & Impact','network.html'],['resources','Resources','resources.html'],['gallery','Gallery','gallery.html'],['dashboard','Dashboard','dashboard-live.html?v=20260923-dashboardlive56'],['contact','Contact','contact.html']
@@ -270,7 +270,7 @@
 
   function footer(){
     const el=$('#site-footer'); if(!el) return;
-    el.innerHTML=`<footer class="footer"><div class="container footer-grid"><div><div class="brand"><span class="monogram">MRA</span><span>Md. Razu Ahmed</span></div><p>${esc(D.brand?.tagline||'')}</p><p class="tiny">Public portfolio · Privacy-safe by design · Last updated ${esc(D.lastUpdated||'')}</p></div><div><strong>Navigate</strong><p><a href="search.html">Search</a><br><a href="blogs.html">Research Blog</a><br><a href="notes.html">Academic Notes</a><br><a href="languages.html">Languages & MOI</a><br><a href="workshops.html">Workshops & Seminars</a><br><a href="dashboard-live.html?v=20260923-dashboardlive56">Dashboard</a><br><a href="cv.html">CV</a><br><a href="copyright.html">Copyright & Reuse</a><br><a href="privacy.html">Privacy</a></p></div><div><strong>Connect</strong><p><a href="mailto:razuahmed038@gmail.com">Email</a><br><a href="https://github.com/beingrazuahmed" target="_blank" rel="noopener">GitHub</a><br><a href="contact.html">Collaborate</a></p></div></div><div class="container footer-collaboration-wrap">
+    el.innerHTML=`<footer class="footer"><div class="container footer-grid"><div><div class="brand"><span class="monogram">MRA</span><span>Md. Razu Ahmed</span></div><p>${esc(D.brand?.tagline||'')}</p><p class="tiny">Public portfolio · Privacy-safe by design · Last updated ${esc(D.lastUpdated||'')}</p></div><div><strong>Navigate</strong><p><a href="latest-activity.html">Latest Activity</a><br><a href="search.html">Search</a><br><a href="blogs.html">Research Blog</a><br><a href="notes.html">Academic Notes</a><br><a href="languages.html">Languages & MOI</a><br><a href="workshops.html">Workshops & Seminars</a><br><a href="dashboard-live.html?v=20260923-dashboardlive56">Dashboard</a><br><a href="cv.html">CV</a><br><a href="copyright.html">Copyright & Reuse</a><br><a href="privacy.html">Privacy</a></p></div><div><strong>Connect</strong><p><a href="mailto:razuahmed038@gmail.com">Email</a><br><a href="https://github.com/beingrazuahmed" target="_blank" rel="noopener">GitHub</a><br><a href="contact.html">Collaborate</a></p></div></div><div class="container footer-collaboration-wrap">
   <div class="footer-collaboration-note">
     <span class="footer-collaboration-symbol" aria-hidden="true">✦</span>
     <div class="footer-collaboration-copy"><strong>Research collaboration, worldwide.</strong><span>Open to thoughtful academic enquiries and interdisciplinary partnerships.</span></div>
@@ -719,6 +719,61 @@
     </a>`;
   }
 
+
+  // One public activity feed powers both the six-item homepage preview and the complete archive.
+  function activityCategory(item){
+    const type=String(item.type||'').toLowerCase();
+    if(type.includes('conference'))return 'Conferences';
+    if(type.includes('publication'))return 'Publications';
+    if(type.includes('dataset'))return 'Datasets';
+    if(type.includes('manuscript')||type.includes('submission'))return 'Manuscripts';
+    return 'Other Updates';
+  }
+  function activityDateValue(label){
+    const match=String(label||'').match(/(\d{1,2})\s+([A-Za-z]{3,9})\s+(\d{4})/);
+    if(!match)return 0;
+    const months=['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+    const month=months.indexOf(match[2].slice(0,3).toLowerCase());
+    return month<0?0:Date.UTC(Number(match[3]),month,Number(match[1]));
+  }
+  function activityFeed(){
+    return [...(D.latestUpdates||[])].sort((a,b)=>activityDateValue(b.date)-activityDateValue(a.date));
+  }
+  function activityCard(item){
+    const kind=activityCategory(item);
+    const slug=[item.date,item.title||item.label].join('-').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+    return `<article class="timeline-item activity-entry" id="activity-${esc(slug)}" data-activity-category="${esc(kind)}">
+      <div class="activity-entry-top"><strong class="activity-date">${esc(item.date||'')}</strong><span class="badge activity-tag">${esc(item.type||'Research milestone')}</span></div>
+      <h3>${esc(item.title||item.label||'Research update')}</h3>
+      <p>${esc(item.detail||item.description||'')}</p>
+      ${item.href?`<a class="timeline-milestone-link" href="${esc(item.href)}">${esc(item.linkLabel||'View related record')} <span aria-hidden="true">→</span></a>`:''}
+    </article>`;
+  }
+  function latestActivity(){
+    const updates=activityFeed();
+    const kinds=['Publications','Manuscripts','Conferences','Datasets','Other Updates'];
+    const categories=[['All Activities',updates.length],...kinds.map(name=>[name,updates.filter(x=>activityCategory(x)===name).length]).filter(x=>x[1]>0)];
+    return `${pageHero('Latest Activity','A complete public timeline of research milestones, publications, manuscript progress, conference participation, datasets and academic development.')}
+    <section class="section activity-directory"><div class="container">
+      ${sectionHead('Research milestones','Recent research updates','Browse all recorded public milestones; the homepage highlights just the latest six.')}
+      <div class="activity-overview">
+        <div><strong>${updates.length}</strong><span>Recorded milestones</span></div>
+        <div><strong>${categories.length-1}</strong><span>Activity categories</span></div>
+        <div><strong>2025–2026</strong><span>Current archive coverage</span></div>
+      </div>
+      <div class="activity-controls">
+        <div class="search-wrap activity-search-wrap"><label class="activity-search-label" for="activitySearch">Search activity history</label><input type="search" class="search-input" id="activitySearch" placeholder="Search milestone, conference, journal or date…" autocomplete="off"></div>
+        <div class="activity-filter-list" role="group" aria-label="Filter activities by category">
+          ${categories.map(([name,count])=>`<button type="button" class="activity-filter${name==='All Activities'?' is-active':''}" data-activity-filter="${esc(name)}" aria-pressed="${name==='All Activities'?'true':'false'}">${esc(name)} <span>${count}</span></button>`).join('')}
+        </div>
+        <div class="activity-results-row"><p id="activityCount" aria-live="polite">Showing all ${updates.length} milestones</p><button type="button" class="activity-clear" id="activityReset">Clear filters</button></div>
+      </div>
+      <div class="timeline activity-timeline" id="activityTimeline">${updates.map(activityCard).join('')}</div>
+      <p class="activity-empty" id="activityEmpty" hidden>No matching milestones. Try another keyword or category.</p>
+      <div class="activity-bottom-link"><a class="section-text-link" href="index.html">← Return to the homepage</a></div>
+    </div></section>`;
+  }
+
   function home(){
     const p=D.profile||{};
     const outputs=D.outputs||[];
@@ -867,7 +922,7 @@
 
     <section class="section alt"><div class="container">
       ${sectionHead('Latest activity','Recent research updates','Recent public milestones across publications, submissions, conferences and research development.')}
-      <div class="timeline">${(D.latestUpdates||[]).slice(0,6).map(u=>`<div class="timeline-item"><strong>${esc(u.date||'')}</strong><h3>${esc(u.title||u.label||'')}</h3><p>${esc(u.detail||u.description||'')}</p>${u.href?`<a class="timeline-milestone-link" href="${esc(u.href)}">View conference submission <span aria-hidden="true">→</span></a>`:''}</div>`).join('')}</div>
+      <div class="timeline">${activityFeed().slice(0,6).map(activityCard).join('')}</div><div class="section-action"><a class="section-text-link" href="latest-activity.html">View all ${activityFeed().length} activities →</a></div>
     </div></section>
 
     <section class="section"><div class="container">
@@ -3001,6 +3056,42 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   }
 
   function initInteractive(){
+
+    const activityButtons=$('[data-activity-filter]');
+    if(activityButtons.length){
+      const entries=$('.activity-timeline .activity-entry');
+      const search=$('#activitySearch'),count=$('#activityCount'),empty=$('#activityEmpty');
+      let category='All Activities';
+      const apply=()=>{
+        const term=String(search?.value||'').trim().toLowerCase();
+        let visible=0;
+        entries.forEach(entry=>{
+          const isMatch=(category==='All Activities'||entry.dataset.activityCategory===category)
+            &&(!term||entry.textContent.toLowerCase().includes(term));
+          entry.hidden=!isMatch;
+          if(isMatch)visible++;
+        });
+        activityButtons.forEach(button=>{
+          const active=button.dataset.activityFilter===category;
+          button.classList.toggle('is-active',active);
+          button.setAttribute('aria-pressed',String(active));
+        });
+        if(count)count.textContent='Showing '+visible+' of '+entries.length+' milestones';
+        if(empty)empty.hidden=visible!==0;
+      };
+      activityButtons.forEach(button=>button.addEventListener('click',()=>{
+        category=button.dataset.activityFilter||'All Activities';
+        apply();
+      }));
+      search?.addEventListener('input',apply);
+      $('#activityReset')?.addEventListener('click',()=>{
+        category='All Activities';
+        if(search)search.value='';
+        apply();
+        search?.focus();
+      });
+      apply();
+    }
     upgradeOriginalElsevierCertificate();
     initSectionJumpNavigation();
     const galleryFilterButtons=$$('[data-gallery-filter]');
@@ -3194,7 +3285,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     footer();
     const main=$('#page-content');
     if(!main)return;
-    const map={home,profile,languages,research,publications,projects,academic,experience,conferences,workshops,recognition,network,'network-profile':networkProfile,resources,blogs:knowledgeView,notes:knowledgeView,reading:knowledgeView,gallery,dashboard,'ask-razu':askRazu,contact,copyright:copyrightPage};
+    const map={home,activity:latestActivity,profile,languages,research,publications,projects,academic,experience,conferences,workshops,recognition,network,'network-profile':networkProfile,resources,blogs:knowledgeView,notes:knowledgeView,reading:knowledgeView,gallery,dashboard,'ask-razu':askRazu,contact,copyright:copyrightPage};
     main.innerHTML=(map[page]||home)();
 
     // Start date/time immediately after the page hero exists. This remains live even if a later UI control fails.
