@@ -22,7 +22,7 @@
   const page = document.body.dataset.page || 'home';
 
   const nav = [
-    ['home','Home','index.html'],['activity','Latest Activity','latest-activity.html'],['profile','Profile','profile.html'],['languages','Languages','languages.html'],['research','Research','research.html'],
+    ['home','Home','index.html'],['profile','Profile','profile.html'],['activity','Latest Activity','latest-activity.html'],['languages','Languages','languages.html'],['research','Research','research.html'],
     ['publications','Publications','publications.html'],['projects','Projects','projects.html'],['academic','Academic','academic.html?v=20260919-logosvg17'],
     ['experience','Experience','experience.html'],['conferences','Conferences','conferences.html?v=20260928-workshops1'],['workshops','Workshops & Seminars','workshops.html'],['recognition','Recognition','recognition.html'],
     ['network','Network & Impact','network.html'],['resources','Resources','resources.html'],['gallery','Gallery','gallery.html'],['dashboard','Dashboard','dashboard-live.html?v=20260923-dashboardlive56'],['contact','Contact','contact.html']
