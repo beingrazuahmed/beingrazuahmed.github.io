@@ -753,13 +753,15 @@
     const updates=activityFeed();
     const kinds=['Publications','Manuscripts','Conferences','Datasets','Other Updates'];
     const categories=[['All Activities',updates.length],...kinds.map(name=>[name,updates.filter(x=>activityCategory(x)===name).length]).filter(x=>x[1]>0)];
+    const years=updates.map(x=>Number(String(x.date||'').match(/\d{4}/)?.[0]||0)).filter(Boolean);
+    const yearRange=years.length?(Math.min(...years)===Math.max(...years)?String(years[0]):Math.min(...years)+'–'+Math.max(...years)):'—';
     return `${pageHero('Latest Activity','A complete public timeline of research milestones, publications, manuscript progress, conference participation, datasets and academic development.')}
     <section class="section activity-directory"><div class="container">
       ${sectionHead('Research milestones','Recent research updates','Browse all recorded public milestones; the homepage highlights just the latest six.')}
       <div class="activity-overview">
         <div><strong>${updates.length}</strong><span>Recorded milestones</span></div>
         <div><strong>${categories.length-1}</strong><span>Activity categories</span></div>
-        <div><strong>2025–2026</strong><span>Current archive coverage</span></div>
+        <div><strong>${yearRange}</strong><span>Current archive coverage</span></div>
       </div>
       <div class="activity-controls">
         <div class="search-wrap activity-search-wrap"><label class="activity-search-label" for="activitySearch">Search activity history</label><input type="search" class="search-input" id="activitySearch" placeholder="Search milestone, conference, journal or date…" autocomplete="off"></div>
