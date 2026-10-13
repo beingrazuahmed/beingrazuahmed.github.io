@@ -3057,9 +3057,9 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
 
   function initInteractive(){
 
-    const activityButtons=$('[data-activity-filter]');
+    const activityButtons=document.querySelectorAll('[data-activity-filter]');
     if(activityButtons.length){
-      const entries=$('.activity-timeline .activity-entry');
+      const entries=document.querySelectorAll('.activity-timeline .activity-entry');
       const search=$('#activitySearch'),count=$('#activityCount'),empty=$('#activityEmpty');
       let category='All Activities';
       const apply=()=>{
