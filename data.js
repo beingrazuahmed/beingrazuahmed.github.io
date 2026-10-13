@@ -226,6 +226,8 @@ window.PORTFOLIO_DATA = {
       id: "icps-2026-submission",
       event: "ICPS 2026",
       full: "2nd International Conference of Physical Sciences",
+      eventLogo: "assets/academic/conferences/icps-2026/icps-2026-logo.webp",
+      hostLogo: "assets/academic/conferences/icps-2026/sust-logo.webp",
       theme: "Fundamental Insights to Global Impact",
       organizer: "School of Physical Sciences, Shahjalal University of Science and Technology (SUST)",
       venue: "Shahjalal University of Science and Technology, Sylhet, Bangladesh",

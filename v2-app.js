@@ -1802,7 +1802,10 @@
         <div class="conference-submission-grid">
           ${upcomingSubmissions.map(submission=>`<article class="card conference-submission-card" id="${esc(submission.id||'upcoming-submission')}">
             <div class="conference-submission-head">
-              <div class="conference-submission-mark" aria-hidden="true">${esc(submission.event||'ICPS')}</div>
+              <div class="conference-submission-brands" aria-label="Conference and host institution logos">
+                ${submission.eventLogo?`<span class="conference-submission-logo-frame conference-submission-logo-event"><img src="${esc(versionedAsset(submission.eventLogo))}" alt="${esc(submission.event||'Conference')} official logo" loading="eager" decoding="async"></span>`:`<span class="conference-submission-mark" aria-hidden="true">${esc(submission.event||'ICPS')}</span>`}
+                ${submission.hostLogo?`<span class="conference-submission-logo-frame conference-submission-logo-host"><img src="${esc(versionedAsset(submission.hostLogo))}" alt="Shahjalal University of Science and Technology (SUST) official logo" loading="eager" decoding="async"></span>`:''}
+              </div>
               <div class="conference-submission-heading">
                 <span class="section-kicker">${esc(submission.event||'Upcoming conference')}</span>
                 <h3>${esc(submission.full||'Conference')}</h3>
