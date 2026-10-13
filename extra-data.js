@@ -1,5 +1,5 @@
 window.PORTFOLIO_EXTRA = {
-  lastUpdated: "9 October 2026",
+  lastUpdated: "13 October 2026",
   impactMetrics: [
     { label: "Google Scholar citations", value: 2, source: "Google Scholar", date: "15 September 2026" },
     { label: "ResearchGate citations", value: 5, source: "ResearchGate", date: "15 September 2026" },
@@ -10,6 +10,7 @@ window.PORTFOLIO_EXTRA = {
     { label: "Downloads", value: 117, source: "Mendeley Data", date: "9 October 2026" }
   ],
   latestUpdates: [
+    { date: "13 Oct 2026", type: "Conference Submission", title: "ICPS 2026 abstract submitted — Paper ID 238", detail: "Submitted “Causal Consensus Feature Selection with Bootstrap Stability for Interpretable Heart Disease Prediction” to the 2nd International Conference of Physical Sciences (ICPS 2026), organized by the School of Physical Sciences at SUST. Second author; acceptance decision pending.", href: "conferences.html#icps-2026-submission" },
     { date: "27 Sep 2026", type: "Manuscript", title: "Measurement manuscript moved to Under Review", detail: "A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images advanced from With Editor to Under Review at Measurement (Elsevier)." },
     { date: "23 Sep 2026", type: "Publication", title: "Data in Brief final article published in Volume 69", detail: "PUST Cafeteria Food Image Dataset published in Data in Brief, Volume 69 (2026), Article 113262, with its final ScienceDirect record." },
     { date: "16 Sep 2026", type: "Portfolio", title: "Dynamic academic portfolio build initiated", detail: "Structured research, conference, service, network and evidence data connected to the public portfolio." },

@@ -1013,3 +1013,9 @@ body[data-page="conferences"] #conference-upcoming{scroll-margin-top:86px}
   .conference-submission-flyer{grid-template-columns:minmax(0,1fr)}
   .conference-submission-flyer-preview{max-width:140px}
 }
+
+
+/* Latest activity: context link for dated research milestones. */
+.timeline-item .timeline-milestone-link{display:inline-flex;align-items:center;gap:6px;margin-top:7px;font-size:12px;font-weight:800;line-height:1.5;color:var(--accent-2);text-decoration:none;text-underline-offset:3px}
+.timeline-item .timeline-milestone-link:hover,.timeline-item .timeline-milestone-link:focus-visible{text-decoration:underline}
+.timeline-item .timeline-milestone-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}

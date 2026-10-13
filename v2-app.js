@@ -867,7 +867,7 @@
 
     <section class="section alt"><div class="container">
       ${sectionHead('Latest activity','Recent research updates','Recent public milestones across publications, submissions, conferences and research development.')}
-      <div class="timeline">${(D.latestUpdates||[]).slice(0,6).map(u=>`<div class="timeline-item"><strong>${esc(u.date||'')}</strong><h3>${esc(u.title||u.label||'')}</h3><p>${esc(u.detail||u.description||'')}</p></div>`).join('')}</div>
+      <div class="timeline">${(D.latestUpdates||[]).slice(0,6).map(u=>`<div class="timeline-item"><strong>${esc(u.date||'')}</strong><h3>${esc(u.title||u.label||'')}</h3><p>${esc(u.detail||u.description||'')}</p>${u.href?`<a class="timeline-milestone-link" href="${esc(u.href)}">View conference submission <span aria-hidden="true">→</span></a>`:''}</div>`).join('')}</div>
     </div></section>
 
     <section class="section"><div class="container">
