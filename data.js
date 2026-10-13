@@ -17,7 +17,7 @@ window.PORTFOLIO_DATA = {
     { label: "Accepted / Forthcoming", value: 1, note: "First-authored journal article" },
     { label: "Conference Contributions", value: 8, note: "3 presentations delivered" },
     { label: "Public Dataset", value: 1, note: "Mendeley Data" },
-    { label: "Completed Peer Reviews", value: 36, note: "Across 3 journals" }
+    { label: "Completed Peer Reviews", value: 37, note: "Across 4 journals" }
   ],
 
   interests: {
@@ -587,6 +587,18 @@ window.PORTFOLIO_DATA = {
       evidenceHref: "gallery.html#eaai-reviewing-certificate-2026",
       evidencePdf: "assets/recognition/eaai-reviewing-certificate-2026.pdf",
       evidenceLabel: "Certificate of Reviewing · PDF"
+    },
+    {
+      id: "array", journal: "Array", publisher: "Elsevier",
+      label: "Array", initials: "ARRAY", artwork: "assets/academic/journals/array/array-cover.jpg", artworkType: "cover", publisherLogo: "assets/academic/journals/publishers/elsevier-logo-color.png", reviews: 1, since: "October 2026",
+      startDate: "2026-10-12", startLabel: "12 October 2026", role: "Peer Reviewer",
+      journalUrl: "https://www.sciencedirect.com/journal/array", issn: "2590-0056",
+      scope: "Completed 1 invited manuscript review, evaluating research methodology, analysis, interpretation, and scientific reporting.",
+      recognition: "Received a Certificate of Reviewing recognizing 1 completed review.",
+      evidenceAsset: "assets/academic/journals/array/array-cover.jpg",
+      evidenceHref: "gallery.html#array-reviewing-certificate-2026",
+      evidencePdf: "assets/recognition/array-reviewing-certificate-2026.pdf",
+      evidenceLabel: "Certificate of Reviewing · PDF"
     }
   ],
 
@@ -649,6 +661,7 @@ window.PORTFOLIO_DATA = {
     { id: "bangladesh-scouts-upazila-rally-2011", title: "Bangladesh Scouts — 2nd Upazila Scout Rally 2011", category: "Leadership & Engagement", evidenceType: "Participation Record", date: "22–25 January 2011", issuer: "Bangladesh Scouts · Paba, Rajshahi", caption: "Participation record from the 2nd Upazila Scout Rally held at Baya School and College ground, Paba, Rajshahi.", asset: "assets/gallery/originals/bangladesh-scouts-upazila-rally-certificate-2011.jpg", href: "assets/gallery/originals/bangladesh-scouts-upazila-rally-certificate-2011.jpg", fileType: "JPG", related: "profile.html", verified: true, sourceFile: "Scouts Certificate.jpeg" },
     { id: "bteb-computer-office-application-certificate", title: "Computer Office Application — National Skill Standard Basic Course", category: "Professional Development", evidenceType: "Certificate", date: "2020–2021", issuer: "Bangladesh Technical Education Board (BTEB), Dhaka", caption: "Certificate for successful completion of the 360-hour Computer Office Application course through Path Finder Computer Training Institute, Pabna, with Grade A+.", asset: "assets/gallery/bteb-computer-office-application-certificate.webp", href: "assets/gallery/bteb-computer-office-application-certificate.webp", related: "recognition.html", verified: true, sourceFile: "User-provided BTEB training certificate" },
     { id: "bspc-reviewing-certificate-2026", title: "Biomedical Signal Processing and Control — Certificate of Reviewing", category: "Scholarly Service", evidenceType: "Certificate", date: "2026", issuer: "Biomedical Signal Processing and Control · Elsevier", caption: "Updated reviewing certificate documenting ten completed reviews for Biomedical Signal Processing and Control. Open the original uploaded PDF to view the full certificate.", asset: "assets/gallery/bspc-reviewing-certificate-2026.webp", href: "assets/recognition/bspc-reviewing-certificate-2026.pdf?v=20261012-bspc-10-reviews", fileType: "PDF", related: "experience.html", verified: true, sourceFile: "bspc-reviewing-certificate-2026.pdf" },
+    { id: "array-reviewing-certificate-2026", title: "Array — Certificate of Reviewing", category: "Scholarly Service", evidenceType: "Certificate", date: "12 October 2026", issuer: "Array · Elsevier", caption: "Original Certificate of Reviewing for one invited manuscript review completed for Array in October 2026. The preview is rendered from the uploaded PDF; the cover image is used as a fallback.", asset: "assets/academic/journals/array/array-cover.jpg", href: "assets/recognition/array-reviewing-certificate-2026.pdf", fileType: "PDF", documentPages: 1, related: "experience.html#editorial-peer-review", verified: true, sourceFile: "array-reviewing-certificate-2026.pdf" },
     { id: "eaai-reviewing-certificate-2026", title: "Engineering Applications of Artificial Intelligence — Certificate of Reviewing", category: "Scholarly Service", evidenceType: "Certificate", date: "September 2026", issuer: "Engineering Applications of Artificial Intelligence · Elsevier", caption: "Certificate of Reviewing awarded to Md. Razu Ahmed for one review contributed to Engineering Applications of Artificial Intelligence in September 2026.", asset: "assets/gallery/eaai-reviewing-certificate-2026.webp", href: "assets/recognition/eaai-reviewing-certificate-2026.pdf", fileType: "PDF", documentPages: 1, related: "experience.html", verified: true, sourceFile: "Certificate_EAAI_Recognised(1).pdf" },
     { id: "elsevier-research-data-management-2026", title: "Research Data Management — Certificate of Completion", category: "Professional Development", evidenceType: "Certificate", date: "13 August 2026", issuer: "Researcher Academy · Elsevier", caption: "Certificate of completion for Research Data Management (4 hours 55 minutes).", asset: "assets/gallery/elsevier-research-data-management-certificate-2026.webp", href: "assets/recognition/elsevier-research-data-management-certificate-2026.pdf", fileType: "PDF", documentPages: 1, related: "recognition.html", verified: true, sourceFile: "research-data-management-certificate_2(1).pdf" },
     { id: "elsevier-research-design-2026", title: "Research Design — Certificate of Completion", category: "Professional Development", evidenceType: "Certificate", date: "13 August 2026", issuer: "Researcher Academy · Elsevier", caption: "Certificate of completion for Research Design (3 hours 50 minutes).", asset: "assets/gallery/elsevier-research-design-certificate-2026.webp", href: "assets/recognition/elsevier-research-design-certificate-2026.pdf", fileType: "PDF", documentPages: 1, related: "recognition.html", verified: true, sourceFile: "research-design-certificate_2(1).pdf" },

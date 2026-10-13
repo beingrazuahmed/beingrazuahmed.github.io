@@ -137,6 +137,9 @@
       "assets/academic/instructors/sabba-ruhi.png",
       "assets/academic/instructors/menhazul-abedin.jpg",
       "assets/academic/instructors/aminul-hoque.jpg"
+    ],
+    "journalCovers": [
+      "assets/academic/journals/array/array-cover.jpg"
     ]
   },
   "credentialGallery": [
@@ -155,6 +158,7 @@
     "assets/academic/conferences/efast-2026-paper-108-oral-presentation-certificate.jpg"
   ],
   "recognitionDocuments": [
+    "assets/recognition/array-reviewing-certificate-2026.pdf",
     "assets/recognition/eaai-reviewing-certificate-2026.pdf",
     "assets/recognition/elsevier-certified-peer-reviewer-2026.pdf",
     "assets/recognition/elsevier-becoming-peer-reviewer-2026.pdf",
