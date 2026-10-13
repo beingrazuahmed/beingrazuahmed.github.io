@@ -2911,6 +2911,51 @@
     { title: 'CV / Research Vault', href: 'cv.html', detail: 'Interactive CV and public academic evidence.' }
   ];
 
+
+  // Surface the publicly submitted ICPS 2026 abstract in the four co-authors'
+  // Shared Works cards and academic-network conference histories.  Use the
+  // canonical conference record so its title and current status stay aligned.
+  const icps2026NetworkSubmission = (base.upcomingConferenceSubmissions || [])
+    .find(record => record.id === 'icps-2026-submission');
+  if (icps2026NetworkSubmission) {
+    const conferenceTitle = icps2026NetworkSubmission.title || 'Heart disease prediction research';
+    const status = icps2026NetworkSubmission.status || 'Abstract Submitted';
+    const decision = icps2026NetworkSubmission.decisionStatus || 'Decision Pending';
+    const paper = icps2026NetworkSubmission.paperId || '238';
+    const sharedLabel = conferenceTitle + ' — ICPS 2026 (SUST); ' +
+      'abstract submitted 13 October 2026 · Paper ID ' + paper + ' · ' + decision;
+    const submissionGroup = {
+      event: (icps2026NetworkSubmission.full || '2nd International Conference of Physical Sciences') +
+        ' (ICPS 2026) — ' + status + ', ' + decision,
+      venue: (icps2026NetworkSubmission.venue || 'SUST, Sylhet, Bangladesh') +
+        ' · ' + (icps2026NetworkSubmission.date || '10–12 December 2026') +
+        ' (scheduled) · Paper ID ' + paper,
+      items: [
+        conferenceTitle + ' — ' + (icps2026NetworkSubmission.authors || '') +
+        ' · Abstract submitted 13 October 2026 · ' + decision +
+        ' (not yet an accepted or presented conference contribution).'
+      ]
+    };
+    const coauthorIds = new Set([
+      'shamim-reza', 'sabba-ruhi', 'aminul-hoque', 'jannatul-mauya'
+    ]);
+    for (const collaborator of people) {
+      if (!coauthorIds.has(collaborator.id)) continue;
+      if (!(collaborator.shared || []).some(work => String(work).includes('ICPS 2026'))) {
+        collaborator.shared = [sharedLabel, ...(collaborator.shared || [])];
+      }
+      if (!(collaborator.sharedConferences || []).some(group => String(group.event || '').includes('ICPS 2026'))) {
+        collaborator.sharedConferences = [submissionGroup, ...(collaborator.sharedConferences || [])];
+      }
+      if (!(collaborator.collaborationStats || []).some(stat => stat.label === 'ICPS 2026 abstract submitted')) {
+        collaborator.collaborationStats = [
+          ...(collaborator.collaborationStats || []),
+          { value: '1', label: 'ICPS 2026 abstract submitted' }
+        ];
+      }
+    }
+  }
+
   const updatedImpact = extra.impactMetrics || [];
 
   const publishedArticles=(base.publications||[]).filter(p=>!p.status?.toLowerCase().includes('accepted'));
