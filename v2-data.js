@@ -2969,7 +2969,7 @@
 
   window.MRA_V2 = {
     version: '3.0',
-    lastUpdated: '9 October 2026',
+    lastUpdated: extra.lastUpdated || '13 October 2026',
     brand: {
       monogram: 'MRA',
       name: 'Md. Razu Ahmed',
