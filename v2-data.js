@@ -2375,6 +2375,16 @@
       email: 'obaidulislam0325@gmail.com',
 
       links: []
+    },
+    {
+      id: 'rezwan-babu',
+      name: 'Rezwan Babu',
+      group: 'Research Collaborators',
+      roles: ['Research Collaborator', 'Conference Co-author'],
+      affiliation: 'Deep Statistical Learning and Research (DSLR) Lab, Department of Statistics and Data Science, Pabna University of Science and Technology, Pabna-6600, Bangladesh',
+      description: 'First author of a jointly submitted ICPS 2026 abstract with Md. Razu Ahmed and Prof. Dr. Sabba Ruhi on asthma-status classification using synthetic health and environmental data.',
+      email: 'rezwanredoy.191640@s.pust.ac.bd',
+      shared: []
     }
   ];
 
@@ -2912,46 +2922,59 @@
   ];
 
 
-  // Surface the publicly submitted ICPS 2026 abstract in the four co-authors'
-  // Shared Works cards and academic-network conference histories.  Use the
-  // canonical conference record so its title and current status stay aligned.
-  const icps2026NetworkSubmission = (base.upcomingConferenceSubmissions || [])
-    .find(record => record.id === 'icps-2026-submission');
-  if (icps2026NetworkSubmission) {
-    const conferenceTitle = icps2026NetworkSubmission.title || 'Heart disease prediction research';
-    const status = icps2026NetworkSubmission.status || 'Abstract Submitted';
-    const decision = icps2026NetworkSubmission.decisionStatus || 'Decision Pending';
-    const paper = icps2026NetworkSubmission.paperId || '238';
-    const sharedLabel = conferenceTitle + ' — ICPS 2026 (SUST); ' +
-      'abstract submitted 13 October 2026 · Paper ID ' + paper + ' · ' + decision;
+  // Keep all pending ICPS 2026 abstract submissions in the relevant
+  // collaborators' Shared Works and conference histories without mixing
+  // submissions with accepted papers, presentations, or proceedings.
+  const icps2026CoauthorsByPaper = {
+    '238': ['shamim-reza', 'sabba-ruhi', 'aminul-hoque', 'jannatul-mauya'],
+    '302': ['sabba-ruhi', 'rezwan-babu']
+  };
+  const icps2026Submissions = (base.upcomingConferenceSubmissions || [])
+    .filter(submission => submission.event === 'ICPS 2026');
+  for (const collaborator of people) {
+    const submissions = icps2026Submissions.filter(submission =>
+      (icps2026CoauthorsByPaper[String(submission.paperId)] || []).includes(collaborator.id)
+    );
+    if (!submissions.length) continue;
+    collaborator.shared = collaborator.shared || [];
+    collaborator.sharedConferences = collaborator.sharedConferences || [];
+    for (const submission of submissions) {
+      const sharedLabel = (submission.title || 'ICPS 2026 abstract') +
+        ' — ICPS 2026 (SUST) · Paper ID ' + submission.paperId +
+        ' · Abstract submitted ' + (submission.submittedDate || '2026') +
+        ' · ' + (submission.decisionStatus || 'Decision Pending');
+      if (!collaborator.shared.some(work =>
+        String(work).includes('ICPS 2026') &&
+        String(work).includes('Paper ID ' + submission.paperId)
+      )) collaborator.shared.unshift(sharedLabel);
+    }
     const submissionGroup = {
-      event: (icps2026NetworkSubmission.full || '2nd International Conference of Physical Sciences') +
-        ' (ICPS 2026) — ' + status + ', ' + decision,
-      venue: (icps2026NetworkSubmission.venue || 'SUST, Sylhet, Bangladesh') +
-        ' · ' + (icps2026NetworkSubmission.date || '10–12 December 2026') +
-        ' (scheduled) · Paper ID ' + paper,
-      items: [
-        conferenceTitle + ' — ' + (icps2026NetworkSubmission.authors || '') +
-        ' · Abstract submitted 13 October 2026 · ' + decision +
-        ' (not yet an accepted or presented conference contribution).'
-      ]
+      event: '2nd International Conference of Physical Sciences (ICPS 2026) — submitted abstracts, decisions pending',
+      venue: 'Shahjalal University of Science and Technology, Sylhet, Bangladesh · 10–12 December 2026 (scheduled)',
+      items: submissions.map(submission =>
+        (submission.title || 'Submitted abstract') + ' — ' +
+        (submission.authors || '') + ' · Paper ID ' + submission.paperId +
+        ' · Abstract submitted ' + (submission.submittedDate || '2026') +
+        ' · Decision Pending (not yet accepted or presented).'
+      )
     };
-    const coauthorIds = new Set([
-      'shamim-reza', 'sabba-ruhi', 'aminul-hoque', 'jannatul-mauya'
-    ]);
-    for (const collaborator of people) {
-      if (!coauthorIds.has(collaborator.id)) continue;
-      if (!(collaborator.shared || []).some(work => String(work).includes('ICPS 2026'))) {
-        collaborator.shared = [sharedLabel, ...(collaborator.shared || [])];
-      }
-      if (!(collaborator.sharedConferences || []).some(group => String(group.event || '').includes('ICPS 2026'))) {
-        collaborator.sharedConferences = [submissionGroup, ...(collaborator.sharedConferences || [])];
-      }
-      if (!(collaborator.collaborationStats || []).some(stat => stat.label === 'ICPS 2026 abstract submitted')) {
-        collaborator.collaborationStats = [
-          ...(collaborator.collaborationStats || []),
-          { value: '1', label: 'ICPS 2026 abstract submitted' }
-        ];
+    const existingIndex = collaborator.sharedConferences.findIndex(group =>
+      String(group.event || '').includes('ICPS 2026')
+    );
+    if (existingIndex < 0) collaborator.sharedConferences.unshift(submissionGroup);
+    else collaborator.sharedConferences[existingIndex] = submissionGroup;
+    collaborator.collaborationStats = (collaborator.collaborationStats || [])
+      .filter(stat => stat.label !== 'ICPS 2026 abstract submitted' &&
+                      stat.label !== 'ICPS 2026 submitted abstracts');
+    collaborator.collaborationStats.push({
+      value: String(submissions.length),
+      label: 'ICPS 2026 submitted abstracts'
+    });
+    for (const stat of collaborator.collaborationStats) {
+      if (stat.label === 'Shared conference event' || stat.label === 'Shared conference events') {
+        stat.value = String(collaborator.sharedConferences.length);
+        stat.label = collaborator.sharedConferences.length === 1 ?
+          'Shared conference event' : 'Shared conference events';
       }
     }
   }
