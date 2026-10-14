@@ -1881,6 +1881,7 @@
               <h4>${esc(submission.title||'Submitted abstract')}</h4>
               <p class="conference-authors">${authorLine(submission.authors)}</p>
               <div class="conference-submission-affiliations">${(submission.affiliations||[]).map(aff=>`<p>${esc(aff)}</p>`).join('')}</div>
+              ${(submission.authorEmails||[]).length?`<p class="conference-submission-correspondence"><strong>Author emails:</strong> ${submission.authorEmails.map(author=>`<a href="mailto:${esc(author.email||'')}">${esc(author.name||'Author')}: ${esc(author.email||'')}</a>`).join(' · ')}</p>`:''}
               ${submission.correspondingAuthor?`<p class="conference-submission-correspondence"><strong>Corresponding author:</strong> ${esc(submission.correspondingAuthor)}${submission.correspondingEmail?` · <a href="mailto:${esc(submission.correspondingEmail)}">${esc(submission.correspondingEmail)}</a>`:''}</p>`:''}
             </div>
             ${submission.flyerAsset?`<section class="conference-submission-flyer" aria-label="Official conference flyer">
