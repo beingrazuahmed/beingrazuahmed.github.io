@@ -224,6 +224,7 @@ window.PORTFOLIO_DATA = {
   upcomingConferenceSubmissions: [
     {
       id: "icps-2026-submission-302",
+      submittedDate: "14 October 2026",
       event: "ICPS 2026",
       full: "2nd International Conference of Physical Sciences",
       eventLogo: "assets/academic/conferences/icps-2026/logos/icps-2026-official-logo.webp",
@@ -256,6 +257,7 @@ window.PORTFOLIO_DATA = {
     },
     {
       id: "icps-2026-submission",
+      submittedDate: "13 October 2026",
       event: "ICPS 2026",
       full: "2nd International Conference of Physical Sciences",
       eventLogo: "assets/academic/conferences/icps-2026/logos/icps-2026-official-logo.webp",
