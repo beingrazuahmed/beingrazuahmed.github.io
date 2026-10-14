@@ -2375,16 +2375,6 @@
       email: 'obaidulislam0325@gmail.com',
 
       links: []
-    },
-    {
-      id: 'rezwan-babu',
-      name: 'Rezwan Babu',
-      group: 'Research Collaborators',
-      roles: ['Research Collaborator', 'Conference Co-author'],
-      affiliation: 'Deep Statistical Learning and Research (DSLR) Lab, Department of Statistics and Data Science, Pabna University of Science and Technology, Pabna-6600, Bangladesh',
-      description: 'First author of a jointly submitted ICPS 2026 abstract with Md. Razu Ahmed and Prof. Dr. Sabba Ruhi on asthma-status classification using synthetic health and environmental data.',
-      email: 'rezwanredoy.191640@s.pust.ac.bd',
-      shared: []
     }
   ];
 
@@ -2927,7 +2917,7 @@
   // submissions with accepted papers, presentations, or proceedings.
   const icps2026CoauthorsByPaper = {
     '238': ['shamim-reza', 'sabba-ruhi', 'aminul-hoque', 'jannatul-mauya'],
-    '302': ['sabba-ruhi', 'rezwan-babu']
+    '302': ['sabba-ruhi']
   };
   const icps2026Submissions = (base.upcomingConferenceSubmissions || [])
     .filter(submission => submission.event === 'ICPS 2026');
