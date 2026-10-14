@@ -223,6 +223,38 @@ window.PORTFOLIO_DATA = {
 
   upcomingConferenceSubmissions: [
     {
+      id: "icps-2026-submission-302",
+      event: "ICPS 2026",
+      full: "2nd International Conference of Physical Sciences",
+      eventLogo: "assets/academic/conferences/icps-2026/logos/icps-2026-official-logo.webp",
+      hostLogo: "assets/academic/conferences/icps-2026/logos/sust-official-logo.webp",
+      flyerAsset: "assets/academic/conferences/icps-2026/media/icps-2026-official-flyer.jpg",
+      flyerLabel: "ICPS 2026 official conference flyer",
+      theme: "Fundamental Insights to Global Impact",
+      organizer: "School of Physical Sciences, Shahjalal University of Science and Technology (SUST)",
+      venue: "Shahjalal University of Science and Technology, Sylhet, Bangladesh",
+      date: "10–12 December 2026",
+      format: "Hybrid (in-person and online)",
+      officialUrl: "https://icps2026.sust.edu/",
+      acceptanceNotice: "2 November 2026 (scheduled)",
+      status: "Abstract Submitted",
+      decisionStatus: "Decision Pending",
+      paperId: "302",
+      role: "Second Author",
+      title: "Statistical Association and Comparative Machine Learning Analysis for Asthma Status Classification Using Synthetic Health and Environmental Data",
+      authors: "Rezwan Babu¹, Md. Razu Ahmed¹, and Sabba Ruhi¹,*",
+      affiliations: [
+        "¹ Deep Statistical Learning and Research (DSLR) Lab, Department of Statistics and Data Science, Pabna University of Science and Technology, Pabna-6600, Bangladesh"
+      ],
+      authorEmails: [
+        { name: "Rezwan Babu", email: "rezwanredoy.191640@s.pust.ac.bd" },
+        { name: "Md. Razu Ahmed", email: "razuahmed038@gmail.com" }
+      ],
+      correspondingAuthor: "Sabba Ruhi",
+      correspondingEmail: "sabba.ruhi@pust.ac.bd",
+      note: "Reported as submitted on 14 October 2026. Acceptance decision pending. This abstract concerns synthetic health and environmental data; it has not been accepted or presented."
+    },
+    {
       id: "icps-2026-submission",
       event: "ICPS 2026",
       full: "2nd International Conference of Physical Sciences",
