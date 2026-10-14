@@ -2465,7 +2465,11 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   }
 
   function network(){
-    const people=D.people||[];
+    // Exclude former network-only entry even when older collaborator data is cached.
+    // Authorship in the conference records remains unchanged.
+    const people=(D.people||[]).filter(person=>
+      person.id!=='rezwan-babu' && String(person.name||'').trim().toLowerCase()!=='rezwan babu'
+    );
     const groups=[...new Set(people.map(x=>x.group))];
     return `${pageHero('Network & Impact','Mentors, advisors, collaborators & mentees — with shared works and relationship context.')}
       <section class="section network-section"><div class="container">
