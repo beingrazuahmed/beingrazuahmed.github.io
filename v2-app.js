@@ -37,7 +37,7 @@
         <nav class="nav" id="primaryNav" aria-label="Primary">${nav.map(([k,l,h])=>`<a href="${h}" ${(page===k||(page==='network-profile'&&k==='network')||(['blogs','notes','reading'].includes(page)&&k==='resources'))?'aria-current="page"':''}>${l}</a>`).join('')}</nav>
         <button class="nav-scroll-btn right" id="navScrollRight" type="button" aria-label="Scroll navigation right">›</button>
       </div>
-      <div class="nav-actions"><a class="btn ghost desktop-only" href="ask-razu.html">Ask Razu AI</a><button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button><button class="icon-btn" id="settingsBtn" aria-label="Appearance settings">◐</button><button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open navigation menu" aria-controls="mobilePanel" aria-expanded="false"><span class="mobile-menu-open-icon" aria-hidden="true">☰</span><span class="mobile-menu-close-icon" aria-hidden="true">×</span></button></div>
+      <div class="nav-actions"><a class="btn ghost desktop-only" href="ask-razu.html">Ask Razu AI</a><button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button><button class="icon-btn" id="settingsBtn" type="button" aria-label="Appearance settings" aria-controls="settings" aria-expanded="false">◐</button><button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open navigation menu" aria-controls="mobilePanel" aria-expanded="false"><span class="mobile-menu-open-icon" aria-hidden="true">☰</span><span class="mobile-menu-close-icon" aria-hidden="true">×</span></button></div>
     </div></div><nav class="mobile-panel" id="mobilePanel" aria-label="Mobile navigation">${nav.map(([k,l,h])=>`<a href="${h}" ${(page===k||(page==='network-profile'&&k==='network')||(['blogs','notes','reading'].includes(page)&&k==='resources'))?'aria-current="page"':''}>${l}</a>`).join('')}<a href="blogs.html" ${page==='blogs'?'aria-current="page"':''}>Research Blog</a><a href="notes.html" ${page==='notes'?'aria-current="page"':''}>Academic Notes</a><a href="ask-razu.html">Ask Razu AI</a><a href="cv.html">CV</a></nav>`;
 
     const menuBtn = $('#menuBtn');
@@ -155,7 +155,13 @@
         <div class="text-size-status"><span id="textSizePercent">100%</span><button type="button" class="text-size-reset" id="textSizeReset">Reset</button></div>
       </aside>`);
 
-    const root=document.documentElement, store=localStorage;
+    const root=document.documentElement;
+    // Private browsing, blocked cookies and embedded mobile browsers can deny storage.
+    // Controls still work for the current page when persistence is unavailable.
+    const store={
+      getItem:key=>{try{return window.localStorage?.getItem(key)??null;}catch{return null;}},
+      setItem:(key,value)=>{try{window.localStorage?.setItem(key,String(value));}catch{}}
+    };
     const normalizeScale=value=>{
       const n=parseInt(value,10);
       return [90,100,110,120].includes(n)?n:100;
@@ -229,14 +235,55 @@
     }));
     if(typeof systemMode.addEventListener==='function') systemMode.addEventListener('change',()=>{if((store.getItem('mra-mode')||'system')==='system')apply();});
     else if(typeof systemMode.addListener==='function') systemMode.addListener(()=>{if((store.getItem('mra-mode')||'system')==='system')apply();});
-    $('#textSel').addEventListener('change',e=>applyTextScale(e.target.value));
+    $('#textSel')?.addEventListener('change',e=>applyTextScale(e.target.value));
 
     const trigger=$('#textSizeTrigger'), panel=$('#textSizePanel'), close=$('#textSizeClose'), reset=$('#textSizeReset'), topBtn=$('#backToTop'), appearanceClose=$('#appearanceClose');
     const closePanel=()=>{if(!panel)return;panel.hidden=true;trigger?.setAttribute('aria-expanded','false');};
     const openPanel=()=>{if(!panel)return;panel.hidden=false;trigger?.setAttribute('aria-expanded','true');};
     trigger?.addEventListener('click',e=>{e.stopPropagation();panel?.hidden?openPanel():closePanel();});
     close?.addEventListener('click',closePanel);
-    appearanceClose?.addEventListener('click',()=>$('#settings')?.setAttribute('hidden',''));
+    const appearance=$('#settings'), appearanceButton=$('#settingsBtn');
+    const closeAppearance=(restoreFocus=false)=>{
+      if(!appearance)return;
+      appearance.hidden=true;
+      appearanceButton?.setAttribute('aria-expanded','false');
+      if(restoreFocus)appearanceButton?.focus({preventScroll:true});
+    };
+    const toggleAppearance=()=>{
+      if(!appearance)return;
+      const opening=appearance.hidden;
+      window.__mraSetMobileMenu?.(false);
+      closePanel();
+      appearance.hidden=!opening;
+      appearanceButton?.setAttribute('aria-expanded',String(opening));
+      if(opening){
+        const topbar=document.querySelector('.topbar');
+        const bottom=topbar?.getBoundingClientRect().bottom;
+        if(Number.isFinite(bottom))root.style.setProperty('--appearance-top',Math.max(8,Math.round(bottom+8))+'px');
+      }
+    };
+    appearanceButton?.addEventListener('click',event=>{
+      event.preventDefault();
+      event.stopPropagation();
+      toggleAppearance();
+    });
+    appearanceClose?.addEventListener('click',()=>closeAppearance(true));
+    document.addEventListener('click',event=>{
+      if(appearance&&!appearance.hidden&&!appearance.contains(event.target)&&!appearanceButton?.contains(event.target))closeAppearance();
+    });
+    document.addEventListener('keydown',event=>{
+      if(event.key==='Escape'){
+        if(appearance&&!appearance.hidden){event.preventDefault();closeAppearance(true);}
+        closePanel();
+      }
+      const tag=document.activeElement?.tagName||'';
+      if(!event.ctrlKey&&!event.metaKey&&!event.altKey&&!event.shiftKey&&
+         event.key.toLowerCase()==='t'&&!/INPUT|TEXTAREA|SELECT/.test(tag)&&
+         !document.activeElement?.isContentEditable){
+        event.preventDefault();
+        toggleAppearance();
+      }
+    });
     panel?.addEventListener('click',e=>e.stopPropagation());
     $$('.text-size-option').forEach(btn=>btn.addEventListener('click',()=>applyTextScale(btn.dataset.textScale)));
     reset?.addEventListener('click',()=>applyTextScale(100));
@@ -245,7 +292,8 @@
 
     const updateTopButton=()=>{
       if(!topBtn)return;
-      const show=window.scrollY>520;
+      const offset=window.scrollY||window.pageYOffset||document.scrollingElement?.scrollTop||0;
+      const show=offset>Math.min(360,window.innerHeight*.4);
       topBtn.classList.toggle('is-visible',show);
       topBtn.tabIndex=show?0:-1;
       topBtn.setAttribute('aria-hidden',String(!show));
@@ -261,7 +309,10 @@
           if(!hadTabIndex)target.addEventListener('blur',()=>target.removeAttribute('tabindex'),{once:true});
         }
       }
-      window.scrollTo({top:0,behavior:reduced?'auto':'smooth'});
+      try{window.scrollTo({top:0,left:0,behavior:reduced?'instant':'smooth'});}
+      catch(_err){window.scrollTo(0,0);}
+      // Safari and nested scroll roots may not honor the Window scroll operation.
+      if(reduced && document.scrollingElement)document.scrollingElement.scrollTop=0;
     });
     window.addEventListener('scroll',updateTopButton,{passive:true});
     updateTopButton();
@@ -3174,10 +3225,6 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
 
     const closeHeaderMobileMenu=()=>window.__mraSetMobileMenu?.(false);
 
-    $('#settingsBtn')?.addEventListener('click',()=>{
-      closeHeaderMobileMenu();
-      $('#settings').toggleAttribute('hidden');
-    });
     $('#searchBtn')?.addEventListener('click',()=>{
       closeHeaderMobileMenu();
       location.href='search.html';
@@ -3186,8 +3233,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
       if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();location.href='search.html'}
       if(e.key==='/'&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName)){e.preventDefault();location.href='search.html'}
       if(e.key.toLowerCase()==='h'&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName))location.href='index.html';
-      if(e.key.toLowerCase()==='t'&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName)){closeHeaderMobileMenu();$('#settings').toggleAttribute('hidden');}
-      if(e.key==='Escape'){$('#settings')?.setAttribute('hidden','');closeHeaderMobileMenu();}
+      if(e.key==='Escape')closeHeaderMobileMenu();
     });
     const portraitStage=$('#heroPortraitStage');
     const portraitFrame=portraitStage?.querySelector('.portrait-frame-editorial');
