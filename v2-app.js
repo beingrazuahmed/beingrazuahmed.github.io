@@ -158,9 +158,13 @@
     const root=document.documentElement;
     // Private browsing, blocked cookies and embedded mobile browsers can deny storage.
     // Controls still work for the current page when persistence is unavailable.
+    const transientSettings=new Map();
     const store={
-      getItem:key=>{try{return window.localStorage?.getItem(key)??null;}catch{return null;}},
-      setItem:(key,value)=>{try{window.localStorage?.setItem(key,String(value));}catch{}}
+      getItem:key=>{try{return window.localStorage?.getItem(key)??transientSettings.get(key)??null;}catch{return transientSettings.get(key)??null;}},
+      setItem:(key,value)=>{
+        transientSettings.set(key,String(value));
+        try{window.localStorage?.setItem(key,String(value));}catch{}
+      }
     };
     const normalizeScale=value=>{
       const n=parseInt(value,10);
@@ -309,7 +313,7 @@
           if(!hadTabIndex)target.addEventListener('blur',()=>target.removeAttribute('tabindex'),{once:true});
         }
       }
-      try{window.scrollTo({top:0,left:0,behavior:reduced?'instant':'smooth'});}
+      try{window.scrollTo({top:0,left:0,behavior:reduced?'auto':'smooth'});}
       catch(_err){window.scrollTo(0,0);}
       // Safari and nested scroll roots may not honor the Window scroll operation.
       if(reduced && document.scrollingElement)document.scrollingElement.scrollTop=0;
