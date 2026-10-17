@@ -555,7 +555,7 @@ window.BAZAR_DEMO_ITEMS = [
     }).join('');
     holder.querySelectorAll('input[data-alt-id]').forEach(el=>el.addEventListener('input',()=>{
       const found=alternatives.find(a=>a.id===el.dataset.altId);
-      if(found)found.price=Math.max(0,Number(el.value)||0);
+      if(found)found.price=el.value.trim()!=='' && Number(el.value)>0 ? Number(el.value) : null;
       updateAlternatives();
     }));
   }
@@ -564,10 +564,11 @@ window.BAZAR_DEMO_ITEMS = [
     alternatives.forEach(a=>{
       const item=items.find(i=>i.id===a.id);
       if(!item)return;
-      const delta=(item.price-a.price)*item.qty;
+      const hasPrice=Number.isFinite(a.price) && a.price>0;
+      const delta=hasPrice?(item.price-a.price)*item.qty:0;
       savings+=Math.max(0,delta);
       $('alt-base-'+a.id).textContent=bdNumber(item.price)+' / '+item.unit;
-      $('alt-saving-'+a.id).textContent=delta>0.005?`Illustrative lower cost: ${bdNumber(delta)} / month`:
+      $('alt-saving-'+a.id).textContent=!hasPrice?'Enter a positive comparison price':delta>0.005?`Illustrative lower cost: ${bdNumber(delta)} / month`:
         delta< -0.005?`Alternative costs ${bdNumber(-delta)} more / month`:'Same estimated monthly cost';
     });
     $('alternativeTotal').textContent=`Combined illustrative savings if these three same-product options are available and cheaper: ${bdNumber(savings)} per month. These are hypothetical price comparisons, not verified local shopping offers.`;
