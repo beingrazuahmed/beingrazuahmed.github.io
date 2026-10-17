@@ -76,7 +76,7 @@
       button.setAttribute('aria-pressed',String(selected));
     });
     $('#modeStatus').textContent=choice==='system'?'System is currently using '+resolved+' mode.':resolved[0].toUpperCase()+resolved.slice(1)+' mode is active.';
-    applyScale(store.getItem('mra-text-scale')||store.getItem('mra-text')==='large'?'110':store.getItem('mra-text-scale')||'100');
+    applyScale(store.getItem('mra-text-scale') || (store.getItem('mra-text')==='large'?'110':'100'));
     requestAnimationFrame(()=>{
       let meta=document.querySelector('meta[name="theme-color"]');
       if(!meta){meta=document.createElement('meta');meta.name='theme-color';document.head.appendChild(meta);}
