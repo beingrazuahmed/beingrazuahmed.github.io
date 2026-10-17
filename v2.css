@@ -13525,3 +13525,115 @@ body[data-page="resources"] .mra-constellation-global{opacity:.55!important}
 @media print{
   body.has-mra-constellation .mra-constellation-global{display:none!important}
 }
+
+
+/* 2026-10-17: Cross-device Appearance, reading controls and scroll-to-top fixes.
+   Keep all floating controls above fixed headers, nav backdrops and background
+   canvases while respecting notches, small screens, and on-screen keyboards. */
+:root{
+  --mra-control-inset-right:env(safe-area-inset-right,0px);
+  --mra-control-inset-bottom:env(safe-area-inset-bottom,0px);
+}
+html body > #settings.appearance-panel{
+  position:fixed!important;
+  z-index:510!important;
+  top:var(--appearance-top,86px)!important;
+  right:calc(16px + var(--mra-control-inset-right))!important;
+  width:min(390px,calc(100vw - 32px - var(--mra-control-inset-right)))!important;
+  max-height:calc(100vh - var(--appearance-top,86px) - 14px)!important;
+  max-height:calc(100dvh - var(--appearance-top,86px) - 14px)!important;
+  overflow-y:auto!important;
+  overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch;
+  pointer-events:auto!important;
+  touch-action:pan-y;
+}
+html body > #settings.appearance-panel[hidden]{display:none!important;}
+html body > .accessibility-dock{
+  position:fixed!important;
+  z-index:480!important;
+  right:calc(16px + var(--mra-control-inset-right))!important;
+  bottom:calc(16px + var(--mra-control-inset-bottom))!important;
+  pointer-events:auto;
+}
+html body > .text-size-panel{
+  position:fixed!important;
+  z-index:490!important;
+  right:calc(80px + var(--mra-control-inset-right))!important;
+  bottom:calc(16px + var(--mra-control-inset-bottom))!important;
+  max-height:calc(100dvh - 35px - var(--mra-control-inset-bottom))!important;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch;
+  pointer-events:auto!important;
+}
+html body > .text-size-panel[hidden]{display:none!important;}
+html body > .accessibility-dock button,
+html body > .text-size-panel button,
+html body > #settings.appearance-panel button,
+html body > #settings.appearance-panel select{
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
+}
+html body > .accessibility-dock button:focus-visible,
+html body > .text-size-panel button:focus-visible,
+html body > #settings.appearance-panel button:focus-visible,
+#settingsBtn:focus-visible{
+  outline:3px solid var(--accent);
+  outline-offset:2px;
+}
+@media(max-width:1080px){
+  html body > #settings.appearance-panel{
+    top:var(--appearance-top,74px)!important;
+  }
+}
+@media(max-width:760px){
+  html body > #settings.appearance-panel{
+    right:calc(12px + var(--mra-control-inset-right))!important;
+    width:calc(100vw - 24px - var(--mra-control-inset-right))!important;
+    max-width:390px!important;
+  }
+  html body > .accessibility-dock{
+    right:calc(12px + var(--mra-control-inset-right))!important;
+    bottom:calc(14px + var(--mra-control-inset-bottom))!important;
+  }
+  html body > .accessibility-dock .accessibility-fab{
+    min-width:44px;
+    min-height:44px;
+  }
+  html body > .text-size-panel{
+    right:calc(64px + var(--mra-control-inset-right))!important;
+    bottom:calc(14px + var(--mra-control-inset-bottom))!important;
+    width:min(292px,calc(100vw - 82px - var(--mra-control-inset-right)))!important;
+  }
+}
+@media(max-width:480px){
+  html body > #settings.appearance-panel{
+    max-width:none!important;
+  }
+  html body > .text-size-panel{
+    right:calc(12px + var(--mra-control-inset-right))!important;
+    bottom:calc(126px + var(--mra-control-inset-bottom))!important;
+    width:calc(100vw - 24px - var(--mra-control-inset-right))!important;
+    max-height:calc(100dvh - 144px - var(--mra-control-inset-bottom))!important;
+  }
+  html body > .text-size-panel .text-size-option{
+    min-width:0;
+    min-height:44px;
+  }
+}
+@media(max-height:480px) and (orientation:landscape){
+  html body > #settings.appearance-panel{
+    top:8px!important;
+    max-height:calc(100dvh - 16px)!important;
+  }
+  html body > .text-size-panel{
+    max-height:calc(100dvh - 20px)!important;
+    bottom:10px!important;
+  }
+}
+@media print{
+  html body > .accessibility-dock,
+  html body > .text-size-panel,
+  html body > #settings.appearance-panel{display:none!important;}
+}
