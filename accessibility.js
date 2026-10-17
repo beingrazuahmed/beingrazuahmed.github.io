@@ -4,10 +4,14 @@
   // v2-app.js. Never inject duplicate controls when the main app owns them.
   if(document.getElementById('textSizeTrigger'))return;
   const root=document.documentElement;
-  const store={
-    getItem:key=>{try{return window.localStorage?.getItem(key)??null;}catch{return null;}},
-    setItem:(key,value)=>{try{window.localStorage?.setItem(key,String(value));}catch{}}
-  };
+  const transientSettings=new Map();
+    const store={
+      getItem:key=>{try{return window.localStorage?.getItem(key)??transientSettings.get(key)??null;}catch{return transientSettings.get(key)??null;}},
+      setItem:(key,value)=>{
+        transientSettings.set(key,String(value));
+        try{window.localStorage?.setItem(key,String(value));}catch{}
+      }
+    };
   const normalize=value=>{
     const n=parseInt(value,10);
     return [90,100,110,120].includes(n)?n:100;
