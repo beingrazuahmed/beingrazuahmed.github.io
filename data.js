@@ -661,6 +661,14 @@ window.PORTFOLIO_DATA = {
   ],
 
   engagements: [
+    {
+      "title": "Send a Little Hope × AI for All",
+      "role": "Course Ambassador",
+      "venue": "Send a Little Hope · AI for All",
+      "evidenceAsset": "assets/gallery/little-hope-ai-for-all-course-ambassador.jpg",
+      "evidenceHref": "gallery.html#send-little-hope-course-ambassador",
+      "evidenceLabel": "Course Ambassador announcement poster"
+    },
     { title: "Public University Student's Association of Rajshahi (PUSAR)", role: "Member", date: "", venue: "Rajshahi, Bangladesh", evidenceAsset: "assets/gallery/originals/pusar-crest-2024-original.png", evidenceHref: "gallery.html#pusar-crest-2024", evidenceLabel: "PUSAR crest" },
     { title: "10 Minute School", role: "Affiliate Partner", date: "December 2020–Present", venue: "10 Minute School", evidenceAsset: "assets/gallery/10-minute-school-affiliate-partner-evidence.jpg", evidenceHref: "gallery.html#10-minute-school-affiliate-evidence", evidenceLabel: "Affiliate Partner evidence" },
     { title: "Sikho", role: "Affiliate Partner", date: "May 2022–Present", venue: "" },
@@ -749,6 +757,20 @@ window.PORTFOLIO_DATA = {
   ],
 
   gallery: [
+    {
+      "id": "send-little-hope-course-ambassador",
+      "title": "Course Ambassador — Send a Little Hope × AI for All",
+      "category": "Leadership & Engagement",
+      "evidenceType": "Announcement Poster",
+      "issuer": "Send a Little Hope · AI for All",
+      "caption": "Official Course Ambassador announcement poster identifying Md. Razu Ahmed, a Statistics and Data Science master's graduate of Pabna University of Science and Technology. This image documents the ambassador role; it is not an award or course-completion certificate.",
+      "asset": "assets/gallery/little-hope-ai-for-all-course-ambassador.jpg",
+      "href": "assets/gallery/little-hope-ai-for-all-course-ambassador.jpg",
+      "fileType": "JPG",
+      "related": "profile.html",
+      "verified": true,
+      "sourceFile": "little-hope-ai-for-all-course-ambassador.jpg"
+    },
     { id: "efast-2026-paper-108-oral-certificate", title: "EFAST 2026 — Oral Presentation Certificate · Paper 108", category: "Conference", evidenceType: "Certificate", paperId: "108", date: "27–28 June 2026", issuer: "EFAST 2026 · Pabna University of Science and Technology", caption: "Oral Presentation Certificate for Paper ID 108, presented by Md. Razu Ahmed at EFAST 2026. The portfolio uses the certificate image as the visual preview and opens the uploaded original PDF as the primary document.", asset: "assets/academic/conferences/efast-2026-paper-108-oral-presentation-certificate.jpg", href: "assets/academic/conferences/efast-2026-paper-108-oral-presentation-certificate.pdf", fileType: "PDF", documentPages: 1, related: "conferences.html#efast-2026", verified: true, sourceFile: "efast-2026-paper-108-oral-presentation-certificate.pdf" },
     { id: "efast-2026-certificate-handover-group-photo", title: "EFAST 2026 — Certificate Handover Group Photograph", category: "Conference", evidenceType: "Conference Photograph", date: "27–28 June 2026", issuer: "EFAST 2026 · Pabna University of Science and Technology", caption: "Group photograph from the certificate-handover session at EFAST 2026.", asset: "assets/academic/conferences/efast-2026/media/efast-2026-certificate-handover-group-photo.jpg", href: "assets/academic/conferences/efast-2026/media/efast-2026-certificate-handover-group-photo.jpg", related: "conferences.html#efast-2026", verified: true, sourceFile: "efast-2026-certificate-handover-group-photo.jpg" },
     { id: "icrast-2025-paper-440-certificate-handover", title: "ICRAST 2025 — Certificate Handover · Paper 440", category: "Conference", evidenceType: "Conference Photograph", paperId: "440", date: "14–15 November 2025", issuer: "2nd ICRAST 2025 · Faculty of Science, University of Rajshahi", caption: "Certificate-handover photograph associated with Md. Razu Ahmed’s Paper ID 440 oral presentation at ICRAST 2025.", asset: "assets/academic/conferences/icrast-2025/icrast-2025-paper-440-certificate-handover.jpg", href: "assets/academic/conferences/icrast-2025/icrast-2025-paper-440-certificate-handover.jpg", related: "conferences.html#icrast-2025", verified: true, sourceFile: "icrast-2025-paper-440-certificate-handover.jpg" },
