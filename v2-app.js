@@ -2182,6 +2182,10 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   }
 
   function recognition(){
+    // Ambassador announcements are engagement evidence, not awards or certificates.
+    const ambassadorEngagements=(D.engagements||[]).filter(e=>
+      e.role==='Course Ambassador' && e.evidenceAsset
+    );
     const verifiedCredentials=(D.gallery||[]).filter(g=>g.verified&&/certificate/i.test(String(g.evidenceType||'')));
     const credentialCount=verifiedCredentials.length;
     const awardCredentials=verifiedCredentials.filter(g=>g.category==='Award').length;
@@ -2191,6 +2195,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     <nav class="academic-jump-nav sectional-jump-nav" data-section-jump-nav aria-label="Recognition page sections"><div class="container academic-jump-nav-inner">
       <a href="#recognition-credentials">Verified Credentials</a>
       <a href="#recognition-awards">Awards</a>
+      ${ambassadorEngagements.length?'<a href="#recognition-ambassadors">Ambassador Engagement</a>':''}
       <a href="#recognition-training">Training & Certifications</a>
     </div></nav>
       <section class="section recognition-credentials-section" id="recognition-credentials"><div class="container">
@@ -2243,6 +2248,27 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
           ${a.evidenceHref?`<a class="credential-inline-link" href="${esc(a.evidenceHref)}">${esc(a.evidenceLabel||'View evidence')} →</a>`:''}
         </article>`).join('')}</div>
       </div></section>
+
+      ${ambassadorEngagements.length?`<section class="section alt recognition-ambassador-section" id="recognition-ambassadors"><div class="container">
+        ${sectionHead('Leadership & community engagement','Course Ambassador','Documented ambassador appointment announcements are shown separately from awards and formal certificates.')}
+        <div class="recognition-ambassador-grid">
+          ${ambassadorEngagements.map(e=>`<article class="card recognition-ambassador-card">
+            <a class="recognition-ambassador-poster" href="${esc(versionedAsset(e.evidenceAsset))}" target="_blank" rel="noopener noreferrer" aria-label="Open original ${esc(e.evidenceLabel||'ambassador poster')}">
+              <img src="${esc(versionedAsset(e.evidenceAsset))}" alt="${esc(e.evidenceLabel||e.title||'Course Ambassador announcement')}" loading="lazy" decoding="async">
+            </a>
+            <div class="recognition-ambassador-copy">
+              <span class="section-kicker">Appointment announcement</span>
+              <h3>${esc(e.role||'Course Ambassador')}</h3>
+              <p class="recognition-ambassador-organization">${esc(e.title||'')}</p>
+              <p>The supplied announcement poster identifies Md. Razu Ahmed as Course Ambassador. This is a leadership and outreach engagement record, not an award or course-completion certificate.</p>
+              <div class="recognition-ambassador-actions">
+                <a class="btn primary" href="${esc(versionedAsset(e.evidenceAsset))}" target="_blank" rel="noopener noreferrer">View original poster ↗</a>
+                <a class="btn ghost" href="${esc(e.evidenceHref||'gallery.html')}">View Gallery record →</a>
+              </div>
+            </div>
+          </article>`).join('')}
+        </div>
+      </div></section>`:''}
 
       <section class="section recognition-training-section" id="recognition-training"><div class="container">
         ${sectionHead('Professional development','Training & certifications','A compact record of research-methods, scholarly-practice, technical and workshop training.')}
