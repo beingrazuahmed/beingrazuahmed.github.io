@@ -1,38 +1,41 @@
-# BazarBondhu AI · SocioNova
+# BazarBondhu AI | Team SocioNova
 
-**AI Navigator Autumn 2026 Capstone | AU26SA2 (L2) | Trainer: Sharif Anowar**
+**AI Navigator Autumn 2026 · AU26SA2 (L2) · Trainer: Sharif Anowar**
 
-**Live demonstration:** https://beingrazuahmed.github.io/bazarbondhu-ai/
+**Live app:** https://beingrazuahmed.github.io/bazarbondhu-ai/
 
-Team: **Md. Razu Ahmed** (Team Leader, Statistics and Data Science, PUST); **Muhammad Ziaul Haque** (Mathematics, PUST).
+**Team leader:** Md. Razu Ahmed (Statistics and Data Science, PUST)  
+**Team member:** Muhammad Ziaul Haque (Mathematics, PUST)
 
-## What it does
+## Working capabilities
 
-- Calculates household grocery allowance after bills and savings.
-- Provides an editable 16-item sample grocery basket with prices, quantities, and priorities.
-- Explores an explainable constrained spending allocation, *not* a nutritional recommendation.
-- Compares **hypothetical alternative-seller prices** for three same-product, same-unit examples.
-- Runs 0–50% what-if food-price increases, **not** a forecast.
-- Reports illustrative per-person spending; household size does not drive nutrition quantities.
-- Answers selected English and Bangla budget questions with **offline character n-gram TF-IDF matching**.
-- Downloads a CSV spending summary.
+The browser-based educational prototype calculates grocery affordability from income, essential commitments and a savings goal. The grocery planner has 16 synthetic sample items, editable quantities/prices/priorities, and a bounded mathematical allocation algorithm (not a dietary optimizer). It has three illustrative same-product seller comparisons, a hypothetical 0–50% price-increase stress test, and CSV export.
 
-## Start and demonstrate
+**New Price evidence feature:** a user can enter an item unit price, observation date, market, source category and reference, and optionally apply that value to the current basket. It can export a local evidence CSV. Entries are **user-reported and never independently authenticated by the site**. Manually changing a recorded price removes its applied source label.
 
-Open `index.html` in a browser or use the public GitHub Pages link. No build environment or secret API keys are needed.
+The in-app assistant uses **offline character n-gram TF-IDF intent matching**, with pre-defined English/Bangla examples and replies assembled from deterministic calculations. No external generative model, grocery price feed or remote database is connected.
 
-Demo sequence: **Dashboard → edit household income or rent → Grocery planner → change prices and compare seller options → Price scenarios (+10%) → AI assistant → CSV export**.
+## Evidence and limitations
 
-Example defaults: monthly income **BDT 30,000**, available grocery allowance **BDT 13,000**, basket **BDT 8,570**; available difference **BDT 4,430**. A hypothetical 10% uniform price increase makes the basket **BDT 9,427**.
+**All starter prices are fictional illustrations**. DAM and TCB links are research pointers, not integrated live feeds. The national context statistic is BBS food inflation **7.22% in September 2026**, reported by BSS on 7 Oct: https://www.bssnews.net/business/432352. No completed household-savings trial or verified market-price audit is claimed. Nutrition adequacy, digital exclusion and language fairness need field validation.
 
-## Transparency
+## Responsible AI
 
-Every seeded grocery price and alternative quote is an **invented demonstration value**, not a verified current price. DAM, TCB, and BBS are possible future data sources but **are not connected**.
+No login or account, tracker, cloud storage or remote household-data upload. User-entered financial information stays in the browser session; users can export selected CSV files. Do not treat priority-based quantity reductions as healthy diet instructions. AI tools assisted development and slide/report preparation; the team must understand and defend the code.
 
-There is **no live store comparison**, remote large-language-model API, tracking, login, cloud database, or household-data upload. Calculations and limited AI question matching run in the browser. The application does not establish nutritional sufficiency and should not be used as dietary, medical, or professional financial advice.
+## Five-minute pitch (main 8 slides)
 
-## Testing and AI-use declaration
+| Slides | Speaker | Seconds |
+|---|---|---:|
+| 1–3: Introduction, need, solution | Md. Razu Ahmed | 100 |
+| 4–6: Planner, scenarios, AI | Muhammad Ziaul Haque | 140 |
+| 7–8: Ethics, evidence and close | Md. Razu Ahmed | 60 |
+| **Total** | | **300** |
 
-Source includes arithmetic, bounded optimization, and a TF-IDF classifier; the team should be prepared to explain all three. ChatGPT assisted with planning, code generation, review and testing, and presentation preparation. Human review and testing remain necessary.
+Slide 9 (QR code) is an optional appendix, excluded from the five minutes.
 
-Educational project, not a deployed public-benefits or commercial service.
+## Testing and demo readiness
+
+The delivered offline package contains the Node regression suite with **38 passing deterministic checks**, a manual QA checklist, full report, slide notes, and source/data collection templates. The current browser test environment blocked local navigation, so a successful new end-to-end browser test is **not claimed**. Team members must verify navigation, the Price evidence entry/apply/export flow and mobile layout on their own browser before Capstone Day.
+
+**Offline backup:** Download the package and open `index.html` locally (no credentials, build step or API keys needed).
