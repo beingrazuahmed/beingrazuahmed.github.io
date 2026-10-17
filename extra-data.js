@@ -1,5 +1,5 @@
 window.PORTFOLIO_EXTRA = {
-  lastUpdated: "14 October 2026",
+  lastUpdated: "17 October 2026",
   impactMetrics: [
     { label: "Google Scholar citations", value: 2, source: "Google Scholar", date: "15 September 2026" },
     { label: "ResearchGate citations", value: 5, source: "ResearchGate", date: "15 September 2026" },
@@ -10,6 +10,7 @@ window.PORTFOLIO_EXTRA = {
     { label: "Downloads", value: 153, source: "Mendeley Data", date: "13 October 2026" }
   ],
   latestUpdates: [
+    {"date":"16 Oct 2026","type":"Conference Submission","title":"ICPS 2026 third abstract submitted — Paper ID 454","detail":"Submitted “Weighted RNN–BiLSTM Probability Fusion for Sentiment Classification of Airline Tweets and IMDb Reviews” to ICPS 2026 at SUST. Authored by Mt. Latifa Farzana, Md. Razu Ahmed, Jannatul Mauya and Md. Shamim Reza; Razu is second author. Abstract submitted 16 October 2026; acceptance decision pending.","href":"conferences.html#icps-2026-submission-454"},
     { date: "14 Oct 2026", type: "Conference Submission", title: "ICPS 2026 second abstract submitted — Paper ID 302", detail: "Submitted “Statistical Association and Comparative Machine Learning Analysis for Asthma Status Classification Using Synthetic Health and Environmental Data” to the 2nd International Conference of Physical Sciences (ICPS 2026) at SUST. Co-authored by Rezwan Babu, Md. Razu Ahmed and Sabba Ruhi; Razu is second author. Acceptance decision pending.", href: "conferences.html#icps-2026-submission-302" },
     { date: "13 Oct 2026", type: "Conference Submission", title: "ICPS 2026 abstract submitted — Paper ID 238", detail: "Submitted “Causal Consensus Feature Selection with Bootstrap Stability for Interpretable Heart Disease Prediction” to the 2nd International Conference of Physical Sciences (ICPS 2026), organized by the School of Physical Sciences at SUST. Second author; acceptance decision pending.", href: "conferences.html#icps-2026-submission" },
     { date: "27 Sep 2026", type: "Manuscript", title: "Measurement manuscript moved to Under Review", detail: "A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images advanced from With Editor to Under Review at Measurement (Elsevier)." },
