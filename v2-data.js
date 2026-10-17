@@ -2873,7 +2873,7 @@
   ];
 
   const engagement = [
-    'Course Ambassador · Send a Little Hope × AI for All · Course outreach and community engagement',
+    'Course Ambassador · Send a Little Hope × AI for All',
     'Affiliate Partner · 10 Minute School · December 2020–Present',
     'Affiliate Partner · Sikho · May 2022–Present',
     'Directly involved in departmental academic and student programmes',
