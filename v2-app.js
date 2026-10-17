@@ -1370,96 +1370,100 @@
   }
 
   function profile(){
-    const photo=D.profile?.image||'';
-    const engagementEvidence=(D.engagements||[]).filter(e=>e.evidenceAsset);
-    const featuredEvidence=engagementEvidence.find(e=>e.role==='Course Ambassador')||engagementEvidence[0];
-    const otherEvidence=engagementEvidence.filter(e=>e!==featuredEvidence);
-    const entries=D.engagement||[];
-    const roles=entries.filter(x=>/^(Course Ambassador|Campus Ambassador|Affiliate Partner|Competitor)\b/i.test(x));
-    const memberships=entries.filter(x=>/^Member\b/i.test(x));
-    const activities=entries.filter(x=>!roles.includes(x)&&!memberships.includes(x));
-    const engagementEntry=(entry,index)=>{
-      const bits=String(entry).split(' · ');
-      return `<li class="profile-journal-entry"><span class="profile-journal-entry-index" aria-hidden="true">${String(index+1).padStart(2,'0')}</span><div><strong>${esc(bits[0])}</strong>${bits.length>1?`<p>${esc(bits.slice(1).join(' · '))}</p>`:''}</div></li>`;
+    const profile=D.profile||{};
+    const principles=D.research?.principles||[];
+    const language=D.languageProfile||{};
+    const evidence=(D.engagements||[]).filter(item=>item.evidenceAsset);
+    const featured=evidence.find(item=>item.role==='Course Ambassador')||evidence[0];
+    const archive=evidence.filter(item=>item!==featured);
+    const engagement=D.engagement||[];
+    const roles=engagement.filter(item=>/^(Course Ambassador|Campus Ambassador|Affiliate Partner|Competitor)\b/i.test(item));
+    const memberships=engagement.filter(item=>/^Member\b/i.test(item));
+    const participation=engagement.filter(item=>!roles.includes(item)&&!memberships.includes(item));
+    const entry=(item)=>{
+      const parts=String(item).split(' · ');
+      return `<li class="dossier-ledger-item"><strong>${esc(parts[0])}</strong>${parts.length>1?`<span>${esc(parts.slice(1).join(' · '))}</span>`:''}</li>`;
     };
-    const engagementGroup=(kicker,title,items)=>{
-      if(!items.length)return '';
-      return `<section class="profile-journal-group"><div class="profile-journal-group-head"><span>${esc(kicker)}</span><h3>${esc(title)}</h3><small>${items.length} ${items.length===1?'record':'records'}</small></div><ol class="profile-journal-list">${items.map(engagementEntry).join('')}</ol></section>`;
-    };
-    return `<section class="profile-editorial-hero" id="profile-top">
-      <div class="container profile-editorial-hero-grid">
-        <div class="profile-editorial-hero-content">
-          <div class="profile-editorial-eyebrow"><span class="profile-editorial-spark" aria-hidden="true"></span> RESEARCHER PROFILE <span class="profile-editorial-eyebrow-line"></span> MD. RAZU AHMED</div>
-          <p class="profile-editorial-overline">Where statistical thinking meets responsible innovation</p>
-          <h1>${esc(D.brand?.name||'Md. Razu Ahmed')}</h1>
-          <p class="profile-editorial-hero-role">${esc(D.brand?.headline||'Researcher')}</p>
-          <p class="profile-editorial-hero-statement">${esc(D.brand?.tagline||'')}</p>
-          <div class="profile-editorial-hero-actions"><a class="btn primary" href="#profile-identity">Explore the profile <span aria-hidden="true">↘</span></a><a class="btn ghost" href="contact.html">Get in touch <span aria-hidden="true">↗</span></a></div>
-          <div class="profile-editorial-focus"><span>Research focus</span><p>${esc(D.profile?.focus||'')}</p></div>
+    const evidenceLink=item=>`<a class="dossier-evidence-mini" href="${esc(item.evidenceHref||versionedAsset(item.evidenceAsset))}">
+      <img src="${esc(versionedAsset(item.evidenceAsset))}" alt="" loading="lazy" decoding="async">
+      <span><strong>${esc(item.title||'Engagement record')}</strong><small>${esc(item.evidenceLabel||item.role||'View supporting evidence')}</small></span>
+      <span aria-hidden="true" class="dossier-evidence-chevron">↗</span>
+    </a>`;
+    return `<section class="dossier-opening" id="profile-top"><div class="container">
+      <div class="dossier-masthead"><span><span class="dossier-masthead-dot" aria-hidden="true"></span> Academic profile</span><span>Statistics / Data Science / Research</span></div>
+      <div class="dossier-hero">
+        <div class="dossier-hero-copy">
+          <p class="dossier-eyebrow">MD. RAZU AHMED · RESEARCHER DOSSIER</p>
+          <h1>${esc(profile.name||D.brand?.name||'Md. Razu Ahmed')}</h1>
+          <p class="dossier-hero-roles">${esc(D.brand?.headline||'Statistician · Data Scientist · Researcher')}</p>
+          <p class="dossier-hero-manifesto">${esc(D.brand?.tagline||'')}</p>
+          <p class="dossier-hero-focus">${esc(profile.focus||'')}</p>
+          <div class="dossier-hero-actions"><a href="#profile-identity" class="btn primary">Read my profile <span aria-hidden="true">↘</span></a><a href="contact.html" class="btn ghost">Academic enquiries <span aria-hidden="true">↗</span></a></div>
+          <div class="dossier-hero-affiliation"><span>Research affiliation</span><p>${esc(profile.affiliation||'')}</p></div>
         </div>
-        <div class="profile-editorial-portrait-wrap">
-          <div class="profile-editorial-portrait-label"><span>Academic portfolio</span><span>01 / Profile</span></div>
-          ${photo?`<div class="profile-editorial-portrait-frame"><img src="${esc(photo)}" alt="Portrait of ${esc(D.brand?.name||'Md. Razu Ahmed')}" decoding="async" fetchpriority="high"></div>`:''}
-          <div class="profile-editorial-portrait-footer"><span>Statistics · Data Science</span><span class="profile-editorial-portrait-mark" aria-hidden="true">MRA</span></div>
-        </div>
+        ${profile.image?`<figure class="dossier-portrait">
+          <div class="dossier-portrait-photo"><img src="${esc(profile.image)}" alt="Portrait of ${esc(profile.name||'Md. Razu Ahmed')}" fetchpriority="high" decoding="async"></div>
+          <figcaption><span>Md. Razu Ahmed</span><span>Research • Statistics</span></figcaption>
+        </figure>`:''}
       </div>
-    </section>
-    <nav class="profile-editorial-nav" aria-label="Profile chapters"><div class="container profile-editorial-nav-inner">
-      <a href="#profile-identity"><span>01</span> Identity</a>
-      <a href="#profile-communication"><span>02</span> Communication</a>
-      <a href="#profile-strengths"><span>03</span> Working style</a>
-      <a href="#profile-engagement"><span>04</span> Engagement</a>
+    </div></section>
+    <nav class="dossier-section-nav" aria-label="Navigate profile"><div class="container dossier-section-nav-inner">
+      <a href="#profile-identity">Research identity</a><a href="#profile-strengths">Working approach</a><a href="#profile-communication">Communication</a><a href="#profile-engagement">Leadership & engagement</a><a href="#profile-interests">Interests</a>
     </div></nav>
-    <section class="section profile-editorial-section" id="profile-identity"><div class="container">
-      <div class="profile-editorial-chapter"><span>CHAPTER 01 / RESEARCH IDENTITY</span><h2>A purposeful approach to research</h2><p>Academic identity, areas of work and guiding principles.</p></div>
-      <div class="profile-editorial-identity-grid">
-        <article class="profile-editorial-bio">
-          <div class="profile-editorial-article-label"><span class="profile-editorial-line-symbol" aria-hidden="true"></span> ABOUT THE RESEARCHER</div>
-          <h3>Rigorous thinking.<br><em>Evidence with meaning.</em></h3>
-          <p class="profile-editorial-bio-text">${esc(D.profile?.intro||D.research?.identity||'')}</p>
-          <div class="profile-editorial-bio-divider"></div>
-          <p class="profile-editorial-affiliation"><span>Research affiliation</span><strong>${esc(D.profile?.affiliation||'')}</strong></p>
-          <div class="profile-editorial-role-list" aria-label="Academic and professional roles">${(D.profile?.roles||[]).map(role=>`<span>${esc(role)}</span>`).join('')}</div>
+    <section class="section dossier-section dossier-identity" id="profile-identity"><div class="container">
+      <header class="dossier-section-heading"><div><span class="dossier-kicker">01 / RESEARCH PROFILE</span><h2>The research behind the profile.</h2></div><p>Statistical methodology, applied machine learning and interpretable evidence.</p></header>
+      <div class="dossier-research-layout">
+        <article class="dossier-research-story">
+          <span class="dossier-minor-label">RESEARCH IDENTITY</span>
+          <p class="dossier-intro-paragraph">${esc(profile.intro||D.research?.identity||'')}</p>
+          <div class="dossier-story-foot"><span>My approach</span><p>${esc(profile.principle||'')}</p></div>
+          <div class="dossier-role-line" aria-label="Research and professional roles">${(profile.roles||[]).map(role=>`<span>${esc(role)}</span>`).join('')}</div>
         </article>
-        <aside class="profile-editorial-principles" aria-labelledby="profile-principles-heading">
-          <div class="profile-editorial-principles-heading"><span>RESEARCH PHILOSOPHY</span><h3 id="profile-principles-heading">Principles that shape the work</h3></div>
-          <ol>${(D.research?.principles||[]).map((p,i)=>`<li><span class="profile-editorial-principle-num">${String(i+1).padStart(2,'0')}</span><div><strong>${esc(p.title||'')}</strong><p>${esc(p.detail||'')}</p></div></li>`).join('')}</ol>
+        <aside class="dossier-methods" aria-labelledby="dossier-methods-title">
+          <span class="dossier-minor-label">THE METHODOLOGICAL FOUNDATION</span>
+          <h3 id="dossier-methods-title">Three principles, one standard.</h3>
+          <ol>${principles.map((principle,i)=>`<li><span>${String(i+1).padStart(2,'0')}</span><div><h4>${esc(principle.title||'')}</h4><p>${esc(principle.detail||'')}</p></div></li>`).join('')}</ol>
         </aside>
       </div>
     </div></section>
-    <section class="section alt profile-editorial-section" id="profile-communication"><div class="container">
-      <div class="profile-editorial-chapter"><span>CHAPTER 02 / COMMUNICATION</span><h2>Languages & academic communication</h2><p>Native Bangla proficiency, English-medium university education and evidence-based scholarly communication.</p></div>
-      <div class="profile-editorial-language-wrap">${languagePanel(true)}</div>
-      <div class="profile-editorial-language-footer"><span>Language proficiency and Medium of Instruction documentation</span><a class="btn primary" href="languages.html">Explore the full language profile <span aria-hidden="true">↗</span></a></div>
+    <section class="section alt dossier-section dossier-practice" id="profile-strengths"><div class="container">
+      <header class="dossier-section-heading"><div><span class="dossier-kicker">02 / RESEARCH PRACTICE</span><h2>How I work.</h2></div><p>Qualities that support collaboration, methodological depth and sustained research.</p></header>
+      <div class="dossier-strength-list">${(D.strengths||[]).map((strength,i)=>`<article class="dossier-strength"><span class="dossier-strength-index">${String(i+1).padStart(2,'0')}</span><div><h3>${esc(strength.title||'')}</h3><p>${esc(strength.detail||'')}</p></div></article>`).join('')}</div>
     </div></section>
-    <section class="section profile-editorial-section" id="profile-strengths"><div class="container">
-      <div class="profile-editorial-chapter"><span>CHAPTER 03 / WORKING STYLE</span><h2>Professional strengths</h2><p>The qualities behind research practice, collaboration and academic development.</p></div>
-      <div class="profile-editorial-strength-grid">${(D.strengths||[]).map((s,i)=>`<article class="profile-editorial-strength-card"><div class="profile-editorial-strength-top"><span>${String(i+1).padStart(2,'0')}</span><span class="profile-editorial-strength-mark" aria-hidden="true">↗</span></div><h3>${esc(s.title||'')}</h3><p>${esc(s.detail||'')}</p></article>`).join('')}</div>
-    </div></section>
-    <section class="section alt profile-editorial-section profile-editorial-engagement-section" id="profile-engagement"><div class="container">
-      <div class="profile-editorial-chapter"><span>CHAPTER 04 / BEYOND RESEARCH</span><h2>Leadership, memberships & engagement</h2><p>Roles, organizational connections and activities alongside academic research.</p></div>
-      <div class="profile-editorial-engagement-layout">
-        <div class="profile-editorial-journal" aria-label="Leadership, memberships and extra-curricular engagement">
-          ${engagementGroup('01 / LEADERSHIP & SERVICE','Roles & initiatives',roles)}
-          ${engagementGroup('02 / ASSOCIATIONS','Memberships',memberships)}
-          ${engagementGroup('03 / COMMUNITY & PARTICIPATION','Activities & participation',activities)}
+    <section class="section dossier-section dossier-communication" id="profile-communication"><div class="container">
+      <header class="dossier-section-heading"><div><span class="dossier-kicker">03 / ACADEMIC COMMUNICATION</span><h2>Communication across disciplines.</h2></div><p>Bangla for local academic engagement and English for university research and scholarly exchange.</p></header>
+      <div class="dossier-language-overview">
+        <div class="dossier-language-statement"><span class="dossier-minor-label">LANGUAGE PROFILE</span><p>${esc(language.statement||'')}</p><a href="languages.html">Full language and MOI record <span aria-hidden="true">↗</span></a></div>
+        <div class="dossier-language-highlights">
+          ${(D.languages||[]).map(item=>`<div><span>${esc(item.name||'')}</span><strong>${esc(item.level||item.proficiency||'')}</strong></div>`).join('')}
+          <div class="dossier-micro-moi"><span>Medium of instruction</span><p>${esc(language.moi?.summary||'')}</p></div>
         </div>
-        <aside class="profile-editorial-evidence" aria-label="Selected engagement evidence">
-          <div class="profile-editorial-evidence-head"><span>SELECTED DOCUMENTATION</span><h3>Evidence behind the engagement</h3><p>Original records are linked for independent viewing.</p></div>
-          ${featuredEvidence?`<article class="profile-editorial-featured-evidence">
-            <a class="profile-editorial-featured-image" href="${esc(versionedAsset(featuredEvidence.evidenceAsset))}" target="_blank" rel="noopener noreferrer" aria-label="Open original ${esc(featuredEvidence.evidenceLabel||'engagement evidence')}">
-              <img src="${esc(versionedAsset(featuredEvidence.evidenceAsset))}" alt="${esc(featuredEvidence.evidenceLabel||featuredEvidence.title||'Engagement announcement')}" loading="lazy" decoding="async">
-            </a>
-            <div class="profile-editorial-featured-copy"><span>FEATURED DOCUMENT</span><strong>${esc(featuredEvidence.role||featuredEvidence.title||'Engagement')}</strong><p>${esc(featuredEvidence.title||'')}</p><a href="${esc(featuredEvidence.evidenceHref||'gallery.html')}">View evidence record <span aria-hidden="true">↗</span></a></div>
-          </article>`:''}
-          ${otherEvidence.length?`<div class="profile-editorial-evidence-archive"><div class="profile-editorial-evidence-archive-title">More documented engagements</div><div class="profile-editorial-evidence-list">${otherEvidence.map(e=>`<a class="profile-editorial-evidence-item" href="${esc(e.evidenceHref||versionedAsset(e.evidenceAsset))}"><img src="${esc(versionedAsset(e.evidenceAsset))}" alt="" loading="lazy" decoding="async"><span><strong>${esc(e.title||'Engagement')}</strong><small>${esc(e.evidenceLabel||e.role||'View record')}</small></span><span class="profile-editorial-evidence-arrow" aria-hidden="true">↗</span></a>`).join('')}</div></div>`:''}
-          <a class="profile-editorial-gallery-link" href="gallery.html#gallery-group-service-leadership">Browse the evidence gallery <span aria-hidden="true">→</span></a>
-        </aside>
       </div>
+      <details class="dossier-language-details"><summary><span>View detailed language proficiency and MOI documents</span><span aria-hidden="true">＋</span></summary><div class="dossier-language-expanded">${languagePanel(true)}</div></details>
     </div></section>
-    <section class="section profile-editorial-interests-section"><div class="container">
-      <div class="profile-editorial-interests"><div><span class="profile-editorial-interests-kicker">OUTSIDE THE WORK</span><h2>Interests & perspective</h2><p>Personal interests beyond research and academic work.</p></div><ul>${(D.personalInterests||[]).map((interest,i)=>`<li><span>${String(i+1).padStart(2,'0')}</span>${esc(interest)}</li>`).join('')}</ul></div>
-    </div></section>`;
+    <section class="section alt dossier-section dossier-engagement" id="profile-engagement"><div class="container">
+      <header class="dossier-section-heading"><div><span class="dossier-kicker">04 / PROFESSIONAL & COMMUNITY ENGAGEMENT</span><h2>Beyond the research desk.</h2></div><p>Documented appointments, memberships, academic service and wider participation.</p></header>
+      <div class="dossier-engagement-primary">
+        <div class="dossier-ledger">
+          <div class="dossier-ledger-head"><h3>Leadership & appointed roles</h3><span>${roles.length} records</span></div>
+          <ul>${roles.map(entry).join('')}</ul>
+        </div>
+        ${featured?`<article class="dossier-feature">
+          <div class="dossier-feature-label"><span>FEATURED ENGAGEMENT</span><span>Original announcement</span></div>
+          <a href="${esc(versionedAsset(featured.evidenceAsset))}" class="dossier-feature-image" target="_blank" rel="noopener noreferrer" aria-label="Open the original ${esc(featured.evidenceLabel||'engagement poster')}">
+            <img src="${esc(versionedAsset(featured.evidenceAsset))}" alt="${esc(featured.evidenceLabel||featured.title||'Engagement evidence')}" loading="lazy" decoding="async">
+          </a>
+          <div class="dossier-feature-info"><strong>${esc(featured.role||'Engagement')}</strong><p>${esc(featured.title||'')}</p><a href="${esc(featured.evidenceHref||'gallery.html')}">View verified gallery record <span aria-hidden="true">↗</span></a></div>
+        </article>`:''}
+      </div>
+      <div class="dossier-engagement-secondary">
+        <section class="dossier-ledger dossier-ledger-secondary"><div class="dossier-ledger-head"><h3>Memberships</h3><span>${memberships.length} records</span></div><ul>${memberships.map(entry).join('')}</ul></section>
+        <section class="dossier-ledger dossier-ledger-secondary"><div class="dossier-ledger-head"><h3>Participation & community activities</h3><span>${participation.length} records</span></div><ul>${participation.map(entry).join('')}</ul></section>
+      </div>
+      ${archive.length?`<div class="dossier-evidence-strip"><div class="dossier-evidence-heading"><div><span class="dossier-minor-label">EVIDENCE ARCHIVE</span><h3>Supporting documents & engagement records</h3></div><a href="gallery.html#gallery-group-service-leadership">All gallery records ↗</a></div><div class="dossier-evidence-grid">${archive.map(evidenceLink).join('')}</div></div>`:''}
+    </div></section>
+    <section class="section dossier-interests" id="profile-interests"><div class="container"><div class="dossier-interests-row"><div><span class="dossier-kicker">05 / PERSONAL PERSPECTIVE</span><h2>Beyond the page.</h2></div><ul>${(D.personalInterests||[]).map(item=>`<li>${esc(item)}</li>`).join('')}</ul></div></div></section>
+    <section class="dossier-closing"><div class="container dossier-closing-inner"><div><span class="dossier-kicker">ACADEMIC COLLABORATION</span><h2>Open to meaningful research conversations.</h2><p>${esc(profile.availability||'')}</p></div><a href="contact.html" class="btn primary">Start a conversation <span aria-hidden="true">↗</span></a></div></section>`;
   }
 
   function languages(){const lp=D.languageProfile||{};return `${pageHero('Languages & Academic Communication','Native Bangla proficiency, English-medium university education, and evidence-backed scholarly communication across research, conferences and peer review.')}
