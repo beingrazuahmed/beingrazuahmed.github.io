@@ -321,8 +321,14 @@ window.PORTFOLIO_DATA = {
       title: "Causal Consensus Feature Selection with Bootstrap Stability for Interpretable Heart Disease Prediction",
       authors: "Jannatul Mauya¹, Md. Razu Ahmed², Md. Shamim Reza², Sabba Ruhi², and Md. Aminul Hoque¹,*",
       affiliations: [
-        "¹ Department of Statistics and Data Science, University of Rajshahi, Rajshahi-6205, Bangladesh",
-        "² Department of Statistics and Data Science, Pabna University of Science and Technology, Pabna-6600, Bangladesh"
+        "¹ Department of Statistics and Data Science, University of Rajshahi, Rajshahi-6205, Bangladesh.",
+        "² Department of Statistics and Data Science, Pabna University of Science and Technology, Pabna-6600, Bangladesh."
+      ],
+      authorEmails: [
+        { name: "Jannatul Mauya", email: "jannatulmauya7711@gmail.com" },
+        { name: "Md. Razu Ahmed", email: "razuahmed038@gmail.com" },
+        { name: "Md. Shamim Reza", email: "shamim.reza@pust.ac.bd" },
+        { name: "Sabba Ruhi", email: "sabba.ruhi@pust.ac.bd" }
       ],
       correspondingAuthor: "Md. Aminul Hoque",
       correspondingEmail: "aminul@ru.ac.bd",
