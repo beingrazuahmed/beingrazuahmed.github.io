@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#113d35">
   <meta name="description" content="BazarBondhu AI — an explainable household budgeting and grocery planning capstone for Bangladesh.">
-  <title>BazarBondhu AI — Your household, in balance</title>
+  <title>BazarBondhu AI — SocioNova capstone demo</title>
   <style>
 /* BazarBondhu AI Professional Edition — no online font, icon, or API dependency */
 :root{--forest:#123d34;--deep:#092f2b;--green:#157b61;--green-bright:#1ca985;--mint:#e3f3e9;--ink:#162e30;--slate:#354d52;--muted:#7f9091;--line:#e5ebeb;--surface:#fff;--bg:#f6f8f7;--amber:#a65f2b;--peach:#fff0e1;--shadow:0 8px 28px rgba(20,51,47,.028);--r:16px}
@@ -67,6 +67,16 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:12px;fl
 /* Keep every navigation item visible via horizontal swipe on compact screens. */
 @media(max-width:720px){.sidebar nav{gap:5px;padding-right:12px}.sidebar .nav{width:auto;min-width:max-content;flex:0 0 auto}}
 
+/* Dated evidence collection: local browser session, no network calls */
+.evidence-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px 16px}
+.evidence-form label{font-size:11px;font-weight:700;color:#49675c;display:block}
+.evidence-form .full{grid-column:1/-1}
+.evidence-form input,.evidence-form select{display:block;width:100%;min-width:0;border-radius:8px;background:#fbfcfb;border:1px solid #dce9df;color:#183c33;padding:11px 12px;margin-top:6px;font-size:12px}
+.evidence-form .checkfield{display:flex;align-items:center;gap:9px;font-size:11px}.evidence-form .checkfield input{width:17px;height:17px;margin:0;accent-color:#168b69}
+.evidence-feedback{color:#638374;font-size:11px;line-height:1.6;margin:0}.evidence-count{background:#e8f5ec;color:#176d51;border:1px solid #cfe6d9;border-radius:9px;padding:12px;font-weight:750;margin:12px 0}
+.evidence-list{max-height:300px;overflow-y:auto}.evidence-entry{border-bottom:1px solid #e7eeea;padding:11px 0;color:#70857e;font-size:11px;overflow-wrap:anywhere}.evidence-entry strong{display:block;font-size:12px;color:#285440}
+.evidence-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:17px}.evidence-source-tag{display:block;font-size:9px;color:#327d61;margin-top:3px;font-weight:600}
+@media(max-width:560px){.evidence-form{grid-template-columns:1fr}.evidence-form .full{grid-column:1}}
 </style>
 </head>
 <body>
@@ -83,6 +93,7 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:12px;fl
       <button type="button" class="nav" data-tab="insights"><svg viewBox="0 0 24 24"><path d="M4 19V5m0 14h17"/><path d="m8 14 4-4 3 3 5-7"/></svg><span>Price scenarios</span></button>
       <button type="button" class="nav" data-tab="assistant"><svg viewBox="0 0 24 24"><path d="m12 3 1.7 5.3L19 10l-5.3 1.7L12 17l-1.7-5.3L5 10l5.3-1.7L12 3z"/><path d="m19 17 .7 1.3L21 19l-1.3.7L19 21l-.7-1.3L17 19l1.3-.7L19 17z"/></svg><span>AI assistant</span><span class="nav-badge">NEW</span></button>
       <button type="button" class="nav" data-tab="about"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></svg><span>Method & ethics</span></button>
+      <button type="button" class="nav" data-tab="evidence"><svg viewBox="0 0 24 24"><path d="M4 19V5h16v14zM8 9h8m-8 4h8"/><path d="m9 16 2 2 4-4"/></svg><span>Price evidence</span></button>
     </nav>
     <div class="side-fill"></div>
     <div class="sidebar-tip"><div class="tip-icon"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M9 14a6 6 0 1 1 6 0l-1 3h-4l-1-3z"/></svg></div><strong>Little savings add up.</strong><p>Adjust prices and quantities to explore a budget that works for you.</p><button type="button" data-goto="basket">Start planning <span>↗</span></button></div>
@@ -105,7 +116,7 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:12px;fl
         <div class="hero-grain" aria-hidden="true"></div>
       </section>
 
-      <div class="notice"><div class="notice-symbol"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></svg></div><div><strong>Using demonstration prices.</strong> Starter food prices and quantities are illustrative, not verified live market data. Update them to reflect your local bazar before making decisions.</div><button class="notice-action" type="button" data-goto="basket">Edit prices <span>→</span></button></div>
+      <div class="notice"><div class="notice-symbol"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></svg></div><div><strong>Using demonstration prices.</strong> All starter prices are fictional demonstration values. Record a dated local observation in Price evidence before treating an entered price as source-documented; the app does not independently verify it.</div><button class="notice-action" type="button" data-goto="evidence">Record prices <span>→</span></button></div>
 
       <section class="panel-page current" id="page-overview" aria-label="Dashboard overview">
         <div class="section-heading"><div><div class="eyebrow">01 / FINANCIAL OVERVIEW</div><h2>Know where you stand.</h2><p class="section-subtitle">A clearer picture of your household's monthly spending.</p></div><span class="section-aside"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18"/></svg> Monthly estimate</span></div>
@@ -145,10 +156,36 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:12px;fl
         <div class="ai-layout"><article class="card ai-main"><div class="chat-heading"><span class="chat-avatar">ব</span><div><strong>BazarBondhu assistant</strong><small><span class="online-indicator light"></span> Here to explain your current calculations</small></div><span class="chat-private">Private session</span></div><div id="chatHistory" class="chat-history" aria-live="polite"><div class="bubble bot">Hello! 👋 I'm BazarBondhu. Ask me about your grocery budget, costs, savings scenarios, or rising prices. আপনি বাংলাতেও প্রশ্ন করতে পারেন।</div></div><form id="chatForm" class="chat-form"><label class="sr-only" for="chatQuery">Your question</label><input id="chatQuery" type="text" maxlength="240" placeholder="Ask anything about your household budget..." autocomplete="off" required><button class="primary" type="submit" aria-label="Send question">Send ↗</button></form><p class="chat-disclaimer">Answers use offline intent matching and verified app calculations—not an external chatbot.</p></article><aside class="card prompts"><span class="mini-section">QUICK START</span><h3>Questions you can try</h3><button type="button" class="prompt">Can my family afford this basket? <span>↗</span></button><button type="button" class="prompt">How can I reduce costs? <span>↗</span></button><button type="button" class="prompt">What happens if prices increase? <span>↗</span></button><button type="button" class="prompt">Which category costs the most? <span>↗</span></button><button type="button" class="prompt">বাজেট ঘাটতি কত? <span>↗</span></button><div class="mini-notice"><strong>A note on this AI</strong><br>The assistant understands a limited set of budgeting questions. It cannot check live prices or give professional nutrition advice.</div></aside></div>
       </section>
 
+      <section class="panel-page" id="page-evidence" aria-label="Dated price observation log">
+        <div class="section-heading"><div><div class="eyebrow">05 / EVIDENCE & PRICE TRACEABILITY</div><h2>Know where a price came from.</h2><p class="section-subtitle">Record a dated price you observed or transcribed. The app does not independently verify your entry.</p></div><span class="section-aside">Local session · no upload</span></div>
+        <div class="two-col">
+          <article class="card"><div class="card-title-row"><div><span class="mini-section">SOURCE-DOCUMENTED INPUT</span><h3>Record a grocery price</h3></div></div>
+            <p class="hint">Check unit, market, date and original source before using any observation in a shopping decision. Do not enter personal names, contact details or payment information.</p>
+            <form id="evidenceForm" class="evidence-form">
+              <label>Grocery item<select id="evidenceItem" required aria-label="Grocery item for price entry"></select></label>
+              <label>Observed unit price (৳)<input type="number" id="evidencePrice" min="0.01" max="100000" step="0.01" placeholder="e.g. 55" required></label>
+              <label>Price observation date<input type="date" id="evidenceDate" required></label>
+              <label>Source category<select id="evidenceType" required><option value="Local market observation">Local market observation</option><option value="DAM report (user-transcribed)">DAM report (user-transcribed)</option><option value="TCB report (user-transcribed)">TCB report (user-transcribed)</option><option value="Other documented source">Other documented source</option></select></label>
+              <label class="full">Market / city or report detail<input type="text" id="evidenceLocation" maxlength="100" placeholder="e.g. Pabna central bazar, stall category" required></label>
+              <label class="full">Evidence reference (URL, receipt description or report identifier)<input type="text" id="evidenceReference" maxlength="240" placeholder="Source link or your dated field note" required></label>
+              <label class="checkfield full"><input type="checkbox" id="evidenceApply" checked><span>Apply this entered price to my example grocery basket</span></label>
+              <div class="full"><button type="submit" class="primary">Record observation <span>→</span></button></div>
+              <p id="evidenceStatus" class="evidence-feedback full" aria-live="polite">No observations recorded. All original item prices remain demonstration-only.</p>
+            </form>
+          </article>
+          <article class="card"><span class="mini-section">LOCAL SOURCE LOG</span><h3>Provenance and demonstration</h3><p class="hint">Entries remain on this device only for the current open page session. Export the log before closing or refreshing; recording does not validate source authenticity.</p>
+            <div class="evidence-count" id="evidenceCount">0 documented entries in this session</div><div id="evidenceList" class="evidence-list"><p class="hint">There are no user-supplied price observations yet.</p></div>
+            <div class="evidence-actions"><button type="button" class="ghost small" id="exportEvidence">Export evidence CSV</button><button type="button" class="ghost small" id="clearEvidence">Clear evidence log</button></div>
+            <div class="mini-notice"><strong>Ethical safeguard:</strong> A source label is not a verification certificate. Local price and availability can change; compare the same unit, date and product quality. Do not interpret reduced food quantities as nutritional advice.</div>
+          </article>
+        </div>
+        <article class="card sources bottom-gap"><span class="mini-section">RESEARCH SOURCES</span><h3>Official Bangladesh sources (open separately)</h3><p>These are source links, not automatic data integrations. You must manually check the appropriate market, date, product and unit.</p><a href="https://market.dam.gov.bd/market_daily_price_report?L=E" target="_blank" rel="noopener noreferrer">Department of Agricultural Marketing (DAM) daily prices <span>↗</span></a><a href="https://tcb.gov.bd/pages/daily-rmps" target="_blank" rel="noopener noreferrer">Trading Corporation of Bangladesh (TCB) retail reports <span>↗</span></a><a href="https://www.bssnews.net/business/432352" target="_blank" rel="noopener noreferrer">BBS September 2026 food inflation (BSS report, 7 Oct 2026) <span>↗</span></a></article>
+      </section>
+
       <section class="panel-page" id="page-about" aria-label="Methods, sources, and ethics">
-        <div class="section-heading"><div><div class="eyebrow">05 / CAPSTONE TRANSPARENCY</div><h2>Built to be understood.</h2><p class="section-subtitle">How the calculations work, what the AI can do, and where it has limits.</p></div></div>
-        <div class="two-col"><article class="card"><span class="mini-section">BEHIND THE PRODUCT</span><h3>How BazarBondhu works</h3><ol class="method-list"><li><strong>Understand your finances.</strong> Enter income, rent, utilities, savings and other household expenses.</li><li><strong>Calculate affordability.</strong> Grocery allowance = max(0, income − fixed expenses − savings goal).</li><li><strong>Plan with constraints.</strong> An explainable, bounded allocation model adjusts shopping quantities to a mathematical spending target.</li><li><strong>Answer questions locally.</strong> A small TF-IDF character n-gram model matches English/Bangla questions to supported intents.</li><li><strong>Make the result clear.</strong> Responses use calculated figures rather than made-up prices.</li></ol></article><article class="card"><span class="mini-section">RESPONSIBLE INNOVATION</span><h3>Ethics, privacy and limitations</h3><div class="ethic"><strong>01 / Nutritional limitations</strong><p>The planner cannot determine whether a proposed quantity is healthy or adequate. It is not dietary guidance.</p></div><div class="ethic"><strong>02 / Price accuracy</strong><p>All included prices are made-up examples; no item is presented as an up-to-date market quotation.</p></div><div class="ethic"><strong>03 / Financial privacy</strong><p>No account, tracker, remote API, or background upload. Inputs stay in memory until the page is refreshed or closed.</p></div><div class="ethic"><strong>04 / Limited language model</strong><p>The assistant supports selected intents only; unknown questions receive a cautious response.</p></div></article></div>
-        <article class="card sources"><span class="mini-section">POTENTIAL REAL-DATA SOURCES</span><h3>Official sources for later development</h3><p>These resources are research leads and are <strong>not connected to this offline demonstration.</strong></p><a href="https://market.dam.gov.bd/market_daily_price_report?L=E" target="_blank" rel="noopener noreferrer">Department of Agricultural Marketing — price reporting <span>↗</span></a><a href="https://tcb.gov.bd/pages/daily-rmps" target="_blank" rel="noopener noreferrer">Trading Corporation of Bangladesh — retail price reports <span>↗</span></a><a href="https://bbs.gov.bd" target="_blank" rel="noopener noreferrer">Bangladesh Bureau of Statistics — household surveys <span>↗</span></a><p class="sources-foot">Future roadmap: district-specific verified prices, local language coverage, user studies and expert-reviewed nutritional constraints.</p></article>
+        <div class="section-heading"><div><div class="eyebrow">06 / CAPSTONE TRANSPARENCY</div><h2>Built to be understood.</h2><p class="section-subtitle">How the calculations work, what the AI can do, and where it has limits.</p></div></div>
+        <div class="two-col"><article class="card"><span class="mini-section">BEHIND THE PRODUCT</span><h3>How BazarBondhu works</h3><ol class="method-list"><li><strong>Understand your finances.</strong> Enter income, rent, utilities, savings and other household expenses.</li><li><strong>Calculate affordability.</strong> Grocery allowance = max(0, income − fixed expenses − savings goal).</li><li><strong>Plan with constraints.</strong> An explainable, bounded allocation model adjusts shopping quantities to a mathematical spending target.</li><li><strong>Answer questions locally.</strong> A small TF-IDF character n-gram model matches English/Bangla questions to supported intents.</li><li><strong>Make the result clear.</strong> Responses use calculated figures rather than made-up prices.</li></ol></article><article class="card"><span class="mini-section">RESPONSIBLE INNOVATION</span><h3>Ethics, privacy and limitations</h3><div class="ethic"><strong>01 / Nutritional limitations</strong><p>The planner cannot determine whether a proposed quantity is healthy or adequate. It is not dietary guidance.</p></div><div class="ethic"><strong>02 / Price accuracy</strong><p>All starting prices are invented examples. Any dated observations are entered by users, retained locally and not independently verified by this app.</p></div><div class="ethic"><strong>03 / Financial privacy</strong><p>No account, tracker, remote API, or background upload. Inputs stay in memory until the page is refreshed or closed.</p></div><div class="ethic"><strong>04 / Limited language model</strong><p>The assistant recognizes a limited set of question types; it can misclassify ambiguous or unfamiliar questions and is not a general-purpose chatbot.</p></div></article></div>
+        <article class="card sources"><span class="mini-section">POTENTIAL REAL-DATA SOURCES</span><h3>Official sources for later development</h3><p>These resources are research leads and are <strong>not connected to this offline demonstration.</strong></p><a href="https://market.dam.gov.bd/market_daily_price_report?L=E" target="_blank" rel="noopener noreferrer">Department of Agricultural Marketing — price reporting <span>↗</span></a><a href="https://tcb.gov.bd/pages/daily-rmps" target="_blank" rel="noopener noreferrer">Trading Corporation of Bangladesh — retail price reports <span>↗</span></a><a href="https://bbs.gov.bd" target="_blank" rel="noopener noreferrer">Bangladesh Bureau of Statistics — household surveys <span>↗</span></a><p class="sources-foot">Real-world context: BBS reported 7.22% year-on-year food inflation for September 2026 (reported by BSS on 7 October 2026). This is context, not a price feed or prediction. <a href="https://www.bssnews.net/business/432352" target="_blank" rel="noopener noreferrer">Read the source ↗</a><br>Future work: independent source verification, district-level coverage, consent-based user testing and expert-reviewed nutrition constraints.</p></article>
       </section>
       <footer><span>© BazarBondhu AI · Team SocioNova</span><span>AI Navigator capstone <span class="footer-separator">•</span> Prototype for demonstration</span></footer>
     </main>
@@ -520,11 +557,20 @@ window.BAZAR_DEMO_ITEMS = [
   const $=id=>document.getElementById(id);
   let shock=10, minimum=0.5;
   const inputKeys=['income','members','rent','utilities','transport','healthEducation','other','savings'];
+  const evidenceRecords=[];
+  const appliedEvidence={};
+  const csvCell=x=>'"'+String(x??'').replace(/"/g,'""')+'"';
+  function saveCSV(name,rows){
+    const csv=rows.map(row=>row.map(csvCell).join(',')).join('\r\n');
+    const link=document.createElement('a');const objectUrl=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'}));
+    link.href=objectUrl;link.download=name;document.body.appendChild(link);link.click();
+    setTimeout(()=>{URL.revokeObjectURL(objectUrl);link.remove();},1000);
+  }
   const bdNumber=amount=>'৳'+Number(amount).toLocaleString('en-BD',{maximumFractionDigits:2});
   function inputs(){const v={};inputKeys.forEach(k=>v[k]=Number($(k).value)||0);return v;}
   function sanitize(value){return String(value).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));}
   function show(tab){
-    const names={overview:'Dashboard',basket:'Grocery planner',insights:'Price scenarios',assistant:'AI assistant',about:'Method & ethics'};
+    const names={overview:'Dashboard',basket:'Grocery planner',insights:'Price scenarios',assistant:'AI assistant',evidence:'Price evidence',about:'Method & ethics'};
     document.querySelectorAll('.panel-page').forEach(p=>p.classList.toggle('current',p.id==='page-'+tab));
     document.querySelectorAll('.nav').forEach(b=>{
       const active=b.dataset.tab===tab;
@@ -538,14 +584,62 @@ window.BAZAR_DEMO_ITEMS = [
   }
   document.querySelectorAll('.nav').forEach(b=>b.addEventListener('click',()=>show(b.dataset.tab)));
   document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.goto)));
-  function drawTable(){const body=$('itemRows');$('itemCount').textContent=items.length;body.innerHTML=items.map((item,i)=>`<tr><td><strong>${sanitize(item.name)}</strong><small lang="bn">${sanitize(item.bn)}</small></td><td><span class="table-category">${sanitize(item.category)}</span></td><td><input aria-label="Price for ${sanitize(item.name)}" class="edit" type="number" min="0" step="0.5" data-i="${i}" data-field="price" value="${item.price}"></td><td><input aria-label="Quantity of ${sanitize(item.name)} in ${sanitize(item.unit)}" class="edit" type="number" min="0" step="0.1" data-i="${i}" data-field="qty" value="${item.qty}"><small>${sanitize(item.unit)}</small></td><td><select aria-label="Priority of ${sanitize(item.name)}" data-i="${i}" data-field="priority">${['High','Medium','Flexible'].map(p=>`<option ${item.priority===p?'selected':''}>${p}</option>`).join('')}</select></td><td class="right" id="subtotal-${i}">${bdNumber(item.price*item.qty)}</td></tr>`).join('');
+  function drawTable(){const body=$('itemRows');$('itemCount').textContent=items.length;body.innerHTML=items.map((item,i)=>`<tr><td><strong>${sanitize(item.name)}</strong><small lang="bn">${sanitize(item.bn)}</small><small id="price-status-${i}" class="evidence-source-tag">Illustrative price</small></td><td><span class="table-category">${sanitize(item.category)}</span></td><td><input aria-label="Price for ${sanitize(item.name)}" class="edit" type="number" min="0" step="0.5" data-i="${i}" data-field="price" value="${item.price}"></td><td><input aria-label="Quantity of ${sanitize(item.name)} in ${sanitize(item.unit)}" class="edit" type="number" min="0" step="0.1" data-i="${i}" data-field="qty" value="${item.qty}"><small>${sanitize(item.unit)}</small></td><td><select aria-label="Priority of ${sanitize(item.name)}" data-i="${i}" data-field="priority">${['High','Medium','Flexible'].map(p=>`<option ${item.priority===p?'selected':''}>${p}</option>`).join('')}</select></td><td class="right" id="subtotal-${i}">${bdNumber(item.price*item.qty)}</td></tr>`).join('');
     body.querySelectorAll('input,select').forEach(el=>el.addEventListener('change',()=>{
       const i=Number(el.dataset.i),field=el.dataset.field;
       items[i][field]=field==='priority'?el.value:Math.max(0,Number(el.value)||0);
+      if(field==='price'){delete appliedEvidence[items[i].id];evidenceRecords.filter(o=>o.id===items[i].id).forEach(o=>o.applied=false);updateEvidenceDisplay();}
       if(field!=='priority')el.value=items[i][field];
       $('subtotal-'+i).textContent=bdNumber(items[i].qty*items[i].price);
-      update();
+      updatePriceTags();update();
     }));
+  }
+  function updatePriceTags(){
+    items.forEach((item,i)=>{
+      const tag=$('price-status-'+i);if(!tag)return;
+      const record=appliedEvidence[item.id];
+      tag.textContent=record?`User-recorded: ${record.date} · not independently verified`:'Illustrative or manually edited price';
+    });
+  }
+  function populateEvidenceItems(){
+    $('evidenceItem').innerHTML=items.map(i=>`<option value="${sanitize(i.id)}">${sanitize(i.name)} (${sanitize(i.unit)})</option>`).join('');
+  }
+  function updateEvidenceDisplay(){
+    $('evidenceCount').textContent=`${evidenceRecords.length} source-documented entr${evidenceRecords.length===1?'y':'ies'} entered this session; ${Object.keys(appliedEvidence).length} applied to the basket`;
+    $('evidenceList').innerHTML=evidenceRecords.length?evidenceRecords.slice().reverse().map(o=>`<div class="evidence-entry"><strong>${sanitize(o.name)} — ${bdNumber(o.price)} / ${sanitize(o.unit)}</strong>${sanitize(o.date)} · ${sanitize(o.type)}<br>${sanitize(o.location)}<br><span class="evidence-source-tag">Reference: ${sanitize(o.reference)}</span>${o.applied?'Applied to the current shopping basket (user-entered)':'Logged only; not applied'}</div>`).join(''):'<p class="hint">There are no user-supplied price observations yet.</p>';
+    updatePriceTags();
+  }
+  function setupEvidence(){
+    populateEvidenceItems();
+    const d=new Date();const today=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+    $('evidenceDate').max=today;$('evidenceDate').value=today;
+    $('evidenceForm').addEventListener('submit',e=>{
+      e.preventDefault();
+      const item=items.find(i=>i.id===$('evidenceItem').value);
+      const price=Number($('evidencePrice').value),date=$('evidenceDate').value;
+      const location=$('evidenceLocation').value.trim(),reference=$('evidenceReference').value.trim();
+      if(!item||!Number.isFinite(price)||price<=0||price>100000||!date||date>today||!location||!reference){
+        $('evidenceStatus').textContent='Please provide a positive unit price, non-future date, market and source reference.';return;
+      }
+      if(evidenceRecords.length>=30){$('evidenceStatus').textContent='30-entry session limit reached. Export your log before starting a new session.';return;}
+      const row={id:item.id,name:item.name,unit:item.unit,price,date,type:$('evidenceType').value,location,reference,applied:$('evidenceApply').checked};
+      evidenceRecords.push(row);
+      if(row.applied){item.price=price;appliedEvidence[item.id]=row;drawTable();update();}
+      updateEvidenceDisplay();
+      $('evidenceStatus').textContent=`Recorded a user-supplied ${item.name} price with its source details. ${row.applied?'The current basket has been recalculated.':'The basket remains unchanged.'} The source has not been independently verified.`;
+      $('evidencePrice').value='';
+    });
+    $('exportEvidence').addEventListener('click',()=>{
+      const rows=[['Item','Unit','User-entered price BDT','Observation date','Source category','Market or area','Source reference','Applied to basket','Verification status'],...evidenceRecords.map(o=>[o.name,o.unit,o.price,o.date,o.type,o.location,o.reference,o.applied?'Yes':'No','Not independently verified'])];
+      saveCSV('BazarBondhu_user_entered_price_evidence.csv',rows);
+      $('evidenceStatus').textContent='Evidence CSV downloaded locally. No observation was sent to an external server.';
+    });
+    $('clearEvidence').addEventListener('click',()=>{
+      if(!confirm('Clear the source log and applied source labels? Current prices will remain until you reset them.'))return;
+      evidenceRecords.length=0;Object.keys(appliedEvidence).forEach(k=>delete appliedEvidence[k]);updateEvidenceDisplay();
+      $('evidenceStatus').textContent='Source log cleared. Any prices left in the basket are now unlabeled manual values.';
+    });
+    updateEvidenceDisplay();
   }
   function drawAlternatives(){
     const holder=$('alternativeRows');
@@ -617,7 +711,7 @@ window.BAZAR_DEMO_ITEMS = [
   $('shock').addEventListener('input',e=>{shock=Number(e.target.value);$('shockLabel').textContent=shock+'%';updateScenario();});
   $('minFraction').addEventListener('input',e=>{minimum=Number(e.target.value)/100;$('minFractionLabel').textContent=e.target.value+'%';update();});
   $('runPlanner').addEventListener('click',update);
-  $('resetPrices').addEventListener('click',()=>{if(confirm('Restore all demonstration prices, quantities, and priorities?')){items=defaultItems.map(item=>({...item}));drawTable();update();}});
+  $('resetPrices').addEventListener('click',()=>{if(confirm('Restore all demonstration prices, quantities, and priorities?')){items=defaultItems.map(item=>({...item}));Object.keys(appliedEvidence).forEach(k=>delete appliedEvidence[k]);evidenceRecords.forEach(o=>o.applied=false);drawTable();updatePriceTags();updateEvidenceDisplay();update();}});
   function bubble(text,cls){const div=document.createElement('div');div.className='bubble '+cls;div.textContent=text;$('chatHistory').appendChild(div);$('chatHistory').scrollTop=$('chatHistory').scrollHeight;}
   function ask(text){const q=String(text||'').trim();if(!q)return;bubble(q,'user');const result=engine.explain(q,inputs(),items,shock,minimum);bubble(result.message,'bot');}
   $('chatForm').addEventListener('submit',e=>{e.preventDefault();ask($('chatQuery').value);$('chatQuery').value='';});
@@ -626,11 +720,12 @@ window.BAZAR_DEMO_ITEMS = [
     const fin=engine.financials(inputs(),items,0),plan=engine.optimizeBasket(items,fin.budget,minimum,0),sc=engine.financials(inputs(),items,shock);
     const rows=[['BazarBondhu AI — Local demonstration summary'],['All initial and alternative prices are synthetic examples, not official current market quotations'],['Income BDT',fin.income],['Fixed expenses and savings BDT',fin.expenses],['Grocery allowance BDT',fin.budget],['Requested basket BDT',fin.total],['Over-budget gap BDT',fin.gap],['Hypothetical scenario percentage',shock],['Scenario requested basket BDT',sc.total],['Planner feasible',plan.feasible],['Planner spend BDT',plan.feasible?plan.plannedCost:'N/A'],[],['Item','Category','Unit','Price BDT / unit','Monthly requested quantity','Priority','Requested subtotal BDT']];
     items.forEach(i=>rows.push([i.name,i.category,i.unit,i.price,i.qty,i.priority,(i.price*i.qty).toFixed(2)]));
-    const csv=rows.map(row=>row.map(x=>'"'+String(x??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');
-    const link=document.createElement('a');link.href=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'}));link.download='BazarBondhu_AI_household_summary_demo.csv';document.body.appendChild(link);link.click();setTimeout(()=>{URL.revokeObjectURL(link.href);link.remove();},1000);
+    rows.push([],['USER-RECORDED PRICE EVIDENCE (if any)'],['Item','Unit','User-entered price BDT','Observation date','Source category','Market or area','Reference','Applied to current basket','Verification status']);
+    evidenceRecords.forEach(o=>rows.push([o.name,o.unit,o.price,o.date,o.type,o.location,o.reference,o.applied?'Yes':'No','Not independently verified']));
+    saveCSV('BazarBondhu_AI_household_summary_demo.csv',rows);
   }
   $('downloadReport').addEventListener('click',download);
-  drawTable();drawAlternatives();update();
+  drawTable();drawAlternatives();setupEvidence();updatePriceTags();update();
 })();
 
 </script>
