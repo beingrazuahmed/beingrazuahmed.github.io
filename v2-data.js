@@ -2917,7 +2917,8 @@
   // submissions with accepted papers, presentations, or proceedings.
   const icps2026CoauthorsByPaper = {
     '238': ['shamim-reza', 'sabba-ruhi', 'aminul-hoque', 'jannatul-mauya'],
-    '302': ['sabba-ruhi']
+    '302': ['sabba-ruhi'],
+    '454': ['shamim-reza', 'jannatul-mauya']
   };
   const icps2026Submissions = (base.upcomingConferenceSubmissions || [])
     .filter(submission => submission.event === 'ICPS 2026');
