@@ -1465,7 +1465,7 @@
 
   relationship: {
     title: 'Batchmate, co-author & research collaborator',
-    detail: 'Abu Bakar Shiddik is Razu’s batchmate from PUST and a continuing research collaborator a member of Md. Razu Ahmed’s statistical field-survey group at PUST, and involved in machine-learning studies, journal publications and conference contributions.'
+    detail: 'Abu Bakar Shiddik is Razu’s batchmate and continuing research collaborator from PUST. He was also a member of Md. Razu Ahmed’s Statistical Field Survey group in the Department of Statistics and Data Science at PUST, alongside shared machine-learning studies, journal publications and conference contributions.'
   },
 
   sharedPublications: [
