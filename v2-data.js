@@ -793,7 +793,7 @@
         }
       ],
       awards: [
-        'National Science & Technology (NST) Fellowship, Ministry of Science and Technology, Government of the People’s Republic of Bangladesh, for research on “Osteoporosis Classification Using Customized Convolution Neural Network: A Case Study in Bangladesh.”',
+        'National Science & Technology (NST) Fellowship 2023–2024, Ministry of Science and Technology, Government of the People’s Republic of Bangladesh, for research on “Osteoporosis Classification Using Customized Convolution Neural Network: A Case Study in Bangladesh.”',
         'Innovative Research Project Award, Pabna University of Science and Technology, for “An Online Diagnosis of Osteoporosis Patients Grading Using Artificial Intelligence Tools: A Case Study in Pabna.”'
       ],
       externalAffiliations: [
@@ -2120,7 +2120,7 @@
 
       biographyParagraphs: [
         'Farzana Mehedi Moly is currently an M.S. (Thesis) student in Statistics and Data Science at Pabna University of Science and Technology (PUST), a Research Assistant at the Deep Statistical Learning and Research Laboratory (DSLR Lab), and a continuing junior research collaborator of Md. Razu Ahmed. She completed her B.Sc. (Hons.) in Statistics at PUST in the 2022 academic year, with the examination held in 2025.',
-        'Her current thesis focuses on Bangla image captioning using generative adversarial networks and deep learning for university academic context understanding. Her collaborative research with Razu includes missing-value reconstruction and downstream hepatitis-C prediction using machine learning, with work presented at EFAST 2026 and a related manuscript under review. She has also applied for the National Science & Technology (NST) Fellowship.'
+        'Her current thesis focuses on Bangla image captioning using generative adversarial networks and deep learning for university academic context understanding. Her collaborative research with Razu includes missing-value reconstruction and downstream hepatitis-C prediction using machine learning, with work presented at EFAST 2026 and a related manuscript under review. She has also applied for the National Science & Technology (NST) Fellowship 2026–2027.'
       ],
 
       researchInterests: [
@@ -2182,7 +2182,7 @@
 
       externalAffiliations: [
         'Research Assistant, Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST).',
-        'National Science & Technology (NST) Fellowship applicant.'
+        'National Science & Technology (NST) Fellowship 2026–2027 applicant (application status; not recorded as awarded).'
       ],
 
       relationship: {
