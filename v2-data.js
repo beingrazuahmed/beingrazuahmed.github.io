@@ -2121,7 +2121,7 @@
 
       biographyParagraphs: [
         'Farzana Mehedi Moly is currently an M.S. (Thesis) student in Statistics and Data Science at Pabna University of Science and Technology (PUST), a Research Assistant at the Deep Statistical Learning and Research Laboratory (DSLR Lab), and a continuing junior research collaborator of Md. Razu Ahmed. She completed her B.Sc. (Hons.) in Statistics at PUST in the 2022 academic year, with the examination held in 2025.',
-        'Her current thesis focuses on Bangla image captioning using generative adversarial networks and deep learning for university academic context understanding. Her collaborative research with Razu includes missing-value reconstruction and downstream hepatitis-C prediction using machine learning, with work presented at EFAST 2026 and a related manuscript under review. She has also applied for the National Science & Technology (NST) Fellowship 2026–2027.'
+        'Her current thesis focuses on Bangla image captioning using generative adversarial networks and deep learning for university academic context understanding. Her collaborative research with Razu includes missing-value reconstruction and downstream hepatitis-C prediction using machine learning, with work presented at EFAST 2026 and a related manuscript under review. She has also applied for the National Science & Technology (NST) Fellowship.'
       ],
 
       researchInterests: [
@@ -2181,7 +2181,7 @@
 
       awards: [],
       applications: [
-        'NST Fellowship 2026–2027 — Applied for research project “Bangla Image Captioning Using Generative Adversarial Networks and Deep Learning for University Academic Context Understanding.” Application submitted; fellowship not awarded or confirmed.'
+        'NST Fellowship — Applied for research project “Bangla Image Captioning Using Generative Adversarial Networks and Deep Learning for University Academic Context Understanding.” Application submitted; fellowship not awarded or confirmed.'
       ],
 
       externalAffiliations: [
