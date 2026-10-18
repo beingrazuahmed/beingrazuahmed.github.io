@@ -1383,7 +1383,7 @@
   shared: [
     'Nationwide dengue admission forecasting',
     'Beyond Burden dengue preparedness study',
-    'BazarBondhu AI — Team SocioNova; applied AI grocery-affordability prototype jointly developed with Md. Razu Ahmed (team leader)'
+    'BazarBondhu AI — Team SocioNova; applied AI household affordability prototype jointly developed with Md. Razu Ahmed'
   ],
 
   email: 'ziaulhaque3929@gmail.com',
