@@ -1326,3 +1326,55 @@ body[data-page="profile"] [id^="profile-"]{scroll-margin-top:84px}
 @media(prefers-reduced-motion:reduce){
  .dossier-section-nav a,.dossier-evidence-mini,.dossier-language-details>summary>span:last-child{transition:none}
 }
+
+/* BazarBondhu AI feature project – evidence-forward, responsive case-study presentation. */
+.bazarbondhu-project-section{padding-block:clamp(48px,6vw,86px)}
+.bazarbondhu-case-heading{margin-bottom:27px;max-width:960px}
+.bazarbondhu-case-heading h2{font-size:clamp(1.9rem,3.1vw,3rem);line-height:1.15;letter-spacing:-.045em;color:var(--text);margin:12px 0}
+.bazarbondhu-case-heading h2 span{font-weight:500;color:var(--muted)}
+.bazarbondhu-case-heading p{color:var(--muted);font-size:13px;margin:0}
+.bazarbondhu-case{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(270px,.65fr);gap:0;border:1px solid var(--line);
+  background:var(--surface);border-radius:22px;overflow:hidden}
+.bazarbondhu-case-main{padding:clamp(24px,4vw,48px);min-width:0}
+.bazarbondhu-case-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:25px}
+.bazarbondhu-case-meta span{border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:10px;font-weight:800;
+  color:var(--accent-2);background:var(--surface-2)}
+.bazarbondhu-case-main h3{color:var(--text);font-size:clamp(1.55rem,2.5vw,2.55rem);line-height:1.2;letter-spacing:-.045em;max-width:750px;margin:0 0 18px}
+.bazarbondhu-case-main>p{color:var(--muted);font-size:14px;line-height:1.85;max-width:730px}
+.bazarbondhu-method-flow{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);
+  gap:12px;align-items:center;margin-top:clamp(24px,3vw,40px);padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.bazarbondhu-method-flow>div{display:grid;gap:7px;min-width:0}
+.bazarbondhu-method-flow small{font-size:10px;font-weight:850;letter-spacing:.1em;color:var(--accent)}
+.bazarbondhu-method-flow strong{font-size:12px;line-height:1.55;color:var(--text);font-weight:700;overflow-wrap:anywhere}
+.bazarbondhu-method-flow>span{color:var(--accent);font-size:17px}
+.bazarbondhu-case-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.bazarbondhu-case-actions .btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;gap:8px}
+.bazarbondhu-case-side{display:flex;flex-direction:column;padding:clamp(22px,3vw,32px);
+  background:linear-gradient(155deg,color-mix(in srgb,var(--accent) 9%,var(--surface)),var(--surface-2));
+  border-left:1px solid var(--line)}
+.bazarbondhu-case-brand{display:flex;justify-content:space-between;align-items:center;gap:10px;
+  border-bottom:1px solid var(--line);padding-bottom:17px}
+.bazarbondhu-case-brand strong{color:var(--accent-2);font-size:2rem;letter-spacing:-.08em}
+.bazarbondhu-case-brand strong span{color:var(--accent);font-size:.68em}
+.bazarbondhu-case-brand small{color:var(--muted);font-weight:800;letter-spacing:.11em;font-size:9px}
+.bazarbondhu-case-capabilities{padding-top:18px}
+.bazarbondhu-case-capabilities h4{color:var(--text);font-size:13px;margin:0 0 15px}
+.bazarbondhu-case-capabilities ul{list-style:none;padding:0;margin:0}
+.bazarbondhu-case-capabilities li{position:relative;padding:9px 0 9px 19px;border-top:1px solid var(--line);
+  color:var(--text);font-size:12px;line-height:1.55}
+.bazarbondhu-case-capabilities li::before{content:"";position:absolute;left:0;top:16px;width:7px;height:7px;background:var(--accent);border-radius:50%}
+.bazarbondhu-case-disclaimer{margin:auto 0 0;padding-top:24px;color:var(--muted);font-size:11px;line-height:1.7}
+.bazarbondhu-case-disclaimer strong{color:var(--text)}
+@media(max-width:900px){
+ .bazarbondhu-case{grid-template-columns:1fr}
+ .bazarbondhu-case-side{border-left:0;border-top:1px solid var(--line)}
+ .bazarbondhu-case-capabilities ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}
+ .bazarbondhu-case-disclaimer{margin-top:18px}
+}
+@media(max-width:560px){
+ .bazarbondhu-case{border-radius:16px}
+ .bazarbondhu-method-flow{grid-template-columns:1fr;gap:9px}
+ .bazarbondhu-method-flow>span{transform:rotate(90deg);justify-self:start;margin-left:3px}
+ .bazarbondhu-case-capabilities ul{grid-template-columns:1fr}
+ .bazarbondhu-case-actions .btn{flex:1 1 160px}
+}
