@@ -2821,13 +2821,13 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         <div class="bazarbondhu-case-heading">
           <span class="section-kicker">Featured applied AI · Public interactive demo</span>
           <h2>BazarBondhu AI <span>— Budget-aware grocery planning for Bangladesh</span></h2>
-          <p>Team SocioNova · AI Navigator capstone · Working demonstration prototype</p>
+          <p>Team SocioNova · Jointly developed by <strong>Md. Razu Ahmed</strong> and <a href="network-ziaul-haque.html"><strong>Muhammad Ziaul Haque</strong></a> · AI Navigator capstone · Working demonstration prototype</p>
         </div>
         <article class="bazarbondhu-case">
           <div class="bazarbondhu-case-main">
             <div class="bazarbondhu-case-meta"><span>Household affordability</span><span>Explainable decision support</span><span>Privacy-aware local prototype</span></div>
             <h3>An Explainable, Budget-Constrained Grocery Planning Assistant for Bangladeshi Households</h3>
-            <p>Built with Team SocioNova, BazarBondhu AI demonstrates how a household can explore grocery quantities within a limited budget, compare hypothetical prices, and examine price-increase scenarios through clear, inspectable calculations.</p>
+            <p>Developed collaboratively by Md. Razu Ahmed and Muhammad Ziaul Haque under Team SocioNova, BazarBondhu AI demonstrates how a household can explore grocery quantities within a limited budget, compare hypothetical prices, and examine price-increase scenarios through clear, inspectable calculations.</p>
             <div class="bazarbondhu-method-flow" aria-label="BazarBondhu AI workflow">
               <div><small>01 · INPUT</small><strong>Budget, item prices & quantities</strong></div>
               <span aria-hidden="true">→</span>
