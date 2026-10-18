@@ -872,7 +872,7 @@
       name: 'Jannatul Mauya',
       group: 'Departmental Seniors & Senior Collaborators',
       profilePage: 'network-jannatul-mauya.html',
-      profileBadges: ['M.Phil. Student', 'Research Assistant', 'Research Collaborator', 'Departmental Senior'],
+      profileBadges: ['M.Phil. Student', 'Research Assistant', 'Research Collaborator', 'Gold Medal Nominee'],
       headline: 'M.Phil. Student in Bioinformatics · Research Assistant, Data Science Research Lab',
       roles: ['M.Phil. Student', 'Research Assistant', 'Research Collaborator', 'Co-author', 'Departmental Senior'],
       affiliation: 'Department of Statistics and Data Science, University of Rajshahi, Rajshahi-6205, Bangladesh',
@@ -967,7 +967,8 @@
       awards: [
         'National Science and Technology (NST) Fellowship 2024–2025, Ministry of Science and Technology, Government of the People’s Republic of Bangladesh · Merit No. 47 · Serial No. 434.',
         'Merit Scholarships received four times during undergraduate study and during the M.S. programme for academic performance.',
-        'EXIM Bank Scholarship for academic excellence.'
+        'EXIM Bank Scholarship for academic excellence.',
+        'Nominated for the Prime Minister’s Gold Medal 2023 by the Faculty of Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh · Nomination only; not a medal award.'
       ],
       relationship: {
         title: 'Departmental senior & major research collaborator',
@@ -1170,7 +1171,7 @@
         }
       ],
       awards: [
-        'National Science & Technology (NST) Fellowship, Ministry of Science and Technology, Government of the People’s Republic of Bangladesh.',
+        'National Science & Technology (NST) Fellowship, Ministry of Science and Technology, Government of the People’s Republic of Bangladesh · Merit No. 139 · Serial No. 992.',
         'Dean’s Honors Award, Pabna University of Science and Technology.',
         'PUST Students Innovation Award.',
         'PUST Merit Scholarship during B.Sc.: 1st rank in Years 2–4 and 3rd rank in Year 1; also received merit scholarship during M.S.'
@@ -1614,7 +1615,7 @@
   ],
 
   awards: [
-    'National Science & Technology (NST) Fellowship, Ministry of Science and Technology, Government of the People’s Republic of Bangladesh.',
+    'National Science & Technology (NST) Fellowship, Ministry of Science and Technology, Government of the People’s Republic of Bangladesh · Merit No. 195 · Serial No. 1216.',
     'Dean’s Honors Award, Pabna University of Science and Technology.',
     'JSR Award.',
     'Merit Scholarships during undergraduate studies and M.S. for outstanding academic performance.',
@@ -1806,7 +1807,7 @@
       ],
 
       awards: [
-        'National Science & Technology (NST) Fellowship.',
+        'National Science & Technology (NST) Fellowship · Merit No. 218 · Serial No. 1196.',
         'Dean’s Honors Award, Pabna University of Science and Technology.',
         'PUST Students Innovation Award · 1st place.',
         'Merit Scholarships during undergraduate studies and M.S. for outstanding academic performance.',
