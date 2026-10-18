@@ -1171,7 +1171,7 @@
         }
       ],
       awards: [
-        'National Science & Technology (NST) Fellowship, Ministry of Science and Technology, Government of the People’s Republic of Bangladesh · Merit No. 139 · Serial No. 992.',
+        'National Science & Technology (NST) Fellowship 2025–2026, Ministry of Science and Technology, Government of the People’s Republic of Bangladesh · Merit No. 139 · Serial No. 992.',
         'Dean’s Honors Award, Pabna University of Science and Technology.',
         'PUST Students Innovation Award.',
         'PUST Merit Scholarship during B.Sc.: 1st rank in Years 2–4 and 3rd rank in Year 1; also received merit scholarship during M.S.'
@@ -1351,7 +1351,7 @@
 
   relationship: {
     title: 'Batchmate, co-author & research collaborator',
-    detail: 'Muhammad Ziaul Haque is Razu’s batchmate from PUST and continuing research collaborator. Their collaboration includes machine learning and deep learning applications and nationwide dengue forecasting studies.'
+    detail: 'Muhammad Ziaul Haque is Razu’s batchmate from PUST and continuing research collaborator. Their collaboration includes machine learning and deep learning applications, nationwide dengue forecasting studies, and BazarBondhu AI (Team SocioNova), a jointly developed household-budgeting and grocery-planning prototype.'
   },
 
   relationshipPath: [
@@ -1382,7 +1382,8 @@
 
   shared: [
     'Nationwide dengue admission forecasting',
-    'Beyond Burden dengue preparedness study'
+    'Beyond Burden dengue preparedness study',
+    'BazarBondhu AI — Team SocioNova; applied AI grocery-affordability prototype jointly developed with Md. Razu Ahmed (team leader)'
   ],
 
   email: 'ziaulhaque3929@gmail.com',
@@ -1615,7 +1616,7 @@
   ],
 
   awards: [
-    'National Science & Technology (NST) Fellowship, Ministry of Science and Technology, Government of the People’s Republic of Bangladesh · Merit No. 195 · Serial No. 1216.',
+    'National Science & Technology (NST) Fellowship 2025–2026, Ministry of Science and Technology, Government of the People’s Republic of Bangladesh · Merit No. 195 · Serial No. 1216.',
     'Dean’s Honors Award, Pabna University of Science and Technology.',
     'JSR Award.',
     'Merit Scholarships during undergraduate studies and M.S. for outstanding academic performance.',
@@ -1807,7 +1808,7 @@
       ],
 
       awards: [
-        'National Science & Technology (NST) Fellowship · Merit No. 218 · Serial No. 1196.',
+        'National Science & Technology (NST) Fellowship 2025–2026 · Merit No. 218 · Serial No. 1196.',
         'Dean’s Honors Award, Pabna University of Science and Technology.',
         'PUST Students Innovation Award · 1st place.',
         'Merit Scholarships during undergraduate studies and M.S. for outstanding academic performance.',
