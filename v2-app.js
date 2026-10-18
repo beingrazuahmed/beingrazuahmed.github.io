@@ -2816,7 +2816,35 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
 
   function askRazu(){return `${pageHero('Ask Razu AI','Research Intelligence for My Academic Portfolio')}<section class="section"><div class="container"><article class="card"><h3>Hi, I’m Ask Razu AI.</h3><p>I can help you explore Md. Razu Ahmed’s research, publications, datasets, methodologies, academic background, peer-review service, conference work, collaborations and current research directions. My answers are grounded in the verified information available in this portfolio.</p><div class="search-wrap"><input class="search-input" id="askInput" placeholder="Ask about research, methods, coursework, conferences or collaborators…"></div><div class="pill-row" style="margin-top:14px">${['Research','Publications','Methods','Experience','Collaborators','Metrics','Coursework','Conferences','Training'].map(x=>`<button class="filter askPrompt" data-q="${x}">${x}</button>`).join('')}</div><div id="askAnswer" class="card" style="margin-top:18px"><strong>Try:</strong> “Which studies used SHAP?”, “Show first-author papers”, “What machine-learning coursework did Razu take?”, or “Who collaborated on dengue?”</div></article></div></section>`;}
 
-  function projects(){return `${pageHero('Projects & Prototypes','Research prototypes, analytical projects and reproducible workflows.')}<section class="section"><div class="container">${sectionHead('Featured prototype','Diabetic-retinopathy grading research prototype')}<article class="card quote-card"><h3>Deep learning + handcrafted feature fusion</h3><p>Research prototype combining DenseNet121 representations, SIFT-BoVW features, XGBoost and Grad-CAM++ for explainable diabetic-retinopathy grading. Intended for research and decision-support exploration, not clinical diagnosis.</p></article></div></section><section class="section alt"><div class="container">${sectionHead('Active projects','Current directions')}<div class="grid grid-3">${(D.ongoing||[]).map(x=>`<article class="card"><span class="badge">In preparation</span><h3>${esc(x.title)}</h3><p>${esc(x.objective||x.summary||x.description||'')}</p>${tags(x.methods||x.tags||[])}</article>`).join('')}</div></div></section>`;}
+  function projects(){return `${pageHero('Projects & Prototypes','Research prototypes, analytical projects and reproducible workflows.')}
+      <section class="section bazarbondhu-project-section" id="bazarbondhu-ai"><div class="container">
+        <div class="bazarbondhu-case-heading">
+          <span class="section-kicker">Featured applied AI · Public interactive demo</span>
+          <h2>BazarBondhu AI <span>— Budget-aware grocery planning for Bangladesh</span></h2>
+          <p>Team SocioNova · AI Navigator capstone · Working demonstration prototype</p>
+        </div>
+        <article class="bazarbondhu-case">
+          <div class="bazarbondhu-case-main">
+            <div class="bazarbondhu-case-meta"><span>Household affordability</span><span>Explainable decision support</span><span>Privacy-aware local prototype</span></div>
+            <h3>An Explainable, Budget-Constrained Grocery Planning Assistant for Bangladeshi Households</h3>
+            <p>Built with Team SocioNova, BazarBondhu AI demonstrates how a household can explore grocery quantities within a limited budget, compare hypothetical prices, and examine price-increase scenarios through clear, inspectable calculations.</p>
+            <div class="bazarbondhu-method-flow" aria-label="BazarBondhu AI workflow">
+              <div><small>01 · INPUT</small><strong>Budget, item prices & quantities</strong></div>
+              <span aria-hidden="true">→</span>
+              <div><small>02 · PROCESS</small><strong>Bounded allocation + TF-IDF intents</strong></div>
+              <span aria-hidden="true">→</span>
+              <div><small>03 · OUTPUT</small><strong>Planning scenarios & CSV export</strong></div>
+            </div>
+            <div class="bazarbondhu-case-actions"><a class="btn primary" href="bazarbondhu-ai/" target="_blank" rel="noopener noreferrer">Open live prototype <span aria-hidden="true">↗</span></a><a class="btn ghost" href="bazarbondhu-ai/#page-about" target="_blank" rel="noopener noreferrer">Methods & ethical safeguards <span aria-hidden="true">↗</span></a></div>
+          </div>
+          <aside class="bazarbondhu-case-side">
+            <div class="bazarbondhu-case-brand"><strong>BB<span>AI</span></strong><small>TEAM SOCIONOVA</small></div>
+            <div class="bazarbondhu-case-capabilities"><h4>Demonstrated capabilities</h4><ul><li>Editable household grocery budgets</li><li>Explainable constrained planning</li><li>Illustrative seller-price comparison</li><li>Hypothetical price-increase simulation</li><li>Limited offline English/Bangla assistant</li><li>Price evidence log & CSV export</li></ul></div>
+            <p class="bazarbondhu-case-disclaimer"><strong>Prototype disclosure.</strong> Starter prices are illustrative, not live verified market prices. The limited TF-IDF assistant is not a generative language model. Local user-entered evidence is not independently verified; nutrition recommendations are not medical advice.</p>
+          </aside>
+        </article>
+      </div></section>
+      <section class="section"><div class="container">${sectionHead('Research prototype','Diabetic-retinopathy grading research prototype')}<article class="card quote-card"><h3>Deep learning + handcrafted feature fusion</h3><p>Research prototype combining DenseNet121 representations, SIFT-BoVW features, XGBoost and Grad-CAM++ for explainable diabetic-retinopathy grading. Intended for research and decision-support exploration, not clinical diagnosis.</p></article></div></section><section class="section alt"><div class="container">${sectionHead('Active projects','Current directions')}<div class="grid grid-3">${(D.ongoing||[]).map(x=>`<article class="card"><span class="badge">In preparation</span><h3>${esc(x.title)}</h3><p>${esc(x.objective||x.summary||x.description||'')}</p>${tags(x.methods||x.tags||[])}</article>`).join('')}</div></div></section>`;}
 
   function contact(){
   const email=D.profile?.email||'razuahmed038@gmail.com',affiliation=D.profile?.affiliation||'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST)',portrait=D.profile?.image||'assets/profile/razu-portrait.JPG';
