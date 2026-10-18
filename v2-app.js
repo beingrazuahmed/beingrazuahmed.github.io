@@ -2614,10 +2614,11 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
           </section>`:''}
 
           <section class="network-profile-section" id="recognition">
-            <div class="network-profile-section-head"><div><span class="section-kicker">Recognition & service</span><h2>Awards and external affiliations</h2></div></div>
-            <div class="network-overview-grid ${!(x.externalAffiliations||[]).length?'is-single':''}">
-              <article class="network-profile-panel"><h3>Awards & recognition</h3><ul class="mentor-clean-list">${(x.awards||[]).map(v=>`<li>${esc(v)}</li>`).join('')}</ul></article>
+            <div class="network-profile-section-head"><div><span class="section-kicker">Recognition & service</span><h2>Academic recognition, affiliations & application status</h2></div></div>
+            <div class="network-overview-grid ${[x.awards?.length,x.externalAffiliations?.length,x.applications?.length].filter(Boolean).length<=1?'is-single':''}">
+              ${(x.awards||[]).length?`<article class="network-profile-panel"><h3>Awards & recognition</h3><ul class="mentor-clean-list">${x.awards.map(v=>`<li>${esc(v)}</li>`).join('')}</ul></article>`:''}
               ${(x.externalAffiliations||[]).length?`<article class="network-profile-panel"><h3>External affiliations</h3><ul class="mentor-clean-list">${x.externalAffiliations.map(v=>`<li>${esc(v)}</li>`).join('')}</ul></article>`:''}
+              ${(x.applications||[]).length?`<article class="network-profile-panel"><h3>Applications · decision pending</h3><ul class="mentor-clean-list">${x.applications.map(v=>`<li>${esc(v)}</li>`).join('')}</ul></article>`:''}
             </div>
           </section>
 
