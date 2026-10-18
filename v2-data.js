@@ -872,7 +872,7 @@
       name: 'Jannatul Mauya',
       group: 'Departmental Seniors & Senior Collaborators',
       profilePage: 'network-jannatul-mauya.html',
-      profileBadges: ['M.Phil. Student', 'Research Assistant', 'Research Collaborator', 'Gold Medal Nominee'],
+      profileBadges: ['M.Phil. Student', 'Research Assistant', 'NST Fellow', 'Research Collaborator', 'Gold Medal Nominee'],
       headline: 'M.Phil. Student in Bioinformatics · Research Assistant, Data Science Research Lab',
       roles: ['M.Phil. Student', 'Research Assistant', 'Research Collaborator', 'Co-author', 'Departmental Senior'],
       affiliation: 'Department of Statistics and Data Science, University of Rajshahi, Rajshahi-6205, Bangladesh',
@@ -887,7 +887,7 @@
       ],
       biographyParagraphs: [
         'Jannatul Mauya is an M.Phil. student in Bioinformatics in the Department of Statistics and Data Science, University of Rajshahi, and a Research Assistant at the Data Science Research Lab. She is also a Research Assistant in the Deep Statistical Learning and Research Laboratory (DSLR Lab) at Pabna University of Science and Technology. She completed both her B.Sc. (Hons.) and M.S. (Thesis) in Statistics at PUST, securing first merit position in both programmes.',
-        'Her research interests include statistics, machine learning, deep learning, medical imaging and image processing, pattern processing, multivariate analysis and big-data analysis. Her work spans biomedical and health-related prediction, computer vision, missing-data methodology, food computing and agricultural image analysis.'
+        'Her research interests include statistics, machine learning, deep learning, medical imaging and image processing, pattern processing, multivariate analysis and big-data analysis. Her work spans biomedical and health-related prediction, computer vision, missing-data methodology, food computing and agricultural image analysis. She received the National Science and Technology (NST) Fellowship 2024–2025 for her research project on AI-driven identification and classification of sugarcane leaf diseases at the Bangladesh Sugarcrop Research Institute (BSRI).'
       ],
       researchInterests: [
         'Statistics',
@@ -965,7 +965,7 @@
         }
       ],
       awards: [
-        'National Science and Technology (NST) Fellowship 2024–2025, Ministry of Science and Technology, Government of the People’s Republic of Bangladesh · Merit No. 47 · Serial No. 434.',
+        'National Science and Technology (NST) Fellowship 2024–2025, Ministry of Science and Technology, Government of the People’s Republic of Bangladesh · Merit No. 47 · Serial No. 434 · Awarded for the research project “AI-Driven Identification and Classification of Sugarcane Leaf Diseases: A Study at the Bangladesh Sugarcrop Research Institute (BSRI).”',
         'Merit Scholarships received four times during undergraduate study and during the M.S. programme for academic performance.',
         'EXIM Bank Scholarship for academic excellence.',
         'Nominated for the Prime Minister’s Gold Medal 2023 by the Faculty of Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh · Nomination only; not a medal award.'
