@@ -1,5 +1,5 @@
 window.PORTFOLIO_EXTRA = {
-  lastUpdated: "17 October 2026",
+  lastUpdated: "18 October 2026",
   impactMetrics: [
     { label: "Google Scholar citations", value: 2, source: "Google Scholar", date: "15 September 2026" },
     { label: "ResearchGate citations", value: 5, source: "ResearchGate", date: "15 September 2026" },
