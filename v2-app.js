@@ -2835,9 +2835,9 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
               <span aria-hidden="true">→</span>
               <div><small>03 · OUTPUT</small><strong>Planning scenarios & CSV export</strong></div>
             </div>
-            <div class="bazarbondhu-case-actions"><a class="btn primary" href="bazarbondhu-ai/" target="_blank" rel="noopener noreferrer">Open live prototype <span aria-hidden="true">↗</span></a><a class="btn ghost" href="bazarbondhu-ai/#page-about" target="_blank" rel="noopener noreferrer">Methods & ethical safeguards <span aria-hidden="true">↗</span></a></div>
+            <div class="bazarbondhu-case-actions"><a class="btn primary" href="bazarbondhu-ai/" target="_blank" rel="noopener noreferrer">Open live prototype <span aria-hidden="true">↗</span></a><a class="btn ghost" href="#bazarbondhu-methods">Methods & ethical safeguards <span aria-hidden="true">↗</span></a></div>
           </div>
-          <aside class="bazarbondhu-case-side">
+          <aside class="bazarbondhu-case-side" id="bazarbondhu-methods">
             <div class="bazarbondhu-case-brand"><strong>BB<span>AI</span></strong><small>TEAM SOCIONOVA</small></div>
             <div class="bazarbondhu-case-capabilities"><h4>Demonstrated capabilities</h4><ul><li>Editable household grocery budgets</li><li>Explainable constrained planning</li><li>Illustrative seller-price comparison</li><li>Hypothetical price-increase simulation</li><li>Limited offline English/Bangla assistant</li><li>Price evidence log & CSV export</li></ul></div>
             <p class="bazarbondhu-case-disclaimer"><strong>Prototype disclosure.</strong> Starter prices are illustrative, not live verified market prices. The limited TF-IDF assistant is not a generative language model. Local user-entered evidence is not independently verified; nutrition recommendations are not medical advice.</p>
