@@ -1150,12 +1150,12 @@
         {
           period: 'Leadership & innovation',
           title: 'Team Member & Chief Technology Officer (CTO)',
-          institution: 'HULT Prize · Stat4Change'
+          institution: 'HULT Prize · Stat4Change (joint team with Md. Razu Ahmed)'
         },
         {
           period: 'Professional development',
           title: 'IT Support Service Course Partner',
-          institution: 'IT Support Service'
+          institution: 'IT Support Service (shared activity with Md. Razu Ahmed)'
         },
         {
           period: 'International academic exposure',
@@ -1171,21 +1171,18 @@
         }
       ],
       awards: [
-        'National Science & Technology (NST) Fellowship 2025–2026, Ministry of Science and Technology, Government of the People’s Republic of Bangladesh · Merit No. 139 · Serial No. 992.',
+        'National Science & Technology (NST) Fellowship 2025–2026, Ministry of Science and Technology, Government of the People’s Republic of Bangladesh · Merit No. 139 · Serial No. 992 · Fellowship research project: “Cross-Attention Transformer-Driven Multimodal Framework for Skin Cancer Detection in Low-Resource Settings.”',
         'Dean’s Honors Award, Pabna University of Science and Technology.',
         'PUST Students Innovation Award.',
         'PUST Merit Scholarship during B.Sc.: 1st rank in Years 2–4 and 3rd rank in Year 1; also received merit scholarship during M.S.'
       ],
       externalAffiliations: [
         'Research Assistant, Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST).',
-        'HULT Prize · Stat4Change team member and Chief Technology Officer (CTO).',
-        'IT Support Service Course Partner.',
-        'Statistical Field Survey Group Member, Department of Statistics and Data Science, Pabna University of Science and Technology (PUST).',
         'Sakura Science Exchange Program participant, University of Yamanashi, Japan.'
       ],
       relationship: {
         title: 'Batchmate, field-survey teammate & research collaborator',
-        detail: 'Md. Abdur Rakib is Razu’s batchmate from PUST and a continuing research collaborator. Their shared academic journey includes statistical field survey activities, joint journal publications, conference contributions, and collaborative research in machine learning and artificial intelligence.'
+        detail: 'Md. Abdur Rakib is Razu’s batchmate from PUST and a continuing research collaborator. Their shared activities include the Hult Prize Stat4Change team (Rakib as CTO), IT Support Service course partnership and the same PUST statistical field-survey group, in addition to journal publications, conferences, machine learning and artificial-intelligence research.'
       },
       relationshipPath: [
         'Batchmates at PUST',
@@ -1223,6 +1220,9 @@
         }
       ],
       shared: [
+        'Hult Prize Stat4Change — shared team with Md. Razu Ahmed; Rakib served as Chief Technology Officer (CTO)',
+        'IT Support Service Course Partner — shared activity with Md. Razu Ahmed',
+        'PUST Statistical Field Survey — member of Md. Razu Ahmed’s survey group, Department of Statistics and Data Science',
         'CKD risk-factor identification and stacking machine-learning prediction — published in International Journal of Statistical Sciences',
         'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh — accepted / forthcoming',
         'ICRAST 2025 Paper ID 440 — AI and employment perceptions',
@@ -1431,13 +1431,13 @@
     'Batchmate',
     'Co-author',
     'Research Collaborator',
-    'Statistical Field Survey Group Member',
+    'Statistical Field Survey Teammate (with Md. Razu Ahmed)',
     'Former Research Assistant · DSLR Lab'
   ],
 
   affiliation: 'Islami Bank PLC, Paltan Branch, Dhaka, Bangladesh',
 
-  description: 'Abu Bakar Shiddik is a batchmate of Razu from Pabna University of Science and Technology and a continuing research collaborator. His contributions include statistical field survey activities, machine learning research, journal publications, conference contributions and collaborative research projects.',
+  description: 'Abu Bakar Shiddik is a batchmate of Razu from Pabna University of Science and Technology and a continuing research collaborator. He was a member of Md. Razu Ahmed’s statistical field-survey group at PUST; his contributions also include machine-learning research, journal publications, conference contributions and collaborative research projects.',
 
   portrait: 'assets/collaborators/abu-bakar-shiddik.jpeg',
   cardPortraitPosition: '50% 14%',
@@ -1465,7 +1465,7 @@
 
   relationship: {
     title: 'Batchmate, co-author & research collaborator',
-    detail: 'Abu Bakar Shiddik is Razu’s batchmate from PUST and a continuing research collaborator involved in statistical field surveys, machine learning studies, journal publications and conference contributions.'
+    detail: 'Abu Bakar Shiddik is Razu’s batchmate from PUST and a continuing research collaborator a member of Md. Razu Ahmed’s statistical field-survey group at PUST, and involved in machine-learning studies, journal publications and conference contributions.'
   },
 
   sharedPublications: [
@@ -1496,6 +1496,7 @@
   ],
 
   shared: [
+    'PUST Statistical Field Survey — shared survey group with Md. Razu Ahmed at the Department of Statistics and Data Science',
     'Chronic kidney disease prediction',
     'AI employment perception study',
     'Statistical field survey research',
@@ -1616,7 +1617,7 @@
   ],
 
   awards: [
-    'National Science & Technology (NST) Fellowship 2025–2026, Ministry of Science and Technology, Government of the People’s Republic of Bangladesh · Merit No. 195 · Serial No. 1216.',
+    'National Science & Technology (NST) Fellowship 2025–2026, Ministry of Science and Technology, Government of the People’s Republic of Bangladesh · Merit No. 195 · Serial No. 1216 · Fellowship research project: “AI-Based Automated Assessment of Calorie Intake and Nutritional Quality from Student Meals in PUST Hall Dining.”',
     'Dean’s Honors Award, Pabna University of Science and Technology.',
     'JSR Award.',
     'Merit Scholarships during undergraduate studies and M.S. for outstanding academic performance.',
@@ -1626,13 +1627,11 @@
   externalAffiliations: [
     'Research Assistant, Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST).',
     'PLOS ONE Peer Reviewer.',
-    'HULT Prize (Stat4Change) Team Member · Chief Marketing Officer (CMO).',
-    'IT Support Service Course Partner.'
   ],
 
   relationship: {
     title: 'Batchmate, co-author & research collaborator',
-    detail: 'Marufa Yeasmin is Razu’s batchmate from PUST and a continuing research collaborator. Their shared academic journey includes dataset development, joint journal publications, conference contributions and collaborative research in machine learning and artificial intelligence.'
+    detail: 'Marufa Yeasmin is Razu’s batchmate from PUST and a continuing research collaborator. Their shared activities include the Hult Prize Stat4Change team (Marufa as CMO) and IT Support Service course partnership, alongside dataset development, joint publications, conferences and machine-learning research.'
   },
 
   relationshipPath: [
@@ -1681,6 +1680,8 @@
   ],
 
   shared: [
+    'Hult Prize Stat4Change — shared team with Md. Razu Ahmed; Marufa served as Chief Marketing Officer (CMO)',
+    'IT Support Service Course Partner — shared activity with Md. Razu Ahmed',
     'PUST Cafeteria Food Image Dataset — Data in Brief publication',
     'Public research dataset development',
     'Real-time food detection and automated cafeteria billing research',
@@ -1808,7 +1809,7 @@
       ],
 
       awards: [
-        'National Science & Technology (NST) Fellowship 2025–2026 · Merit No. 218 · Serial No. 1196.',
+        'National Science & Technology (NST) Fellowship 2025–2026 · Merit No. 218 · Serial No. 1196 · Fellowship research project: “Automated Billing from Platter Images at PUST Central Cafeteria Using Multimodal Deep Learning.”',
         'Dean’s Honors Award, Pabna University of Science and Technology.',
         'PUST Students Innovation Award · 1st place.',
         'Merit Scholarships during undergraduate studies and M.S. for outstanding academic performance.',
@@ -2179,10 +2180,12 @@
       ],
 
       awards: [],
+      applications: [
+        'NST Fellowship 2026–2027 — Applied for research project “Bangla Image Captioning Using Generative Adversarial Networks and Deep Learning for University Academic Context Understanding.” Application submitted; fellowship not awarded or confirmed.'
+      ],
 
       externalAffiliations: [
-        'Research Assistant, Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST).',
-        'National Science & Technology (NST) Fellowship 2026–2027 applicant (application status; not recorded as awarded).'
+        'Research Assistant, Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST).'
       ],
 
       relationship: {
