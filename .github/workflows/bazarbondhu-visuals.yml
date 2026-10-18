@@ -1,0 +1,40 @@
+name: Capture BazarBondhu prototype screens
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/bazarbondhu-visuals.yml'
+      - 'scripts/capture-bazarbondhu.cjs'
+      - 'bazarbondhu-ai/index.html'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install screenshot browser
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.1
+          npx playwright install chromium
+      - name: Validate portfolio and capture real screens
+        run: |
+          node scripts/portfolio.mjs check
+          node scripts/capture-bazarbondhu.cjs
+      - name: Commit actual app screenshots
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/academic/projects/bazarbondhu/*.png
+          if ! git diff --cached --quiet; then
+            git commit -m "Add four captured BazarBondhu AI prototype screens"
+            git push origin HEAD:main
+          fi

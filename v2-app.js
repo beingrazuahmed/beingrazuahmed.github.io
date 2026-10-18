@@ -2844,6 +2844,34 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
             <p class="bazarbondhu-case-disclaimer"><strong>Prototype disclosure.</strong> Starter prices are illustrative, not live verified market prices. The limited TF-IDF assistant is not a generative language model. Local user-entered evidence is not independently verified; nutrition recommendations are not medical advice.</p>
           </aside>
         </article>
+        <section class="bazarbondhu-gallery" aria-labelledby="bazarbondhu-visuals-title">
+          <div class="bazarbondhu-gallery-heading">
+            <div><span class="section-kicker">Prototype walkthrough · Actual interface captures</span>
+              <h3 id="bazarbondhu-visuals-title">Inside BazarBondhu AI</h3>
+              <p>Four real screens from the interactive Team SocioNova demonstration, showing the calculation workflow rather than a concept mock-up.</p>
+            </div>
+            <a class="btn ghost" href="bazarbondhu-ai/" target="_blank" rel="noopener noreferrer">Explore the complete application <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="bazarbondhu-gallery-grid">
+            <figure class="bazarbondhu-visual-card bazarbondhu-visual-featured">
+              <a href="bazarbondhu-ai/?view=overview" target="_blank" rel="noopener noreferrer" aria-label="Explore BazarBondhu AI dashboard"><img src="assets/academic/projects/bazarbondhu/dashboard.png" alt="BazarBondhu AI dashboard with monthly budget summary, grocery spending indicators and household expense controls." width="1440" height="900" loading="lazy" decoding="async"></a>
+              <figcaption><span>01 / Dashboard</span><strong>Household affordability at a glance</strong><small>Income, grocery allowance, basket cost, and spending summaries</small></figcaption>
+            </figure>
+            <figure class="bazarbondhu-visual-card">
+              <a href="bazarbondhu-ai/?view=basket" target="_blank" rel="noopener noreferrer" aria-label="Explore BazarBondhu grocery planner"><img src="assets/academic/projects/bazarbondhu/grocery-planner.png" alt="BazarBondhu AI grocery planner showing editable sample item prices, quantities and budget-constrained basket planning." width="1440" height="900" loading="lazy" decoding="async"></a>
+              <figcaption><span>02 / Grocery planner</span><strong>Build a budget-aware basket</strong><small>Adjust illustrative prices, quantities, and item priorities</small></figcaption>
+            </figure>
+            <figure class="bazarbondhu-visual-card">
+              <a href="bazarbondhu-ai/?view=insights" target="_blank" rel="noopener noreferrer" aria-label="Explore BazarBondhu price scenarios"><img src="assets/academic/projects/bazarbondhu/price-scenarios.png" alt="BazarBondhu AI hypothetical grocery-price increase scenario showing recalculated cost, spending gap and category chart." width="1440" height="900" loading="lazy" decoding="async"></a>
+              <figcaption><span>03 / Price scenarios</span><strong>Stress-test household affordability</strong><small>See the impact of a hypothetical 25% price increase</small></figcaption>
+            </figure>
+            <figure class="bazarbondhu-visual-card">
+              <a href="bazarbondhu-ai/?view=assistant" target="_blank" rel="noopener noreferrer" aria-label="Explore BazarBondhu assistant"><img src="assets/academic/projects/bazarbondhu/ai-assistant.png" alt="BazarBondhu AI limited offline natural-language assistant answering an illustrative budget and price-increase question." width="1440" height="900" loading="lazy" decoding="async"></a>
+              <figcaption><span>04 / AI assistant</span><strong>Explain the calculations in plain language</strong><small>Bounded, offline answers based on the application state</small></figcaption>
+            </figure>
+          </div>
+          <p class="bazarbondhu-gallery-note">Captured from the working demonstration. All starter grocery prices are illustrative rather than verified live market quotations; the assistant is a limited intent-matching tool, not a generative chatbot.</p>
+        </section>
       </div></section>
       <section class="section"><div class="container">${sectionHead('Research prototype','Diabetic-retinopathy grading research prototype')}<article class="card quote-card"><h3>Deep learning + handcrafted feature fusion</h3><p>Research prototype combining DenseNet121 representations, SIFT-BoVW features, XGBoost and Grad-CAM++ for explainable diabetic-retinopathy grading. Intended for research and decision-support exploration, not clinical diagnosis.</p></article></div></section><section class="section alt"><div class="container">${sectionHead('Active projects','Current directions')}<div class="grid grid-3">${(D.ongoing||[]).map(x=>`<article class="card"><span class="badge">In preparation</span><h3>${esc(x.title)}</h3><p>${esc(x.objective||x.summary||x.description||'')}</p>${tags(x.methods||x.tags||[])}</article>`).join('')}</div></div></section>`;}
 

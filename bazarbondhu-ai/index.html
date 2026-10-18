@@ -726,6 +726,9 @@ window.BAZAR_DEMO_ITEMS = [
   }
   $('downloadReport').addEventListener('click',download);
   drawTable();drawAlternatives();setupEvidence();updatePriceTags();update();
+  // Support deep links from the portfolio's real-prototype screenshot gallery.
+  const requestedTab=new URLSearchParams(window.location.search).get('view');
+  if(['basket','insights','assistant','evidence','about'].includes(requestedTab))show(requestedTab);
 })();
 
 </script>
