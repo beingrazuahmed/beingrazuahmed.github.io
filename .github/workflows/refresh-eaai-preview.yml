@@ -31,10 +31,10 @@ jobs:
           fi
           pdfinfo assets/recognition/eaai-reviewing-certificate-2026.pdf | grep -E '^(Pages|Page size|File size):'
           pdftotext assets/recognition/eaai-reviewing-certificate-2026.pdf /tmp/eaai-text.txt
-          if grep -Eiq '(^|[^0-9])2([^0-9]|$)|two' /tmp/eaai-text.txt; then
-            echo "Updated PDF includes the value 2 / two."
+          if grep -Eiq '(^|[^0-9])3([^0-9]|$)|three' /tmp/eaai-text.txt; then
+            echo "Updated PDF includes the value 3 / three."
           else
-            echo "::warning::2 was not found in extracted text; the certificate may use an image or alternate wording."
+            echo "::warning::3 was not found in extracted text; the certificate may use an image or alternate wording."
           fi
           pdftoppm -f 1 -singlefile -r 165 -png assets/recognition/eaai-reviewing-certificate-2026.pdf /tmp/eaai-latest
           python3 -m venv /tmp/eaai-render-venv
@@ -54,7 +54,7 @@ jobs:
         run: |
           python3 - <<'PY'
           import pathlib, re, json
-          version = '20261018-eaai2-total39'
+          version = '20261019-eaai3-total40'
           pattern = re.compile(r'\b(data|v2-data|v2-app|script)\.js\?v=[0-9A-Za-z_-]+')
           changed = []
           for path in pathlib.Path('.').glob('*.html'):
@@ -79,7 +79,7 @@ jobs:
               manifest.write_text(updated, encoding='utf-8')
               changed.append(manifest.name)
           print('Updated HTML and manifest:', ', '.join(changed))
-          assert changed, 'Expected to refresh at least one cache reference'
+          # Idempotent: uploading a replacement PDF may require refreshing only its preview.
           PY
       - name: Commit authentic preview and refreshed website links
         run: |
@@ -88,6 +88,6 @@ jobs:
           git add 'assets/gallery/eaai-reviewing-certificate-2026.webp' 'asset-manifest.json' '*.html'
           if ! git diff --cached --quiet; then
             git diff --cached --check
-            git commit -m "Refresh EAAI 2-review PDF preview and portfolio script cache"
+            git commit -m "Refresh EAAI 3-review PDF preview and portfolio script cache"
             git push origin HEAD:main
           fi
