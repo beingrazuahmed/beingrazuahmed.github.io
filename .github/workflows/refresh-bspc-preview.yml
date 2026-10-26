@@ -1,4 +1,5 @@
 name: Refresh BSPC Certificate Preview
+
 on:
   push:
     branches: [main]
@@ -10,84 +11,98 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: bspc-preview-main
+  cancel-in-progress: false
+
 jobs:
-  render-certificate:
+  refresh-preview:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Validate portfolio JavaScript
         run: |
           node --check data.js
+          node --check extra-data.js
           node --check v2-data.js
           node --check v2-app.js
           node --check script.js
-      - name: Render updated PDF certificate
+
+      - name: Render updated certificate from original PDF
         shell: bash
         run: |
           set -euo pipefail
+          pdf=assets/recognition/bspc-reviewing-certificate-2026.pdf
+          test -s "$pdf"
           if ! command -v pdftoppm >/dev/null; then
             sudo apt-get update -qq
             sudo apt-get install -y poppler-utils
           fi
-          pdfinfo assets/recognition/bspc-reviewing-certificate-2026.pdf | grep -E '^(Pages|Page size|File size):'
-          pdftotext assets/recognition/bspc-reviewing-certificate-2026.pdf /tmp/bspc-text.txt
-          if grep -Eiq '(^|[^0-9])11([^0-9]|$)|eleven' /tmp/bspc-text.txt; then
-            echo "Updated PDF includes the value 11 / eleven."
+          pdfinfo "$pdf" | grep -E '^(Pages|Page size|File size):'
+          pdftotext "$pdf" /tmp/bspc-certificate.txt
+          if grep -Eiq '(^|[^0-9])12([^0-9]|$)|twelve' /tmp/bspc-certificate.txt; then
+            echo "Verified the number 12 in the uploaded BSPC certificate text."
           else
-            echo "::warning::11 was not found in extracted text; the certificate may use an image or alternate wording."
+            echo "::warning::The number 12 was not found in extracted PDF text; inspect the original certificate for a visual or alternative representation."
           fi
-          pdftoppm -f 1 -singlefile -r 165 -png assets/recognition/bspc-reviewing-certificate-2026.pdf /tmp/bspc-latest
-          python3 -m venv /tmp/bspc-render-venv
-          /tmp/bspc-render-venv/bin/pip install -q pillow
-          /tmp/bspc-render-venv/bin/python - <<'PY'
-          from PIL import Image
+          pdftoppm -f 1 -singlefile -r 165 -png "$pdf" /tmp/bspc-latest
+          python3 -m venv /tmp/bspc-render
+          /tmp/bspc-render/bin/pip install -q pillow
+          /tmp/bspc-render/bin/python - <<'PY'
           from pathlib import Path
-          source = Path('/tmp/bspc-latest.png')
-          target = Path('assets/gallery/bspc-reviewing-certificate-2026.webp')
-          im = Image.open(source).convert('RGB')
-          im.save(target, 'WEBP', quality=91, method=6)
-          assert target.stat().st_size > 10000
-          print('BSPC certificate preview updated:', im.size, target.stat().st_size, 'bytes')
+          from PIL import Image
+          image = Image.open('/tmp/bspc-latest.png').convert('RGB')
+          output = Path('assets/gallery/bspc-reviewing-certificate-2026.webp')
+          image.save(output, 'WEBP', quality=91, method=6)
+          assert output.stat().st_size > 10000
+          print('Rendered BSPC certificate preview:', image.size, output.stat().st_size, 'bytes')
           PY
-      - name: Refresh HTML cache references and evidence manifest
+
+      - name: Refresh certificate URLs and website JavaScript cache
         shell: bash
         run: |
           python3 - <<'PY'
-          import pathlib, re, json
-          version = '20261018-bspc11-total38'
-          pattern = re.compile(r'\b(data|v2-data|v2-app|script)\.js\?v=[0-9A-Za-z_-]+')
-          changed = []
-          for path in pathlib.Path('.').glob('*.html'):
-              orig = path.read_text(encoding='utf-8')
-              updated = pattern.sub(lambda m: m.group(1)+'.js?v='+version, orig)
-              if updated != orig:
+          from pathlib import Path
+          import hashlib
+          import re
+
+          original = Path('assets/recognition/bspc-reviewing-certificate-2026.pdf')
+          revision = 'bspc-' + hashlib.sha256(original.read_bytes()).hexdigest()[:12]
+          certificate_url = re.compile(r'(assets/(?:gallery/bspc-reviewing-certificate-2026\.webp|recognition/bspc-reviewing-certificate-2026\.pdf))(?:\?v=[A-Za-z0-9_-]+)?')
+          for name in ('data.js', 'v2-app.js'):
+              path = Path(name)
+              current = path.read_text(encoding='utf-8')
+              updated, count = certificate_url.subn(lambda m: m.group(1) + '?v=' + revision, current)
+              assert count, 'BSPC certificate URL missing from ' + name
+              if updated != current:
                   path.write_text(updated, encoding='utf-8')
-                  changed.append(path.name)
-          manifest = pathlib.Path('asset-manifest.json')
-          original = manifest.read_text(encoding='utf-8')
-          updated = original
-          additions = [
-              ('"assets/gallery/bspc-reviewing-certificate-2026.jpg",', '"assets/gallery/bspc-reviewing-certificate-2026.webp"'),
-              ('"assets/recognition/array-reviewing-certificate-2026.pdf",', '"assets/recognition/bspc-reviewing-certificate-2026.pdf"'),
-          ]
-          for anchor,new in additions:
-              if new not in updated:
-                  assert anchor in updated, 'Missing asset manifest anchor: '+anchor
-                  updated = updated.replace(anchor, anchor+'\n    '+new+',', 1)
-          json.loads(updated)
-          if updated != original:
-              manifest.write_text(updated, encoding='utf-8')
-              changed.append(manifest.name)
-          print('Updated HTML and manifest:', ', '.join(changed))
-          assert changed, 'Expected to refresh at least one cache reference'
+                  print('Updated', count, 'certificate references in', name)
+          scripts = re.compile(r'\b(data|extra-data|coursework-data|v2-data|v2-app|script)\.js\?v=[A-Za-z0-9_-]+')
+          updated_pages = 0
+          for page in Path('.').glob('*.html'):
+              old = page.read_text(encoding='utf-8')
+              new = scripts.sub(lambda m: m.group(1) + '.js?v=' + revision, old)
+              if new != old:
+                  page.write_text(new, encoding='utf-8')
+                  updated_pages += 1
+          print('Certificate asset revision:', revision, 'HTML pages refreshed:', updated_pages)
           PY
-      - name: Commit authentic preview and refreshed website links
+          node --check data.js
+          node --check v2-app.js
+          git diff --check
+
+      - name: Publish refreshed preview and links
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add 'assets/gallery/bspc-reviewing-certificate-2026.webp' 'asset-manifest.json' '*.html'
+          git add 'assets/gallery/bspc-reviewing-certificate-2026.webp' data.js v2-app.js '*.html'
           if ! git diff --cached --quiet; then
             git diff --cached --check
-            git commit -m "Refresh BSPC 11-review PDF preview and portfolio script cache"
+            git commit -m "Regenerate BSPC 12-review certificate preview and refresh URLs"
             git push origin HEAD:main
+          else
+            echo "BSPC certificate preview and cache links are already current."
           fi
