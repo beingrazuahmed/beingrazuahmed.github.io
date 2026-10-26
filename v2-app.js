@@ -3141,7 +3141,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     const records=[
       {id:'elsevier-certified-peer-reviewer-2026',url:'assets/recognition/elsevier-certified-peer-reviewer-2026.pdf',name:'Certified Peer Reviewer Course'},
       {id:'elsevier-becoming-peer-reviewer-2026',url:'assets/recognition/elsevier-becoming-peer-reviewer-2026.pdf',name:'Becoming a Peer Reviewer'},
-      {id:'bspc-reviewing-certificate-2026',url:'assets/recognition/bspc-reviewing-certificate-2026.pdf?v=bspc-5450a80048fb',name:'Biomedical Signal Processing and Control Certificate of Reviewing'},
+      {id:'bspc-reviewing-certificate-2026',url:'assets/recognition/bspc-reviewing-certificate-2026.pdf?v=bspc-a93551fbf3bb',name:'Biomedical Signal Processing and Control Certificate of Reviewing'},
       {id:'array-reviewing-certificate-2026',url:'assets/recognition/array-reviewing-certificate-2026.pdf',name:'Array Certificate of Reviewing'},
       {id:'eaai-reviewing-certificate-2026',url:'assets/recognition/eaai-reviewing-certificate-2026.pdf?v=20261019-eaai-3-reviews',name:'Engineering Applications of Artificial Intelligence Certificate of Reviewing'},
       {id:'elsevier-research-design-2026',url:'assets/recognition/elsevier-research-design-certificate-2026.pdf?v=rd-c7664bf6a341',name:'Research Design'}
