@@ -41,10 +41,10 @@ jobs:
           fi
           pdfinfo "$pdf" | grep -E '^(Pages|Page size|File size):'
           pdftotext "$pdf" /tmp/bspc-certificate.txt
-          if grep -Eiq '(^|[^0-9])12([^0-9]|$)|twelve' /tmp/bspc-certificate.txt; then
-            echo "Verified the number 12 in the uploaded BSPC certificate text."
+          if grep -Eiq '(^|[^0-9])13([^0-9]|$)|thirteen' /tmp/bspc-certificate.txt; then
+            echo "Verified the number 13 in the uploaded BSPC certificate text."
           else
-            echo "::warning::The number 12 was not found in extracted PDF text; inspect the original certificate for a visual or alternative representation."
+            echo "::warning::The number 13 was not found in extracted PDF text; inspect the original certificate for a visual or alternative representation."
           fi
           pdftoppm -f 1 -singlefile -r 165 -png "$pdf" /tmp/bspc-latest
           python3 -m venv /tmp/bspc-render
@@ -68,7 +68,7 @@ jobs:
           import re
 
           original = Path('assets/recognition/bspc-reviewing-certificate-2026.pdf')
-          revision = 'bspc-' + hashlib.sha256(original.read_bytes()).hexdigest()[:12]
+          revision = 'bspc-' + hashlib.sha256(original.read_bytes()).hexdigest()[:12] + '-total42'
           certificate_url = re.compile(r'(assets/(?:gallery/bspc-reviewing-certificate-2026\.webp|recognition/bspc-reviewing-certificate-2026\.pdf))(?:\?v=[A-Za-z0-9_-]+)?')
           for name in ('data.js', 'v2-app.js'):
               path = Path(name)
@@ -101,7 +101,7 @@ jobs:
           git add 'assets/gallery/bspc-reviewing-certificate-2026.webp' data.js v2-app.js '*.html'
           if ! git diff --cached --quiet; then
             git diff --cached --check
-            git commit -m "Regenerate BSPC 12-review certificate preview and refresh URLs"
+            git commit -m "Regenerate BSPC 13-review certificate preview and refresh URLs"
             git push origin HEAD:main
           else
             echo "BSPC certificate preview and cache links are already current."
