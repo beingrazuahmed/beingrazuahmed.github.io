@@ -1,0 +1,106 @@
+name: Refresh Elsevier Research Design Certificate Preview
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/refresh-research-design-preview.yml'
+      - 'assets/recognition/elsevier-research-design-certificate-2026.pdf'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: research-design-preview-main
+  cancel-in-progress: false
+
+jobs:
+  refresh-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate JavaScript source
+        run: |
+          node --check data.js
+          node --check extra-data.js
+          node --check v2-data.js
+          node --check v2-app.js
+
+      - name: Render actual uploaded Research Design PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+          pdf=assets/recognition/elsevier-research-design-certificate-2026.pdf
+          test -s "$pdf"
+          if ! command -v pdftoppm >/dev/null; then
+            sudo apt-get update -qq
+            sudo apt-get install -y poppler-utils
+          fi
+          pdfinfo "$pdf" | grep -E '^(Pages|Page size|File size):'
+          pdftotext "$pdf" /tmp/research-design-text.txt
+          if grep -Eiq 'research design' /tmp/research-design-text.txt; then
+            echo "Confirmed Research Design in uploaded certificate."
+          else
+            echo "::warning::Research Design could not be confirmed from extracted PDF text."
+          fi
+          pdftoppm -f 1 -singlefile -r 165 -png "$pdf" /tmp/research-design-latest
+          python3 -m venv /tmp/research-design-render-venv
+          /tmp/research-design-render-venv/bin/pip install -q pillow
+          /tmp/research-design-render-venv/bin/python - <<'PY'
+          from PIL import Image
+          from pathlib import Path
+          image = Image.open('/tmp/research-design-latest.png').convert('RGB')
+          output = Path('assets/gallery/elsevier-research-design-certificate-2026.webp')
+          image.save(output, 'WEBP', quality=91, method=6)
+          assert output.stat().st_size > 10000, "Certificate preview unexpectedly small"
+          print('Rendered current certificate preview:', image.size, output.stat().st_size, 'bytes')
+          PY
+
+      - name: Refresh certificate asset versions and HTML consumers
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib
+          import re
+
+          certificate = Path('assets/recognition/elsevier-research-design-certificate-2026.pdf')
+          revision = 'rd-' + hashlib.sha256(certificate.read_bytes()).hexdigest()[:12]
+          asset = re.compile(r'(assets/(?:gallery/elsevier-research-design-certificate-2026\.webp|recognition/elsevier-research-design-certificate-2026\.pdf))(?:\?v=[A-Za-z0-9_-]+)?')
+          for file_name in ('data.js', 'v2-app.js'):
+              path = Path(file_name)
+              original = path.read_text(encoding='utf-8')
+              revised, count = asset.subn(lambda match: match.group(1) + '?v=' + revision, original)
+              assert count, 'No certificate references found in ' + file_name
+              if revised != original:
+                  path.write_text(revised, encoding='utf-8')
+                  print('Updated', count, 'certificate URLs in', file_name)
+          scripts = re.compile(r'\b(data|extra-data|v2-app)\.js\?v=[A-Za-z0-9_-]+')
+          page_count = 0
+          for path in Path('.').glob('*.html'):
+              original = path.read_text(encoding='utf-8')
+              revised = scripts.sub(lambda match: match.group(1) + '.js?v=' + revision, original)
+              if revised != original:
+                  path.write_text(revised, encoding='utf-8')
+                  page_count += 1
+          print('Certificate revision:', revision, 'HTML pages refreshed:', page_count)
+          PY
+          node --check data.js
+          node --check v2-app.js
+
+      - name: Publish refreshed preview and cache-busted references
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/gallery/elsevier-research-design-certificate-2026.webp data.js v2-app.js '*.html'
+          if ! git diff --cached --quiet; then
+            git diff --cached --check
+            git commit -m "Render current Research Design certificate and refresh cached URLs"
+            git push origin HEAD:main
+          else
+            echo "Research Design preview and references already current."
+          fi
