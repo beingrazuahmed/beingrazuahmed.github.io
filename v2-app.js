@@ -1082,6 +1082,19 @@
     </section>`;
   }
 
+  function publicationPublisherBrands(links=[]){
+    if(!Array.isArray(links)||!links.length)return '';
+    return `<nav class="publication-publisher-brands" aria-label="Journal and publisher official links">${links.map(item=>{
+      const label=String(item.label||'Publisher');
+      const detail=String(item.detail||label);
+      const brand=String(item.brand||'').replace(/[^a-z0-9-]/gi,'');
+      return `<a class="publication-publisher-brand is-${esc(brand)}" href="${esc(item.url||'#')}" target="_blank" rel="noopener noreferrer" title="Visit ${esc(detail)}" aria-label="Visit ${esc(detail)} website">
+        <span class="publication-publisher-logo"><img src="${esc(item.logo||'')}" alt="${esc(label)} logo" loading="lazy" decoding="async"></span>
+        <span class="publication-publisher-label">${esc(label)}</span>
+      </a>`;
+    }).join('')}</nav>`;
+  }
+
   function outputCard(p){
     if(p.outputKind==='dataset'||p.type==='Dataset')return datasetOutputCard(p);
     const id=(p.id||'').toLowerCase();
@@ -1098,6 +1111,7 @@
             ${p.publisher?`<div class="editorial-publisher"><span>Publisher</span><strong>${esc(p.publisher)}</strong></div>`:''}
           </div>`
         : `<p>${esc(p.journal||p.venue||p.summary||p.description||'')}</p>`}
+      ${publicationPublisherBrands(p.publisherBrandLinks)}
       ${(p.citationAPA||p.citationIEEE)
         ? `<div class="publication-citation-block"><div class="publication-citation-label">APA & IEEE citations</div>${dualAcademicCitation(p.citationAPA,p.citationIEEE)}</div>`
         : (p.citation? `<p class="output-citation">${esc(p.citation)}</p>` : '')}
