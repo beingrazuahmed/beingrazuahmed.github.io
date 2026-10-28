@@ -117,14 +117,14 @@ window.PORTFOLIO_DATA = {
       citation: "Accepted for publication on 28 October 2026 · DOI pending.",
       acceptedDate: "28 October 2026",
       authors: [
-        { name: "Muhammad Ziaul Haque", affiliation: 1, email: "ziaulhaque3929@gmail.com" },
-        { name: "Md. Razu Ahmed", affiliation: 2, email: "razuahmed038@gmail.com" },
-        { name: "Mimosa Saha", affiliation: 2, email: "mimosaha06@gmail.com" },
-        { name: "Md. Feroz Ali", affiliation: 3, email: "feroz071021@gmail.com", corresponding: true },
-        { name: "Diganto Biswas", affiliation: 3, email: "digantobiswas01516@gmail.com" },
-        { name: "Md Shafiul Alam", affiliation: 4, email: "shafiul@kfu.edu.sa", corresponding: true },
-        { name: "S M Shakil", affiliation: 5, email: "sshakil2152@floridapoly.edu" },
-        { name: "Obaidullah Obaidi", affiliation: 6, email: "obaidullah.obaidi@ku.edu.af", corresponding: true }
+        { name: "Muhammad Ziaul Haque", affiliation: 1 },
+        { name: "Md. Razu Ahmed", affiliation: 2 },
+        { name: "Mimosa Saha", affiliation: 2 },
+        { name: "Md. Feroz Ali", affiliation: 3, corresponding: true },
+        { name: "Diganto Biswas", affiliation: 3 },
+        { name: "Md Shafiul Alam", affiliation: 4, corresponding: true },
+        { name: "S M Shakil", affiliation: 5 },
+        { name: "Obaidullah Obaidi", affiliation: 6, corresponding: true }
       ],
       authorAffiliations: [
         "Department of Mathematics, Pabna University of Science and Technology, Pabna 6600, Bangladesh",
