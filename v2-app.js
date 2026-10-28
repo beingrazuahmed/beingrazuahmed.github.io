@@ -1072,13 +1072,11 @@
       return `<span class="publication-author${owner}">${esc(name)}</span>`;
     }).join('<span class="publication-author-separator">, </span>');
     const affiliationRows=affiliations.map(affiliation=>`<li>${esc(affiliation)}</li>`).join('');
-    const emailRows=authors.filter(a=>a.email).map(a=>`<li><span>${esc(a.name)}</span><a href="mailto:${esc(a.email)}">${esc(a.email)}</a></li>`).join('');
     return `<section class="publication-authorship" aria-label="Publication authors and affiliations">
       <div class="publication-author-overview"><span class="publication-author-kicker">Authors</span><p class="publication-author-byline">${byline}</p></div>
-      <details class="publication-author-details"><summary>View affiliations &amp; author email addresses</summary>
+      <details class="publication-author-details"><summary>View institutional affiliations</summary>
         <div class="publication-author-details-content">
           ${affiliationRows?`<h4>Institutional affiliations</h4><ul class="publication-affiliation-list">${affiliationRows}</ul>`:''}
-          ${emailRows?`<h4>Author email addresses</h4><ul class="publication-author-email-list">${emailRows}</ul>`:''}
         </div>
       </details>
     </section>`;
