@@ -13690,3 +13690,119 @@ body[data-page="dashboard"] .dashboard-impact-brand-links .publication-brand-lin
   outline:3px solid #88369c;
   outline-offset:3px;
 }
+
+/* === Publication authorship and institutional affiliation · 2026-10-28 === */
+.output-card .publication-authorship{
+  margin:14px 0 12px;
+  padding:14px 15px;
+  background:color-mix(in srgb,var(--surface-2) 48%,var(--surface));
+  border:1px solid color-mix(in srgb,var(--accent) 12%,var(--line));
+  border-radius:14px;
+  min-width:0;
+}
+.output-card .publication-author-kicker{
+  display:block;
+  margin-bottom:7px;
+  color:var(--muted);
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.output-card .publication-author-byline{
+  margin:0;
+  color:var(--text);
+  font-size:.89rem;
+  line-height:1.8;
+  overflow-wrap:anywhere;
+}
+.output-card .publication-author{display:inline}
+.output-card .publication-author.is-portfolio-owner{font-weight:850}
+.output-card .publication-author sup{
+  display:inline;
+  position:relative;
+  top:-.12em;
+  padding-left:2px;
+  color:var(--accent);
+  font-size:.68em;
+  font-weight:750;
+  white-space:nowrap;
+}
+.output-card .publication-author-separator{white-space:normal}
+.output-card .publication-corresponding-legend{
+  display:block;
+  color:var(--muted);
+  margin-top:8px;
+  font-size:.74rem;
+  line-height:1.4;
+}
+.output-card .publication-author-details{
+  margin-top:12px;
+  padding-top:10px;
+  border-top:1px solid var(--line);
+  min-width:0;
+}
+.output-card .publication-author-details summary{
+  display:list-item;
+  width:fit-content;
+  max-width:100%;
+  color:var(--accent);
+  font-size:.83rem;
+  font-weight:750;
+  cursor:pointer;
+  line-height:1.55;
+  overflow-wrap:anywhere;
+}
+.output-card .publication-author-details summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:3px}
+.output-card .publication-author-details-content{margin-top:14px;min-width:0}
+.output-card .publication-author-details-content h4{
+  margin:16px 0 8px;
+  font-size:.81rem;
+  line-height:1.45;
+  font-weight:800;
+  color:var(--text);
+}
+.output-card .publication-author-details-content h4:first-child{margin-top:0}
+.output-card .publication-affiliation-list{
+  list-style:decimal;
+  padding-left:22px;
+  margin:0;
+}
+.output-card .publication-affiliation-list li{
+  padding-left:3px;
+  margin:0 0 8px;
+  color:var(--muted);
+  font-size:.82rem;
+  line-height:1.65;
+}
+.output-card .publication-author-email-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:7px;
+}
+.output-card .publication-author-email-list li{
+  display:flex;
+  flex-wrap:wrap;
+  gap:3px 9px;
+  justify-content:space-between;
+  min-width:0;
+  font-size:.79rem;
+  line-height:1.5;
+}
+.output-card .publication-author-email-list li span{color:var(--text);font-weight:650}
+.output-card .publication-author-email-list a{
+  color:var(--accent);
+  text-decoration:underline;
+  text-underline-offset:2px;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+.output-card .publication-author-email-list a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media(max-width:600px){
+  .output-card .publication-authorship{padding:12px}
+  .output-card .publication-author-byline{font-size:.85rem;line-height:1.75}
+  .output-card .publication-author-email-list li{display:block}
+  .output-card .publication-author-email-list li span{display:block;margin-bottom:2px}
+}
