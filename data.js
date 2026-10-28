@@ -114,6 +114,22 @@ window.PORTFOLIO_DATA = {
       id: "dengue-forecast", type: "Journal Article", status: "Accepted / Forthcoming", year: 2026, role: "Second Author",
       title: "Nationwide Evaluation of District-Informed Bottom-Up and Direct National Approaches for One-Week-Ahead Forecasting of Dengue Hospital Admissions in Bangladesh",
       venue: "BMC Public Health", publisher: "Springer Nature",
+      publisherBrandLinks: [
+        {
+          label: "BMC",
+          detail: "BMC Public Health journal",
+          url: "https://link.springer.com/journal/12889",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/BioMed_Central_2018.svg",
+          brand: "bmc"
+        },
+        {
+          label: "Springer Nature",
+          detail: "Springer Nature publisher",
+          url: "https://www.springernature.com/",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Springer_Nature_Logo.svg",
+          brand: "springer-nature"
+        }
+      ],
       citation: "Accepted for publication on 28 October 2026 · DOI pending.",
       acceptedDate: "28 October 2026",
       authors: [
