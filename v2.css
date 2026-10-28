@@ -13764,8 +13764,8 @@ body[data-page="dashboard"] .dashboard-impact-brand-links .publication-brand-lin
 }
 .output-card .publication-author-details-content h4:first-child{margin-top:0}
 .output-card .publication-affiliation-list{
-  list-style:decimal;
-  padding-left:22px;
+  list-style:disc;
+  padding-left:20px;
   margin:0;
 }
 .output-card .publication-affiliation-list li{
