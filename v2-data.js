@@ -515,8 +515,8 @@
         'Reviewer, Results in Engineering.'
       ],
       relationship: {
-        title: 'Supportive mentor, research guide & co-author',
-        detail: 'Dr. Md. Feroz Ali has been highly helpful and supportive in Razu’s research development. He provides clear guidance, teaches practical research hacks and useful tools, and shares workflow strategies that help make research more efficient and methodologically focused. He is also a co-author with Razu on a nationwide dengue forecasting article accepted for publication in BMC Public Health on 28 October 2026.'
+        title: 'Supportive mentor, research guide, co-author & corresponding author',
+        detail: 'Dr. Md. Feroz Ali has been highly helpful and supportive in Razu’s research development. He provides clear guidance, teaches practical research hacks and useful tools, and shares workflow strategies that help make research more efficient and methodologically focused. He is also a co-author and one of the corresponding authors of the nationwide dengue forecasting article accepted for publication in BMC Public Health on 28 October 2026.'
       },
       relationshipPath: [
         'Supportive senior guidance',
@@ -532,11 +532,11 @@
           title: 'Nationwide Evaluation of District-Informed Bottom-Up and Direct National Approaches for One-Week-Ahead Forecasting of Dengue Hospital Admissions in Bangladesh',
           journal: 'BMC Public Health',
           publisher: 'Springer Nature',
-          detail: 'Accepted for publication on 28 October 2026; DOI pending.'
+          detail: 'Role: Co-corresponding author (one of the corresponding authors) · Accepted for publication on 28 October 2026; DOI pending.'
         }
       ],
       shared: [
-        'Nationwide dengue forecasting — accepted for publication in BMC Public Health (28 October 2026)'
+        'Nationwide dengue forecasting — corresponding author; accepted in BMC Public Health (28 October 2026)'
       ],
       email: 'feroz.ali.eee@pust.ac.bd',
       additionalEmail: 'feroz071021@gmail.com',
@@ -1377,7 +1377,7 @@
   ],
 
   shared: [
-    'Nationwide dengue admission forecasting',
+    'Nationwide dengue admission forecasting — accepted in BMC Public Health (28 October 2026)',
     'Beyond Burden dengue preparedness study',
     'BazarBondhu AI — Team SocioNova; applied AI household affordability prototype jointly developed with Md. Razu Ahmed'
   ],
@@ -2024,7 +2024,7 @@
         {
           title: 'Nationwide Evaluation of District-Informed Bottom-Up and Direct National Approaches for One-Week-Ahead Forecasting of Dengue Hospital Admissions in Bangladesh',
           journal: 'BMC Public Health',
-          publisher: 'Springer',
+          publisher: 'Springer Nature',
           detail: 'Accepted 28 October 2026 · Q1 · SJR 2025 1.356 · H-Index 225 · CiteScore 5.9 · Impact Factor 4.4 · SNIP 2025 1.570 · Science Citation Index Expanded (SCIE) · E-ISSN 1471-2458.'
         }
       ],

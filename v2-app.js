@@ -1068,6 +1068,7 @@
     return `<article class="card output-card editorial-card" id="output-${esc(id)}" data-output-bucket="${esc(p.bucket||'')}" data-output-kind="${esc((p.type||'article').toLowerCase())}">
       <div class="meta"><span class="badge">${esc(p.status||p.bucket||'Research')}</span>${p.role?`<span class="badge">${esc(p.role)}</span>`:''}</div>
       <h3>${esc(p.title||'Untitled')}</h3>
+      ${p.correspondingAuthorNote?`<p class="output-author-note">${esc(p.correspondingAuthorNote)}</p>`:''}
       ${p.bucket==='under-review'
         ? `<div class="editorial-journal-info">
             <div class="editorial-journal-main"><span>Journal</span><strong>${esc(p.journal||p.venue||'')}</strong></div>

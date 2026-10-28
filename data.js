@@ -116,6 +116,7 @@ window.PORTFOLIO_DATA = {
       venue: "BMC Public Health", publisher: "Springer Nature",
       citation: "Accepted for publication in BMC Public Health on 28 October 2026; online publication and DOI pending.",
       acceptedDate: "28 October 2026",
+      correspondingAuthorNote: "Dr. Md. Feroz Ali is one of the corresponding authors.",
       journalStanding: {
         publisher: "Springer Nature",
         onlineIssn: "1471-2458",
