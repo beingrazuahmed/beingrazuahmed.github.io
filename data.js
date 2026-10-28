@@ -116,7 +116,25 @@ window.PORTFOLIO_DATA = {
       venue: "BMC Public Health", publisher: "Springer Nature",
       citation: "Accepted for publication in BMC Public Health on 28 October 2026; online publication and DOI pending.",
       acceptedDate: "28 October 2026",
-      correspondingAuthorNote: "Dr. Md. Feroz Ali is one of the corresponding authors.",
+      authors: [
+        { name: "Muhammad Ziaul Haque", affiliation: 1, email: "ziaulhaque3929@gmail.com" },
+        { name: "Md. Razu Ahmed", affiliation: 2, email: "razuahmed038@gmail.com" },
+        { name: "Mimosa Saha", affiliation: 2, email: "mimosaha06@gmail.com" },
+        { name: "Md. Feroz Ali", affiliation: 3, email: "feroz071021@gmail.com", corresponding: true },
+        { name: "Diganto Biswas", affiliation: 3, email: "digantobiswas01516@gmail.com" },
+        { name: "Md Shafiul Alam", affiliation: 4, email: "shafiul@kfu.edu.sa", corresponding: true },
+        { name: "S M Shakil", affiliation: 5, email: "sshakil2152@floridapoly.edu" },
+        { name: "Obaidullah Obaidi", affiliation: 6, email: "obaidullah.obaidi@ku.edu.af", corresponding: true }
+      ],
+      authorAffiliations: [
+        "Department of Mathematics, Pabna University of Science and Technology, Pabna 6600, Bangladesh",
+        "Department of Statistics and Data Science, Pabna University of Science and Technology, Pabna 6600, Bangladesh",
+        "Department of Electrical and Electronic Engineering, Pabna University of Science and Technology, Pabna 6600, Bangladesh",
+        "Department of Electrical Engineering, College of Engineering, King Faisal University, Al Ahsa 31982, Saudi Arabia",
+        "Department of Electrical and Computer Engineering, Florida Polytechnic University, Florida 33805, United States",
+        "Department of Energy Engineering, Faculty of Engineering, Kabul University, Kabul 1006, Afghanistan"
+      ],
+      correspondingAuthorNote: "Corresponding authors: Md. Feroz Ali, Md Shafiul Alam and Obaidullah Obaidi.",
       journalStanding: {
         publisher: "Springer Nature",
         onlineIssn: "1471-2458",
