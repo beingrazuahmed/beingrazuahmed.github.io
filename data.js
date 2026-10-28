@@ -114,9 +114,7 @@ window.PORTFOLIO_DATA = {
       id: "dengue-forecast", type: "Journal Article", status: "Accepted / Forthcoming", year: 2026, role: "Second Author",
       title: "Nationwide Evaluation of District-Informed Bottom-Up and Direct National Approaches for One-Week-Ahead Forecasting of Dengue Hospital Admissions in Bangladesh",
       venue: "BMC Public Health", publisher: "Springer Nature",
-      citation: "Accepted for publication in BMC Public Health on 28 October 2026; online publication and DOI pending.",
-      citationAPA: "Haque, M. Z., Ahmed, M. R., Saha, M., Ali, M. F., Biswas, D., Alam, M. S., Shakil, S. M., & Obaidi, O. (in press). Nationwide evaluation of district-informed bottom-up and direct national approaches for one-week-ahead forecasting of dengue hospital admissions in Bangladesh. BMC Public Health.",
-      citationIEEE: "M. Z. Haque, M. R. Ahmed, M. Saha, M. F. Ali, D. Biswas, M. S. Alam, S. M. Shakil, and O. Obaidi, “Nationwide evaluation of district-informed bottom-up and direct national approaches for one-week-ahead forecasting of dengue hospital admissions in Bangladesh,” BMC Public Health, in press.",
+      citation: "Accepted for publication on 28 October 2026 · DOI pending.",
       acceptedDate: "28 October 2026",
       authors: [
         { name: "Muhammad Ziaul Haque", affiliation: 1, email: "ziaulhaque3929@gmail.com" },
