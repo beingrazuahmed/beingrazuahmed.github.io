@@ -860,7 +860,7 @@
               <div class="hero-secondary-links"><a href="ask-razu.html">Ask Razu AI</a><span>·</span><a href="dashboard-live.html?v=20260923-dashboardlive56">Research Dashboard</a><span>·</span><a href="experience.html#dslr-lab-research-assistant">DSLR Lab</a><span>·</span><a href="experience.html#ircb-research-assistant">Research Experience</a></div>
               <div class="hero-impact" aria-label="Research profile highlights">
                 <div class="impact-chip"><strong>3</strong><span>Published / Online</span></div>
-                <div class="impact-chip"><strong>1</strong><span>Accepted / Forthcoming</span></div>
+                <div class="impact-chip"><strong>${acceptedOutputs.length}</strong><span>Accepted / Forthcoming</span></div>
                 <div class="impact-chip"><strong>42</strong><span>Peer Reviews</span></div>
                 <div class="impact-chip"><strong>8</strong><span>Conference Contributions</span></div>
               </div>

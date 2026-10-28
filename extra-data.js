@@ -1,5 +1,5 @@
 window.PORTFOLIO_EXTRA = {
-  lastUpdated: "26 October 2026",
+  lastUpdated: "28 October 2026",
   impactMetrics: [
     { label: "Google Scholar citations", value: 2, source: "Google Scholar", date: "15 September 2026" },
     { label: "ResearchGate citations", value: 5, source: "ResearchGate", date: "15 September 2026" },
@@ -10,6 +10,7 @@ window.PORTFOLIO_EXTRA = {
     { label: "Downloads", value: 244, source: "Mendeley Data", date: "26 October 2026" }
   ],
   latestUpdates: [
+    { date: "28 Oct 2026", type: "Publication", title: "Nationwide dengue forecasting paper accepted — BMC Public Health", detail: "Co-authored nationwide study comparing district-informed bottom-up and direct national one-week-ahead dengue hospital-admission forecasts across all 64 districts of Bangladesh. Accepted for publication in BMC Public Health (Springer Nature) on 28 October 2026 after two revision rounds; Q1, 2025 Journal Impact Factor 4.4, SNIP 1.570 and SJR 1.356. Online publication and DOI pending.", href: "publications.html?status=accepted#output-dengue-forecast" },
     {"date":"18 Oct 2026","type":"Conference Submission","title":"ICPS 2026 fourth abstract submitted — Paper ID 475","detail":"Submitted “Machine Learning for Self-Reported Diabetes Classification: Predictive Performance and Consensus Feature Stability in BRFSS 2023” to ICPS 2026 (SUST) with Md. Humayun Kabir. Md. Razu Ahmed is first and corresponding author. Abstract submitted 18 October 2026; acceptance decision pending.","href":"conferences.html#icps-2026-submission-475"},
     {"date":"16 Oct 2026","type":"Conference Submission","title":"ICPS 2026 third abstract submitted — Paper ID 454","detail":"Submitted “Weighted RNN–BiLSTM Probability Fusion for Sentiment Classification of Airline Tweets and IMDb Reviews” to ICPS 2026 at SUST. Authored by Mt. Latifa Farzana, Md. Razu Ahmed, Jannatul Mauya and Md. Shamim Reza; Razu is second author. Abstract submitted 16 October 2026; acceptance decision pending.","href":"conferences.html#icps-2026-submission-454"},
     { date: "14 Oct 2026", type: "Conference Submission", title: "ICPS 2026 second abstract submitted — Paper ID 302", detail: "Submitted “Statistical Association and Comparative Machine Learning Analysis for Asthma Status Classification Using Synthetic Health and Environmental Data” to the 2nd International Conference of Physical Sciences (ICPS 2026) at SUST. Co-authored by Rezwan Babu, Md. Razu Ahmed and Sabba Ruhi; Razu is second author. Acceptance decision pending.", href: "conferences.html#icps-2026-submission-302" },

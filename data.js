@@ -14,7 +14,7 @@ window.PORTFOLIO_DATA = {
 
   metrics: [
     { label: "Published / Online", value: 3, note: "Peer-reviewed journal articles" },
-    { label: "Accepted / Forthcoming", value: 1, note: "First-authored journal article" },
+    { label: "Accepted / Forthcoming", value: 2, note: "First- and second-authored journal articles" },
     { label: "Conference Contributions", value: 8, note: "3 presentations delivered" },
     { label: "Public Dataset", value: 1, note: "Mendeley Data" },
     { label: "Completed Peer Reviews", value: 42, note: "Across 4 journals" }
@@ -111,6 +111,28 @@ window.PORTFOLIO_DATA = {
       visual: "assets/publications/data-in-brief/figure-5-annotations.png"
     },
     {
+      id: "dengue-forecast", type: "Journal Article", status: "Accepted / Forthcoming", year: 2026, role: "Second Author",
+      title: "Nationwide Evaluation of District-Informed Bottom-Up and Direct National Approaches for One-Week-Ahead Forecasting of Dengue Hospital Admissions in Bangladesh",
+      venue: "BMC Public Health", publisher: "Springer Nature",
+      citation: "Accepted for publication in BMC Public Health on 28 October 2026; online publication and DOI pending.",
+      acceptedDate: "28 October 2026",
+      journalStanding: {
+        publisher: "Springer Nature",
+        onlineIssn: "1471-2458",
+        citeScore2025: "5.9",
+        jif2025: "4.4",
+        snip2025: "1.570",
+        sjr2025: "1.356",
+        hIndex: "225",
+        quartile: "Q1",
+        indexing: "Science Citation Index Expanded (SCIE) · Scopus"
+      },
+      tags: ["Dengue", "Forecasting", "LightGBM", "Public Health"],
+      summary: "A temporally locked nationwide comparison of district-informed bottom-up and direct national one-week-ahead dengue admission forecasts across all 64 districts of Bangladesh.",
+      highlight: "Bottom-up LightGBM achieved held-out national wMAPE 12.10% and R² 0.9625 in 2025.",
+      visual: "assets/manuscripts/dengue-forecasting/workflow.png"
+    },
+    {
       id: "ai-employment", type: "Journal Article", status: "Accepted / Forthcoming", year: 2026, role: "First Author",
       title: "Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh",
       venue: "International Journal of Statistical Sciences", citation: "Forthcoming in 26(2), November 2026",
@@ -177,14 +199,6 @@ window.PORTFOLIO_DATA = {
       summary: "A rigorous comparison of missing-data reconstruction strategies and their downstream impact on hepatitis-C prediction and severity estimation.",
       highlight: "Hybrid MICE–Median achieved the lowest standardized MAE across all tested missingness levels.",
       visual: "assets/manuscripts/hcv/methodology.png"
-    },
-    {
-      id: "dengue-forecast", status: "Under Review", role: "Second Author",
-      title: "Nationwide Evaluation of District-Informed Bottom-Up and Direct National Approaches for One-Week-Ahead Forecasting of Dengue Hospital Admissions in Bangladesh",
-      venue: "BMC Public Health", publisher: "BMC · Springer Nature", tags: ["Dengue", "Forecasting", "LightGBM", "Public Health"],
-      summary: "A temporally locked nationwide comparison of district-informed bottom-up and direct national one-week-ahead dengue admission forecasts across all 64 districts of Bangladesh.",
-      highlight: "Bottom-up LightGBM achieved held-out national wMAPE 12.10% and R² 0.9625 in 2025.",
-      visual: "assets/manuscripts/dengue-forecasting/workflow.png"
     },
     {
       id: "beyond-burden", status: "Under Review", role: "Joint First Author · Co-corresponding Author",
