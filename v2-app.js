@@ -1060,6 +1060,30 @@
     </article>`;
   }
 
+  function outputAuthorship(p={}){
+    const authors=Array.isArray(p.authors)?p.authors:[];
+    if(!authors.length)return '';
+    const affiliations=Array.isArray(p.authorAffiliations)?p.authorAffiliations:[];
+    const byline=authors.map(a=>{
+      const name=String(a.name||'');
+      const affiliation=Number(a.affiliation||0);
+      const superscript=affiliation>0?`<sup>${esc(affiliation)}${a.corresponding?'*':''}</sup>`:'';
+      const owner=name==='Md. Razu Ahmed'?' is-portfolio-owner':'';
+      return `<span class="publication-author${a.corresponding?' is-corresponding':''}${owner}">${esc(name)}${superscript}</span>`;
+    }).join('<span class="publication-author-separator">, </span>');
+    const affiliationRows=affiliations.map(affiliation=>`<li>${esc(affiliation)}</li>`).join('');
+    const emailRows=authors.filter(a=>a.email).map(a=>`<li><span>${esc(a.name)}${a.corresponding?' *':''}</span><a href="mailto:${esc(a.email)}">${esc(a.email)}</a></li>`).join('');
+    return `<section class="publication-authorship" aria-label="Publication authors and affiliations">
+      <div class="publication-author-overview"><span class="publication-author-kicker">Authors</span><p class="publication-author-byline">${byline}</p>${authors.some(a=>a.corresponding)?'<small class="publication-corresponding-legend">* Corresponding author</small>':''}</div>
+      <details class="publication-author-details"><summary>View affiliations &amp; author email addresses</summary>
+        <div class="publication-author-details-content">
+          ${affiliationRows?`<h4>Institutional affiliations</h4><ol class="publication-affiliation-list">${affiliationRows}</ol>`:''}
+          ${emailRows?`<h4>Author email addresses</h4><ul class="publication-author-email-list">${emailRows}</ul>`:''}
+        </div>
+      </details>
+    </section>`;
+  }
+
   function outputCard(p){
     if(p.outputKind==='dataset'||p.type==='Dataset')return datasetOutputCard(p);
     const id=(p.id||'').toLowerCase();
@@ -1068,6 +1092,7 @@
     return `<article class="card output-card editorial-card" id="output-${esc(id)}" data-output-bucket="${esc(p.bucket||'')}" data-output-kind="${esc((p.type||'article').toLowerCase())}">
       <div class="meta"><span class="badge">${esc(p.status||p.bucket||'Research')}</span>${p.role?`<span class="badge">${esc(p.role)}</span>`:''}</div>
       <h3>${esc(p.title||'Untitled')}</h3>
+      ${outputAuthorship(p)}
       ${p.correspondingAuthorNote?`<p class="output-author-note">${esc(p.correspondingAuthorNote)}</p>`:''}
       ${p.bucket==='under-review'
         ? `<div class="editorial-journal-info">
