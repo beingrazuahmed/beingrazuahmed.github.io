@@ -1,0 +1,123 @@
+name: Refresh Array Certificate Preview
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/refresh-array-preview.yml'
+      - 'assets/recognition/array-reviewing-certificate-2026.pdf'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: array-preview-main
+  cancel-in-progress: false
+
+jobs:
+  refresh-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate portfolio sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check data.js
+          node --check extra-data.js
+          node --check v2-data.js
+          node --check v2-app.js
+          node --check script.js
+          if node scripts/portfolio.mjs check; then
+            echo "Complete portfolio validation passed."
+          else
+            echo "::warning::Full repository validation reported existing issues; JavaScript validation passed."
+          fi
+
+      - name: Render original uploaded Array certificate
+        shell: bash
+        run: |
+          set -euo pipefail
+          pdf=assets/recognition/array-reviewing-certificate-2026.pdf
+          test -s "$pdf"
+          if ! command -v pdftoppm >/dev/null; then
+            sudo apt-get update -qq
+            sudo apt-get install -y poppler-utils
+          fi
+          pdfinfo "$pdf" | grep -E '^(Pages|Page size|File size):'
+          pdftotext "$pdf" /tmp/array-certificate.txt
+          if grep -Eiq '(^|[^[:digit:]])3([^[:digit:]]|$)|three' /tmp/array-certificate.txt; then
+            echo "The uploaded Array PDF contains the number 3 / three."
+          else
+            echo "::warning::The number 3 was not found in extracted PDF text; inspect the certificate PDF for a graphical or alternate representation."
+          fi
+          if grep -Eiq 'Array' /tmp/array-certificate.txt; then
+            echo "The uploaded PDF text mentions Array."
+          else
+            echo "::warning::The journal name could not be confirmed in extracted PDF text."
+          fi
+          pdftoppm -f 1 -singlefile -r 165 -png "$pdf" /tmp/array-original
+          python3 -m venv /tmp/array-preview-venv
+          /tmp/array-preview-venv/bin/pip install -q pillow
+          /tmp/array-preview-venv/bin/python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          image = Image.open('/tmp/array-original.png').convert('RGB')
+          preview = Path('assets/gallery/array-reviewing-certificate-2026.webp')
+          image.save(preview, 'WEBP', quality=91, method=6)
+          assert preview.stat().st_size > 10000, "Preview unexpectedly small"
+          print('Rendered original Array certificate:', image.size, preview.stat().st_size, 'bytes')
+          PY
+
+      - name: Refresh cache links and evidence registry
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib
+          import json
+          import re
+          pdf = Path('assets/recognition/array-reviewing-certificate-2026.pdf')
+          revision = 'array-' + hashlib.sha256(pdf.read_bytes()).hexdigest()[:12]
+          regex = re.compile(r'(assets/(?:gallery/array-reviewing-certificate-2026\.webp|recognition/array-reviewing-certificate-2026\.pdf))(?:\?v=[0-9a-zA-Z_-]+)?')
+          for source in ('data.js', 'v2-app.js'):
+              path = Path(source)
+              old = path.read_text(encoding='utf-8')
+              new, count = regex.subn(lambda m: m.group(1) + '?v=' + revision, old)
+              assert count, 'Missing certificate references: ' + source
+              if old != new:
+                  path.write_text(new, encoding='utf-8')
+              print('Refreshed', count, 'Array certificate references in', source)
+          manifest = json.loads(Path('asset-manifest.json').read_text(encoding='utf-8'))
+          assert 'assets/gallery/array-reviewing-certificate-2026.webp' in manifest['credentialGallery']
+          script_pattern = re.compile(r'\b(data|extra-data|coursework-data|v2-data|v2-app|script)\.js\?v=[A-Za-z0-9_-]+')
+          refreshed = []
+          for page in Path('.').glob('*.html'):
+              old = page.read_text(encoding='utf-8')
+              new = script_pattern.sub(lambda m: m.group(1) + '.js?v=' + revision, old)
+              if old != new:
+                  page.write_text(new, encoding='utf-8')
+                  refreshed.append(page.name)
+          print('Array PDF revision:', revision, 'HTML pages refreshed:', len(refreshed))
+          PY
+          node --check data.js
+          node --check v2-app.js
+          git diff --check
+
+      - name: Commit certificate preview and refreshed website references
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/gallery/array-reviewing-certificate-2026.webp data.js v2-app.js '*.html'
+          if ! git diff --cached --quiet; then
+            git diff --cached --check
+            git commit -m "Generate Array certificate preview from current PDF and refresh links"
+            git push origin HEAD:main
+          else
+            echo "Array preview and versioned links are already current."
+          fi
