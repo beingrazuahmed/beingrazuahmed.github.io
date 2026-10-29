@@ -1,9 +1,9 @@
 window.PORTFOLIO_EXTRA = {
-  lastUpdated: "28 October 2026",
+  lastUpdated: "30 October 2026",
   impactMetrics: [
     { label: "Google Scholar citations", value: 2, source: "Google Scholar", date: "15 September 2026" },
     { label: "ResearchGate citations", value: 5, source: "ResearchGate", date: "15 September 2026" },
-    { label: "Research Interest Score", value: 10.1, source: "ResearchGate", date: "26 October 2026" },
+    { label: "Research Interest Score", value: 10.3, source: "ResearchGate", date: "30 October 2026" },
     { label: "h-index", value: 1, source: "Google Scholar / ResearchGate", date: "15 September 2026" },
     { label: "Usage", value: 441, source: "Mendeley Data", date: "26 October 2026" },
     { label: "Views", value: 197, source: "Mendeley Data", date: "26 October 2026" },
