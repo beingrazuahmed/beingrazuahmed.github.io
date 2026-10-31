@@ -945,7 +945,7 @@
           location: 'Rajshahi-6205, Bangladesh'
         },
         {
-          period: 'February 2025 – former appointment (end date not specified)',
+          period: 'February 2025–June 2026',
           title: 'Former Research Assistant',
           institution: 'Deep Statistical Learning and Research Laboratory (DSLR Lab), Department of Statistics and Data Science, Pabna University of Science and Technology (PUST), Pabna-6600, Bangladesh',
           location: 'Pabna-6600, Bangladesh'
