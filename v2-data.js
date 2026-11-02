@@ -842,9 +842,6 @@
           detail: 'Collaborative review in preparation with Md. Razu Ahmed, Dr. Md. Ashad Alam and Jannatul Mauya.'
         }
       ],
-      sharedInPreparation: [
-        { title: 'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction', detail: 'Collaborative heart-disease manuscript in preparation to submit with Md. Razu Ahmed, Prof. Dr. Md. Shamim Reza, Prof. Dr. Sabba Ruhi and Prof. Dr. Md. Aminul Hoque.' }
-      ],
       shared: [
         'Sophisticated Audio Source Separation: A Statistical Exploration of Clarity and Precision With FastICA — published in Engineering Reports',
         'Adaptive Probability Fusion of Lightweight Recurrent Networks for Cross-Domain Sentiment Classification — Under Revision',
