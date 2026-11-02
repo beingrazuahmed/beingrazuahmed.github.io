@@ -220,6 +220,29 @@ window.PORTFOLIO_DATA = {
 
   manuscripts: [
     {
+      id: "bs-ccfs-heart-disease", type: "Journal Manuscript", status: "Submitted", year: 2026, role: "Second Author",
+      title: "BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction",
+      venue: "PLOS ONE", publisher: "Public Library of Science (PLOS)", submittedDate: "2 November 2026",
+      authors: [
+        { name: "Jannatul Mauya", affiliation: 1 },
+        { name: "Md. Razu Ahmed", affiliation: 2 },
+        { name: "Md. Shamim Reza", affiliation: 2 },
+        { name: "Sabba Ruhi", affiliation: 2 },
+        { name: "Md. Aminul Hoque", affiliation: 1, corresponding: true }
+      ],
+      authorAffiliations: [
+        "Department of Statistics and Data Science, University of Rajshahi, Rajshahi-6205, Bangladesh",
+        "Department of Statistics and Data Science, Pabna University of Science and Technology, Pabna-6600, Bangladesh"
+      ],
+      correspondingAuthorNote: "Corresponding author: Md. Aminul Hoque.",
+      publisherBrandLinks: [
+        { label: "PLOS ONE", detail: "Official PLOS ONE journal website", url: "https://journals.plos.org/plosone/", logo: "assets/academic/journals/plos-one/plos-one-logo.png", brand: "plos" }
+      ],
+      tags: ["Causal Discovery", "Bootstrap Stability", "Consensus Feature Selection", "Heart Disease", "Explainable AI"],
+      summary: "Second-authored manuscript submitted to PLOS ONE on 2 November 2026. BS-CCFS combines PC, FCI and NOTEARS with 30 bootstrap resamples to identify stable, target-connected candidate predictors for interpretable heart disease prediction.",
+      highlight: "Five of 13 predictors retained (61.5% reduction); controlled XGBoost comparison ROC-AUC 0.894 versus 0.890 with all predictors. Submission pending editorial assessment."
+    },
+    {
       id: "dr", status: "Under Review", role: "First Author",
       title: "A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images",
       venue: "Measurement", publisher: "Elsevier", tags: ["Medical Imaging", "Deep Learning", "Feature Fusion", "Explainable AI"],
