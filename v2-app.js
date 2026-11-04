@@ -2929,6 +2929,12 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   }
 
   function projects(){return `${pageHero('Projects & Prototypes','Research prototypes, analytical projects and reproducible workflows.')}
+      <div class="container"><nav class="project-portfolio-index" aria-label="Explore project collections">
+        <a href="#bazarbondhu-ai"><strong>01</strong> BazarBondhu AI</a>
+        <a href="#fastica-audio-project"><strong>02</strong> B.Sc. · Audio separation</a>
+        <a href="#dr-grading-project"><strong>03</strong> M.S. · Retinopathy grading</a>
+        <a href="#active-project-directions"><strong>04</strong> Current directions</a>
+      </nav></div>
       <section class="section bazarbondhu-project-section" id="bazarbondhu-ai"><div class="container">
         <div class="bazarbondhu-case-heading">
           <span class="section-kicker">Featured applied AI · Public interactive demo</span>
