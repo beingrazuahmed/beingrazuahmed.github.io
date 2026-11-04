@@ -2928,13 +2928,91 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     </article>`;
   }
 
+  function fieldSurveyProjectCase(){
+    const f=D.fieldSurvey||{}, conf=f.conference||{}, article=f.article||{};
+    const evidence=(conf.contributions||[]).find(item=>String(item.paperId||'')===String(conf.paperId||''))?.evidence||[];
+    const link=(type,label)=>{
+      const entry=evidence.find(item=>item.type===type && item.href);
+      return entry?`<a href="${esc(entry.href)}" target="_blank" rel="noopener noreferrer">${esc(label)} ↗</a>`:'';
+    };
+    return `<section class="section field-survey-project-section" id="field-survey-project"><div class="container">
+      <header class="survey-project-head">
+        <div><span class="section-kicker">Supervised B.Sc. field research · Survey methodology &amp; scholarly outcomes</span>
+          <h2>Statistical Field Survey <span>— AI and employment perceptions in Bangladesh</span></h2>
+          <p>Original questionnaire-based research at Pabna University of Science and Technology, moving from study design and field data collection to an international conference presentation and an accepted journal manuscript.</p>
+        </div>
+        <a class="btn ghost" href="academic.html#academic-fieldwork">Full academic record <span aria-hidden="true">↗</span></a>
+      </header>
+      <article class="survey-project-case" aria-labelledby="survey-project-title">
+        <div class="survey-project-main">
+          <div>
+            <div class="survey-project-eyebrow">
+              <span>${esc(f.courseCode||'STAT-4110')}</span><span>${esc(f.credits||2)} credits</span><span>Grade ${esc(f.grade||'')}</span><span>Primary field-survey data</span>
+            </div>
+            <h3 id="survey-project-title">${esc(f.study||'Measuring attitudes toward AI and its impact on employment')}</h3>
+            <p>This collaborative B.Sc. field survey investigated perceptions of how artificial intelligence may affect employment and the labour market. The project combined a structured questionnaire with proportionate stratified random sampling and statistical analysis of respondent attitudes.</p>
+            <p>Participants were surveyed using a five-point Likert instrument. The work included socio-demographic and attitudinal variables and explored relationships using methods including correspondence analysis and principal component analysis.</p>
+            <div class="survey-project-info">
+              <p><strong>Research team:</strong> ${esc((f.team||[]).join(' · '))}</p>
+              <p><strong>Academic supervisor:</strong> ${esc(f.supervisor||'')}</p>
+              <p><strong>Study design:</strong> ${esc(f.design||'')}</p>
+            </div>
+          </div>
+          ${f.workflowAsset?`<figure class="survey-project-figure">
+            <div class="survey-project-figure-top">Research methodology · Survey workflow</div>
+            <div class="survey-project-image"><img src="${esc(f.workflowAsset)}" alt="Workflow diagram of the PUST statistical field survey on AI and employment perceptions" loading="lazy" decoding="async"></div>
+            <figcaption>${esc(f.workflowCaption||'Survey data-collection and analysis workflow.')}</figcaption>
+          </figure>`:''}
+        </div>
+        <div class="survey-project-metrics" aria-label="Field survey study design statistics">
+          <div><strong>4,795</strong><span>Target population at PUST</span></div>
+          <div><strong>370</strong><span>Survey participants</span></div>
+          <div><strong>33</strong><span>Variables · 8 socio-demographic + 25 attitudinal</span></div>
+        </div>
+        <div class="survey-project-bottom-grid">
+          <div>
+            <h4>Research &amp; statistical methods</h4>
+            <ul>
+              <li>Proportionate stratified random sampling</li>
+              <li>Questionnaire survey and interviews</li>
+              <li>Five-point Likert-scale measurement</li>
+              <li>Correspondence analysis and PCA</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Conference dissemination</h4>
+            <p><strong>${esc(conf.shortName||'ICRAST 2025')}</strong> · ${esc(conf.date||'')}</p>
+            <p>${esc(conf.presentation||'Oral Presentation')} · ${esc(conf.role||'Presenting Author')} · Paper ${esc(conf.paperId||'440')}${conf.page?` · ${esc(conf.page)}`:''}</p>
+            <div class="survey-project-links">
+              ${link('certificate','Certificate')}
+              ${link('proceedings','Book of Abstracts')}
+              ${link('slides','Presentation slides')}
+            </div>
+          </div>
+          <div>
+            <h4>Journal progression</h4>
+            <p><strong>${esc(article.title||'')}</strong></p>
+            <p>${esc(article.journal||'')}${article.acceptedDate?` · Accepted ${esc(article.acceptedDate)}`:''}</p>
+            <p>Currently recorded as ${esc(article.status||'accepted / forthcoming')}. The project and the resulting publication are distinct stages of the research.</p>
+            <div class="survey-project-links"><a href="publications.html">Explore publication record ↗</a></div>
+          </div>
+        </div>
+        <footer class="survey-project-footer">
+          <p><strong>Research progression:</strong> Undergraduate statistical field survey → ICRAST 2025 oral presentation → accepted peer-reviewed article. Descriptive sample statistics are presented as documented study characteristics, not as nationally representative estimates.</p>
+          <a class="btn primary" href="academic.html#academic-fieldwork">View complete survey evidence <span aria-hidden="true">↗</span></a>
+        </footer>
+      </article>
+    </div></section>`;
+  }
+
   function projects(){return `${pageHero('Projects & Prototypes','Research prototypes, analytical projects and reproducible workflows.')}
       <div class="container"><nav class="project-portfolio-index" aria-label="Explore project collections">
         <a href="#bazarbondhu-ai"><strong>01</strong> BazarBondhu AI</a>
         <a href="#ask-razu-ai-project"><strong>02</strong> Ask Razu AI</a>
-        <a href="#fastica-audio-project"><strong>03</strong> B.Sc. · Audio separation</a>
-        <a href="#dr-grading-project"><strong>04</strong> M.S. · Retinopathy grading</a>
-        <a href="#active-project-directions"><strong>05</strong> Current directions</a>
+        <a href="#field-survey-project"><strong>03</strong> Statistical Field Survey</a>
+        <a href="#fastica-audio-project"><strong>04</strong> B.Sc. · Audio separation</a>
+        <a href="#dr-grading-project"><strong>05</strong> M.S. · Retinopathy grading</a>
+        <a href="#active-project-directions"><strong>06</strong> Current directions</a>
       </nav></div>
       <section class="section bazarbondhu-project-section" id="bazarbondhu-ai"><div class="container">
         <div class="bazarbondhu-case-heading">
@@ -3042,6 +3120,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
           </footer>
         </article>
       </div></section>
+      ${fieldSurveyProjectCase()}
       <section class="section academic-showcase-section" id="supervised-projects"><div class="container">
         <div class="academic-showcase-intro">
           <div><span class="section-kicker">Supervised academic research · Evidence and outcomes</span>
