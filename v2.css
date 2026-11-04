@@ -13717,6 +13717,22 @@ body[data-page="dashboard"] .dashboard-impact-brand-links .publication-brand-lin
   overflow-wrap:anywhere;
 }
 .output-card .publication-author{display:inline}
+.output-card .publication-author-orcid-link{
+  display:inline-flex;vertical-align:middle;align-items:center;justify-content:center;
+  margin-left:4px;width:17px;height:17px;border-radius:50%;
+  text-decoration:none;opacity:.92;transition:opacity .15s ease,transform .15s ease;
+}
+.output-card .publication-author-orcid-link img{display:block;width:15px;height:15px}
+.output-card .publication-author-orcid-link:hover{opacity:1;transform:scale(1.1)}
+.output-card .publication-author-orcid-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.output-card .publication-code-deposit{
+  display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;
+  margin:10px 0 12px;padding:11px 13px;border:1px solid var(--line);
+  border-radius:10px;background:var(--surface-2);font-size:.83rem;overflow-wrap:anywhere;
+}
+.output-card .publication-code-deposit strong{color:var(--text);font-weight:780}
+.output-card .publication-code-deposit a{color:var(--accent);font-weight:700;text-underline-offset:3px}
+.output-card .publication-code-deposit a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .output-card .publication-author.is-portfolio-owner{font-weight:850}
 .output-card .publication-author sup{
   display:inline;

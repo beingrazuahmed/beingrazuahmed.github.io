@@ -358,6 +358,7 @@
       'google scholar': {src:favicon('scholar.google.com'), cls:'is-google-scholar'},
       'proquest': {src:favicon('proquest.com'), cls:'is-proquest'},
       'semantic scholar': {src:favicon('semanticscholar.org'), cls:'is-semantic-scholar'},
+      'zenodo': {src:favicon('zenodo.org'), cls:'is-zenodo'},
       'sciprofiles': {src:favicon('sciprofiles.com'), cls:'is-sciprofiles'},
       'researchgate': {src:favicon('researchgate.net'), cls:'is-researchgate'},
       'sciencedirect': {src:favicon('sciencedirect.com'), cls:'is-sciencedirect'},
@@ -1069,7 +1070,11 @@
     const byline=authors.map(a=>{
       const name=String(a.name||'');
       const owner=name==='Md. Razu Ahmed'?' is-portfolio-owner':'';
-      return `<span class="publication-author${owner}">${esc(name)}</span>`;
+      const orcidId=String(a.orcid||'').trim().replace(/^https:\/\/orcid\.org\//i,'');
+      const orcidLink=/^(?:\d{4}-){3}[\dX]{4}$/.test(orcidId)
+        ? `<a class="publication-author-orcid-link" href="https://orcid.org/${esc(orcidId)}" target="_blank" rel="noopener noreferrer" aria-label="Open ORCID profile for ${esc(name)}" title="ORCID: ${esc(orcidId)}"><img src="assets/academic/logos/contact/orcid.svg" alt="" width="15" height="15" loading="lazy" decoding="async"></a>`
+        : '';
+      return `<span class="publication-author${owner}">${esc(name)}${orcidLink}</span>`;
     }).join('<span class="publication-author-separator">, </span>');
     const affiliationRows=affiliations.map(affiliation=>`<li>${esc(affiliation)}</li>`).join('');
     return `<section class="publication-authorship" aria-label="Publication authors and affiliations">
@@ -1115,6 +1120,7 @@
       ${(p.citationAPA||p.citationIEEE)
         ? `<div class="publication-citation-block"><div class="publication-citation-label">APA & IEEE citations</div>${dualAcademicCitation(p.citationAPA,p.citationIEEE)}</div>`
         : (p.citation? `<p class="output-citation">${esc(p.citation)}</p>` : '')}
+      ${p.codeRepository?.url?`<div class="publication-code-deposit"><strong>Open analysis code</strong><a href="${esc(p.codeRepository.url)}" target="_blank" rel="noopener noreferrer">Zenodo · Version ${esc(p.codeRepository.version||'1.0.0')} · DOI: ${esc(p.codeRepository.doi||'')}</a></div>`:''}
       ${js?`<div class="output-standing">
         ${js.jif2025?`<span><strong>${esc(js.jif2025)}</strong>JIF</span>`:''}
         ${js.citeScore2025?`<span><strong>${esc(js.citeScore2025)}</strong>CiteScore</span>`:''}

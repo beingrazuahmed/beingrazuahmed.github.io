@@ -4,6 +4,11 @@
   const coursework = window.COURSEWORK_DATA || {};
 
   const publicationLinks = {
+    'dengue-forecast': {
+      primary: [{ label: 'Zenodo', url: 'https://doi.org/10.5281/zenodo.23928401' }],
+      discovery: [],
+      social: []
+    },
     fastica: {
       primary: [
         { label: 'DOI', url: 'https://doi.org/10.1002/eng2.70575' },

@@ -132,15 +132,16 @@ window.PORTFOLIO_DATA = {
       ],
       citation: "Accepted for publication on 28 October 2026 · DOI pending.",
       acceptedDate: "28 October 2026",
+      codeRepository: { label: "Zenodo analysis code", url: "https://doi.org/10.5281/zenodo.23928401", doi: "10.5281/zenodo.23928401", version: "1.0.0", published: "4 November 2026" },
       authors: [
-        { name: "Muhammad Ziaul Haque", affiliation: 1 },
-        { name: "Md. Razu Ahmed", affiliation: 2 },
-        { name: "Mimosa Saha", affiliation: 2 },
-        { name: "Md. Feroz Ali", affiliation: 3, corresponding: true },
-        { name: "Diganto Biswas", affiliation: 3 },
-        { name: "Md Shafiul Alam", affiliation: 4, corresponding: true },
-        { name: "S M Shakil", affiliation: 5 },
-        { name: "Obaidullah Obaidi", affiliation: 6, corresponding: true }
+        { name: "Muhammad Ziaul Haque", affiliation: 1, orcid: "https://orcid.org/0009-0005-2588-1777" },
+        { name: "Md. Razu Ahmed", affiliation: 2, orcid: "https://orcid.org/0009-0001-8646-1881" },
+        { name: "Mimosa Saha", affiliation: 2, orcid: "https://orcid.org/0009-0009-6929-6667" },
+        { name: "Md. Feroz Ali", affiliation: 3, corresponding: true, orcid: "https://orcid.org/0000-0003-2764-9371" },
+        { name: "Diganto Biswas", affiliation: 3, orcid: "https://orcid.org/0009-0006-9699-264X" },
+        { name: "Md Shafiul Alam", affiliation: 4, corresponding: true, orcid: "https://orcid.org/0000-0002-8505-8011" },
+        { name: "S M Shakil", affiliation: 5, orcid: "https://orcid.org/0000-0001-7849-1979" },
+        { name: "Obaidullah Obaidi", affiliation: 6, corresponding: true, orcid: "https://orcid.org/0000-0002-8613-2324" }
       ],
       authorAffiliations: [
         "Department of Mathematics, Pabna University of Science and Technology, Pabna 6600, Bangladesh",
