@@ -352,45 +352,6 @@ window.PORTFOLIO_DATA = {
 
   upcomingConferenceSubmissions: [
     {
-      "id": "icps-2026-submission-475",
-      "submittedDate": "18 October 2026",
-      "event": "ICPS 2026",
-      "full": "2nd International Conference of Physical Sciences",
-      "eventLogo": "assets/academic/conferences/icps-2026/logos/icps-2026-official-logo.webp",
-      "hostLogo": "assets/academic/conferences/icps-2026/logos/sust-official-logo.webp",
-      "flyerAsset": "assets/academic/conferences/icps-2026/media/icps-2026-official-flyer.jpg",
-      "flyerLabel": "ICPS 2026 official conference flyer",
-      "theme": "Fundamental Insights to Global Impact",
-      "organizer": "School of Physical Sciences, Shahjalal University of Science and Technology (SUST)",
-      "venue": "Shahjalal University of Science and Technology, Sylhet, Bangladesh",
-      "date": "10–12 December 2026",
-      "format": "Hybrid (in-person and online)",
-      "officialUrl": "https://icps2026.sust.edu/",
-      "acceptanceNotice": "2 November 2026 (scheduled)",
-      "status": "Abstract Submitted",
-      "decisionStatus": "Decision Pending",
-      "paperId": "475",
-      "role": "First Author · Corresponding Author",
-      "title": "Machine Learning for Self-Reported Diabetes Classification: Predictive Performance and Consensus Feature Stability in BRFSS 2023",
-      "authors": "Md. Razu Ahmed¹,*, and Md. Humayun Kabir¹",
-      "affiliations": [
-        "¹ Department of Statistics and Data Science, Pabna University of Science and Technology, Pabna-6600, Bangladesh."
-      ],
-      "authorEmails": [
-        {
-          "name": "Md. Razu Ahmed",
-          "email": "razuahmed038@gmail.com"
-        },
-        {
-          "name": "Md. Humayun Kabir",
-          "email": "gotohumayun@gmail.com"
-        }
-      ],
-      "correspondingAuthor": "Md. Razu Ahmed",
-      "correspondingEmail": "razuahmed038@gmail.com",
-      "note": "Abstract submitted 18 October 2026 · Paper ID 475 · Decision pending; not accepted or presented."
-    },
-    {
       "id": "icps-2026-submission-454",
       "submittedDate": "16 October 2026",
       "event": "ICPS 2026",
@@ -405,9 +366,9 @@ window.PORTFOLIO_DATA = {
       "date": "10–12 December 2026",
       "format": "Hybrid (in-person and online)",
       "officialUrl": "https://icps2026.sust.edu/",
-      "acceptanceNotice": "2 November 2026 (scheduled)",
-      "status": "Abstract Submitted",
-      "decisionStatus": "Decision Pending",
+      "statusUpdated": "4 November 2026",
+      "status": "Accepted for Oral Presentation",
+      "decisionStatus": "Accepted for Oral Presentation",
       "paperId": "454",
       "role": "Second Author",
       "title": "Weighted RNN–BiLSTM Probability Fusion for Sentiment Classification of Airline Tweets and IMDb Reviews",
@@ -431,7 +392,7 @@ window.PORTFOLIO_DATA = {
       ],
       "correspondingAuthor": "Md. Shamim Reza",
       "correspondingEmail": "shamim.reza@pust.ac.bd",
-      "note": "Abstract submitted 16 October 2026; decision pending. This is not an accepted or presented conference contribution."
+      "note": "Accepted for oral presentation at ICPS 2026 (10–12 December 2026). Abstract submitted 16 October 2026; presentation has not yet taken place."
     },
     {
       id: "icps-2026-submission-302",
@@ -448,9 +409,9 @@ window.PORTFOLIO_DATA = {
       date: "10–12 December 2026",
       format: "Hybrid (in-person and online)",
       officialUrl: "https://icps2026.sust.edu/",
-      acceptanceNotice: "2 November 2026 (scheduled)",
-      status: "Abstract Submitted",
-      decisionStatus: "Decision Pending",
+      statusUpdated: "4 November 2026",
+      status: "Waitlisted",
+      decisionStatus: "Waiting List",
       paperId: "302",
       role: "Second Author",
       title: "Statistical Association and Comparative Machine Learning Analysis for Asthma Status Classification Using Synthetic Health and Environmental Data",
@@ -464,7 +425,7 @@ window.PORTFOLIO_DATA = {
       ],
       correspondingAuthor: "Sabba Ruhi",
       correspondingEmail: "sabba.ruhi@pust.ac.bd",
-      note: "Reported as submitted on 14 October 2026. Acceptance decision pending. This abstract concerns synthetic health and environmental data; it has not been accepted or presented."
+      note: "Placed on the ICPS 2026 waiting list. Abstract submitted 14 October 2026; not accepted for presentation at this stage. This study uses synthetic health and environmental data."
     },
     {
       id: "icps-2026-submission",
@@ -481,9 +442,9 @@ window.PORTFOLIO_DATA = {
       date: "10–12 December 2026",
       format: "Hybrid (in-person and online)",
       officialUrl: "https://icps2026.sust.edu/",
-      acceptanceNotice: "2 November 2026 (scheduled)",
-      status: "Abstract Submitted",
-      decisionStatus: "Decision Pending",
+      statusUpdated: "4 November 2026",
+      status: "Accepted for Oral Presentation",
+      decisionStatus: "Accepted for Oral Presentation",
       paperId: "238",
       role: "Second Author",
       title: "Causal Consensus Feature Selection with Bootstrap Stability for Interpretable Heart Disease Prediction",
@@ -500,7 +461,7 @@ window.PORTFOLIO_DATA = {
       ],
       correspondingAuthor: "Md. Aminul Hoque",
       correspondingEmail: "aminul@ru.ac.bd",
-      note: "This is a submitted abstract, not an accepted or presented conference contribution."
+      note: "Accepted for oral presentation at ICPS 2026 (10–12 December 2026). Abstract submitted 13 October 2026; presentation has not yet taken place."
     }
   ],
 
