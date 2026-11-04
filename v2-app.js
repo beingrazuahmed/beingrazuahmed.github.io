@@ -2931,9 +2931,10 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   function projects(){return `${pageHero('Projects & Prototypes','Research prototypes, analytical projects and reproducible workflows.')}
       <div class="container"><nav class="project-portfolio-index" aria-label="Explore project collections">
         <a href="#bazarbondhu-ai"><strong>01</strong> BazarBondhu AI</a>
-        <a href="#fastica-audio-project"><strong>02</strong> B.Sc. · Audio separation</a>
-        <a href="#dr-grading-project"><strong>03</strong> M.S. · Retinopathy grading</a>
-        <a href="#active-project-directions"><strong>04</strong> Current directions</a>
+        <a href="#ask-razu-ai-project"><strong>02</strong> Ask Razu AI</a>
+        <a href="#fastica-audio-project"><strong>03</strong> B.Sc. · Audio separation</a>
+        <a href="#dr-grading-project"><strong>04</strong> M.S. · Retinopathy grading</a>
+        <a href="#active-project-directions"><strong>05</strong> Current directions</a>
       </nav></div>
       <section class="section bazarbondhu-project-section" id="bazarbondhu-ai"><div class="container">
         <div class="bazarbondhu-case-heading">
@@ -2989,6 +2990,57 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
           </div>
           <p class="bazarbondhu-gallery-note">Captured from the working demonstration. All starter grocery prices are illustrative rather than verified live market quotations; the assistant is a limited intent-matching tool, not a generative chatbot.</p>
         </section>
+      </div></section>
+      <section class="section alt ask-project-section" id="ask-razu-ai-project"><div class="container">
+        <header class="ask-project-head">
+          <div>
+            <span class="section-kicker">Portfolio-native research technology · Live browser prototype</span>
+            <h2>Ask Razu AI <span>— Academic research intelligence interface</span></h2>
+            <p>A question-led interface for exploring the public academic portfolio of Md. Razu Ahmed. Presented transparently as a working, early-stage, rule-based assistant—not a live-retrieval or generative-language-model system.</p>
+          </div>
+          <a class="btn ghost" href="ask-razu.html">Try the assistant <span aria-hidden="true">↗</span></a>
+        </header>
+        <article class="ask-project-case" aria-labelledby="ask-project-title">
+          <div class="ask-project-overview">
+            <div class="ask-project-story">
+              <div class="ask-project-status"><span>Public interactive demo</span><span>Browser-side JavaScript</span><span>Curated portfolio answers</span></div>
+              <h3 id="ask-project-title">Making a research portfolio easier to explore through questions</h3>
+              <p>Instead of browsing multiple pages to locate background information, visitors can ask a question or select a topic prompt. The current implementation matches supported keywords and returns short, human-readable summaries drawn from approved public portfolio information.</p>
+              <div class="ask-project-flow" aria-label="Current Ask Razu AI response workflow">
+                <div class="ask-project-step"><small>01 · ASK</small><strong>Enter a question</strong><span>Free-text input or one of nine topic buttons</span></div>
+                <div class="ask-project-step"><small>02 · MATCH</small><strong>Match supported terms</strong><span>Client-side JavaScript condition rules</span></div>
+                <div class="ask-project-step"><small>03 · EXPLAIN</small><strong>Show a curated answer</strong><span>Public portfolio summary or scope guidance</span></div>
+              </div>
+              <div class="ask-project-buttons">
+                <a class="btn primary" href="ask-razu.html">Launch Ask Razu AI <span aria-hidden="true">↗</span></a>
+                <a class="btn ghost" href="https://github.com/beingrazuahmed/beingrazuahmed.github.io/blob/main/v2-app.js" target="_blank" rel="noopener noreferrer">View implementation <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+            <figure class="ask-project-preview">
+              <div class="ask-project-preview-top"><strong>Ask Razu AI</strong><span>Example from the working rules</span></div>
+              <div class="ask-project-dialogue">
+                <div><p class="ask-project-label">Visitor's question</p><div class="ask-project-question">Which studies used SHAP?</div></div>
+                <div><p class="ask-project-label">Current assistant response</p><div class="ask-project-response">SHAP appears in the CKD, HCV and public-health / explainability research records where public-approved details are available.</div></div>
+              </div>
+              <figcaption>Illustrative conversation panel reproducing an existing example query and its current rule-based response; this is not a screenshot or an LLM-generated answer.</figcaption>
+            </figure>
+          </div>
+          <div class="ask-project-details">
+            <div class="ask-project-detail"><h4>What visitors can do</h4>
+              <ul><li>Type questions or choose from nine research and academic topic prompts.</li><li>Explore supported topics including SHAP methods, first-author work, coursework, dengue collaborations and peer-review activity.</li><li>Open the assistant directly from the portfolio navigation.</li></ul>
+            </div>
+            <div class="ask-project-detail"><h4>Implementation</h4>
+              <ul><li>HTML, CSS and vanilla JavaScript integrated into the existing GitHub Pages portfolio.</li><li>Keyword-triggered responses with prewritten summaries and a general fallback.</li><li>Client-side interaction; no external AI-model service is required for current responses.</li></ul>
+            </div>
+            <div class="ask-project-detail"><h4>Next development priorities</h4>
+              <ul><li>Connect answers to maintainable structured public records instead of static answer strings.</li><li>Add direct source links and evidence labels for each supported response.</li><li>Expand query coverage and improve answer freshness while preserving the public-information boundary.</li></ul>
+            </div>
+          </div>
+          <footer class="ask-project-bottom">
+            <p><strong>Scope &amp; limitations:</strong> This prototype is a limited, keyword-based portfolio guide. It does not yet perform open-ended reasoning, semantic retrieval or citation-backed question answering. Confidential manuscripts, reviewer reports and private records are outside its intended public scope.</p>
+            <a href="ask-razu.html">Explore live interface <span aria-hidden="true">↗</span></a>
+          </footer>
+        </article>
       </div></section>
       <section class="section academic-showcase-section" id="supervised-projects"><div class="container">
         <div class="academic-showcase-intro">
