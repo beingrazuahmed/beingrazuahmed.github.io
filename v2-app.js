@@ -2865,6 +2865,69 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
 
   function askRazu(){return `${pageHero('Ask Razu AI','Research Intelligence for My Academic Portfolio')}<section class="section"><div class="container"><article class="card"><h3>Hi, I’m Ask Razu AI.</h3><p>I can help you explore Md. Razu Ahmed’s research, publications, datasets, methodologies, academic background, peer-review service, conference work, collaborations and current research directions. My answers are grounded in the verified information available in this portfolio.</p><div class="search-wrap"><input class="search-input" id="askInput" placeholder="Ask about research, methods, coursework, conferences or collaborators…"></div><div class="pill-row" style="margin-top:14px">${['Research','Publications','Methods','Experience','Collaborators','Metrics','Coursework','Conferences','Training'].map(x=>`<button class="filter askPrompt" data-q="${x}">${x}</button>`).join('')}</div><div id="askAnswer" class="card" style="margin-top:18px"><strong>Try:</strong> “Which studies used SHAP?”, “Show first-author papers”, “What machine-learning coursework did Razu take?”, or “Who collaborated on dengue?”</div></article></div></section>`;}
 
+
+  function portfolioAcademicCase(p={},index=0){
+    const isFastica=String(p.course||'').includes('STAT-4210');
+    const id=isFastica?'fastica-audio-project':'dr-grading-project';
+    const degree=isFastica?'B.Sc. research project':'M.S. research project';
+    const standing=isFastica?'Published research · Engineering Reports':'Research prototype · non-clinical';
+    const steps=isFastica?[
+      ['01 / PREPARE','Three audio sources','Standardize recordings and build a specified 3 × 3 mixture'],
+      ['02 / COMPARE','FastICA · PCA · NMF','Separate the mixtures using three contrasting approaches'],
+      ['03 / EVALUATE','SDR · SIR · SAR','Evaluate reconstructed signals with aligned BSS Eval metrics']
+    ]:[
+      ['01 / PREPARE','APTOS 2019 + IDRiD','Harmonize five DR grades while retaining the official IDRiD test split'],
+      ['02 / MODEL','DenseNet121 + SIFT-BoVW','Compare staged deep, handcrafted and fused feature models'],
+      ['03 / EXPLAIN','XGBoost + Grad-CAM++','Evaluate held-out grades and display visual explanations']
+    ];
+    const limitation=isFastica
+      ?'The reported separation scores belong to the specified experimental recordings and mixing design, not an uncontrolled real-world audio benchmark.'
+      :'This is a research and screening-oriented demonstration, not clinical diagnostic software. Its test-set metrics do not establish readiness for patient care.';
+    const metricCards=(p.metrics||[]).map(m=>`<div class="academic-showcase-metric"><strong>${esc(m.value||'')}</strong><span>${esc(m.label||'')}</span></div>`).join('');
+    const stages=steps.map(s=>`<div class="academic-showcase-stage"><small>${esc(s[0])}</small><strong>${esc(s[1])}</strong><span>${esc(s[2])}</span></div>`).join('');
+    return `<article class="academic-showcase-case" id="${id}" aria-labelledby="${id}-title">
+      <div class="academic-showcase-heading">
+        <div class="academic-showcase-titles">
+          <div class="academic-showcase-eyebrow"><span>${esc(degree)}</span><span>${esc(standing)}</span><span>${esc(p.grade||'')} academic grade</span></div>
+          <h3 id="${id}-title">${esc(p.title||'Academic research project')}</h3>
+          <p class="academic-showcase-course">${esc(p.course||'')} · ${esc(p.credits||'')} credits · ${esc(p.level||'')}</p>
+        </div>
+        <span class="academic-showcase-number" aria-hidden="true">0${index+1}</span>
+      </div>
+      <div class="academic-showcase-main">
+        <div class="academic-showcase-story">
+          ${p.focus?`<p class="academic-showcase-focus"><strong>Research focus</strong> ${esc(p.focus)}</p>`:''}
+          <p class="academic-showcase-summary">${esc(p.summary||'')}</p>
+          <div class="academic-showcase-steps" aria-label="Project methodology">${stages}</div>
+        </div>
+        ${p.figure?`<figure class="academic-showcase-figure">
+          <div class="academic-showcase-image-frame"><img src="${esc(p.figure)}" alt="${esc(p.figureAlt||p.title||'Project figure')}" loading="lazy" decoding="async"></div>
+          <figcaption>${esc(p.figureCaption||'Project research visual.')}</figcaption>
+        </figure>`:''}
+      </div>
+      ${metricCards?`<div class="academic-showcase-metrics" aria-label="Reported project evaluation results">${metricCards}</div>`:''}
+      <div class="academic-showcase-details">
+        <div class="academic-showcase-methods">
+          <h4>Methods &amp; techniques</h4>
+          <div class="academic-showcase-tags">${(p.methods||[]).map(x=>`<span>${esc(x)}</span>`).join('')}</div>
+        </div>
+        <div class="academic-showcase-outcome">
+          <h4>Research outcome</h4>
+          <p>${esc(p.outcome||'')}</p>
+          ${p.benchmark?`<p class="academic-showcase-benchmark"><strong>Comparative finding:</strong> ${esc(p.benchmark)}</p>`:''}
+          <p class="academic-showcase-limitation"><strong>Scope:</strong> ${esc(limitation)}</p>
+        </div>
+      </div>
+      <footer class="academic-showcase-footer">
+        <div class="academic-showcase-supervision"><span>Academic supervisor</span><strong>${esc(p.supervisor||'')}</strong></div>
+        <div class="academic-showcase-actions">
+          <a href="academic.html#academic-projects" class="btn ghost">Full academic record <span aria-hidden="true">↗</span></a>
+          ${p.outputUrl?`<a href="${esc(p.outputUrl)}" class="btn primary" target="_blank" rel="noopener noreferrer">Published article · DOI <span aria-hidden="true">↗</span></a>`:''}
+        </div>
+      </footer>
+    </article>`;
+  }
+
   function projects(){return `${pageHero('Projects & Prototypes','Research prototypes, analytical projects and reproducible workflows.')}
       <section class="section bazarbondhu-project-section" id="bazarbondhu-ai"><div class="container">
         <div class="bazarbondhu-case-heading">
@@ -2921,7 +2984,20 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
           <p class="bazarbondhu-gallery-note">Captured from the working demonstration. All starter grocery prices are illustrative rather than verified live market quotations; the assistant is a limited intent-matching tool, not a generative chatbot.</p>
         </section>
       </div></section>
-      <section class="section"><div class="container">${sectionHead('Research prototype','Diabetic-retinopathy grading research prototype')}<article class="card quote-card"><h3>Deep learning + handcrafted feature fusion</h3><p>Research prototype combining DenseNet121 representations, SIFT-BoVW features, XGBoost and Grad-CAM++ for explainable diabetic-retinopathy grading. Intended for research and decision-support exploration, not clinical diagnosis.</p></article></div></section><section class="section alt"><div class="container">${sectionHead('Active projects','Current directions')}<div class="grid grid-3">${(D.ongoing||[]).map(x=>`<article class="card"><span class="badge">In preparation</span><h3>${esc(x.title)}</h3><p>${esc(x.objective||x.summary||x.description||'')}</p>${tags(x.methods||x.tags||[])}</article>`).join('')}</div></div></section>`;}
+      <section class="section academic-showcase-section" id="supervised-projects"><div class="container">
+        <div class="academic-showcase-intro">
+          <div><span class="section-kicker">Supervised academic research · Evidence and outcomes</span>
+          <h2>From statistical projects to reproducible research</h2>
+          <p>Two supervised research projects from the B.Sc. and M.S. programmes at Pabna University of Science and Technology—presented with their documented workflows, research figures, evaluation results and outcomes.</p></div>
+          <a class="btn ghost" href="academic.html#academic-projects">Explore the Academic section <span aria-hidden="true">↗</span></a>
+        </div>
+        <nav class="academic-showcase-jump" aria-label="Academic project quick links">
+          <a href="#fastica-audio-project">B.Sc. · Audio separation</a>
+          <a href="#dr-grading-project">M.S. · Retinopathy grading</a>
+        </nav>
+        <div class="academic-showcase-stack">${(D.academicProjects||[]).map(portfolioAcademicCase).join('')}</div>
+      </div></section>
+      <section class="section alt" id="active-project-directions"><div class="container">${sectionHead('Active projects','Current directions','Selected public-safe ongoing research directions, distinct from completed academic coursework projects.')}<div class="grid grid-3">${(D.ongoing||[]).map(x=>`<article class="card"><span class="badge">${esc(x.status||'In progress')}</span><h3>${esc(x.title)}</h3><p>${esc(x.objective||x.summary||x.description||'')}</p>${tags(x.methods||x.tags||[])}</article>`).join('')}</div></div></section>`;}
 
   function contact(){
   const email=D.profile?.email||'razuahmed038@gmail.com',affiliation=D.profile?.affiliation||'Department of Statistics and Data Science, Pabna University of Science and Technology (PUST)',portrait=D.profile?.image||'assets/profile/razu-portrait.JPG';
