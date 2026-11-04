@@ -1,3 +1,32 @@
+/* Quick project directory, positioned directly below the page introduction */
+body[data-page="projects"] .project-portfolio-index{
+  display:flex;flex-wrap:wrap;gap:10px;
+  padding:0 0 15px;margin:0 0 2px;
+}
+body[data-page="projects"] .project-portfolio-index a{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:10px 15px;border-radius:11px;
+  border:1px solid var(--line);background:var(--surface);
+  color:var(--text);font-size:.78rem;font-weight:720;
+  box-shadow:0 4px 14px rgba(19,62,91,.045);
+  transition:border-color .15s ease,background .15s ease
+}
+body[data-page="projects"] .project-portfolio-index a strong{
+  color:var(--accent-2);font-size:.67rem;letter-spacing:.045em
+}
+body[data-page="projects"] .project-portfolio-index a:hover,
+body[data-page="projects"] .project-portfolio-index a:focus-visible{
+  border-color:var(--accent);background:var(--surface-2)
+}
+@media(max-width:520px){
+  body[data-page="projects"] .project-portfolio-index{
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px
+  }
+  body[data-page="projects"] .project-portfolio-index a{
+    gap:7px;padding:9px 10px;font-size:.7rem;line-height:1.5
+  }
+}
+
 /* Projects page — research-project case studies sourced from the Academic section.
    Separate presentation layer; canonical data remains in coursework-data.js. */
 body[data-page="projects"] .academic-showcase-section{position:relative}
