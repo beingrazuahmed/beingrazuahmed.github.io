@@ -3005,14 +3005,92 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     </div></section>`;
   }
 
+  function ckdProjectCase(){
+    const p=(D.outputs||[]).find(x=>x.id==='ckd')||{};
+    const authors=(p.publicationAuthors||[]).map(x=>x.name).filter(Boolean).join(' · ');
+    const articleUrl=p.doi||'https://doi.org/10.3329/ijss.v25i2.85732';
+    const figure=p.visual||'assets/publications/ckd/feature-importance.png';
+    return `<section class="section alt ckd-project-section" id="ckd-prediction-project"><div class="container">
+      <header class="ckd-project-head">
+        <div>
+          <span class="section-kicker">Published biomedical data science · First-author research</span>
+          <h2>Chronic Kidney Disease <span>— Risk factors &amp; stacking machine learning</span></h2>
+          <p>A published statistical-learning study examining predictive CKD indicators, complementary feature-selection approaches, and stacked classification models across a benchmark and a simulated dataset.</p>
+        </div>
+        <a class="btn ghost" href="${esc(articleUrl)}" target="_blank" rel="noopener noreferrer">Read published paper <span aria-hidden="true">↗</span></a>
+      </header>
+      <article class="ckd-case" aria-labelledby="ckd-project-title">
+        <div class="ckd-main">
+          <div>
+            <div class="ckd-tags">
+              <span>First author</span><span>Peer-reviewed publication · 2025</span><span>Biomedical machine learning</span><span>Feature-selection consensus</span>
+            </div>
+            <h3 id="ckd-project-title">${esc(p.title||'Identification of Predisposing Risk Factors for Chronic Kidney Disease and Optimizing Disease Prediction Using a Stacking Machine Learning Algorithm')}</h3>
+            <p>The study combined statistical feature analysis with predictive machine learning to identify informative CKD-associated variables and compare classification performance. It evaluated a 400-record UCI clinical benchmark with 24 predictor features, alongside 1,000 synthetically simulated observations.</p>
+            <p>Six feature-selection approaches informed a majority-vote consensus. A stacking ensemble was then evaluated alongside individual learning algorithms, supported by data-preprocessing safeguards and bootstrap confidence intervals.</p>
+            <div class="ckd-pipeline" aria-label="CKD project analysis pipeline">
+              <div class="ckd-stage"><small>01 · PREPARE</small><strong>Clean &amp; rebalance</strong><span>Imputation · outlier handling · scaling · training-only SMOTE</span></div>
+              <div class="ckd-stage"><small>02 · SELECT</small><strong>Consensus features</strong><span>LR · RFE · RF · mutual information · χ² · PCA</span></div>
+              <div class="ckd-stage"><small>03 · EVALUATE</small><strong>Stacking + benchmarks</strong><span>Classification metrics · bootstrap confidence intervals</span></div>
+            </div>
+            <div class="ckd-actions">
+              <a class="btn primary" href="${esc(articleUrl)}" target="_blank" rel="noopener noreferrer">Published article · DOI <span aria-hidden="true">↗</span></a>
+              <a class="btn ghost" href="publications.html">View publication record <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <figure class="ckd-figure">
+            <div class="ckd-figure-top">Research visualization · CKD feature importance</div>
+            <div class="ckd-figure-frame"><img src="${esc(figure)}" alt="Feature-importance results from the published CKD risk-factor and stacking ensemble study" loading="lazy" decoding="async"></div>
+            <figcaption>Study figure from the portfolio publication record. Feature importance describes predictive association in the analysed data, not evidence of causality.</figcaption>
+          </figure>
+        </div>
+        <div class="ckd-evidence-strip" aria-label="Published study datasets and reported test accuracy">
+          <div><strong>400</strong><span>UCI CKD benchmark records</span></div>
+          <div><strong>1,000</strong><span>Synthetically simulated records</span></div>
+          <div><strong>100.0%</strong><span>Reported accuracy · UCI CKD data</span></div>
+          <div><strong>96.7%</strong><span>Reported accuracy · simulated data</span></div>
+        </div>
+        <div class="ckd-detail-grid">
+          <div>
+            <h4>Predictive variables</h4>
+            <p>Frequently selected variables in the UCI analysis included serum creatinine, hemoglobin, packed cell volume, red blood cell count, specific gravity, albumin, hypertension, diabetes, sugar and appetite.</p>
+            <p>These are model-selected indicators, not causal-effect estimates.</p>
+          </div>
+          <div>
+            <h4>Methods &amp; validation</h4>
+            <ul>
+              <li>Median/mode imputation and Z-score outlier capping</li>
+              <li>Min–max scaling and training-only SMOTE</li>
+              <li>Six feature selectors with majority-vote consensus</li>
+              <li>Stacking ensemble and individual classifier comparisons</li>
+              <li>Bootstrap 95% confidence intervals</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Published outcome</h4>
+            <p><strong>${esc(p.venue||'International Journal of Statistical Sciences')}</strong></p>
+            <p>${esc(p.citation||'Vol. 25(2), pp. 1–32, 2025')} · ${esc(p.role||'First Author')}</p>
+            ${authors?`<p><strong>Authors:</strong> ${esc(authors)}</p>`:''}
+            <p>The research offers a reproducible comparative framework for analysing CKD-associated predictors and evaluating stacking-based prediction.</p>
+          </div>
+        </div>
+        <footer class="ckd-bottom">
+          <p><strong>Interpretation &amp; limitations:</strong> Results are specific to the UCI benchmark and a synthetic dataset; the simulated sample is not an independent external clinical cohort. High test accuracy does not establish clinical deployment readiness, and broader external or prospective validation would be necessary.</p>
+          <a class="btn ghost" href="${esc(articleUrl)}" target="_blank" rel="noopener noreferrer">Open journal DOI <span aria-hidden="true">↗</span></a>
+        </footer>
+      </article>
+    </div></section>`;
+  }
+
   function projects(){return `${pageHero('Projects & Prototypes','Research prototypes, analytical projects and reproducible workflows.')}
       <div class="container"><nav class="project-portfolio-index" aria-label="Explore project collections">
         <a href="#bazarbondhu-ai"><strong>01</strong> BazarBondhu AI</a>
         <a href="#ask-razu-ai-project"><strong>02</strong> Ask Razu AI</a>
         <a href="#field-survey-project"><strong>03</strong> Statistical Field Survey</a>
-        <a href="#fastica-audio-project"><strong>04</strong> B.Sc. · Audio separation</a>
-        <a href="#dr-grading-project"><strong>05</strong> M.S. · Retinopathy grading</a>
-        <a href="#active-project-directions"><strong>06</strong> Current directions</a>
+        <a href="#ckd-prediction-project"><strong>04</strong> CKD · Stacking ML</a>
+        <a href="#fastica-audio-project"><strong>05</strong> B.Sc. · Audio separation</a>
+        <a href="#dr-grading-project"><strong>06</strong> M.S. · Retinopathy grading</a>
+        <a href="#active-project-directions"><strong>07</strong> Current directions</a>
       </nav></div>
       <section class="section bazarbondhu-project-section" id="bazarbondhu-ai"><div class="container">
         <div class="bazarbondhu-case-heading">
@@ -3121,6 +3199,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         </article>
       </div></section>
       ${fieldSurveyProjectCase()}
+      ${ckdProjectCase()}
       <section class="section academic-showcase-section" id="supervised-projects"><div class="container">
         <div class="academic-showcase-intro">
           <div><span class="section-kicker">Supervised academic research · Evidence and outcomes</span>
