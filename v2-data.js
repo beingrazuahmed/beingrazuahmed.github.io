@@ -2914,41 +2914,42 @@
   ];
 
 
-  // Keep all pending ICPS 2026 abstract submissions in the relevant
-  // collaborators' Shared Works and conference histories without mixing
-  // submissions with accepted papers, presentations, or proceedings.
+  // Mirror reported ICPS 2026 abstract decisions in collaborator profiles.
+  // An oral acceptance is upcoming, not a completed presentation or proceeding.
   const icps2026CoauthorsByPaper = {
     '238': ['shamim-reza', 'sabba-ruhi', 'aminul-hoque', 'jannatul-mauya'],
     '302': ['sabba-ruhi'],
     '454': ['shamim-reza', 'jannatul-mauya']
   };
-  const icps2026Submissions = (base.upcomingConferenceSubmissions || [])
+  const icps2026Records = (base.upcomingConferenceSubmissions || [])
     .filter(submission => submission.event === 'ICPS 2026');
   for (const collaborator of people) {
-    const submissions = icps2026Submissions.filter(submission =>
+    const submissions = icps2026Records.filter(submission =>
       (icps2026CoauthorsByPaper[String(submission.paperId)] || []).includes(collaborator.id)
     );
     if (!submissions.length) continue;
     collaborator.shared = collaborator.shared || [];
     collaborator.sharedConferences = collaborator.sharedConferences || [];
+    const outcome = submission => /accepted for oral presentation/i.test(String(submission.decisionStatus||submission.status||''))
+      ? 'Accepted for oral presentation (not yet presented)'
+      : /waiting list|waitlist/i.test(String(submission.decisionStatus||submission.status||''))
+        ? 'On waiting list (not yet accepted)' : 'Decision pending';
     for (const submission of submissions) {
       const sharedLabel = (submission.title || 'ICPS 2026 abstract') +
         ' — ICPS 2026 (SUST) · Paper ID ' + submission.paperId +
-        ' · Abstract submitted ' + (submission.submittedDate || '2026') +
-        ' · ' + (submission.decisionStatus || 'Decision Pending');
+        ' · ' + outcome(submission);
       if (!collaborator.shared.some(work =>
         String(work).includes('ICPS 2026') &&
         String(work).includes('Paper ID ' + submission.paperId)
       )) collaborator.shared.unshift(sharedLabel);
     }
     const submissionGroup = {
-      event: '2nd International Conference of Physical Sciences (ICPS 2026) — submitted abstracts, decisions pending',
-      venue: 'Shahjalal University of Science and Technology, Sylhet, Bangladesh · 10–12 December 2026 (scheduled)',
+      event: '2nd International Conference of Physical Sciences (ICPS 2026) — oral acceptances and waiting-list decisions',
+      venue: 'Shahjalal University of Science and Technology, Sylhet, Bangladesh · 10–12 December 2026 (upcoming)',
       items: submissions.map(submission =>
-        (submission.title || 'Submitted abstract') + ' — ' +
+        (submission.title || 'ICPS 2026 abstract') + ' — ' +
         (submission.authors || '') + ' · Paper ID ' + submission.paperId +
-        ' · Abstract submitted ' + (submission.submittedDate || '2026') +
-        ' · Decision Pending (not yet accepted or presented).'
+        ' · ' + outcome(submission) + '.'
       )
     };
     const existingIndex = collaborator.sharedConferences.findIndex(group =>
@@ -2957,11 +2958,18 @@
     if (existingIndex < 0) collaborator.sharedConferences.unshift(submissionGroup);
     else collaborator.sharedConferences[existingIndex] = submissionGroup;
     collaborator.collaborationStats = (collaborator.collaborationStats || [])
-      .filter(stat => stat.label !== 'ICPS 2026 abstract submitted' &&
-                      stat.label !== 'ICPS 2026 submitted abstracts');
-    collaborator.collaborationStats.push({
-      value: String(submissions.length),
-      label: 'ICPS 2026 submitted abstracts'
+      .filter(stat => !String(stat.label||'').startsWith('ICPS 2026 '));
+    const oralCount = submissions.filter(submission =>
+      /accepted for oral presentation/i.test(String(submission.decisionStatus||submission.status||''))).length;
+    const waitlistCount = submissions.filter(submission =>
+      /waiting list|waitlist/i.test(String(submission.decisionStatus||submission.status||''))).length;
+    if (oralCount) collaborator.collaborationStats.push({
+      value: String(oralCount),
+      label: 'ICPS 2026 oral acceptances'
+    });
+    if (waitlistCount) collaborator.collaborationStats.push({
+      value: String(waitlistCount),
+      label: 'ICPS 2026 waitlisted abstracts'
     });
     for (const stat of collaborator.collaborationStats) {
       if (stat.label === 'Shared conference event' || stat.label === 'Shared conference events') {
