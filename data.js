@@ -40,6 +40,17 @@ window.PORTFOLIO_DATA = {
       citationIEEE: "M. R. Ahmed, J. Mauya, M. S. Reza, and R. Amin, “Sophisticated Audio Source Separation: A Statistical Exploration of Clarity and Precision With FastICA,” Engineering Reports, vol. 8, no. 1, Art. no. e70575, 2026, doi: 10.1002/eng2.70575.",
       doi: "https://doi.org/10.1002/eng2.70575",
       journalUrl: "https://onlinelibrary.wiley.com/journal/25778196",
+      publicationAuthors: [
+        {"name":"Md. Razu Ahmed","affiliation":1,"orcid":"https://orcid.org/0009-0001-8646-1881"},
+        {"name":"Jannatul Mauya","affiliation":1,"orcid":"https://orcid.org/0009-0005-7294-1306"},
+        {"name":"Md. Shamim Reza","affiliation":2,"orcid":"https://orcid.org/0000-0002-3699-0494","corresponding":true},
+        {"name":"Ruhul Amin","affiliation":3,"orcid":"https://orcid.org/0000-0002-1145-3385","corresponding":true}
+      ],
+      authorAffiliations: [
+        "Deep Statistical Learning and Research Lab, Department of Statistics, Pabna University of Science and Technology, Pabna-6600, Bangladesh",
+        "Department of Statistics, Pabna University of Science and Technology, Pabna-6600, Bangladesh",
+        "Department of Computer Science and Engineering, Metropolitan University, Sylhet, Bangladesh"
+      ],
       journalStanding: {
         publisher: "John Wiley & Sons, Ltd.",
         onlineIssn: "2577-8196",
@@ -64,6 +75,16 @@ window.PORTFOLIO_DATA = {
       citationAPA: "Ahmed, M. R., Rakib, M. A., Shiddik, A. B., & Reza, M. S. (2025). Identification of predisposing risk factors for chronic kidney disease and optimizing disease prediction using a stacking machine learning algorithm. International Journal of Statistical Sciences, 25(2), 1–32. https://doi.org/10.3329/ijss.v25i2.85732",
       citationIEEE: "M. R. Ahmed, M. A. Rakib, A. B. Shiddik, and M. S. Reza, “Identification of Predisposing Risk Factors for Chronic Kidney Disease and Optimizing Disease Prediction Using a Stacking Machine Learning Algorithm,” International Journal of Statistical Sciences, vol. 25, no. 2, pp. 1–32, 2025, doi: 10.3329/ijss.v25i2.85732.",
       doi: "https://doi.org/10.3329/ijss.v25i2.85732",
+      publicationAuthors: [
+        {"name":"Md. Razu Ahmed","affiliation":1,"orcid":"https://orcid.org/0009-0001-8646-1881"},
+        {"name":"Md. Abdur Rakib","affiliation":1,"orcid":"https://orcid.org/0009-0000-7625-0442"},
+        {"name":"Abu Bakar Shiddik","affiliation":1,"orcid":"https://orcid.org/0009-0008-2799-9404"},
+        {"name":"Md. Shamim Reza","affiliation":2,"orcid":"https://orcid.org/0000-0002-3699-0494","corresponding":true}
+      ],
+      authorAffiliations: [
+        "Deep Statistical Learning and Research Lab, Department of Statistics, Pabna University of Science and Technology, Pabna-6600, Bangladesh",
+        "Department of Statistics, Pabna University of Science and Technology, Pabna-6600, Bangladesh"
+      ],
       indexingDiscovery: [
         "ICI World of Journals · ICV indicator 2024: 68.51",
         "Eurasian Scientific Journal Index (ESJI)",
@@ -83,6 +104,17 @@ window.PORTFOLIO_DATA = {
       citationAPA: "Yeasmin, M., Ahmed, M. R., Kundu, P. R., Mauya, J., & Reza, M. S. (2026). PUST cafeteria food image dataset: Real-world Bangladeshi meal-platter images with bounding-box and polygon annotations. Data in Brief, 69, 113262. https://doi.org/10.1016/j.dib.2026.113262",
       citationIEEE: "M. Yeasmin, M. R. Ahmed, P. R. Kundu, J. Mauya, and M. S. Reza, “PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations,” Data in Brief, vol. 69, Art. no. 113262, 2026, doi: 10.1016/j.dib.2026.113262.",
       authors: "Marufa Yeasmin, Md. Razu Ahmed, Protiva Rani Kundu, Jannatul Mauya, Md. Shamim Reza",
+      publicationAuthors: [
+        {"name":"Marufa Yeasmin","affiliation":1,"orcid":"https://orcid.org/0009-0001-4685-1033"},
+        {"name":"Md. Razu Ahmed","affiliation":1,"orcid":"https://orcid.org/0009-0001-8646-1881"},
+        {"name":"Protiva Rani Kundu","affiliation":1,"orcid":"https://orcid.org/0009-0003-8210-5569"},
+        {"name":"Jannatul Mauya","affiliation":1,"orcid":"https://orcid.org/0009-0005-7294-1306","corresponding":true},
+        {"name":"Md. Shamim Reza","affiliation":1,"orcid":"https://orcid.org/0000-0002-3699-0494","corresponding":true,"otherAffiliations":[2]}
+      ],
+      authorAffiliations: [
+        "Deep Statistical Learning and Research (DSLR) Lab, Department of Statistics and Data Science, Pabna University of Science and Technology, Pabna 6600, Bangladesh",
+        "Department of Statistics and Data Science, Pabna University of Science and Technology, Pabna 6600, Bangladesh"
+      ],
       volume: "69",
       articleNumber: "113262",
       issn: "2352-3409",
@@ -172,6 +204,19 @@ window.PORTFOLIO_DATA = {
       id: "ai-employment", type: "Journal Article", status: "Accepted / Forthcoming", year: 2026, role: "First Author",
       title: "Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh",
       venue: "International Journal of Statistical Sciences", citation: "Forthcoming in 26(2), November 2026",
+      publicationAuthors: [
+        {"name":"Md. Razu Ahmed","affiliation":1,"orcid":"https://orcid.org/0009-0001-8646-1881"},
+        {"name":"Md. Abdur Rakib","affiliation":1,"orcid":"https://orcid.org/0009-0000-7625-0442"},
+        {"name":"Abu Bakar Shiddik","affiliation":1,"orcid":"https://orcid.org/0009-0008-2799-9404"},
+        {"name":"Jannatul Mauya","affiliation":1,"orcid":"https://orcid.org/0009-0005-7294-1306"},
+        {"name":"Md. Aminul Hoque","affiliation":2,"orcid":"https://orcid.org/0000-0003-1214-256X"},
+        {"name":"Md. Shamim Reza","affiliation":1,"orcid":"https://orcid.org/0000-0002-3699-0494","corresponding":true,"otherAffiliations":[3]}
+      ],
+      authorAffiliations: [
+        "Deep Statistical Learning and Research (DSLR) Lab, Department of Statistics and Data Science, Pabna University of Science and Technology, Pabna-6600, Bangladesh",
+        "Department of Statistics and Data Science, University of Rajshahi, Rajshahi-6205, Bangladesh",
+        "Department of Statistics and Data Science, Pabna University of Science and Technology, Pabna-6600, Bangladesh"
+      ],
       indexingDiscovery: [
         "ICI World of Journals · ICV indicator 2024: 68.51",
         "Eurasian Scientific Journal Index (ESJI)",
@@ -202,6 +247,17 @@ window.PORTFOLIO_DATA = {
       license: "CC BY 4.0",
       institution: "Pabna University of Science and Technology",
       contributors: "Marufa Yeasmin, Md. Razu Ahmed, Protiva Rani Kundu, Jannatul Mauya, Md. Shamim Reza",
+      publicationAuthors: [
+        {"name":"Marufa Yeasmin","affiliation":1,"orcid":"https://orcid.org/0009-0001-4685-1033"},
+        {"name":"Md. Razu Ahmed","affiliation":1,"orcid":"https://orcid.org/0009-0001-8646-1881"},
+        {"name":"Protiva Rani Kundu","affiliation":1,"orcid":"https://orcid.org/0009-0003-8210-5569"},
+        {"name":"Jannatul Mauya","affiliation":1,"orcid":"https://orcid.org/0009-0005-7294-1306","corresponding":true},
+        {"name":"Md. Shamim Reza","affiliation":1,"orcid":"https://orcid.org/0000-0002-3699-0494","corresponding":true,"otherAffiliations":[2]}
+      ],
+      authorAffiliations: [
+        "Deep Statistical Learning and Research (DSLR) Lab, Department of Statistics and Data Science, Pabna University of Science and Technology, Pabna 6600, Bangladesh",
+        "Department of Statistics and Data Science, Pabna University of Science and Technology, Pabna 6600, Bangladesh"
+      ],
       citationAPA: "Yeasmin, M., Ahmed, M. R., Kundu, P. R., Mauya, J., & Reza, M. S. (2026). PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations (Version 2) [Data set]. Mendeley Data. https://doi.org/10.17632/fn6yhzjz83.2",
       citationIEEE: "M. Yeasmin, M. R. Ahmed, P. R. Kundu, J. Mauya, and M. S. Reza, “PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations,” Mendeley Data, ver. 2, 2026, doi: 10.17632/fn6yhzjz83.2.",
       relatedArticle: "https://doi.org/10.1016/j.dib.2026.113262",

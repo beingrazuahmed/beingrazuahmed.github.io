@@ -1018,7 +1018,7 @@
         ${p.imageSize?`<div><span>Image size</span><strong>${esc(p.imageSize)}</strong></div>`:''}
       </div>
 
-      ${p.contributors?`<div class="dataset-contributors"><span>Contributors</span><p>${highlightCitationAuthor(p.contributors,'full')}</p></div>`:''}
+      ${(p.publicationAuthors||[]).length?outputAuthorship(p):(p.contributors?`<div class="dataset-contributors"><span>Contributors</span><p>${highlightCitationAuthor(p.contributors,'full')}</p></div>`:'')}
 
       ${(p.annotationFormats||[]).length?`<div class="dataset-format-row"><span class="dataset-format-label">Released annotation formats</span><div class="project-tags">${(p.annotationFormats||[]).map(x=>`<span>${esc(x)}</span>`).join('')}</div></div>`:''}
 
@@ -1062,7 +1062,7 @@
   }
 
   function outputAuthorship(p={}){
-    const authors=Array.isArray(p.authors)?p.authors:[];
+    const authors=Array.isArray(p.publicationAuthors)?p.publicationAuthors:(Array.isArray(p.authors)?p.authors:[]);
     if(!authors.length)return '';
     const affiliations=Array.isArray(p.authorAffiliations)?p.authorAffiliations:[];
     // Keep affiliation and corresponding-author metadata in the record, but
