@@ -6,11 +6,13 @@
 
 **Authors:** Jannatul Mauya, Md. Razu Ahmed, Md. Shamim Reza, Sabba Ruhi, Md. Aminul Hoque.
 
-## Upload source
+## Figure asset publication and provenance
 
-The research figures were supplied as 300-DPI TIFF files. The portfolio uses **11 optimized full-pixel-resolution WebP files**, prepared from those author-supplied TIFFs, with one figure per original panel.
+**All 11 figure assets are uploaded and connected to the live portfolio gallery.** They were converted from the authors' 300-DPI TIFF sources into full-pixel-resolution WebP previews, with one image per paper panel. Each displayed figure links to its own source file at its complete available resolution.
 
-Upload the contents of `BS_CCFS_Heart_Disease_Figures_GitHub_Ready.zip` to **this directory** using **Add file → Upload files**. Upload the eleven `.webp` figures and `figure-manifest.json`, but not `README_UPLOAD.txt`. The site automatically swaps figure placeholders for the original figure images when these files exist. The original TIFFs should be preserved separately, not mirrored from the manuscript without coauthor agreement.
+The accompanying [figure-manifest.json](figure-manifest.json) preserves original TIFF filenames, panel labels, image dimensions, byte sizes, captions and SHA-256 checksums. The GitHub Actions [BS-CCFS figure validator](https://github.com/beingrazuahmed/beingrazuahmed.github.io/actions/workflows/bsccfs-figure-check.yml) checks all 11 names, file signatures and the manifest.
+
+The original source TIFFs should be preserved separately and not redistributed without agreement from all relevant rights holders. This directory is a research-image gallery, **not** an approved public deposit of patient-level data or complete model-training code.
 
 | Figure | Exact hosted filename | Content |
 |:--|:--|:--|
