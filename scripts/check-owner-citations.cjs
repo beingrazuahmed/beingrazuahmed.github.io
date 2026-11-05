@@ -27,7 +27,8 @@ async function main(){
     assert(markup.includes(tag),`Global name emphasis not linked by ${file}`);
     assert.equal(markup.split('owner-emphasis.js').length-1,1,`Duplicate owner script in ${file}`);
     if(markup.includes('v2-app.js?v=')){
-      assert(markup.includes(`v2-app.js?v=${version}`),`Stale app version in ${file}`);
+      const appVersion=file==='projects.html'?'20261105-ckd-gallery-no-fig5':version;
+      assert(markup.includes(`v2-app.js?v=${appVersion}`),`Stale app version in ${file}`);
     }
   }
 
@@ -85,6 +86,16 @@ async function main(){
   assert(app.includes("publishedProjectCitationPanel('ckd')"),'Missing CKD citation panel');
   assert(app.includes('dualAcademicCitation(p.citationAPA,p.citationIEEE)'),
     'Project citation blocks must reuse canonical records');
+  const galleryStart=app.indexOf('function ckdProjectExtras(){');
+  const galleryStop=app.indexOf('function ckdProjectCase(){',galleryStart);
+  assert(galleryStart>=0 && galleryStop>galleryStart,'CKD gallery implementation not located');
+  const gallerySource=app.slice(galleryStart,galleryStop);
+  assert(!gallerySource.includes("n:5,file:'fig05-methodology-workflow.webp'"),
+    'Figure 5 is already featured and must not repeat in the lower CKD gallery');
+  assert(app.includes('fig05-methodology-workflow.webp'),
+    'Featured CKD Figure 5 must remain available');
+  assert((gallerySource.match(/\{n:(?:2|3|4|6|11|16|21|26),file:/g)||[]).length===8,
+    'Exactly eight nonduplicate figure files should remain in CKD gallery');
 
   vm.runInNewContext(text('dib-project.js'),dataContext,{filename:'dib-project.js'});
   const dib=dataContext.window.MRA_DIB_CASE();
