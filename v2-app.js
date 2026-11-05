@@ -1038,6 +1038,7 @@
       </div>
 
       <div class="link-row publication-link-row dataset-link-row" aria-label="Dataset links">${publicationBrandLinks(linkObj)}</div>
+      <p><a class="btn ghost" href="projects.html#dib-food-dataset-project">Explore the complete dataset project &amp; research figures ↗</a></p>
     </article>`;
   }
 
@@ -1142,6 +1143,7 @@
         <div class="journal-indexing publication-indexing-list">${(p.indexingDiscovery||[]).map(x=>`<span>${esc(x)}</span>`).join('')}</div>
       </div>`:''}
       <div class="link-row publication-link-row" aria-label="Publication links">${publicationBrandLinks(linkObj)}</div>
+      ${id==='dib'?'<p><a class="btn ghost" href="projects.html#dib-food-dataset-project">View dataset research project &amp; seven figures ↗</a></p>':''}
     </article>`;
   }
   function personCard(x){return `<article class="card person-card">${safeImg(x.portrait,x.name,'avatar')}<h3>${esc(x.name)}</h3><div class="meta">${(x.roles||[]).map(r=>`<span class="badge">${esc(r)}</span>`).join('')}</div><p><strong>${esc(x.affiliation||'')}</strong></p><p>${esc(x.description||'')}</p><div class="link-row">${(x.links||[]).map(l=>ext(l.url,l.label)).join(' · ')}</div></article>`;}
@@ -3295,9 +3297,10 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         <a href="#ask-razu-ai-project"><strong>02</strong> Ask Razu AI</a>
         <a href="#field-survey-project"><strong>03</strong> Statistical Field Survey</a>
         <a href="#ckd-prediction-project"><strong>04</strong> CKD · Stacking ML</a>
-        <a href="#fastica-audio-project"><strong>05</strong> FastICA · Published</a>
-        <a href="#dr-grading-project"><strong>06</strong> M.S. · Retinopathy grading</a>
-        <a href="#active-project-directions"><strong>07</strong> Current directions</a>
+        <a href="#dib-food-dataset-project"><strong>05</strong> Food Dataset · Data in Brief</a>
+        <a href="#fastica-audio-project"><strong>06</strong> FastICA · Published</a>
+        <a href="#dr-grading-project"><strong>07</strong> M.S. · Retinopathy grading</a>
+        <a href="#active-project-directions"><strong>08</strong> Current directions</a>
       </nav></div>
       <section class="section bazarbondhu-project-section" id="bazarbondhu-ai"><div class="container">
         <div class="bazarbondhu-case-heading">
@@ -3407,6 +3410,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
       </div></section>
       ${fieldSurveyProjectCase()}
       ${ckdProjectCase()}
+      ${typeof window.MRA_DIB_CASE==='function'?window.MRA_DIB_CASE():''}
       <section class="section academic-showcase-section" id="supervised-projects"><div class="container">
         <div class="academic-showcase-intro">
           <div><span class="section-kicker">Supervised academic research · Evidence and outcomes</span>
