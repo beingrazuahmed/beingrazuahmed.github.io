@@ -3161,24 +3161,53 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         <figcaption class="ckdx-kdigo-heading">
           <span class="ckdx-reference-number" aria-hidden="true">01</span>
           <span class="ckdx-reference-content">
-            <small>FIGURE 1 · KDIGO 2024 CLINICAL REFERENCE</small>
+            <small>FIGURE 1 · KDIGO 2024 · RISK STRATIFICATION</small>
             <strong id="ckdx-fig01-title">Prognosis of CKD by GFR and albuminuria categories</strong>
-            <span>View Figure 1 on page 2 of the published paper. The publisher-hosted PDF is displayed here without copying or rehosting the KDIGO artwork.</span>
+            <span>GFR categories G1–G5 across albuminuria groups A1–A3, directly visualized from the KDIGO 2024 risk classifications.</span>
           </span>
         </figcaption>
-        <div class="ckdx-kdigo-preview">
-          <iframe title="Published CKD article page 2 containing Figure 1, KDIGO GFR and albuminuria prognosis chart" src="https://www.banglajol.info/index.php/ijss/article/view/85732/55866#page=2&view=FitH&toolbar=0&navpanes=0" loading="lazy" referrerpolicy="no-referrer"></iframe>
+        <div class="ckdx-kdigo-chart">
+          <div class="ckdx-kdigo-chart-title">KDIGO: Prognosis of CKD by GFR and albuminuria categories</div>
+          <div class="ckdx-kdigo-chart-scroll" role="region" aria-label="Figure 1: KDIGO 2024 risk classification matrix; scroll horizontally on small screens" tabindex="0">
+            <table class="ckdx-kdigo-risk-table">
+              <caption>Color-coded CKD prognosis risk by GFR stage and albuminuria category, following KDIGO 2024.</caption>
+              <colgroup><col class="ckdx-kdigo-col-stage"><col class="ckdx-kdigo-col-desc"><col class="ckdx-kdigo-col-range"><col class="ckdx-kdigo-col-risk"><col class="ckdx-kdigo-col-risk"><col class="ckdx-kdigo-col-risk"></colgroup>
+              <thead>
+                <tr><th scope="colgroup" colspan="3">GFR categories (mL/min/1.73 m²)</th><th scope="colgroup" colspan="3">Persistent albuminuria categories · Description and range</th></tr>
+                <tr class="ckdx-kdigo-subheaders">
+                  <th scope="col">Category</th><th scope="col">Description</th><th scope="col">GFR</th>
+                  <th scope="col"><strong>A1</strong><span>Normal to mildly increased</span><em>&lt;30 mg/g<br>&lt;3 mg/mmol</em></th>
+                  <th scope="col"><strong>A2</strong><span>Moderately increased</span><em>30–300 mg/g<br>3–30 mg/mmol</em></th>
+                  <th scope="col"><strong>A3</strong><span>Severely increased</span><em>&gt;300 mg/g<br>&gt;30 mg/mmol</em></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">G1</th><td>Normal or high</td><td>≥90</td><td class="ckdx-risk-low">Low risk</td><td class="ckdx-risk-moderate">Moderately increased</td><td class="ckdx-risk-high">High risk</td></tr>
+                <tr><th scope="row">G2</th><td>Mildly decreased</td><td>60–89</td><td class="ckdx-risk-low">Low risk</td><td class="ckdx-risk-moderate">Moderately increased</td><td class="ckdx-risk-high">High risk</td></tr>
+                <tr><th scope="row">G3a</th><td>Mildly to moderately decreased</td><td>45–59</td><td class="ckdx-risk-moderate">Moderately increased</td><td class="ckdx-risk-high">High risk</td><td class="ckdx-risk-very-high">Very high risk</td></tr>
+                <tr><th scope="row">G3b</th><td>Moderately to severely decreased</td><td>30–44</td><td class="ckdx-risk-high">High risk</td><td class="ckdx-risk-very-high">Very high risk</td><td class="ckdx-risk-very-high">Very high risk</td></tr>
+                <tr><th scope="row">G4</th><td>Severely decreased</td><td>15–29</td><td class="ckdx-risk-very-high">Very high risk</td><td class="ckdx-risk-very-high">Very high risk</td><td class="ckdx-risk-very-high">Very high risk</td></tr>
+                <tr><th scope="row">G5</th><td>Kidney failure</td><td>&lt;15</td><td class="ckdx-risk-very-high">Very high risk</td><td class="ckdx-risk-very-high">Very high risk</td><td class="ckdx-risk-very-high">Very high risk</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ckdx-kdigo-legend" aria-label="Risk color legend">
+            <span><i class="ckdx-risk-low" aria-hidden="true"></i>Low risk*</span>
+            <span><i class="ckdx-risk-moderate" aria-hidden="true"></i>Moderately increased risk</span>
+            <span><i class="ckdx-risk-high" aria-hidden="true"></i>High risk</span>
+            <span><i class="ckdx-risk-very-high" aria-hidden="true"></i>Very high risk</span>
+          </div>
+          <p class="ckdx-kdigo-legend-note">* If no other markers of kidney disease are present, G1/A1 or G2/A1 does not itself indicate CKD. This grid summarizes population-level prognosis categories and is not an individual clinical assessment.</p>
         </div>
         <div class="ckdx-kdigo-footer">
-          <span>Source: KDIGO (2024), as cited in Ahmed et al. (2025). If the PDF cannot load inside this page, use the publisher link.</span>
-          <a href="https://www.banglajol.info/index.php/ijss/article/view/85732/55866#page=2" target="_blank" rel="noopener noreferrer">View Figure 1 in published PDF ↗</a>
-          <a href="https://kdigo.org/guidelines/ckd-evaluation-and-management/" target="_blank" rel="noopener noreferrer">Official KDIGO guideline ↗</a>
+          <span><strong>Source: KDIGO (2024).</strong> Risk categories independently formatted as an accessible web chart based on <em>KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease</em>. The guideline artwork is not copied or rehosted.</span>
+          <a href="https://kdigo.org/guidelines/ckd-evaluation-and-management/" target="_blank" rel="noopener noreferrer">View official KDIGO source ↗</a>
         </div>
       </figure>
       <div class="ckdx-grid">${figs.slice(0,4).map(card).join('')}</div>
       <details class="ckdx-details"><summary><span>Explore preprocessing and methodology figures</span><span>Figures 2–6 · Expand +</span></summary>
         <div class="ckdx-grid">${figs.slice(4).map(card).join('')}</div></details>
-      <p class="ckdx-note"><strong>Figure attribution:</strong> Figures 2–6, 11, 16, 21 and 26: Ahmed, Rakib, Shiddik &amp; Reza (2025), <em>International Journal of Statistical Sciences</em>. Figure 1: KDIGO (2024), visible via the publisher-hosted PDF page and linked to the KDIGO source; no separate KDIGO image is redistributed by this website. The MIT software license does not cover article figures.</p>
+      <p class="ckdx-note"><strong>Figure attribution:</strong> Figures 2–6, 11, 16, 21 and 26: Ahmed, Rakib, Shiddik &amp; Reza (2025), <em>International Journal of Statistical Sciences</em>. Figure 1: CKD risk classification categories from KDIGO (2024), redrawn as an accessible web chart with source credit; no KDIGO source artwork is redistributed by this website. The MIT software license does not cover article figures.</p>
     </section>`;
   }
 
