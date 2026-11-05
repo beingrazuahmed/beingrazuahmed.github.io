@@ -109,7 +109,7 @@ async function main(){
   for(const id of ['heart-bsccfs-project','heart-bsccfs-overview','heart-bsccfs-method','heart-bsccfs-figures','heart-bsccfs-record']){
     assert(heartHtml.includes('id="'+id+'"'), 'Missing heart project section anchor '+id);
   }
-  const heartFigs=[...heartHtml.matchAll(/src="([^"]+\\.webp)"/g)]
+  const heartFigs=[...heartHtml.matchAll(/src="([^"]+\.webp)"/g)]
     .map(x=>x[1]).filter(x=>x.startsWith('assets/academic/projects/bs-ccfs-heart-disease/'));
   const uniqueHeartFigs=[...new Set(heartFigs)];
   assert.equal(uniqueHeartFigs.length,11,'The heart gallery must reference 11 distinct original panels');
