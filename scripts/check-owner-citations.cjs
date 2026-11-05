@@ -27,7 +27,7 @@ async function main(){
     assert(markup.includes(tag),`Global name emphasis not linked by ${file}`);
     assert.equal(markup.split('owner-emphasis.js').length-1,1,`Duplicate owner script in ${file}`);
     if(markup.includes('v2-app.js?v=')){
-      const appVersion=file==='projects.html'?'20261105-ckd-gallery-no-fig5':version;
+      const appVersion=['projects.html','publications.html'].includes(file)?'20261105-heart-case-study-v1':version;
       assert(markup.includes(`v2-app.js?v=${appVersion}`),`Stale app version in ${file}`);
     }
   }
@@ -97,6 +97,29 @@ async function main(){
   assert((gallerySource.match(/\{n:(?:2|3|4|6|11|16|21|26),file:/g)||[]).length===8,
     'Exactly eight nonduplicate figure files should remain in CKD gallery');
 
+  vm.runInNewContext(text('heart-bsccfs-project.js'),dataContext,{filename:'heart-bsccfs-project.js'});
+  assert.equal(typeof dataContext.window.MRA_HEART_CASE,'function','Heart disease project renderer missing');
+  assert.equal(typeof dataContext.window.MRA_HEART_ACTIVATE,'function','Heart disease preview initializer missing');
+  const heartHtml=dataContext.window.MRA_HEART_CASE();
+  assert(heartHtml.includes('BS-CCFS: Bootstrap-Stable Consensus Feature Selection'),
+    'Full official heart disease research title missing');
+  assert(heartHtml.includes('Submitted to PLOS ONE · 2026'),'Heart manuscript must be marked submitted, not published');
+  assert(heartHtml.includes('PLOS ONE')&&!heartHtml.includes('published article · DOI'),
+    'Submission must not be represented as a peer-reviewed publication DOI');
+  for(const id of ['heart-bsccfs-project','heart-bsccfs-overview','heart-bsccfs-method','heart-bsccfs-figures','heart-bsccfs-record']){
+    assert(heartHtml.includes('id="'+id+'"'), 'Missing heart project section anchor '+id);
+  }
+  const heartFigs=[...heartHtml.matchAll(/src="(assets\\/academic\\/projects\\/bs-ccfs-heart-disease\\/[^"]+\\.webp)"/g)];
+  const uniqueHeartFigs=[...new Set(heartFigs.map(x=>x[1]))];
+  assert.equal(uniqueHeartFigs.length,11,'The heart gallery must reference 11 distinct original panels');
+  assert(heartHtml.includes('Figure 1')||heartHtml.includes('FIGURE 1'));
+  assert(heartHtml.includes('736 / 184'),'Heart dataset split should match manuscript');
+  assert(heartHtml.includes('5 / 13'),'The selected feature subset must match manuscript');
+  assert(app.includes('MRA_HEART_CASE()')&&app.includes('MRA_HEART_ACTIVATE'),
+    'Portfolio shell must render and activate BS-CCFS case study');
+  assert(app.includes('href="#heart-bsccfs-project"'),'Heart study must appear in Projects navigation');
+  assert(app.includes('projects.html#heart-bsccfs-project'),'Submission record should link to the new heart study');
+
   vm.runInNewContext(text('dib-project.js'),dataContext,{filename:'dib-project.js'});
   const dib=dataContext.window.MRA_DIB_CASE();
   assert(dib.includes('Cite the peer-reviewed Data in Brief article'));
@@ -123,6 +146,10 @@ async function main(){
   const projects=text('projects.html');
   assert(projects.includes('published-project-citations.css'));
   assert(projects.includes('dib-project.js?v=20261105-doi-github-icons1'));
+  assert(projects.includes('heart-bsccfs-project.js?v=20261105-heart-case-study-v1'));
+  assert(projects.includes('heart-bsccfs-project.css?v=20261105-heart-case-study-v1'));
+  assert(projects.includes('v2-app.js?v=20261105-heart-case-study-v1'));
+  assert(text('publications.html').includes('v2-app.js?v=20261105-heart-case-study-v1'));
   assert(projects.includes('project-research-links.css?v=20261105-soft-teal-ctas3'));
   assert(projects.includes('project-research-links.js?v=20261105-pub-doi-light-nav2'));
   for(const file of ['assets/academic/logos/vendor/doi-user.png','assets/academic/logos/contact/github.svg']){
