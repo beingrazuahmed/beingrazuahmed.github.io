@@ -28,13 +28,19 @@
       <header class="dib-project-head">
         <div>
           <span class="dib-kicker">Published open dataset · Peer-reviewed Data Article · Second author</span>
-          <h2 id="dib-project-heading">PUST Cafeteria Food Image Dataset <span>— From Real-World Meals to Reusable Vision Data</span></h2>
+          <h2 id="dib-project-heading">PUST Cafeteria Food Image Dataset: <span>Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations</span></h2>
           <p>An openly released collection of Bangladeshi cafeteria meal-platter photographs with paired bounding-box and polygon annotations. Published in <em>Data in Brief</em>, Volume 69, Article 113262 (2026), with the authoritative Version 2 data release archived at Mendeley Data.</p>
         </div>
         <span class="dib-head-label">Data in Brief · 2026</span>
       </header>
+      <nav class="dib-section-nav" data-section-jump-nav aria-label="PUST Cafeteria Food Image Dataset project subsections">
+        <a href="#dib-project-overview"><span>01</span> Overview</a>
+        <a href="#dib-data-design"><span>02</span> Dataset design</a>
+        <a href="#dib-data-figures"><span>03</span> Published figures</a>
+        <a href="#dib-data-reuse"><span>04</span> Access &amp; citation</a>
+      </nav>
       <article class="dib-case" aria-label="Published PUST cafeteria food image dataset research project">
-        <div class="dib-hero">
+        <div class="dib-hero" id="dib-project-overview">
           <div class="dib-lead-copy">
             <div class="dib-meta-pills"><span>Elsevier · Open access</span><span>Mendeley Data · Version 2</span><span>CC BY 4.0</span><span>Computer vision</span></div>
             <h3>Making authentic Bangladeshi meal scenes accessible to object detection and instance segmentation research</h3>
