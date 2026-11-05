@@ -3125,13 +3125,13 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     const preview='https://raw.githubusercontent.com/beingrazuahmed/ckd-risk-factors-stacking-ml/main/figures/';
     const card=f=>`<a class="ckdx-image-card" href="${root}/blob/main/figures/${f.file}" target="_blank" rel="noopener noreferrer" aria-label="Open publication Figure ${f.n}: ${esc(f.title)}"><figure>
         <div class="ckdx-figure-view"><img src="${preview+f.file}" alt="${esc(f.detail)}" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
-          <span class="ckdx-image-pending" hidden>Research image is prepared; GitHub figure upload pending.</span></div>
+          <span class="ckdx-image-pending" hidden>Figure preview unavailable. Select the card to view the original figure on GitHub.</span></div>
         <figcaption><small>FIGURE ${f.n} · ${esc(f.group)}</small><strong>${esc(f.title)}</strong><span>${esc(f.detail)}</span></figcaption>
       </figure></a>`;
     return `<section class="ckdx-section ckdx-section--methods" aria-labelledby="ckdx-code-title">
       <div class="ckdx-head"><div><p class="ckdx-kicker">REPRODUCIBLE RESEARCH · PYTHON</p>
         <h4 id="ckdx-code-title">Explore the complete research methodology</h4>
-        <p>Two public notebook branches, a licensed UCI data source, code documentation, and transparent scientific limitations.</p></div>
+        <p>Three open Jupyter notebooks—including the complete published research workflow—plus source-code checks, data provenance, and transparent scientific limitations.</p></div>
         <a href="${root}" target="_blank" rel="noopener noreferrer">Open GitHub repository ↗</a>
       </div>
       <div class="ckdx-modes">
@@ -3140,13 +3140,16 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         <div><small>03 · INTERPRETATION</small><strong>Bootstrap &amp; model audit</strong><p>Review selected features, stacking metrics, 95% intervals and validation caveats.</p></div>
       </div>
       <div class="ckdx-links">
+        <a href="${root}/blob/main/notebooks/CKD_Full_Research_Workflow.ipynb" target="_blank" rel="noopener noreferrer">Full research workflow ↗</a>
         <a href="${root}/blob/main/notebooks/CKD_UCI_Benchmark.ipynb" target="_blank" rel="noopener noreferrer">UCI notebook ↗</a>
         <a href="${root}/blob/main/notebooks/CKD_Synthetic_Study.ipynb" target="_blank" rel="noopener noreferrer">Synthetic notebook ↗</a>
         <a href="${root}/blob/main/REPRODUCIBILITY.md" target="_blank" rel="noopener noreferrer">Reproducibility guide ↗</a>
         <a href="${root}/blob/main/METHODS_AND_LIMITATIONS.md" target="_blank" rel="noopener noreferrer">Limitations ↗</a>
+        <a href="${root}/actions/workflows/quality.yml" target="_blank" rel="noopener noreferrer">Automated code checks ↗</a>
+        <a href="${root}/blob/main/figures/FIGURE_RIGHTS.md" target="_blank" rel="noopener noreferrer">Figure rights ↗</a>
         <a href="https://archive.ics.uci.edu/dataset/336/chronic+kidney+disease" target="_blank" rel="noopener noreferrer">Official UCI data ↗</a>
       </div>
-      <p class="ckdx-note"><strong>Research scope:</strong> Published accuracy values are 100.0% (UCI CKD) and 96.7% (synthetic), not independent clinical validation. The original stacking implementation retains documented preprocessing and internal-CV limitations. The software must not be used for clinical diagnosis.</p>
+      <p class="ckdx-note"><strong>Research scope:</strong> The published article reports 100.0% UCI and 96.7% synthetic accuracy. Automated repository checks passed on 5 November 2026, but these tests do not independently reproduce the paper’s numerical results or establish clinical validity. The original stacking implementation has documented preprocessing and internal-validation limitations. Not for clinical diagnosis.</p>
     </section>
     <section class="ckdx-section" id="ckd-research-figures" aria-labelledby="ckdx-fig-title">
       <div class="ckdx-head"><div><p class="ckdx-kicker">ORIGINAL RESEARCH FIGURES · PERFORMANCE &amp; UNCERTAINTY</p>
@@ -3165,7 +3168,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     const p=(D.outputs||[]).find(x=>x.id==='ckd')||{};
     const authors=(p.publicationAuthors||[]).map(x=>x.name).filter(Boolean).join(' · ');
     const articleUrl=p.doi||'https://doi.org/10.3329/ijss.v25i2.85732';
-    const figure=p.visual||'assets/publications/ckd/feature-importance.png';
+    const figure=p.visual||'https://raw.githubusercontent.com/beingrazuahmed/ckd-risk-factors-stacking-ml/main/figures/fig04-feature-importance.webp';
     return `<section class="section alt ckd-project-section" id="ckd-prediction-project"><div class="container">
       <header class="ckd-project-head">
         <div>
@@ -3195,9 +3198,9 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
             </div>
           </div>
           <figure class="ckd-figure">
-            <div class="ckd-figure-top">Research visualization · CKD feature importance</div>
+            <div class="ckd-figure-top">Published Figure 4 · Random Forest feature importance</div>
             <div class="ckd-figure-frame"><img src="${esc(figure)}" alt="Feature-importance results from the published CKD risk-factor and stacking ensemble study" loading="lazy" decoding="async"></div>
-            <figcaption>Study figure from the portfolio publication record. Feature importance describes predictive association in the analysed data, not evidence of causality.</figcaption>
+            <figcaption>Published Figure 4. Feature importance indicates predictive association within the analysed data, not causality. <a href="https://github.com/beingrazuahmed/ckd-risk-factors-stacking-ml/blob/main/figures/fig04-feature-importance.webp" target="_blank" rel="noopener noreferrer">View full-resolution figure ↗</a></figcaption>
           </figure>
         </div>
         <div class="ckd-evidence-strip" aria-label="Published study datasets and reported test accuracy">
