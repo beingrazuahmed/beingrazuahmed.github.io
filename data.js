@@ -140,7 +140,7 @@ window.PORTFOLIO_DATA = {
       tags: ["Bangladeshi Food", "Food Image Dataset", "Object Detection", "Instance Segmentation", "YOLO Annotations", "COCO Annotations"],
       summary: "A real-world Bangladeshi cafeteria food-image resource with bounding-box and polygon annotations for object detection and instance segmentation.",
       highlight: "720 source photographs yielded 1,728 processed images with 6,297 annotated instances across 16 classes.",
-      visual: "assets/publications/data-in-brief/figure-5-annotations.png"
+      visual: "assets/academic/projects/pust-food-dataset/fig05-detection-segmentation-annotations.webp"
     },
     {
       id: "dengue-forecast", type: "Journal Article", status: "Accepted / Forthcoming", year: 2026, role: "Second Author",
