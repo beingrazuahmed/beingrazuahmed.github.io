@@ -1,6 +1,6 @@
 /* BS-CCFS heart disease · official manuscript-title project case study.
- * Research figures are original author-supplied panels; until GitHub assets are
- * uploaded, visually descriptive placeholders are rendered instead of 404 images.
+ * Eleven author-supplied figure panels are hosted in the GitHub Pages asset
+ * directory; a descriptive fallback is shown only if an image cannot load.
  * The submitted PLOS ONE manuscript has no published paper DOI.
  */
 (() => {
@@ -29,7 +29,7 @@
     return `<figure class="heart-figure-card ${f.feature?'heart-figure-card--'+f.feature:''}" data-heart-figure>
       <a class="heart-figure-media" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="Open original manuscript ${escape(figLabel(f))}: ${escape(f.title)}" aria-disabled="true" tabindex="-1">
         <img src="${href}" alt="${escape(figLabel(f))}: ${escape(f.desc)}" loading="eager" decoding="async">
-        <span class="heart-figure-placeholder" aria-hidden="true"><span class="heart-placeholder-symbol">✦</span><span class="heart-placeholder-number">${escape(figLabel(f))}</span><strong>${escape(f.title)}</strong><small>Original research figure preview will appear here after upload</small></span>
+        <span class="heart-figure-placeholder" aria-hidden="true"><span class="heart-placeholder-symbol">✦</span><span class="heart-placeholder-number">${escape(figLabel(f))}</span><strong>${escape(f.title)}</strong><small>Figure preview unavailable; verify the linked research asset</small></span>
       </a>
       <figcaption><small>${escape(figLabel(f))} · ${escape(f.group)}</small><strong>${escape(f.title)}</strong><span>${escape(f.desc)}</span></figcaption>
     </figure>`;
@@ -114,9 +114,9 @@
         </div>
 
         <section id="heart-bsccfs-figures" class="heart-gallery-section" aria-labelledby="heart-gallery-title">
-          <header class="heart-gallery-heading"><div><p class="heart-eyebrow">SOURCE RESEARCH · ORIGINAL TIFF FIGURES</p>
+          <header class="heart-gallery-heading"><div><p class="heart-eyebrow">SOURCE RESEARCH · ORIGINAL AUTHOR-SUPPLIED FIGURES</p>
             <h3 id="heart-gallery-title">Explore the BS-CCFS figures and study diagnostics</h3>
-            <p>Eleven original panels supplied at 300 DPI. When their web-optimized versions are uploaded, they appear in place of the labeled figure previews. Full-size images open separately.</p></div>
+            <p>All eleven author-supplied panels are connected to this gallery, optimized from 300-DPI source TIFFs for the web. Select a figure to open its full available resolution, including the supplementary panels.</p></div>
             <a href="https://github.com/beingrazuahmed/beingrazuahmed.github.io/tree/main/assets/academic/projects/bs-ccfs-heart-disease" target="_blank" rel="noopener noreferrer">Figure assets · GitHub ↗</a></header>
 
           <div class="heart-figure-cluster"><h4>Study framework &amp; causal discovery</h4>
@@ -138,7 +138,7 @@
           </div>
           <div class="heart-record-scope"><p class="heart-eyebrow">SCIENTIFIC INTERPRETATION</p><h3>Scope and responsible use</h3>
             <p>Causal discovery graphs identify candidate statistical structures under assumptions; they do not independently establish interventions or causal effects. The dataset and internal comparison are not a substitute for external validation, prospective testing or clinician oversight.</p>
-            <p><strong>Data and code:</strong> research-figure previews are prepared for sharing. A complete rerunnable code release has not been supplied for this portfolio update, so reproducibility beyond the documented workflow should not be implied.</p>
+            <p><strong>Data and code:</strong> all eleven research-figure previews are now hosted on GitHub Pages with source-file provenance. A complete rerunnable code release has not been supplied for this portfolio update, so reproducibility beyond the documented workflow should not be implied.</p>
           </div>
         </section>
 
