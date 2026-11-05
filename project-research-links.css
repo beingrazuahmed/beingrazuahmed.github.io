@@ -95,3 +95,43 @@ body[data-page="projects"] .dib-section-nav a:focus-visible{
   outline:2px solid #3275ab;
   outline-offset:2px;
 }
+
+/* Project action buttons: soft teal instead of the dark/black primary gradient.
+   Applies to DOI, data-release, and published-output CTAs without changing link targets. */
+body[data-page="projects"] .btn.primary,
+body[data-page="projects"] a.btn.primary{
+  background:#ddf4f0!important;
+  background-image:none!important;
+  border:1px solid #9ccfc5!important;
+  color:#174f49!important;
+  box-shadow:0 3px 12px rgba(23,79,73,.075);
+  text-shadow:none;
+  transition:background-color .16s ease,border-color .16s ease,box-shadow .16s ease,transform .16s ease;
+}
+body[data-page="projects"] .btn.primary:hover,
+body[data-page="projects"] a.btn.primary:hover{
+  background:#c5eae3!important;
+  background-image:none!important;
+  border-color:#76b9ad!important;
+  color:#123d38!important;
+  box-shadow:0 6px 17px rgba(23,79,73,.13);
+}
+body[data-page="projects"] .btn.primary:focus-visible,
+body[data-page="projects"] a.btn.primary:focus-visible{
+  background:#c5eae3!important;
+  background-image:none!important;
+  color:#123d38!important;
+  outline:3px solid #3e867d!important;
+  outline-offset:3px;
+}
+body[data-page="projects"] .btn.primary:active,
+body[data-page="projects"] a.btn.primary:active{
+  background:#b3dfd6!important;
+  color:#123d38!important;
+}
+body[data-page="projects"] .btn.primary .project-link-icon--github{
+  filter:none!important;
+}
+@media(prefers-reduced-motion:reduce){
+  body[data-page="projects"] .btn.primary{transition:none}
+}
