@@ -113,6 +113,10 @@ async function main(){
     .map(x=>x[1]).filter(x=>x.startsWith('assets/academic/projects/bs-ccfs-heart-disease/'));
   const uniqueHeartFigs=[...new Set(heartFigs)];
   assert.equal(uniqueHeartFigs.length,11,'The heart gallery must reference 11 distinct original panels');
+  assert(heartHtml.includes('All eleven author-supplied panels are connected'),
+    'Heart research gallery must describe its uploaded live images');
+  assert(!heartHtml.includes('when their web-optimized versions are uploaded'),
+    'Remove obsolete pre-upload copy once images are hosted');
   assert(heartHtml.includes('Figure 1')||heartHtml.includes('FIGURE 1'));
   assert(heartHtml.includes('736 / 184'),'Heart dataset split should match manuscript');
   assert(heartHtml.includes('5 / 13'),'The selected feature subset must match manuscript');
@@ -147,7 +151,7 @@ async function main(){
   const projects=text('projects.html');
   assert(projects.includes('published-project-citations.css'));
   assert(projects.includes('dib-project.js?v=20261105-doi-github-icons1'));
-  assert(projects.includes('heart-bsccfs-project.js?v=20261105-heart-case-study-v1'));
+  assert(projects.includes('heart-bsccfs-project.js?v=20261105-bsccfs-gallery-connected2'));
   assert(projects.includes('heart-bsccfs-project.css?v=20261105-heart-case-study-v1'));
   assert(projects.includes('v2-app.js?v=20261105-heart-case-study-v1'));
   assert(text('publications.html').includes('v2-app.js?v=20261105-heart-case-study-v1'));
