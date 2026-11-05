@@ -109,8 +109,9 @@ async function main(){
   for(const id of ['heart-bsccfs-project','heart-bsccfs-overview','heart-bsccfs-method','heart-bsccfs-figures','heart-bsccfs-record']){
     assert(heartHtml.includes('id="'+id+'"'), 'Missing heart project section anchor '+id);
   }
-  const heartFigs=[...heartHtml.matchAll(/src="(assets\\/academic\\/projects\\/bs-ccfs-heart-disease\\/[^"]+\\.webp)"/g)];
-  const uniqueHeartFigs=[...new Set(heartFigs.map(x=>x[1]))];
+  const heartFigs=[...heartHtml.matchAll(/src="([^"]+\\.webp)"/g)]
+    .map(x=>x[1]).filter(x=>x.startsWith('assets/academic/projects/bs-ccfs-heart-disease/'));
+  const uniqueHeartFigs=[...new Set(heartFigs)];
   assert.equal(uniqueHeartFigs.length,11,'The heart gallery must reference 11 distinct original panels');
   assert(heartHtml.includes('Figure 1')||heartHtml.includes('FIGURE 1'));
   assert(heartHtml.includes('736 / 184'),'Heart dataset split should match manuscript');
