@@ -3,7 +3,7 @@
 (() => {
   'use strict';
   const sources = {
-    doi: 'assets/academic/logos/vendor/doi.svg',
+    doi: 'assets/academic/logos/vendor/doi-user.png',
     github: 'assets/academic/logos/contact/github.svg'
   };
 
