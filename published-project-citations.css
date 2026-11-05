@@ -1,0 +1,98 @@
+/* Source-backed academic citations inside published project case studies */
+body[data-page="projects"] .published-project-citation{
+  padding:26px clamp(18px,3vw,34px) 28px;
+  border-top:1px solid var(--line);
+  background:color-mix(in srgb,var(--surface-2) 32%,var(--surface));
+  min-width:0;
+}
+body[data-page="projects"] .published-project-citation-head{
+  display:flex;
+  gap:18px;
+  align-items:flex-end;
+  justify-content:space-between;
+  margin-bottom:13px;
+}
+body[data-page="projects"] .published-project-citation-head>div{min-width:0;max-width:850px}
+body[data-page="projects"] .published-project-citation-kicker{
+  display:block;
+  font-size:.64rem;
+  line-height:1.5;
+  font-weight:850;
+  letter-spacing:.075em;
+  color:var(--accent-2);
+}
+body[data-page="projects"] .published-project-citation-head h4{
+  font-size:clamp(1.02rem,1.6vw,1.3rem);
+  color:var(--text);
+  margin:5px 0 4px;
+  line-height:1.35;
+  letter-spacing:-.015em;
+}
+body[data-page="projects"] .published-project-citation-head p{
+  margin:0;
+  font-size:.73rem;
+  line-height:1.6;
+  color:var(--muted);
+}
+body[data-page="projects"] .published-project-citation-head>a{
+  flex:0 0 auto;
+  display:inline-flex;
+  gap:6px;
+  align-items:center;
+  font-size:.72rem;
+  font-weight:790;
+  line-height:1.4;
+  padding:10px 12px;
+  border:1px solid var(--line);
+  background:var(--surface);
+  border-radius:10px;
+  text-decoration:none;
+  color:var(--accent-2);
+}
+body[data-page="projects"] .published-project-citation-head>a:hover,
+body[data-page="projects"] .published-project-citation-head>a:focus-visible{
+  border-color:var(--accent);
+  background:var(--surface-2);
+}
+body[data-page="projects"] .published-project-citation .dual-citation{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  align-items:stretch;
+  gap:11px;
+  margin-top:11px;
+}
+body[data-page="projects"] .published-project-citation .citation-format{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap:9px;
+  padding:14px 15px;
+  background:var(--surface);
+}
+body[data-page="projects"] .published-project-citation .citation-style-label{
+  align-self:flex-start;
+}
+body[data-page="projects"] .published-project-citation .citation-format p{
+  font-size:.74rem;
+  line-height:1.74;
+  overflow-wrap:anywhere;
+}
+body[data-page="projects"] .published-project-citation .citation-self,
+body[data-page="projects"] .published-project-citation .portfolio-owner-emphasis{
+  font-weight:850!important;
+  color:var(--text);
+}
+@media(max-width:920px){
+  body[data-page="projects"] .published-project-citation .dual-citation{
+    grid-template-columns:1fr;
+  }
+}
+@media(max-width:680px){
+  body[data-page="projects"] .published-project-citation-head{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:12px;
+  }
+  body[data-page="projects"] .published-project-citation-head>a{
+    align-self:flex-start;
+  }
+}
