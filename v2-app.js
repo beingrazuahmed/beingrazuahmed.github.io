@@ -3108,6 +3108,59 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     </div></section>`;
   }
 
+
+  function ckdProjectExtras(){
+    const root='https://github.com/beingrazuahmed/ckd-risk-factors-stacking-ml';
+    const figs=[
+      {n:11,file:'fig11-uci-accuracy.webp',group:'UCI CKD · BENCHMARK',title:'Model accuracy comparison',detail:'Published accuracy across methods on the UCI CKD dataset.'},
+      {n:21,file:'fig21-simulated-accuracy.webp',group:'SYNTHETIC · BENCHMARK',title:'Synthetic study performance',detail:'Published accuracy on the simulated 1,000-record dataset.'},
+      {n:16,file:'fig16-uci-bootstrap-accuracy.webp',group:'UCI CKD · BOOTSTRAP',title:'UCI accuracy and 95% CI',detail:'Bootstrap confidence intervals for UCI CKD test accuracy.'},
+      {n:26,file:'fig26-simulated-bootstrap-accuracy.webp',group:'SYNTHETIC · BOOTSTRAP',title:'Synthetic accuracy and 95% CI',detail:'Bootstrap confidence intervals for synthetic CKD accuracy.'},
+      {n:2,file:'fig02-class-distribution.webp',group:'DATA PREPARATION',title:'Class balance & SMOTE',detail:'Class distributions including outer-training SMOTE.'},
+      {n:3,file:'fig03-correlation-heatmap.webp',group:'EXPLORATORY ANALYSIS',title:'Numerical correlation heatmap',detail:'Study-variable correlations; not causal estimates.'},
+      {n:4,file:'fig04-feature-importance.webp',group:'PREDICTOR ANALYSIS',title:'Feature importance',detail:'Random Forest predictor-importance ranking.'},
+      {n:5,file:'fig05-methodology-workflow.webp',group:'RESEARCH WORKFLOW',title:'Complete CKD methodology',detail:'Preprocessing, feature selection, stacking and evaluation.'},
+      {n:6,file:'fig06-train-test-accuracy.webp',group:'UCI CKD · DIAGNOSTICS',title:'Train vs test accuracy',detail:'Model-level training and testing accuracy comparisons.'}
+    ];
+    const preview='https://raw.githubusercontent.com/beingrazuahmed/ckd-risk-factors-stacking-ml/main/figures/';
+    const card=f=>`<a class="ckdx-image-card" href="${root}/blob/main/figures/${f.file}" target="_blank" rel="noopener noreferrer" aria-label="Open publication Figure ${f.n}: ${esc(f.title)}"><figure>
+        <div class="ckdx-figure-view"><img src="${preview+f.file}" alt="${esc(f.detail)}" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+          <span class="ckdx-image-pending" hidden>Research image is prepared; GitHub figure upload pending.</span></div>
+        <figcaption><small>FIGURE ${f.n} · ${esc(f.group)}</small><strong>${esc(f.title)}</strong><span>${esc(f.detail)}</span></figcaption>
+      </figure></a>`;
+    return `<section class="ckdx-section ckdx-section--methods" aria-labelledby="ckdx-code-title">
+      <div class="ckdx-head"><div><p class="ckdx-kicker">REPRODUCIBLE RESEARCH · PYTHON</p>
+        <h4 id="ckdx-code-title">Explore the complete research methodology</h4>
+        <p>Two public notebook branches, a licensed UCI data source, code documentation, and transparent scientific limitations.</p></div>
+        <a href="${root}" target="_blank" rel="noopener noreferrer">Open GitHub repository ↗</a>
+      </div>
+      <div class="ckdx-modes">
+        <div><small>01 · PUBLIC BENCHMARK</small><strong>400 UCI CKD records</strong><p>Fetch the official data and run the published UCI benchmark code.</p></div>
+        <div><small>02 · REPRODUCIBLE SIMULATION</small><strong>1,000 synthetic records</strong><p>Generate research-specific synthetic data and run the companion analysis.</p></div>
+        <div><small>03 · INTERPRETATION</small><strong>Bootstrap &amp; model audit</strong><p>Review selected features, stacking metrics, 95% intervals and validation caveats.</p></div>
+      </div>
+      <div class="ckdx-links">
+        <a href="${root}/blob/main/notebooks/CKD_UCI_Benchmark.ipynb" target="_blank" rel="noopener noreferrer">UCI notebook ↗</a>
+        <a href="${root}/blob/main/notebooks/CKD_Synthetic_Study.ipynb" target="_blank" rel="noopener noreferrer">Synthetic notebook ↗</a>
+        <a href="${root}/blob/main/REPRODUCIBILITY.md" target="_blank" rel="noopener noreferrer">Reproducibility guide ↗</a>
+        <a href="${root}/blob/main/METHODS_AND_LIMITATIONS.md" target="_blank" rel="noopener noreferrer">Limitations ↗</a>
+        <a href="https://archive.ics.uci.edu/dataset/336/chronic+kidney+disease" target="_blank" rel="noopener noreferrer">Official UCI data ↗</a>
+      </div>
+      <p class="ckdx-note"><strong>Research scope:</strong> Published accuracy values are 100.0% (UCI CKD) and 96.7% (synthetic), not independent clinical validation. The original stacking implementation retains documented preprocessing and internal-CV limitations. The software must not be used for clinical diagnosis.</p>
+    </section>
+    <section class="ckdx-section" id="ckd-research-figures" aria-labelledby="ckdx-fig-title">
+      <div class="ckdx-head"><div><p class="ckdx-kicker">ORIGINAL RESEARCH FIGURES · PERFORMANCE &amp; UNCERTAINTY</p>
+        <h4 id="ckdx-fig-title">Real benchmark vs synthetic study</h4>
+        <p>Compare published accuracy and bootstrap confidence intervals across both study branches. Open the full-resolution figure by selecting its card.</p></div>
+        <a href="${root}/tree/main/figures" target="_blank" rel="noopener noreferrer">All 9 figures ↗</a>
+      </div>
+      <div class="ckdx-grid">${figs.slice(0,4).map(card).join('')}</div>
+      <details class="ckdx-details"><summary><span>Explore preprocessing and methodology figures</span><span>Figures 2–6 · Expand +</span></summary>
+        <div class="ckdx-grid">${figs.slice(4).map(card).join('')}</div></details>
+      <p class="ckdx-note">Figures: Ahmed, Rakib, Shiddik &amp; Reza (2025), <em>International Journal of Statistical Sciences</em>. The separately credited KDIGO 2024 Figure 1 is excluded pending reuse permission. The MIT code license does not cover paper figures.</p>
+    </section>`;
+  }
+
   function ckdProjectCase(){
     const p=(D.outputs||[]).find(x=>x.id==='ckd')||{};
     const authors=(p.publicationAuthors||[]).map(x=>x.name).filter(Boolean).join(' · ');
@@ -3138,7 +3191,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
             </div>
             <div class="ckd-actions">
               <a class="btn primary" href="${esc(articleUrl)}" target="_blank" rel="noopener noreferrer">Published article · DOI <span aria-hidden="true">↗</span></a>
-              <a class="btn ghost" href="publications.html">View publication record <span aria-hidden="true">↗</span></a>
+              <a class="btn ghost" href="https://github.com/beingrazuahmed/ckd-risk-factors-stacking-ml" target="_blank" rel="noopener noreferrer">Research code &amp; notebooks <span aria-hidden="true">↗</span></a><a class="btn ghost" href="publications.html#output-ckd">Publication record <span aria-hidden="true">↗</span></a>
             </div>
           </div>
           <figure class="ckd-figure">
@@ -3177,6 +3230,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
             <p>The research offers a reproducible comparative framework for analysing CKD-associated predictors and evaluating stacking-based prediction.</p>
           </div>
         </div>
+        ${ckdProjectExtras()}
         <footer class="ckd-bottom">
           <p><strong>Interpretation &amp; limitations:</strong> Results are specific to the UCI benchmark and a synthetic dataset; the simulated sample is not an independent external clinical cohort. High test accuracy does not establish clinical deployment readiness, and broader external or prospective validation would be necessary.</p>
           <a class="btn ghost" href="${esc(articleUrl)}" target="_blank" rel="noopener noreferrer">Open journal DOI <span aria-hidden="true">↗</span></a>

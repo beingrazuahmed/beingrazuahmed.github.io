@@ -27,7 +27,8 @@
     },
     ckd: {
       primary: [
-        { label: 'DOI', url: 'https://doi.org/10.3329/ijss.v25i2.85732' }
+        { label: 'DOI', url: 'https://doi.org/10.3329/ijss.v25i2.85732' },
+        { label: 'Research code', url: 'https://github.com/beingrazuahmed/ckd-risk-factors-stacking-ml' }
       ],
       discovery: [
         { label: 'Google Scholar', url: 'https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=Identification+of+predisposing+risk+factors+for+chronic+kidney+disease+and+optimizing+disease+prediction+using+a+stacking+machine+learning+algorithm&btnG=' },
