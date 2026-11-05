@@ -75,9 +75,9 @@ def local_name(xml: bytes, archive: dict[str, bytes]) -> dict[int, bytes]:
             continue
         label = next((x for x in fig if x.tag.rsplit("}", 1)[-1] == "label"), None)
         label_text = "".join(label.itertext()) if label is not None else fig.attrib.get("id", "")
-        m = re.search(r"(?<!\\d)([1-7])(?!\\d)", label_text)
+        m = re.search(r"(?<!\d)([1-7])(?!\d)", label_text)
         if not m:
-            m = re.search(r"(?<!\\d)([1-7])(?!\\d)", fig.attrib.get("id", ""))
+            m = re.search(r"(?<!\d)([1-7])(?!\d)", fig.attrib.get("id", ""))
         if not m:
             continue
         number = int(m.group(1))
@@ -132,7 +132,7 @@ def main() -> None:
             if i in figmap:
                 continue
             for key, data in archive.items():
-                if re.search(rf"(?:^|[/_-])gr{i}(?:\\.|[_-])", key.lower()) and Path(key).suffix.lower() in (".jpg", ".jpeg", ".png", ".tif", ".tiff"):
+                if re.search(rf"(?:^|[/_-])gr{i}(?:\.|[_-])", key.lower()) and Path(key).suffix.lower() in (".jpg", ".jpeg", ".png", ".tif", ".tiff"):
                     figmap[i] = data
                     break
     if set(figmap) != set(NAMES):
