@@ -62,6 +62,8 @@ body[data-page="projects"] .academic-showcase-jump a:hover,
 body[data-page="projects"] .academic-showcase-jump a:focus-visible{
   border-color:var(--accent);background:var(--surface-2)
 }
+body[data-page="projects"] .academic-showcase-jump a[aria-current="location"]{border-color:var(--accent);background:var(--surface-2);color:var(--accent-2)}
+body[data-page="projects"] .academic-showcase-jump a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 body[data-page="projects"] .academic-showcase-stack{display:grid;gap:28px}
 body[data-page="projects"] .academic-showcase-case{
   min-width:0;overflow:hidden;scroll-margin-top:95px;
