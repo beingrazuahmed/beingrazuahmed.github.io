@@ -21,8 +21,35 @@ body[data-page="projects"] .ckdx-note{color:var(--muted);font-size:.7rem;line-he
 body[data-page="projects"] .ckdx-note strong{color:var(--text)}
 body[data-page="projects"] .ckdx-kdigo-card{margin:0 0 20px;padding:0;border:1px solid var(--line);border-radius:17px;overflow:hidden;background:var(--surface)}
 body[data-page="projects"] .ckdx-kdigo-heading{display:flex;align-items:center;gap:16px;padding:19px 22px;background:var(--surface-2)}
-body[data-page="projects"] .ckdx-kdigo-preview{height:510px;max-height:68vh;background:#f2f5f8;position:relative;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-body[data-page="projects"] .ckdx-kdigo-preview iframe{display:block;width:100%;height:100%;border:0;background:#fff}
+body[data-page="projects"] .ckdx-kdigo-chart{padding:20px 22px;background:#fff;color:#1b2736;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+body[data-page="projects"] .ckdx-kdigo-chart-title{text-align:center;font-size:clamp(.88rem,1.5vw,1.18rem);font-weight:850;line-height:1.4;margin:0 0 15px;color:#24354b}
+body[data-page="projects"] .ckdx-kdigo-chart-scroll{width:100%;overflow-x:auto;overscroll-behavior-inline:contain;border-radius:9px;box-shadow:0 0 0 1px #d6dce4}
+body[data-page="projects"] .ckdx-kdigo-chart-scroll:focus-visible{outline:3px solid #2563eb;outline-offset:3px}
+body[data-page="projects"] .ckdx-kdigo-risk-table{width:100%;min-width:715px;table-layout:fixed;border-collapse:separate;border-spacing:2px;background:#fff;color:#263444;margin:0}
+body[data-page="projects"] .ckdx-kdigo-col-stage{width:8%}
+body[data-page="projects"] .ckdx-kdigo-col-desc{width:22%}
+body[data-page="projects"] .ckdx-kdigo-col-range{width:12%}
+body[data-page="projects"] .ckdx-kdigo-col-risk{width:19.33%}
+body[data-page="projects"] .ckdx-kdigo-risk-table caption{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+body[data-page="projects"] .ckdx-kdigo-risk-table th,body[data-page="projects"] .ckdx-kdigo-risk-table td{padding:11px 8px;vertical-align:middle;text-align:center;font-size:.72rem;line-height:1.4;border:0}
+body[data-page="projects"] .ckdx-kdigo-risk-table thead th{background:#e7edf6;color:#203048;font-size:.71rem;line-height:1.4;font-weight:790}
+body[data-page="projects"] .ckdx-kdigo-risk-table thead tr:first-child th{background:#d9e4f1;font-size:.74rem}
+body[data-page="projects"] .ckdx-kdigo-subheaders th strong{display:block;font-size:.89rem;margin:0 0 4px}
+body[data-page="projects"] .ckdx-kdigo-subheaders th span{display:block;font-size:.69rem;font-weight:620;min-height:2.4em}
+body[data-page="projects"] .ckdx-kdigo-subheaders th em{display:block;margin-top:5px;font-style:normal;font-size:.66rem;color:#3b4d64}
+body[data-page="projects"] .ckdx-kdigo-risk-table tbody th{background:#dfe8f3;font-size:.83rem;font-weight:900}
+body[data-page="projects"] .ckdx-kdigo-risk-table tbody td:not([class]){background:#e5ecf5;font-weight:600}
+body[data-page="projects"] .ckdx-kdigo-risk-table tbody td[class^="ckdx-risk"]{font-size:.66rem;font-weight:800;letter-spacing:.005em;color:#28323b}
+body[data-page="projects"] .ckdx-risk-low{background:#bad17e!important}
+body[data-page="projects"] .ckdx-risk-moderate{background:#f8df7e!important}
+body[data-page="projects"] .ckdx-risk-high{background:#f5af59!important}
+body[data-page="projects"] .ckdx-risk-very-high{background:#e77065!important}
+body[data-page="projects"] .ckdx-kdigo-legend{display:flex;flex-wrap:wrap;gap:9px 18px;margin-top:15px;align-items:center}
+body[data-page="projects"] .ckdx-kdigo-legend span{display:inline-flex;align-items:center;gap:7px;font-size:.7rem;font-weight:740;color:#344154}
+body[data-page="projects"] .ckdx-kdigo-legend i{display:inline-block;flex:0 0 16px;width:16px;height:16px;border:1px solid rgba(40,55,75,.12);border-radius:4px}
+body[data-page="projects"] .ckdx-kdigo-legend-note{margin:8px 0 0;font-size:.64rem;line-height:1.5;color:#576579}
+@media(max-width:740px){body[data-page="projects"] .ckdx-kdigo-chart{padding:15px 12px}body[data-page="projects"] .ckdx-kdigo-risk-table{min-width:675px}body[data-page="projects"] .ckdx-kdigo-legend{gap:8px 10px}body[data-page="projects"] .ckdx-kdigo-risk-table th,body[data-page="projects"] .ckdx-kdigo-risk-table td{padding:8px 6px}}
+
 body[data-page="projects"] .ckdx-kdigo-footer{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:14px 20px}
 body[data-page="projects"] .ckdx-kdigo-footer span{flex:1 1 300px;color:var(--muted);font-size:.72rem;line-height:1.6}
 body[data-page="projects"] .ckdx-kdigo-footer a{padding:9px 12px;border:1px solid var(--line);border-radius:9px;background:var(--surface-2);font-size:.72rem;font-weight:750;color:var(--accent-2)}
