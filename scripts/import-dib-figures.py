@@ -51,6 +51,16 @@ def node_name(el):
     return el.tag.rsplit("}", 1)[-1]
 
 
+def cloud_url(url):
+    """Convert NCBI metadata's S3 URIs to the official anonymous HTTPS endpoint."""
+    prefix = "s3://pmc-oa-opendata/"
+    if isinstance(url, str) and url.startswith(prefix):
+        return S3 + "/" + url[len(prefix):]
+    if isinstance(url, str) and url.startswith(S3 + "/"):
+        return url
+    raise RuntimeError("Unexpected official PMC cloud object URI: " + repr(url)[:140])
+
+
 def article_metadata():
     query = f"{S3}/?list-type=2&prefix={quote(PMCID + '.')}&delimiter=%2F"
     root = ET.fromstring(get(query))
@@ -75,10 +85,8 @@ def article_metadata():
         license_code = str(meta.get("license_code") or "").lower()
         if not license_code.startswith("cc"):
             raise RuntimeError(f"Artwork redistribution license not established: {license_code}")
-        xmlurl = meta.get("xml_url") or f"{S3}/{version}/{version}.xml"
-        print("XML URL metadata:", repr(xmlurl)[:500])
-        if not isinstance(xmlurl, str) or not xmlurl.startswith(S3 + "/"):
-            raise RuntimeError("Unexpected metadata XML source")
+        xmlurl = cloud_url(meta.get("xml_url") or f"{S3}/{version}/{version}.xml")
+        print("Using verified article XML:", xmlurl.split("?")[0])
         print("PMC article version:", version, "license:", license_code,
               "media objects:", len(meta.get("media_urls") or []))
         return meta, xmlurl, version
@@ -109,9 +117,10 @@ def figure_graphics(xml):
 def image_url(number, names, media_urls):
     choices = []
     for row in media_urls:
-        url = row if isinstance(row, str) else row.get("url", "")
-        if not url or not url.startswith(S3 + "/"):
+        value = row if isinstance(row, str) else row.get("url", "")
+        if not value:
             continue
+        url = cloud_url(value)
         path = Path(urlparse(url).path)
         if path.suffix.lower() not in (".jpg", ".jpeg", ".png", ".tif", ".tiff", ".webp"):
             continue
