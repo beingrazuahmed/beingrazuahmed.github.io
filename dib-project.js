@@ -51,7 +51,9 @@
             <p>Every distinguishable food instance was labelled in <strong>Roboflow</strong> with a bounding box and a polygon mask. The same final image collection is distributed in <strong>YOLO detection, YOLO segmentation and COCO</strong> formats—suitable for research benchmarking, transfer learning and regional food-image analysis.</p>
             <div class="dib-actions">
               <a class="btn primary" href="${DATA}" target="_blank" rel="noopener noreferrer">Access Mendeley Data · V2 <span aria-hidden="true">↗</span></a>
-              <a class="btn ghost" href="${PAPER}" target="_blank" rel="noopener noreferrer">Read Data in Brief article <span aria-hidden="true">↗</span></a>
+              <a class="btn ghost" href="https://doi.org/10.17632/fn6yhzjz83.2" target="_blank" rel="noopener noreferrer">Dataset DOI <span aria-hidden="true">↗</span></a>
+              <a class="btn ghost" href="${PAPER}" target="_blank" rel="noopener noreferrer">Data Article DOI <span aria-hidden="true">↗</span></a>
+              <a class="btn ghost" href="https://github.com/beingrazuahmed/beingrazuahmed.github.io/tree/main/assets/academic/projects/pust-food-dataset" target="_blank" rel="noopener noreferrer">Published figures · GitHub <span aria-hidden="true">↗</span></a>
               <a class="btn ghost" href="publications.html#output-dib">Publication record <span aria-hidden="true">↗</span></a>
             </div>
             <p class="dib-authorline"><strong>Authors:</strong> Marufa Yeasmin · Md. Razu Ahmed · Protiva Rani Kundu · Jannatul Mauya · Md. Shamim Reza</p>
@@ -123,7 +125,7 @@
               <li>Use <strong>class_names.csv</strong>, the source-image mapping and the split-specific annotation files to configure a detection or segmentation experiment.</li>
               <li>Keep original-image families separated when preparing new experiments; cite both the dataset DOI and the descriptive data article.</li>
             </ol>
-            <div class="dib-citation"><strong>Dataset citation · V2:</strong> Yeasmin, M., Ahmed, M. R., Kundu, P. R., Mauya, J., &amp; Reza, M. S. (2026). <em>PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations</em> (Version 2). Mendeley Data. <a href="${DATA}" target="_blank" rel="noopener noreferrer">https://doi.org/10.17632/fn6yhzjz83.2</a></div>
+            <div class="dib-citation"><strong>Dataset citation · V2:</strong> Yeasmin, M., Ahmed, M. R., Kundu, P. R., Mauya, J., &amp; Reza, M. S. (2026). <em>PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations</em> (Version 2). Mendeley Data. <a href="https://doi.org/10.17632/fn6yhzjz83.2" target="_blank" rel="noopener noreferrer">https://doi.org/10.17632/fn6yhzjz83.2</a></div>
           </div>
           <div>
             <span class="dib-kicker">Research context · Responsible reuse</span>
