@@ -106,8 +106,8 @@ async function main(){
   const projects=text('projects.html');
   assert(projects.includes('published-project-citations.css'));
   assert(projects.includes('dib-project.js?v=20261105-doi-github-icons1'));
-  assert(projects.includes('project-research-links.css?v=20261105-doi-github-icons1'));
-  assert(projects.includes('project-research-links.js?v=20261105-doi-github-icons1'));
+  assert(projects.includes('project-research-links.css?v=20261105-pub-doi-light-nav2'));
+  assert(projects.includes('project-research-links.js?v=20261105-pub-doi-light-nav2'));
   for(const file of ['assets/academic/logos/vendor/doi-user.png','assets/academic/logos/contact/github.svg']){
     assert(fs.statSync(file).size>300, 'Missing or invalid project icon: '+file);
   }
