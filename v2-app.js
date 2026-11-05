@@ -3157,10 +3157,19 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         <p>Compare published accuracy and bootstrap confidence intervals across both study branches. Open the full-resolution figure by selecting its card.</p></div>
         <a href="${root}/tree/main/figures" target="_blank" rel="noopener noreferrer">All 9 figures ↗</a>
       </div>
+      <a class="ckdx-reference-card" href="https://kdigo.org/guidelines/ckd-evaluation-and-management/" target="_blank" rel="noopener noreferrer" aria-label="Figure 1: KDIGO 2024 guideline reference. Open the official guideline at KDIGO.">
+        <span class="ckdx-reference-number" aria-hidden="true">01</span>
+        <span class="ckdx-reference-content">
+          <small>FIGURE 1 · THIRD-PARTY CLINICAL REFERENCE</small>
+          <strong>KDIGO 2024 CKD Guideline</strong>
+          <span>Figure 1 in the published paper credits Kidney Disease: Improving Global Outcomes (KDIGO, 2024). Access the original guideline directly from KDIGO. The figure itself is not reproduced on this website.</span>
+        </span>
+        <span class="ckdx-reference-action">Official source ↗</span>
+      </a>
       <div class="ckdx-grid">${figs.slice(0,4).map(card).join('')}</div>
       <details class="ckdx-details"><summary><span>Explore preprocessing and methodology figures</span><span>Figures 2–6 · Expand +</span></summary>
         <div class="ckdx-grid">${figs.slice(4).map(card).join('')}</div></details>
-      <p class="ckdx-note">Figures: Ahmed, Rakib, Shiddik &amp; Reza (2025), <em>International Journal of Statistical Sciences</em>. The separately credited KDIGO 2024 Figure 1 is excluded pending reuse permission. The MIT code license does not cover paper figures.</p>
+      <p class="ckdx-note"><strong>Figure attribution:</strong> Published Figures 2–6, 11, 16, 21 and 26: Ahmed, Rakib, Shiddik &amp; Reza (2025), <em>International Journal of Statistical Sciences</em>. Figure 1 cites KDIGO (2024) and is accessible through the official source link above; no third-party Figure 1 artwork is hosted here. The MIT code license does not cover article figures.</p>
     </section>`;
   }
 
