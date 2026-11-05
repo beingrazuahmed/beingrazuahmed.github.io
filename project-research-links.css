@@ -48,3 +48,50 @@ body[data-page="projects"] .fastica-code-actions a.project-link-with-icon{
     justify-content:flex-start;
   }
 }
+
+/* Project navigation state: light sky-blue active/hover instead of theme-dependent dark background.
+   Keep identical legibility in light and dark portfolio themes. */
+body[data-page="projects"] .project-portfolio-index a[aria-current="location"],
+body[data-page="projects"] .academic-showcase-jump a[aria-current="location"],
+body[data-page="projects"] .dib-section-nav a[aria-current="location"]{
+  background:#e3f2ff!important;
+  border-color:#9dcdf4!important;
+  color:#17466b!important;
+  box-shadow:0 0 0 1px rgba(81,154,208,.12);
+}
+body[data-page="projects"] .project-portfolio-index a:hover,
+body[data-page="projects"] .academic-showcase-jump a:hover,
+body[data-page="projects"] .dib-section-nav a:hover,
+body[data-page="projects"] .project-portfolio-index a:focus-visible,
+body[data-page="projects"] .academic-showcase-jump a:focus-visible,
+body[data-page="projects"] .dib-section-nav a:focus-visible{
+  background:#eef7ff!important;
+  border-color:#a6cfee!important;
+  color:#17466b!important;
+}
+body[data-page="projects"] .project-portfolio-index a[aria-current="location"]:hover,
+body[data-page="projects"] .academic-showcase-jump a[aria-current="location"]:hover,
+body[data-page="projects"] .dib-section-nav a[aria-current="location"]:hover,
+body[data-page="projects"] .project-portfolio-index a[aria-current="location"]:focus-visible,
+body[data-page="projects"] .academic-showcase-jump a[aria-current="location"]:focus-visible,
+body[data-page="projects"] .dib-section-nav a[aria-current="location"]:focus-visible{
+  background:#d6ebff!important;
+  border-color:#88bbe4!important;
+  color:#153f60!important;
+}
+body[data-page="projects"] .project-portfolio-index a:active,
+body[data-page="projects"] .academic-showcase-jump a:active,
+body[data-page="projects"] .dib-section-nav a:active{
+  background:#d6ebff!important;
+  color:#153f60!important;
+}
+body[data-page="projects"] .project-portfolio-index a[aria-current="location"] strong,
+body[data-page="projects"] .dib-section-nav a[aria-current="location"] span{
+  color:#17466b!important;
+}
+body[data-page="projects"] .project-portfolio-index a:focus-visible,
+body[data-page="projects"] .academic-showcase-jump a:focus-visible,
+body[data-page="projects"] .dib-section-nav a:focus-visible{
+  outline:2px solid #3275ab;
+  outline-offset:2px;
+}
