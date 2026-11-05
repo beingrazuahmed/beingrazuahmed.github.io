@@ -3139,7 +3139,6 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
       {n:2,file:'fig02-class-distribution.webp',group:'DATA PREPARATION',title:'Class balance & SMOTE',detail:'Class distributions including outer-training SMOTE.'},
       {n:3,file:'fig03-correlation-heatmap.webp',group:'EXPLORATORY ANALYSIS',title:'Numerical correlation heatmap',detail:'Study-variable correlations; not causal estimates.'},
       {n:4,file:'fig04-feature-importance.webp',group:'PREDICTOR ANALYSIS',title:'Feature importance',detail:'Random Forest predictor-importance ranking.'},
-      {n:5,file:'fig05-methodology-workflow.webp',group:'RESEARCH WORKFLOW',title:'Complete CKD methodology',detail:'Preprocessing, feature selection, stacking and evaluation.'},
       {n:6,file:'fig06-train-test-accuracy.webp',group:'UCI CKD · DIAGNOSTICS',title:'Train vs test accuracy',detail:'Model-level training and testing accuracy comparisons.'}
     ];
     const preview='https://raw.githubusercontent.com/beingrazuahmed/ckd-risk-factors-stacking-ml/main/figures/';
@@ -3225,7 +3224,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         </div>
       </figure>
       <div class="ckdx-grid">${figs.slice(0,4).map(card).join('')}</div>
-      <details class="ckdx-details"><summary><span>Explore preprocessing and methodology figures</span><span>Figures 2–6 · Expand +</span></summary>
+      <details class="ckdx-details"><summary><span>Explore other preprocessing and diagnostic figures</span><span>Figures 2–4 &amp; 6 · Expand +</span></summary>
         <div class="ckdx-grid">${figs.slice(4).map(card).join('')}</div></details>
       <p class="ckdx-note"><strong>Figure attribution:</strong> Figures 2–6, 11, 16, 21 and 26: Ahmed, Rakib, Shiddik &amp; Reza (2025), <em>International Journal of Statistical Sciences</em>. Figure 1: CKD risk classification categories from KDIGO (2024), redrawn as an accessible web chart with source credit; no KDIGO source artwork is redistributed by this website. The MIT software license does not cover article figures.</p>
     </section>`;
