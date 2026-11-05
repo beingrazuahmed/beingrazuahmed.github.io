@@ -3157,19 +3157,28 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         <p>Compare published accuracy and bootstrap confidence intervals across both study branches. Open the full-resolution figure by selecting its card.</p></div>
         <a href="${root}/tree/main/figures" target="_blank" rel="noopener noreferrer">All 9 figures ↗</a>
       </div>
-      <a class="ckdx-reference-card" href="https://kdigo.org/guidelines/ckd-evaluation-and-management/" target="_blank" rel="noopener noreferrer" aria-label="Figure 1: KDIGO 2024 guideline reference. Open the official guideline at KDIGO.">
-        <span class="ckdx-reference-number" aria-hidden="true">01</span>
-        <span class="ckdx-reference-content">
-          <small>FIGURE 1 · THIRD-PARTY CLINICAL REFERENCE</small>
-          <strong>KDIGO 2024 CKD Guideline</strong>
-          <span>Figure 1 in the published paper credits Kidney Disease: Improving Global Outcomes (KDIGO, 2024). Access the original guideline directly from KDIGO. The figure itself is not reproduced on this website.</span>
-        </span>
-        <span class="ckdx-reference-action">Official source ↗</span>
-      </a>
+      <figure class="ckdx-kdigo-card" id="ckd-figure-1" aria-labelledby="ckdx-fig01-title">
+        <figcaption class="ckdx-kdigo-heading">
+          <span class="ckdx-reference-number" aria-hidden="true">01</span>
+          <span class="ckdx-reference-content">
+            <small>FIGURE 1 · KDIGO 2024 CLINICAL REFERENCE</small>
+            <strong id="ckdx-fig01-title">Prognosis of CKD by GFR and albuminuria categories</strong>
+            <span>View Figure 1 on page 2 of the published paper. The publisher-hosted PDF is displayed here without copying or rehosting the KDIGO artwork.</span>
+          </span>
+        </figcaption>
+        <div class="ckdx-kdigo-preview">
+          <iframe title="Published CKD article page 2 containing Figure 1, KDIGO GFR and albuminuria prognosis chart" src="https://www.banglajol.info/index.php/ijss/article/view/85732/55866#page=2&view=FitH&toolbar=0&navpanes=0" loading="lazy" referrerpolicy="no-referrer"></iframe>
+        </div>
+        <div class="ckdx-kdigo-footer">
+          <span>Source: KDIGO (2024), as cited in Ahmed et al. (2025). If the PDF cannot load inside this page, use the publisher link.</span>
+          <a href="https://www.banglajol.info/index.php/ijss/article/view/85732/55866#page=2" target="_blank" rel="noopener noreferrer">View Figure 1 in published PDF ↗</a>
+          <a href="https://kdigo.org/guidelines/ckd-evaluation-and-management/" target="_blank" rel="noopener noreferrer">Official KDIGO guideline ↗</a>
+        </div>
+      </figure>
       <div class="ckdx-grid">${figs.slice(0,4).map(card).join('')}</div>
       <details class="ckdx-details"><summary><span>Explore preprocessing and methodology figures</span><span>Figures 2–6 · Expand +</span></summary>
         <div class="ckdx-grid">${figs.slice(4).map(card).join('')}</div></details>
-      <p class="ckdx-note"><strong>Figure attribution:</strong> Published Figures 2–6, 11, 16, 21 and 26: Ahmed, Rakib, Shiddik &amp; Reza (2025), <em>International Journal of Statistical Sciences</em>. Figure 1 cites KDIGO (2024) and is accessible through the official source link above; no third-party Figure 1 artwork is hosted here. The MIT code license does not cover article figures.</p>
+      <p class="ckdx-note"><strong>Figure attribution:</strong> Figures 2–6, 11, 16, 21 and 26: Ahmed, Rakib, Shiddik &amp; Reza (2025), <em>International Journal of Statistical Sciences</em>. Figure 1: KDIGO (2024), visible via the publisher-hosted PDF page and linked to the KDIGO source; no separate KDIGO image is redistributed by this website. The MIT software license does not cover article figures.</p>
     </section>`;
   }
 
@@ -3177,7 +3186,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     const p=(D.outputs||[]).find(x=>x.id==='ckd')||{};
     const authors=(p.publicationAuthors||[]).map(x=>x.name).filter(Boolean).join(' · ');
     const articleUrl=p.doi||'https://doi.org/10.3329/ijss.v25i2.85732';
-    const figure=p.visual||'https://raw.githubusercontent.com/beingrazuahmed/ckd-risk-factors-stacking-ml/main/figures/fig04-feature-importance.webp';
+    const figure=p.visual||'https://raw.githubusercontent.com/beingrazuahmed/ckd-risk-factors-stacking-ml/main/figures/fig05-methodology-workflow.webp';
     return `<section class="section alt ckd-project-section" id="ckd-prediction-project"><div class="container">
       <header class="ckd-project-head">
         <div>
@@ -3207,9 +3216,9 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
             </div>
           </div>
           <figure class="ckd-figure">
-            <div class="ckd-figure-top">Published Figure 4 · Random Forest feature importance</div>
-            <div class="ckd-figure-frame"><img src="${esc(figure)}" alt="Feature-importance results from the published CKD risk-factor and stacking ensemble study" loading="lazy" decoding="async"></div>
-            <figcaption>Published Figure 4. Feature importance indicates predictive association within the analysed data, not causality. <a href="https://github.com/beingrazuahmed/ckd-risk-factors-stacking-ml/blob/main/figures/fig04-feature-importance.webp" target="_blank" rel="noopener noreferrer">View full-resolution figure ↗</a></figcaption>
+            <div class="ckd-figure-top">Featured research visualization · Figure 5 · Methodology workflow</div>
+            <a class="ckd-figure-frame ckd-figure-frame-link" href="https://github.com/beingrazuahmed/ckd-risk-factors-stacking-ml/blob/main/figures/fig05-methodology-workflow.webp" target="_blank" rel="noopener noreferrer" aria-label="Open original published Figure 5: complete CKD methodology workflow"><img src="${esc(figure)}" alt="Published Figure 5: methodological workflow for CKD analysis, feature selection, model evaluation and stacking machine learning" loading="lazy" decoding="async"></a>
+            <figcaption><strong>Figure 5 — Complete methodology workflow.</strong> A visual overview of CKD data preparation, feature selection, classification and stacking evaluation. Select the image to open the full-resolution figure.</figcaption>
           </figure>
         </div>
         <div class="ckd-evidence-strip" aria-label="Published study datasets and reported test accuracy">
@@ -3252,7 +3261,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   }
 
   function projects(){return `${pageHero('Projects & Prototypes','Research prototypes, analytical projects and reproducible workflows.')}
-      <div class="container"><nav class="project-portfolio-index" aria-label="Explore project collections">
+      <div class="container"><nav class="project-portfolio-index" data-section-jump-nav aria-label="Explore project collections">
         <a href="#bazarbondhu-ai"><strong>01</strong> BazarBondhu AI</a>
         <a href="#ask-razu-ai-project"><strong>02</strong> Ask Razu AI</a>
         <a href="#field-survey-project"><strong>03</strong> Statistical Field Survey</a>
