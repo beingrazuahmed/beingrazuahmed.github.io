@@ -102,11 +102,17 @@ async function main(){
     'Selected project navigation must have a light background');
   assert(projectStyles.includes('background:#eef7ff!important'),
     'Hover and focused project navigation must have a light background');
+  assert(projectStyles.includes('background:#ddf4f0!important'),
+    'Primary DOI and project action buttons must use light-teal background');
+  assert(projectStyles.includes('color:#174f49!important'),
+    'Light project action buttons must have high-contrast dark text');
+  assert(projectStyles.includes('background:#c5eae3!important'),
+    'Project buttons must use a distinct light hover and focus background');
 
   const projects=text('projects.html');
   assert(projects.includes('published-project-citations.css'));
   assert(projects.includes('dib-project.js?v=20261105-doi-github-icons1'));
-  assert(projects.includes('project-research-links.css?v=20261105-pub-doi-light-nav2'));
+  assert(projects.includes('project-research-links.css?v=20261105-soft-teal-ctas3'));
   assert(projects.includes('project-research-links.js?v=20261105-pub-doi-light-nav2'));
   for(const file of ['assets/academic/logos/vendor/doi-user.png','assets/academic/logos/contact/github.svg']){
     assert(fs.statSync(file).size>300, 'Missing or invalid project icon: '+file);
