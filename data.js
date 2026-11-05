@@ -93,9 +93,9 @@ window.PORTFOLIO_DATA = {
         "Bangladesh National Scientific and Technical Documentation Centre (BANSDOC)"
       ],
       tags: ["CKD", "Machine Learning", "Stacking", "Feature Selection"],
-      summary: "A leakage-aware machine-learning workflow for CKD risk-factor identification and predictive modelling using feature-selection consensus and stacked learners.",
+      summary: "Published CKD risk-factor and stacking-ensemble benchmark across UCI and synthetic datasets, with public research notebooks and documented validation limitations.",
       highlight: "The proposed stacking approach reported 100% accuracy on the UCI CKD data and 96.7% on simulated validation data.",
-      visual: "assets/publications/ckd/feature-importance.png"
+      visual: "https://raw.githubusercontent.com/beingrazuahmed/ckd-risk-factors-stacking-ml/main/figures/fig04-feature-importance.webp"
     },
     {
       id: "dib", type: "Journal Article", status: "Published", year: 2026, role: "Second Author",
