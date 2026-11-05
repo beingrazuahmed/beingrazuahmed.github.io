@@ -4,7 +4,7 @@ This folder holds web-optimized displays of the research figures supplied by Md.
 
 **Figure 1 (study-design workflow)** is already stored at `../ai-job-market-field-survey-workflow.png` and displayed in the main project overview.
 
-The five gallery images should be uploaded here, with the following filenames:
+All five gallery images have now been uploaded to this folder under the following filenames and are linked from the [AI survey portfolio project](https://beingrazuahmed.github.io/projects.html#ai-survey-figures):
 
 | Original figure | Upload filename | Content |
 | --- | --- | --- |
@@ -19,3 +19,10 @@ The five gallery images should be uploaded here, with the following filenames:
 These are descriptive and multivariate exploratory figures, not causal evidence of AI-related job displacement and not nationally representative estimates. Underlying respondent-level survey records are not published in this repository. Check permissions before redistributing images elsewhere.
 
 The original 14K-pixel images were resized without changing plotted values or labels to provide browser-friendly WebP versions.
+## Portfolio and source links
+
+- [AI and Employment Statistical Field Survey](https://beingrazuahmed.github.io/projects.html#field-survey-project)
+- [Five-figure gallery](https://beingrazuahmed.github.io/projects.html#ai-survey-figures)
+- [Related accepted journal article on the portfolio](https://beingrazuahmed.github.io/publications.html#output-ai-employment)
+
+The gallery displays the original study's workflow (Figure 1) and the five verified, web-optimized Figure 2–6 files. Figures and research claims are presented with their original study scope. The respondent-level data are not available for download here.

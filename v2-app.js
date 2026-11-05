@@ -3008,15 +3008,16 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
       <a class="survey-evidence-image-link" href="${folder+f.name}" target="_blank" rel="noopener noreferrer" aria-label="Open original-study Figure ${esc(f.number)}: ${esc(f.title)}">
         <img src="${folder+f.name}" loading="lazy" decoding="async" alt="${esc(f.alt)}" onerror="this.parentElement.hidden=true;this.parentElement.nextElementSibling.hidden=false">
       </a>
-      <div class="survey-evidence-image-pending" hidden><span>Research image prepared · Awaiting gallery upload</span></div>
+      <div class="survey-evidence-image-pending" hidden><span>Figure temporarily unavailable. <a href="https://github.com/beingrazuahmed/beingrazuahmed.github.io/tree/main/assets/academic/field-survey/ai-survey-figures" target="_blank" rel="noopener noreferrer">Open gallery on GitHub ↗</a></span></div>
       <figcaption><small>FIGURE ${esc(f.number)} · RESEARCH VISUAL</small><strong>${esc(f.title)}</strong><span>${esc(f.summary)}</span></figcaption>
     </figure>`).join('');
-    return `<section class="survey-evidence-section" aria-labelledby="survey-evidence-title">
+    return `<section class="survey-evidence-section" id="ai-survey-figures" aria-labelledby="survey-evidence-title">
       <header class="survey-evidence-head">
         <div><p class="survey-evidence-kicker">RESEARCH EVIDENCE · SIX ORIGINAL FIGURES</p>
           <h4 id="survey-evidence-title">Understanding AI and employment perceptions</h4>
-          <p>Figure 1 documents the study workflow above. The five additional visuals describe the survey cohort and the correspondence-analysis and PCA results. Figures can be viewed at their full web resolution.</p>
+          <p>Figure 1 documents the study workflow above. The five additional visuals describe the survey cohort and the correspondence-analysis and PCA results. Select a figure for its full web-resolution image.</p>
         </div>
+        <a class="survey-evidence-source" href="https://github.com/beingrazuahmed/beingrazuahmed.github.io/tree/main/assets/academic/field-survey/ai-survey-figures" target="_blank" rel="noopener noreferrer">View all figure files ↗</a>
       </header>
       <div class="survey-evidence-highlights" aria-label="Descriptive survey findings">
         <div><small>RESPONDENT PROFILE</small><strong>370</strong><span>Survey participants at PUST</span></div>
@@ -3096,7 +3097,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
             <p><strong>${esc(article.title||'')}</strong></p>
             <p>${esc(article.journal||'')}${article.acceptedDate?` · Accepted ${esc(article.acceptedDate)}`:''}</p>
             <p>Currently recorded as ${esc(article.status||'accepted / forthcoming')}. The project and the resulting publication are distinct stages of the research.</p>
-            <div class="survey-project-links"><a href="publications.html">Publication record ↗</a><a href="https://www.ru.ac.bd/stat/ijss/" target="_blank" rel="noopener noreferrer">Journal website ↗</a></div>
+            <div class="survey-project-links"><a href="publications.html#output-ai-employment">Related publication ↗</a><a href="https://www.ru.ac.bd/stat/ijss/" target="_blank" rel="noopener noreferrer">Journal website ↗</a></div>
           </div>
         </div>
         <footer class="survey-project-footer">

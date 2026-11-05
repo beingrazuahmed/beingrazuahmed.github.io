@@ -75,3 +75,10 @@ body[data-page="projects"] .survey-evidence-disclaimer strong{color:var(--text)}
 @media(max-width:990px){body[data-page="projects"] .survey-evidence-highlights{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:750px){body[data-page="projects"] .survey-evidence-section{padding:23px 20px}body[data-page="projects"] .survey-evidence-grid{grid-template-columns:1fr}body[data-page="projects"] .survey-evidence-card--wide{grid-column:auto}}
 @media(max-width:470px){body[data-page="projects"] .survey-evidence-highlights{gap:8px}body[data-page="projects"] .survey-evidence-highlights>div{padding:12px}body[data-page="projects"] .survey-evidence-highlights strong{font-size:1.2rem}body[data-page="projects"] .survey-evidence-image-link{padding:10px}}
+
+/* Linked, verified AI survey figures — publication-linked gallery and graceful error fallback */
+body[data-page="projects"] #ai-survey-figures{scroll-margin-top:100px}
+body[data-page="projects"] .survey-evidence-source{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--accent-2);font-size:.72rem;font-weight:760;text-align:center}
+body[data-page="projects"] .survey-evidence-source:hover,body[data-page="projects"] .survey-evidence-source:focus-visible{border-color:var(--accent);background:var(--surface-2)}
+body[data-page="projects"] .survey-evidence-image-pending a{color:var(--accent-2);font-weight:750;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:750px){body[data-page="projects"] .survey-evidence-head{flex-direction:column;align-items:stretch}body[data-page="projects"] .survey-evidence-source{align-self:flex-start}}
