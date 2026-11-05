@@ -1,0 +1,47 @@
+name: Validate global author emphasis and published citations
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/owner-citations-check.yml'
+      - 'owner-emphasis.js'
+      - 'published-project-citations.css'
+      - 'scripts/check-owner-citations.cjs'
+      - 'v2-app.js'
+      - 'dib-project.js'
+      - 'data.js'
+      - '*.html'
+      - 'bazarbondhu-ai/index.html'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Verify typography, citations and page links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install DOM-only test dependency
+        run: npm install --no-save --no-package-lock --ignore-scripts jsdom@26.1.0
+
+      - name: Validate source JavaScript
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check owner-emphasis.js
+          node --check dib-project.js
+          node --check v2-app.js
+          node --check data.js
+          node --check scripts/check-owner-citations.cjs
+
+      - name: Test 44 pages and published reference panels
+        run: node scripts/check-owner-citations.cjs
