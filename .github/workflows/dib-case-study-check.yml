@@ -42,6 +42,7 @@ jobs:
           const html=ctx.window.MRA_DIB_CASE();
           const required=[
             'id="dib-food-dataset-project"',
+            'id="dib-project-overview"',
             'id="dib-data-design"',
             'id="dib-data-figures"',
             'id="dib-data-reuse"',
@@ -60,10 +61,19 @@ jobs:
           });
           const page=fs.readFileSync('projects.html','utf8');
           assert(page.indexOf('src="dib-project.js') < page.indexOf('src="v2-app.js'));
+          const official='PUST Cafeteria Food Image Dataset:';
+          const subtitle='Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations';
+          assert(html.includes(official) && html.includes(subtitle),'Missing exact official data article title');
+          const nav=html.match(/<nav class="dib-section-nav"[^>]*>[\\s\\S]*?<\\/nav>/);
+          assert(nav,'Missing published dataset subsection navigation');
+          const links=[...nav[0].matchAll(/href="#([^"]+)"/g)].map(x=>x[1]);
+          assert.deepStrictEqual(links,['dib-project-overview','dib-data-design','dib-data-figures','dib-data-reuse']);
+          links.forEach(id=>assert(html.includes('id="'+id+'"'),'Broken submenu target '+id));
           const shell=fs.readFileSync('v2-app.js','utf8');
           assert(shell.includes('MRA_DIB_CASE()'),'Project case must be connected to site app');
           assert(shell.includes('href="#dib-food-dataset-project"'),'Project menu anchor missing');
-          console.log('Data article project, seven figures, V2 DOI and navigation verified');
+          assert(shell.includes('PUST Cafeteria Food Image Dataset</a>'),'Main project menu label must identify dataset');
+          console.log('Data article official title, four submenu anchors, seven figures and V2 DOI verified');
           NODE
       - name: Validate figure asset manifest
         shell: bash
