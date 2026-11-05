@@ -1144,6 +1144,7 @@
       </div>`:''}
       <div class="link-row publication-link-row" aria-label="Publication links">${publicationBrandLinks(linkObj)}</div>
       ${id==='dib'?'<p><a class="btn ghost" href="projects.html#dib-food-dataset-project">View dataset research project &amp; seven figures ↗</a></p>':''}
+      ${id==='bs-ccfs-heart-disease'?'<p><a class="btn ghost" href="projects.html#heart-bsccfs-project">Explore BS-CCFS research project &amp; figure gallery ↗</a></p>':''}
     </article>`;
   }
   function personCard(x){return `<article class="card person-card">${safeImg(x.portrait,x.name,'avatar')}<h3>${esc(x.name)}</h3><div class="meta">${(x.roles||[]).map(r=>`<span class="badge">${esc(r)}</span>`).join('')}</div><p><strong>${esc(x.affiliation||'')}</strong></p><p>${esc(x.description||'')}</p><div class="link-row">${(x.links||[]).map(l=>ext(l.url,l.label)).join(' · ')}</div></article>`;}
@@ -3315,10 +3316,11 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         <a href="#ask-razu-ai-project"><strong>02</strong> Ask Razu AI</a>
         <a href="#field-survey-project"><strong>03</strong> Statistical Field Survey</a>
         <a href="#ckd-prediction-project"><strong>04</strong> CKD · Stacking ML</a>
-        <a href="#dib-food-dataset-project" title="PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations" aria-label="PUST Cafeteria Food Image Dataset project"><strong>05</strong> PUST Cafeteria Food Image Dataset</a>
-        <a href="#fastica-audio-project"><strong>06</strong> FastICA · Published</a>
-        <a href="#dr-grading-project"><strong>07</strong> M.S. · Retinopathy grading</a>
-        <a href="#active-project-directions"><strong>08</strong> Current directions</a>
+        <a href="#heart-bsccfs-project"><strong>05</strong> Heart Disease · BS-CCFS</a>
+        <a href="#dib-food-dataset-project" title="PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations" aria-label="PUST Cafeteria Food Image Dataset project"><strong>06</strong> PUST Cafeteria Food Image Dataset</a>
+        <a href="#fastica-audio-project"><strong>07</strong> FastICA · Published</a>
+        <a href="#dr-grading-project"><strong>08</strong> M.S. · Retinopathy grading</a>
+        <a href="#active-project-directions"><strong>09</strong> Current directions</a>
       </nav></div>
       <section class="section bazarbondhu-project-section" id="bazarbondhu-ai"><div class="container">
         <div class="bazarbondhu-case-heading">
@@ -3428,6 +3430,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
       </div></section>
       ${fieldSurveyProjectCase()}
       ${ckdProjectCase()}
+      ${typeof window.MRA_HEART_CASE==='function'?window.MRA_HEART_CASE():''}
       ${typeof window.MRA_DIB_CASE==='function'?window.MRA_DIB_CASE():''}
       <section class="section academic-showcase-section" id="supervised-projects"><div class="container">
         <div class="academic-showcase-intro">
@@ -4119,6 +4122,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
 
     try{initResearchConstellation();}catch(err){console.error('MRA constellation failed to initialize:',err);}
     try{initInteractive();}catch(err){console.error('MRA interactive controls failed to initialize:',err);}
+    try{window.MRA_HEART_ACTIVATE?.();}catch(err){console.error('BS-CCFS figure gallery initialization failed:',err);}
   }
   render();
 })();
