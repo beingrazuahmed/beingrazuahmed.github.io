@@ -22,11 +22,13 @@
       "assets/publications/ckd/methodology-workflow.png"
     ],
     "data-in-brief": [
-      "assets/publications/data-in-brief/figure-1-platter.png",
-      "assets/publications/data-in-brief/figure-4-split.png",
-      "assets/publications/data-in-brief/figure-5-annotations.png",
-      "assets/publications/data-in-brief/figure-6-directory.png",
-      "assets/publications/data-in-brief/figure-7-workflow.png"
+      "assets/academic/projects/pust-food-dataset/fig01-meal-platter-examples.webp",
+      "assets/academic/projects/pust-food-dataset/fig02-class-distribution-before.webp",
+      "assets/academic/projects/pust-food-dataset/fig03-class-distribution-after.webp",
+      "assets/academic/projects/pust-food-dataset/fig04-class-distribution-splits.webp",
+      "assets/academic/projects/pust-food-dataset/fig05-detection-segmentation-annotations.webp",
+      "assets/academic/projects/pust-food-dataset/fig06-dataset-directory-structure.webp",
+      "assets/academic/projects/pust-food-dataset/fig07-dataset-preparation-workflow.webp"
     ],
     "ai-employment": [
       "assets/publications/ai-employment/figure-1-methodology.png",
