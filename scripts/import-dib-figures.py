@@ -1,29 +1,29 @@
 #!/usr/bin/env python3
-"""Import seven published open-access figures from the official PMC OA package.
+"""Retrieve the seven published Data in Brief figures using PMC's 2026 Cloud Service.
 
-Source: Yeasmin et al., Data in Brief 69 (2026) 113262,
-DOI: 10.1016/j.dib.2026.113262.
-Authors' uploaded screenshots are NOT used as a remote URL; we retrieve only
-the openly licensed figures accompanying the same published article.
-Original datasets are retained at Mendeley Data V2 (DOI 10.17632/fn6yhzjz83.2).
+Yeasmin et al. (2026), Data in Brief 69, 113262,
+https://doi.org/10.1016/j.dib.2026.113262
+Dataset: https://doi.org/10.17632/fn6yhzjz83.2
+
+This script does not mirror or alter the Mendeley research dataset.
 """
 from __future__ import annotations
 
 import io
 import json
 import re
-import tarfile
-import time
 from pathlib import Path
+from urllib.parse import quote, urlparse
 from urllib.request import Request, urlopen
-from urllib.parse import urlparse
 from xml.etree import ElementTree as ET
 
 from PIL import Image, ImageOps
 
 PMCID = "PMC13629197"
+ARTICLE_DOI = "10.1016/j.dib.2026.113262"
+S3 = "https://pmc-oa-opendata.s3.amazonaws.com"
 OUT = Path("assets/academic/projects/pust-food-dataset")
-NAMES = {
+FILES = {
     1: "fig01-meal-platter-examples.webp",
     2: "fig02-class-distribution-before.webp",
     3: "fig03-class-distribution-after.webp",
@@ -35,131 +35,131 @@ NAMES = {
 XHREF = "{http://www.w3.org/1999/xlink}href"
 
 
-def fetch(url: str) -> bytes:
-    if not url.startswith(("https://", "http://")):
-        raise ValueError("Only HTTP(S) article resources may be downloaded")
-    req = Request(url, headers={
-        "User-Agent": "RazuAcademicPortfolio/1.0 (citation: doi:10.1016/j.dib.2026.113262)",
-        "Accept": "*/*",
-    })
-    with urlopen(req, timeout=90) as response:
-        content = response.read()
-    if not content:
-        raise RuntimeError(f"Empty response: {url}")
-    return content
+def get(url):
+    if not url.startswith(S3 + "/"):
+        raise RuntimeError("Only the official PMC AWS open-data source is permitted")
+    req = Request(url, headers={"User-Agent": "Research-portfolio-figure-mirror/1.0",
+                                "Accept": "application/json,application/xml,image/*,*/*"})
+    with urlopen(req, timeout=80) as response:
+        data = response.read()
+    if not data:
+        raise RuntimeError("Empty response for " + url)
+    return data
 
 
-def package_url() -> str:
-    endpoint = f"https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi?id={PMCID}"
-    root = ET.fromstring(fetch(endpoint))
-    links = []
-    for node in root.iter():
-        if node.tag.lower().endswith("link"):
-            href = node.attrib.get("href", "")
-            if href and (node.attrib.get("format") in ("tgz", "tar.gz")):
-                links.append(href)
-    if not links:
-        raise RuntimeError("No openly downloadable PMC article package: " +
-                           ET.tostring(root, encoding="unicode")[:700])
-    url = links[0].replace("ftp://ftp.ncbi.nlm.nih.gov/", "https://ftp.ncbi.nlm.nih.gov/")
-    if not url.startswith("https://ftp.ncbi.nlm.nih.gov/"):
-        raise RuntimeError(f"Unexpected OA package host: {url}")
-    return url
+def node_name(el):
+    return el.tag.rsplit("}", 1)[-1]
 
 
-def local_name(xml: bytes, archive: dict[str, bytes]) -> dict[int, bytes]:
-    root = ET.fromstring(xml)
-    figs: dict[int, bytes] = {}
-    for fig in root.iter():
-        if fig.tag.rsplit("}", 1)[-1] != "fig":
+def article_metadata():
+    query = f"{S3}/?list-type=2&prefix={quote(PMCID + '.')}&delimiter=%2F"
+    root = ET.fromstring(get(query))
+    prefixes = [x.text for x in root.iter() if node_name(x) == "Prefix"
+                and x.text and re.fullmatch(re.escape(PMCID) + r"\.[0-9]+/", x.text)]
+    if not prefixes:
+        raise RuntimeError(f"PMC cloud data does not contain {PMCID}: {ET.tostring(root, encoding='unicode')[:650]}")
+    versions = sorted(set(x.rstrip("/") for x in prefixes),
+                      key=lambda x: int(x.rsplit(".", 1)[-1]), reverse=True)
+    for version in versions:
+        candidate = f"{S3}/metadata/{version}.json"
+        try:
+            meta = json.loads(get(candidate))
+        except Exception as ex:
+            print("Metadata unavailable for", version, str(ex)[:130])
             continue
-        label = next((x for x in fig if x.tag.rsplit("}", 1)[-1] == "label"), None)
-        label_text = "".join(label.itertext()) if label is not None else fig.attrib.get("id", "")
-        m = re.search(r"(?<!\d)([1-7])(?!\d)", label_text)
+        if ARTICLE_DOI.lower() not in str(meta.get("doi", "")).lower():
+            print("Skip non-matching DOI:", version, meta.get("doi"))
+            continue
+        if str(meta.get("is_manuscript", "")).lower() == "yes":
+            continue
+        license_code = str(meta.get("license_code") or "").lower()
+        if not license_code.startswith("cc"):
+            raise RuntimeError(f"Artwork redistribution license not established: {license_code}")
+        xmlurl = meta.get("xml_url") or f"{S3}/{version}/{version}.xml"
+        if not str(xmlurl).startswith(S3 + "/"):
+            raise RuntimeError("Unexpected metadata XML source")
+        print("PMC article version:", version, "license:", license_code,
+              "media objects:", len(meta.get("media_urls") or []))
+        return meta, xmlurl, version
+    raise RuntimeError(f"No licensed, DOI-matching article version found for {PMCID}")
+
+
+def figure_graphics(xml):
+    root = ET.fromstring(xml)
+    mappings = {}
+    for elem in root.iter():
+        if node_name(elem) != "fig":
+            continue
+        label = next((x for x in elem if node_name(x) == "label"), None)
+        label_str = "".join(label.itertext()) if label is not None else elem.attrib.get("id", "")
+        m = re.search(r"(?<!\d)([1-7])(?!\d)", label_str)
         if not m:
-            m = re.search(r"(?<!\d)([1-7])(?!\d)", fig.attrib.get("id", ""))
+            m = re.search(r"(?<!\d)([1-7])(?!\d)", elem.attrib.get("id", ""))
         if not m:
             continue
         number = int(m.group(1))
-        graphics = [x.attrib.get(XHREF, x.attrib.get("href", ""))
-                    for x in fig.iter() if x.tag.rsplit("}", 1)[-1] in ("graphic", "inline-graphic")]
-        for name in graphics:
-            stem = Path(name).name.lower().rsplit(".", 1)[0]
-            candidates = [(key, data) for key, data in archive.items()
-                          if Path(key).stem.lower() == stem and Path(key).suffix.lower()
-                          in (".jpg", ".jpeg", ".png", ".tif", ".tiff")]
-            if not candidates:
-                continue
-            candidates.sort(key=lambda row: (
-                Path(row[0]).suffix.lower() in (".png", ".tif", ".tiff"), len(row[1])
-            ), reverse=True)
-            figs[number] = candidates[0][1]
-            break
-    return figs
+        names = [x.attrib.get(XHREF, x.attrib.get("href", ""))
+                 for x in elem.iter() if node_name(x) in ("graphic", "inline-graphic")]
+        if names:
+            mappings[number] = names
+    return mappings
 
 
-def main() -> None:
-    target = package_url()
-    print("Downloading publisher-deposited OA package from:", target)
-    tarbytes = fetch(target)
-    if len(tarbytes) < 10000:
-        raise RuntimeError("Publisher OA package unexpectedly small")
-    archive = {}
-    with tarfile.open(fileobj=io.BytesIO(tarbytes), mode="r:*") as tf:
-        for m in tf.getmembers():
-            if not m.isfile() or m.size > 250_000_000:
-                continue
-            if not Path(m.name).suffix.lower() in (".xml", ".nxml", ".jpg", ".jpeg", ".png", ".tif", ".tiff"):
-                continue
-            fh = tf.extractfile(m)
-            if fh:
-                archive[m.name] = fh.read()
-    print("Package files:", sorted(archive)[:45])
-    xmls = [(k, v) for k, v in archive.items() if k.endswith((".xml", ".nxml"))]
-    xmls.sort(key=lambda x: len(x[1]), reverse=True)
-    figmap: dict[int, bytes] = {}
-    for filename, blob in xmls:
-        try:
-            result = local_name(blob, archive)
-            if len(result) > len(figmap):
-                figmap = result
-                print("Figure mapping from", filename, sorted(figmap))
-        except ET.ParseError:
+def image_url(number, names, media_urls):
+    choices = []
+    for row in media_urls:
+        url = row if isinstance(row, str) else row.get("url", "")
+        if not url or not url.startswith(S3 + "/"):
             continue
-    if len(figmap) < len(NAMES):
-        print("WARNING: XML did not resolve all seven figures; trying conventional Elsevier graphic names")
-        for i in NAMES:
-            if i in figmap:
-                continue
-            for key, data in archive.items():
-                if re.search(rf"(?:^|[/_-])gr{i}(?:\.|[_-])", key.lower()) and Path(key).suffix.lower() in (".jpg", ".jpeg", ".png", ".tif", ".tiff"):
-                    figmap[i] = data
-                    break
-    if set(figmap) != set(NAMES):
-        raise RuntimeError("Missing article figures: " + str(sorted(set(NAMES) - set(figmap))))
+        path = Path(urlparse(url).path)
+        if path.suffix.lower() not in (".jpg", ".jpeg", ".png", ".tif", ".tiff", ".webp"):
+            continue
+        name = path.stem.lower()
+        matches = any(name == Path(g).stem.lower() or name == Path(g).name.lower()
+                      for g in names)
+        if not matches:
+            continue
+        choices.append((len(url), url))
+    if not choices:
+        raise RuntimeError(f"Cannot locate original figure {number} in PMC media inventory: {names}")
+    return sorted(choices)[0][1]
+
+
+def main():
+    meta, xmlurl, version = article_metadata()
+    graphic_map = figure_graphics(get(xmlurl))
+    print("Figure graphics:", graphic_map)
+    if set(FILES) - set(graphic_map):
+        raise RuntimeError("Missing figure mappings: " + str(sorted(set(FILES) - set(graphic_map))))
+    media = meta.get("media_urls") or []
+    if not media:
+        raise RuntimeError("PMC article metadata does not expose figure media")
     OUT.mkdir(parents=True, exist_ok=True)
-    results = []
-    for number, filename in NAMES.items():
-        image = Image.open(io.BytesIO(figmap[number]))
-        image = ImageOps.exif_transpose(image)
-        if image.mode not in ("RGB", "RGBA"):
-            image = image.convert("RGB")
-        if image.width > 2800:
-            image.thumbnail((2800, 2800), Image.Resampling.LANCZOS)
-        dest = OUT / filename
-        image.save(dest, "WEBP", quality=88, method=6)
-        if dest.stat().st_size < 3500:
-            raise RuntimeError(f"Converted figure appears invalid: {dest}")
-        results.append({"figure": number, "file": filename, "width": image.width,
-                        "height": image.height, "bytes": dest.stat().st_size})
+    output = []
+    for number, filename in FILES.items():
+        url = image_url(number, graphic_map[number], media)
+        raw = get(url)
+        im = Image.open(io.BytesIO(raw))
+        im = ImageOps.exif_transpose(im)
+        if im.mode not in ("RGB", "RGBA"):
+            im = im.convert("RGB")
+        if im.width > 2800 or im.height > 2800:
+            im.thumbnail((2800, 2800), Image.Resampling.LANCZOS)
+        path = OUT / filename
+        im.save(path, "WEBP", quality=88, method=6)
+        if path.stat().st_size < 3500:
+            raise RuntimeError("Image unexpectedly small: " + filename)
+        output.append({"figure": number, "file": filename, "size": [im.width, im.height],
+                       "bytes": path.stat().st_size, "source_url": url})
+        print(f"Figure {number}: {im.size}, {path.stat().st_size} bytes")
     (OUT / "figure-manifest.json").write_text(json.dumps({
-        "article_doi": "10.1016/j.dib.2026.113262",
+        "source": "NIH NLM NCBI PMC AWS Article Datasets",
+        "pmcid": PMCID, "version": version, "license": meta.get("license_code"),
+        "journal_article_doi": ARTICLE_DOI,
         "dataset_doi": "10.17632/fn6yhzjz83.2",
-        "source": target,
-        "license": "Article open-access terms; attribution required",
-        "figures": results,
+        "figures": output,
     }, indent=2) + "\n", encoding="utf-8")
-    print("Successfully prepared", len(results), "publication figures:", results)
+    print("Imported all seven publisher-deposited figures with provenance.")
 
 
 if __name__ == "__main__":
