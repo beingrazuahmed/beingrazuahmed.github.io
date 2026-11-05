@@ -1,0 +1,81 @@
+name: Validate Data in Brief portfolio case study
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/dib-case-study-check.yml'
+      - 'dib-project.js'
+      - 'dib-project.css'
+      - 'projects.html'
+      - 'v2-app.js'
+      - 'data.js'
+      - 'asset-manifest.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate JavaScript syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check data.js
+          node --check v2-app.js
+          node --check dib-project.js
+      - name: Validate data citation, gallery images and project links
+        shell: bash
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs=require('fs');
+          const vm=require('vm');
+          const assert=require('assert');
+          const source=fs.readFileSync('dib-project.js','utf8');
+          const ctx={window:{}};
+          vm.runInNewContext(source,ctx,{filename:'dib-project.js'});
+          assert.strictEqual(typeof ctx.window.MRA_DIB_CASE,'function');
+          const html=ctx.window.MRA_DIB_CASE();
+          const required=[
+            'id="dib-food-dataset-project"',
+            'id="dib-data-design"',
+            'id="dib-data-figures"',
+            'id="dib-data-reuse"',
+            '10.1016/j.dib.2026.113262',
+            '10.17632/fn6yhzjz83.2',
+            'Mendeley Data',
+            '1,728','6,297','1,512','CC BY 4.0'
+          ];
+          for(const token of required)assert(html.includes(token),'Case-study content missing '+token);
+          const matches=[...html.matchAll(/src="(assets\/academic\/projects\/pust-food-dataset\/[^"]+\.webp)"/g)];
+          const images=[...new Set(matches.map(m=>m[1]))];
+          assert.strictEqual(images.length,7,'Expected seven distinct publication images');
+          images.forEach(p=>{
+            assert(fs.statSync(p).size>3500,'Missing or undersized publication figure: '+p);
+            console.log('Verified image',p,fs.statSync(p).size,'bytes');
+          });
+          const page=fs.readFileSync('projects.html','utf8');
+          assert(page.indexOf('src="dib-project.js') < page.indexOf('src="v2-app.js'));
+          const shell=fs.readFileSync('v2-app.js','utf8');
+          assert(shell.includes('MRA_DIB_CASE()'),'Project case must be connected to site app');
+          assert(shell.includes('href="#dib-food-dataset-project"'),'Project menu anchor missing');
+          console.log('Data article project, seven figures, V2 DOI and navigation verified');
+          NODE
+      - name: Validate figure asset manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          manifest=json.loads(Path('asset-manifest.json').read_text())
+          figs=manifest['publications']['data-in-brief']
+          assert len(figs)==7
+          for f in figs:
+              assert Path(f).is_file() and Path(f).stat().st_size>3500
+          print('All seven figure-manifest files confirmed')
+          PY
