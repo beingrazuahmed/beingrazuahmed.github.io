@@ -95,7 +95,7 @@ window.PORTFOLIO_DATA = {
       tags: ["CKD", "Machine Learning", "Stacking", "Feature Selection"],
       summary: "Published CKD risk-factor and stacking-ensemble benchmark across UCI and synthetic datasets, with public research notebooks and documented validation limitations.",
       highlight: "The proposed stacking approach reported 100% accuracy on the UCI CKD data and 96.7% on simulated validation data.",
-      visual: "https://raw.githubusercontent.com/beingrazuahmed/ckd-risk-factors-stacking-ml/main/figures/fig04-feature-importance.webp"
+      visual: "https://raw.githubusercontent.com/beingrazuahmed/ckd-risk-factors-stacking-ml/main/figures/fig05-methodology-workflow.webp"
     },
     {
       id: "dib", type: "Journal Article", status: "Published", year: 2026, role: "Second Author",
