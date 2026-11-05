@@ -1,0 +1,50 @@
+/* Consistent DOI and GitHub brand icons across published and open-source projects.
+   Link titles and URLs remain text/semantic; icons are decorative only. */
+body[data-page="projects"] .project-link-with-icon:not(.project-link-icon-inline){
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  vertical-align:middle;
+}
+body[data-page="projects"] .project-link-icon{
+  flex:0 0 auto;
+  display:inline-block;
+  width:18px;
+  height:18px;
+  object-fit:contain;
+  vertical-align:middle;
+}
+body[data-page="projects"] .project-link-icon--doi{
+  width:39px;
+  max-width:39px;
+  height:17px;
+}
+body[data-page="projects"] .project-link-icon--github{
+  width:18px;
+  height:18px;
+}
+body[data-page="projects"] .project-link-icon-inline .project-link-icon{
+  margin-right:5px;
+  vertical-align:-3px;
+}
+body[data-page="projects"] .published-project-citation-head a.project-link-with-icon{
+  gap:9px;
+  max-width:100%;
+}
+body[data-page="projects"] .academic-showcase-actions a.project-link-with-icon,
+body[data-page="projects"] .dib-actions a.project-link-with-icon,
+body[data-page="projects"] .ckdx-links a.project-link-with-icon,
+body[data-page="projects"] .fastica-code-actions a.project-link-with-icon{
+  gap:8px;
+}
+:root[data-mode="dark"] body[data-page="projects"] .project-link-icon--github,
+:root[data-mode="dark"] body[data-page="projects"] .project-link-icon--github{
+  filter:brightness(0) invert(.93);
+}
+@media(max-width:520px){
+  body[data-page="projects"] .published-project-citation-head a.project-link-with-icon{
+    flex-wrap:wrap;
+    justify-content:flex-start;
+  }
+}
