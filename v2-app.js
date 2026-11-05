@@ -2994,6 +2994,41 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     </article>`;
   }
 
+
+  function aiSurveyResearchGallery(){
+    const folder='assets/academic/field-survey/ai-survey-figures/';
+    const figures=[
+      {number:'02',name:'fig02-participant-demographics.webp',title:'Who participated?',alt:'Figure 2: bar charts of 274 male and 96 female respondents and the distribution of urban, rural, and suburban residence',summary:'Respondent gender and residence distributions, with counts and sample percentages.',wide:true},
+      {number:'03',name:'fig03-correspondence-analysis.webp',title:'Correspondence analysis',alt:'Figure 3: five panels of correspondence-analysis category maps and biplot-style associations',summary:'Five categorical association maps; exploratory relationships are not causal effects.'},
+      {number:'04',name:'fig04-pca-scree-plot.webp',title:'PCA scree plot',alt:'Figure 4: scree plot showing eigenvalues across 33 principal components',summary:'Eigenvalue profile of the 33-variable measurement space.'},
+      {number:'05',name:'fig05-retained-component-variables.webp',title:'Retained component themes',alt:'Figure 5: horizontal bar chart of the number of associated variables across nine retained PCA components',summary:'Variables grouped into nine reported component themes.'},
+      {number:'06',name:'fig06-dominant-rotated-loadings.webp',title:'Dominant rotated loadings',alt:'Figure 6: horizontal bar chart of highest contributing variable for each retained PCA component',summary:'Leading rotated loading within each retained component.'}
+    ];
+    const cards=figures.map(f=>`<figure class="survey-evidence-card${f.wide?' survey-evidence-card--wide':''}">
+      <a class="survey-evidence-image-link" href="${folder+f.name}" target="_blank" rel="noopener noreferrer" aria-label="Open original-study Figure ${esc(f.number)}: ${esc(f.title)}">
+        <img src="${folder+f.name}" loading="lazy" decoding="async" alt="${esc(f.alt)}" onerror="this.parentElement.hidden=true;this.parentElement.nextElementSibling.hidden=false">
+      </a>
+      <div class="survey-evidence-image-pending" hidden><span>Research image prepared · Awaiting gallery upload</span></div>
+      <figcaption><small>FIGURE ${esc(f.number)} · RESEARCH VISUAL</small><strong>${esc(f.title)}</strong><span>${esc(f.summary)}</span></figcaption>
+    </figure>`).join('');
+    return `<section class="survey-evidence-section" aria-labelledby="survey-evidence-title">
+      <header class="survey-evidence-head">
+        <div><p class="survey-evidence-kicker">RESEARCH EVIDENCE · SIX ORIGINAL FIGURES</p>
+          <h4 id="survey-evidence-title">Understanding AI and employment perceptions</h4>
+          <p>Figure 1 documents the study workflow above. The five additional visuals describe the survey cohort and the correspondence-analysis and PCA results. Figures can be viewed at their full web resolution.</p>
+        </div>
+      </header>
+      <div class="survey-evidence-highlights" aria-label="Descriptive survey findings">
+        <div><small>RESPONDENT PROFILE</small><strong>370</strong><span>Survey participants at PUST</span></div>
+        <div><small>GENDER DISTRIBUTION</small><strong>74.1%</strong><span>Male respondents (274 of 370)</span></div>
+        <div><small>RESIDENCE</small><strong>55.7%</strong><span>Urban respondents (206 of 370)</span></div>
+        <div><small>COMPONENT THEMES</small><strong>9</strong><span>Retained themes displayed in Figure 5</span></div>
+      </div>
+      <div class="survey-evidence-grid">${cards}</div>
+      <p class="survey-evidence-disclaimer"><strong>Interpretation:</strong> These graphics document descriptive and multivariate analysis of respondents at one university; they do not establish nationally representative patterns or causal employment effects. Figure attribution: Ahmed and study collaborators, AI-employment research, 2026. No respondent-level records are published here.</p>
+    </section>`;
+  }
+
   function fieldSurveyProjectCase(){
     const f=D.fieldSurvey||{}, conf=f.conference||{}, article=f.article||{};
     const evidence=(conf.contributions||[]).find(item=>String(item.paperId||'')===String(conf.paperId||''))?.evidence||[];
@@ -3005,7 +3040,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
       <header class="survey-project-head">
         <div><span class="section-kicker">Supervised B.Sc. field research · Survey methodology &amp; scholarly outcomes</span>
           <h2>Statistical Field Survey <span>— AI and employment perceptions in Bangladesh</span></h2>
-          <p>Original questionnaire-based research at Pabna University of Science and Technology, moving from study design and field data collection to an international conference presentation and an accepted journal manuscript.</p>
+          <p>A primary-data statistical survey of artificial intelligence and employment perceptions, progressing from questionnaire design and field collection to an ICRAST 2025 oral presentation and a peer-reviewed journal article accepted in September 2026.</p>
         </div>
         <a class="btn ghost" href="academic.html#academic-fieldwork">Full academic record <span aria-hidden="true">↗</span></a>
       </header>
@@ -3035,6 +3070,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
           <div><strong>370</strong><span>Survey participants</span></div>
           <div><strong>33</strong><span>Variables · 8 socio-demographic + 25 attitudinal</span></div>
         </div>
+        ${aiSurveyResearchGallery()}
         <div class="survey-project-bottom-grid">
           <div>
             <h4>Research &amp; statistical methods</h4>
@@ -3060,7 +3096,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
             <p><strong>${esc(article.title||'')}</strong></p>
             <p>${esc(article.journal||'')}${article.acceptedDate?` · Accepted ${esc(article.acceptedDate)}`:''}</p>
             <p>Currently recorded as ${esc(article.status||'accepted / forthcoming')}. The project and the resulting publication are distinct stages of the research.</p>
-            <div class="survey-project-links"><a href="publications.html">Explore publication record ↗</a></div>
+            <div class="survey-project-links"><a href="publications.html">Publication record ↗</a><a href="https://www.ru.ac.bd/stat/ijss/" target="_blank" rel="noopener noreferrer">Journal website ↗</a></div>
           </div>
         </div>
         <footer class="survey-project-footer">
