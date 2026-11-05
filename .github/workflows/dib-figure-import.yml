@@ -1,0 +1,62 @@
+name: Import published Data in Brief figures
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/dib-figure-import.yml'
+      - 'scripts/import-dib-figures.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dib-published-figures-import
+  cancel-in-progress: false
+
+jobs:
+  import-figures:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout portfolio repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install figure conversion dependency
+        run: python -m pip install --disable-pip-version-check pillow
+
+      - name: Acquire and prepare seven published figures
+        run: python scripts/import-dib-figures.py
+
+      - name: Ensure every gallery image exists and is valid
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check v2-app.js
+          test -s assets/academic/projects/pust-food-dataset/fig01-meal-platter-examples.webp
+          test -s assets/academic/projects/pust-food-dataset/fig02-class-distribution-before.webp
+          test -s assets/academic/projects/pust-food-dataset/fig03-class-distribution-after.webp
+          test -s assets/academic/projects/pust-food-dataset/fig04-class-distribution-splits.webp
+          test -s assets/academic/projects/pust-food-dataset/fig05-detection-segmentation-annotations.webp
+          test -s assets/academic/projects/pust-food-dataset/fig06-dataset-directory-structure.webp
+          test -s assets/academic/projects/pust-food-dataset/fig07-dataset-preparation-workflow.webp
+
+      - name: Commit published figure assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/academic/projects/pust-food-dataset/
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish seven source-credited Data in Brief research figures'
+            git push origin HEAD:main
+          else
+            echo 'All seven published figures are already up to date'
+          fi
