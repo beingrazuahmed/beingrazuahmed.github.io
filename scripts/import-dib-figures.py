@@ -76,7 +76,8 @@ def article_metadata():
         if not license_code.startswith("cc"):
             raise RuntimeError(f"Artwork redistribution license not established: {license_code}")
         xmlurl = meta.get("xml_url") or f"{S3}/{version}/{version}.xml"
-        if not str(xmlurl).startswith(S3 + "/"):
+        print("XML URL metadata:", repr(xmlurl)[:500])
+        if not isinstance(xmlurl, str) or not xmlurl.startswith(S3 + "/"):
             raise RuntimeError("Unexpected metadata XML source")
         print("PMC article version:", version, "license:", license_code,
               "media objects:", len(meta.get("media_urls") or []))
