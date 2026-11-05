@@ -3297,7 +3297,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         <a href="#ask-razu-ai-project"><strong>02</strong> Ask Razu AI</a>
         <a href="#field-survey-project"><strong>03</strong> Statistical Field Survey</a>
         <a href="#ckd-prediction-project"><strong>04</strong> CKD · Stacking ML</a>
-        <a href="#dib-food-dataset-project"><strong>05</strong> Food Dataset · Data in Brief</a>
+        <a href="#dib-food-dataset-project" title="PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations" aria-label="PUST Cafeteria Food Image Dataset project"><strong>05</strong> PUST Cafeteria Food Image Dataset</a>
         <a href="#fastica-audio-project"><strong>06</strong> FastICA · Published</a>
         <a href="#dr-grading-project"><strong>07</strong> M.S. · Retinopathy grading</a>
         <a href="#active-project-directions"><strong>08</strong> Current directions</a>
@@ -3842,12 +3842,14 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     };
     const syncHash=()=>{
       const target=findHashTarget();
-      if(target){
-        const item=sections.find(x=>x.target===target||x.target.contains(target));
-        if(item)activate(item,true);
+      if(!target){schedule();return;}
+      const item=sections.find(x=>x.target===target||x.target.contains(target));
+      if(item){
+        activate(item,true);
         navigate(target,false);
+      }else{
+        schedule();
       }
-      else schedule();
     };
     window.addEventListener('hashchange',syncHash);
     window.addEventListener('popstate',syncHash);
