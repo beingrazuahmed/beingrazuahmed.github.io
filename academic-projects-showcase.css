@@ -11,6 +11,13 @@ body[data-page="projects"] .project-portfolio-index a{
   box-shadow:0 4px 14px rgba(19,62,91,.045);
   transition:border-color .15s ease,background .15s ease
 }
+body[data-page="projects"] .project-portfolio-index a[aria-current="location"]{
+  border-color:var(--accent);background:var(--surface-2);color:var(--accent-2);
+  box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 25%,transparent);
+}
+body[data-page="projects"] .project-portfolio-index a:focus-visible{
+  outline:2px solid var(--accent);outline-offset:3px;
+}
 body[data-page="projects"] .project-portfolio-index a strong{
   color:var(--accent-2);font-size:.67rem;letter-spacing:.045em
 }
