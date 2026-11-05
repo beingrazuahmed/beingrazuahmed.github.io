@@ -28,7 +28,7 @@
     const href=BASE+f.file;
     return `<figure class="heart-figure-card ${f.feature?'heart-figure-card--'+f.feature:''}" data-heart-figure>
       <a class="heart-figure-media" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="Open original manuscript ${escape(figLabel(f))}: ${escape(f.title)}" aria-disabled="true" tabindex="-1">
-        <img src="${href}" alt="${escape(figLabel(f))}: ${escape(f.desc)}" loading="lazy" decoding="async">
+        <img src="${href}" alt="${escape(figLabel(f))}: ${escape(f.desc)}" loading="eager" decoding="async">
         <span class="heart-figure-placeholder" aria-hidden="true"><span class="heart-placeholder-symbol">✦</span><span class="heart-placeholder-number">${escape(figLabel(f))}</span><strong>${escape(f.title)}</strong><small>Original research figure preview will appear here after upload</small></span>
       </a>
       <figcaption><small>${escape(figLabel(f))} · ${escape(f.group)}</small><strong>${escape(f.title)}</strong><span>${escape(f.desc)}</span></figcaption>
