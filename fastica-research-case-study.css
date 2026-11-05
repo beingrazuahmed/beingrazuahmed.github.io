@@ -46,7 +46,8 @@ body[data-page="projects"] .fastica-figure-link figcaption small{font-size:.6rem
 body[data-page="projects"] .fastica-figure-link figcaption strong{font-size:.82rem;color:var(--text);line-height:1.4}
 body[data-page="projects"] .fastica-figure-link figcaption span{font-size:.69rem;color:var(--muted);line-height:1.65}
 body[data-page="projects"] .fastica-figure-link--hero{grid-column:1/-1}
-body[data-page="projects"] .fastica-figure-link--hero .fastica-figure-image{height:min(39vw,375px);min-height:220px}
+body[data-page="projects"] .fastica-figure-link--hero .fastica-figure-image{height:auto;min-height:0;display:block;padding:clamp(14px,2vw,24px);overflow:visible}
+body[data-page="projects"] .fastica-figure-link--hero .fastica-figure-image img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;object-position:center}
 body[data-page="projects"] .fastica-figure-link--hero figcaption{padding:15px 19px}
 body[data-page="projects"] .fastica-gallery-details{margin-top:17px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface-2)}
 body[data-page="projects"] .fastica-gallery-details summary{display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;list-style:none;padding:16px 18px;font-size:.77rem;color:var(--text);font-weight:800}
@@ -56,5 +57,5 @@ body[data-page="projects"] .fastica-gallery-details summary span+span{font-size:
 body[data-page="projects"] .fastica-gallery-extra{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0 15px 15px}
 @media(max-width:850px){body[data-page="projects"] .fastica-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}body[data-page="projects"] .fastica-run-modes{grid-template-columns:1fr}}
 @media(max-width:720px){body[data-page="projects"] .fastica-research-panel,body[data-page="projects"] .fastica-gallery{padding:22px 20px}body[data-page="projects"] .fastica-panel-head{flex-direction:column;align-items:stretch;gap:12px}body[data-page="projects"] .fastica-panel-cta{align-self:flex-start}body[data-page="projects"] .fastica-repro{padding:16px}}
-@media(max-width:480px){body[data-page="projects"] .fastica-gallery-grid,body[data-page="projects"] .fastica-gallery-extra{grid-template-columns:1fr}body[data-page="projects"] .fastica-figure-link--hero .fastica-figure-image{height:220px;min-height:0}body[data-page="projects"] .fastica-table th,body[data-page="projects"] .fastica-table td{padding:12px 13px}}
+@media(max-width:480px){body[data-page="projects"] .fastica-gallery-grid,body[data-page="projects"] .fastica-gallery-extra{grid-template-columns:1fr}body[data-page="projects"] .fastica-figure-link--hero .fastica-figure-image{height:auto;min-height:0;padding:12px}body[data-page="projects"] .fastica-table th,body[data-page="projects"] .fastica-table td{padding:12px 13px}}
 @media(prefers-reduced-motion:reduce){body[data-page="projects"] .fastica-figure-link{transition:none}}
