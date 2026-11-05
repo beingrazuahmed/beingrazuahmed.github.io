@@ -1183,6 +1183,23 @@
     </div>`;
   }
 
+  /* A single, source-backed citation panel reused by published case studies.
+     Metadata and journal author order come from the canonical publication records. */
+  function publishedProjectCitationPanel(id){
+    const p=(D.outputs||[]).find(x=>x.id===id&&x.bucket==='published');
+    if(!p||(!p.citationAPA&&!p.citationIEEE))return '';
+    const doi=p.doi||'';
+    return `<section class="published-project-citation" aria-label="How to cite this published research">
+      <div class="published-project-citation-head">
+        <div><span class="published-project-citation-kicker">CITATION &amp; PERMANENT RESEARCH RECORD</span>
+          <h4>Cite the published article</h4>
+          <p>Verified journal reference · Author order, year and article details retained.</p></div>
+        ${doi?`<a href="${esc(doi)}" target="_blank" rel="noopener noreferrer">Official publication DOI <span aria-hidden="true">↗</span></a>`:''}
+      </div>
+      ${dualAcademicCitation(p.citationAPA,p.citationIEEE)}
+    </section>`;
+  }
+
   function fieldSurveyCard(){
     const f=D.fieldSurvey||{}, c=f.conference||{};
     const academicCitationMode=page==='academic';
@@ -2985,6 +3002,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
       </div>
       ${isFastica?fasticaPortfolioReproducibility():''}
       ${isFastica?fasticaPortfolioEvidence():''}
+      ${isFastica?publishedProjectCitationPanel('fastica'):''}
       <footer class="academic-showcase-footer">
         <div class="academic-showcase-supervision"><span>Academic supervisor</span><strong>${esc(p.supervisor||'')}</strong></div>
         <div class="academic-showcase-actions">
@@ -3283,6 +3301,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
           </div>
         </div>
         ${ckdProjectExtras()}
+        ${publishedProjectCitationPanel('ckd')}
         <footer class="ckd-bottom">
           <p><strong>Interpretation &amp; limitations:</strong> Results are specific to the UCI benchmark and a synthetic dataset; the simulated sample is not an independent external clinical cohort. High test accuracy does not establish clinical deployment readiness, and broader external or prospective validation would be necessary.</p>
           <a class="btn ghost" href="${esc(articleUrl)}" target="_blank" rel="noopener noreferrer">Open journal DOI <span aria-hidden="true">↗</span></a>
