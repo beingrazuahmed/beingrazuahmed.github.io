@@ -95,7 +95,39 @@ async function main(){
 
   const projects=text('projects.html');
   assert(projects.includes('published-project-citations.css'));
-  assert(projects.includes('dib-project.js?v=20261105-owner-citations1'));
-  console.log('PASS: '+pages.length+' HTML pages, visible name emphasis, unaltered metadata/links, dynamic DOM and official citations');
+  assert(projects.includes('dib-project.js?v=20261105-doi-github-icons1'));
+  assert(projects.includes('project-research-links.css?v=20261105-doi-github-icons1'));
+  assert(projects.includes('project-research-links.js?v=20261105-doi-github-icons1'));
+  for(const file of ['assets/academic/logos/vendor/doi.svg','assets/academic/logos/contact/github.svg']){
+    assert(fs.statSync(file).size>300, 'Missing or invalid project icon: '+file);
+  }
+  const iconDom=new JSDOM(`<!doctype html><body data-page="projects"><main id="page-content">
+    <a id="doi-link" href="https://doi.org/10.1002/eng2.70575">Paper DOI</a>
+    <a id="github-link" href="https://github.com/beingrazuahmed/fastica-audio-source-separation">Source code</a>
+    <p><a id="inline-doi" href="https://doi.org/10.17632/fn6yhzjz83.2">Dataset DOI</a></p>
+    <figure><a id="figure-link" href="https://github.com/beingrazuahmed/fastica-audio-source-separation/blob/main/figures/example.png"><img src="figure.png"></a></figure>
+    <a id="other-link" href="https://data.mendeley.com/datasets/fn6yhzjz83/2">Mendeley Data V2</a>
+  </main></body>`,{runScripts:'outside-only',url:'https://beingrazuahmed.github.io/projects.html'});
+  iconDom.window.eval(text('project-research-links.js'));
+  iconDom.window.document.dispatchEvent(new iconDom.window.Event('DOMContentLoaded'));
+  const iconDoc=iconDom.window.document;
+  const doi=iconDoc.querySelector('#doi-link');
+  const git=iconDoc.querySelector('#github-link');
+  assert.equal(doi.querySelector('img.project-link-icon--doi')?.getAttribute('src'),'assets/academic/logos/vendor/doi.svg');
+  assert.equal(git.querySelector('img.project-link-icon--github')?.getAttribute('src'),'assets/academic/logos/contact/github.svg');
+  assert.equal(iconDoc.querySelector('#inline-doi').dataset.projectLinkIcon,'doi');
+  assert(iconDoc.querySelector('#inline-doi').classList.contains('project-link-icon-inline'));
+  assert.equal(doi.getAttribute('href'),'https://doi.org/10.1002/eng2.70575','DOI URL must not change');
+  assert.equal(git.getAttribute('href'),'https://github.com/beingrazuahmed/fastica-audio-source-separation','Repository URL must not change');
+  assert.equal(doi.querySelector('img').getAttribute('alt'),'','Branded icons must be decorative');
+  assert.equal(doi.querySelector('img').getAttribute('aria-hidden'),'true');
+  assert(!iconDoc.querySelector('#figure-link .project-link-icon'),'Figure links must not receive extra icon overlays');
+  assert(!iconDoc.querySelector('#other-link .project-link-icon'),'Unrelated links must remain unchanged');
+  iconDom.window.refreshProjectResearchLinks();
+  assert.equal(doi.querySelectorAll('img.project-link-icon--doi').length,1,'Icon rendering must be idempotent');
+  iconDom.window.close();
+  assert(dib.includes('Published figures · GitHub'),'Figure attribution GitHub link must appear in data article project');
+  assert(dib.includes('Dataset DOI'),'Dataset DOI action must appear in the data article project');
+  console.log('PASS: '+pages.length+' HTML pages, bold owner names, APA/IEEE citations, DOI + GitHub project icon links and preserved URLs');
 }
 main().catch(err=>{console.error(err);process.exitCode=1;});
