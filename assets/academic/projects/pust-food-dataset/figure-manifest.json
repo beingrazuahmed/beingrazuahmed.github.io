@@ -1,0 +1,80 @@
+{
+  "source": "NIH NLM NCBI PMC AWS Article Datasets",
+  "pmcid": "PMC13629197",
+  "version": "PMC13629197.1",
+  "license": "CC BY",
+  "journal_article_doi": "10.1016/j.dib.2026.113262",
+  "dataset_doi": "10.17632/fn6yhzjz83.2",
+  "figures": [
+    {
+      "figure": 1,
+      "file": "fig01-meal-platter-examples.webp",
+      "size": [
+        1599,
+        781
+      ],
+      "bytes": 149768,
+      "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13629197.1/gr1.webp?md5=e78cd80fe4c9bf9c7b3f5feb34c0f7e2"
+    },
+    {
+      "figure": 2,
+      "file": "fig02-class-distribution-before.webp",
+      "size": [
+        1600,
+        801
+      ],
+      "bytes": 26876,
+      "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13629197.1/gr2.webp?md5=b70dfe6c533f7b70bc540158cf92dc70"
+    },
+    {
+      "figure": 3,
+      "file": "fig03-class-distribution-after.webp",
+      "size": [
+        1600,
+        800
+      ],
+      "bytes": 29042,
+      "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13629197.1/gr3.webp?md5=6579f87dac57fe287e9da832314af916"
+    },
+    {
+      "figure": 4,
+      "file": "fig04-class-distribution-splits.webp",
+      "size": [
+        1599,
+        721
+      ],
+      "bytes": 24150,
+      "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13629197.1/gr4.webp?md5=06ba01b5289478f72a23755effe64313"
+    },
+    {
+      "figure": 5,
+      "file": "fig05-detection-segmentation-annotations.webp",
+      "size": [
+        1599,
+        680
+      ],
+      "bytes": 98714,
+      "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13629197.1/gr5.webp?md5=00b2519aa6b29b6d0dbb62f004fbe956"
+    },
+    {
+      "figure": 6,
+      "file": "fig06-dataset-directory-structure.webp",
+      "size": [
+        1600,
+        1135
+      ],
+      "bytes": 103464,
+      "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13629197.1/gr6.webp?md5=8c814bc0991d136441d3ed980d3ada6f"
+    },
+    {
+      "figure": 7,
+      "file": "fig07-dataset-preparation-workflow.webp",
+      "size": [
+        1600,
+        1677
+      ],
+      "bytes": 294844,
+      "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13629197.1/gr7.webp?md5=62ceedcae940f34fb9cd317f72df56b1"
+    }
+  ]
+}
