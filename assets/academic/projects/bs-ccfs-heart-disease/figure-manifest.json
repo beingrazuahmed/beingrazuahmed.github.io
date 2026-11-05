@@ -1,0 +1,118 @@
+{
+  "project": "BS-CCFS heart-disease research project",
+  "submission": "PLOS ONE; submitted 2026-11-02, not published",
+  "source": "User-supplied 300-DPI TIFF graphics, converted into full-pixel-resolution WebP files",
+  "figure_rights": "Manuscript research graphics: author/coauthor permission and publication policies apply; no article DOI claimed.",
+  "files": [
+    {
+      "figure": "Supplementary Figure S2",
+      "file": "figs2-leakage-aware-preprocessing.webp",
+      "source_filename": "Supplementary Figure S2.tiff",
+      "width": 1280,
+      "height": 748,
+      "bytes": 103474,
+      "sha256": "883d34d37ab992465f14cfa9f4ea6d142322b72f3244e33e2eb8a525b164c77f",
+      "caption": "Stratified split and training-only iterative-imputation schematic"
+    },
+    {
+      "figure": "Figure 4",
+      "file": "fig04-mixed-type-validity.webp",
+      "source_filename": "Figure 4.tiff",
+      "width": 627,
+      "height": 371,
+      "bytes": 8126,
+      "sha256": "8fd952947a9e46a14df4bc1fc5607d62d20e48599276b933aa4cddec8f3265f1",
+      "caption": "Mixed-data-type causal validity check (Fisher Z and G-test)"
+    },
+    {
+      "figure": "Figure 1",
+      "file": "fig01-complete-methodology.webp",
+      "source_filename": "Figure 1.tiff",
+      "width": 827,
+      "height": 1387,
+      "bytes": 109910,
+      "sha256": "4673fe2b858a7f5f445ab0b7a8a6ea7041b84530269f40da92e1b2696790ed13",
+      "caption": "Complete BS-CCFS methodology flowchart"
+    },
+    {
+      "figure": "Figure 3",
+      "file": "fig03-threshold-sensitivity.webp",
+      "source_filename": "Figure 3.tiff",
+      "width": 786,
+      "height": 487,
+      "bytes": 19846,
+      "sha256": "7fe0d433add619cab091b1454733ca242534d3fea6a981e004ba080a05d2d8fd",
+      "caption": "Consensus-threshold sensitivity of ROC AUC and feature count"
+    },
+    {
+      "figure": "Figure 5",
+      "file": "fig05-model-roc-curves.webp",
+      "source_filename": "Figure 5.tiff",
+      "width": 694,
+      "height": 549,
+      "bytes": 28732,
+      "sha256": "f0d959f0180f51ed5c849bcd892a39f76833f127eb57f98388c7d444c019af45",
+      "caption": "ROC curves comparing candidate heart-disease prediction models"
+    },
+    {
+      "figure": "Figure 7A",
+      "file": "fig07a-confusion-matrix.webp",
+      "source_filename": "Figure 7A.tiff",
+      "width": 524,
+      "height": 472,
+      "bytes": 6800,
+      "sha256": "cada3e1cdae12de8cfb880908413854256da48670586d9783ef97e87c077298c",
+      "caption": "CatBoost holdout confusion matrix"
+    },
+    {
+      "figure": "Figure 7B",
+      "file": "fig07b-calibration.webp",
+      "source_filename": "Figure 7B.tiff",
+      "width": 539,
+      "height": 549,
+      "bytes": 14734,
+      "sha256": "ad137dffdde1a0937e18944f8eb03fc1ed8d821bb806c8eb10823aef4fd9a341",
+      "caption": "Predicted versus observed probability calibration curve"
+    },
+    {
+      "figure": "Figure 7C",
+      "file": "fig07c-precision-recall.webp",
+      "source_filename": "Figure 7C.tiff",
+      "width": 539,
+      "height": 549,
+      "bytes": 8152,
+      "sha256": "7eaf598655452ac5ec2a4a7a1a9a181eb379d4c673597f9031b0ac1140f404f5",
+      "caption": "Precision\u2013recall curve"
+    },
+    {
+      "figure": "Figure 6",
+      "file": "fig06-shap-explainability.webp",
+      "source_filename": "Figure 6.tiff",
+      "width": 982,
+      "height": 387,
+      "bytes": 23484,
+      "sha256": "f031252b3700bbc39b5c5ddee62dee17bc3a9b1b6feb06184378490e6db78ee4",
+      "caption": "SHAP feature-importance ranking and summary plot"
+    },
+    {
+      "figure": "Supplementary Figure S1",
+      "file": "figs1-correlation-matrix.webp",
+      "source_filename": "Supplementary Figure S1.tiff",
+      "width": 960,
+      "height": 731,
+      "bytes": 78478,
+      "sha256": "d9206351834ded1c141371361a0d5c534ec7415a36d07cf144c979d7b9fcb762",
+      "caption": "Feature correlation matrix for the 13-input cohort"
+    },
+    {
+      "figure": "Figure 2",
+      "file": "fig02-causal-discovery-graphs.webp",
+      "source_filename": "Figure 2.tiff",
+      "width": 1536,
+      "height": 745,
+      "bytes": 49220,
+      "sha256": "986c79d5befa73fbd4cc282b6db8161d0e5a235651b37f51bd68ff15dc84435a",
+      "caption": "Target-connected causal discovery graphs and selected predictors"
+    }
+  ]
+}
