@@ -24,6 +24,9 @@
       <figcaption><span>FIGURE ${f.n}</span><strong>${safe(f.title)}</strong><small>${safe(f.desc)}</small></figcaption>
     </figure>`;
   function render(){
+    const article=(window.PORTFOLIO_DATA?.publications||[]).find(p=>p.id==='dib')||{};
+    const articleAPA=article.citationAPA||'Yeasmin, M., Ahmed, M. R., Kundu, P. R., Mauya, J., & Reza, M. S. (2026). PUST cafeteria food image dataset: Real-world Bangladeshi meal-platter images with bounding-box and polygon annotations. Data in Brief, 69, 113262. https://doi.org/10.1016/j.dib.2026.113262';
+    const articleIEEE=article.citationIEEE||'M. Yeasmin, M. R. Ahmed, P. R. Kundu, J. Mauya, and M. S. Reza, “PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations,” Data in Brief, vol. 69, Art. no. 113262, 2026, doi: 10.1016/j.dib.2026.113262.';
     return `<section class="section alt dib-project-section" id="dib-food-dataset-project" aria-labelledby="dib-project-heading"><div class="container">
       <header class="dib-project-head">
         <div>
@@ -130,6 +133,18 @@
             <p><strong>Access:</strong> Open data under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0</a>. Cite the dataset and <a href="${PAPER}" target="_blank" rel="noopener noreferrer">associated article</a> when reusing the resource.</p>
           </div>
         </div>
+        <section class="published-project-citation dib-article-citation" aria-label="Cite the published Data in Brief data article">
+          <div class="published-project-citation-head">
+            <div><span class="published-project-citation-kicker">PUBLISHED DATA ARTICLE · FORMAL JOURNAL REFERENCE</span>
+              <h4>Cite the peer-reviewed Data in Brief article</h4>
+              <p>When using the underlying image annotations, cite the Mendeley Data V2 record above as well as this related publication.</p></div>
+            <a href="${PAPER}" target="_blank" rel="noopener noreferrer">Data in Brief article DOI <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="dual-citation" aria-label="Data in Brief article citations">
+            <div class="citation-format citation-format-apa"><span class="citation-style-label">APA</span><p>${safe(articleAPA)}</p></div>
+            <div class="citation-format citation-format-ieee"><span class="citation-style-label">IEEE</span><p>${safe(articleIEEE)}</p></div>
+          </div>
+        </section>
         <footer class="dib-bottom"><p><strong>Published research record:</strong> Yeasmin, Ahmed, Kundu, Mauya &amp; Reza (2026), <em>Data in Brief</em>, 69, Article 113262. Data DOI: 10.17632/fn6yhzjz83.2. Dataset version 2 was published on 28 August 2026.</p>
           <a class="btn ghost" href="${DATA}" target="_blank" rel="noopener noreferrer">Open Mendeley Data Version 2 ↗</a>
         </footer>
