@@ -58,6 +58,12 @@
 
   function initialize() {
     if (!document.body) return;
+    if (!document.getElementById('portfolio-owner-emphasis-style')) {
+      const style = document.createElement('style');
+      style.id = 'portfolio-owner-emphasis-style';
+      style.textContent = '.portfolio-owner-emphasis{font-weight:850!important;color:inherit}.brand-name .brand-primary,.brand-name .brand-accent{font-weight:850!important}';
+      document.head.appendChild(style);
+    }
     emphasize(document.body);
     const observer = new MutationObserver(records => {
       // Ignore unrelated dynamic clocks, search counters, animations and filters.
