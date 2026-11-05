@@ -64,7 +64,7 @@ jobs:
           const official='PUST Cafeteria Food Image Dataset:';
           const subtitle='Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations';
           assert(html.includes(official) && html.includes(subtitle),'Missing exact official data article title');
-          const nav=html.match(/<nav class="dib-section-nav"[^>]*>[\\s\\S]*?<\\/nav>/);
+          const nav=html.match(/<nav class="dib-section-nav"[^>]*>[\s\S]*?<\/nav>/);
           assert(nav,'Missing published dataset subsection navigation');
           const links=[...nav[0].matchAll(/href="#([^"]+)"/g)].map(x=>x[1]);
           assert.deepStrictEqual(links,['dib-project-overview','dib-data-design','dib-data-figures','dib-data-reuse']);
