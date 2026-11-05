@@ -1,0 +1,64 @@
+name: Validate BS-CCFS research figures
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/bsccfs-figure-check.yml'
+      - 'heart-bsccfs-project.js'
+      - 'heart-bsccfs-project.css'
+      - 'assets/academic/projects/bs-ccfs-heart-disease/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-gallery:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check project JavaScript
+        run: node --check heart-bsccfs-project.js
+
+      - name: Check all author-supplied figure files if uploaded
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('assets/academic/projects/bs-ccfs-heart-disease')
+          wanted={
+            'fig01-complete-methodology.webp',
+            'fig02-causal-discovery-graphs.webp',
+            'fig03-threshold-sensitivity.webp',
+            'fig04-mixed-type-validity.webp',
+            'fig05-model-roc-curves.webp',
+            'fig06-shap-explainability.webp',
+            'fig07a-confusion-matrix.webp',
+            'fig07b-calibration.webp',
+            'fig07c-precision-recall.webp',
+            'figs1-correlation-matrix.webp',
+            'figs2-leakage-aware-preprocessing.webp',
+          }
+          actual={p.name for p in root.glob('*.webp')}
+          if not actual:
+              print('Gallery scaffold validated. Images not uploaded; accessible placeholders remain visible.')
+          else:
+              missing=sorted(wanted-actual)
+              extra=sorted(actual-wanted)
+              if missing or extra:
+                  raise SystemExit(f'Incomplete or misnamed figure upload. Missing: {missing}. Unexpected: {extra}')
+              for filename in sorted(wanted):
+                  path=root/filename
+                  assert path.stat().st_size>=3000, f'Missing or truncated file: {path}'
+                  assert path.read_bytes()[:4]==b'RIFF', f'Not a WebP image: {path}'
+                  assert path.read_bytes()[8:12]==b'WEBP', f'Invalid WebP signature: {path}'
+                  print(filename,path.stat().st_size,'bytes')
+              mf=root/'figure-manifest.json'
+              assert mf.is_file(),'Figure manifest required with the 11 uploaded images'
+              manifest=json.loads(mf.read_text(encoding='utf8'))
+              assert len(manifest.get('files',[]))==11
+              assert {r['file'] for r in manifest['files']}==wanted
+              print('All eleven 300-DPI-origin research figure conversions verified.')
+          PY
