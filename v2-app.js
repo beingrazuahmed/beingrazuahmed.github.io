@@ -3385,7 +3385,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
           <p>Two supervised research projects from the B.Sc. and M.S. programmes at Pabna University of Science and Technology—presented with their documented workflows, research figures, evaluation results and outcomes.</p></div>
           <a class="btn ghost" href="academic.html#academic-projects">Explore the Academic section <span aria-hidden="true">↗</span></a>
         </div>
-        <nav class="academic-showcase-jump" aria-label="Academic project quick links">
+        <nav class="academic-showcase-jump" data-section-jump-nav aria-label="Academic project quick links">
           <a href="#fastica-audio-project">B.Sc. · Audio separation</a>
           <a href="#dr-grading-project">M.S. · Retinopathy grading</a>
         </nav>
@@ -3746,8 +3746,9 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   /* Shared jump navigation: works with content rendered after the initial HTML loads.
      Keeps hash links useful for deep links, keyboard users and long mobile pages. */
   function initSectionJumpNavigation(){
-    const nav=$('[data-section-jump-nav]');
-    if(!nav)return;
+    const navs=[...document.querySelectorAll('[data-section-jump-nav]')];
+    if(!navs.length)return;
+    navs.forEach(nav=>{
     const scroller=nav.querySelector('.academic-jump-nav-inner')||nav;
     const sections=[...nav.querySelectorAll('a[href^="#"]')].map(link=>{
       const id=link.getAttribute('href').slice(1);
@@ -3820,6 +3821,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     requestAnimationFrame(()=>{
       if(findHashTarget())syncHash();
       else watch();
+    });
     });
   }
 
