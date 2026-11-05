@@ -1388,6 +1388,7 @@
         <p><strong>Supervisor:</strong> ${esc(p.supervisor||'')}</p>
         <p><strong>Outcome:</strong> ${esc(p.outcome||'')}</p>
         ${p.outputUrl&&!p.journal?`<a class="btn small" href="${esc(p.outputUrl)}" target="_blank" rel="noopener noreferrer">${esc(p.outputLabel||'View related output')}</a>`:''}
+        ${isEngineeringReports?`<a class="btn small" href="https://github.com/beingrazuahmed/fastica-audio-source-separation" target="_blank" rel="noopener noreferrer">Source code &amp; reproducibility ↗</a>`:''}
       </div>
     </article>`;
   }
@@ -2923,6 +2924,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         <div class="academic-showcase-actions">
           <a href="academic.html#academic-projects" class="btn ghost">Full academic record <span aria-hidden="true">↗</span></a>
           ${p.outputUrl?`<a href="${esc(p.outputUrl)}" class="btn primary" target="_blank" rel="noopener noreferrer">Published article · DOI <span aria-hidden="true">↗</span></a>`:''}
+          ${isFastica?`<a href="https://github.com/beingrazuahmed/fastica-audio-source-separation" class="btn ghost" target="_blank" rel="noopener noreferrer">Research code &amp; notebook <span aria-hidden="true">↗</span></a>`:''}
         </div>
       </footer>
     </article>`;
