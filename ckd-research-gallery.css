@@ -19,6 +19,16 @@ body[data-page="projects"] .ckdx-links a{padding:10px 12px;border:1px solid var(
 body[data-page="projects"] .ckdx-links a:hover{border-color:var(--accent);background:var(--surface-2)}
 body[data-page="projects"] .ckdx-note{color:var(--muted);font-size:.7rem;line-height:1.75;margin:15px 0 0}
 body[data-page="projects"] .ckdx-note strong{color:var(--text)}
+body[data-page="projects"] .ckdx-reference-card{display:flex;align-items:center;gap:18px;margin:0 0 18px;padding:20px 22px;border:1px solid var(--line);border-radius:17px;background:color-mix(in srgb,var(--surface-2) 65%,var(--surface));text-decoration:none!important;color:var(--text)!important;transition:border-color .15s ease,box-shadow .15s ease}
+body[data-page="projects"] .ckdx-reference-card:hover,body[data-page="projects"] .ckdx-reference-card:focus-visible{border-color:var(--accent);box-shadow:0 8px 23px rgba(30,65,93,.075)}
+body[data-page="projects"] .ckdx-reference-number{display:grid;place-items:center;flex:0 0 61px;width:61px;height:61px;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--accent-2);font-size:1.5rem;font-weight:850;letter-spacing:-.045em}
+body[data-page="projects"] .ckdx-reference-content{min-width:0;display:flex;flex:1;flex-direction:column;gap:5px}
+body[data-page="projects"] .ckdx-reference-content small{color:var(--accent-2);font-size:.62rem;font-weight:850;letter-spacing:.07em}
+body[data-page="projects"] .ckdx-reference-content strong{font-size:.96rem;line-height:1.45;color:var(--text)}
+body[data-page="projects"] .ckdx-reference-content>span{font-size:.73rem;color:var(--muted);line-height:1.65}
+body[data-page="projects"] .ckdx-reference-action{flex:0 0 auto;color:var(--accent-2);font-size:.74rem;font-weight:850;white-space:nowrap}
+@media(max-width:740px){body[data-page="projects"] .ckdx-reference-card{align-items:flex-start;gap:12px;padding:16px;flex-wrap:wrap}body[data-page="projects"] .ckdx-reference-number{flex-basis:47px;width:47px;height:47px;font-size:1.2rem}body[data-page="projects"] .ckdx-reference-action{margin-left:59px}}
+@media(prefers-reduced-motion:reduce){body[data-page="projects"] .ckdx-reference-card{transition:none}}
 body[data-page="projects"] .ckdx-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
 body[data-page="projects"] .ckdx-image-card{display:block;min-width:0;color:var(--text)!important;text-decoration:none!important;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--surface);transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease}
 body[data-page="projects"] .ckdx-image-card:hover,body[data-page="projects"] .ckdx-image-card:focus-visible{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 10px 24px rgba(30,65,93,.085)}
