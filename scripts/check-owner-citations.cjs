@@ -113,8 +113,19 @@ async function main(){
     .map(x=>x[1]).filter(x=>x.startsWith('assets/academic/projects/bs-ccfs-heart-disease/'));
   const uniqueHeartFigs=[...new Set(heartFigs)];
   assert.equal(uniqueHeartFigs.length,11,'The heart gallery must reference 11 distinct original panels');
-  assert(heartHtml.includes('All eleven author-supplied panels are connected'),
-    'Heart research gallery must describe its uploaded live images');
+  const featuredFile='assets/academic/projects/bs-ccfs-heart-disease/fig01-complete-methodology.webp';
+  assert.equal(heartFigs.filter(x=>x===featuredFile).length,1,
+    'Figure 1 must appear exactly once as the hero image');
+  const galleryOnly=heartHtml.slice(heartHtml.indexOf('id="heart-bsccfs-figures"'));
+  const galleryBeforeRecord=galleryOnly.slice(0,galleryOnly.indexOf('id="heart-bsccfs-record"'));
+  assert(!galleryBeforeRecord.includes('fig01-complete-methodology.webp'),
+    'Do not repeat featured Figure 1 in lower heart disease gallery');
+  assert.equal((galleryBeforeRecord.match(/class="heart-figure-card /g)||[]).length,10,
+    'The lower heart disease gallery must display exactly 10 other figure cards');
+  assert(heartHtml.includes('Featured research visualization') || heartHtml.includes('FEATURED RESEARCH VISUALIZATION'),
+    'The methodology figure should be visibly highlighted');
+  assert(heartHtml.includes('Figure 1 is featured above'),
+    'Heart gallery introduction should distinguish the ten other images');
   assert(!heartHtml.includes('when their web-optimized versions are uploaded'),
     'Remove obsolete pre-upload copy once images are hosted');
   assert(heartHtml.includes('Figure 1')||heartHtml.includes('FIGURE 1'));
@@ -151,8 +162,8 @@ async function main(){
   const projects=text('projects.html');
   assert(projects.includes('published-project-citations.css'));
   assert(projects.includes('dib-project.js?v=20261105-doi-github-icons1'));
-  assert(projects.includes('heart-bsccfs-project.js?v=20261105-bsccfs-gallery-connected2'));
-  assert(projects.includes('heart-bsccfs-project.css?v=20261105-heart-case-study-v1'));
+  assert(projects.includes('heart-bsccfs-project.js?v=20261105-fig01-featured-v2'));
+  assert(projects.includes('heart-bsccfs-project.css?v=20261105-fig01-featured-v2'));
   assert(projects.includes('v2-app.js?v=20261105-heart-case-study-v1'));
   assert(text('publications.html').includes('v2-app.js?v=20261105-heart-case-study-v1'));
   assert(projects.includes('project-research-links.css?v=20261105-soft-teal-ctas3'));
