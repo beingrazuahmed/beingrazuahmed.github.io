@@ -2867,6 +2867,68 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   function askRazu(){return `${pageHero('Ask Razu AI','Research Intelligence for My Academic Portfolio')}<section class="section"><div class="container"><article class="card"><h3>Hi, I’m Ask Razu AI.</h3><p>I can help you explore Md. Razu Ahmed’s research, publications, datasets, methodologies, academic background, peer-review service, conference work, collaborations and current research directions. My answers are grounded in the verified information available in this portfolio.</p><div class="search-wrap"><input class="search-input" id="askInput" placeholder="Ask about research, methods, coursework, conferences or collaborators…"></div><div class="pill-row" style="margin-top:14px">${['Research','Publications','Methods','Experience','Collaborators','Metrics','Coursework','Conferences','Training'].map(x=>`<button class="filter askPrompt" data-q="${x}">${x}</button>`).join('')}</div><div id="askAnswer" class="card" style="margin-top:18px"><strong>Try:</strong> “Which studies used SHAP?”, “Show first-author papers”, “What machine-learning coursework did Razu take?”, or “Who collaborated on dengue?”</div></article></div></section>`;}
 
 
+  function fasticaPortfolioEvidence(){
+    const base='https://raw.githubusercontent.com/beingrazuahmed/fastica-audio-source-separation/main/figures/';
+    const browse='https://github.com/beingrazuahmed/fastica-audio-source-separation/blob/main/figures/';
+    const primary=[
+      ['fig09-bss-comparison.png','Figure 9','BSS Eval benchmark','Published SDR, SIR and SAR comparison of FastICA, PCA and NMF.'],
+      ['fig05-spectrogram-male-male.png','Figure 5','Male + male','Original recording and corresponding separated-source spectrogram.'],
+      ['fig06-spectrogram-female-female.png','Figure 6','Female + female','Original recording and corresponding separated-source spectrogram.'],
+      ['fig07-spectrogram-male-female.png','Figure 7','Male + female','Original recording and corresponding separated-source spectrogram.']
+    ];
+    const extra=[
+      ['fig02-waveform-male-male.png','Figure 2','Male + male waveforms','Original recording and aligned separated-source waveform.'],
+      ['fig03-waveform-female-female.png','Figure 3','Female + female waveforms','Original recording and aligned separated-source waveform.'],
+      ['fig04-waveform-male-female.png','Figure 4','Male + female waveforms','Original recording and aligned separated-source waveform.'],
+      ['fig08-mixed-audio.png','Figure 8','Mixed audio diagnostics','Waveform and spectrogram of the mixed audio signal.']
+    ];
+    const card=(item,index)=>`<a class="fastica-figure-link${index===0?' fastica-figure-link--hero':''}" href="${browse+item[0]}" target="_blank" rel="noopener noreferrer" aria-label="View full-resolution ${esc(item[1])}: ${esc(item[2])}"><figure>
+      <div class="fastica-figure-image"><img src="${base+item[0]}" alt="${esc(item[3])}" loading="lazy" decoding="async"></div>
+      <figcaption><small>${esc(item[1])} · PUBLISHED FIGURE</small><strong>${esc(item[2])}</strong><span>${esc(item[3])}</span></figcaption>
+    </figure></a>`;
+    return `<section class="fastica-gallery" aria-labelledby="fastica-gallery-title">
+      <div class="fastica-panel-head"><div><p class="fastica-eyebrow">PUBLISHED FIGURES · AUDIO SIGNAL ANALYSIS</p><h4 id="fastica-gallery-title">Separation results, visualized</h4>
+      <p>Explore the quantitative benchmark and the three original-versus-separated recording comparisons. Open any figure at full resolution.</p></div>
+      <a class="fastica-panel-cta" target="_blank" rel="noopener noreferrer" href="https://github.com/beingrazuahmed/fastica-audio-source-separation/tree/main/figures">All 9 figures ↗</a></div>
+      <div class="fastica-gallery-grid">${primary.map(card).join('')}</div>
+      <details class="fastica-gallery-details"><summary><span>Additional waveform and mixed-audio figures</span><span>Figures 2–4 &amp; 8 · Expand +</span></summary>
+        <div class="fastica-gallery-extra">${extra.map((f)=>card(f,1)).join('')}</div>
+      </details>
+      <p class="fastica-credit">Image credit: Ahmed, Mauya, Reza &amp; Amin (2026), <em>Engineering Reports</em>. Original participant audio is not publicly distributed.</p>
+    </section>`;
+  }
+
+  function fasticaPortfolioReproducibility(){
+    return `<section class="fastica-research-panel" aria-labelledby="fastica-results-title">
+      <div class="fastica-panel-head"><div><p class="fastica-eyebrow">PUBLISHED EVALUATION · COMPARATIVE EXPERIMENT</p>
+      <h4 id="fastica-results-title">Blind source separation performance</h4>
+      <p>Mean ± standard deviation across ten repeated runs in the published, fixed three-source mixing experiment.</p></div>
+      <a class="fastica-panel-cta" href="https://github.com/beingrazuahmed/fastica-audio-source-separation" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
+      <div class="fastica-table-wrap"><table class="fastica-table">
+        <caption>Published BSS Eval scores in dB</caption>
+        <thead><tr><th scope="col">Algorithm</th><th scope="col">SDR (dB)</th><th scope="col">SIR (dB)</th><th scope="col">SAR (dB)</th></tr></thead>
+        <tbody><tr class="fastica-primary-method"><th scope="row">FastICA <span>Primary model</span></th><td>53.51 ± 0.07</td><td>53.52 ± 0.07</td><td>79.58 ± 0.00</td></tr>
+        <tr><th scope="row">PCA <span>Baseline</span></th><td>2.79 ± 0.00</td><td>2.79 ± 0.00</td><td>80.64 ± 0.00</td></tr>
+        <tr><th scope="row">NMF <span>Baseline</span></th><td>−2.26 ± 0.00</td><td>0.41 ± 0.00</td><td>4.80 ± 0.00</td></tr></tbody>
+      </table></div>
+      <p class="fastica-table-note">Paper-reported outcomes are specific to the original recordings and defined mixing experiment. SAR alone does not determine overall separation performance.</p>
+      <div class="fastica-repro">
+        <h4>Run the research workflow</h4><p>Open Python research code with documentation for different authorized audio sources.</p>
+        <div class="fastica-run-modes">
+          <div><small>01 · ORIGINAL STUDY</small><strong>Authorized recordings</strong><p>Repeat the original experiment with permission to access the private source recordings.</p></div>
+          <div><small>02 · CUSTOM AUDIO</small><strong>Your own recordings</strong><p>Supply three local audio files; follow the same computational procedure with new results.</p></div>
+          <div><small>03 · SYNTHETIC DEMO</small><strong>Without private data</strong><p>Test the implemented workflow using generated demonstration signals.</p></div>
+        </div>
+        <nav class="fastica-code-actions" aria-label="FastICA code and documentation">
+          <a href="https://github.com/beingrazuahmed/fastica-audio-source-separation/blob/main/notebooks/FastICA_Audio_Source_Separation.ipynb" target="_blank" rel="noopener noreferrer">Jupyter notebook ↗</a>
+          <a href="https://github.com/beingrazuahmed/fastica-audio-source-separation/blob/main/REPRODUCIBILITY.md" target="_blank" rel="noopener noreferrer">Reproducibility guide ↗</a>
+          <a href="https://github.com/beingrazuahmed/fastica-audio-source-separation/blob/main/DATA_AVAILABILITY.md" target="_blank" rel="noopener noreferrer">Data permissions ↗</a>
+        </nav>
+        <p class="fastica-privacy"><strong>Research ethics:</strong> Code and publication figures are publicly shared; participant recordings are restricted. Results on replacement audio will differ from the paper.</p>
+      </div>
+    </section>`;
+  }
+
   function portfolioAcademicCase(p={},index=0){
     const isFastica=String(p.course||'').includes('STAT-4210');
     const id=isFastica?'fastica-audio-project':'dr-grading-project';
@@ -2919,6 +2981,8 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
           <p class="academic-showcase-limitation"><strong>Scope:</strong> ${esc(limitation)}</p>
         </div>
       </div>
+      ${isFastica?fasticaPortfolioReproducibility():''}
+      ${isFastica?fasticaPortfolioEvidence():''}
       <footer class="academic-showcase-footer">
         <div class="academic-showcase-supervision"><span>Academic supervisor</span><strong>${esc(p.supervisor||'')}</strong></div>
         <div class="academic-showcase-actions">
@@ -3090,7 +3154,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         <a href="#ask-razu-ai-project"><strong>02</strong> Ask Razu AI</a>
         <a href="#field-survey-project"><strong>03</strong> Statistical Field Survey</a>
         <a href="#ckd-prediction-project"><strong>04</strong> CKD · Stacking ML</a>
-        <a href="#fastica-audio-project"><strong>05</strong> B.Sc. · Audio separation</a>
+        <a href="#fastica-audio-project"><strong>05</strong> FastICA · Published</a>
         <a href="#dr-grading-project"><strong>06</strong> M.S. · Retinopathy grading</a>
         <a href="#active-project-directions"><strong>07</strong> Current directions</a>
       </nav></div>

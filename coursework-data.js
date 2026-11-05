@@ -172,9 +172,9 @@ window.COURSEWORK_DATA = {
         "Signal-to-Interference Ratio (SIR)",
         "Signal-to-Artifact Ratio (SAR)"
       ],
-      figure: "assets/academic/projects/bsc-fastica-pipeline.png?v=20260918-portraits23",
+      figure: "https://raw.githubusercontent.com/beingrazuahmed/fastica-audio-source-separation/main/figures/fig01-workflow.png",
       figureAlt: "End-to-end audio source separation workflow comparing FastICA, PCA and NMF",
-      figureCaption: "End-to-end pipeline for audio source separation with FastICA and two baselines (PCA and NMF).",
+      figureCaption: "Figure 1 · Published experimental workflow: FastICA source separation and PCA/NMF comparison. High-resolution figure available on GitHub.",
       outcome: "Developed into a peer-reviewed journal article in Engineering Reports.",
       doi: "10.1002/eng2.70575",
       outputUrl: "https://doi.org/10.1002/eng2.70575",
