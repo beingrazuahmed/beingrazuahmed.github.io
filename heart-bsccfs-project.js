@@ -36,7 +36,7 @@
   };
 
   function render(){
-    const main=FIGURES.filter(f=>['1','2'].includes(f.id));
+    const main=FIGURES.filter(f=>f.id==='2');
     const studies=FIGURES.filter(f=>['3','4','5','6'].includes(f.id));
     const checks=FIGURES.filter(f=>f.id.startsWith('7'));
     const supp=FIGURES.filter(f=>f.id.startsWith('S'));
@@ -72,21 +72,16 @@
             <p class="heart-author-credit"><strong>Authors:</strong> Jannatul Mauya · <strong>Md. Razu Ahmed</strong> · Md. Shamim Reza · Sabba Ruhi · Md. Aminul Hoque <small>(corresponding author)</small></p>
           </div>
 
-          <aside class="heart-method-visual" aria-label="Visual summary of the BS-CCFS approach">
-            <div class="heart-visual-head"><span>INSIDE THE APPROACH</span><strong>From candidate signals to stable, interpretable features</strong></div>
-            <div class="heart-visual-step"><small>CAUSAL DISCOVERY</small>
-              <div class="heart-discovery-nodes"><span>PC</span><span>FCI</span><span>NOTEARS</span></div></div>
-            <div class="heart-flow-arrow" aria-hidden="true">↓</div>
-            <div class="heart-bootstrap-visual"><span class="heart-bootstrap-circle"><strong>30</strong><small>bootstrap<br>samples</small></span>
-              <div><small>BS-CCFS CONSENSUS</small><strong>Stable target-connected variables</strong><span>Cross-algorithm support + stability threshold</span></div>
+          <figure class="heart-featured-figure" aria-labelledby="heart-featured-figure-title">
+            <div class="heart-featured-figure-heading">
+              <span class="heart-featured-figure-kicker">FEATURED RESEARCH VISUALIZATION · FIGURE 1</span>
+              <strong id="heart-featured-figure-title">Complete BS-CCFS methodology workflow</strong>
             </div>
-            <div class="heart-flow-arrow" aria-hidden="true">↓</div>
-            <div class="heart-features-visual"><small>5 CONSENSUS PREDICTORS</small>
-              <div class="heart-feature-chips"><span>thal</span><span>cp</span><span>ca</span><span>exang</span><span>chol</span></div></div>
-            <div class="heart-flow-arrow" aria-hidden="true">↓</div>
-            <div class="heart-results-visual"><strong>Model comparison &amp; explainability</strong><span>ROC-AUC · calibration · confusion matrix · SHAP</span></div>
-            <div class="heart-visual-foot">Method schematic — not a reproduction of a numbered manuscript figure.</div>
-          </aside>
+            <a class="heart-featured-figure-image" href="${BASE}fig01-complete-methodology.webp" target="_blank" rel="noopener noreferrer" aria-label="Open the complete original Figure 1 methodology flowchart at full resolution">
+              <img src="${BASE}fig01-complete-methodology.webp" alt="Figure 1: complete flowchart of the BS-CCFS research method, spanning preprocessing, causal discovery, bootstrap-stable feature selection, modelling, and evaluation" width="827" height="1387" loading="eager" decoding="async">
+            </a>
+            <figcaption><strong>Figure 1 — Complete methodology.</strong> Original author-supplied research figure. Select the image to view the full available resolution; the lower gallery contains only the remaining figures.</figcaption>
+          </figure>
         </div>
 
         <div class="heart-metric-band" aria-label="Study sample and feature-selection facts">
@@ -116,10 +111,10 @@
         <section id="heart-bsccfs-figures" class="heart-gallery-section" aria-labelledby="heart-gallery-title">
           <header class="heart-gallery-heading"><div><p class="heart-eyebrow">SOURCE RESEARCH · ORIGINAL AUTHOR-SUPPLIED FIGURES</p>
             <h3 id="heart-gallery-title">Explore the BS-CCFS figures and study diagnostics</h3>
-            <p>All eleven author-supplied panels are connected to this gallery, optimized from 300-DPI source TIFFs for the web. Select a figure to open its full available resolution, including the supplementary panels.</p></div>
+            <p>Figure 1 is featured above; the ten other original figure panels appear here without repetition, optimized from the author-supplied 300-DPI TIFFs. Select any image to open its full available resolution.</p></div>
             <a href="https://github.com/beingrazuahmed/beingrazuahmed.github.io/tree/main/assets/academic/projects/bs-ccfs-heart-disease" target="_blank" rel="noopener noreferrer">Figure assets · GitHub ↗</a></header>
 
-          <div class="heart-figure-cluster"><h4>Study framework &amp; causal discovery</h4>
+          <div class="heart-figure-cluster"><h4>Causal discovery graphs</h4>
             <div class="heart-figure-grid heart-figure-grid--method">${main.map(card).join('')}</div></div>
           <div class="heart-figure-cluster"><h4>Robustness, discrimination &amp; explainability</h4>
             <div class="heart-figure-grid heart-figure-grid--standard">${studies.map(card).join('')}</div></div>
@@ -128,7 +123,7 @@
 
           <details class="heart-supplementary"><summary><strong>Supplementary research figures</strong><span>S1 correlation matrix + S2 preprocessing and imputation</span></summary>
             <div class="heart-figure-grid heart-figure-grid--supplementary">${supp.map(card).join('')}</div></details>
-          <p class="heart-figure-note"><strong>Image provenance:</strong> all panels in this gallery correspond to user-supplied original manuscript figures (Figures 1–7C and S1–S2). No published journal version or published DOI is claimed. Original figure re-use remains subject to coauthor rights and future journal terms.</p>
+          <p class="heart-figure-note"><strong>Image provenance:</strong> the featured Figure 1 and the ten other gallery panels correspond to author-supplied original manuscript figures (Figures 1–7C and S1–S2). No published journal version or published DOI is claimed. Original figure re-use remains subject to coauthor rights and future journal terms.</p>
         </section>
 
         <section id="heart-bsccfs-record" class="heart-research-record" aria-label="Manuscript status and research limits">
@@ -138,7 +133,7 @@
           </div>
           <div class="heart-record-scope"><p class="heart-eyebrow">SCIENTIFIC INTERPRETATION</p><h3>Scope and responsible use</h3>
             <p>Causal discovery graphs identify candidate statistical structures under assumptions; they do not independently establish interventions or causal effects. The dataset and internal comparison are not a substitute for external validation, prospective testing or clinician oversight.</p>
-            <p><strong>Data and code:</strong> all eleven research-figure previews are now hosted on GitHub Pages with source-file provenance. A complete rerunnable code release has not been supplied for this portfolio update, so reproducibility beyond the documented workflow should not be implied.</p>
+            <p><strong>Data and code:</strong> the featured Figure 1 and ten additional research figures are hosted on GitHub Pages with source-file provenance. A complete rerunnable code release has not been supplied for this portfolio update, so reproducibility beyond the documented workflow should not be implied.</p>
           </div>
         </section>
 
