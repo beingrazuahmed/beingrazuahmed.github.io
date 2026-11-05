@@ -93,12 +93,22 @@ async function main(){
   assert(dib.includes('10.1016/j.dib.2026.113262'));
   assert(dib.includes('10.17632/fn6yhzjz83.2'));
 
+  const projectStyles=text('project-research-links.css');
+  for(const menu of ['.project-portfolio-index','.academic-showcase-jump','.dib-section-nav']){
+    assert(projectStyles.includes(menu+' a[aria-current="location"]'),
+      'Missing selected-menu light background for '+menu);
+  }
+  assert(projectStyles.includes('background:#e3f2ff!important'),
+    'Selected project navigation must have a light background');
+  assert(projectStyles.includes('background:#eef7ff!important'),
+    'Hover and focused project navigation must have a light background');
+
   const projects=text('projects.html');
   assert(projects.includes('published-project-citations.css'));
   assert(projects.includes('dib-project.js?v=20261105-doi-github-icons1'));
   assert(projects.includes('project-research-links.css?v=20261105-doi-github-icons1'));
   assert(projects.includes('project-research-links.js?v=20261105-doi-github-icons1'));
-  for(const file of ['assets/academic/logos/vendor/doi.svg','assets/academic/logos/contact/github.svg']){
+  for(const file of ['assets/academic/logos/vendor/doi-user.png','assets/academic/logos/contact/github.svg']){
     assert(fs.statSync(file).size>300, 'Missing or invalid project icon: '+file);
   }
   const iconDom=new JSDOM(`<!doctype html><body data-page="projects"><main id="page-content">
@@ -113,7 +123,7 @@ async function main(){
   const iconDoc=iconDom.window.document;
   const doi=iconDoc.querySelector('#doi-link');
   const git=iconDoc.querySelector('#github-link');
-  assert.equal(doi.querySelector('img.project-link-icon--doi')?.getAttribute('src'),'assets/academic/logos/vendor/doi.svg');
+  assert.equal(doi.querySelector('img.project-link-icon--doi')?.getAttribute('src'),'assets/academic/logos/vendor/doi-user.png');
   assert.equal(git.querySelector('img.project-link-icon--github')?.getAttribute('src'),'assets/academic/logos/contact/github.svg');
   assert.equal(iconDoc.querySelector('#inline-doi').dataset.projectLinkIcon,'doi');
   assert(iconDoc.querySelector('#inline-doi').classList.contains('project-link-icon-inline'));
