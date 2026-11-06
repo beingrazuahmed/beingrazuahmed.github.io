@@ -206,8 +206,8 @@ async function main(){
   assert(projects.includes('dib-project.js?v=20261105-doi-github-icons1'));
   assert(projects.includes('heart-bsccfs-project.js?v=20261105-fig01-featured-v2'));
   assert(projects.includes('heart-bsccfs-project.css?v=20261105-fig01-featured-v2'));
-  assert(projects.includes('v2-app.js?v=20261105-heart-case-study-v1'));
-  assert(text('publications.html').includes('v2-app.js?v=20261105-heart-case-study-v1'));
+  assert(projects.includes('v2-app.js?v=20261106-review46-v1'));
+  assert(text('publications.html').includes('v2-app.js?v=20261106-review46-v1'));
   assert(projects.includes('project-research-links.css?v=20261105-soft-teal-ctas3'));
   assert(projects.includes('project-research-links.js?v=20261105-pub-doi-light-nav2'));
   for(const file of ['assets/academic/logos/vendor/doi-user.png','assets/academic/logos/contact/github.svg']){
