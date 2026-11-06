@@ -16,7 +16,7 @@
   ];
   const esc=(s='')=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','"':'&quot;',"'":'&#39;'}[c]));
   // Refresh formerly missing figures after their first upload to GitHub Pages.
-  const FIGURE_REV='20261106-dr-prototype-highlight3';
+  const FIGURE_REV='20261106-dr-five-stage-archived-poster4';
   const href=(s)=>BASE+s+'?v='+FIGURE_REV;
   const figure=(f)=>`<figure class="dr-figure${f.wide?' dr-figure--wide':''}">
     <a class="dr-figure-media" href="${href(f.file)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${esc(f.group)}: ${esc(f.title)}">
@@ -55,7 +55,6 @@
           <div class="dr-focus-strip"><strong>Research prototype</strong><span>Upload a fundus image · inspect five-grade predictions · view visual explanations</span></div>
           <div class="dr-actions">
             <a class="btn primary" href="publications.html#output-dr">View publication record <span aria-hidden="true">↗</span></a>
-            <a class="btn ghost" href="assets/academic/conferences/icasds-2025/documents/icasds-2025-poster-341.pdf" target="_blank" rel="noopener noreferrer">Conference poster · PDF <span aria-hidden="true">↗</span></a>
           </div>
           <p class="dr-credits"><strong>Researcher:</strong> Md. Razu Ahmed <span aria-hidden="true">·</span> <strong>Supervisor:</strong> ${esc(p.supervisor||'Prof. Dr. Md. Shamim Reza')}</p>
         </div>
@@ -93,6 +92,12 @@
         <div><p class="dr-kicker">RESEARCH STATUS</p><h4>Submitted to Measurement (Elsevier)</h4>
           <p><strong>${esc(p.title||'A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images')}</strong></p>
           <p>Submitted 11 September 2026. The manuscript is under review; no article acceptance, publication DOI or final peer-reviewed citation is claimed here.</p>
+          <aside class="dr-earlier-experiment" aria-label="Earlier conference-stage research">
+            <small>EARLIER CONFERENCE EXPERIMENT · 2025</small>
+            <h5>Three-stage exploratory study — ICASDS 2025 poster</h5>
+            <p>The ICASDS 2025 poster documents an <strong>earlier three-stage experimental version</strong>. It is archived as research history, not evidence for or a representation of the subsequent <strong>five-stage framework</strong> submitted to <em>Measurement</em>. The two stages of the work should not be directly conflated.</p>
+            <a href="assets/academic/conferences/icasds-2025/documents/icasds-2025-poster-341.pdf" target="_blank" rel="noopener noreferrer">View historical three-stage poster · PDF ↗</a>
+          </aside>
           <div class="dr-record-links"><a href="publications.html#output-dr">Portfolio manuscript record ↗</a>
             <a href="assets/academic/conferences/icasds-2025/documents/icasds-2025-paper-341-proceedings.pdf" target="_blank" rel="noopener noreferrer">ICASDS 2025 abstract · Paper 341 ↗</a>
             <a href="https://github.com/beingrazuahmed/beingrazuahmed.github.io" target="_blank" rel="noopener noreferrer">Portfolio source · GitHub ↗</a></div>
@@ -102,26 +107,7 @@
       <footer class="dr-footer"><span>M.S. project · Medical imaging research · 2026</span><a href="academic.html#academic-projects">Full academic project record ↗</a></footer>
     </article>`;
   }
-  function inject(){
-    if(document.body.dataset.page!=='projects')return;
-    const placeholder=document.getElementById('dr-grading-project');
-    if(!placeholder||placeholder.dataset.drEnhanced)return;
-    const p=(window.MRA_V2?.academicProjects||[]).find(x=>String(x.course||'').includes('M.STAT-5110'));
-    if(!p)return;
-    placeholder.outerHTML=render(p);
-    // Keep concise navigation labels while exposing the complete official title.
-    document.querySelectorAll('a[href="#dr-grading-project"]').forEach(anchor => {
-      anchor.title=p.title;
-      const number=anchor.querySelector('strong');
-      if(number) { for(const node of [...anchor.childNodes]) if(node.nodeType===Node.TEXT_NODE) node.textContent=' Diabetic Retinopathy · Fusion'; }
-      else anchor.textContent='M.S. · Diabetic Retinopathy';
-    });
-    if(location.hash.startsWith('#dr-') && document.readyState==='complete') {
-      const target=document.querySelector(location.hash);
-      if(target)target.scrollIntoView({block:'start'});
-    }
-    if(typeof window.refreshProjectResearchLinks==='function')window.refreshProjectResearchLinks();
-  }
-  inject();
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',inject,{once:true});
+  // Main renderer calls this synchronously for the M.S. project.
+  // Avoids late DOM replacement/races when research cards are rendered.
+  window.MRA_DR_CASE=render;
 })();

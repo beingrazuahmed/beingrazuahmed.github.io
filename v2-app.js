@@ -2950,6 +2950,10 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   }
 
   function portfolioAcademicCase(p={},index=0){
+    // Render the dedicated, prototype-featured retinopathy case as part of
+    // the normal page render, instead of replacing it after DOM insertion.
+    if(String(p.course||'').includes('M.STAT-5110')&&typeof window.MRA_DR_CASE==='function')
+      return window.MRA_DR_CASE(p);
     const isFastica=String(p.course||'').includes('STAT-4210');
     const id=isFastica?'fastica-audio-project':'dr-grading-project';
     const degree=isFastica?'B.Sc. research project':'M.S. research project';
@@ -3319,7 +3323,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         <a href="#heart-bsccfs-project"><strong>05</strong> Heart Disease · BS-CCFS</a>
         <a href="#dib-food-dataset-project" title="PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations" aria-label="PUST Cafeteria Food Image Dataset project"><strong>06</strong> PUST Cafeteria Food Image Dataset</a>
         <a href="#fastica-audio-project"><strong>07</strong> FastICA · Published</a>
-        <a href="#dr-grading-project"><strong>08</strong> M.S. · Retinopathy grading</a>
+        <a href="#dr-grading-project" title="A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images"><strong>08</strong> Diabetic Retinopathy · Fusion</a>
         <a href="#active-project-directions"><strong>09</strong> Current directions</a>
       </nav></div>
       <section class="section bazarbondhu-project-section" id="bazarbondhu-ai"><div class="container">
@@ -3441,7 +3445,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         </div>
         <nav class="academic-showcase-jump" data-section-jump-nav aria-label="Academic project quick links">
           <a href="#fastica-audio-project">B.Sc. · Audio separation</a>
-          <a href="#dr-grading-project">M.S. · Retinopathy grading</a>
+          <a href="#dr-grading-project" title="A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images">M.S. · Diabetic Retinopathy</a>
         </nav>
         <div class="academic-showcase-stack">${(D.academicProjects||[]).map(portfolioAcademicCase).join('')}</div>
       </div></section>
