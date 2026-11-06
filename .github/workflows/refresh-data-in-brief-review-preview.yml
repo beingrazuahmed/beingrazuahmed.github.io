@@ -27,6 +27,10 @@ jobs:
           set -euo pipefail
           source_pdf="assets/academic/journals/data-in-brief/data-in-brief-reviewing-certificate-2026.pdf"
           test -s "$source_pdf"
+          if ! command -v pdfinfo >/dev/null || ! command -v pdftoppm >/dev/null; then
+            sudo apt-get update -qq
+            sudo apt-get install -y poppler-utils
+          fi
           pdfinfo "$source_pdf" | grep -E '^(Pages|Page size|File size):'
           pdftotext "$source_pdf" /tmp/dib-review-certificate.txt
           if grep -iq "Data in Brief" /tmp/dib-review-certificate.txt; then
