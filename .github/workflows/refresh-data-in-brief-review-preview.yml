@@ -1,0 +1,65 @@
+name: Build Data in Brief Reviewer Certificate Preview
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/refresh-data-in-brief-review-preview.yml'
+      - 'assets/academic/journals/data-in-brief/data-in-brief-reviewing-certificate-2026.pdf'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dib-review-preview-main
+  cancel-in-progress: false
+
+jobs:
+  render-certificate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check certificate source and render preview
+        shell: bash
+        run: |
+          set -euo pipefail
+          source_pdf="assets/academic/journals/data-in-brief/data-in-brief-reviewing-certificate-2026.pdf"
+          test -s "$source_pdf"
+          pdfinfo "$source_pdf" | grep -E '^(Pages|Page size|File size):'
+          pdftotext "$source_pdf" /tmp/dib-review-certificate.txt
+          if grep -iq "Data in Brief" /tmp/dib-review-certificate.txt; then
+            echo "Verified Data in Brief journal name within the submitted certificate text."
+          else
+            echo "::warning::The journal name was not found in the extractable text; please visually confirm the uploaded certificate."
+          fi
+          pdftoppm -f 1 -singlefile -r 170 -png "$source_pdf" /tmp/dib-review-certificate
+          python3 -m venv /tmp/dib-review-render
+          /tmp/dib-review-render/bin/python -m pip install -q pillow
+          /tmp/dib-review-render/bin/python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          src = Image.open('/tmp/dib-review-certificate.png').convert('RGB')
+          dst = Path('assets/gallery/data-in-brief-reviewing-certificate-2026.webp')
+          dst.parent.mkdir(parents=True, exist_ok=True)
+          src.save(dst, 'WEBP', quality=91, method=6)
+          assert dst.stat().st_size > 10000, "Certificate preview unexpectedly small"
+          print('DIB certificate preview:', src.size, 'bytes:', dst.stat().st_size)
+          PY
+
+      - name: Commit screenshot-free certificate preview
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/gallery/data-in-brief-reviewing-certificate-2026.webp
+          if ! git diff --cached --quiet; then
+            git diff --cached --check
+            git commit -m "Render official Data in Brief review certificate for public portfolio gallery"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo 'Data in Brief certificate preview is up to date'
+          fi
