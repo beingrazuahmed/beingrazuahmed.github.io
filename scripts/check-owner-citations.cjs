@@ -205,7 +205,30 @@ async function main(){
   assert(projects.includes('dib-project.js?v=20261105-doi-github-icons1'));
   assert(projects.includes('heart-bsccfs-project.js?v=20261105-fig01-featured-v2'));
   assert(projects.includes('heart-bsccfs-project.css?v=20261105-fig01-featured-v2'));
-  assert(projects.includes('v2-app.js?v=20261106-ai-official-title-dengue-live3'));
+  assert(projects.includes('v2-app.js?v=20261106-project-hub-redesign1'));
+  assert(projects.includes('projects-hub.css?v=20261106-project-hub-redesign1'));
+  assert(projects.includes('projects-hub.js?v=20261106-project-hub-redesign1'));
+  assert(projects.indexOf('src="projects-hub.js') < projects.indexOf('src="v2-app.js'),
+    'The Projects hub must register before the main renderer');
+  const hubSource=text('projects-hub.js');
+  const hubContext={window:{}};
+  vm.runInNewContext(hubSource,hubContext,{filename:'projects-hub.js'});
+  assert.equal(typeof hubContext.window.MRA_PROJECT_HUB_RENDER,'function',
+    'The portfolio directory must expose its renderer');
+  assert.equal(typeof hubContext.window.MRA_PROJECT_HUB_ACTIVATE,'function',
+    'The portfolio directory must expose active search/filter controls');
+  const hubMarkup=hubContext.window.MRA_PROJECT_HUB_RENDER();
+  assert.equal((hubMarkup.match(/class="prh-project-card prh-project-card--/g)||[]).length,9,
+    'The overview must link to all nine documented projects');
+  for(const key of ['dengue-bmc-project','ckd-prediction-project','fastica-audio-project',
+    'field-survey-project','dr-grading-project','heart-bsccfs-project',
+    'dib-food-dataset-project','bazarbondhu-ai','ask-razu-ai-project']){
+    assert(hubMarkup.includes('href="#'+key+'"'), 'Missing portfolio directory link '+key);
+  }
+  assert(text('v2-app.js').includes('MRA_PROJECT_HUB_ACTIVATE'),
+    'The main app must initialize the directory controls');
+  assert(text('v2-app.js').includes('href="#projects-overview"'),
+    'The sticky projects subnavigation must link to the overview');
   assert(projects.includes('dengue-bmc-project.js?v=20261106-dengue-final-abstract2'));
   assert(projects.includes('dengue-bmc-project.css?v=20261106-dengue-final-abstract2'));
   assert(projects.indexOf('src="dengue-bmc-project.js') < projects.indexOf('src="v2-app.js'),

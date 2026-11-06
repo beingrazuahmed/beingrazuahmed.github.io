@@ -3314,10 +3314,11 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     </div></section>`;
   }
 
-  function projects(){return `${pageHero('Projects & Prototypes','Research prototypes, analytical projects and reproducible workflows.')}
+  function projects(){return `${typeof window.MRA_PROJECT_HUB_RENDER==='function' ? window.MRA_PROJECT_HUB_RENDER() : pageHero('Projects & Prototypes','Research prototypes, analytical projects and reproducible workflows.')}
       <div class="project-index-bar" id="project-index-bar"><div class="container project-index-shell">
         <button class="project-index-arrow" id="projectIndexPrev" type="button" aria-label="Scroll project submenu left" aria-controls="projectPortfolioIndex">‹</button>
         <nav class="project-portfolio-index" id="projectPortfolioIndex" data-project-jump-nav aria-label="Explore project collections">
+        <a href="#projects-overview"><strong>00</strong> Overview</a>
         <a href="#bazarbondhu-ai"><strong>01</strong> BazarBondhu AI</a>
         <a href="#ask-razu-ai-project"><strong>02</strong> Ask Razu AI</a>
         <a href="#field-survey-project" title="Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh"><strong>03</strong> AI &amp; Employment · Field Survey</a>
@@ -3331,6 +3332,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         </nav>
         <button class="project-index-arrow" id="projectIndexNext" type="button" aria-label="Scroll project submenu right" aria-controls="projectPortfolioIndex">›</button>
       </div></div>
+      <div class="prh-dossiers-intro" id="prh-dossiers"><div class="container"><div><small>IN-DEPTH PROJECT CASE STUDIES</small><h2>Methods, results and original evidence</h2><p>Explore the complete studies and working prototypes below. The portfolio directory above provides a faster way to navigate directly to any project.</p></div></div></div>
       <section class="section bazarbondhu-project-section" id="bazarbondhu-ai"><div class="container">
         <div class="bazarbondhu-case-heading">
           <span class="section-kicker">Featured applied AI · Public interactive demo</span>
@@ -4084,6 +4086,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
 
     try{initResearchConstellation();}catch(err){console.error('MRA constellation failed to initialize:',err);}
     try{initInteractive();}catch(err){console.error('MRA interactive controls failed to initialize:',err);}
+    try{window.MRA_PROJECT_HUB_ACTIVATE?.();}catch(err){console.error('Project directory controls failed to initialize:',err);}
     try{window.MRA_HEART_ACTIVATE?.();}catch(err){console.error('BS-CCFS figure gallery initialization failed:',err);}
   }
   render();
