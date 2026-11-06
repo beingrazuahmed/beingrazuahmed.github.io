@@ -141,7 +141,8 @@
       "assets/academic/instructors/aminul-hoque.jpg"
     ],
     "journalCovers": [
-      "assets/academic/journals/array/array-cover.jpg"
+      "assets/academic/journals/array/array-cover.jpg",
+      "assets/academic/journals/data-in-brief/data-in-brief-cover.jpg"
     ]
   },
   "credentialGallery": [
@@ -159,7 +160,8 @@
     "assets/gallery/bspc-reviewing-certificate-2026.webp",
     "assets/gallery/coursera-streamlit-project-certificate-2023.webp",
     "assets/gallery/coursera-ai-for-everyone-certificate-2020.webp",
-    "assets/academic/conferences/efast-2026-paper-108-oral-presentation-certificate.jpg"
+    "assets/academic/conferences/efast-2026-paper-108-oral-presentation-certificate.jpg",
+    "assets/gallery/data-in-brief-reviewing-certificate-2026.webp"
   ],
   "recognitionDocuments": [
     "assets/recognition/array-reviewing-certificate-2026.pdf",
@@ -175,7 +177,8 @@
     "assets/recognition/jsr-award-icasds-2025.pdf",
     "assets/academic/conferences/icasds-2025-poster-presentation-certificate.pdf",
     "assets/recognition/hult-prize-2024-2025-oncampus-competitor-certificate.pdf",
-    "assets/recognition/physics-olympiad-2015/bangladesh-physics-olympiad-2015.pdf"
+    "assets/recognition/physics-olympiad-2015/bangladesh-physics-olympiad-2015.pdf",
+    "assets/academic/journals/data-in-brief/data-in-brief-reviewing-certificate-2026.pdf"
   ],
   "recognitionGallery": [
     "assets/gallery/originals/pusar-crest-2024-original.png",
@@ -184,7 +187,8 @@
     "assets/gallery/originals/rajshahi-college-class-xi-gpa5-crest-2015-original.png",
     "assets/gallery/originals/ssc-gpa5-crest-2014-original.png",
     "assets/gallery/originals/jsc-gpa5-crest-2011-original.png",
-    "assets/recognition/physics-olympiad-2015/bangladesh-physics-olympiad-2015.png"
+    "assets/recognition/physics-olympiad-2015/bangladesh-physics-olympiad-2015.png",
+    "assets/gallery/data-in-brief-reviewing-certificate-2026.webp"
   ],
   "writingToolLogos": [
     "assets/academic/logos/vendor/grammarly.svg"
@@ -192,7 +196,8 @@
   "cacheVersion": "20261013-icps-original-logos-flyer2",
   "academicEvidenceGallery": [
     "assets/gallery/originals/bsc-medium-of-instruction-english-pust-2024.jpg",
-    "assets/gallery/originals/ms-medium-of-instruction-english-pust-2025.jpg"
+    "assets/gallery/originals/ms-medium-of-instruction-english-pust-2025.jpg",
+    "assets/gallery/data-in-brief-reviewing-certificate-2026.webp"
   ],
   "engagementEvidenceGallery": [
     "assets/gallery/originals/bangladesh-scouts-upazila-rally-certificate-2011.jpg"
