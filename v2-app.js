@@ -1541,7 +1541,7 @@
       <div class="language-practice-strip">
         <div><span class="practice-icon">${uiIcon('publication')}</span><strong>Research writing</strong><p>Journal manuscripts, technical documentation and scholarly correspondence.</p></div>
         <div><span class="practice-icon">${uiIcon('conference')}</span><strong>Research dissemination</strong><p>Oral/poster presentations and multidisciplinary academic communication.</p></div>
-        <div><span class="practice-icon">${uiIcon('review')}</span><strong>Peer review</strong><p>Critical reading and written reviewer feedback across 44 completed invited reviews.</p></div>
+        <div><span class="practice-icon">${uiIcon('review')}</span><strong>Peer review</strong><p>Critical reading and written reviewer feedback across 45 completed invited reviews.</p></div>
         <div><span class="practice-icon">${uiIcon('field')}</span><strong>Field communication</strong><p>Bangla for participant-facing and local academic communication in Bangladesh.</p></div>
       </div>
       <div class="language-links"><a class="btn primary" href="academic.html">Academic Record</a><a class="btn" href="conferences.html">Conference Record</a><a class="btn" href="publications.html">Research Outputs</a></div>
@@ -1812,14 +1812,14 @@
           <div class="editorial-service-heading">
             <span class="section-kicker">Editorial service · since March 2026</span>
             <h2 id="editorial-service-title">Editorial &amp; Peer Review Service</h2>
-            <p>Ongoing invited reviewer appointments for four international journals, with recorded dates, journal details, review activity, and available certificates.</p>
+            <p>Invited peer-review service across five international journals, with review activity, journal details, and available certificates. Individual completed reviews are distinguished from ongoing reviewer appointments.</p>
           </div>
           <div class="editorial-service-overview" aria-label="Scholarly reviewing summary">
             <div><strong>${(D.service||[]).reduce((sum,x)=>sum+Number(x.reviews||0),0)}</strong><span>Completed reviews</span></div>
             <div><strong>${(D.service||[]).length}</strong><span>Journals served</span></div>
           </div>
         </div>
-        <div class="editorial-journal-grid editorial-journal-grid--four">
+        <div class="editorial-journal-grid editorial-journal-grid--five">
           ${(D.service||[]).map((record,index)=>`
             <article class="editorial-journal-card" id="reviewer-${esc(record.id||index)}">
               <div class="editorial-journal-head">
@@ -1836,8 +1836,8 @@
                 </div>
               </div>
               <div class="editorial-journal-position">
-                <div><strong>${esc(record.role||'Peer Reviewer')}</strong><span><time datetime="${esc(record.startDate||'')}">${esc(record.startLabel||record.since||'')}</time> – Present</span></div>
-                <span class="editorial-journal-current"><span aria-hidden="true">●</span> Ongoing</span>
+                <div><strong>${esc(record.role||'Peer Reviewer')}</strong><span><time datetime="${esc(record.startDate||'')}">${esc(record.startLabel||record.since||'')}</time>${record.ongoing===false?' · Completed':' – Present'}</span></div>
+                <span class="editorial-journal-current${record.ongoing===false?' is-completed':''}"><span aria-hidden="true">●</span> ${record.ongoing===false?'Completed':'Ongoing'}</span>
               </div>
               <p class="editorial-journal-scope">${esc(record.scope||'Invited manuscript review and scholarly evaluation.')}</p>
               ${record.recognition&&record.evidenceHref?`<p class="editorial-journal-recognition">${uiIcon('review')}<span>${esc(record.recognition)}</span></p>`:''}
@@ -2881,7 +2881,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
           ${publicationBrandLink({label:'Mendeley Data',url:'https://data.mendeley.com/datasets/fn6yhzjz83/2'})}
           ${publicationBrandLink({label:'PlumX Metrics',url:'https://plu.mx/plum/a/?doi=10.17632/fn6yhzjz83&theme=plum-bigben-theme'})}
           <a class="dashboard-plumx-detail" href="${esc('https://plu.mx/plum/a/?doi=10.17632/fn6yhzjz83&theme=plum-bigben-theme')}" target="_blank" rel="noopener noreferrer" aria-label="Explore the PUST Cafeteria dataset on PlumX Metrics">View PlumX impact record <span aria-hidden="true">↗</span></a>
-        </div></aside></div></section><section class="section alt"><div class="container">${sectionHead('Portfolio analytics','Research distribution')}<div class="grid grid-3"><article class="card"><h3>Publication status</h3><p>${publishedArticles} published articles · ${publishedDatasets} published dataset · ${accepted} accepted/forthcoming · ${editorial} in the editorial process${preparing?` · ${preparing} in preparation`:''}.</p></article><article class="card"><h3>Conference record</h3><p>8 contributions · 3 presentations · 1 JSR Award.</p></article><article class="card"><h3>Scholarly service</h3><p>44 completed invited reviews across four journals.</p></article></div></div></section>`;
+        </div></aside></div></section><section class="section alt"><div class="container">${sectionHead('Portfolio analytics','Research distribution')}<div class="grid grid-3"><article class="card"><h3>Publication status</h3><p>${publishedArticles} published articles · ${publishedDatasets} published dataset · ${accepted} accepted/forthcoming · ${editorial} in the editorial process${preparing?` · ${preparing} in preparation`:''}.</p></article><article class="card"><h3>Conference record</h3><p>8 contributions · 3 presentations · 1 JSR Award.</p></article><article class="card"><h3>Scholarly service</h3><p>45 completed invited reviews across five journals.</p></article></div></div></section>`;
   }
 
   function askRazu(){return `${pageHero('Ask Razu AI','Research Intelligence for My Academic Portfolio')}<section class="section"><div class="container"><article class="card"><h3>Hi, I’m Ask Razu AI.</h3><p>I can help you explore Md. Razu Ahmed’s research, publications, datasets, methodologies, academic background, peer-review service, conference work, collaborations and current research directions. My answers are grounded in the verified information available in this portfolio.</p><div class="search-wrap"><input class="search-input" id="askInput" placeholder="Ask about research, methods, coursework, conferences or collaborators…"></div><div class="pill-row" style="margin-top:14px">${['Research','Publications','Methods','Experience','Collaborators','Metrics','Coursework','Conferences','Training'].map(x=>`<button class="filter askPrompt" data-q="${x}">${x}</button>`).join('')}</div><div id="askAnswer" class="card" style="margin-top:18px"><strong>Try:</strong> “Which studies used SHAP?”, “Show first-author papers”, “What machine-learning coursework did Razu take?”, or “Who collaborated on dengue?”</div></article></div></section>`;}
@@ -4096,7 +4096,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         domains.forEach(card=>{card.hidden=!!q && !(card.dataset.search||card.textContent.toLowerCase()).includes(q);});
       });
     }
-    const ask=$('#askInput'), ans=$('#askAnswer'); if(ask&&ans){const reply=q=>{const s=q.toLowerCase();let out='';if(s.includes('shap'))out='SHAP appears in the CKD, HCV and public-health / explainability research records where public-approved details are available.';else if(s.includes('first-author'))out='First-author published/accepted works include the FastICA source-separation study, CKD prediction study and accepted AI-employment perceptions article.';else if(s.includes('course')||s.includes('machine learning coursework'))out='Relevant coursework includes Data Mining, Machine Learning, Deep Learning for Computer Vision, Programming with Python and R, Numerical Analysis and Simulation, and supporting statistics/mathematics courses.';else if(s.includes('dengue'))out='The public dengue portfolio includes nationwide forecasting and decision-oriented preparedness research, including collaborations with Md. Ziaul Haque and other co-authors.';else if(s.includes('review'))out='Md. Razu Ahmed has completed 44 invited peer reviews: 25 for PLOS ONE, 13 for Biomedical Signal Processing and Control, 3 for Engineering Applications of Artificial Intelligence, and 3 for Array.';else out='I can answer from the public portfolio about research, publications, methods, coursework, conferences, collaborators, training and scholarly metrics. Confidential research is intentionally excluded.';ans.textContent=out;}; ask.addEventListener('keydown',e=>{if(e.key==='Enter')reply(ask.value)}); $$('.askPrompt').forEach(b=>b.addEventListener('click',()=>{ask.value=b.dataset.q;reply(b.dataset.q)}));}
+    const ask=$('#askInput'), ans=$('#askAnswer'); if(ask&&ans){const reply=q=>{const s=q.toLowerCase();let out='';if(s.includes('shap'))out='SHAP appears in the CKD, HCV and public-health / explainability research records where public-approved details are available.';else if(s.includes('first-author'))out='First-author published/accepted works include the FastICA source-separation study, CKD prediction study and accepted AI-employment perceptions article.';else if(s.includes('course')||s.includes('machine learning coursework'))out='Relevant coursework includes Data Mining, Machine Learning, Deep Learning for Computer Vision, Programming with Python and R, Numerical Analysis and Simulation, and supporting statistics/mathematics courses.';else if(s.includes('dengue'))out='The public dengue portfolio includes nationwide forecasting and decision-oriented preparedness research, including collaborations with Md. Ziaul Haque and other co-authors.';else if(s.includes('review'))out='Md. Razu Ahmed has completed 45 invited peer reviews: 25 for PLOS ONE, 13 for Biomedical Signal Processing and Control, 3 for Engineering Applications of Artificial Intelligence, 3 for Array, and 1 for Data in Brief.';else out='I can answer from the public portfolio about research, publications, methods, coursework, conferences, collaborators, training and scholarly metrics. Confidential research is intentionally excluded.';ans.textContent=out;}; ask.addEventListener('keydown',e=>{if(e.key==='Enter')reply(ask.value)}); $$('.askPrompt').forEach(b=>b.addEventListener('click',()=>{ask.value=b.dataset.q;reply(b.dataset.q)}));}
     const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.06}); document.querySelectorAll('.card,.timeline-item').forEach(e=>{e.classList.add('reveal');io.observe(e)});
   }
 
