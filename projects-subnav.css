@@ -1,0 +1,113 @@
+/* Project-specific subnavigation. Stable anchor offsets and one-row scrollable menu. */
+body[data-page="projects"] .project-index-bar {
+  position: sticky;
+  top: var(--project-header-offset, 75px);
+  z-index: 66;
+  background: color-mix(in srgb, var(--bg) 95%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 7px 18px rgba(27, 62, 79, .055);
+}
+body[data-page="projects"] .project-index-shell {
+  width: min(calc(100% - 28px), var(--max));
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) 34px;
+  align-items: center;
+  column-gap: 7px;
+  padding-block: 9px;
+}
+body[data-page="projects"] .project-portfolio-index {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  padding: 2px 1px 4px;
+  margin: 0;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+body[data-page="projects"] .project-portfolio-index::-webkit-scrollbar { display: none; }
+body[data-page="projects"] .project-portfolio-index a {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  scroll-snap-align: nearest;
+  min-height: 39px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: .73rem;
+  line-height: 1.25;
+  font-weight: 740;
+  text-decoration: none;
+  box-shadow: none;
+  transition: background .17s ease, border-color .17s ease;
+}
+body[data-page="projects"] .project-portfolio-index a strong {
+  font-size: .64rem;
+  color: var(--accent-2);
+  letter-spacing: .035em;
+}
+body[data-page="projects"] .project-portfolio-index a:hover,
+body[data-page="projects"] .project-portfolio-index a:focus-visible {
+  background: var(--surface-2);
+  color: var(--accent-2);
+  border-color: var(--accent);
+}
+body[data-page="projects"] .project-portfolio-index a[aria-current="location"] {
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+  color: var(--accent-2);
+  border-color: var(--accent);
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+body[data-page="projects"] .project-index-arrow {
+  width: 34px;
+  height: 38px;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--accent-2);
+  font: 800 23px/1 system-ui, sans-serif;
+  cursor: pointer;
+  padding: 0;
+}
+body[data-page="projects"] .project-index-arrow:hover:not(:disabled),
+body[data-page="projects"] .project-index-arrow:focus-visible {
+  background: var(--surface-2);
+  border-color: var(--accent);
+}
+body[data-page="projects"] .project-index-arrow:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+body[data-page="projects"] .project-index-arrow:disabled {
+  opacity: .36;
+  cursor: default;
+}
+body[data-page="projects"] #page-content [id] {
+  scroll-margin-top: calc(var(--project-header-offset, 75px) + var(--project-index-height, 62px) + 15px);
+}
+@media(max-width:700px) {
+  body[data-page="projects"] .project-index-shell {
+    width: min(calc(100% - 20px), var(--max));
+    grid-template-columns: 30px minmax(0, 1fr) 30px;
+    column-gap: 5px;
+    padding-block: 7px;
+  }
+  body[data-page="projects"] .project-index-arrow { width: 30px; height: 35px; }
+  body[data-page="projects"] .project-portfolio-index a { min-height: 37px; padding: 7px 10px; font-size: .71rem; }
+}
+@media(prefers-reduced-motion: reduce) {
+  body[data-page="projects"] .project-portfolio-index { scroll-behavior: auto !important; }
+}

@@ -3315,7 +3315,9 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   }
 
   function projects(){return `${pageHero('Projects & Prototypes','Research prototypes, analytical projects and reproducible workflows.')}
-      <div class="container"><nav class="project-portfolio-index" data-section-jump-nav aria-label="Explore project collections">
+      <div class="project-index-bar" id="project-index-bar"><div class="container project-index-shell">
+        <button class="project-index-arrow" id="projectIndexPrev" type="button" aria-label="Scroll project submenu left" aria-controls="projectPortfolioIndex">‹</button>
+        <nav class="project-portfolio-index" id="projectPortfolioIndex" data-project-jump-nav aria-label="Explore project collections">
         <a href="#bazarbondhu-ai"><strong>01</strong> BazarBondhu AI</a>
         <a href="#ask-razu-ai-project"><strong>02</strong> Ask Razu AI</a>
         <a href="#field-survey-project"><strong>03</strong> Statistical Field Survey</a>
@@ -3325,7 +3327,9 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         <a href="#fastica-audio-project"><strong>07</strong> FastICA · Published</a>
         <a href="#dr-grading-project" title="A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images"><strong>08</strong> Diabetic Retinopathy · Fusion</a>
         <a href="#active-project-directions"><strong>09</strong> Current directions</a>
-      </nav></div>
+        </nav>
+        <button class="project-index-arrow" id="projectIndexNext" type="button" aria-label="Scroll project submenu right" aria-controls="projectPortfolioIndex">›</button>
+      </div></div>
       <section class="section bazarbondhu-project-section" id="bazarbondhu-ai"><div class="container">
         <div class="bazarbondhu-case-heading">
           <span class="section-kicker">Featured applied AI · Public interactive demo</span>
