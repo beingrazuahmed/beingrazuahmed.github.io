@@ -84,11 +84,6 @@ async function main(){
   assert(instructions.includes('data-in-brief-cover.jpg') &&
     instructions.includes('data-in-brief-reviewing-certificate-2026.pdf'),
     'Review evidence folder must contain exact upload instructions');
-  assert(app.includes("record.ongoing===false?'Completed':'Ongoing'"),
-    'Completed DIB review must be labelled accurately');
-  assert(app.includes('editorial-journal-grid--five'),
-    'Five editorial-service cards should use balanced grid styling');
-
   for(const [id,doi] of [
     ['fastica','10.1002/eng2.70575'],
     ['ckd','10.3329/ijss.v25i2.85732'],
@@ -101,6 +96,11 @@ async function main(){
   }
 
   const app=text('v2-app.js');
+  assert(app.includes("record.ongoing===false?'Completed':'Ongoing'"),
+    'Completed DIB review must be labelled accurately');
+  assert(app.includes('editorial-journal-grid--five'),
+    'Five editorial-service cards should use balanced grid styling');
+
   assert(app.includes("publishedProjectCitationPanel('fastica')"),'Missing FastICA citation panel');
   assert(app.includes("publishedProjectCitationPanel('ckd')"),'Missing CKD citation panel');
   assert(app.includes('dualAcademicCitation(p.citationAPA,p.citationIEEE)'),
