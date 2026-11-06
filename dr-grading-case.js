@@ -5,18 +5,18 @@
     {no:'01',file:'fig01-retina-lesions.webp',title:'Normal retina and characteristic DR lesions',group:'CLINICAL CONTEXT',desc:'Illustration of a normal retina and diabetic-retinopathy changes including microaneurysms, exudates and neovascularization.'},
     {no:'02',file:'fig02-five-dr-grades.webp',title:'The five retinopathy grades',group:'FIVE-CLASS TARGET',desc:'Representative fundus images spanning no DR through proliferative diabetic retinopathy.',wide:true},
     {no:'03',file:'fig03-dataset-preparation.webp',title:'Fundus-image preparation',group:'DATASET PIPELINE',desc:'Image cleaning, de-duplication, preprocessing and augmentation stages used in the research workflow.'},
+    {no:'04',file:'fig04-stagewise-framework.webp',title:'Complete stage-wise grading methodology',group:'STUDY WORKFLOW',desc:'Original Figure 4: five-stage framework showing fundus preparation, deep and handcrafted features, model selection and evaluation.',wide:true},
     {no:'A',file:'additional-framework-overview.webp',title:'Detailed research framework',group:'ADDITIONAL SCHEMATIC',desc:'Supplementary author-supplied chart of the data processing, models, comparative stages and screening output.',wide:true},
     {no:'05',file:'fig05-cnn1-architecture.webp',title:'CNN-1 architecture',group:'CUSTOM CNN BASELINE',desc:'Convolution blocks, global average pooling and the five-class prediction head.',wide:true},
     {no:'06',file:'fig06-cnn2-architecture.webp',title:'CNN-2 · Residual and SE blocks',group:'CUSTOM CNN BASELINE',desc:'Residual network with squeeze-and-excitation blocks and projection shortcuts.'},
     {no:'07',file:'fig07-cnn3-architecture.webp',title:'CNN-3 · EfficientNet-lite',group:'CUSTOM CNN BASELINE',desc:'MBConv stages, squeeze-and-excitation components and DropPath.'},
     {no:'08',file:'fig08-confusion-matrix.webp',title:'Normalized held-out confusion matrix',group:'CLASS-LEVEL DIAGNOSTICS',desc:'Distribution of predicted grades versus ground-truth grades for the selected fused model.'},
     {no:'09',file:'fig09-roc-curves.webp',title:'One-vs-rest ROC curves',group:'CLASS DISCRIMINATION',desc:'Five class-specific discrimination curves for the selected Stage-5 model.'},
-    {no:'10',file:'fig10-performance-comparison.webp',title:'Final model vs CNN baselines',group:'MODEL COMPARISON',desc:'Reported held-out accuracy, macro-F1, Cohen’s κ and OvR AUC across evaluated baselines.',wide:true},
-    {no:'11',file:'fig11-screening-prototype.webp',title:'Explainable screening web prototype',group:'RESEARCH DEMONSTRATOR',desc:'Prototype interface for fundus-image upload, predicted grade, class probabilities and visual explanation.',wide:true}
+    {no:'10',file:'fig10-performance-comparison.webp',title:'Final model vs CNN baselines',group:'MODEL COMPARISON',desc:'Reported held-out accuracy, macro-F1, Cohen’s κ and OvR AUC across evaluated baselines.',wide:true}
   ];
   const esc=(s='')=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','"':'&quot;',"'":'&#39;'}[c]));
   // Refresh formerly missing figures after their first upload to GitHub Pages.
-  const FIGURE_REV='20261106-2f3f8c0-verified-assets';
+  const FIGURE_REV='20261106-dr-prototype-highlight3';
   const href=(s)=>BASE+s+'?v='+FIGURE_REV;
   const figure=(f)=>`<figure class="dr-figure${f.wide?' dr-figure--wide':''}">
     <a class="dr-figure-media" href="${href(f.file)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${esc(f.group)}: ${esc(f.title)}">
@@ -31,7 +31,7 @@
   </section>`;
   function render(p){
     const metrics=(p.metrics||[]).slice(0,4).map(m=>`<div><strong>${esc(m.value||'')}</strong><span>${esc(m.label||'')}</span></div>`).join('');
-    const featured='fig04-stagewise-framework.webp';
+    const featured='fig11-screening-prototype.webp';
     return `<article class="dr-case" id="dr-grading-project" aria-labelledby="dr-project-title" data-dr-enhanced="true">
       <header class="dr-header">
         <div><p class="dr-kicker">M.S. RESEARCH · MEDICAL IMAGE ANALYSIS · EXPLAINABLE AI</p>
@@ -49,9 +49,10 @@
       <div class="dr-hero" id="dr-overview">
         <div class="dr-story">
           <div class="dr-chips"><span>M.STAT-5110</span><span>4 credits · A+ grade</span><span>Five DR grades</span></div>
-          <h4>From retinal fundus images to five-class, explainable grading</h4>
-          <p>${esc(p.summary||'The research compares staged image-feature representations for grading diabetic retinopathy from fundus photographs.')}</p>
-          <p class="dr-lead"><strong>Selected Stage-5 fusion:</strong> fine-tuned DenseNet121 embeddings + SIFT Bag of Visual Words + XGBoost. Validation-informed experiments compare deep, handcrafted and fused representations rather than treating an individual model score as a clinical guarantee.</p>
+          <h4>Five-class grading with explainable deep–handcrafted feature fusion</h4>
+          <p>This research combines retinal fundus images from APTOS 2019 and IDRiD in a leakage-aware five-stage comparison of deep embeddings, handcrafted descriptors and feature fusion.</p>
+          <p class="dr-lead"><strong>Selected Stage-5 model:</strong> fine-tuned DenseNet121 + SIFT-BoVW + XGBoost. Grad-CAM++ supports interpretation in the screening-oriented demonstration.</p>
+          <div class="dr-focus-strip"><strong>Research prototype</strong><span>Upload a fundus image · inspect five-grade predictions · view visual explanations</span></div>
           <div class="dr-actions">
             <a class="btn primary" href="publications.html#output-dr">View publication record <span aria-hidden="true">↗</span></a>
             <a class="btn ghost" href="assets/academic/conferences/icasds-2025/documents/icasds-2025-poster-341.pdf" target="_blank" rel="noopener noreferrer">Conference poster · PDF <span aria-hidden="true">↗</span></a>
@@ -59,12 +60,13 @@
           <p class="dr-credits"><strong>Researcher:</strong> Md. Razu Ahmed <span aria-hidden="true">·</span> <strong>Supervisor:</strong> ${esc(p.supervisor||'Prof. Dr. Md. Shamim Reza')}</p>
         </div>
         <figure class="dr-featured">
-          <div class="dr-featured-top"><small>FEATURED · FIGURE 04</small><strong>Complete stage-wise grading framework</strong></div>
-          <a class="dr-featured-image" href="${href(featured)}" target="_blank" rel="noopener noreferrer" aria-label="Open complete original Figure 4">
-            <img src="${href(featured)}" alt="Study-wide diagram of leak-safe preparation, five model stages, evaluation and an explainable DR screening prototype" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false;this.parentElement.removeAttribute('href');this.parentElement.setAttribute('aria-disabled','true')">
-            <span class="dr-image-fallback" hidden><span aria-hidden="true">◈</span><strong>Featured workflow image prepared</strong><small>Figure 04 appears here once its WebP asset is uploaded.</small></span>
+          <div class="dr-featured-top"><small>FEATURED RESEARCH PROTOTYPE · FIGURE 11</small><strong>Explainable diabetic-retinopathy screening interface</strong></div>
+          <a class="dr-featured-image" href="${href(featured)}" target="_blank" rel="noopener noreferrer" aria-label="Open the complete original Figure 11 screening prototype screenshot">
+            <img src="${href(featured)}" alt="Original Figure 11 showing the research web prototype for five-class diabetic retinopathy grading, class-wise probabilities and explanation visualization" loading="eager" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false;this.parentElement.removeAttribute('href');this.parentElement.setAttribute('aria-disabled','true')">
+            <span class="dr-image-fallback" hidden><span aria-hidden="true">◈</span><strong>Prototype screenshot unavailable</strong><small>Open the research figure repository to view the image.</small></span>
           </a>
-          <figcaption>Figure 4 brings together dataset handling, deep-handcrafted modelling, comparison, evaluation and prototype demonstration. It is featured here once and omitted from the gallery below.</figcaption>
+          <div class="dr-featured-functions" aria-label="Demonstrated prototype capabilities"><span>Retinal image input</span><span>Five-class grading</span><span>Grad-CAM++ interpretation</span></div>
+          <figcaption><strong>Figure 11 · Prototype demonstration.</strong> Author-supplied screenshot of the web-based grading interface. This illustrates a non-clinical research prototype, not a live diagnostic application.</figcaption>
         </figure>
       </div>
       <div class="dr-metrics" aria-label="Reported held-out evaluation with uncertainty">${metrics}</div>
@@ -81,12 +83,11 @@
       </div>
       <section class="dr-gallery" id="dr-visuals" aria-labelledby="dr-gallery-title">
         <header class="dr-block-heading"><p class="dr-kicker">ORIGINAL RESEARCH FIGURES · AUTHOR-SUPPLIED</p>
-          <h4 id="dr-gallery-title">Explore the experimental evidence</h4><p>Eleven additional visuals accompany the featured Figure 4. The diagrams preserve their complete aspect ratios and open at full available WebP resolution. <a href="https://github.com/beingrazuahmed/beingrazuahmed.github.io/tree/main/assets/academic/projects/dr-grading" target="_blank" rel="noopener noreferrer">View original research figure files on GitHub ↗</a></p></header>
-        ${group('Clinical context and grading targets','Retinal lesions and the five severity classes represented in this work.',[0,1])}
-        ${group('Preparing the data and research pipeline','Dataset preparation and the supplementary end-to-end schematic.',[2,3])}
-        ${group('Three custom CNN comparators','Architectures included as contextual baseline models, distinct from the final DenseNet121 fusion model.',[4,5,6])}
-        ${group('Held-out evaluation','Confusion matrix, ROC behaviour and comparative baseline scores.',[7,8,9])}
-        ${group('Screening-oriented prototype','Author-supplied interface screenshot; a research prototype rather than a public clinical service.',[10],'dr-prototype-group')}
+          <h4 id="dr-gallery-title">Explore the experimental evidence</h4><p>Eleven additional research visuals accompany the featured Figure 11 prototype. Figure 4 documents the methodology below; every figure appears only once. All panels retain their original aspect ratio and open at full available WebP resolution. <a href="https://github.com/beingrazuahmed/beingrazuahmed.github.io/tree/main/assets/academic/projects/dr-grading" target="_blank" rel="noopener noreferrer">View original research figure files on GitHub ↗</a></p></header>
+        ${group('Clinical context and grading targets','Retinal lesions and the five severity classes represented in this work.',[0,1],'dr-clinical-group')}
+        ${group('Methodology and data preparation','The stage-wise framework (Figure 4), dataset preparation and the supplementary research schematic.',[3,2,4],'dr-pipeline-group')}
+        ${group('Three custom CNN comparators','Architecture illustrations for baseline models, distinct from the selected DenseNet121 fusion model.',[5,6,7])}
+        ${group('Held-out evaluation','Confusion matrix, ROC behaviour and comparative baseline scores.',[8,9,10])}
       </section>
       <div class="dr-record" id="dr-scholarly-record">
         <div><p class="dr-kicker">RESEARCH STATUS</p><h4>Submitted to Measurement (Elsevier)</h4>
