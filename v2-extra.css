@@ -1378,3 +1378,36 @@ body[data-page="profile"] [id^="profile-"]{scroll-margin-top:84px}
  .bazarbondhu-case-capabilities ul{grid-template-columns:1fr}
  .bazarbondhu-case-actions .btn{flex:1 1 160px}
 }
+
+/* Five journal service records, including the completed Data in Brief review.
+   Keep the final two cards balanced without changing journal identity artwork. */
+@media(min-width:1171px){
+  .editorial-journal-grid--five{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .editorial-journal-grid--five>.editorial-journal-card{grid-column:span 2}
+  .editorial-journal-grid--five>.editorial-journal-card:nth-last-child(-n+2){grid-column:span 3}
+}
+@media(min-width:781px) and (max-width:1170px){
+  .editorial-journal-grid--five{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .editorial-journal-grid--five>.editorial-journal-card:last-child{
+    grid-column:1/-1;
+    width:100%;
+    max-width:calc((100% - 17px)/2);
+    justify-self:center;
+  }
+}
+@media(max-width:780px){
+  .editorial-journal-grid--five{grid-template-columns:minmax(0,1fr)}
+  .editorial-journal-grid--five>.editorial-journal-card:last-child{
+    grid-column:auto;max-width:100%;width:auto;
+  }
+}
+#reviewer-data-in-brief .editorial-journal-artwork-fallback{
+  width:100%;height:100%;display:grid;place-items:center;
+  background:linear-gradient(150deg,#e9f5f8,#f0f5fa 65%,#deecf1);
+  border:1px solid #d0e5ed;border-radius:7px;
+  color:#245778;font-size:25px;font-weight:900;
+}
+#reviewer-data-in-brief .editorial-journal-current.is-completed{
+  border-color:#b6d4ea;background:#ebf5fc;color:#2c5373;
+}
+#reviewer-data-in-brief .editorial-journal-current.is-completed span{color:#4780a8}
