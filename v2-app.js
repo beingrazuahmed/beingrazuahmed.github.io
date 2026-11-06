@@ -2884,7 +2884,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         </div></aside></div></section><section class="section alt"><div class="container">${sectionHead('Portfolio analytics','Research distribution')}<div class="grid grid-3"><article class="card"><h3>Publication status</h3><p>${publishedArticles} published articles · ${publishedDatasets} published dataset · ${accepted} accepted/forthcoming · ${editorial} in the editorial process${preparing?` · ${preparing} in preparation`:''}.</p></article><article class="card"><h3>Conference record</h3><p>8 contributions · 3 presentations · 1 JSR Award.</p></article><article class="card"><h3>Scholarly service</h3><p>46 completed invited reviews across five journals.</p></article></div></div></section>`;
   }
 
-  function askRazu(){return `${pageHero('Ask Razu AI','Research Intelligence for My Academic Portfolio')}<section class="section"><div class="container"><article class="card"><h3>Hi, I’m Ask Razu AI.</h3><p>I can help you explore Md. Razu Ahmed’s research, publications, datasets, methodologies, academic background, peer-review service, conference work, collaborations and current research directions. My answers are grounded in the verified information available in this portfolio.</p><div class="search-wrap"><input class="search-input" id="askInput" placeholder="Ask about research, methods, coursework, conferences or collaborators…"></div><div class="pill-row" style="margin-top:14px">${['Research','Publications','Methods','Experience','Collaborators','Metrics','Coursework','Conferences','Training'].map(x=>`<button class="filter askPrompt" data-q="${x}">${x}</button>`).join('')}</div><div id="askAnswer" class="card" style="margin-top:18px"><strong>Try:</strong> “Which studies used SHAP?”, “Show first-author papers”, “What machine-learning coursework did Razu take?”, or “Who collaborated on dengue?”</div></article></div></section>`;}
+  function askRazu(){if(typeof window.MRA_ASK_APP==='function')return window.MRA_ASK_APP();return `${pageHero('Ask Razu AI','Research Intelligence for My Academic Portfolio')}<section class="section"><div class="container"><article class="card"><h3>Hi, I’m Ask Razu AI.</h3><p>I can help you explore Md. Razu Ahmed’s research, publications, datasets, methodologies, academic background, peer-review service, conference work, collaborations and current research directions. My answers are grounded in the verified information available in this portfolio.</p><div class="search-wrap"><input class="search-input" id="askInput" placeholder="Ask about research, methods, coursework, conferences or collaborators…"></div><div class="pill-row" style="margin-top:14px">${['Research','Publications','Methods','Experience','Collaborators','Metrics','Coursework','Conferences','Training'].map(x=>`<button class="filter askPrompt" data-q="${x}">${x}</button>`).join('')}</div><div id="askAnswer" class="card" style="margin-top:18px"><strong>Try:</strong> “Which studies used SHAP?”, “Show first-author papers”, “What machine-learning coursework did Razu take?”, or “Who collaborated on dengue?”</div></article></div></section>`;}
 
 
   function fasticaPortfolioEvidence(){
@@ -3385,57 +3385,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
           <p class="bazarbondhu-gallery-note">Captured from the working demonstration. All starter grocery prices are illustrative rather than verified live market quotations; the assistant is a limited intent-matching tool, not a generative chatbot.</p>
         </section>
       </div></section>
-      <section class="section alt ask-project-section" id="ask-razu-ai-project"><div class="container">
-        <header class="ask-project-head">
-          <div>
-            <span class="section-kicker">Portfolio-native research technology · Live browser prototype</span>
-            <h2>Ask Razu AI <span>— Academic research intelligence interface</span></h2>
-            <p>A question-led interface for exploring the public academic portfolio of Md. Razu Ahmed. Presented transparently as a working, early-stage, rule-based assistant—not a live-retrieval or generative-language-model system.</p>
-          </div>
-          <a class="btn ghost" href="ask-razu.html">Try the assistant <span aria-hidden="true">↗</span></a>
-        </header>
-        <article class="ask-project-case" aria-labelledby="ask-project-title">
-          <div class="ask-project-overview">
-            <div class="ask-project-story">
-              <div class="ask-project-status"><span>Public interactive demo</span><span>Browser-side JavaScript</span><span>Curated portfolio answers</span></div>
-              <h3 id="ask-project-title">Making a research portfolio easier to explore through questions</h3>
-              <p>Instead of browsing multiple pages to locate background information, visitors can ask a question or select a topic prompt. The current implementation matches supported keywords and returns short, human-readable summaries drawn from approved public portfolio information.</p>
-              <div class="ask-project-flow" aria-label="Current Ask Razu AI response workflow">
-                <div class="ask-project-step"><small>01 · ASK</small><strong>Enter a question</strong><span>Free-text input or one of nine topic buttons</span></div>
-                <div class="ask-project-step"><small>02 · MATCH</small><strong>Match supported terms</strong><span>Client-side JavaScript condition rules</span></div>
-                <div class="ask-project-step"><small>03 · EXPLAIN</small><strong>Show a curated answer</strong><span>Public portfolio summary or scope guidance</span></div>
-              </div>
-              <div class="ask-project-buttons">
-                <a class="btn primary" href="ask-razu.html">Launch Ask Razu AI <span aria-hidden="true">↗</span></a>
-                <a class="btn ghost" href="https://github.com/beingrazuahmed/beingrazuahmed.github.io/blob/main/v2-app.js" target="_blank" rel="noopener noreferrer">View implementation <span aria-hidden="true">↗</span></a>
-              </div>
-            </div>
-            <figure class="ask-project-preview">
-              <div class="ask-project-preview-top"><strong>Ask Razu AI</strong><span>Example from the working rules</span></div>
-              <div class="ask-project-dialogue">
-                <div><p class="ask-project-label">Visitor's question</p><div class="ask-project-question">Which studies used SHAP?</div></div>
-                <div><p class="ask-project-label">Current assistant response</p><div class="ask-project-response">SHAP appears in the CKD, HCV and public-health / explainability research records where public-approved details are available.</div></div>
-              </div>
-              <figcaption>Illustrative conversation panel reproducing an existing example query and its current rule-based response; this is not a screenshot or an LLM-generated answer.</figcaption>
-            </figure>
-          </div>
-          <div class="ask-project-details">
-            <div class="ask-project-detail"><h4>What visitors can do</h4>
-              <ul><li>Type questions or choose from nine research and academic topic prompts.</li><li>Explore supported topics including SHAP methods, first-author work, coursework, dengue collaborations and peer-review activity.</li><li>Open the assistant directly from the portfolio navigation.</li></ul>
-            </div>
-            <div class="ask-project-detail"><h4>Implementation</h4>
-              <ul><li>HTML, CSS and vanilla JavaScript integrated into the existing GitHub Pages portfolio.</li><li>Keyword-triggered responses with prewritten summaries and a general fallback.</li><li>Client-side interaction; no external AI-model service is required for current responses.</li></ul>
-            </div>
-            <div class="ask-project-detail"><h4>Next development priorities</h4>
-              <ul><li>Connect answers to maintainable structured public records instead of static answer strings.</li><li>Add direct source links and evidence labels for each supported response.</li><li>Expand query coverage and improve answer freshness while preserving the public-information boundary.</li></ul>
-            </div>
-          </div>
-          <footer class="ask-project-bottom">
-            <p><strong>Scope &amp; limitations:</strong> This prototype is a limited, keyword-based portfolio guide. It does not yet perform open-ended reasoning, semantic retrieval or citation-backed question answering. Confidential manuscripts, reviewer reports and private records are outside its intended public scope.</p>
-            <a href="ask-razu.html">Explore live interface <span aria-hidden="true">↗</span></a>
-          </footer>
-        </article>
-      </div></section>
+      ${typeof window.MRA_ASK_PROJECT==='function'?window.MRA_ASK_PROJECT():''}
       ${fieldSurveyProjectCase()}
       ${ckdProjectCase()}
       ${typeof window.MRA_HEART_CASE==='function'?window.MRA_HEART_CASE():''}
@@ -4105,7 +4055,8 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         domains.forEach(card=>{card.hidden=!!q && !(card.dataset.search||card.textContent.toLowerCase()).includes(q);});
       });
     }
-    const ask=$('#askInput'), ans=$('#askAnswer'); if(ask&&ans){const reply=q=>{const s=q.toLowerCase();let out='';if(s.includes('shap'))out='SHAP appears in the CKD, HCV and public-health / explainability research records where public-approved details are available.';else if(s.includes('first-author'))out='First-author published/accepted works include the FastICA source-separation study, CKD prediction study and accepted AI-employment perceptions article.';else if(s.includes('course')||s.includes('machine learning coursework'))out='Relevant coursework includes Data Mining, Machine Learning, Deep Learning for Computer Vision, Programming with Python and R, Numerical Analysis and Simulation, and supporting statistics/mathematics courses.';else if(s.includes('dengue'))out='The public dengue portfolio includes nationwide forecasting and decision-oriented preparedness research, including collaborations with Md. Ziaul Haque and other co-authors.';else if(s.includes('review'))out='Md. Razu Ahmed has completed 46 invited peer reviews: 25 for PLOS ONE, 14 for Biomedical Signal Processing and Control, 3 for Engineering Applications of Artificial Intelligence, 3 for Array, and 1 for Data in Brief.';else out='I can answer from the public portfolio about research, publications, methods, coursework, conferences, collaborators, training and scholarly metrics. Confidential research is intentionally excluded.';ans.textContent=out;}; ask.addEventListener('keydown',e=>{if(e.key==='Enter')reply(ask.value)}); $$('.askPrompt').forEach(b=>b.addEventListener('click',()=>{ask.value=b.dataset.q;reply(b.dataset.q)}));}
+    if(typeof window.MRA_ASK_ACTIVATE==='function')window.MRA_ASK_ACTIVATE();
+    else { const ask=$('#askInput'), ans=$('#askAnswer'); if(ask&&ans){const reply=q=>{const s=q.toLowerCase();let out='';if(s.includes('shap'))out='SHAP appears in the CKD, HCV and public-health / explainability research records where public-approved details are available.';else if(s.includes('first-author'))out='First-author published/accepted works include the FastICA source-separation study, CKD prediction study and accepted AI-employment perceptions article.';else if(s.includes('course')||s.includes('machine learning coursework'))out='Relevant coursework includes Data Mining, Machine Learning, Deep Learning for Computer Vision, Programming with Python and R, Numerical Analysis and Simulation, and supporting statistics/mathematics courses.';else if(s.includes('dengue'))out='The public dengue portfolio includes nationwide forecasting and decision-oriented preparedness research, including collaborations with Md. Ziaul Haque and other co-authors.';else if(s.includes('review'))out='Md. Razu Ahmed has completed 46 invited peer reviews: 25 for PLOS ONE, 14 for Biomedical Signal Processing and Control, 3 for Engineering Applications of Artificial Intelligence, 3 for Array, and 1 for Data in Brief.';else out='I can answer from the public portfolio about research, publications, methods, coursework, conferences, collaborators, training and scholarly metrics. Confidential research is intentionally excluded.';ans.textContent=out;}; ask.addEventListener('keydown',e=>{if(e.key==='Enter')reply(ask.value)}); $$('.askPrompt').forEach(b=>b.addEventListener('click',()=>{ask.value=b.dataset.q;reply(b.dataset.q)}));} }
     const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.06}); document.querySelectorAll('.card,.timeline-item').forEach(e=>{e.classList.add('reveal');io.observe(e)});
   }
 

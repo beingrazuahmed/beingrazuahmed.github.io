@@ -205,7 +205,17 @@ async function main(){
   assert(projects.includes('dib-project.js?v=20261105-doi-github-icons1'));
   assert(projects.includes('heart-bsccfs-project.js?v=20261105-fig01-featured-v2'));
   assert(projects.includes('heart-bsccfs-project.css?v=20261105-fig01-featured-v2'));
-  assert(projects.includes('v2-app.js?v=20261106-projects-navigation5'));
+  assert(projects.includes('v2-app.js?v=20261106-ask-redesign6'));
+  assert(projects.includes('ask-razu-project.css?v=20261106-ask-redesign6'));
+  assert(projects.includes('ask-razu-project.js?v=20261106-ask-redesign6'));
+  assert(projects.indexOf('src="ask-razu-project.js') < projects.indexOf('src="v2-app.js'),
+    'Ask Razu portfolio renderer must load before the main Projects renderer');
+  const askPage = text('ask-razu.html');
+  assert(askPage.includes('ask-razu-ui.css?v=20261106-ask-redesign6'));
+  assert(askPage.includes('ask-razu-ui.js?v=20261106-ask-redesign6'));
+  assert(askPage.includes('v2-app.js?v=20261106-ask-redesign6'));
+  assert(askPage.indexOf('src="ask-razu-ui.js') < askPage.indexOf('src="v2-app.js'),
+    'Ask Razu interface renderer must load before the main application');
   assert(projects.includes('projects-subnav.css?v=20261106-projects-navigation5'));
   assert(projects.includes('projects-subnav.js?v=20261106-projects-navigation5'));
   assert(projects.indexOf('src="v2-app.js') < projects.indexOf('src="projects-subnav.js'),
