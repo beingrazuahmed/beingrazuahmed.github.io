@@ -1,0 +1,103 @@
+{
+  "project": "Diabetic Retinopathy Grading",
+  "source": "Author-supplied DR Paper Figures(1).zip",
+  "featured": "fig04-stagewise-framework.webp",
+  "images": [
+    {
+      "original": "Proposed Framework.png",
+      "webp": "additional-framework-overview.webp",
+      "pixel_width": 4200,
+      "pixel_height": 3781,
+      "bytes": 727038,
+      "sha256": "14f48c39d43e4d734328fe840b831fd0a7fdb6aaf043db341a3058325fc39f26"
+    },
+    {
+      "original": "Figure 1 Normal retina versus diabetic retinopathy affected retina showing common lesions.tif",
+      "webp": "fig01-retina-lesions.webp",
+      "pixel_width": 640,
+      "pixel_height": 344,
+      "bytes": 26438,
+      "sha256": "e859af5ca3dcf25bea46775b7741430cc8fe85af3a32c30ebe33c47f12455081"
+    },
+    {
+      "original": "Figure 2 Representative fundus images illustrating the five DR grades.jpg",
+      "webp": "fig02-five-dr-grades.webp",
+      "pixel_width": 1112,
+      "pixel_height": 255,
+      "bytes": 24694,
+      "sha256": "cd0d7d20853f5abeffae31ea05f5455cd40e1b97d4b2630f98e20d6b27d475a6"
+    },
+    {
+      "original": "Figure 3 Dataset preparation pipeline.png",
+      "webp": "fig03-dataset-preparation.webp",
+      "pixel_width": 2900,
+      "pixel_height": 1742,
+      "bytes": 108232,
+      "sha256": "03dd461fb7d2589a99d4fb1817c74899c8a08d3fd02de91c77a6815868460a27"
+    },
+    {
+      "original": "Figure 4 Overview of the proposed stage-wise framework for five-class DR grading.png",
+      "webp": "fig04-stagewise-framework.webp",
+      "pixel_width": 1536,
+      "pixel_height": 1024,
+      "bytes": 235758,
+      "sha256": "04b1e725fdcfebc2585a7bedd4a67fcce77ca3ab84e004c5f23082a7ef2a940f"
+    },
+    {
+      "original": "Figure 5 Architecture of CNN-1 (4xConvBlock + GAP + FC head) for five-class DR grading.png",
+      "webp": "fig05-cnn1-architecture.webp",
+      "pixel_width": 4200,
+      "pixel_height": 1560,
+      "bytes": 206182,
+      "sha256": "eeeac5153116d044437a069d182300b502c6c425edc6120e2c9c0a657253bc9b"
+    },
+    {
+      "original": "Figure 6 Architecture of CNN-2 (ResNet-style with SE blocks and projection shortcuts) for five-class DR grading.png",
+      "webp": "fig06-cnn2-architecture.webp",
+      "pixel_width": 4200,
+      "pixel_height": 3602,
+      "bytes": 448048,
+      "sha256": "0ab19c3d69225eb39027780335fbec609be68f3b98806c3d6969d2c8291dd5e0"
+    },
+    {
+      "original": "Figure 7 Architecture of CNN-3 (EfficientNet-lite MBConv with SE and DropPath) for five-class DR grading.png",
+      "webp": "fig07-cnn3-architecture.webp",
+      "pixel_width": 4200,
+      "pixel_height": 3937,
+      "bytes": 381692,
+      "sha256": "848300d17d1201707fa1f1f2563f125113fe9aafd68fcec3386015a8b6eb2cbc"
+    },
+    {
+      "original": "Figure 8 Normalized confusion matrix of the final model (FT-DenseNet121 + SIFT-BoVW + XGBoost) on the test set.png",
+      "webp": "fig08-confusion-matrix.webp",
+      "pixel_width": 1400,
+      "pixel_height": 1200,
+      "bytes": 28834,
+      "sha256": "c33c517ce29af91e9d9b113d5f70b4670eb16f1059e6cde7ae9c0897c68dcbdd"
+    },
+    {
+      "original": "Figure 9 One-vs-rest ROC curves of the final model (FT-DenseNet121 + SIFT-BoVW + XGBoost) on the test set.png",
+      "webp": "fig09-roc-curves.webp",
+      "pixel_width": 1500,
+      "pixel_height": 1200,
+      "bytes": 40714,
+      "sha256": "5c85296353535e467916dca26f9af2f491a1fad21b33a8fdc1b0fe19544cc421"
+    },
+    {
+      "original": "Figure 10 Test-set performance comparison (Stage-5 vs custom CNN baselines).png",
+      "webp": "fig10-performance-comparison.webp",
+      "pixel_width": 3900,
+      "pixel_height": 1899,
+      "bytes": 95078,
+      "sha256": "ae151f66b5d6ab27867c837535e29e3de5dbfb7bec68a83abb75e4b6e24b1236"
+    },
+    {
+      "original": "Figure 11 Web-based DR screening prototype.png",
+      "webp": "fig11-screening-prototype.webp",
+      "pixel_width": 2162,
+      "pixel_height": 1672,
+      "bytes": 265054,
+      "sha256": "9f11677dd146ef119affa045bd3d542605c63bcad3dd6a5350437272ce1fab08"
+    }
+  ]
+}
