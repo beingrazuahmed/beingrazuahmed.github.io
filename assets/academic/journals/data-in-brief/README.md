@@ -2,19 +2,19 @@
 
 This is the dedicated portfolio folder for **Md. Razu Ahmed's peer-review service for Data in Brief** (Elsevier). It is separate from the **PUST Cafeteria Food Image Dataset** research project and data-article publication.
 
-## Upload here
+## Verified reviewer evidence (uploaded)
 
-Open this folder on GitHub, choose **Add file → Upload files**, and upload the following items:
+The **Data in Brief** reviewer record is active from **3 November 2026–Present**, documenting **1 completed manuscript review**, with an official Certificate of Reviewing.
 
-| File | Exact destination filename | What to upload |
+| Evidence | Repository location | Notes |
 | --- | --- | --- |
-| Journal cover | `data-in-brief-cover.jpg` | The *Data in Brief* journal cover, with the image in JPEG format |
-| Certificate | `data-in-brief-reviewing-certificate-2026.pdf` | Your official certificate of reviewing (PDF) |
-| Optional preview | `data-in-brief-reviewing-certificate-2026.webp` | A clear image preview of the official reviewing certificate, for the Recognition/Gallery page |
+| Journal cover | `data-in-brief-cover.jpg` | User-uploaded source image, linked to the journal reviewer card |
+| Certificate PDF | `data-in-brief-reviewing-certificate-2026.pdf` | User-uploaded official original |
+| Public certificate preview | `../../gallery/data-in-brief-reviewing-certificate-2026.webp` | Automatically rendered first-page preview used by Gallery and Recognition |
 
-**Please do not upload the original reviewed manuscript, reviewer report, author correspondence, editorial decision, invitation emails, private identifiers, or other confidential peer-review materials.** Publicly display only an official certificate issued for that purpose. Check that the certificate does not reveal the reviewed manuscript or other confidential details.
+A [GitHub Actions workflow](https://github.com/beingrazuahmed/beingrazuahmed.github.io/actions/workflows/refresh-data-in-brief-review-preview.yml) regenerates the gallery preview from the original PDF when it is replaced. It does not post confidential review content or manuscript files.
 
-The actual cover and certificate are **not in this directory yet**. The portfolio's peer-review section uses a text fallback until you upload the cover, so there are no broken cover images. The certificate link will be connected after upload and verification.
+**Confidentiality:** Do not upload reviewed manuscripts, reviewer reports, editor correspondence, or manuscript-identifying private information. Display only official reviewer recognition that is intended to be shared publicly.
 
 ## Portfolio placement
 
@@ -24,6 +24,6 @@ The actual cover and certificate are **not in this directory yet**. The portfoli
 
 **Journal:** Data in Brief · Elsevier · ISSN 2352-3409
 
-**Review service and article authorship are separate accomplishments.** The reviewer card concerns the completed Data in Brief manuscript review; the authored data article and its Mendeley Data release remain under Publications/Projects.
+**Review service and article authorship are separate accomplishments.** The reviewer card concerns Data in Brief service beginning 3 November 2026 and one completed manuscript review; the separately authored data article and Mendeley Data V2 release remain under Publications/Projects.
 
-Once the official cover and certificate are uploaded, the journal artwork and certificate links can be connected in the website data model without restructuring the page.
+The journal cover and official certificate are now connected to the Editorial & Peer Review Service section, Gallery, and Recognition.
