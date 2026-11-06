@@ -3326,7 +3326,8 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         <a href="#dib-food-dataset-project" title="PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations" aria-label="PUST Cafeteria Food Image Dataset project"><strong>06</strong> PUST Cafeteria Food Image Dataset</a>
         <a href="#fastica-audio-project"><strong>07</strong> FastICA · Published</a>
         <a href="#dr-grading-project" title="A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images"><strong>08</strong> Diabetic Retinopathy · Fusion</a>
-        <a href="#active-project-directions"><strong>09</strong> Current directions</a>
+        <a href="#dengue-bmc-project" title="Nationwide Evaluation of District-Informed Bottom-Up and Direct National Approaches for One-Week-Ahead Forecasting of Dengue Hospital Admissions in Bangladesh"><strong>09</strong> Dengue · BMC Public Health</a>
+        <a href="#active-project-directions"><strong>10</strong> Current directions</a>
         </nav>
         <button class="project-index-arrow" id="projectIndexNext" type="button" aria-label="Scroll project submenu right" aria-controls="projectPortfolioIndex">›</button>
       </div></div>
@@ -3403,6 +3404,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         </nav>
         <div class="academic-showcase-stack">${(D.academicProjects||[]).map(portfolioAcademicCase).join('')}</div>
       </div></section>
+      ${typeof window.MRA_DENGUE_CASE==='function'?window.MRA_DENGUE_CASE():''}
       <section class="section alt" id="active-project-directions"><div class="container">${sectionHead('Active projects','Current directions','Selected public-safe ongoing research directions, distinct from completed academic coursework projects.')}<div class="grid grid-3">${(D.ongoing||[]).map(x=>`<article class="card"><span class="badge">${esc(x.status||'In progress')}</span><h3>${esc(x.title)}</h3><p>${esc(x.objective||x.summary||x.description||'')}</p>${tags(x.methods||x.tags||[])}</article>`).join('')}</div></div></section>`;}
 
   function contact(){
