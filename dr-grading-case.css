@@ -1,0 +1,109 @@
+
+/* Dedicated DR research case study. Image pixels remain uncropped and figures appear once. */
+body[data-page="projects"] .dr-case {--dr-ink:#214260;--dr-accent:#187b86;--dr-border:#c9dee2;scroll-margin-top:110px;border:1px solid var(--line);border-radius:26px;overflow:hidden;background:var(--surface);box-shadow:0 18px 52px rgba(20,65,88,.08);color:var(--text)}
+body[data-page="projects"] .dr-case [id^="dr-"] {scroll-margin-top:110px}
+body[data-page="projects"] .dr-header {padding:28px 31px 21px;display:flex;justify-content:space-between;align-items:start;gap:20px}
+body[data-page="projects"] .dr-header>div {max-width:880px;min-width:0}
+body[data-page="projects"] .dr-kicker {margin:0;color:var(--accent-2);font-size:.66rem;letter-spacing:.09em;font-weight:850;line-height:1.7}
+body[data-page="projects"] .dr-header h3 {font-size:clamp(1.65rem,2.8vw,2.7rem);letter-spacing:-.035em;line-height:1.19;color:var(--text);margin:8px 0 11px}
+body[data-page="projects"] .dr-header h3 span {color:var(--muted);font-weight:580}
+body[data-page="projects"] .dr-header p:not(.dr-kicker) {font-size:.87rem;line-height:1.7;color:var(--muted);margin:0}
+body[data-page="projects"] .dr-status {font-size:.69rem;font-weight:820;line-height:1.5;padding:9px 13px;border-radius:99px;white-space:normal;text-align:center;color:#24577d;background:#eaf5fd;border:1px solid #bbd7e5}
+body[data-page="projects"] .dr-nav {display:flex;gap:8px;flex-wrap:wrap;margin:0 31px 18px;padding:9px;border:1px solid var(--line);border-radius:13px;background:var(--surface-2)}
+body[data-page="projects"] .dr-nav a {padding:9px 14px;border:1px solid transparent;border-radius:9px;text-decoration:none;color:var(--accent-2);font-weight:850;font-size:.7rem;line-height:1.3}
+body[data-page="projects"] .dr-nav a span {color:var(--text);font-weight:690;margin-left:5px}
+body[data-page="projects"] .dr-nav a:hover,body[data-page="projects"] .dr-nav a:focus-visible {background:#e8f7fb;color:#155c72;border-color:#a6d6e4}
+body[data-page="projects"] .dr-nav a:focus-visible {outline:2px solid #2683a1;outline-offset:2px}
+body[data-page="projects"] .dr-hero {display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);gap:25px;padding:8px 31px 30px;align-items:stretch}
+body[data-page="projects"] .dr-story {display:flex;align-items:start;flex-direction:column;min-width:0}
+body[data-page="projects"] .dr-chips {display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}
+body[data-page="projects"] .dr-chips span {border:1px solid var(--line);border-radius:99px;padding:6px 9px;background:var(--surface-2);font-size:.68rem;font-weight:790}
+body[data-page="projects"] .dr-story h4 {font-size:clamp(1.13rem,1.8vw,1.54rem);line-height:1.43;letter-spacing:-.02em;margin:0 0 13px;color:var(--text)}
+body[data-page="projects"] .dr-story p {margin:0 0 13px;font-size:.82rem;line-height:1.78;color:var(--muted)}
+body[data-page="projects"] .dr-story .dr-lead {color:var(--text)}
+body[data-page="projects"] .dr-actions {display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 15px}
+body[data-page="projects"] .dr-actions a {text-align:center;font-size:.7rem;line-height:1.42;min-height:42px;padding:10px 12px}
+body[data-page="projects"] .dr-story .dr-credits {margin:auto 0 0;padding-top:12px;font-size:.73rem;color:var(--muted)}
+body[data-page="projects"] .dr-credits strong {color:var(--text)}
+body[data-page="projects"] .dr-featured {display:flex;flex-direction:column;margin:0;overflow:hidden;min-width:0;border:1px solid var(--dr-border);border-radius:16px;background:var(--surface)}
+body[data-page="projects"] .dr-featured-top {padding:12px 15px;background:var(--surface-2);border-bottom:1px solid var(--line)}
+body[data-page="projects"] .dr-featured-top small,body[data-page="projects"] .dr-featured-top strong {display:block;line-height:1.5}
+body[data-page="projects"] .dr-featured-top small {font-size:.64rem;letter-spacing:.06em;font-weight:870;color:var(--accent-2)}
+body[data-page="projects"] .dr-featured-top strong {font-size:.83rem;margin-top:4px;color:var(--text)}
+body[data-page="projects"] .dr-featured-image {display:flex;align-items:center;justify-content:center;min-height:275px;padding:11px;background:#fff;cursor:zoom-in}
+body[data-page="projects"] .dr-featured-image[aria-disabled="true"] {cursor:default}
+body[data-page="projects"] .dr-featured-image img {display:block;max-width:100%;width:auto;height:auto;max-height:790px;object-fit:contain}
+body[data-page="projects"] .dr-featured figcaption {padding:11px 15px;font-size:.7rem;line-height:1.68;color:var(--muted);border-top:1px solid var(--line)}
+body[data-page="projects"] .dr-metrics {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--surface-2);border-block:1px solid var(--line)}
+body[data-page="projects"] .dr-metrics>div {display:flex;flex-direction:column;gap:6px;padding:20px 18px;min-width:0}
+body[data-page="projects"] .dr-metrics>div+div {border-left:1px solid var(--line)}
+body[data-page="projects"] .dr-metrics strong {color:var(--text);font-size:clamp(1.1rem,1.75vw,1.55rem);font-weight:850;overflow-wrap:anywhere;letter-spacing:-.03em}
+body[data-page="projects"] .dr-metrics span {font-size:.7rem;font-weight:700;color:var(--muted)}
+body[data-page="projects"] .dr-methodology,body[data-page="projects"] .dr-gallery {padding:29px 31px}
+body[data-page="projects"] .dr-gallery {border-top:1px solid var(--line)}
+body[data-page="projects"] .dr-block-heading {max-width:890px;margin:0 0 21px}
+body[data-page="projects"] .dr-block-heading h4 {font-size:clamp(1.28rem,2vw,1.9rem);letter-spacing:-.025em;line-height:1.28;margin:7px 0 8px;color:var(--text)}
+body[data-page="projects"] .dr-block-heading>p:not(.dr-kicker) {font-size:.81rem;line-height:1.74;color:var(--muted);margin:0}
+body[data-page="projects"] .dr-stages {display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}
+body[data-page="projects"] .dr-stages>div {min-width:0;border:1px solid var(--line);border-radius:12px;padding:14px 12px;background:color-mix(in srgb,var(--surface-2) 73%,var(--surface))}
+body[data-page="projects"] .dr-stages small {color:var(--accent-2);font-size:.64rem;font-weight:850;line-height:1.5}
+body[data-page="projects"] .dr-stages h5 {margin:8px 0;font-size:.78rem;line-height:1.45;color:var(--text)}
+body[data-page="projects"] .dr-stages p {font-size:.68rem;line-height:1.67;margin:0;color:var(--muted)}
+body[data-page="projects"] .dr-note {padding:14px 16px;border-left:3px solid #57a4a7;background:var(--surface-2);border-radius:0 9px 9px 0;margin:17px 0 0;color:var(--muted);font-size:.77rem;line-height:1.75}
+body[data-page="projects"] .dr-note strong {color:var(--text)}
+body[data-page="projects"] .dr-gallery-group {margin-top:27px}
+body[data-page="projects"] .dr-gallery-group>header {display:flex;justify-content:space-between;align-items:center;gap:13px;margin-bottom:11px}
+body[data-page="projects"] .dr-gallery-group h5 {font-size:1.07rem;margin:0 0 4px;color:var(--text)}
+body[data-page="projects"] .dr-gallery-group header p {font-size:.73rem;line-height:1.6;color:var(--muted);margin:0}
+body[data-page="projects"] .dr-gallery-group header>span {flex:0 0 auto;color:var(--muted);font-size:.67rem;font-weight:700}
+body[data-page="projects"] .dr-gallery-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+body[data-page="projects"] .dr-figure {margin:0;border:1px solid var(--line);border-radius:13px;overflow:hidden;background:var(--surface);min-width:0;display:flex;flex-direction:column}
+body[data-page="projects"] .dr-figure--wide {grid-column:1 / -1}
+body[data-page="projects"] .dr-figure-media {display:flex;justify-content:center;align-items:center;min-height:220px;padding:12px;background:#fff;cursor:zoom-in}
+body[data-page="projects"] .dr-figure-media[aria-disabled="true"] {cursor:default}
+body[data-page="projects"] .dr-figure-media img {max-width:100%;height:auto;width:auto;max-height:560px;display:block;object-fit:contain}
+body[data-page="projects"] .dr-figure--wide .dr-figure-media img {max-height:750px}
+body[data-page="projects"] .dr-image-fallback {min-height:180px;display:flex;justify-content:center;align-items:center;flex-direction:column;gap:7px;text-align:center;color:#406678;font-size:.76rem;padding:18px}
+body[data-page="projects"] .dr-image-fallback[hidden] {display:none}
+body[data-page="projects"] .dr-image-fallback>span {font-size:2.3rem;line-height:1;color:#298594}
+body[data-page="projects"] .dr-image-fallback strong {font-size:.87rem}
+body[data-page="projects"] .dr-image-fallback small {max-width:230px;font-size:.66rem;line-height:1.6}
+body[data-page="projects"] .dr-figure figcaption {padding:12px 14px;display:flex;gap:5px;flex-direction:column;border-top:1px solid var(--line)}
+body[data-page="projects"] .dr-figure figcaption small {color:var(--accent-2);font-size:.61rem;font-weight:850;letter-spacing:.045em}
+body[data-page="projects"] .dr-figure figcaption strong {font-size:.79rem;line-height:1.5;color:var(--text)}
+body[data-page="projects"] .dr-figure figcaption span {font-size:.68rem;line-height:1.65;color:var(--muted)}
+body[data-page="projects"] .dr-prototype-group .dr-gallery-grid {grid-template-columns:1fr}
+body[data-page="projects"] .dr-record {display:grid;grid-template-columns:1fr 1fr;gap:25px;border-top:1px solid var(--line);background:var(--surface-2);padding:26px 31px}
+body[data-page="projects"] .dr-record>div {min-width:0}
+body[data-page="projects"] .dr-record h4 {margin:7px 0 11px;font-size:1.11rem;line-height:1.35}
+body[data-page="projects"] .dr-record p:not(.dr-kicker) {margin:0 0 10px;font-size:.76rem;line-height:1.7;color:var(--muted)}
+body[data-page="projects"] .dr-record-links {display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+body[data-page="projects"] .dr-record-links a {font-size:.7rem;padding:8px 11px;border:1px solid var(--line);border-radius:9px;color:var(--accent-2);font-weight:750;background:var(--surface);line-height:1.4}
+body[data-page="projects"] .dr-record-links a:hover,body[data-page="projects"] .dr-record-links a:focus-visible {background:#e8f7fb!important;border-color:#a6d6e4!important;color:#155d70!important}
+body[data-page="projects"] .dr-record-caution {border-left:3px solid #73b3a8;padding-left:21px}
+body[data-page="projects"] .dr-footer {display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:17px 31px;border-top:1px solid var(--line)}
+body[data-page="projects"] .dr-footer span {font-size:.7rem;color:var(--muted);font-weight:720}
+body[data-page="projects"] .dr-footer a {font-size:.74rem;color:var(--accent-2);font-weight:800}
+@media(max-width:1100px){
+ body[data-page="projects"] .dr-stages {grid-template-columns:repeat(3,minmax(0,1fr))}
+ body[data-page="projects"] .dr-hero {grid-template-columns:1fr}
+ body[data-page="projects"] .dr-featured-image img {max-height:700px}
+}
+@media(max-width:700px){
+ body[data-page="projects"] .dr-header {padding:22px 19px 16px;flex-direction:column}
+ body[data-page="projects"] .dr-nav {margin:0 19px 14px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+ body[data-page="projects"] .dr-nav a {padding:10px;font-size:.67rem}
+ body[data-page="projects"] .dr-hero {padding:8px 19px 23px}
+ body[data-page="projects"] .dr-methodology,body[data-page="projects"] .dr-gallery {padding:23px 19px}
+ body[data-page="projects"] .dr-stages {grid-template-columns:repeat(2,minmax(0,1fr))}
+ body[data-page="projects"] .dr-metrics {grid-template-columns:repeat(2,minmax(0,1fr))}
+ body[data-page="projects"] .dr-metrics>div {padding:16px 13px}
+ body[data-page="projects"] .dr-metrics>div:nth-child(3) {border-left:0;border-top:1px solid var(--line)}
+ body[data-page="projects"] .dr-metrics>div:nth-child(4) {border-top:1px solid var(--line)}
+ body[data-page="projects"] .dr-gallery-grid {grid-template-columns:1fr}
+ body[data-page="projects"] .dr-figure--wide {grid-column:auto}
+ body[data-page="projects"] .dr-record {grid-template-columns:1fr;padding:23px 19px}
+ body[data-page="projects"] .dr-footer {padding:16px 19px}
+}
+@media(max-width:440px){body[data-page="projects"] .dr-stages {grid-template-columns:1fr}body[data-page="projects"] .dr-actions .btn {width:100%}}
+@media(prefers-reduced-motion:reduce){body[data-page="projects"] .dr-nav a {scroll-behavior:auto}}
