@@ -1,0 +1,21 @@
+{
+  "project": "Comparative Evaluation of Hybrid MICE\u2013Median Missing-Value Reconstruction and Downstream Hepatitis C Prediction Using Machine Learning",
+  "files": [
+    {
+      "filename": "fig01-hcv-evaluation-workflow.webp",
+      "title": "Figure 1 \u2014 Overall workflow for HCV downstream prediction and distinct missing-value reconstruction analyses",
+      "width": 4096,
+      "height": 3260,
+      "bytes": 902648,
+      "sha256": "8c56f062bd83bd2f73d1ea9784671897052c7af1f75b34a4df5e68ee3cd04a4a"
+    },
+    {
+      "filename": "fig02-hybrid-mice-median-reconstruction.webp",
+      "title": "Figure 2 \u2014 Equal-weight hybrid MICE\u2013Median reconstruction design and MCAR evaluation",
+      "width": 1024,
+      "height": 1536,
+      "bytes": 162920,
+      "sha256": "336a1b7a6e5f7760bb1022d3aec578373ab0b9467e1cc2858dae0b33357cf27e"
+    }
+  ]
+}
