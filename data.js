@@ -852,6 +852,16 @@ window.PORTFOLIO_DATA = {
       evidenceHref: "gallery.html#array-reviewing-certificate-2026",
       evidencePdf: "assets/recognition/array-reviewing-certificate-2026.pdf?v=array-2b4ab82b2d32",
       evidenceLabel: "Certificate of Reviewing · PDF"
+    },
+    {
+      id: "data-in-brief", journal: "Data in Brief", publisher: "Elsevier",
+      label: "DIB", initials: "DIB", artworkType: "cover",
+      publisherLogo: "assets/academic/journals/publishers/elsevier-logo-color.png",
+      reviews: 1, since: "2026", startLabel: "2026", ongoing: false,
+      role: "Peer Reviewer",
+      journalUrl: "https://www.sciencedirect.com/journal/data-in-brief", issn: "2352-3409",
+      scope: "Completed an invited manuscript review for Data in Brief, evaluating data description, research-data accessibility, methodology, documentation and reporting.",
+      recognition: "Review certificate and journal cover pending publication to the portfolio evidence folder."
     }
   ],
 
