@@ -27,7 +27,7 @@ async function main(){
     assert(markup.includes(tag),`Global name emphasis not linked by ${file}`);
     assert.equal(markup.split('owner-emphasis.js').length-1,1,`Duplicate owner script in ${file}`);
     if(markup.includes('v2-app.js?v=')){
-      const appVersion=['projects.html','publications.html'].includes(file)?'20261105-heart-case-study-v1':version;
+      const appVersion=['experience.html','index.html','profile.html'].includes(file)?'20261106-dib-review-record1':(['projects.html','publications.html'].includes(file)?'20261105-heart-case-study-v1':version);
       assert(markup.includes(`v2-app.js?v=${appVersion}`),`Stale app version in ${file}`);
     }
   }
@@ -70,6 +70,25 @@ async function main(){
   const dataContext={window:{}};
   vm.runInNewContext(text('data.js'),dataContext,{filename:'data.js'});
   const pubs=dataContext.window.PORTFOLIO_DATA.publications;
+  const dibReview=(dataContext.window.PORTFOLIO_DATA.service||[]).find(x=>x.id==='data-in-brief');
+  assert(dibReview,'Data in Brief service record must appear in editorial service data');
+  assert.equal(dibReview.journal,'Data in Brief');
+  assert.equal(dibReview.reviews,1,'Record only the confirmed single completed DIB review');
+  assert.equal(dibReview.ongoing,false,'Do not claim an ongoing reviewer appointment');
+  assert(!dibReview.artwork,'Avoid broken cover image until the user uploads the original');
+  assert(!dibReview.evidenceHref && !dibReview.evidencePdf,
+    'Do not link to a nonexistent review certificate');
+  const reviewFolder='assets/academic/journals/data-in-brief/README.md';
+  assert(fs.existsSync(reviewFolder),'Missing journal-cover and review-certificate upload destination');
+  const instructions=text(reviewFolder);
+  assert(instructions.includes('data-in-brief-cover.jpg') &&
+    instructions.includes('data-in-brief-reviewing-certificate-2026.pdf'),
+    'Review evidence folder must contain exact upload instructions');
+  assert(app.includes("record.ongoing===false?'Completed':'Ongoing'"),
+    'Completed DIB review must be labelled accurately');
+  assert(app.includes('editorial-journal-grid--five'),
+    'Five editorial-service cards should use balanced grid styling');
+
   for(const [id,doi] of [
     ['fastica','10.1002/eng2.70575'],
     ['ckd','10.3329/ijss.v25i2.85732'],
