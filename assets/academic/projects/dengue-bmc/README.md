@@ -1,18 +1,18 @@
-# BMC Public Health accepted dengue forecasting — portfolio figures
+# BMC Public Health dengue forecasting — portfolio figures
 
-Project: **Nationwide Evaluation of District-Informed Bottom-Up and Direct National Approaches for One-Week-Ahead Forecasting of Dengue Hospital Admissions in Bangladesh**
+This folder holds **21 WebP images** optimized from the author-supplied `Dengue Figs.zip`.
 
-Accepted by *BMC Public Health* on **28 October 2026**. Second author: **Md. Razu Ahmed**. Journal article DOI pending.
+The portfolio project page is pre-wired to these exact filenames. Upload the `*.webp` figures and `figure-manifest.json` directly to:
 
-The case study at `projects.html#dengue-bmc-project` has **21 author-provided figure slots**, prewired to the exact filenames in `Dengue_BMC_Portfolio_Figures.zip`.
+`assets/academic/projects/dengue-bmc/`
 
-To publish the images, upload all 21 `.webp` files and `figure-manifest.json` from the optimized ZIP **directly into this directory** (`assets/academic/projects/dengue-bmc/`), without nesting an extra folder. Keep filenames intact.
+Do **not** add a second nested folder or upload the ZIP in place of the individual figures.
 
-- Figure 8 is the featured 2025 national forecast comparison, shown once.
-- Figure 1 is the original study workflow, shown once.
-- Figure 4's four yearly maps use `fig04a` through `fig04d`.
-- Figure 10 contains panels 10A–10E; Figure 11 contains 11A–11B.
+- Featured Figure 8: `fig08-national-forecast-comparison.webp`.
+- Supporting methodology Figure 1: `fig01-study-workflow.webp`.
+- Original Figure 4 comprises four annual map panels, stored as `fig04a`–`fig04d`.
+- Figures 10 and 11 preserve their named subpanels.
 
-The link `https://doi.org/10.5281/zenodo.23928401` is an **analysis-code/software archive DOI**, not the journal article DOI.
+There is one display instance per image. The source paper was accepted by *BMC Public Health* on **28 October 2026**; no journal publication DOI is claimed.
 
-The `figure-manifest.json` file in the ZIP lists all 21 filenames, original filenames and image checksums.
+See `figure-manifest.json` for exact source filenames and SHA-256 hashes.

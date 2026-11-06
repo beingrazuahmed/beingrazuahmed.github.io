@@ -1,0 +1,306 @@
+{
+  "project": "Nationwide Evaluation of District-Informed Bottom-Up and Direct National Approaches for One-Week-Ahead Forecasting of Dengue Hospital Admissions in Bangladesh",
+  "accepted_date": "2026-10-28",
+  "journal": "BMC Public Health",
+  "publication_status": "Accepted / Forthcoming — article DOI not yet assigned",
+  "figure_count": 21,
+  "featured": "fig08-national-forecast-comparison.webp",
+  "secondary_feature": "fig01-study-workflow.webp",
+  "source": "User-provided Dengue Figs.zip",
+  "files": [
+    {
+      "original": "Figure 1 Study design and district-informed dengue forecasting workflow.png",
+      "webp": "fig01-study-workflow.webp",
+      "original_dimensions": [
+        602,
+        861
+      ],
+      "webp_dimensions": [
+        602,
+        861
+      ],
+      "webp_bytes": 101806,
+      "sha256": "c6b23889865cc57f246771aed7cdcecf537e1a2f46be2eaf621cb1c01141cd04"
+    },
+    {
+      "original": "Figure 2 Empirical effect of weekly aggregation on the sparsity and distribution of reported dengue hospital admissions.png",
+      "webp": "fig02-weekly-aggregation.webp",
+      "original_dimensions": [
+        1260,
+        561
+      ],
+      "webp_dimensions": [
+        1260,
+        561
+      ],
+      "webp_bytes": 28722,
+      "sha256": "706f333f02c5822f226632407ca7972ed2a97292938710166c774cbe9550ca95"
+    },
+    {
+      "original": "Figure 3 Development-period weather–admission lag diagnostics after adjustment for seasonality, linear trend, and lag-1 temporal persistence.png",
+      "webp": "fig03-weather-lag-diagnostics.webp",
+      "original_dimensions": [
+        2068,
+        1073
+      ],
+      "webp_dimensions": [
+        2068,
+        1073
+      ],
+      "webp_bytes": 121410,
+      "sha256": "717d291117c65675c9312b32e32d4e2fb21139add83d99586450c48341ab79e5"
+    },
+    {
+      "original": "Figure 4 District-level distribution of reported dengue hospital admissions in Bangladesh, 2022.png",
+      "webp": "fig04a-district-admissions-2022.webp",
+      "original_dimensions": [
+        5322,
+        6533
+      ],
+      "webp_dimensions": [
+        2200,
+        2700
+      ],
+      "webp_bytes": 250178,
+      "sha256": "599b2e2fc2e7306bf6ac2ecc9ed59a05a5ef9c65951530197532219280176b2d"
+    },
+    {
+      "original": "Figure 4 District-level distribution of reported dengue hospital admissions in Bangladesh, 2023.png",
+      "webp": "fig04b-district-admissions-2023.webp",
+      "original_dimensions": [
+        5322,
+        6533
+      ],
+      "webp_dimensions": [
+        2200,
+        2700
+      ],
+      "webp_bytes": 259790,
+      "sha256": "8232df50380ea6255631166c0634ba218d4591f1976082df99aa26a0068f176d"
+    },
+    {
+      "original": "Figure 4 District-level distribution of reported dengue hospital admissions in Bangladesh, 2024.png",
+      "webp": "fig04c-district-admissions-2024.webp",
+      "original_dimensions": [
+        5322,
+        6533
+      ],
+      "webp_dimensions": [
+        2200,
+        2700
+      ],
+      "webp_bytes": 260234,
+      "sha256": "4ce4f5624b89101c33513b4f2ed009fc8713d16d0041d9d713e9af8419a8b20b"
+    },
+    {
+      "original": "Figure 4 District-level distribution of reported dengue hospital admissions in Bangladesh, 2025.png",
+      "webp": "fig04d-district-admissions-2025.webp",
+      "original_dimensions": [
+        5322,
+        6533
+      ],
+      "webp_dimensions": [
+        2200,
+        2700
+      ],
+      "webp_bytes": 255764,
+      "sha256": "11dcd6a0fe932756964ae18a4723386f08820b34581a6f210e07098da1d5fd38"
+    },
+    {
+      "original": "Figure 5 Monthly distribution of reported dengue hospital admissions in Bangladesh, 2022–2025.png",
+      "webp": "fig05-monthly-seasonality.webp",
+      "original_dimensions": [
+        602,
+        295
+      ],
+      "webp_dimensions": [
+        602,
+        295
+      ],
+      "webp_bytes": 15848,
+      "sha256": "1d064f91d16aef1657457766deffeba75ac4a7e6368360e301679a7324ee0de4"
+    },
+    {
+      "original": "Figure 6 Mean monthly reported dengue hospital admissions in the 20 highest-burden districts of Bangladesh, 2022–2025.png",
+      "webp": "fig06-top20-district-heatmap.webp",
+      "original_dimensions": [
+        582,
+        417
+      ],
+      "webp_dimensions": [
+        582,
+        417
+      ],
+      "webp_bytes": 11258,
+      "sha256": "cde4d38bcc8f23ee5fe06a9a3a548fd6a2a9eaa6dc763d4be4510243739cc310"
+    },
+    {
+      "original": "Figure 7 Weekly reported dengue hospital admissions in Bangladesh, 2022–2025, with a 3-week moving average.png",
+      "webp": "fig07-weekly-admissions.webp",
+      "original_dimensions": [
+        1379,
+        683
+      ],
+      "webp_dimensions": [
+        1379,
+        683
+      ],
+      "webp_bytes": 45570,
+      "sha256": "750628f6ba8ed9beace37b1f5625910d60215fa2032548886880d22ec407eb1a"
+    },
+    {
+      "original": "Figure 8 Observed Bangladesh weekly reported dengue hospital admissions and one-week-ahead national forecasts during the 52-week 2025 held-out test period.png",
+      "webp": "fig08-national-forecast-comparison.webp",
+      "original_dimensions": [
+        2194,
+        1051
+      ],
+      "webp_dimensions": [
+        2194,
+        1051
+      ],
+      "webp_bytes": 105104,
+      "sha256": "6b6cea7dbe88620ada387d208d6b72fdf28c6f129773d0649f8ad3102a7cdb56"
+    },
+    {
+      "original": "Figure 9 Primary 4-week circular block-bootstrap 95% confidence intervals for national wMAPE differences across the three bottom-up model comparisons.png",
+      "webp": "fig09-bootstrap-comparisons.webp",
+      "original_dimensions": [
+        480,
+        383
+      ],
+      "webp_dimensions": [
+        480,
+        383
+      ],
+      "webp_bytes": 10410,
+      "sha256": "36b21c78e8553e29023b1fed20b0c45c1f202eb27ff2206e5b596bdaa50762c7"
+    },
+    {
+      "original": "Figure 10A Global SHAP distribution and direction.png",
+      "webp": "fig10a-shap-global.webp",
+      "original_dimensions": [
+        1080,
+        1050
+      ],
+      "webp_dimensions": [
+        1080,
+        1050
+      ],
+      "webp_bytes": 83062,
+      "sha256": "96a77d97382c6b2c233df69f73599eb10cf21ac99208b4ed42e722ae1220b1ba"
+    },
+    {
+      "original": "Figure 10B Current reported admissions.png",
+      "webp": "fig10b-shap-admissions.webp",
+      "original_dimensions": [
+        1054,
+        1050
+      ],
+      "webp_dimensions": [
+        1054,
+        1050
+      ],
+      "webp_bytes": 49940,
+      "sha256": "bc82bfc0ab3acb795585fc1edcb40a3e9c828e065ec0985c7659e13fc272846a"
+    },
+    {
+      "original": "Figure 10C Current relative humidity.png",
+      "webp": "fig10c-shap-humidity.webp",
+      "original_dimensions": [
+        1080,
+        770
+      ],
+      "webp_dimensions": [
+        1080,
+        770
+      ],
+      "webp_bytes": 59680,
+      "sha256": "f24098cfef285de018c7c2f8f66c6826e530e8143e03d241192540781cd962fb"
+    },
+    {
+      "original": "Figure 10D Current mean temperature.png",
+      "webp": "fig10d-shap-temperature.webp",
+      "original_dimensions": [
+        1054,
+        735
+      ],
+      "webp_dimensions": [
+        1054,
+        735
+      ],
+      "webp_bytes": 54946,
+      "sha256": "73ea072c3316a51ea770a6234fc51f50691353e23bd1fd5c21c58cb1fe9ea0eb"
+    },
+    {
+      "original": "Figure 10E Seasonal timing.png",
+      "webp": "fig10e-shap-seasonality.webp",
+      "original_dimensions": [
+        1080,
+        644
+      ],
+      "webp_dimensions": [
+        1080,
+        644
+      ],
+      "webp_bytes": 25554,
+      "sha256": "95b8821d941ae030a58782819a49e4c1a9530d6eef55da3ece3d51f99d9c0310"
+    },
+    {
+      "original": "Figure 11A District map of mean signed residuals.png",
+      "webp": "fig11a-spatial-residual-map.webp",
+      "original_dimensions": [
+        1039,
+        1234
+      ],
+      "webp_dimensions": [
+        1039,
+        1234
+      ],
+      "webp_bytes": 97272,
+      "sha256": "0b29e6b833662d8db5cc8fe7ef9f69a1b6a1824b97142daa67dbd592383d7e4f"
+    },
+    {
+      "original": "Figure 11B Moran scatterplot for mean signed residuals.png",
+      "webp": "fig11b-spatial-moran.webp",
+      "original_dimensions": [
+        1117,
+        1052
+      ],
+      "webp_dimensions": [
+        1117,
+        1052
+      ],
+      "webp_bytes": 41466,
+      "sha256": "184835c78c5b835cab26bb59da2b06c3d720897e7340013ac0c527843750c33d"
+    },
+    {
+      "original": "Figure 12 Population-standardized sensitivity of the frozen 2025 district forecasts.png",
+      "webp": "fig12-population-sensitivity.webp",
+      "original_dimensions": [
+        1505,
+        1388
+      ],
+      "webp_dimensions": [
+        1505,
+        1388
+      ],
+      "webp_bytes": 56866,
+      "sha256": "69d06bbf93284b0be39f5604c73b08ab032ea15915f9ad3e2b73e30aa7179342"
+    },
+    {
+      "original": "Figure 13 Empirical residual-based uncertainty intervals around the bottom-up LightGBM national forecasts during the 52-week 2025 held-out test period.png",
+      "webp": "fig13-residual-uncertainty.webp",
+      "original_dimensions": [
+        2188,
+        1085
+      ],
+      "webp_dimensions": [
+        2188,
+        1085
+      ],
+      "webp_bytes": 97638,
+      "sha256": "83ef64e4be8b452f5353b9524a150faa4a2361dd2f63182a76dab5809205319d"
+    }
+  ]
+}
