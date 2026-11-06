@@ -206,8 +206,8 @@ async function main(){
   assert(projects.includes('heart-bsccfs-project.js?v=20261105-fig01-featured-v2'));
   assert(projects.includes('heart-bsccfs-project.css?v=20261105-fig01-featured-v2'));
   assert(projects.includes('v2-app.js?v=20261106-bmc-dengue-research1'));
-  assert(projects.includes('dengue-bmc-project.js?v=20261106-bmc-dengue-research1'));
-  assert(projects.includes('dengue-bmc-project.css?v=20261106-bmc-dengue-research1'));
+  assert(projects.includes('dengue-bmc-project.js?v=20261106-dengue-final-abstract2'));
+  assert(projects.includes('dengue-bmc-project.css?v=20261106-dengue-final-abstract2'));
   assert(projects.indexOf('src="dengue-bmc-project.js') < projects.indexOf('src="v2-app.js'),
     'Accepted dengue renderer must load before the main Projects renderer');
   assert(text('v2-app.js').includes('MRA_DENGUE_CASE()'),
