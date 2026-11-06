@@ -51,7 +51,7 @@
           <p>${esc(p.summary||'The research compares staged image-feature representations for grading diabetic retinopathy from fundus photographs.')}</p>
           <p class="dr-lead"><strong>Selected Stage-5 fusion:</strong> fine-tuned DenseNet121 embeddings + SIFT Bag of Visual Words + XGBoost. Validation-informed experiments compare deep, handcrafted and fused representations rather than treating an individual model score as a clinical guarantee.</p>
           <div class="dr-actions">
-            <a class="btn primary" href="publications.html">View publication record <span aria-hidden="true">↗</span></a>
+            <a class="btn primary" href="publications.html#output-dr">View publication record <span aria-hidden="true">↗</span></a>
             <a class="btn ghost" href="assets/academic/conferences/icasds-2025/documents/icasds-2025-poster-341.pdf" target="_blank" rel="noopener noreferrer">Conference poster · PDF <span aria-hidden="true">↗</span></a>
           </div>
           <p class="dr-credits"><strong>Researcher:</strong> Md. Razu Ahmed <span aria-hidden="true">·</span> <strong>Supervisor:</strong> ${esc(p.supervisor||'Prof. Dr. Md. Shamim Reza')}</p>
@@ -90,7 +90,7 @@
         <div><p class="dr-kicker">RESEARCH STATUS</p><h4>Submitted to Measurement (Elsevier)</h4>
           <p><strong>${esc(p.title||'A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images')}</strong></p>
           <p>Submitted 11 September 2026. The manuscript is under review; no article acceptance, publication DOI or final peer-reviewed citation is claimed here.</p>
-          <div class="dr-record-links"><a href="publications.html">Portfolio manuscript record ↗</a>
+          <div class="dr-record-links"><a href="publications.html#output-dr">Portfolio manuscript record ↗</a>
             <a href="assets/academic/conferences/icasds-2025/documents/icasds-2025-paper-341-proceedings.pdf" target="_blank" rel="noopener noreferrer">ICASDS 2025 abstract · Paper 341 ↗</a>
             <a href="https://github.com/beingrazuahmed/beingrazuahmed.github.io" target="_blank" rel="noopener noreferrer">Portfolio source · GitHub ↗</a></div>
         </div>
