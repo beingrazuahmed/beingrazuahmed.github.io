@@ -819,14 +819,14 @@ window.PORTFOLIO_DATA = {
     },
     {
       id: "bspc", journal: "Biomedical Signal Processing and Control", publisher: "Elsevier",
-      label: "BSPC", initials: "BSPC", artwork: "assets/academic/journals/bspc/bspc-cover.jpeg", artworkType: "cover", publisherLogo: "assets/academic/journals/publishers/elsevier-logo-color.png", reviews: 13, since: "July 2026",
+      label: "BSPC", initials: "BSPC", artwork: "assets/academic/journals/bspc/bspc-cover.jpeg", artworkType: "cover", publisherLogo: "assets/academic/journals/publishers/elsevier-logo-color.png", reviews: 14, since: "July 2026",
       startDate: "2026-07-22", startLabel: "22 July 2026", role: "Peer Reviewer",
       journalUrl: "https://www.sciencedirect.com/journal/biomedical-signal-processing-and-control", issn: "1746-8094",
-      scope: "Completed 13 invited manuscript reviews, assessing biomedical signal-processing and machine-learning methods, validation strategies, interpretation of results, and scientific reporting.",
-      recognition: "Received Certificates of Reviewing recognizing 13 completed reviews.",
-      evidenceAsset: "assets/gallery/bspc-reviewing-certificate-2026.webp?v=bspc-775b0d6dc89a-total42",
+      scope: "Completed 14 invited manuscript reviews, assessing biomedical signal-processing and machine-learning methods, validation strategies, interpretation of results, and scientific reporting.",
+      recognition: "Certificate of Reviewing documenting 14 completed reviews.",
+      evidenceAsset: "assets/gallery/bspc-reviewing-certificate-2026.webp?v=bspc-20261106-review14",
       evidenceHref: "gallery.html#bspc-reviewing-certificate-2026",
-      evidencePdf: "assets/recognition/bspc-reviewing-certificate-2026.pdf?v=bspc-775b0d6dc89a-total42",
+      evidencePdf: "assets/recognition/bspc-reviewing-certificate-2026.pdf?v=bspc-20261106-review14",
       evidenceLabel: "Certificate of Reviewing · PDF"
     },
     {
@@ -855,13 +855,19 @@ window.PORTFOLIO_DATA = {
     },
     {
       id: "data-in-brief", journal: "Data in Brief", publisher: "Elsevier",
-      label: "DIB", initials: "DIB", artworkType: "cover",
+      label: "DIB", initials: "DIB",
+      artwork: "assets/academic/journals/data-in-brief/data-in-brief-cover.jpg", artworkType: "cover",
       publisherLogo: "assets/academic/journals/publishers/elsevier-logo-color.png",
-      reviews: 1, since: "2026", startLabel: "2026", ongoing: false,
+      reviews: 1, since: "November 2026", startDate: "2026-11-03",
+      startLabel: "3 November 2026", ongoing: true,
       role: "Peer Reviewer",
       journalUrl: "https://www.sciencedirect.com/journal/data-in-brief", issn: "2352-3409",
-      scope: "Completed an invited manuscript review for Data in Brief, evaluating data description, research-data accessibility, methodology, documentation and reporting.",
-      recognition: "Review certificate and journal cover pending publication to the portfolio evidence folder."
+      scope: "Peer Reviewer since 3 November 2026; completed 1 invited manuscript review, assessing research data documentation, reproducibility, accessibility and scientific reporting.",
+      recognition: "Official Data in Brief Certificate of Reviewing received for 1 completed review.",
+      evidenceAsset: "assets/gallery/data-in-brief-reviewing-certificate-2026.webp?v=dib-20261106-review1",
+      evidenceHref: "gallery.html#data-in-brief-reviewing-certificate-2026",
+      evidencePdf: "assets/academic/journals/data-in-brief/data-in-brief-reviewing-certificate-2026.pdf?v=dib-20261106-review1",
+      evidenceLabel: "Certificate of Reviewing · PDF"
     }
   ],
 
@@ -937,7 +943,8 @@ window.PORTFOLIO_DATA = {
     { id: "ms-medium-of-instruction-english-pust-2025", title: "M.S. Medium of Instruction (English) — PUST", category: "Academic Documentation", evidenceType: "Academic Document", date: "2025", issuer: "Pabna University of Science and Technology (PUST)", caption: "Official Medium of Instruction document confirming English as the language of instruction for the M.S. in Statistics programme.", asset: "assets/gallery/originals/ms-medium-of-instruction-english-pust-2025.jpg", href: "assets/gallery/originals/ms-medium-of-instruction-english-pust-2025.jpg", fileType: "JPG", related: "languages.html", verified: true, sourceFile: "MS MOI (English).jpeg" },
     { id: "bangladesh-scouts-upazila-rally-2011", title: "Bangladesh Scouts — 2nd Upazila Scout Rally 2011", category: "Leadership & Engagement", evidenceType: "Participation Record", date: "22–25 January 2011", issuer: "Bangladesh Scouts · Paba, Rajshahi", caption: "Participation record from the 2nd Upazila Scout Rally held at Baya School and College ground, Paba, Rajshahi.", asset: "assets/gallery/originals/bangladesh-scouts-upazila-rally-certificate-2011.jpg", href: "assets/gallery/originals/bangladesh-scouts-upazila-rally-certificate-2011.jpg", fileType: "JPG", related: "profile.html", verified: true, sourceFile: "Scouts Certificate.jpeg" },
     { id: "bteb-computer-office-application-certificate", title: "Computer Office Application — National Skill Standard Basic Course", category: "Professional Development", evidenceType: "Certificate", date: "2020–2021", issuer: "Bangladesh Technical Education Board (BTEB), Dhaka", caption: "Certificate for successful completion of the 360-hour Computer Office Application course through Path Finder Computer Training Institute, Pabna, with Grade A+.", asset: "assets/gallery/bteb-computer-office-application-certificate.webp", href: "assets/gallery/bteb-computer-office-application-certificate.webp", related: "recognition.html", verified: true, sourceFile: "User-provided BTEB training certificate" },
-    { id: "bspc-reviewing-certificate-2026", title: "Biomedical Signal Processing and Control — Certificate of Reviewing", category: "Scholarly Service", evidenceType: "Certificate", date: "2026", issuer: "Biomedical Signal Processing and Control · Elsevier", caption: "Updated reviewing certificate documenting thirteen completed reviews for Biomedical Signal Processing and Control. Open the original uploaded PDF to view the full certificate.", asset: "assets/gallery/bspc-reviewing-certificate-2026.webp?v=bspc-775b0d6dc89a-total42", href: "assets/recognition/bspc-reviewing-certificate-2026.pdf?v=bspc-775b0d6dc89a-total42", fileType: "PDF", related: "experience.html", verified: true, sourceFile: "bspc-reviewing-certificate-2026.pdf" },
+    { id: "bspc-reviewing-certificate-2026", title: "Biomedical Signal Processing and Control — Certificate of Reviewing", category: "Scholarly Service", evidenceType: "Certificate", date: "2026", issuer: "Biomedical Signal Processing and Control · Elsevier", caption: "Updated official reviewing certificate documenting 14 completed reviews for Biomedical Signal Processing and Control. Open the original uploaded PDF for the complete certificate.", asset: "assets/gallery/bspc-reviewing-certificate-2026.webp?v=bspc-20261106-review14", href: "assets/recognition/bspc-reviewing-certificate-2026.pdf?v=bspc-20261106-review14", fileType: "PDF", documentPages: 1, related: "experience.html#reviewer-bspc", verified: true, sourceFile: "bspc-reviewing-certificate-2026.pdf" },
+    { id: "data-in-brief-reviewing-certificate-2026", title: "Data in Brief — Certificate of Reviewing", category: "Scholarly Service", evidenceType: "Certificate", date: "November 2026", issuer: "Data in Brief · Elsevier", caption: "Official Certificate of Reviewing for one completed Data in Brief manuscript review. Reviewer service began on 3 November 2026 and continues; open the original PDF for the issued credential.", asset: "assets/gallery/data-in-brief-reviewing-certificate-2026.webp?v=dib-20261106-review1", href: "assets/academic/journals/data-in-brief/data-in-brief-reviewing-certificate-2026.pdf?v=dib-20261106-review1", fileType: "PDF", documentPages: 1, related: "experience.html#reviewer-data-in-brief", verified: true, sourceFile: "data-in-brief-reviewing-certificate-2026.pdf" },
     { id: "array-reviewing-certificate-2026", title: "Array — Certificate of Reviewing", category: "Scholarly Service", evidenceType: "Certificate", date: "29 October 2026", issuer: "Array · Elsevier", caption: "Certificate of Reviewing issued 29 October 2026, documenting 3 completed invited reviews for Array. The preview is rendered directly from the latest uploaded original PDF.", asset: "assets/gallery/array-reviewing-certificate-2026.webp?v=array-2b4ab82b2d32", href: "assets/recognition/array-reviewing-certificate-2026.pdf?v=array-2b4ab82b2d32", fileType: "PDF", documentPages: 1, related: "experience.html#editorial-peer-review", verified: true, sourceFile: "array-reviewing-certificate-2026.pdf" },
     { id: "eaai-reviewing-certificate-2026", title: "Engineering Applications of Artificial Intelligence — Certificate of Reviewing", category: "Scholarly Service", evidenceType: "Certificate", date: "September 2026", issuer: "Engineering Applications of Artificial Intelligence · Elsevier", caption: "Updated Certificate of Reviewing documenting 3 completed reviews for Engineering Applications of Artificial Intelligence, uploaded in October 2026.", asset: "assets/gallery/eaai-reviewing-certificate-2026.webp?v=20261019-eaai-3-reviews", href: "assets/recognition/eaai-reviewing-certificate-2026.pdf?v=20261019-eaai-3-reviews", fileType: "PDF", documentPages: 1, related: "experience.html", verified: true, sourceFile: "eaai-reviewing-certificate-2026.pdf" },
     { id: "elsevier-research-data-management-2026", title: "Research Data Management — Certificate of Completion", category: "Professional Development", evidenceType: "Certificate", date: "13 August 2026", issuer: "Researcher Academy · Elsevier", caption: "Certificate of completion for Research Data Management (4 hours 55 minutes).", asset: "assets/gallery/elsevier-research-data-management-certificate-2026.webp", href: "assets/recognition/elsevier-research-data-management-certificate-2026.pdf", fileType: "PDF", documentPages: 1, related: "recognition.html", verified: true, sourceFile: "research-data-management-certificate_2(1).pdf" },
