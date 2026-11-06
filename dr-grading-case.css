@@ -5,7 +5,7 @@ body[data-page="projects"] .dr-case [id^="dr-"] {scroll-margin-top:110px}
 body[data-page="projects"] .dr-header {padding:28px 31px 21px;display:flex;justify-content:space-between;align-items:start;gap:20px}
 body[data-page="projects"] .dr-header>div {max-width:880px;min-width:0}
 body[data-page="projects"] .dr-kicker {margin:0;color:var(--accent-2);font-size:.66rem;letter-spacing:.09em;font-weight:850;line-height:1.7}
-body[data-page="projects"] .dr-header h3 {font-size:clamp(1.65rem,2.8vw,2.7rem);letter-spacing:-.035em;line-height:1.19;color:var(--text);margin:8px 0 11px}
+body[data-page="projects"] .dr-header h3 {font-size:clamp(1.32rem,2.05vw,2.1rem);letter-spacing:-.03em;line-height:1.32;color:var(--text);margin:8px 0 11px;overflow-wrap:break-word}
 body[data-page="projects"] .dr-header h3 span {color:var(--muted);font-weight:580}
 body[data-page="projects"] .dr-header p:not(.dr-kicker) {font-size:.87rem;line-height:1.7;color:var(--muted);margin:0}
 body[data-page="projects"] .dr-status {font-size:.69rem;font-weight:820;line-height:1.5;padding:9px 13px;border-radius:99px;white-space:normal;text-align:center;color:#24577d;background:#eaf5fd;border:1px solid #bbd7e5}

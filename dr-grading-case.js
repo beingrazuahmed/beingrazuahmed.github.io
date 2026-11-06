@@ -15,7 +15,9 @@
     {no:'11',file:'fig11-screening-prototype.webp',title:'Explainable screening web prototype',group:'RESEARCH DEMONSTRATOR',desc:'Prototype interface for fundus-image upload, predicted grade, class probabilities and visual explanation.',wide:true}
   ];
   const esc=(s='')=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','"':'&quot;',"'":'&#39;'}[c]));
-  const href=(s)=>BASE+s;
+  // Refresh formerly missing figures after their first upload to GitHub Pages.
+  const FIGURE_REV='20261106-2f3f8c0-verified-assets';
+  const href=(s)=>BASE+s+'?v='+FIGURE_REV;
   const figure=(f)=>`<figure class="dr-figure${f.wide?' dr-figure--wide':''}">
     <a class="dr-figure-media" href="${href(f.file)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${esc(f.group)}: ${esc(f.title)}">
       <img src="${href(f.file)}" alt="${esc(f.desc)}" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false;this.parentElement.removeAttribute('href');this.parentElement.setAttribute('aria-disabled','true')">
@@ -33,7 +35,7 @@
     return `<article class="dr-case" id="dr-grading-project" aria-labelledby="dr-project-title" data-dr-enhanced="true">
       <header class="dr-header">
         <div><p class="dr-kicker">M.S. RESEARCH · MEDICAL IMAGE ANALYSIS · EXPLAINABLE AI</p>
-          <h3 id="dr-project-title">Diabetic Retinopathy <span>— Five-Class Grading</span></h3>
+          <h3 id="dr-project-title">${esc(p.title||'A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images')}</h3>
           <p>Deep learning and handcrafted retinal-image features brought together in a transparent, stage-wise comparative study.</p>
         </div>
         <span class="dr-status">Manuscript under review · Measurement</span>
@@ -47,7 +49,7 @@
       <div class="dr-hero" id="dr-overview">
         <div class="dr-story">
           <div class="dr-chips"><span>M.STAT-5110</span><span>4 credits · A+ grade</span><span>Five DR grades</span></div>
-          <h4>${esc(p.title||'Automated diabetic retinopathy grading from retinal fundus images')}</h4>
+          <h4>From retinal fundus images to five-class, explainable grading</h4>
           <p>${esc(p.summary||'The research compares staged image-feature representations for grading diabetic retinopathy from fundus photographs.')}</p>
           <p class="dr-lead"><strong>Selected Stage-5 fusion:</strong> fine-tuned DenseNet121 embeddings + SIFT Bag of Visual Words + XGBoost. Validation-informed experiments compare deep, handcrafted and fused representations rather than treating an individual model score as a clinical guarantee.</p>
           <div class="dr-actions">
@@ -79,7 +81,7 @@
       </div>
       <section class="dr-gallery" id="dr-visuals" aria-labelledby="dr-gallery-title">
         <header class="dr-block-heading"><p class="dr-kicker">ORIGINAL RESEARCH FIGURES · AUTHOR-SUPPLIED</p>
-          <h4 id="dr-gallery-title">Explore the experimental evidence</h4><p>Eleven additional visuals accompany the featured Figure 4. The diagrams preserve their complete aspect ratios and open at full available WebP resolution.</p></header>
+          <h4 id="dr-gallery-title">Explore the experimental evidence</h4><p>Eleven additional visuals accompany the featured Figure 4. The diagrams preserve their complete aspect ratios and open at full available WebP resolution. <a href="https://github.com/beingrazuahmed/beingrazuahmed.github.io/tree/main/assets/academic/projects/dr-grading" target="_blank" rel="noopener noreferrer">View original research figure files on GitHub ↗</a></p></header>
         ${group('Clinical context and grading targets','Retinal lesions and the five severity classes represented in this work.',[0,1])}
         ${group('Preparing the data and research pipeline','Dataset preparation and the supplementary end-to-end schematic.',[2,3])}
         ${group('Three custom CNN comparators','Architectures included as contextual baseline models, distinct from the final DenseNet121 fusion model.',[4,5,6])}
@@ -106,6 +108,13 @@
     const p=(window.MRA_V2?.academicProjects||[]).find(x=>String(x.course||'').includes('M.STAT-5110'));
     if(!p)return;
     placeholder.outerHTML=render(p);
+    // Keep concise navigation labels while exposing the complete official title.
+    document.querySelectorAll('a[href="#dr-grading-project"]').forEach(anchor => {
+      anchor.title=p.title;
+      const number=anchor.querySelector('strong');
+      if(number) { for(const node of [...anchor.childNodes]) if(node.nodeType===Node.TEXT_NODE) node.textContent=' Diabetic Retinopathy · Fusion'; }
+      else anchor.textContent='M.S. · Diabetic Retinopathy';
+    });
     if(location.hash.startsWith('#dr-') && document.readyState==='complete') {
       const target=document.querySelector(location.hash);
       if(target)target.scrollIntoView({block:'start'});
