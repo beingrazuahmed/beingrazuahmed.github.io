@@ -205,9 +205,9 @@ async function main(){
   assert(projects.includes('dib-project.js?v=20261105-doi-github-icons1'));
   assert(projects.includes('heart-bsccfs-project.js?v=20261105-fig01-featured-v2'));
   assert(projects.includes('heart-bsccfs-project.css?v=20261105-fig01-featured-v2'));
-  assert(projects.includes('v2-app.js?v=20261106-project-hub-redesign1'));
+  assert(projects.includes('v2-app.js?v=20261106-hcv-hybrid-case1'));
   assert(projects.includes('projects-hub.css?v=20261106-project-hub-redesign1'));
-  assert(projects.includes('projects-hub.js?v=20261106-project-hub-redesign1'));
+  assert(projects.includes('projects-hub.js?v=20261106-hcv-hybrid-case1'));
   assert(projects.indexOf('src="projects-hub.js') < projects.indexOf('src="v2-app.js'),
     'The Projects hub must register before the main renderer');
   const hubSource=text('projects-hub.js');
@@ -218,17 +218,34 @@ async function main(){
   assert.equal(typeof hubContext.window.MRA_PROJECT_HUB_ACTIVATE,'function',
     'The portfolio directory must expose active search/filter controls');
   const hubMarkup=hubContext.window.MRA_PROJECT_HUB_RENDER();
-  assert.equal((hubMarkup.match(/class="prh-project-card prh-project-card--/g)||[]).length,9,
-    'The overview must link to all nine documented projects');
+  assert.equal((hubMarkup.match(/class="prh-project-card prh-project-card--/g)||[]).length,10,
+    'The overview must link to all ten documented projects');
   for(const key of ['dengue-bmc-project','ckd-prediction-project','fastica-audio-project',
     'field-survey-project','dr-grading-project','heart-bsccfs-project',
-    'dib-food-dataset-project','bazarbondhu-ai','ask-razu-ai-project']){
+    'dib-food-dataset-project','bazarbondhu-ai','ask-razu-ai-project','hcv-mice-median-project']){
     assert(hubMarkup.includes('href="#'+key+'"'), 'Missing portfolio directory link '+key);
   }
   assert(text('v2-app.js').includes('MRA_PROJECT_HUB_ACTIVATE'),
     'The main app must initialize the directory controls');
   assert(text('v2-app.js').includes('href="#projects-overview"'),
     'The sticky projects subnavigation must link to the overview');
+  assert(projects.includes('hcv-project.js?v=20261106-hcv-hybrid-case1'),
+    'HCV project script must be versioned and loaded');
+  assert(projects.includes('hcv-project.css?v=20261106-hcv-hybrid-case1'),
+    'HCV project stylesheet must be versioned and loaded');
+  assert(projects.indexOf('src="hcv-project.js') < projects.indexOf('src="v2-app.js'),
+    'HCV renderer must load before the main Projects renderer');
+  assert(text('v2-app.js').includes("MRA_HCV_CASE()"),
+    'HCV project must render in the detailed Projects list');
+  assert(text('v2-app.js').includes('href="#hcv-mice-median-project"'),
+    'HCV project must be in the sticky project navigation');
+  const hcvJs = text('hcv-project.js');
+  for(const metric of ['0.827','0.754','0.914','0.841','0.955','8 / 11']){
+    assert(hcvJs.includes(metric), 'HCV project missing documented metric: '+metric);
+  }
+  for(const image of ['fig01-hcv-evaluation-workflow.webp','fig02-hybrid-mice-median-reconstruction.webp']){
+    assert(hcvJs.includes(image), 'HCV project missing original figure asset: '+image);
+  }
   assert(projects.includes('dengue-bmc-project.js?v=20261106-dengue-final-abstract2'));
   assert(projects.includes('dengue-bmc-project.css?v=20261106-dengue-final-abstract2'));
   assert(projects.indexOf('src="dengue-bmc-project.js') < projects.indexOf('src="v2-app.js'),
