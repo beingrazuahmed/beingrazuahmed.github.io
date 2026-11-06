@@ -205,7 +205,7 @@ async function main(){
   assert(projects.includes('dib-project.js?v=20261105-doi-github-icons1'));
   assert(projects.includes('heart-bsccfs-project.js?v=20261105-fig01-featured-v2'));
   assert(projects.includes('heart-bsccfs-project.css?v=20261105-fig01-featured-v2'));
-  assert(projects.includes('v2-app.js?v=20261106-bmc-dengue-research1'));
+  assert(projects.includes('v2-app.js?v=20261106-ai-official-title-dengue-live3'));
   assert(projects.includes('dengue-bmc-project.js?v=20261106-dengue-final-abstract2'));
   assert(projects.includes('dengue-bmc-project.css?v=20261106-dengue-final-abstract2'));
   assert(projects.indexOf('src="dengue-bmc-project.js') < projects.indexOf('src="v2-app.js'),
@@ -214,6 +214,12 @@ async function main(){
     'Projects must render the accepted dengue study');
   assert(text('v2-app.js').includes('href="#dengue-bmc-project"'),
     'Projects submenu must include the dengue study');
+  assert(text('v2-app.js').includes('AI &amp; Employment · Field Survey'),
+    'Projects submenu must identify the AI employment field-survey study');
+  assert(text('v2-app.js').includes("esc(article.title||'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh')"),
+    'Field survey heading must use the final official accepted article title');
+  assert(projects.includes('field-survey-project.css?v=20261106-ai-official-title3'),
+    'Field survey heading styling must use the current version');
   assert(projects.includes('ask-razu-project.css?v=20261106-ask-redesign6'));
   assert(projects.includes('ask-razu-project.js?v=20261106-ask-redesign6'));
   assert(projects.indexOf('src="ask-razu-project.js') < projects.indexOf('src="v2-app.js'),

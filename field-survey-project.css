@@ -82,3 +82,28 @@ body[data-page="projects"] .survey-evidence-source{flex:0 0 auto;display:inline-
 body[data-page="projects"] .survey-evidence-source:hover,body[data-page="projects"] .survey-evidence-source:focus-visible{border-color:var(--accent);background:var(--surface-2)}
 body[data-page="projects"] .survey-evidence-image-pending a{color:var(--accent-2);font-weight:750;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:750px){body[data-page="projects"] .survey-evidence-head{flex-direction:column;align-items:stretch}body[data-page="projects"] .survey-evidence-source{align-self:flex-start}}
+
+/* Editorial title refinement: show exact accepted AI-paper title prominently. */
+body[data-page="projects"] .survey-project-head h2{
+  max-width:980px;
+  font-size:clamp(1.38rem,2.45vw,2.25rem);
+  line-height:1.28;
+  letter-spacing:-.027em;
+  overflow-wrap:break-word;
+  text-wrap:balance;
+}
+body[data-page="projects"] .survey-project-head .survey-project-official-note{
+  max-width:900px;
+  font-size:.84rem;
+  line-height:1.75;
+}
+body[data-page="projects"] .survey-project-head .survey-project-official-note strong{
+  color:var(--text);
+}
+body[data-page="projects"] .survey-project-main h3{
+  font-size:clamp(1.24rem,1.95vw,1.72rem);
+  line-height:1.32;
+}
+@media(max-width:760px){
+ body[data-page="projects"] .survey-project-head h2{font-size:clamp(1.32rem,5vw,1.8rem)}
+}

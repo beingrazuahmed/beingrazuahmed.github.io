@@ -3064,9 +3064,9 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     };
     return `<section class="section field-survey-project-section" id="field-survey-project"><div class="container">
       <header class="survey-project-head">
-        <div><span class="section-kicker">Supervised B.Sc. field research · Survey methodology &amp; scholarly outcomes</span>
-          <h2>Statistical Field Survey <span>— AI and employment perceptions in Bangladesh</span></h2>
-          <p>A primary-data statistical survey of artificial intelligence and employment perceptions, progressing from questionnaire design and field collection to an ICRAST 2025 oral presentation and a peer-reviewed journal article accepted in September 2026.</p>
+        <div><span class="section-kicker">STATISTICAL FIELD SURVEY · FIRST-AUTHOR ACCEPTED RESEARCH</span>
+          <h2>${esc(article.title||'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh')}</h2>
+          <p class="survey-project-official-note"><strong>Official accepted journal article title.</strong> Developed from a supervised B.Sc. statistical field survey, presented at ICRAST 2025 and accepted by the <em>International Journal of Statistical Sciences</em> on 2 September 2026.</p>
         </div>
         <a class="btn ghost" href="academic.html#academic-fieldwork">Full academic record <span aria-hidden="true">↗</span></a>
       </header>
@@ -3076,7 +3076,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
             <div class="survey-project-eyebrow">
               <span>${esc(f.courseCode||'STAT-4110')}</span><span>${esc(f.credits||2)} credits</span><span>Grade ${esc(f.grade||'')}</span><span>Primary field-survey data</span>
             </div>
-            <h3 id="survey-project-title">${esc(f.study||'Measuring attitudes toward AI and its impact on employment')}</h3>
+            <h3 id="survey-project-title">Study design, sampling and statistical analysis</h3>
             <p>This collaborative B.Sc. field survey investigated perceptions of how artificial intelligence may affect employment and the labour market. The project combined a structured questionnaire with proportionate stratified random sampling and statistical analysis of respondent attitudes.</p>
             <p>Participants were surveyed using a five-point Likert instrument. The work included socio-demographic and attitudinal variables and explored relationships using methods including correspondence analysis and principal component analysis.</p>
             <div class="survey-project-info">
@@ -3121,7 +3121,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
             <h4>Journal progression</h4>
             <p><strong>${esc(article.title||'')}</strong></p>
             <p>${esc(article.journal||'')}${article.acceptedDate?` · Accepted ${esc(article.acceptedDate)}`:''}</p>
-            <p>Currently recorded as ${esc(article.status||'accepted / forthcoming')}. The project and the resulting publication are distinct stages of the research.</p>
+            <p>Currently recorded as ${esc(article.status||'accepted / forthcoming')}. This is the final journal article title; the earlier field-survey and ICRAST presentation were stages of the same research programme.</p>
             <div class="survey-project-links"><a href="publications.html#output-ai-employment">Related publication ↗</a><a href="https://www.ru.ac.bd/stat/ijss/" target="_blank" rel="noopener noreferrer">Journal website ↗</a></div>
           </div>
         </div>
@@ -3320,7 +3320,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         <nav class="project-portfolio-index" id="projectPortfolioIndex" data-project-jump-nav aria-label="Explore project collections">
         <a href="#bazarbondhu-ai"><strong>01</strong> BazarBondhu AI</a>
         <a href="#ask-razu-ai-project"><strong>02</strong> Ask Razu AI</a>
-        <a href="#field-survey-project"><strong>03</strong> Statistical Field Survey</a>
+        <a href="#field-survey-project" title="Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh"><strong>03</strong> AI &amp; Employment · Field Survey</a>
         <a href="#ckd-prediction-project"><strong>04</strong> CKD · Stacking ML</a>
         <a href="#heart-bsccfs-project"><strong>05</strong> Heart Disease · BS-CCFS</a>
         <a href="#dib-food-dataset-project" title="PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations" aria-label="PUST Cafeteria Food Image Dataset project"><strong>06</strong> PUST Cafeteria Food Image Dataset</a>
