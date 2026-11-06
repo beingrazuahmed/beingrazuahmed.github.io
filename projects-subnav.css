@@ -38,7 +38,7 @@ body[data-page="projects"] .project-portfolio-index a {
   align-items: center;
   gap: 8px;
   white-space: nowrap;
-  scroll-snap-align: nearest;
+  scroll-snap-align: center;
   min-height: 39px;
   padding: 8px 12px;
   border: 1px solid var(--line);

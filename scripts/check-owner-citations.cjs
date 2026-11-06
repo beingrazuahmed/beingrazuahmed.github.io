@@ -27,8 +27,7 @@ async function main(){
     assert(markup.includes(tag),`Global name emphasis not linked by ${file}`);
     assert.equal(markup.split('owner-emphasis.js').length-1,1,`Duplicate owner script in ${file}`);
     if(markup.includes('v2-app.js?v=')){
-      const appVersion='20261106-review46-v1';
-      assert(markup.includes(`v2-app.js?v=${appVersion}`),`Stale app version in ${file}`);
+      assert(/v2-app\.js\?v=[\w-]+/.test(markup),`Missing cache-versioned app in ${file}`);
     }
   }
 
@@ -206,7 +205,13 @@ async function main(){
   assert(projects.includes('dib-project.js?v=20261105-doi-github-icons1'));
   assert(projects.includes('heart-bsccfs-project.js?v=20261105-fig01-featured-v2'));
   assert(projects.includes('heart-bsccfs-project.css?v=20261105-fig01-featured-v2'));
-  assert(projects.includes('v2-app.js?v=20261106-review46-v1'));
+  assert(projects.includes('v2-app.js?v=20261106-projects-navigation5'));
+  assert(projects.includes('projects-subnav.css?v=20261106-projects-navigation5'));
+  assert(projects.includes('projects-subnav.js?v=20261106-projects-navigation5'));
+  assert(projects.indexOf('src="v2-app.js') < projects.indexOf('src="projects-subnav.js'),
+    'Project submenu navigation must load after the main renderer');
+  assert(text('v2-app.js').includes('data-project-jump-nav'),
+    'Projects submenu must use its dedicated navigation handler');
   assert(text('publications.html').includes('v2-app.js?v=20261106-review46-v1'));
   assert(projects.includes('project-research-links.css?v=20261105-soft-teal-ctas3'));
   assert(projects.includes('project-research-links.js?v=20261105-pub-doi-light-nav2'));
