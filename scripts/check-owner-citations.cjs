@@ -27,7 +27,7 @@ async function main(){
     assert(markup.includes(tag),`Global name emphasis not linked by ${file}`);
     assert.equal(markup.split('owner-emphasis.js').length-1,1,`Duplicate owner script in ${file}`);
     if(markup.includes('v2-app.js?v=')){
-      const appVersion=['experience.html','index.html','profile.html'].includes(file)?'20261106-dib-review-record1':(['projects.html','publications.html'].includes(file)?'20261105-heart-case-study-v1':version);
+      const appVersion='20261106-review46-v1';
       assert(markup.includes(`v2-app.js?v=${appVersion}`),`Stale app version in ${file}`);
     }
   }
@@ -70,21 +70,40 @@ async function main(){
   const dataContext={window:{}};
   vm.runInNewContext(text('data.js'),dataContext,{filename:'data.js'});
   const pubs=dataContext.window.PORTFOLIO_DATA.publications;
-  const dibReview=(dataContext.window.PORTFOLIO_DATA.service||[]).find(x=>x.id==='data-in-brief');
-  assert(dibReview,'Data in Brief service record must appear in editorial service data');
+  const service=dataContext.window.PORTFOLIO_DATA.service||[];
+  const dibReview=service.find(x=>x.id==='data-in-brief');
+  const bspcReview=service.find(x=>x.id==='bspc');
+  assert(dibReview&&bspcReview,'Data in Brief and BSPC reviewer records must both exist');
   assert.equal(dibReview.journal,'Data in Brief');
-  assert.equal(dibReview.reviews,1,'Record only the confirmed single completed DIB review');
-  assert.equal(dibReview.ongoing,false,'Do not claim an ongoing reviewer appointment');
-  assert(!dibReview.artwork,'Avoid broken cover image until the user uploads the original');
-  assert(!dibReview.evidenceHref && !dibReview.evidencePdf,
-    'Do not link to a nonexistent review certificate');
+  assert.equal(dibReview.issn,'2352-3409');
+  assert.equal(dibReview.journalUrl,'https://www.sciencedirect.com/journal/data-in-brief');
+  assert.equal(dibReview.reviews,1);
+  assert.equal(dibReview.startDate,'2026-11-03');
+  assert.equal(dibReview.startLabel,'3 November 2026');
+  assert.equal(dibReview.ongoing,true,'Data in Brief peer reviewer service is ongoing');
+  assert.equal(bspcReview.reviews,14);
+  assert.equal(service.reduce((total,r)=>total+Number(r.reviews||0),0),46,
+    'The total number of invited peer reviews must be 46');
+  assert.equal(service.length,5,'Exactly five journals have review records');
+  assert(dibReview.artwork.endsWith('/data-in-brief-cover.jpg'));
+  assert(dibReview.evidencePdf.includes('data-in-brief-reviewing-certificate-2026.pdf'));
+  assert(dibReview.evidenceHref.includes('gallery.html#data-in-brief-reviewing-certificate-2026'));
+  const original='assets/academic/journals/data-in-brief/data-in-brief-reviewing-certificate-2026.pdf';
+  const cover='assets/academic/journals/data-in-brief/data-in-brief-cover.jpg';
+  const preview='assets/gallery/data-in-brief-reviewing-certificate-2026.webp';
+  for(const [file,minSize] of [[original,10000],[cover,1000],[preview,10000],
+    ['assets/recognition/bspc-reviewing-certificate-2026.pdf',10000],
+    ['assets/gallery/bspc-reviewing-certificate-2026.webp',10000]]){
+    assert(fs.existsSync(file) && fs.statSync(file).size>minSize,
+      'Missing uploaded review artifact '+file);
+  }
+  const dibGallery=(dataContext.window.PORTFOLIO_DATA.gallery||[]).find(x=>x.id==='data-in-brief-reviewing-certificate-2026');
+  const bspcGallery=(dataContext.window.PORTFOLIO_DATA.gallery||[]).find(x=>x.id==='bspc-reviewing-certificate-2026');
+  assert(dibGallery?.verified && dibGallery.href.includes('data-in-brief-reviewing-certificate-2026.pdf'));
+  assert(bspcGallery?.verified && bspcGallery.caption.includes('14 completed reviews'));
   const reviewFolder='assets/academic/journals/data-in-brief/README.md';
-  assert(fs.existsSync(reviewFolder),'Missing journal-cover and review-certificate upload destination');
-  const instructions=text(reviewFolder);
-  assert(instructions.includes('data-in-brief-cover.jpg') &&
-    instructions.includes('data-in-brief-reviewing-certificate-2026.pdf'),
-    'Review evidence folder must contain exact upload instructions');
-  for(const [id,doi] of [
+  assert(fs.existsSync(reviewFolder) && text(reviewFolder).includes('3 November 2026'));
+    for(const [id,doi] of [
     ['fastica','10.1002/eng2.70575'],
     ['ckd','10.3329/ijss.v25i2.85732'],
     ['dib','10.1016/j.dib.2026.113262']
@@ -100,6 +119,10 @@ async function main(){
     'Completed DIB review must be labelled accurately');
   assert(app.includes('editorial-journal-grid--five'),
     'Five editorial-service cards should use balanced grid styling');
+  assert(app.includes('46 completed invited reviews'), 'The public overview must show 46 total reviews');
+  assert(app.includes('14 for Biomedical Signal Processing and Control'),'BSPC assistant text must say 14');
+  assert(app.includes('data-in-brief-reviewing-certificate-2026.pdf'),
+    'DIB certificate PDF must be connected in the public gallery');
 
   assert(app.includes("publishedProjectCitationPanel('fastica')"),'Missing FastICA citation panel');
   assert(app.includes("publishedProjectCitationPanel('ckd')"),'Missing CKD citation panel');
