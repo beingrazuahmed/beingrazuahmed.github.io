@@ -31,10 +31,10 @@ jobs:
           fi
           pdfinfo assets/recognition/eaai-reviewing-certificate-2026.pdf | grep -E '^(Pages|Page size|File size):'
           pdftotext assets/recognition/eaai-reviewing-certificate-2026.pdf /tmp/eaai-text.txt
-          if grep -Eiq '(^|[^0-9])3([^0-9]|$)|three' /tmp/eaai-text.txt; then
-            echo "Updated PDF includes the value 3 / three."
+          if grep -Eiq '(^|[^0-9])4([^0-9]|$)|four' /tmp/eaai-text.txt; then
+            echo "Updated PDF includes the value 4 / four."
           else
-            echo "::warning::3 was not found in extracted text; the certificate may use an image or alternate wording."
+            echo "::warning::4 was not found in extracted text; visually inspect the certificate if necessary."
           fi
           pdftoppm -f 1 -singlefile -r 165 -png assets/recognition/eaai-reviewing-certificate-2026.pdf /tmp/eaai-latest
           python3 -m venv /tmp/eaai-render-venv
@@ -49,45 +49,25 @@ jobs:
           assert target.stat().st_size > 10000
           print('EAAI certificate preview updated:', im.size, target.stat().st_size, 'bytes')
           PY
-      - name: Refresh HTML cache references and evidence manifest
+      - name: Verify certificate assets are registered
         shell: bash
         run: |
           python3 - <<'PY'
-          import pathlib, re, json
-          version = '20261019-eaai3-total40'
-          pattern = re.compile(r'\b(data|v2-data|v2-app|script)\.js\?v=[0-9A-Za-z_-]+')
-          changed = []
-          for path in pathlib.Path('.').glob('*.html'):
-              orig = path.read_text(encoding='utf-8')
-              updated = pattern.sub(lambda m: m.group(1)+'.js?v='+version, orig)
-              if updated != orig:
-                  path.write_text(updated, encoding='utf-8')
-                  changed.append(path.name)
-          manifest = pathlib.Path('asset-manifest.json')
-          original = manifest.read_text(encoding='utf-8')
-          updated = original
-          additions = [
-              ('"assets/gallery/eaai-reviewing-certificate-2026.webp",', '"assets/gallery/eaai-reviewing-certificate-2026.webp"'),
-              ('"assets/recognition/eaai-reviewing-certificate-2026.pdf",', '"assets/recognition/eaai-reviewing-certificate-2026.pdf"'),
-          ]
-          for anchor,new in additions:
-              if new not in updated:
-                  assert anchor in updated, 'Missing asset manifest anchor: '+anchor
-                  updated = updated.replace(anchor, anchor+'\n    '+new+',', 1)
-          json.loads(updated)
-          if updated != original:
-              manifest.write_text(updated, encoding='utf-8')
-              changed.append(manifest.name)
-          print('Updated HTML and manifest:', ', '.join(changed))
-          # Idempotent: uploading a replacement PDF may require refreshing only its preview.
+          from pathlib import Path
+          manifest = Path('asset-manifest.json').read_text(encoding='utf-8')
+          for path in ('assets/gallery/eaai-reviewing-certificate-2026.webp',
+                       'assets/recognition/eaai-reviewing-certificate-2026.pdf'):
+              assert Path(path).is_file(), f'Missing EAAI asset: {path}'
+              assert '"'+path+'"' in manifest, f'Missing EAAI asset manifest entry: {path}'
+          print('Replacement certificate PDF and refreshed WebP are registered.')
           PY
-      - name: Commit authentic preview and refreshed website links
+      - name: Commit authentic preview generated from the replacement PDF
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add 'assets/gallery/eaai-reviewing-certificate-2026.webp' 'asset-manifest.json' '*.html'
+          git add 'assets/gallery/eaai-reviewing-certificate-2026.webp'
           if ! git diff --cached --quiet; then
             git diff --cached --check
-            git commit -m "Refresh EAAI 3-review PDF preview and portfolio script cache"
+            git commit -m "Refresh EAAI 4-review certificate preview"
             git push origin HEAD:main
           fi
