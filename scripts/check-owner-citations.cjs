@@ -75,6 +75,12 @@ async function main(){
   assert.equal(heartManuscript.submittedDate,'2 November 2026','Preserve the original submission date');
   assert.equal(heartManuscript.role,'Second Author');
   assert(heartManuscript.highlight.includes('7 November 2026'),'The editorial status date must be shown');
+  const icrast=(dataContext.window.PORTFOLIO_DATA.conferences||[]).find(c=>c.id==='icrast-2025');
+  assert(icrast,'ICRAST 2025 conference record must exist');
+  assert.equal(icrast.eventLogo,'assets/academic/conferences/icrast-2025-faculty-science-logo-original.jpeg','Preserve the existing ICRAST logo');
+  assert.equal(icrast.hostLogo,'assets/academic/journals/ijss/ru-logo.webp','Display RU logo beside ICRAST logo');
+  assert(fs.existsSync(icrast.eventLogo)&&fs.existsSync(icrast.hostLogo),'Both conference logos must exist');
+  assert(text('conferences.html').includes('data.js?v=20261107-icrast-ru-logo1'),'Conference data must be cache-refreshed');
   const service=dataContext.window.PORTFOLIO_DATA.service||[];
   const dibReview=service.find(x=>x.id==='data-in-brief');
   const bspcReview=service.find(x=>x.id==='bspc');
