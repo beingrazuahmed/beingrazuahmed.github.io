@@ -13898,3 +13898,23 @@ body[data-page="dashboard"] .dashboard-impact-brand-links .publication-brand-lin
 @media(prefers-reduced-motion:reduce){
   .output-card .publication-publisher-brand{transition:none}
 }
+
+/* ICRAST 2025 — keep the conference and University of Rajshahi logos side by side. */
+#icrast-2025 .conference-group-identity > img.conference-event-logo,
+#icrast-2025 .conference-group-identity > img.conference-brand-logo-exact{
+  flex-shrink:0;
+  object-fit:contain;
+}
+@media(max-width:480px){
+  #icrast-2025 .conference-group-identity{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:10px;
+  }
+  #icrast-2025 .conference-group-identity > div{
+    flex-basis:100%;
+    min-width:0;
+  }
+}
