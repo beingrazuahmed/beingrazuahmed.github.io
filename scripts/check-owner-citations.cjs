@@ -69,6 +69,12 @@ async function main(){
   const dataContext={window:{}};
   vm.runInNewContext(text('data.js'),dataContext,{filename:'data.js'});
   const pubs=dataContext.window.PORTFOLIO_DATA.publications;
+  const heartManuscript=(dataContext.window.PORTFOLIO_DATA.manuscripts||[]).find(m=>m.id==='bs-ccfs-heart-disease');
+  assert(heartManuscript,'Heart disease manuscript must be present in the main publications data');
+  assert.equal(heartManuscript.status,'Editor Invited','Current PLOS ONE status badge must not remain Submitted');
+  assert.equal(heartManuscript.submittedDate,'2 November 2026','Preserve the original submission date');
+  assert.equal(heartManuscript.role,'Second Author');
+  assert(heartManuscript.highlight.includes('7 November 2026'),'The editorial status date must be shown');
   const service=dataContext.window.PORTFOLIO_DATA.service||[];
   const dibReview=service.find(x=>x.id==='data-in-brief');
   const bspcReview=service.find(x=>x.id==='bspc');
