@@ -2,7 +2,7 @@
 
 **Manuscript:** BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction
 
-**Status:** Submitted to PLOS ONE on 2 November 2026; peer-review and publication outcomes are **not** claimed. There is no published article DOI at present. Razu Ahmed is **second author**.
+**Status:** Submitted to PLOS ONE on 2 November 2026; **Editor Invited** as of 7 November 2026 (editor assignment and peer review are not yet confirmed). No acceptance or publication is claimed, and there is no published article DOI. **Md. Razu Ahmed** is **second author**.
 
 **Authors:** Jannatul Mauya, Md. Razu Ahmed, Md. Shamim Reza, Sabba Ruhi, Md. Aminul Hoque.
 
