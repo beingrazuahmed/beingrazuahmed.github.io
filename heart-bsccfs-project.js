@@ -47,7 +47,7 @@
           <h2 id="heart-bsccfs-title">Heart Disease Prediction <span>— BS-CCFS</span></h2>
           <p>Bootstrap-stable, multi-algorithm feature selection for interpretable classification of a mixed-type clinical research dataset.</p>
         </div>
-        <span class="heart-submitted-pill">Submitted to PLOS ONE · 2026</span>
+        <span class="heart-submitted-pill">Editor Invited · PLOS ONE · 7 Nov 2026</span>
       </header>
 
       <nav class="heart-section-nav" data-section-jump-nav aria-label="Navigate heart disease project sections">
@@ -127,8 +127,8 @@
         </section>
 
         <section id="heart-bsccfs-record" class="heart-research-record" aria-label="Manuscript status and research limits">
-          <div class="heart-record-status"><p class="heart-eyebrow">SCHOLARLY RECORD</p><h3>Submitted manuscript · Not yet a journal publication</h3>
-            <p><strong>Submitted to PLOS ONE:</strong> 2 November 2026. <strong>Authorship:</strong> second author. The submission is recorded in the portfolio's Publications section, but there is no article DOI, final bibliographic citation or peer-reviewed acceptance to report yet.</p>
+          <div class="heart-record-status"><p class="heart-eyebrow">SCHOLARLY RECORD</p><h3>Editor Invited · Manuscript in editorial process</h3>
+            <p><strong>Submitted to PLOS ONE:</strong> 2 November 2026. <strong>Current status:</strong> Editor Invited (7 November 2026); peer review is not yet confirmed. <strong>Authorship:</strong> second author. The submission is recorded in the portfolio's Publications section, but there is no article DOI, final bibliographic citation or peer-reviewed acceptance to report yet.</p>
             <a class="btn ghost" href="${ENTRY}">View manuscript record <span aria-hidden="true">↗</span></a>
           </div>
           <div class="heart-record-scope"><p class="heart-eyebrow">SCIENTIFIC INTERPRETATION</p><h3>Scope and responsible use</h3>
@@ -137,7 +137,7 @@
           </div>
         </section>
 
-        <footer class="heart-project-footer"><span><strong>BS-CCFS</strong> · PLOS ONE manuscript submission · 2026</span>
+        <footer class="heart-project-footer"><span><strong>BS-CCFS</strong> · PLOS ONE · Editor Invited · 7 November 2026</span>
           <a href="publications.html#output-bs-ccfs-heart-disease">Read the manuscript record ↗</a></footer>
       </article>
     </div>
