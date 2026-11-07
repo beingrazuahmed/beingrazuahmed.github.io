@@ -154,7 +154,7 @@
         }
       ],
       sharedEditorial: [
-        { title: 'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction', journal: 'PLOS ONE', publisher: 'PLOS', detail: 'Submitted 2 November 2026 · Md. Razu Ahmed is second author; editorial assessment pending.' },
+        { title: 'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction', journal: 'PLOS ONE', publisher: 'PLOS', detail: 'Submitted 2 November 2026 · Status: Editor Invited (7 November 2026) · Md. Razu Ahmed is second author; peer review not yet confirmed.' },
         { title: 'A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images', journal: 'Measurement', publisher: 'Elsevier', detail: 'Under Review.' },
         { title: 'Comparative Evaluation of Hybrid MICE–Median Missing-Value Reconstruction and Downstream Hepatitis C Prediction Using Machine Learning', journal: 'BMC Medical Informatics and Decision Making', publisher: 'BMC · Springer Nature', detail: 'Under Review.' },
         { title: 'Real-Time Food Detection for Automated Cafeteria Billing Using RT-DETR and GAN-Based Data Augmentation', journal: 'Discover Artificial Intelligence', publisher: 'Springer Nature' },
@@ -171,7 +171,7 @@
         'Cafeteria billing and food detection',
         'Cross-domain sentiment classification',
         'Undergraduate academic-performance research',
-        'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction — submitted to PLOS ONE (2 November 2026)'
+        'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction — submitted to PLOS ONE (2 November 2026); Editor Invited (7 November 2026)'
       ],
       email: 'shamim.reza@pust.ac.bd',
       additionalEmail: 'mshamim.pust@gmail.com',
@@ -237,12 +237,12 @@
         }
       ],
       sharedEditorial: [
-        { title: 'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction', journal: 'PLOS ONE', publisher: 'PLOS', detail: 'Submitted 2 November 2026 · Md. Razu Ahmed is second author; editorial assessment pending.' }
+        { title: 'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction', journal: 'PLOS ONE', publisher: 'PLOS', detail: 'Submitted 2 November 2026 · Status: Editor Invited (7 November 2026) · Md. Razu Ahmed is second author; peer review not yet confirmed.' }
       ],
       shared: [
         'Sugarcane leaf disease detection — EFAST 2026',
         'Cesarean-section determinants in Bangladesh — EFAST 2026',
-        'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction — submitted to PLOS ONE (2 November 2026)'
+        'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction — submitted to PLOS ONE (2 November 2026); Editor Invited (7 November 2026)'
       ],
       email: 'sabba.ruhi@pust.ac.bd',
       additionalEmail: 'sabba.ruhi@gmail.com',
@@ -329,11 +329,11 @@
         }
       ],
       sharedEditorial: [
-        { title: 'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction', journal: 'PLOS ONE', publisher: 'PLOS', detail: 'Submitted 2 November 2026 · Md. Razu Ahmed is second author; editorial assessment pending.' }
+        { title: 'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction', journal: 'PLOS ONE', publisher: 'PLOS', detail: 'Submitted 2 November 2026 · Status: Editor Invited (7 November 2026) · Md. Razu Ahmed is second author; peer review not yet confirmed.' }
       ],
       shared: [
         'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh — accepted / forthcoming',
-        'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction — submitted to PLOS ONE (2 November 2026)'
+        'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction — submitted to PLOS ONE (2 November 2026); Editor Invited (7 November 2026)'
       ],
       email: 'aminul@ru.ac.bd',
       additionalEmail: 'mdaminulh@gmail.com',
@@ -1027,7 +1027,7 @@
         }
       ],
       sharedEditorial: [
-        { title: 'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction', journal: 'PLOS ONE', publisher: 'PLOS', detail: 'Submitted 2 November 2026 · Md. Razu Ahmed is second author; editorial assessment pending.' },
+        { title: 'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction', journal: 'PLOS ONE', publisher: 'PLOS', detail: 'Submitted 2 November 2026 · Status: Editor Invited (7 November 2026) · Md. Razu Ahmed is second author; peer review not yet confirmed.' },
         {
           title: 'A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images',
           journal: 'Measurement',
@@ -1066,7 +1066,7 @@
         'PUST Cafeteria Food Image Dataset Version 2 — Mendeley Data',
         'EFAST 2026 — three joint conference contributions',
         'Manuscripts currently in the editorial process',
-        'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction — submitted to PLOS ONE (2 November 2026)'
+        'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction — submitted to PLOS ONE (2 November 2026); Editor Invited (7 November 2026)'
       ],
       email: 'jannatulmauya7711@gmail.com',
       links: [
