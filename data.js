@@ -593,6 +593,7 @@ window.PORTFOLIO_DATA = {
       host: "Faculty of Science, University of Rajshahi, Bangladesh", organizer: "Faculty of Science, University of Rajshahi",
       venue: "University of Rajshahi, Rajshahi, Bangladesh", date: "14–15 November 2025", meta: "Book of Abstracts",
       eventLogo: "assets/academic/conferences/icrast-2025-faculty-science-logo-original.jpeg",
+      hostLogo: "assets/academic/journals/ijss/ru-logo.webp",
       brochureAsset: "assets/academic/conferences/icrast-2025-brochure.jpg",
       brochureHref: "assets/academic/conferences/icrast-2025-brochure.jpg",
       url: "https://csa.ru.ac.bd/science/conf2nd/", flyerUrl: "https://www.ru.ac.bd/wp-content/uploads/2025/08/CFP.pdf", flyerLabel: "Official call for papers / conference flyer",
