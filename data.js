@@ -277,7 +277,7 @@ window.PORTFOLIO_DATA = {
 
   manuscripts: [
     {
-      id: "bs-ccfs-heart-disease", type: "Journal Manuscript", status: "Submitted", year: 2026, role: "Second Author",
+      id: "bs-ccfs-heart-disease", type: "Journal Manuscript", status: "Editor Invited", year: 2026, role: "Second Author",
       title: "BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction",
       venue: "PLOS ONE", publisher: "Public Library of Science (PLOS)", submittedDate: "2 November 2026",
       authors: [
@@ -297,7 +297,7 @@ window.PORTFOLIO_DATA = {
       ],
       tags: ["Causal Discovery", "Bootstrap Stability", "Consensus Feature Selection", "Heart Disease", "Explainable AI"],
       summary: "Second-authored manuscript submitted to PLOS ONE on 2 November 2026. BS-CCFS combines PC, FCI and NOTEARS with 30 bootstrap resamples to identify stable, target-connected candidate predictors for interpretable heart disease prediction.",
-      highlight: "Five of 13 predictors retained (61.5% reduction); controlled XGBoost comparison ROC-AUC 0.894 versus 0.890 with all predictors. Submission pending editorial assessment."
+      highlight: "Five of 13 predictors retained (61.5% reduction); controlled XGBoost comparison ROC-AUC 0.894 versus 0.890 with all predictors. Editorial status: Editor Invited as of 7 November 2026; peer review has not been confirmed."
     },
     {
       id: "dr", status: "Under Review", role: "First Author",
