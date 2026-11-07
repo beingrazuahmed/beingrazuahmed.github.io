@@ -144,7 +144,8 @@ async function main(){
   const heartHtml=dataContext.window.MRA_HEART_CASE();
   assert(heartHtml.includes('BS-CCFS: Bootstrap-Stable Consensus Feature Selection'),
     'Full official heart disease research title missing');
-  assert(heartHtml.includes('Submitted to PLOS ONE · 2026'),'Heart manuscript must be marked submitted, not published');
+  assert(heartHtml.includes('Editor Invited · PLOS ONE · 7 Nov 2026'),'Heart manuscript must display its current Editor Invited status');
+  assert(heartHtml.includes('Submitted to PLOS ONE:</strong> 2 November 2026'),'Original heart manuscript submission date must be preserved');
   assert(heartHtml.includes('PLOS ONE')&&!heartHtml.includes('published article · DOI'),
     'Submission must not be represented as a peer-reviewed publication DOI');
   for(const id of ['heart-bsccfs-project','heart-bsccfs-overview','heart-bsccfs-method','heart-bsccfs-figures','heart-bsccfs-record']){
