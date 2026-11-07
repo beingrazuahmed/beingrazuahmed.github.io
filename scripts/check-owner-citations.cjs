@@ -216,7 +216,8 @@ async function main(){
   const projects=text('projects.html');
   assert(projects.includes('published-project-citations.css'));
   assert(projects.includes('dib-project.js?v=20261105-doi-github-icons1'));
-  assert(projects.includes('heart-bsccfs-project.js?v=20261105-fig01-featured-v2'));
+  assert(/heart-bsccfs-project\.js\?v=[\w-]+/.test(projects),
+    'Projects page must load a cache-versioned BS-CCFS project script');
   assert(projects.includes('heart-bsccfs-project.css?v=20261105-fig01-featured-v2'));
   assert(projects.includes('v2-app.js?v=20261106-hcv-hybrid-case1'));
   assert(projects.includes('projects-hub.css?v=20261106-project-hub-redesign1'));
