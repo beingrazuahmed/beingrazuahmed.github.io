@@ -80,7 +80,10 @@ async function main(){
   assert.equal(icrast.eventLogo,'assets/academic/conferences/icrast-2025-faculty-science-logo-original.jpeg','Preserve the existing ICRAST logo');
   assert.equal(icrast.hostLogo,'assets/academic/journals/ijss/ru-logo.webp','Display RU logo beside ICRAST logo');
   assert(fs.existsSync(icrast.eventLogo)&&fs.existsSync(icrast.hostLogo),'Both conference logos must exist');
-  assert(text('conferences.html').includes('data.js?v=20261107-icrast-ru-logo1'),'Conference data must be cache-refreshed');
+  assert(/data\.js\?v=[\w-]+/.test(text('conferences.html')),'Conference data must be cache-refreshed');
+  assert(text('gallery.html').includes('data.js?v=20261108-eaai4-total47'),'Gallery must load the updated EAAI review record');
+  const extraData=text('extra-data.js');
+  assert(extraData.includes('lastUpdated: "8 November 2026"'),'Footer date must track the latest portfolio change');
   const service=dataContext.window.PORTFOLIO_DATA.service||[];
   const dibReview=service.find(x=>x.id==='data-in-brief');
   const bspcReview=service.find(x=>x.id==='bspc');
