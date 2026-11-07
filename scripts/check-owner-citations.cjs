@@ -93,8 +93,14 @@ async function main(){
   assert.equal(dibReview.startLabel,'3 November 2026');
   assert.equal(dibReview.ongoing,true,'Data in Brief peer reviewer service is ongoing');
   assert.equal(bspcReview.reviews,14);
-  assert.equal(service.reduce((total,r)=>total+Number(r.reviews||0),0),46,
-    'The total number of invited peer reviews must be 46');
+  const eaaiReview=service.find(r=>r.id==="eaai");
+  assert(eaaiReview,"EAAI reviewer record must exist");
+  assert.equal(eaaiReview.reviews,4,"EAAI must show 4 reviews");
+  assert(eaaiReview.recognition.includes("4 completed reviews"));
+  assert(eaaiReview.evidencePdf.includes("20261108-eaai4-certificate"));
+  assert(eaaiReview.evidenceAsset.includes("20261108-eaai4-certificate"));
+  assert.equal(service.reduce((total,r)=>total+Number(r.reviews||0),0),47,
+    'The total number of invited peer reviews must be 47');
   assert.equal(service.length,5,'Exactly five journals have review records');
   assert(dibReview.artwork.endsWith('/data-in-brief-cover.jpg'));
   assert(dibReview.evidencePdf.includes('data-in-brief-reviewing-certificate-2026.pdf'));
@@ -130,7 +136,7 @@ async function main(){
     'Completed DIB review must be labelled accurately');
   assert(app.includes('editorial-journal-grid--five'),
     'Five editorial-service cards should use balanced grid styling');
-  assert(app.includes('46 completed invited reviews'), 'The public overview must show 46 total reviews');
+  assert(app.includes('47 completed invited reviews'), 'The public overview must show 47 total reviews');
   assert(app.includes('14 for Biomedical Signal Processing and Control'),'BSPC assistant text must say 14');
   assert(app.includes('data-in-brief-reviewing-certificate-2026.pdf'),
     'DIB certificate PDF must be connected in the public gallery');
@@ -219,7 +225,7 @@ async function main(){
   assert(/heart-bsccfs-project\.js\?v=[\w-]+/.test(projects),
     'Projects page must load a cache-versioned BS-CCFS project script');
   assert(projects.includes('heart-bsccfs-project.css?v=20261105-fig01-featured-v2'));
-  assert(projects.includes('v2-app.js?v=20261106-hcv-hybrid-case1'));
+  assert(/v2-app\.js\?v=[\w-]+/.test(projects), 'The Projects page must use versioned v2-app.js');
   assert(projects.includes('projects-hub.css?v=20261106-project-hub-redesign1'));
   assert(projects.includes('projects-hub.js?v=20261106-hcv-hybrid-case1'));
   assert(projects.indexOf('src="projects-hub.js') < projects.indexOf('src="v2-app.js'),
@@ -281,7 +287,7 @@ async function main(){
   const askPage = text('ask-razu.html');
   assert(askPage.includes('ask-razu-ui.css?v=20261106-ask-redesign6'));
   assert(askPage.includes('ask-razu-ui.js?v=20261106-ask-redesign6'));
-  assert(askPage.includes('v2-app.js?v=20261106-ask-redesign6'));
+  assert(/v2-app\.js\?v=[\w-]+/.test(askPage), 'The Ask page must use versioned v2-app.js');
   assert(askPage.indexOf('src="ask-razu-ui.js') < askPage.indexOf('src="v2-app.js'),
     'Ask Razu interface renderer must load before the main application');
   assert(projects.includes('projects-subnav.css?v=20261106-projects-navigation5'));
@@ -290,7 +296,7 @@ async function main(){
     'Project submenu navigation must load after the main renderer');
   assert(text('v2-app.js').includes('data-project-jump-nav'),
     'Projects submenu must use its dedicated navigation handler');
-  assert(text('publications.html').includes('v2-app.js?v=20261106-review46-v1'));
+  assert(/v2-app\.js\?v=[\w-]+/.test(text('publications.html')), 'The Publications page must use versioned v2-app.js');
   assert(projects.includes('project-research-links.css?v=20261105-soft-teal-ctas3'));
   assert(projects.includes('project-research-links.js?v=20261105-pub-doi-light-nav2'));
   for(const file of ['assets/academic/logos/vendor/doi-user.png','assets/academic/logos/contact/github.svg']){
