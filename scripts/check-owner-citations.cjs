@@ -81,9 +81,19 @@ async function main(){
   assert.equal(icrast.hostLogo,'assets/academic/journals/ijss/ru-logo.webp','Display RU logo beside ICRAST logo');
   assert(fs.existsSync(icrast.eventLogo)&&fs.existsSync(icrast.hostLogo),'Both conference logos must exist');
   assert(/data\.js\?v=[\w-]+/.test(text('conferences.html')),'Conference data must be cache-refreshed');
-  assert(text('gallery.html').includes('data.js?v=20261108-eaai4-total47'),'Gallery must load the updated EAAI review record');
+  assert(/data\.js\?v=[\w-]+/.test(text('gallery.html')),'Gallery must load cache-versioned reviewer records');
   const extraData=text('extra-data.js');
   assert(extraData.includes('lastUpdated: "8 November 2026"'),'Footer date must track the latest portfolio change');
+  const allGallery=dataContext.window.PORTFOLIO_DATA.gallery||[];
+  const scholarlyCertificates=allGallery.filter(g=>['bspc-reviewing-certificate-2026','data-in-brief-reviewing-certificate-2026','array-reviewing-certificate-2026','eaai-reviewing-certificate-2026'].includes(g.id));
+  assert.equal(scholarlyCertificates.length,4,'All four Elsevier reviewing certificates must have gallery records');
+  scholarlyCertificates.forEach(g=>{
+    assert(!/\b(?:updated|uploaded|latest|replacement|preview|rendered|source file)\b/i.test(g.caption),
+      'Gallery certificate caption contains website-maintenance wording: '+g.id);
+    assert(g.caption.includes('Certificate of Reviewing'),'Gallery caption must identify the credential: '+g.id);
+  });
+  assert.equal((dataContext.window.PORTFOLIO_DATA.metrics||[]).find(m=>m.label==='Completed Peer Reviews')?.value,47,
+    'Overview peer review metric must match the editorial service total');
   const service=dataContext.window.PORTFOLIO_DATA.service||[];
   const dibReview=service.find(x=>x.id==='data-in-brief');
   const bspcReview=service.find(x=>x.id==='bspc');
@@ -140,6 +150,12 @@ async function main(){
   assert(app.includes('editorial-journal-grid--five'),
     'Five editorial-service cards should use balanced grid styling');
   assert(app.includes('47 completed invited reviews'), 'The public overview must show 47 total reviews');
+  assert(!app.includes('<strong>44</strong><span>Peer Reviews</span>'),'Homepage may not display the stale 44-review count');
+  assert(!app.includes('Source file ·'),'Gallery cards must not expose raw source filenames as editorial copy');
+  assert(app.includes('View certificate ↗'),'Certificate gallery actions must be credential-oriented');
+  const v2DataSource=text('v2-data.js');
+  assert(!v2DataSource.includes("{ value: '44', label: 'Completed Peer Reviews' }"),
+    'At-a-glance metric must derive from the current editorial records');
   assert(app.includes('14 for Biomedical Signal Processing and Control'),'BSPC assistant text must say 14');
   assert(app.includes('data-in-brief-reviewing-certificate-2026.pdf'),
     'DIB certificate PDF must be connected in the public gallery');
