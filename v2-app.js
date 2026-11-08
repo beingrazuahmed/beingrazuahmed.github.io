@@ -862,7 +862,7 @@
               <div class="hero-impact" aria-label="Research profile highlights">
                 <div class="impact-chip"><strong>3</strong><span>Published / Online</span></div>
                 <div class="impact-chip"><strong>${acceptedOutputs.length}</strong><span>Accepted / Forthcoming</span></div>
-                <div class="impact-chip"><strong>44</strong><span>Peer Reviews</span></div>
+                <div class="impact-chip"><strong>${(D.service||[]).reduce((sum,item)=>sum+Number(item.reviews||0),0)}</strong><span>Peer Reviews</span></div>
                 <div class="impact-chip"><strong>8</strong><span>Conference Contributions</span></div>
               </div>
             </div>
@@ -2798,8 +2798,8 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
       <div class="gallery-evidence-meta"><span class="badge">${esc(g.category||'Evidence')}</span>${g.evidenceType?`<span class="badge gallery-evidence-type">${esc(g.evidenceType)}</span>`:''}${g.paperId?`<span class="paper-id-chip">Paper ID ${esc(g.paperId)}</span>`:''}${g.fileType?`<span class="paper-id-chip">${esc(g.fileType)}${g.documentPages&&g.documentPages>1?` · ${esc(g.documentPages)} pages`:''}</span>`:''}</div>
       ${g.issuer||g.date?`<div class="gallery-evidence-context">${g.issuer?`<span>${esc(g.issuer)}</span>`:''}${g.date?`<span>${esc(g.date)}</span>`:''}</div>`:''}
       <h3>${esc(g.title||g.category||'')}</h3><p>${esc(g.caption||g.description||'')}</p>
-      ${g.sourceFile?`<small class="evidence-source-name">Source file · ${esc(g.sourceFile)}</small>`:''}
-      <div class="gallery-card-actions">${g.asset&&g.href&&g.asset!==g.href?`<span class="gallery-version-group"><a href="${esc(versionedAsset(g.asset))}" target="_blank" rel="noopener noreferrer">View image ↗</a><a href="${esc(versionedAsset(g.href))}" target="_blank" rel="noopener noreferrer">${String(g.fileType||'').toUpperCase()==='PDF'?'Open PDF ↗':'Open document ↗'}</a></span>`:(g.href||g.asset)?`<a href="${esc(versionedAsset(g.href||g.asset))}" target="_blank" rel="noopener noreferrer">${String(g.fileType||'').toUpperCase()==='PDF'?'Open PDF ↗':'Open original ↗'}</a>`:''}${g.related?`<a href="${esc(g.related)}">Related record →</a>`:''}</div>
+      
+      <div class="gallery-card-actions">${g.asset&&g.href&&g.asset!==g.href?`<span class="gallery-version-group"><a href="${esc(versionedAsset(g.asset))}" target="_blank" rel="noopener noreferrer">${g.evidenceType==='Certificate'?'View certificate ↗':'View image ↗'}</a><a href="${esc(versionedAsset(g.href))}" target="_blank" rel="noopener noreferrer">${String(g.fileType||'').toUpperCase()==='PDF'?'Open PDF ↗':'Open document ↗'}</a></span>`:(g.href||g.asset)?`<a href="${esc(versionedAsset(g.href||g.asset))}" target="_blank" rel="noopener noreferrer">${String(g.fileType||'').toUpperCase()==='PDF'?'Open PDF ↗':'Open original ↗'}</a>`:''}${g.related?`<a href="${esc(g.related)}">Related record →</a>`:''}</div>
     </article>`;
     const groupSection=(group,index)=>{
       const items=recordsFor(group);
@@ -2819,7 +2819,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
           <div>
             <span class="section-kicker">Documentary archive</span>
             <h2>${verifiedCount} verified evidence records</h2>
-            <p>The archive is now organized into focused collections instead of one mixed stream. Each record remains directly connected to its original evidence and related portfolio section.</p>
+            <p>Explore documented academic achievements, research presentations, scholarly service, professional development and institutional recognition. Each record links to its supporting credential or primary document.</p>
           </div>
           <a class="credential-archive-link" href="recognition.html">View credential showcase <span aria-hidden="true">→</span></a>
         </div>
