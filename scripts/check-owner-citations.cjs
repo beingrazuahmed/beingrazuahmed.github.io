@@ -130,7 +130,8 @@ async function main(){
   const dibGallery=(dataContext.window.PORTFOLIO_DATA.gallery||[]).find(x=>x.id==='data-in-brief-reviewing-certificate-2026');
   const bspcGallery=(dataContext.window.PORTFOLIO_DATA.gallery||[]).find(x=>x.id==='bspc-reviewing-certificate-2026');
   assert(dibGallery?.verified && dibGallery.href.includes('data-in-brief-reviewing-certificate-2026.pdf'));
-  assert(bspcGallery?.verified && bspcGallery.caption.includes('14 completed reviews'));
+  assert(bspcGallery?.verified && /14 completed manuscript reviews/.test(bspcGallery.caption),
+    'BSPC certificate must accurately recognize 14 completed manuscript reviews');
   const reviewFolder='assets/academic/journals/data-in-brief/README.md';
   assert(fs.existsSync(reviewFolder) && text(reviewFolder).includes('3 November 2026'));
     for(const [id,doi] of [
