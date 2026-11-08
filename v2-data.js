@@ -2860,7 +2860,7 @@
     evidence: [
       { icon: 'publication', title: 'Research Writing', detail: 'Peer-reviewed articles, active manuscripts, technical documentation and scholarly correspondence prepared in English.' },
       { icon: 'conference', title: 'Conference Communication', detail: 'English used for research presentations, abstracts, posters and conference-facing academic communication.' },
-      { icon: 'review', title: 'Peer Review', detail: '44 completed invited peer reviews across four international journals, requiring sustained critical reading and written scholarly feedback in English.' },
+      { icon: 'review', title: 'Peer Review', detail: `${(base.service||[]).reduce((sum,item)=>sum+Number(item.reviews||0),0)} completed invited peer reviews across ${(base.service||[]).length} international journals, involving critical evaluation of research methods, findings and scientific reporting in English.` },
       { icon: 'field', title: 'Field & Local Communication', detail: 'Bangla supports participant-facing communication, local academic engagement and field research in Bangladesh.' }
     ]
   };
@@ -3016,7 +3016,7 @@
       { value: String((base.manuscripts || []).length), label: 'Editorial Process' },
       { value: String((extra.ongoing || []).length), label: 'In Preparation' },
       { value: '8', label: 'Conference Contributions' },
-      { value: '44', label: 'Completed Peer Reviews' },
+      { value: String((base.service||[]).reduce((sum,item)=>sum+Number(item.reviews||0),0)), label: 'Completed Peer Reviews' },
       { value: '1', label: 'Public Dataset' }
     ],
     compass,
