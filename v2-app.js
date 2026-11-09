@@ -835,7 +835,7 @@
   function home(){
     const p=D.profile||{};
     const outputs=D.outputs||[];
-    const publishedIds=['fastica','ckd','dib'];
+    const publishedIds=['fastica','ckd','dib','dengue-forecast'];
     const selected=publishedIds.map(id=>outputs.find(x=>x.id===id&&x.bucket==='published')).filter(Boolean);
     const publishedDataset=outputs.find(x=>x.outputKind==='dataset'||x.type==='Dataset');
     const acceptedOutputs=outputs.filter(x=>x.bucket==='accepted');
@@ -860,7 +860,7 @@
               <div class="cta-row hero-actions"><a class="btn primary hero-primary" href="research.html">Explore Research <span aria-hidden="true">↗</span></a><a class="btn" href="cv.html">View CV</a><a class="btn hero-collab" href="contact.html">Collaborate</a></div>
               <div class="hero-secondary-links"><a href="ask-razu.html">Ask Razu AI</a><span>·</span><a href="dashboard-live.html?v=20260923-dashboardlive56">Research Dashboard</a><span>·</span><a href="experience.html#dslr-lab-research-assistant">DSLR Lab</a><span>·</span><a href="experience.html#ircb-research-assistant">Research Experience</a></div>
               <div class="hero-impact" aria-label="Research profile highlights">
-                <div class="impact-chip"><strong>3</strong><span>Published / Online</span></div>
+                <div class="impact-chip"><strong>${publishedArticles.length}</strong><span>Published / Online</span></div>
                 <div class="impact-chip"><strong>${acceptedOutputs.length}</strong><span>Accepted / Forthcoming</span></div>
                 <div class="impact-chip"><strong>${(D.service||[]).reduce((sum,item)=>sum+Number(item.reviews||0),0)}</strong><span>Peer Reviews</span></div>
                 <div class="impact-chip"><strong>8</strong><span>Conference Contributions</span></div>
