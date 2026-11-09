@@ -2,7 +2,7 @@
   "project": "Nationwide Evaluation of District-Informed Bottom-Up and Direct National Approaches for One-Week-Ahead Forecasting of Dengue Hospital Admissions in Bangladesh",
   "accepted_date": "2026-10-28",
   "journal": "BMC Public Health",
-  "publication_status": "Accepted / Forthcoming — article DOI not yet assigned",
+  "publication_status": "Published online · Article in Press (2026)",
   "figure_count": 21,
   "featured": "fig08-national-forecast-comparison.webp",
   "secondary_feature": "fig01-study-workflow.webp",
@@ -302,5 +302,8 @@
       "webp_bytes": 97638,
       "sha256": "83ef64e4be8b452f5353b9524a150faa4a2361dd2f63182a76dab5809205319d"
     }
-  ]
+  ],
+  "article_doi": "10.1186/s12889-026-30204-3",
+  "article_url": "https://doi.org/10.1186/s12889-026-30204-3",
+  "publication_year": 2026
 }
