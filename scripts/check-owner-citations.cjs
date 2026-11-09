@@ -248,7 +248,7 @@ async function main(){
   assert(projects.includes('heart-bsccfs-project.css?v=20261105-fig01-featured-v2'));
   assert(/v2-app\.js\?v=[\w-]+/.test(projects), 'The Projects page must use versioned v2-app.js');
   assert(projects.includes('projects-hub.css?v=20261106-project-hub-redesign1'));
-  assert(projects.includes('projects-hub.js?v=20261106-hcv-hybrid-case1'));
+  assert(projects.includes('projects-hub.js?v=20261109-dengue-published1'));
   assert(projects.indexOf('src="projects-hub.js') < projects.indexOf('src="v2-app.js'),
     'The Projects hub must register before the main renderer');
   const hubSource=text('projects-hub.js');
@@ -287,7 +287,7 @@ async function main(){
   for(const image of ['fig01-hcv-evaluation-workflow.webp','fig02-hybrid-mice-median-reconstruction.webp']){
     assert(hcvJs.includes(image), 'HCV project missing original figure asset: '+image);
   }
-  assert(projects.includes('dengue-bmc-project.js?v=20261106-dengue-final-abstract2'));
+  assert(projects.includes('dengue-bmc-project.js?v=20261109-dengue-published1'));
   assert(projects.includes('dengue-bmc-project.css?v=20261106-dengue-final-abstract2'));
   assert(projects.indexOf('src="dengue-bmc-project.js') < projects.indexOf('src="v2-app.js'),
     'Published dengue renderer must load before the main Projects renderer');
