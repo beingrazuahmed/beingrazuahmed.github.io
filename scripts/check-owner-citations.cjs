@@ -156,6 +156,7 @@ async function main(){
   assert(!app.includes('Source file ·'),'Gallery cards must not expose raw source filenames as editorial copy');
   assert(app.includes('View certificate ↗'),'Certificate gallery actions must be credential-oriented');
   const v2DataSource=text('v2-data.js');
+  vm.runInNewContext(v2DataSource,dataContext,{filename:'v2-data.js'});
   for (const [id, repository] of [
     ['fastica', 'https://github.com/beingrazuahmed/fastica-audio-source-separation'],
     ['ckd', 'https://github.com/beingrazuahmed/ckd-risk-factors-stacking-ml']
