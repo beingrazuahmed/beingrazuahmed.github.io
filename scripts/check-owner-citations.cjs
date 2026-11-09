@@ -292,7 +292,7 @@ async function main(){
   assert(projects.indexOf('src="dengue-bmc-project.js') < projects.indexOf('src="v2-app.js'),
     'Published dengue renderer must load before the main Projects renderer');
   assert(text('v2-app.js').includes('MRA_DENGUE_CASE()'),
-    'Projects must render the accepted dengue study');
+    'Projects must render the published dengue study');
   assert(text('v2-app.js').includes('href="#dengue-bmc-project"'),
     'Projects submenu must include the dengue study');
   assert(text('v2-app.js').includes('AI &amp; Employment · Field Survey'),
