@@ -355,6 +355,8 @@
       'doi': {src:'assets/academic/logos/vendor/doi-user.png', cls:'is-doi'},
       'engineering reports': {src:'assets/academic/journals/engineering-reports/logo.webp', cls:'is-wide is-journal'},
       'scopus': {src:'assets/academic/logos/scopus-circle.png', cls:'is-scopus'},
+      'pubmed': {src:favicon('pubmed.ncbi.nlm.nih.gov'), cls:'is-pubmed'},
+      'pubmed central': {src:favicon('pmc.ncbi.nlm.nih.gov'), cls:'is-pmc'},
       'google scholar': {src:favicon('scholar.google.com'), cls:'is-google-scholar'},
       'proquest': {src:favicon('proquest.com'), cls:'is-proquest'},
       'semantic scholar': {src:favicon('semanticscholar.org'), cls:'is-semantic-scholar'},
@@ -390,7 +392,7 @@
       </a>`;
     }
     const meta=publicationBrandMeta(label);
-    return `<a class="publication-brand-link ${esc(meta.cls||'')}" href="${esc(item.url||'#')}" target="_blank" rel="noopener noreferrer" aria-label="Open ${esc(label)}" title="${esc(label)}" data-label="${esc(label)}">
+    return `<a class="publication-brand-link ${esc(meta.cls||'')}" href="${esc(item.url||'#')}" target="_blank" rel="noopener noreferrer" aria-label="Open ${esc(label)}${item.identifier?` · ${esc(item.identifier)}`:''}" title="${esc(label)}${item.identifier?` · ${esc(item.identifier)}`:''}" data-label="${esc(label)}">
       <span class="publication-brand-logo"><img src="${esc(meta.src)}" alt="" loading="lazy" decoding="async"></span>
     </a>`;
   }
