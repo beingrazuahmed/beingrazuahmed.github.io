@@ -242,7 +242,11 @@ async function main(){
 
   const projects=text('projects.html');
   assert(projects.includes('published-project-citations.css'));
-  assert(projects.includes('dib-project.js?v=20261105-doi-github-icons1'));
+  assert(projects.includes('dib-project.js?v=20261109-pubmed-pmc1'));
+  assert(projects.includes('dib-project.css?v=20261109-pubmed-pmc1'));
+  assert(text('v2-data.js').includes('https://pubmed.ncbi.nlm.nih.gov/42824703/'), 'DIB PubMed link must be present');
+  assert(text('v2-data.js').includes('https://pmc.ncbi.nlm.nih.gov/articles/PMC13629197/'), 'DIB PMC link must be present');
+  assert(text('dib-project.js').includes('PMID: 42824703') && text('dib-project.js').includes('PMCID: PMC13629197'), 'DIB project must display article identifiers');
   assert(/heart-bsccfs-project\.js\?v=[\w-]+/.test(projects),
     'Projects page must load a cache-versioned BS-CCFS project script');
   assert(projects.includes('heart-bsccfs-project.css?v=20261105-fig01-featured-v2'));
