@@ -361,6 +361,7 @@
       'proquest': {src:favicon('proquest.com'), cls:'is-proquest'},
       'semantic scholar': {src:favicon('semanticscholar.org'), cls:'is-semantic-scholar'},
       'zenodo': {src:favicon('zenodo.org'), cls:'is-zenodo'},
+      'github': {src:'assets/academic/logos/contact/github.svg', cls:'is-github'},
       'sciprofiles': {src:favicon('sciprofiles.com'), cls:'is-sciprofiles'},
       'researchgate': {src:favicon('researchgate.net'), cls:'is-researchgate'},
       'sciencedirect': {src:favicon('sciencedirect.com'), cls:'is-sciencedirect'},
