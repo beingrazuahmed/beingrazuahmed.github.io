@@ -5,7 +5,7 @@
 
   const publicationLinks = {
     'dengue-forecast': {
-      primary: [{ label: 'Zenodo', url: 'https://doi.org/10.5281/zenodo.23928401' }],
+      primary: [{ label: 'DOI', url: 'https://doi.org/10.1186/s12889-026-30204-3' }, { label: 'Zenodo', url: 'https://doi.org/10.5281/zenodo.23928401' }],
       discovery: [],
       social: []
     },
@@ -520,27 +520,28 @@
       ],
       relationship: {
         title: 'Supportive mentor, research guide, co-author & corresponding author',
-        detail: 'Dr. Md. Feroz Ali has been highly helpful and supportive in Razu’s research development. He provides clear guidance, teaches practical research hacks and useful tools, and shares workflow strategies that help make research more efficient and methodologically focused. He is also a co-author and one of the corresponding authors of the nationwide dengue forecasting article accepted for publication in BMC Public Health on 28 October 2026.'
+        detail: 'Dr. Md. Feroz Ali has been highly helpful and supportive in Razu’s research development. He provides clear guidance, teaches practical research hacks and useful tools, and shares workflow strategies that help make research more efficient and methodologically focused. He is also a co-author and one of the corresponding authors of the nationwide dengue forecasting article published in BMC Public Health in 2026 (accepted 28 October 2026; DOI: 10.1186/s12889-026-30204-3).'
       },
       relationshipPath: [
         'Supportive senior guidance',
         'Research tools & workflow strategies',
-        'Joint dengue forecasting manuscript',
+        'Joint published dengue forecasting article',
         'Continuing research collaboration'
       ],
       collaborationStats: [
-        { value: '1', label: 'Accepted / forthcoming' }
+        { value: '1', label: 'Published journal article' }
       ],
-      sharedAccepted: [
+      sharedPublications: [
         {
           title: 'Nationwide Evaluation of District-Informed Bottom-Up and Direct National Approaches for One-Week-Ahead Forecasting of Dengue Hospital Admissions in Bangladesh',
           journal: 'BMC Public Health',
           publisher: 'Springer Nature',
-          detail: 'Role: Co-corresponding author (one of the corresponding authors) · Accepted for publication on 28 October 2026; DOI pending.'
+          doi: 'https://doi.org/10.1186/s12889-026-30204-3',
+          detail: 'Published in BMC Public Health (2026) · Article in Press · Corresponding author · Accepted 28 October 2026.'
         }
       ],
       shared: [
-        'Nationwide dengue forecasting — corresponding author; accepted in BMC Public Health (28 October 2026)'
+        'Nationwide dengue forecasting — corresponding author; published in BMC Public Health (2026), DOI: 10.1186/s12889-026-30204-3'
       ],
       email: 'feroz.ali.eee@pust.ac.bd',
       additionalEmail: 'feroz071021@gmail.com',
@@ -1362,10 +1363,8 @@
     'Dengue forecasting collaboration'
   ],
 
-  sharedPublications: [],
-
-  sharedAccepted: [
-    { title: 'Nationwide Evaluation of District-Informed Bottom-Up and Direct National Approaches for One-Week-Ahead Forecasting of Dengue Hospital Admissions in Bangladesh', journal: 'BMC Public Health', publisher: 'Springer Nature', detail: 'Accepted for publication on 28 October 2026; DOI pending.' }
+  sharedPublications: [
+    { title: 'Nationwide Evaluation of District-Informed Bottom-Up and Direct National Approaches for One-Week-Ahead Forecasting of Dengue Hospital Admissions in Bangladesh', journal: 'BMC Public Health', publisher: 'Springer Nature', doi: 'https://doi.org/10.1186/s12889-026-30204-3', detail: 'Published online in 2026 (Article in Press); accepted 28 October 2026.' }
   ],
 
   sharedEditorial: [
@@ -1378,7 +1377,7 @@
   ],
 
   shared: [
-    'Nationwide dengue admission forecasting — accepted in BMC Public Health (28 October 2026)',
+    'Nationwide dengue admission forecasting — published in BMC Public Health (2026), DOI: 10.1186/s12889-026-30204-3',
     'Beyond Burden dengue preparedness study',
     'BazarBondhu AI — Team SocioNova; applied AI household affordability prototype jointly developed with Md. Razu Ahmed'
   ],
@@ -2018,15 +2017,16 @@
       collaborationStats: [
         { value: '1', label: 'Conference contribution' },
         { value: '2', label: 'Pre-conference workshops' },
-        { value: '1', label: 'Accepted / forthcoming' }
+        { value: '1', label: 'Published journal article' }
       ],
 
-      sharedAccepted: [
+      sharedPublications: [
         {
           title: 'Nationwide Evaluation of District-Informed Bottom-Up and Direct National Approaches for One-Week-Ahead Forecasting of Dengue Hospital Admissions in Bangladesh',
           journal: 'BMC Public Health',
           publisher: 'Springer Nature',
-          detail: 'Accepted 28 October 2026 · Q1 · SJR 2025 1.356 · H-Index 225 · CiteScore 5.9 · Impact Factor 4.4 · SNIP 2025 1.570 · Science Citation Index Expanded (SCIE) · E-ISSN 1471-2458.'
+          doi: 'https://doi.org/10.1186/s12889-026-30204-3',
+          detail: 'Published in BMC Public Health (2026) · Accepted 28 October 2026 · Q1 · SJR 2025 1.356 · H-Index 225 · CiteScore 5.9 · Impact Factor 4.4 · SNIP 2025 1.570 · Science Citation Index Expanded (SCIE) · E-ISSN 1471-2458.'
         }
       ],
 
@@ -2052,7 +2052,7 @@
         'ICASDS 2025 Paper ID 315 — multi-class diabetes mellitus grading using machine learning',
         'ICASDS 2025 pre-conference workshop — Causal Inference for Observational Data Analysis',
         'ICASDS 2025 pre-conference workshop — From Business Challenge to Deployment',
-        'Nationwide dengue admission forecasting — accepted in BMC Public Health on 28 October 2026'
+        'Nationwide dengue admission forecasting — published in BMC Public Health (2026), DOI: 10.1186/s12889-026-30204-3'
       ],
 
       email: 'mimosaha06@gmail.com',
@@ -3096,7 +3096,7 @@
           "Develop end-to-end analytical workflows encompassing data preparation, feature engineering, model development, validation, interpretation, and performance evaluation.",
           "Support survey-based and observational studies through study design, sampling, questionnaire development, data management, and statistical analysis.",
           "Build reproducible research workflows in Python and Jupyter Notebook and prepare publication-quality figures, tables, supplementary materials, technical documentation, and manuscripts.",
-          "Collaborate with supervisors and research teams throughout the research lifecycle, contributing to methodological development, analysis, interpretation, manuscript revision, and submission; outputs include three published/online peer-reviewed journal articles, two accepted/forthcoming articles, eight conference contributions, one publicly deposited research dataset, and multiple ongoing interdisciplinary studies.",
+          "Collaborate with supervisors and research teams throughout the research lifecycle, contributing to methodological development, analysis, interpretation, manuscript revision, and submission; outputs include four published/online peer-reviewed journal articles, one accepted/forthcoming article, eight conference contributions, one publicly deposited research dataset, and multiple ongoing interdisciplinary studies.",
           "Developed a Flask-based prototype for automated diabetic-retinopathy grading by integrating Python model inference with an HTML- and CSS-based user interface."
         ]
       },
