@@ -156,6 +156,18 @@ async function main(){
   assert(!app.includes('Source file ·'),'Gallery cards must not expose raw source filenames as editorial copy');
   assert(app.includes('View certificate ↗'),'Certificate gallery actions must be credential-oriented');
   const v2DataSource=text('v2-data.js');
+  for (const [id, repository] of [
+    ['fastica', 'https://github.com/beingrazuahmed/fastica-audio-source-separation'],
+    ['ckd', 'https://github.com/beingrazuahmed/ckd-risk-factors-stacking-ml']
+  ]) {
+    const links=dataContext.window.MRA_V2.publicationLinks[id].primary;
+    assert(links.some(link=>link.label==='GitHub'&&link.url===repository),
+      `${id} published article must have a GitHub-icon research-code link`);
+  }
+  assert(app.includes("'github': {src:'assets/academic/logos/contact/github.svg'"),
+    'Publication link icons must use the verified GitHub SVG');
+  assert(text('publications.html').includes('v2-app.js?v=20261109-github-code-icons1'),
+    'Publication page must refresh cached GitHub brand icons');
   assert(!v2DataSource.includes("{ value: '44', label: 'Completed Peer Reviews' }"),
     'At-a-glance metric must derive from the current editorial records');
   assert(app.includes('14 for Biomedical Signal Processing and Control'),'BSPC assistant text must say 14');
