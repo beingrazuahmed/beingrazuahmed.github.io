@@ -13,8 +13,8 @@ window.PORTFOLIO_DATA = {
   },
 
   metrics: [
-    { label: "Published / Online", value: 3, note: "Peer-reviewed journal articles" },
-    { label: "Accepted / Forthcoming", value: 2, note: "First- and second-authored journal articles" },
+    { label: "Published / Online", value: 4, note: "Peer-reviewed journal articles" },
+    { label: "Accepted / Forthcoming", value: 1, note: "Peer-reviewed journal article" },
     { label: "Conference Contributions", value: 8, note: "3 presentations delivered" },
     { label: "Public Dataset", value: 1, note: "Mendeley Data" },
     { label: "Completed Peer Reviews", value: 47, note: "Across 5 journals" }
@@ -143,7 +143,7 @@ window.PORTFOLIO_DATA = {
       visual: "assets/academic/projects/pust-food-dataset/fig05-detection-segmentation-annotations.webp"
     },
     {
-      id: "dengue-forecast", type: "Journal Article", status: "Accepted / Forthcoming", year: 2026, role: "Second Author",
+      id: "dengue-forecast", type: "Journal Article", status: "Published", year: 2026, role: "Second Author",
       title: "Nationwide Evaluation of District-Informed Bottom-Up and Direct National Approaches for One-Week-Ahead Forecasting of Dengue Hospital Admissions in Bangladesh",
       venue: "BMC Public Health", publisher: "Springer Nature",
       publisherBrandLinks: [
@@ -162,7 +162,11 @@ window.PORTFOLIO_DATA = {
           brand: "springer-nature"
         }
       ],
-      citation: "Accepted for publication on 28 October 2026 · DOI pending.",
+      citation: "BMC Public Health (2026) · Article in Press · Accepted 28 October 2026.",
+      citationAPA: "Haque, M. Z., Ahmed, M. R., Saha, M., Ali, M. F., Biswas, D., Alam, M. S., Shakil, S. M., & Obaidi, O. (2026). Nationwide evaluation of district-informed bottom-up and direct national approaches for one-week-ahead forecasting of dengue hospital admissions in Bangladesh. BMC Public Health. https://doi.org/10.1186/s12889-026-30204-3",
+      citationIEEE: "M. Z. Haque, M. R. Ahmed, M. Saha, M. F. Ali, D. Biswas, M. S. Alam, S. M. Shakil, and O. Obaidi, “Nationwide evaluation of district-informed bottom-up and direct national approaches for one-week-ahead forecasting of dengue hospital admissions in Bangladesh,” BMC Public Health, 2026, doi: 10.1186/s12889-026-30204-3.",
+      doi: "https://doi.org/10.1186/s12889-026-30204-3",
+      journalUrl: "https://doi.org/10.1186/s12889-026-30204-3",
       acceptedDate: "28 October 2026",
       codeRepository: { label: "Zenodo analysis code", url: "https://doi.org/10.5281/zenodo.23928401", doi: "10.5281/zenodo.23928401", version: "1.0.0", published: "4 November 2026" },
       authors: [
@@ -196,7 +200,7 @@ window.PORTFOLIO_DATA = {
         indexing: "Science Citation Index Expanded (SCIE) · Scopus"
       },
       tags: ["Dengue", "Forecasting", "LightGBM", "Public Health"],
-      summary: "A temporally locked nationwide comparison of district-informed bottom-up and direct national one-week-ahead dengue admission forecasts across all 64 districts of Bangladesh.",
+      summary: "A temporally ordered nationwide comparison of district-informed bottom-up and direct national one-week-ahead forecasts of reported dengue hospital admissions across all 64 districts of Bangladesh. Published in BMC Public Health (2026).",
       highlight: "Bottom-up LightGBM achieved held-out national wMAPE 12.10% and R² 0.9625 in 2025.",
       visual: "assets/manuscripts/dengue-forecasting/workflow.png"
     },
