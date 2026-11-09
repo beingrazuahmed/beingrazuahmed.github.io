@@ -7,6 +7,7 @@
   const PAPER='https://doi.org/10.1016/j.dib.2026.113262';
   const DATA='https://data.mendeley.com/datasets/fn6yhzjz83/2';
   const SOURCE='https://pmc.ncbi.nlm.nih.gov/articles/PMC13629197/';
+  const PUBMED='https://pubmed.ncbi.nlm.nih.gov/42824703/';
   const figures=[
     {n:5,file:'fig05-detection-segmentation-annotations.webp',title:'Bounding-box and polygon annotations',desc:'Visual examples of the paired object-detection and instance-segmentation labels.',featured:true},
     {n:7,file:'fig07-dataset-preparation-workflow.webp',title:'End-to-end preparation workflow',desc:'Collection, manual annotation, original-image partitioning, augmentation, refinement and data release.',featured:true},
@@ -55,6 +56,10 @@
               <a class="btn ghost" href="${PAPER}" target="_blank" rel="noopener noreferrer">Data Article DOI <span aria-hidden="true">↗</span></a>
               <a class="btn ghost" href="https://github.com/beingrazuahmed/beingrazuahmed.github.io/tree/main/assets/academic/projects/pust-food-dataset" target="_blank" rel="noopener noreferrer">Published figures · GitHub <span aria-hidden="true">↗</span></a>
               <a class="btn ghost" href="publications.html#output-dib">Publication record <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="dib-index-links" aria-label="PubMed article identifiers">
+              <a href="${PUBMED}" target="_blank" rel="noopener noreferrer" aria-label="View PubMed record, PMID 42824703"><img src="https://www.google.com/s2/favicons?sz=128&domain=pubmed.ncbi.nlm.nih.gov" alt="" loading="lazy" decoding="async"><span>PubMed <small>PMID: 42824703</small></span><span class="dib-index-ext" aria-hidden="true">↗</span></a>
+              <a href="${SOURCE}" target="_blank" rel="noopener noreferrer" aria-label="View PubMed Central full-text article, PMCID PMC13629197"><img src="https://www.google.com/s2/favicons?sz=128&domain=pmc.ncbi.nlm.nih.gov" alt="" loading="lazy" decoding="async"><span>PubMed Central <small>PMCID: PMC13629197</small></span><span class="dib-index-ext" aria-hidden="true">↗</span></a>
             </div>
             <p class="dib-authorline"><strong>Authors:</strong> Marufa Yeasmin · Md. Razu Ahmed · Protiva Rani Kundu · Jannatul Mauya · Md. Shamim Reza</p>
           </div>
