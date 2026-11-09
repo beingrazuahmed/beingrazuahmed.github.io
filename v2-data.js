@@ -12,7 +12,8 @@
     fastica: {
       primary: [
         { label: 'DOI', url: 'https://doi.org/10.1002/eng2.70575' },
-        { label: 'Engineering Reports', url: 'https://onlinelibrary.wiley.com/journal/25778196' }
+        { label: 'Engineering Reports', url: 'https://onlinelibrary.wiley.com/journal/25778196' },
+        { label: 'GitHub', url: 'https://github.com/beingrazuahmed/fastica-audio-source-separation', identifier: 'Research code and reproducibility' }
       ],
       discovery: [
         { label: 'Scopus', url: 'https://www.scopus.com/pages/publications/105026452579' },
@@ -28,7 +29,7 @@
     ckd: {
       primary: [
         { label: 'DOI', url: 'https://doi.org/10.3329/ijss.v25i2.85732' },
-        { label: 'Research code', url: 'https://github.com/beingrazuahmed/ckd-risk-factors-stacking-ml' }
+        { label: 'GitHub', url: 'https://github.com/beingrazuahmed/ckd-risk-factors-stacking-ml', identifier: 'Research code and notebooks' }
       ],
       discovery: [
         { label: 'Google Scholar', url: 'https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=Identification+of+predisposing+risk+factors+for+chronic+kidney+disease+and+optimizing+disease+prediction+using+a+stacking+machine+learning+algorithm&btnG=' },
