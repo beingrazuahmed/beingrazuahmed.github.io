@@ -83,7 +83,7 @@ async function main(){
   assert(/data\.js\?v=[\w-]+/.test(text('conferences.html')),'Conference data must be cache-refreshed');
   assert(/data\.js\?v=[\w-]+/.test(text('gallery.html')),'Gallery must load cache-versioned reviewer records');
   const extraData=text('extra-data.js');
-  assert(extraData.includes('lastUpdated: "8 November 2026"'),'Footer date must track the latest portfolio change');
+  assert(extraData.includes('lastUpdated: "9 November 2026"'),'Footer date must track the latest portfolio change');
   const allGallery=dataContext.window.PORTFOLIO_DATA.gallery||[];
   const scholarlyCertificates=allGallery.filter(g=>['bspc-reviewing-certificate-2026','data-in-brief-reviewing-certificate-2026','array-reviewing-certificate-2026','eaai-reviewing-certificate-2026'].includes(g.id));
   assert.equal(scholarlyCertificates.length,4,'All four Elsevier reviewing certificates must have gallery records');
@@ -137,7 +137,8 @@ async function main(){
     for(const [id,doi] of [
     ['fastica','10.1002/eng2.70575'],
     ['ckd','10.3329/ijss.v25i2.85732'],
-    ['dib','10.1016/j.dib.2026.113262']
+    ['dib','10.1016/j.dib.2026.113262'],
+    ['dengue-forecast','10.1186/s12889-026-30204-3']
   ]){
     const p=pubs.find(x=>x.id===id);
     assert(p&&p.citationAPA&&p.citationIEEE,`Missing canonical published citations for ${id}`);
@@ -289,7 +290,7 @@ async function main(){
   assert(projects.includes('dengue-bmc-project.js?v=20261106-dengue-final-abstract2'));
   assert(projects.includes('dengue-bmc-project.css?v=20261106-dengue-final-abstract2'));
   assert(projects.indexOf('src="dengue-bmc-project.js') < projects.indexOf('src="v2-app.js'),
-    'Accepted dengue renderer must load before the main Projects renderer');
+    'Published dengue renderer must load before the main Projects renderer');
   assert(text('v2-app.js').includes('MRA_DENGUE_CASE()'),
     'Projects must render the accepted dengue study');
   assert(text('v2-app.js').includes('href="#dengue-bmc-project"'),
