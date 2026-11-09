@@ -46,6 +46,8 @@
         { label: 'Mendeley Data', url: 'https://doi.org/10.17632/fn6yhzjz83.2' }
       ],
       discovery: [
+        { label: 'PubMed', url: 'https://pubmed.ncbi.nlm.nih.gov/42824703/', identifier: 'PMID: 42824703' },
+        { label: 'PubMed Central', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC13629197/', identifier: 'PMCID: PMC13629197' },
         { label: 'Scopus', url: 'https://www.scopus.com/pages/publications/105051233565' },
         { label: 'Google Scholar', url: 'https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=PUST+Cafeteria+Food+Image+Dataset%3A+Real-World+Bangladeshi+Meal-Platter+Images+with+Bounding-Box+and+Polygon+Annotations&btnG=' },
         { label: 'Semantic Scholar', url: 'https://www.semanticscholar.org/paper/PUST-Cafeteria-Food-Image-Dataset%3A-Real-World-with-Yeasmin-Ahmed/07a90c12567b3985f246f7ef158068e447818609' }
