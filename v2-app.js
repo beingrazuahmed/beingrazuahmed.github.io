@@ -966,10 +966,10 @@
     </div></section>
 
     <section class="section alt knowledge-home-section" id="knowledge-studio"><div class="container">
-      ${sectionHead('Knowledge studio','Research writing & study notes','Accessible explanations, methodological discussions and original learning resources.')}
+      ${sectionHead('Knowledge studio','Research writing & study notes','Original research commentary and academic methods notes, including new dengue forecasting resources (10 November 2026).')}
       <div class="knowledge-hub-grid">
-        <a class="knowledge-hub-card" href="blogs.html"><span class="knowledge-hub-symbol" aria-hidden="true">✒</span><h3>Research Blog</h3><p>Insights into leakage-aware modelling, explainable AI and sound statistical research practice.</p><span class="knowledge-hub-cta">Read research articles ↗</span></a>
-        <a class="knowledge-hub-card" href="notes.html"><span class="knowledge-hub-symbol" aria-hidden="true">▤</span><h3>Academic Notes</h3><p>Short, focused guides for statistics, experimental design and research modelling, ready to read or save as PDF.</p><span class="knowledge-hub-cta">Explore study notes ↗</span></a>
+        <a class="knowledge-hub-card" href="blogs.html"><span class="knowledge-hub-symbol" aria-hidden="true">✒</span><h3>Research Blog</h3><p>Research case studies on dengue forecasting, model evaluation, explainable AI and rigorous statistical practice.</p><span class="knowledge-hub-cta">Read research articles ↗</span></a>
+        <a class="knowledge-hub-card" href="notes.html"><span class="knowledge-hub-symbol" aria-hidden="true">▤</span><h3>Academic Notes</h3><p>Practical notes on temporal forecasting, statistical evaluation, regression, sampling and experimental design, readable or printable as PDF.</p><span class="knowledge-hub-cta">Explore study notes ↗</span></a>
       </div>
     </div></section>
 
