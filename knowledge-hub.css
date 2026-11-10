@@ -155,3 +155,35 @@
   .knowledge-equation{background:#f7f7f7!important;color:#111!important}
   @page{size:A4;margin:15mm}
 }
+
+/* Connected project-based research and learning library */
+.knowledge-library-stats{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.knowledge-library-stats span{border:1px solid var(--line);border-radius:99px;padding:8px 11px;background:var(--surface);font-size:11px;font-weight:750;color:var(--muted)}
+.knowledge-filterbar{align-items:flex-start}
+.knowledge-filters{flex-wrap:wrap;justify-content:flex-end;max-width:770px}
+.knowledge-filters input{width:235px}.knowledge-filters select{width:180px}
+#knowledge-project{max-width:245px}
+.knowledge-project-context{margin-top:auto;margin-bottom:16px;border-left:3px solid var(--accent);border-radius:0 9px 9px 0;background:color-mix(in srgb,var(--accent) 6%,var(--surface));padding:12px;display:grid;gap:5px}
+.knowledge-project-context span{font-size:9px;letter-spacing:.12em;color:var(--muted);font-weight:850}
+.knowledge-project-context a,.knowledge-evidence-note a{font-size:12px;line-height:1.5;color:var(--accent-2);font-weight:750;text-decoration:none}
+.knowledge-project-context a:hover,.knowledge-evidence-note a:hover,.knowledge-reading-source:hover{text-decoration:underline;text-underline-offset:3px}
+.knowledge-reading-source{display:inline-flex;margin-top:18px;border:1px solid var(--line);border-radius:10px;padding:10px 13px;color:var(--accent-2);text-decoration:none;background:var(--surface);font-size:12px;font-weight:750}
+.knowledge-evidence-note{border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin:8px 0 23px;background:color-mix(in srgb,var(--accent) 5%,var(--surface))}
+.knowledge-evidence-note strong{font-size:12px;color:var(--text)}
+.knowledge-evidence-note p{font-size:13px;color:var(--muted);line-height:1.65;margin:7px 0}
+.knowledge-path-section{padding-block:clamp(44px,5vw,75px)}
+.knowledge-path-section-head{display:flex;justify-content:space-between;align-items:end;gap:20px}
+.knowledge-path-section-head h2{font-size:clamp(1.7rem,3vw,2.7rem);letter-spacing:-.045em;color:var(--text);margin:8px 0}
+.knowledge-path-section-head p{font-size:13px;color:var(--muted);max-width:77ch;line-height:1.75;margin:0}
+.knowledge-path-section-head>a{font-size:12px;font-weight:750;color:var(--accent-2);text-decoration:none;white-space:nowrap}
+.knowledge-path-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-top:26px}
+.knowledge-path-card{min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:17px;padding:22px;display:flex;flex-direction:column;box-shadow:0 8px 26px rgba(20,42,80,.045)}
+.knowledge-path-label{font-size:9px;letter-spacing:.13em;font-weight:850;color:var(--accent-2)}
+.knowledge-path-card h3{font-size:18px;line-height:1.35;letter-spacing:-.03em;color:var(--text);margin:14px 0 5px}
+.knowledge-path-card p{font-size:11px;color:var(--muted);margin:0 0 20px;line-height:1.65}
+.knowledge-path-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.knowledge-path-actions a{border:1px solid var(--line);background:color-mix(in srgb,var(--accent) 4%,var(--surface));padding:8px 10px;border-radius:9px;font-size:11px;color:var(--accent-2);font-weight:740;text-decoration:none}
+.knowledge-path-actions a:hover{background:color-mix(in srgb,var(--accent) 10%,var(--surface));border-color:var(--accent)}
+@media(max-width:1120px){.knowledge-filterbar{display:block}.knowledge-filters{justify-content:flex-start;max-width:none;margin-top:18px}.knowledge-path-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:690px){.knowledge-path-grid{grid-template-columns:1fr}.knowledge-path-section-head{display:block}.knowledge-path-section-head>a{display:inline-block;margin-top:12px}.knowledge-filters{flex-direction:column}.knowledge-filters input,.knowledge-filters select,#knowledge-project{width:100%;max-width:none}}
+@media print{.knowledge-evidence-note{background:#fff!important;border-color:#bbb!important}.knowledge-reading-source{color:#111!important}}
