@@ -144,3 +144,9 @@ body[data-page="projects"] .dng-news-entry p{color:var(--muted);font-size:.79rem
 body[data-page="projects"] .dng-news-entry a{display:inline-flex;align-items:center;color:var(--accent-2);font-size:.78rem;font-weight:750;text-decoration:underline;text-underline-offset:4px}
 body[data-page="projects"] .dng-news-entry a:hover{color:var(--text)}
 @media(max-width:650px){body[data-page="projects"] .dng-news-entry{padding:16px}}
+
+/* Source identity on dengue repository/discovery links */
+body[data-page="projects"] .dng-source-icon{display:inline-block;width:18px;height:18px;object-fit:contain;vertical-align:-4px;margin-right:8px;flex:none;border-radius:4px}
+body[data-page="projects"] .dng-source-label{display:inline-flex;align-items:center;gap:0;flex-wrap:wrap}
+body[data-page="projects"] .dng-source-label .dng-source-icon{margin-right:7px}
+body[data-page="projects"] .dng-news-entry a:has(.dng-source-icon),body[data-page="projects"] .dng-record-links a:has(.dng-source-icon){display:inline-flex;align-items:center;gap:0}
