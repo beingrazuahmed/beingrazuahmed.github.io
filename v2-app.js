@@ -783,6 +783,7 @@
   function activityCategory(item){
     const type=String(item.type||'').toLowerCase();
     if(type.includes('conference'))return 'Conferences';
+    if(type.includes('media coverage'))return 'Media Coverage';
     if(type.includes('publication'))return 'Publications';
     if(type.includes('dataset'))return 'Datasets';
     if(type.includes('manuscript')||type.includes('submission'))return 'Manuscripts';
@@ -810,7 +811,7 @@
   }
   function latestActivity(){
     const updates=activityFeed();
-    const kinds=['Publications','Manuscripts','Conferences','Datasets','Other Updates'];
+    const kinds=['Publications','Media Coverage','Manuscripts','Conferences','Datasets','Other Updates'];
     const categories=[['All Activities',updates.length],...kinds.map(name=>[name,updates.filter(x=>activityCategory(x)===name).length]).filter(x=>x[1]>0)];
     const years=updates.map(x=>Number(String(x.date||'').match(/\d{4}/)?.[0]||0)).filter(Boolean);
     const yearRange=years.length?(Math.min(...years)===Math.max(...years)?String(years[0]):Math.min(...years)+'–'+Math.max(...years)):'—';
@@ -979,6 +980,21 @@
         ${(D.service||[]).map(record=>`<article class="card editorial-card"><h3>${esc(record.journal||'Journal')}</h3><p>${esc(record.reviews||0)} completed ${Number(record.reviews)===1?'review':'reviews'}</p>${record.evidenceHref?`<a class="credential-inline-link" href="${esc(record.evidenceHref)}">View reviewing certificate →</a>`:''}</article>`).join('')}
       </div>
       <div class="section-action"><a class="section-text-link" href="experience.html#editorial-peer-review">Explore editorial appointments, journal details &amp; review certificates ↗</a></div>
+    </div></section>
+
+    <section class="section" id="research-in-the-news"><div class="container">
+      ${sectionHead('Research in the news','International online science-media coverage','Selected external reporting and publisher-platform discovery links for published research.')}
+      <article class="card editorial-card" style="padding:22px;display:grid;gap:13px">
+        <div class="section-kicker">10 November 2026 · Scienmag</div>
+        <h3 style="margin:0">District-Informed Modeling Evaluated for Dengue Hospital Admission Forecasting in Bangladesh</h3>
+        <p style="margin:0">A third-party online science-news summary of our nationwide dengue forecasting research published in <em>BMC Public Health</em>. The coverage describes the district-informed framework, observed findings and methodological limitations.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:16px">
+          <a class="section-text-link" href="https://scienmag.com/district-informed-modeling-evaluated-for-dengue-hospital-admission-forecasting-in-bangladesh/" target="_blank" rel="noopener noreferrer">Read Scienmag coverage ↗</a>
+          <a class="section-text-link" href="https://www.springermedicine.com/nationwide-evaluation-of-district-informed-bottom-up-and-direct-/53959062" target="_blank" rel="noopener noreferrer">Springer Medicine listing ↗</a>
+          <a class="section-text-link" href="projects.html#dng-media-coverage">Research project and coverage →</a>
+        </div>
+        <p class="tiny" style="margin:0">Springer Medicine is a publisher-affiliated article listing, not independent press coverage.</p>
+      </article>
     </div></section>
 
     <section class="section alt"><div class="container">
