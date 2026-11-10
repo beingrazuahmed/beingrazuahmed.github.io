@@ -134,3 +134,13 @@ body[data-page="projects"] .dng-performance-insights strong span{font-size:.82re
 body[data-page="projects"] .dng-performance-insights p{font-size:.7rem;line-height:1.6;color:var(--muted);margin:0}
 @media(max-width:890px){body[data-page="projects"] .dng-performance{grid-template-columns:1fr}}
 @media(max-width:650px){body[data-page="projects"] .dng-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}body[data-page="projects"] .dng-metrics>div:nth-child(3),body[data-page="projects"] .dng-metrics>div:nth-child(7){border-left:0}body[data-page="projects"] .dng-metrics>div:nth-child(n+3){border-top:1px solid var(--line)}body[data-page="projects"] .dng-metrics>div:nth-child(5){border-left:0}body[data-page="projects"] .dng-performance-table{padding:12px}body[data-page="projects"] .dng-performance-table th,body[data-page="projects"] .dng-performance-table td{font-size:.69rem;padding:9px 6px}}
+
+/* Independent science-news mention: deliberately distinct from the journal record. */
+body[data-page="projects"] .dng-media-coverage{margin-top:22px}
+body[data-page="projects"] .dng-news-entry{border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:20px 22px;max-width:100%;box-shadow:0 4px 16px rgba(21,48,62,.035)}
+body[data-page="projects"] .dng-news-meta{display:flex;justify-content:space-between;gap:9px;flex-wrap:wrap;color:var(--muted);font-size:.71rem;font-weight:700;letter-spacing:.02em}
+body[data-page="projects"] .dng-news-entry h4{color:var(--text);font-size:1.04rem;line-height:1.46;margin:12px 0 9px}
+body[data-page="projects"] .dng-news-entry p{color:var(--muted);font-size:.79rem;line-height:1.7;margin:0 0 15px}
+body[data-page="projects"] .dng-news-entry a{display:inline-flex;align-items:center;color:var(--accent-2);font-size:.78rem;font-weight:750;text-decoration:underline;text-underline-offset:4px}
+body[data-page="projects"] .dng-news-entry a:hover{color:var(--text)}
+@media(max-width:650px){body[data-page="projects"] .dng-news-entry{padding:16px}}
