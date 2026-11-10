@@ -1142,7 +1142,7 @@
       ${(p.citationAPA||p.citationIEEE)
         ? `<div class="publication-citation-block"><div class="publication-citation-label">APA & IEEE citations</div>${dualAcademicCitation(p.citationAPA,p.citationIEEE)}</div>`
         : (p.citation? `<p class="output-citation">${esc(p.citation)}</p>` : '')}
-      ${p.codeRepository?.url?`<div class="publication-code-deposit"><strong>Open analysis code</strong><a href="${esc(p.codeRepository.url)}" target="_blank" rel="noopener noreferrer"><img class="publication-zenodo-inline" src="https://www.google.com/s2/favicons?sz=128&domain=zenodo.org" alt="" loading="lazy">Zenodo · Version ${esc(p.codeRepository.version||'1.0.0')} · DOI: ${esc(p.codeRepository.doi||'')}</a></div>`:''}
+      ${p.codeRepository?.url?`<div class="publication-code-deposit"><span class="publication-code-label">Analysis code</span><a href="${esc(p.codeRepository.url)}" target="_blank" rel="noopener noreferrer" title="Zenodo · Version ${esc(p.codeRepository.version||'1.0.0')} · DOI ${esc(p.codeRepository.doi||'')}" aria-label="Open Zenodo analysis code · DOI ${esc(p.codeRepository.doi||'')}"><img class="publication-zenodo-inline" src="https://www.google.com/s2/favicons?sz=128&domain=zenodo.org" alt="" loading="lazy" width="18" height="18">Zenodo · v${esc(p.codeRepository.version||'1.0.0')} <span aria-hidden="true">↗</span></a></div>`:''}
       ${js?`<div class="output-standing">
         ${js.jif2025?`<span><strong>${esc(js.jif2025)}</strong>JIF</span>`:''}
         ${js.citeScore2025?`<span><strong>${esc(js.citeScore2025)}</strong>CiteScore</span>`:''}

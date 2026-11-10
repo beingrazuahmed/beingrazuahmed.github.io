@@ -13918,3 +13918,11 @@ body[data-page="dashboard"] .dashboard-impact-brand-links .publication-brand-lin
     min-width:0;
   }
 }
+
+/* Publications: compact and accessible Zenodo analysis-code citation */
+body[data-page="publications"] .output-card .publication-code-deposit{display:inline-flex;align-items:center;flex-wrap:wrap;gap:8px 12px;max-width:100%;min-height:38px;margin:8px 0 11px;padding:7px 11px;border-radius:9px;font-size:.77rem;line-height:1.4;vertical-align:middle}
+body[data-page="publications"] .output-card .publication-code-label{font-size:.75rem;font-weight:780;color:var(--text)}
+body[data-page="publications"] .output-card .publication-code-deposit a{display:inline-flex;align-items:center;gap:6px;min-width:0;max-width:100%;font-size:.77rem;line-height:1.4;text-decoration:none}
+body[data-page="publications"] .output-card .publication-code-deposit a:hover{text-decoration:underline;text-underline-offset:3px}
+body[data-page="publications"] .output-card .publication-code-deposit .publication-zenodo-inline{display:block;width:18px!important;height:18px!important;max-width:18px!important;max-height:18px!important;min-width:18px;min-height:18px;object-fit:contain;flex:0 0 18px;margin:0;padding:0;border:0;border-radius:3px;vertical-align:middle}
+@media(max-width:480px){body[data-page="publications"] .output-card .publication-code-deposit{display:flex;width:fit-content;padding:8px 10px}}
