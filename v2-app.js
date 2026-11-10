@@ -966,10 +966,10 @@
     </div></section>
 
     <section class="section alt knowledge-home-section" id="knowledge-studio"><div class="container">
-      ${sectionHead('Knowledge studio','Research writing & study notes','Original research commentary and academic methods notes, including new dengue forecasting resources (10 November 2026).')}
+      ${sectionHead('Knowledge studio','Research writing & study notes','A connected library of research case studies, methodological explanations and statistical learning notes drawn from documented portfolio projects.')}
       <div class="knowledge-hub-grid">
-        <a class="knowledge-hub-card" href="blogs.html"><span class="knowledge-hub-symbol" aria-hidden="true">✒</span><h3>Research Blog</h3><p>Research case studies on dengue forecasting, model evaluation, explainable AI and rigorous statistical practice.</p><span class="knowledge-hub-cta">Read research articles ↗</span></a>
-        <a class="knowledge-hub-card" href="notes.html"><span class="knowledge-hub-symbol" aria-hidden="true">▤</span><h3>Academic Notes</h3><p>Practical notes on temporal forecasting, statistical evaluation, regression, sampling and experimental design, readable or printable as PDF.</p><span class="knowledge-hub-cta">Explore study notes ↗</span></a>
+        <a class="knowledge-hub-card" href="blogs.html"><span class="knowledge-hub-symbol" aria-hidden="true">✒</span><h3>Research Blog</h3><p>Project-linked writing on dengue, CKD, HCV, FastICA, clinical AI, datasets, survey research and responsible AI.</p><span class="knowledge-hub-cta">Read research articles ↗</span></a>
+        <a class="knowledge-hub-card" href="notes.html"><span class="knowledge-hub-symbol" aria-hidden="true">▤</span><h3>Academic Notes</h3><p>Detailed notes covering statistical evaluation, imputation, sampling, signal processing, model validation and applied AI.</p><span class="knowledge-hub-cta">Explore study notes ↗</span></a>
       </div>
     </div></section>
 
@@ -2759,15 +2759,20 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   function resources(){return `${pageHero('Resources','Research toolkit, scholarly articles and freely readable academic notes.')}
     <nav class="academic-jump-nav sectional-jump-nav" data-section-jump-nav aria-label="Resources page sections"><div class="container academic-jump-nav-inner">
       <a href="#knowledge-library">Blog & Notes</a>
+      <a href="#research-learning-paths">Learning Paths</a>
       <a href="#research-toolkit">Research Toolkit</a>
       <a href="#resource-latest-notes">Latest Notes</a>
     </div></nav>
     <section class="section knowledge-resource-hub" id="knowledge-library"><div class="container">
       <div class="knowledge-hub-heading"><div><div class="section-kicker">Knowledge library</div><h2>Research Blog & Academic Notes</h2><p>Read original research-methods commentary and exam-friendly learning materials. Browse a topic, then open its full reading page.</p></div></div>
       <div class="knowledge-hub-grid">
-        <a class="knowledge-hub-card" href="blogs.html"><span class="knowledge-hub-symbol" aria-hidden="true">✒</span><h3>Research Blog</h3><p>Dengue forecasting case studies, research visibility, validation, statistical inference and responsible explainable AI.</p><span class="knowledge-hub-cta">Explore articles ↗</span></a>
-        <a class="knowledge-hub-card" href="notes.html"><span class="knowledge-hub-symbol" aria-hidden="true">▤</span><h3>Academic Notes</h3><p>Study notes on one-week-ahead forecasting, wMAPE and R², regression, sampling and experimental design, with print-to-PDF support.</p><span class="knowledge-hub-cta">Browse study notes ↗</span></a>
+        <a class="knowledge-hub-card" href="blogs.html"><span class="knowledge-hub-symbol" aria-hidden="true">✒</span><h3>Research Blog</h3><p>Project-based articles on clinical prediction, forecasting, datasets, survey research, sound validation and responsible AI.</p><span class="knowledge-hub-cta">Explore articles ↗</span></a>
+        <a class="knowledge-hub-card" href="notes.html"><span class="knowledge-hub-symbol" aria-hidden="true">▤</span><h3>Academic Notes</h3><p>Step-by-step notes on predictive evaluation, MICE, FastICA, image labels, sampling and optimization, printable as PDF.</p><span class="knowledge-hub-cta">Browse study notes ↗</span></a>
       </div>
+    </div></section>
+    <section class="section knowledge-path-section" id="research-learning-paths"><div class="container">
+      <div class="knowledge-path-section-head"><div><div class="section-kicker">Learn from the research</div><h2>Project-based learning paths</h2><p>Move from documented research cases to original methodology articles and academic notes. Publication and manuscript status are preserved.</p></div><a href="projects.html#project-learning-paths">Explore project cases ↗</a></div>
+      ${window.MRA_KNOWLEDGE?window.MRA_KNOWLEDGE.tracks():''}
     </div></section>
     <section class="section alt" id="research-toolkit"><div class="container">${sectionHead('Research toolkit','Software, writing tools & environments','A structured view of the software, libraries, writing tools and reproducibility environments used across research workflows.')}${researchToolLayout()}${techMarquee()}${computationalEnvironmentPanel()}</div></section>
     <section class="section knowledge-preview-section" id="resource-latest-notes"><div class="container">${sectionHead('Learning resources','Recently added academic notes','Study the key concepts and open the complete explanations.')}${window.MRA_KNOWLEDGE?window.MRA_KNOWLEDGE.preview('note',3):''}<div class="knowledge-section-links"><a href="notes.html">Browse all academic notes ↗</a></div></div></section>`;}
@@ -3349,7 +3354,8 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         <a href="#fastica-audio-project"><strong>08</strong> FastICA · Published</a>
         <a href="#dr-grading-project" title="A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images"><strong>09</strong> Diabetic Retinopathy · Fusion</a>
         <a href="#dengue-bmc-project" title="Nationwide Evaluation of District-Informed Bottom-Up and Direct National Approaches for One-Week-Ahead Forecasting of Dengue Hospital Admissions in Bangladesh"><strong>10</strong> Dengue · BMC Public Health</a>
-        <a href="#active-project-directions"><strong>11</strong> Current directions</a>
+        <a href="#project-learning-paths"><strong>11</strong> Learning paths</a>
+        <a href="#active-project-directions"><strong>12</strong> Current directions</a>
         </nav>
         <button class="project-index-arrow" id="projectIndexNext" type="button" aria-label="Scroll project submenu right" aria-controls="projectPortfolioIndex">›</button>
       </div></div>
@@ -3429,6 +3435,10 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         <div class="academic-showcase-stack">${(D.academicProjects||[]).map(portfolioAcademicCase).join('')}</div>
       </div></section>
       ${typeof window.MRA_DENGUE_CASE==='function'?window.MRA_DENGUE_CASE():''}
+      <section class="section knowledge-path-section" id="project-learning-paths"><div class="container">
+        <div class="knowledge-path-section-head"><div><div class="section-kicker">FROM PROJECTS TO LEARNING</div><h2>Research articles &amp; academic notes</h2><p>Explore methods, assumptions and statistical interpretation connected to the documented case studies. Unpublished work is identified by its actual status.</p></div><a href="resources.html#research-learning-paths">Explore learning library ↗</a></div>
+        ${window.MRA_KNOWLEDGE?window.MRA_KNOWLEDGE.tracks():''}
+      </div></section>
       <section class="section alt" id="active-project-directions"><div class="container">${sectionHead('Active projects','Current directions','Selected public-safe ongoing research directions, distinct from completed academic coursework projects.')}<div class="grid grid-3">${(D.ongoing||[]).map(x=>`<article class="card"><span class="badge">${esc(x.status||'In progress')}</span><h3>${esc(x.title)}</h3><p>${esc(x.objective||x.summary||x.description||'')}</p>${tags(x.methods||x.tags||[])}</article>`).join('')}</div></div></section>`;}
 
   function contact(){
