@@ -4,7 +4,7 @@
 */
 (function(){
   'use strict';
-  const ARTICLES=[
+  const CORE_ARTICLES=[
     {
         "slug": "dengue-forecasting-district-national-evaluation",
         "kind": "blog",
@@ -104,7 +104,7 @@
       ]
     }
   ];
-  const NOTES=[
+  const CORE_NOTES=[
     {
         "slug": "temporal-validation-one-week-forecasting",
         "kind": "note",
@@ -219,17 +219,27 @@
       ]
     }
   ];
+  const LIB=window.MRA_PROJECT_LEARNING||{articles:[],notes:[],projects:[]};
+  const ARTICLES=[...CORE_ARTICLES.slice(0,2),...LIB.articles,...CORE_ARTICLES.slice(2)];
+  const NOTES=[...CORE_NOTES.slice(0,2),...LIB.notes,...CORE_NOTES.slice(2)];
   const ALL=ARTICLES.concat(NOTES);
+  const projectNames=[{id:'dengue',name:'Nationwide dengue forecasting',url:'projects.html#dengue-bmc-project',status:'Published · BMC Public Health'},...LIB.projects];
+  for(const item of ALL)if(['dengue-forecasting-district-national-evaluation','temporal-validation-one-week-forecasting','forecast-metrics-wmape-r2-uncertainty'].includes(item.slug)){
+    item.project='dengue';item.projectTitle='Nationwide dengue forecasting';item.projectUrl='projects.html#dengue-bmc-project';item.projectStatus='Published · BMC Public Health';
+  }
   const escapeHtml=v=>String(v==null?"":v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const url=item=>"reading.html?type="+encodeURIComponent(item.kind)+"&slug="+encodeURIComponent(item.slug);
   const get=(type,slug)=>ALL.find(x=>x.kind===type&&x.slug===slug);
-  const card=item=>
-    '<article class="knowledge-card" data-knowledge-card data-category="'+escapeHtml(item.category)+'" data-search="'+escapeHtml((item.title+" "+item.category+" "+item.excerpt+" "+item.level).toLowerCase())+'">'+
-      '<div class="knowledge-card-top"><span class="knowledge-topic">'+escapeHtml(item.category)+'</span><span class="knowledge-readtime">'+item.minutes+' min read</span></div>'+
-      '<h3><a href="'+url(item)+'">'+escapeHtml(item.title)+'</a></h3>'+
-      '<p>'+escapeHtml(item.excerpt)+'</p>'+
-      '<div class="knowledge-card-bottom"><span>'+escapeHtml(item.level)+'</span><a href="'+url(item)+'" aria-label="Read '+escapeHtml(item.title)+'">Read '+(item.kind==="note"?"note":"article")+' <span aria-hidden="true">↗</span></a></div>'+
-    '</article>';
+  const card=item=>'<article class="knowledge-card" data-knowledge-card data-category="'+escapeHtml(item.category)+'" data-project="'+escapeHtml(item.project||'general')+'" data-search="'+escapeHtml((item.title+' '+item.category+' '+item.excerpt+' '+item.level+' '+(item.projectTitle||'')).toLowerCase())+'">'+
+    '<div class="knowledge-card-top"><span class="knowledge-topic">'+escapeHtml(item.category)+'</span><span class="knowledge-readtime">'+item.minutes+' min read</span></div>'+
+    '<h3><a href="'+url(item)+'">'+escapeHtml(item.title)+'</a></h3><p>'+escapeHtml(item.excerpt)+'</p>'+
+    (item.projectUrl?'<div class="knowledge-project-context"><span>FROM THE PROJECT</span><a href="'+escapeHtml(item.projectUrl)+'">'+escapeHtml(item.projectTitle)+' ↗</a></div>':'')+
+    '<div class="knowledge-card-bottom"><span>'+escapeHtml(item.level)+'</span><a href="'+url(item)+'">Read '+(item.kind==='note'?'note':'article')+' ↗</a></div></article>';
+  const learningPaths=()=>'<div class="knowledge-path-grid">'+projectNames.map(pr=>{
+    const blog=ARTICLES.find(x=>x.project===pr.id),note=NOTES.find(x=>x.project===pr.id);
+    return '<article class="knowledge-path-card"><span class="knowledge-path-label">PROJECT LEARNING PATH</span><h3>'+escapeHtml(pr.name)+'</h3><p>'+escapeHtml(pr.status)+'</p><div class="knowledge-path-actions"><a href="'+escapeHtml(pr.url)+'">Project case ↗</a>'+
+     (blog?'<a href="'+url(blog)+'">Blog article ↗</a>':'')+(note?'<a href="'+url(note)+'">Academic note ↗</a>':'')+'</div></article>';
+  }).join('')+'</div>';
   const landing=(kind,limit)=>{
     const items=(kind==="note"?NOTES:ARTICLES).slice(0,limit||3);
     return '<div class="knowledge-grid">'+items.map(card).join('')+'</div>';
@@ -237,16 +247,19 @@
   const listPage=kind=>{
     const isNote=kind==="note",items=isNote?NOTES:ARTICLES;
     const categories=["All topics"].concat([...new Set(items.map(x=>x.category))]);
+    const ids=[...new Set(items.filter(x=>x.project).map(x=>x.project))];
+    const projects=projectNames.filter(x=>ids.includes(x.id));
     return '<section class="knowledge-hero"><div class="container knowledge-hero-inner">'+
       '<div class="knowledge-kicker">'+(isNote?"ACADEMIC NOTES / STUDY LIBRARY":"RESEARCH BLOG / IDEAS & METHODS")+'</div>'+
       '<h1>'+(isNote?"Academic Notes":"Research Blog")+'</h1>'+
+      '<div class="knowledge-library-stats"><span>'+ARTICLES.length+' research articles</span><span>'+NOTES.length+' academic notes</span><span>'+projectNames.length+' project paths</span></div>'+
       '<p>'+(isNote?"Exam-friendly statistical and mathematical explanations, reusable research checklists and compact learning guides.":"Readable articles on research design, explainable AI, statistical methods and credible model evaluation.")+'</p>'+
       '<div class="knowledge-hero-links"><a href="resources.html">Resources hub <span aria-hidden="true">↗</span></a><a href="'+(isNote?"blogs.html":"notes.html")+'">'+(isNote?"Explore the blog":"Browse academic notes")+' <span aria-hidden="true">↗</span></a></div>'+
     '</div></section>'+
     '<section class="section knowledge-list-section"><div class="container">'+
       '<div class="knowledge-filterbar"><div><div class="section-kicker">Curated learning resources</div><h2>'+items.length+' '+(isNote?"study notes":"research articles")+'</h2><p>Original educational materials for independent reading. Not journal publications.</p></div>'+
       '<div class="knowledge-filters"><label class="knowledge-visually-hidden" for="knowledge-search">Search '+(isNote?"notes":"articles")+'</label><input id="knowledge-search" type="search" placeholder="Search titles, concepts…" autocomplete="off">'+
-      '<label class="knowledge-visually-hidden" for="knowledge-category">Filter by topic</label><select id="knowledge-category">'+categories.map(x=>'<option value="'+escapeHtml(x)+'">'+escapeHtml(x)+'</option>').join('')+'</select></div></div>'+
+      '<label class="knowledge-visually-hidden" for="knowledge-category">Filter by topic</label><select id="knowledge-category">'+categories.map(x=>'<option value="'+escapeHtml(x)+'">'+escapeHtml(x)+'</option>').join('')+'</select><label class="knowledge-visually-hidden" for="knowledge-project">Filter by project</label><select id="knowledge-project"><option value="All projects">All projects</option><option value="general">General methods</option>'+projects.map(x=>'<option value="'+escapeHtml(x.id)+'">'+escapeHtml(x.name)+'</option>').join('')+'</select></div></div>'+
       '<p class="knowledge-filter-result" id="knowledge-result-count" role="status" aria-live="polite">Showing '+items.length+' of '+items.length+' resources</p>'+
       '<div class="knowledge-grid" id="knowledge-list">'+items.map(card).join('')+'</div>'+
       '<p class="knowledge-empty" id="knowledge-empty" hidden>No resources match your search. Try a different term or topic.</p>'+
@@ -265,16 +278,18 @@
     if(description)description.setAttribute("content",item.excerpt);
     const canonical=document.querySelector('link[rel="canonical"]');
     if(canonical)canonical.setAttribute("href",location.origin+location.pathname+"?type="+encodeURIComponent(kind)+"&slug="+encodeURIComponent(slug));
-    const related=ALL.filter(x=>x.slug!==item.slug).filter(x=>x.kind===item.kind).slice(0,2);
+    const related=ALL.filter(x=>x.slug!==item.slug).sort((a,b)=>Number(!!item.project&&b.project===item.project)-Number(!!item.project&&a.project===item.project)).slice(0,3);
     const backlink=kind==="note"?"notes.html":"blogs.html";
     return '<section class="knowledge-reading-hero"><div class="container knowledge-reading-title">'+
       '<nav class="knowledge-breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">›</span><a href="'+backlink+'">'+(kind==="note"?"Academic Notes":"Research Blog")+'</a><span aria-hidden="true">›</span><span>Reading</span></nav>'+
       '<div class="knowledge-kicker">'+escapeHtml(item.category)+' / '+(kind==="note"?"STUDY NOTE":"RESEARCH ARTICLE")+'</div>'+
       '<h1>'+escapeHtml(item.title)+'</h1><p class="knowledge-reading-deck">'+escapeHtml(item.excerpt)+'</p>'+
       '<div class="knowledge-reading-meta"><span>Md. Razu Ahmed</span><span>'+escapeHtml(item.date)+'</span><span>'+item.minutes+' min read</span></div>'+
+    (item.projectUrl?'<a class="knowledge-reading-source" href="'+escapeHtml(item.projectUrl)+'">Connected research project · '+escapeHtml(item.projectTitle)+' ↗</a>':'')+
     '</div></section>'+
     '<section class="knowledge-reading-layout container"><aside class="knowledge-toc" aria-label="On this page"><strong>ON THIS PAGE</strong><nav>'+item.sections.map((x,i)=>'<a href="#part-'+(i+1)+'">'+escapeHtml(x.heading)+'</a>').join('')+'</nav><button type="button" id="knowledge-print" class="knowledge-print-button">Print / Save as PDF</button><p>Use your browser’s print dialog to save this resource as a PDF.</p></aside>'+
     '<article class="knowledge-article" id="knowledge-document"><div class="knowledge-reading-intro">'+(kind==="note"?"Study note · "+escapeHtml(item.level):"Research commentary · "+escapeHtml(item.level))+'</div>'+
+    (item.projectUrl?'<div class="knowledge-evidence-note"><strong>Connected to the research portfolio</strong><p>'+escapeHtml(item.projectTitle)+' · '+escapeHtml(item.projectStatus||'Project case')+'. This is an educational resource, not an additional peer-reviewed article.</p><a href="'+escapeHtml(item.projectUrl)+'">Explore project methods, figures and status ↗</a></div>':'')+
       item.sections.map((section,i)=>'<section id="part-'+(i+1)+'"><h2>'+escapeHtml(section.heading)+'</h2>'+section.html+'</section>').join('')+
       '<div class="knowledge-article-footer"><strong>Further study</strong><p>Use primary methodological literature, course materials, and relevant software documentation to verify assumptions and implementation details.</p><p class="knowledge-attribution">Educational content · Md. Razu Ahmed · '+escapeHtml(item.date)+'</p></div>'+
     '</article></section>'+
@@ -283,13 +298,15 @@
   function wire(){
     const search=document.getElementById("knowledge-search");
     const selector=document.getElementById("knowledge-category");
+    const projectSelector=document.getElementById("knowledge-project");
     const update=()=>{
       const query=(search&&search.value||"").trim().toLowerCase();
       const category=selector&&selector.value||"All topics";
+      const selectedProject=projectSelector&&projectSelector.value||"All projects";
       const cards=[...document.querySelectorAll('[data-knowledge-card]')];
       let visible=0;
       for(const el of cards){
-        const ok=(!query||(el.dataset.search||"").includes(query))&&(category==="All topics"||el.dataset.category===category);
+        const ok=(!query||(el.dataset.search||"").includes(query))&&(category==="All topics"||el.dataset.category===category)&&(selectedProject==="All projects"||el.dataset.project===selectedProject);
         el.hidden=!ok;
         if(ok)visible++;
       }
@@ -300,9 +317,10 @@
     };
     if(search)search.addEventListener("input",update);
     if(selector)selector.addEventListener("change",update);
+    if(projectSelector)projectSelector.addEventListener("change",update);
     const print=document.getElementById("knowledge-print");
     if(print)print.addEventListener("click",()=>window.print());
   }
   document.addEventListener("DOMContentLoaded",wire,{once:true});
-  window.MRA_KNOWLEDGE={render(page){return page==="blogs"?listPage("blog"):page==="notes"?listPage("note"):readingPage()},preview:landing,articles:ARTICLES,notes:NOTES};
+  window.MRA_KNOWLEDGE={render(page){return page==="blogs"?listPage("blog"):page==="notes"?listPage("note"):readingPage()},preview:landing,tracks:learningPaths,articles:ARTICLES,notes:NOTES};
 })();
