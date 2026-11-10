@@ -983,17 +983,18 @@
     </div></section>
 
     <section class="section" id="research-in-the-news"><div class="container">
-      ${sectionHead('Research in the news','International online science-media coverage','Selected external reporting and publisher-platform discovery links for published research.')}
+      ${sectionHead('Research in the news','International online science-media coverage','Research-news reporting, related syndication, and verified publisher-platform discovery.')}
       <article class="card editorial-card" style="padding:22px;display:grid;gap:13px">
         <div class="section-kicker">10 November 2026 · Scienmag</div>
         <h3 style="margin:0">District-Informed Modeling Evaluated for Dengue Hospital Admission Forecasting in Bangladesh</h3>
         <p style="margin:0">A third-party online science-news summary of our nationwide dengue forecasting research published in <em>BMC Public Health</em>. The coverage describes the district-informed framework, observed findings and methodological limitations.</p>
         <div style="display:flex;flex-wrap:wrap;gap:16px">
           <a class="section-text-link" href="https://scienmag.com/district-informed-modeling-evaluated-for-dengue-hospital-admission-forecasting-in-bangladesh/" target="_blank" rel="noopener noreferrer">Read Scienmag coverage ↗</a>
+          <a class="section-text-link" href="https://bioengineer.org/district-informed-modeling-evaluated-for-dengue-hospital-admission-forecasting-in-bangladesh/" target="_blank" rel="noopener noreferrer">Bioengineer.org syndication ↗</a>
           <a class="section-text-link" href="https://www.springermedicine.com/nationwide-evaluation-of-district-informed-bottom-up-and-direct-/53959062" target="_blank" rel="noopener noreferrer">Springer Medicine listing ↗</a>
           <a class="section-text-link" href="projects.html#dng-media-coverage">Research project and coverage →</a>
         </div>
-        <p class="tiny" style="margin:0">Springer Medicine is a publisher-affiliated article listing, not independent press coverage.</p>
+        <p class="tiny" style="margin:0">Bioengineer.org credits Scienmag as its news source; the Global Incident Tracker entry is automated monitoring, not separate press coverage. Springer Medicine is a publisher-affiliated article listing.</p>
       </article>
     </div></section>
 
