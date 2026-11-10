@@ -6,7 +6,7 @@
   const publicationLinks = {
     'dengue-forecast': {
       primary: [{ label: 'DOI', url: 'https://doi.org/10.1186/s12889-026-30204-3' }, { label: 'Zenodo', url: 'https://doi.org/10.5281/zenodo.23928401' }, { label: 'Springer Medicine', url: 'https://www.springermedicine.com/nationwide-evaluation-of-district-informed-bottom-up-and-direct-/53959062', identifier: 'Publisher-affiliated article listing' }],
-      discovery: [{ label: 'Draconitic Research', url: 'https://research.draconitic.com/paper/dgr1tq7hbjrpe', identifier: 'Third-party research discovery record; metadata not independently verified' }],
+      discovery: [{ label: 'Draconitic Research', url: 'https://research.draconitic.com/paper/dgr1tq7hbjrpe', identifier: 'Research-discovery listing of BMC Public Health article; title, authors and 9 November 2026 publication date displayed' }],
       social: []
     },
     fastica: {
