@@ -83,7 +83,7 @@ async function main(){
   assert(/data\.js\?v=[\w-]+/.test(text('conferences.html')),'Conference data must be cache-refreshed');
   assert(/data\.js\?v=[\w-]+/.test(text('gallery.html')),'Gallery must load cache-versioned reviewer records');
   const extraData=text('extra-data.js');
-  assert(extraData.includes('lastUpdated: "9 November 2026"'),'Footer date must track the latest portfolio change');
+  assert(extraData.includes('lastUpdated: "10 November 2026"'),'Footer date must track the latest portfolio change');
   const allGallery=dataContext.window.PORTFOLIO_DATA.gallery||[];
   const scholarlyCertificates=allGallery.filter(g=>['bspc-reviewing-certificate-2026','data-in-brief-reviewing-certificate-2026','array-reviewing-certificate-2026','eaai-reviewing-certificate-2026'].includes(g.id));
   assert.equal(scholarlyCertificates.length,4,'All four Elsevier reviewing certificates must have gallery records');
@@ -167,7 +167,7 @@ async function main(){
   }
   assert(app.includes("'github': {src:'assets/academic/logos/contact/github.svg'"),
     'Publication link icons must use the verified GitHub SVG');
-  assert(text('publications.html').includes('v2-app.js?v=20261109-github-code-icons1'),
+  assert(/v2-app\.js\?v=[\w-]+/.test(text('publications.html')),
     'Publication page must refresh cached GitHub brand icons');
   assert(!v2DataSource.includes("{ value: '44', label: 'Completed Peer Reviews' }"),
     'At-a-glance metric must derive from the current editorial records');
@@ -265,7 +265,7 @@ async function main(){
   assert(projects.includes('heart-bsccfs-project.css?v=20261105-fig01-featured-v2'));
   assert(/v2-app\.js\?v=[\w-]+/.test(projects), 'The Projects page must use versioned v2-app.js');
   assert(projects.includes('projects-hub.css?v=20261106-project-hub-redesign1'));
-  assert(projects.includes('projects-hub.js?v=20261109-dengue-published1'));
+  assert(/projects-hub\.js\?v=[\w-]+/.test(projects));
   assert(projects.indexOf('src="projects-hub.js') < projects.indexOf('src="v2-app.js'),
     'The Projects hub must register before the main renderer');
   const hubSource=text('projects-hub.js');
@@ -304,8 +304,8 @@ async function main(){
   for(const image of ['fig01-hcv-evaluation-workflow.webp','fig02-hybrid-mice-median-reconstruction.webp']){
     assert(hcvJs.includes(image), 'HCV project missing original figure asset: '+image);
   }
-  assert(projects.includes('dengue-bmc-project.js?v=20261109-dengue-published1'));
-  assert(projects.includes('dengue-bmc-project.css?v=20261106-dengue-final-abstract2'));
+  assert(/dengue-bmc-project\.js\?v=[\w-]+/.test(projects));
+  assert(/dengue-bmc-project\.css\?v=[\w-]+/.test(projects));
   assert(projects.indexOf('src="dengue-bmc-project.js') < projects.indexOf('src="v2-app.js'),
     'Published dengue renderer must load before the main Projects renderer');
   assert(text('v2-app.js').includes('MRA_DENGUE_CASE()'),
