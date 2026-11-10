@@ -6,6 +6,66 @@
   'use strict';
   const ARTICLES=[
     {
+        "slug": "dengue-forecasting-district-national-evaluation",
+        "kind": "blog",
+        "title": "What Nationwide Dengue Forecasting Taught Us About District-Level Models",
+        "category": "Public Health Forecasting",
+        "level": "Research case study",
+        "minutes": 9,
+        "date": "10 November 2026",
+        "excerpt": "A research-informed account of bottom-up and direct national forecasts across all 64 districts of Bangladesh, with careful interpretation of validation evidence.",
+        "sections": [
+            {
+                "heading": "The forecasting question",
+                "html": "<p>How should we forecast Bangladesh's national dengue hospital admissions one week ahead: model the whole country directly, or forecast each reporting district and aggregate those predictions? Our 2026 <em>BMC Public Health</em> study evaluated both approaches over observations from 2022–2025 across all 64 districts of Bangladesh.</p><p>The study includes 93,504 district-day observations and 13,312 district-week records. Cases were assigned to the <strong>reporting district</strong>, which is not necessarily a patient's home district. This distinction matters for interpretation.</p>"
+            },
+            {
+                "heading": "Bottom-up versus direct national forecasting",
+                "html": "<p>The bottom-up approach generated one-week-ahead district forecasts using a pooled LightGBM model and summed the predicted counts to obtain a national forecast. Direct national comparators included a national LightGBM model, a negative binomial generalized additive model, a persistence benchmark, and a hierarchical forecasting approach.</p><p>These strategies answer the same planning question at different spatial resolutions. A method that appears strongest nationally need not provide the best forecast for every district.</p>"
+            },
+            {
+                "heading": "How we evaluated the predictions",
+                "html": "<p>The analysis used a temporally ordered design with 2024 for validation and a 52-week 2025 evaluation period. The 2025 observations were excluded from model fitting. However, the final specification was revised after initial 2025 results had been inspected, so the evaluation should not be presented as an entirely untouched prospective test.</p><p>Evaluating multiple baselines matters: a sophisticated model has to improve meaningfully over straightforward alternatives, not merely produce an impressive score in isolation.</p>"
+            },
+            {
+                "heading": "What the results do—and do not—show",
+                "html": "<p>In the observed 2025 national evaluation, bottom-up LightGBM had the lowest point error, with <strong>wMAPE 12.10%</strong> and <strong>R² 0.9625</strong>. This is an observed performance ranking, not definitive proof that bottom-up modelling is superior.</p><p>Adjusted predictive-accuracy tests and circular block-bootstrap uncertainty analyses did <strong>not establish statistically significant superiority</strong> over strong comparators. It is important to report both the favorable point estimate and the remaining uncertainty.</p>"
+            },
+            {
+                "heading": "Practical lessons for public-health modelling",
+                "html": "<ol><li>Match the forecast horizon to a real operational decision.</li><li>Respect temporal order; do not randomly shuffle weeks.</li><li>Separate hospital reporting location from patient residence.</li><li>Compare against simple and strong national baselines.</li><li>Report uncertainty, sensitivity, and regional limitations alongside headline scores.</li><li>Undertake prospective validation before presenting the method as an operational early-warning system.</li></ol><p><strong>Original research:</strong> <a href='https://doi.org/10.1186/s12889-026-30204-3' target='_blank' rel='noopener noreferrer'>Haque, Ahmed et al., <em>BMC Public Health</em> (2026), DOI: 10.1186/s12889-026-30204-3</a>.</p>"
+            }
+        ]
+    },
+    {
+        "slug": "research-coverage-versus-academic-citations",
+        "kind": "blog",
+        "title": "Media Coverage, Research Listings and Citations Are Not the Same",
+        "category": "Research Communication",
+        "level": "Scholarly visibility",
+        "minutes": 6,
+        "date": "10 November 2026",
+        "excerpt": "How to document research visibility professionally without confusing peer-reviewed publication, news syndication, indexing, and scholarly citations.",
+        "sections": [
+            {
+                "heading": "One article can appear on many websites",
+                "html": "<p>Once a journal publishes an article, it may appear on the publisher's website, research-discovery services, science-news platforms, and automated monitoring feeds. Multiple appearances can improve discoverability, but they are not necessarily distinct publications or independently written news reports.</p>"
+            },
+            {
+                "heading": "Four categories worth separating",
+                "html": "<ul><li><strong>Original journal article:</strong> the peer-reviewed scholarly record, identified by its permanent DOI.</li><li><strong>Publisher or discovery listing:</strong> a page that indexes, summarizes, or links to the original article.</li><li><strong>Original news coverage:</strong> a science-news story explaining the findings to a broader audience.</li><li><strong>Syndication or monitoring:</strong> a republication of a story or an automated notice about it.</li></ul><p>For example, the 2026 nationwide dengue forecasting article appears in <em>BMC Public Health</em>; Scienmag reported on it, Bioengineer.org carried the Scienmag story, and other platforms provide research listings or monitoring entries.</p>"
+            },
+            {
+                "heading": "A scholarly citation requires a citing scholarly work",
+                "html": "<p>A citation occurs when another scholarly work references the article in its literature or bibliography. A news page with a ‘Cite this article’ feature offers a way to cite that news page; it is not evidence that a new research paper has cited the original study.</p><p>Likewise, a database entry by itself does not increase the number of peer-reviewed publications.</p>"
+            },
+            {
+                "heading": "A professional visibility record",
+                "html": "<ol><li>Keep the original research DOI prominent.</li><li>Record the news outlet, headline, article URL, and date.</li><li>Mark syndicated stories clearly and credit their stated source.</li><li>Group indexing and publisher listings separately from news coverage.</li><li>Count verified scholarly citations only when the citing work is identifiable.</li><li>Review coverage for accurate presentation of study limitations.</li></ol><p><strong>Takeaway:</strong> precision in describing visibility makes academic achievements more credible, not less impressive.</p>"
+            }
+        ]
+    },
+    {
       slug:"leakage-aware-machine-learning-validation",
       kind:"blog",title:"Leakage-Aware Validation: The Split Comes First",
       category:"Machine Learning",level:"Research methods",minutes:7,date:"9 October 2026",
@@ -45,6 +105,70 @@
     }
   ];
   const NOTES=[
+    {
+        "slug": "temporal-validation-one-week-forecasting",
+        "kind": "note",
+        "title": "One-Week-Ahead Forecasting: Temporal Validation Checklist",
+        "category": "Time-Series Forecasting",
+        "level": "Graduate · Research methods",
+        "minutes": 8,
+        "date": "10 November 2026",
+        "excerpt": "A practical, exam-friendly note on forecasting horizons, lag construction, rolling evaluation, baseline models, and leakage prevention.",
+        "sections": [
+            {
+                "heading": "Define the information set",
+                "html": "<p>At the end of week t, a one-week-ahead model predicts the value in week t+1 using only information actually available by the forecast issue time. The prediction is written as:</p><div class='knowledge-equation'>ŷ(t+1 | t) = f(information available through week t)</div><p>If surveillance reports are delayed, some recorded values for week t may not have been available operationally; specify the data-availability cutoff rather than relying on calendar time alone.</p>"
+            },
+            {
+                "heading": "Construct valid time lags",
+                "html": "<p>A lagged feature y(t−1) can be used only if the value would have been observed before forecast issuance. Rolling means and weather covariates must also stop at the information cutoff. Avoid centered moving averages or variables calculated from future observations.</p><p>When comparing districts, keep the same week definitions and describe how missing weeks and reporting revisions were handled.</p>"
+            },
+            {
+                "heading": "Use temporal rather than random splitting",
+                "html": "<p>For a forecasting study, use chronological development, validation, and evaluation periods. Randomly shuffled weeks can make future information influence earlier predictions. In rolling-origin evaluation, move the forecast origin forward and repeat the identical one-week prediction rule.</p><p><strong>Example design:</strong> develop on earlier years, select settings in a later validation year, and evaluate in a subsequent year. If the test year informs later model changes, disclose that limitation.</p>"
+            },
+            {
+                "heading": "Benchmarks and evaluation",
+                "html": "<ul><li><strong>Persistence:</strong> predict the next week using the latest available week.</li><li><strong>Seasonal baseline:</strong> use the analogous earlier season if justified.</li><li><strong>Direct national model:</strong> predict the national count from national features.</li><li><strong>Bottom-up model:</strong> forecast districts and aggregate them nationally.</li></ul><p>Compare errors at the level of the actual decision, and assess whether differences are stable across outbreaks and quieter periods.</p>"
+            },
+            {
+                "heading": "Reporting checklist",
+                "html": "<ol><li>State forecast issuance time and horizon.</li><li>Specify the exact dates of training, validation and evaluation.</li><li>Describe feature availability and any reporting delays.</li><li>Document baselines and aggregation rules.</li><li>Report absolute errors, relative errors and uncertainty.</li><li>Identify any revisions made after seeing holdout results.</li></ol><p><strong>Related published example:</strong> <a href='https://doi.org/10.1186/s12889-026-30204-3' target='_blank' rel='noopener noreferrer'>Nationwide dengue forecasting evaluation, <em>BMC Public Health</em> (2026)</a>.</p>"
+            }
+        ]
+    },
+    {
+        "slug": "forecast-metrics-wmape-r2-uncertainty",
+        "kind": "note",
+        "title": "Forecast Accuracy: wMAPE, R² and Uncertainty",
+        "category": "Statistical Evaluation",
+        "level": "Undergraduate · Graduate",
+        "minutes": 7,
+        "date": "10 November 2026",
+        "excerpt": "Understand aggregate percentage error, goodness of fit, error comparisons, and why a lower point error may not prove one forecasting model is better.",
+        "sections": [
+            {
+                "heading": "Weighted mean absolute percentage error",
+                "html": "<p>For nonnegative observed counts yᵢ, a frequently used aggregate definition is:</p><div class='knowledge-equation'>wMAPE = 100 × [Σᵢ |yᵢ − ŷᵢ|] / [Σᵢ yᵢ]</div><p>State the exact definition used because ‘wMAPE’ is sometimes implemented differently across studies. If the observed total in the denominator is zero, this form is undefined. A value of 12.10% means the sum of absolute errors is 12.10% of the sum of observed counts, not that every week's prediction is within 12.10%.</p>"
+            },
+            {
+                "heading": "Coefficient of determination",
+                "html": "<p>A common out-of-sample definition is:</p><div class='knowledge-equation'>R² = 1 − [Σᵢ (yᵢ − ŷᵢ)²] / [Σᵢ (yᵢ − ȳ)²]</div><p>Here ȳ is the mean of observed evaluation values. Test-set R² can be negative and does not, by itself, show that a model is calibrated or superior to all competing methods.</p>"
+            },
+            {
+                "heading": "Why point estimates are not the whole conclusion",
+                "html": "<p>Suppose model A has lower observed wMAPE than model B. Their errors are calculated on the same sequence of weeks, so they are paired and may be temporally dependent. A point estimate ranks them on the observed sample; uncertainty analysis is needed before claiming the difference is reliably nonzero.</p><p>For temporally dependent errors, resampling individual weeks independently may be inappropriate. Block-bootstrap approaches can preserve some local temporal structure. Predictive-accuracy tests also require suitable assumptions and careful multiple-comparison handling.</p>"
+            },
+            {
+                "heading": "Interpretation example from published research",
+                "html": "<p>In a 52-week 2025 national evaluation of dengue hospital admissions in Bangladesh, bottom-up LightGBM showed <strong>wMAPE 12.10%</strong> and <strong>R² 0.9625</strong>. It achieved the lowest observed national point error, but the study's adjusted comparisons and block-bootstrap analysis did not establish statistically significant superiority over strong alternatives.</p><p><strong>Do not write:</strong> ‘The model was proven to outperform all others.’ <strong>Write:</strong> ‘The model had the lowest observed point error, although superiority was not statistically established.’</p>"
+            },
+            {
+                "heading": "Compact exam and reporting checklist",
+                "html": "<ol><li>State each metric's formula and denominator.</li><li>Verify the forecast target and aggregation unit.</li><li>Interpret wMAPE as an aggregate error ratio.</li><li>Remember that R² can be negative out of sample.</li><li>Use appropriate paired comparisons for model differences.</li><li>Distinguish observed rankings from statistically supported conclusions.</li></ol><p><strong>Reference example:</strong> <a href='https://doi.org/10.1186/s12889-026-30204-3' target='_blank' rel='noopener noreferrer'>Haque et al., <em>BMC Public Health</em> (2026)</a>.</p>"
+            }
+        ]
+    },
     {
       slug:"linear-regression-diagnostics",
       kind:"note",title:"Linear Regression: Residuals & Model Adequacy",
