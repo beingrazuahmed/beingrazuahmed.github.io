@@ -1187,14 +1187,15 @@
       ],
       relationship: {
         title: 'Batchmate, field-survey teammate & research collaborator',
-        detail: 'Md. Abdur Rakib, Abu Bakar Shiddik and Md. Razu Ahmed worked together on the PUST Statistical Field Survey; the CKD journal paper (2025); the accepted AI-employment perceptions article (2026); and both ICRAST 2025 papers (IDs 440 and 461). Rakib and Razu also collaborated through the Hult Prize Stat4Change team and an IT Support Service course partnership.'
+        detail: 'Md. Abdur Rakib and Md. Razu Ahmed are Statistics batchmates from Pabna University of Science and Technology (PUST). Their academic collaboration encompasses undergraduate fieldwork, co-authored journal research and conference contributions in applied statistics and machine learning.'
       },
       relationshipPath: [
-        'Batchmates at PUST',
-        'Statistical Field Survey group',
-        'CKD article · AI-employment article',
-        'ICRAST 2025 · Papers 440 & 461'
+        'Statistics batchmates at PUST',
+        'Undergraduate research fieldwork',
+        'Journal research collaboration',
+        'Conference co-authorship'
       ],
+      collaborationOverview: 'Rakib and Md. Razu Ahmed have worked on survey-based analysis, chronic kidney disease risk prediction and dimensionality-reduction methods for facial-emotion recognition. Their shared research brings statistical modelling and machine learning to health, employment and computer-vision questions.',
       collaborationStats: [
         { value: '1', label: 'Published journal article' },
         { value: '1', label: 'Accepted / forthcoming' },
@@ -1224,10 +1225,12 @@
           ]
         }
       ],
+      sharedFieldwork: [
+        'PUST Statistical Field Survey — joint study of attitudes toward AI and its impact on employment'
+      ],
       shared: [
-        'PUST Statistical Field Survey — common survey-group member with Md. Razu Ahmed and Abu Bakar Shiddik',
-        'Hult Prize Stat4Change — shared team with Md. Razu Ahmed; Rakib served as Chief Technology Officer (CTO)',
-        'IT Support Service course — shared activity with Md. Razu Ahmed'
+        'Hult Prize Stat4Change — collaborated with Md. Razu Ahmed as a team member and Chief Technology Officer (CTO)',
+        'IT Support Service course — joint training activity with Md. Razu Ahmed'
       ],
       email: 'marakib94@gmail.com',
       links: [
@@ -1432,7 +1435,7 @@
 
   affiliation: 'Islami Bank PLC, Paltan Branch, Dhaka, Bangladesh',
 
-  description: 'Abu Bakar Shiddik is a batchmate of Razu from Pabna University of Science and Technology and a continuing research collaborator. He was a member of Md. Razu Ahmed’s statistical field-survey group at PUST; his contributions also include machine-learning research, journal publications, conference contributions and collaborative research projects.',
+  description: 'Statistics graduate of Pabna University of Science and Technology and research collaborator of Md. Razu Ahmed, with joint work in survey research, statistical learning, biomedical prediction and conference scholarship.',
 
   portrait: 'assets/collaborators/abu-bakar-shiddik.jpeg',
   cardPortraitPosition: '50% 14%',
@@ -1460,14 +1463,15 @@
 
   relationship: {
     title: 'Batchmate, field-survey teammate & co-author',
-    detail: 'Abu Bakar Shiddik, Md. Abdur Rakib and Md. Razu Ahmed worked together on the PUST Statistical Field Survey; the published CKD study (2025); the accepted AI-employment perceptions article (2026); and ICRAST 2025 Papers 440 and 461. These represent two conference papers and two distinct journal research outputs, not separate duplicates.'
+    detail: 'Abu Bakar Shiddik and Md. Razu Ahmed studied Statistics together at Pabna University of Science and Technology (PUST) and participated in the same undergraduate field-survey team. Their collaboration continued through co-authored journal studies and conference research.'
   },
   relationshipPath: [
-    'Batchmates at PUST',
-    'Common Statistical Field Survey group',
-    'CKD article · AI-employment article',
-    'ICRAST 2025 · Papers 440 & 461'
+    'Statistics batchmates at PUST',
+    'Undergraduate research fieldwork',
+    'Journal research collaboration',
+    'Conference co-authorship'
   ],
+  collaborationOverview: 'Shiddik and Md. Razu Ahmed have collaborated on statistical analysis and prediction for chronic kidney disease, survey research on AI and employment, and dimensionality-reduction approaches to facial-emotion recognition. Their work spans biomedical, social and computational applications of statistics.',
   collaborationStats: [
     { value: '1', label: 'Published journal article' },
     { value: '1', label: 'Accepted / forthcoming article' },
@@ -1501,9 +1505,10 @@
     }
   ],
 
-  shared: [
-    'PUST Statistical Field Survey — common survey-group member with Md. Razu Ahmed and Md. Abdur Rakib'
+  sharedFieldwork: [
+    'PUST Statistical Field Survey — joint study of attitudes toward AI and its impact on employment'
   ],
+  shared: [],
 
   email: 'shakhawathussain7920@gmail.com',
 
@@ -1633,14 +1638,16 @@
 
   relationship: {
     title: 'Batchmate, co-author & research collaborator',
-    detail: 'Marufa Yeasmin and Md. Razu Ahmed collaborated on the PUST Cafeteria Food Image Dataset (Mendeley Data, Version 2) and its peer-reviewed Data in Brief article (2026), as well as the food-detection and automated cafeteria-billing manuscript under review. They also worked together on the Hult Prize Stat4Change team (Marufa as CMO) and an IT Support Service course. Her separate undergraduate field survey is not the shared AI-employment field survey undertaken by Razu, Rakib and Shiddik.'
+    detail: 'Marufa Yeasmin and Md. Razu Ahmed are Statistics batchmates at Pabna University of Science and Technology (PUST) and research collaborators at the Deep Statistical Learning and Research Laboratory. Their joint academic work focuses on food-image dataset development and computer-vision applications.'
   },
 
   relationshipPath: [
-    'Batchmates at PUST',
-    'Mendeley Data dataset · Data in Brief article',
-    'Cafeteria-billing manuscript · Under review'
+    'Statistics batchmates at PUST',
+    'Research collaboration at DSLR Lab',
+    'Open dataset and journal publication',
+    'Applied computer-vision research'
   ],
+  collaborationOverview: 'Marufa and Md. Razu Ahmed have collaborated on annotated cafeteria food imagery, public dataset development and machine-learning approaches to food detection and automated billing. Their related scholarly outputs are distinguished below as a published data article, a public dataset and a manuscript under review.',
 
   collaborationStats: [
     {
@@ -1683,8 +1690,8 @@
   ],
 
   shared: [
-    'Hult Prize Stat4Change — shared team with Md. Razu Ahmed; Marufa served as Chief Marketing Officer (CMO)',
-    'IT Support Service course — shared activity with Md. Razu Ahmed'
+    'Hult Prize Stat4Change — collaborated with Md. Razu Ahmed as a team member and Chief Marketing Officer (CMO)',
+    'IT Support Service course — joint training activity with Md. Razu Ahmed'
   ],
 
   email: 'marufayeas4@gmail.com',

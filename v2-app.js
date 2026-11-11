@@ -2671,7 +2671,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     if(!x)return `${pageHero('Academic Network Profile','Profile information is currently unavailable.')}<section class="section"><div class="container"><a class="btn ghost" href="network.html">← Back to Network</a></div></section>`;
 
     const supervisionPath=x.relationshipPath||['B.Sc. Statistical Field Survey','B.Sc. Statistical Project','M.S. Project','Continuing Research Collaboration'];
-    const hasSharedRecord=['sharedPublications','sharedAccepted','sharedDataset','sharedEditorial','sharedInPreparation'].some(k=>(x[k]||[]).length);
+    const hasSharedRecord=['sharedPublications','sharedAccepted','sharedDataset','sharedEditorial','sharedInPreparation','sharedFieldwork'].some(k=>(x[k]||[]).length);
     const hasTeachingLab=(x.taughtCourses||[]).length||x.labProfile;
 
     return `${pageHero('Academic Network Profile','A detailed academic profile and relationship context within this research network.')}
@@ -2759,15 +2759,16 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
           ${hasSharedRecord?`<section class="network-profile-section" id="collaboration">
             <div class="network-profile-section-head"><div><span class="section-kicker">Research collaboration</span><h2>Shared scholarly record with ${highlightRazuName('Razu')}</h2></div></div>
             ${(x.collaborationStats||[]).length?`<div class="network-profile-statbar">${(x.collaborationStats||[]).map(s=>`<div><strong>${esc(s.value)}</strong><span>${esc(s.label)}</span></div>`).join('')}</div>`:''}
-            ${x.relationship?.detail?`<div class="network-profile-record-block network-profile-collab-summary"><div class="mentor-record-heading"><h3>Collaboration context</h3></div><p>${highlightRazuName(x.relationship.detail)}</p></div>`:''}
+            ${(x.collaborationOverview||x.relationship?.detail)?`<div class="network-profile-record-block network-profile-collab-summary"><div class="mentor-record-heading"><h3>Research focus of the collaboration</h3></div><p>${highlightRazuName(x.collaborationOverview||x.relationship.detail)}</p></div>`:''}
             ${(x.sharedPublications||[]).length?`<div class="network-profile-record-block"><div class="mentor-record-heading"><h3>Peer-reviewed journal publications</h3><span>${x.sharedPublications.length}</span></div>${mentorWorkList(x.sharedPublications)}</div>`:''}
             ${(x.sharedAccepted||[]).length||(x.sharedDataset||[]).length?`<div class="network-profile-two-col">
               ${(x.sharedAccepted||[]).length?`<div class="network-profile-record-block"><div class="mentor-record-heading"><h3>Accepted / forthcoming</h3><span>${x.sharedAccepted.length}</span></div>${mentorWorkList(x.sharedAccepted)}</div>`:''}
               ${(x.sharedDataset||[]).length?`<div class="network-profile-record-block"><div class="mentor-record-heading"><h3>Public research dataset</h3><span>${x.sharedDataset.length}</span></div>${mentorWorkList(x.sharedDataset)}</div>`:''}
             </div>`:''}
+            ${(x.sharedFieldwork||[]).length?`<div class="network-profile-record-block"><div class="mentor-record-heading"><h3>Joint academic fieldwork</h3><span>${x.sharedFieldwork.length}</span></div><ul class="mentor-clean-list">${x.sharedFieldwork.map(activity=>`<li>${highlightRazuName(activity)}</li>`).join('')}</ul></div>`:''}
             ${(x.sharedEditorial||[]).length?`<div class="network-profile-record-block"><div class="mentor-record-heading"><h3>Manuscripts in the editorial process</h3><span>${x.sharedEditorial.length}</span></div><p class="mentor-record-note">Shown for collaboration context only; these records are not presented as published outputs.</p>${mentorWorkList(x.sharedEditorial,'editorial')}</div>`:''}
             ${(x.sharedInPreparation||[]).length?`<div class="network-profile-record-block network-preparation-record"><div class="mentor-record-heading"><h3>In preparation</h3><span>${x.sharedInPreparation.length} ${x.sharedInPreparation.length===1?'paper':'papers'}</span></div>${mentorWorkList(x.sharedInPreparation,'preparation')}</div>`:''}
-            ${['abdur-rakib','abu-bakar-shiddik','marufa-yeasmin'].includes(x.id)&&(x.shared||[]).length?`<div class="network-profile-record-block"><div class="mentor-record-heading"><h3>Other shared academic activities</h3><span>${x.shared.length}</span></div><ul class="mentor-clean-list">${x.shared.map(activity=>`<li>${highlightRazuName(activity)}</li>`).join('')}</ul></div>`:''}
+            ${['abdur-rakib','abu-bakar-shiddik','marufa-yeasmin'].includes(x.id)&&(x.shared||[]).length?`<div class="network-profile-record-block"><div class="mentor-record-heading"><h3>Additional collaborative activities</h3><span>${x.shared.length}</span></div><ul class="mentor-clean-list">${x.shared.map(activity=>`<li>${highlightRazuName(activity)}</li>`).join('')}</ul></div>`:''}
           </section>`:''}
 
           ${(x.sharedConferences||[]).length?`<section class="network-profile-section" id="conferences">
@@ -2799,6 +2800,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
       ...(x.sharedAccepted||[]).map(v=>v.title+' · Accepted / forthcoming'),
       ...(x.sharedDataset||[]).map(v=>v.title+' · Public dataset'),
       ...(x.sharedEditorial||[]).map(v=>v.title+' · Manuscript under review'),
+      ...(x.sharedFieldwork||[]),
       ...(x.sharedConferences||[]).flatMap(g=>(g.items||[]).map(item=>{
         const id=String(item).match(/Paper ID\s*(\d+)/i)?.[1];
         if(id==='440')return 'ICRAST 2025 · Paper 440 — AI and employment perceptions';
