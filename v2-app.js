@@ -2767,6 +2767,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
             </div>`:''}
             ${(x.sharedEditorial||[]).length?`<div class="network-profile-record-block"><div class="mentor-record-heading"><h3>Manuscripts in the editorial process</h3><span>${x.sharedEditorial.length}</span></div><p class="mentor-record-note">Shown for collaboration context only; these records are not presented as published outputs.</p>${mentorWorkList(x.sharedEditorial,'editorial')}</div>`:''}
             ${(x.sharedInPreparation||[]).length?`<div class="network-profile-record-block network-preparation-record"><div class="mentor-record-heading"><h3>In preparation</h3><span>${x.sharedInPreparation.length} ${x.sharedInPreparation.length===1?'paper':'papers'}</span></div>${mentorWorkList(x.sharedInPreparation,'preparation')}</div>`:''}
+            ${(x.shared||[]).length?`<div class="network-profile-record-block"><div class="mentor-record-heading"><h3>Other shared academic activities</h3><span>${x.shared.length}</span></div><ul class="mentor-clean-list">${x.shared.map(activity=>`<li>${highlightRazuName(activity)}</li>`).join('')}</ul></div>`:''}
           </section>`:''}
 
           ${(x.sharedConferences||[]).length?`<section class="network-profile-section" id="conferences">
@@ -2792,6 +2793,21 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     const roles=x.roles||[];
     const leadRoles=roles.slice(0,2);
     const supportingRoles=roles.slice(2);
+    const reconciledIds=new Set(['abdur-rakib','abu-bakar-shiddik','marufa-yeasmin']);
+    const sharedSummary=reconciledIds.has(x.id)?[
+      ...(x.sharedPublications||[]).map(v=>v.title+' · Published journal article'),
+      ...(x.sharedAccepted||[]).map(v=>v.title+' · Accepted / forthcoming'),
+      ...(x.sharedDataset||[]).map(v=>v.title+' · Public dataset'),
+      ...(x.sharedEditorial||[]).map(v=>v.title+' · Manuscript under review'),
+      ...(x.sharedConferences||[]).flatMap(g=>(g.items||[]).map(item=>{
+        const id=String(item).match(/Paper ID\\s*(\\d+)/i)?.[1];
+        if(id==='440')return 'ICRAST 2025 · Paper 440 — AI and employment perceptions';
+        if(id==='461')return 'ICRAST 2025 · Paper 461 — facial emotion recognition';
+        return g.event+' · '+item;
+      })),
+      ...(x.shared||[])
+    ]:(x.shared||[]);
+    const uniqueSummary=[...new Set(sharedSummary)];
     return `<article class="network-person-card">
       <div class="network-person-media">
         ${x.portrait?`<img class="network-person-portrait" src="${esc(x.portrait)}" alt="${esc(x.name||'Academic collaborator')} portrait" loading="lazy" decoding="async"${x.cardPortraitPosition?` style="object-position:${esc(x.cardPortraitPosition)}"`:''}>`:''}
@@ -2804,7 +2820,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
         ${x.affiliation?`<p class="network-affiliation">${esc(x.affiliation)}</p>`:''}
         ${x.description?`<p class="network-description">${highlightRazuName(x.description)}</p>`:''}
         ${x.heroNote && x.showCardNote !== false?`<div class="network-person-relationship-note"><span>Academic relationship</span><p>${highlightRazuName(x.heroNote)}</p></div>`:''}
-        ${x.shared?.length?`<details class="network-shared"><summary>Shared works <span>${x.shared.length}</span></summary><ul>${x.shared.map(s=>`<li>${esc(s)}</li>`).join('')}</ul></details>`:''}
+        ${uniqueSummary.length?`<details class="network-shared"><summary>Shared work &amp; activities <span>${uniqueSummary.length}</span></summary><ul>${uniqueSummary.map(s=>`<li>${esc(s)}</li>`).join('')}</ul></details>`:''}
         ${x.profilePage?`<div class="network-person-profile-action"><a class="btn ghost" href="${esc(x.profilePage)}">View Full Profile →</a></div>`:(x.links||[]).length?`<div class="network-card-profile-links" aria-label="Academic and professional links">${(x.links||[]).map(mentorProfileLink).join('')}</div>`:''}
       </div>
     </article>`;

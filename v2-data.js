@@ -1187,13 +1187,13 @@
       ],
       relationship: {
         title: 'Batchmate, field-survey teammate & research collaborator',
-        detail: 'Md. Abdur Rakib is Razu’s batchmate from PUST and a continuing research collaborator. Their shared activities include the Hult Prize Stat4Change team (Rakib as CTO), IT Support Service course partnership and the same PUST statistical field-survey group, in addition to journal publications, conferences, machine learning and artificial-intelligence research.'
+        detail: 'Md. Abdur Rakib, Abu Bakar Shiddik and Md. Razu Ahmed worked together on the PUST Statistical Field Survey; the CKD journal paper (2025); the accepted AI-employment perceptions article (2026); and both ICRAST 2025 papers (IDs 440 and 461). Rakib and Razu also collaborated through the Hult Prize Stat4Change team and an IT Support Service course partnership.'
       },
       relationshipPath: [
         'Batchmates at PUST',
         'Statistical Field Survey group',
-        'Joint journal publication and accepted article',
-        'ICRAST 2025 conference collaboration'
+        'CKD article · AI-employment article',
+        'ICRAST 2025 · Papers 440 & 461'
       ],
       collaborationStats: [
         { value: '1', label: 'Published journal article' },
@@ -1225,13 +1225,9 @@
         }
       ],
       shared: [
+        'PUST Statistical Field Survey — common survey-group member with Md. Razu Ahmed and Abu Bakar Shiddik',
         'Hult Prize Stat4Change — shared team with Md. Razu Ahmed; Rakib served as Chief Technology Officer (CTO)',
-        'IT Support Service Course Partner — shared activity with Md. Razu Ahmed',
-        'PUST Statistical Field Survey — member of Md. Razu Ahmed’s survey group, Department of Statistics and Data Science',
-        'CKD risk-factor identification and stacking machine-learning prediction — published in International Journal of Statistical Sciences',
-        'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh — accepted / forthcoming',
-        'ICRAST 2025 Paper ID 440 — AI and employment perceptions',
-        'ICRAST 2025 Paper ID 461 — facial emotion recognition'
+        'IT Support Service course — shared activity with Md. Razu Ahmed'
       ],
       email: 'marakib94@gmail.com',
       links: [
@@ -1463,9 +1459,20 @@
   ],
 
   relationship: {
-    title: 'Batchmate, co-author & research collaborator',
-    detail: 'Abu Bakar Shiddik is Razu’s batchmate and continuing research collaborator from PUST. He was also a member of Md. Razu Ahmed’s Statistical Field Survey group in the Department of Statistics and Data Science at PUST, alongside shared machine-learning studies, journal publications and conference contributions.'
+    title: 'Batchmate, field-survey teammate & co-author',
+    detail: 'Abu Bakar Shiddik, Md. Abdur Rakib and Md. Razu Ahmed worked together on the PUST Statistical Field Survey; the published CKD study (2025); the accepted AI-employment perceptions article (2026); and ICRAST 2025 Papers 440 and 461. These represent two conference papers and two distinct journal research outputs, not separate duplicates.'
   },
+  relationshipPath: [
+    'Batchmates at PUST',
+    'Common Statistical Field Survey group',
+    'CKD article · AI-employment article',
+    'ICRAST 2025 · Papers 440 & 461'
+  ],
+  collaborationStats: [
+    { value: '1', label: 'Published journal article' },
+    { value: '1', label: 'Accepted / forthcoming article' },
+    { value: '2', label: 'ICRAST 2025 conference papers' }
+  ],
 
   sharedPublications: [
     {
@@ -1488,18 +1495,14 @@
       event: '2nd International Conference on Recent Advances in Science and Technology 2025 (ICRAST 2025)',
       venue: 'Faculty of Science, University of Rajshahi, Rajshahi, Bangladesh · 14–15 November 2025',
       items: [
-        'Measuring Attitudes toward AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology · Paper ID 440',
-        'Facial Emotion Recognition with Dimensionality Reduction: A Comparative Study of PCA, FA, and Combined PCA–FA with a CNN Baseline · Paper ID 461'
+        'Ahmed, M. R., Rakib, M. A., Shiddik, A. B., & Reza, M. S. (2025). Measuring Attitudes toward AI’s Impact on the Job Market in Bangladesh: A Study at Pabna University of Science and Technology · ICRAST 2025 · p. 120 · Paper ID 440.',
+        'Rakib, M. A., Ahmed, M. R., Shiddik, A. B., & Reza, M. S. (2025). Facial Emotion Recognition with Dimensionality Reduction: A Comparative Study of PCA, FA, and Combined PCA–FA with a CNN Baseline · ICRAST 2025 · p. 126 · Paper ID 461.'
       ]
     }
   ],
 
   shared: [
-    'PUST Statistical Field Survey — shared survey group with Md. Razu Ahmed at the Department of Statistics and Data Science',
-    'Chronic kidney disease prediction',
-    'AI employment perception study',
-    'Statistical field survey research',
-    'ICRAST 2025 conference contributions'
+    'PUST Statistical Field Survey — common survey-group member with Md. Razu Ahmed and Md. Abdur Rakib'
   ],
 
   email: 'shakhawathussain7920@gmail.com',
@@ -1630,13 +1633,13 @@
 
   relationship: {
     title: 'Batchmate, co-author & research collaborator',
-    detail: 'Marufa Yeasmin is Razu’s batchmate from PUST and a continuing research collaborator. Their shared activities include the Hult Prize Stat4Change team (Marufa as CMO) and IT Support Service course partnership, alongside dataset development, joint publications, conferences and machine-learning research.'
+    detail: 'Marufa Yeasmin and Md. Razu Ahmed collaborated on the PUST Cafeteria Food Image Dataset (Mendeley Data, Version 2) and its peer-reviewed Data in Brief article (2026), as well as the food-detection and automated cafeteria-billing manuscript under review. They also worked together on the Hult Prize Stat4Change team (Marufa as CMO) and an IT Support Service course. Her separate undergraduate field survey is not the shared AI-employment field survey undertaken by Razu, Rakib and Shiddik.'
   },
 
   relationshipPath: [
     'Batchmates at PUST',
-    'Joint journal publication and dataset development',
-    'Collaborative AI and machine learning research'
+    'Mendeley Data dataset · Data in Brief article',
+    'Cafeteria-billing manuscript · Under review'
   ],
 
   collaborationStats: [
@@ -1662,29 +1665,26 @@
     }
   ],
 
-  sharedDatasets: [
+  sharedDataset: [
     {
       title: 'PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and Polygon Annotations (Version 2)',
-      repository: 'Mendeley Data',
+      venue: 'Mendeley Data, Version 2',
       doi: 'https://doi.org/10.17632/fn6yhzjz83.2'
     }
   ],
 
-  sharedUnderReview: [
+  sharedEditorial: [
     {
       title: 'Real-Time Food Detection for Automated Cafeteria Billing Using RT-DETR and GAN-Based Data Augmentation',
-      journal: 'Discover Artificial Intelligence (Springer)',
+      journal: 'Discover Artificial Intelligence',
+      publisher: 'Springer Nature',
       detail: 'Under Review.'
     }
   ],
 
   shared: [
     'Hult Prize Stat4Change — shared team with Md. Razu Ahmed; Marufa served as Chief Marketing Officer (CMO)',
-    'IT Support Service Course Partner — shared activity with Md. Razu Ahmed',
-    'PUST Cafeteria Food Image Dataset — Data in Brief publication',
-    'Public research dataset development',
-    'Real-time food detection and automated cafeteria billing research',
-    'AI-driven computer vision applications'
+    'IT Support Service course — shared activity with Md. Razu Ahmed'
   ],
 
   email: 'marufayeas4@gmail.com',
