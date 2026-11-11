@@ -83,7 +83,13 @@ async function main(){
   assert(/data\.js\?v=[\w-]+/.test(text('conferences.html')),'Conference data must be cache-refreshed');
   assert(/data\.js\?v=[\w-]+/.test(text('gallery.html')),'Gallery must load cache-versioned reviewer records');
   const extraData=text('extra-data.js');
-  assert(extraData.includes('lastUpdated: "10 November 2026"'),'Footer date must track the latest portfolio change');
+  const extraContext={window:{}};
+  vm.runInNewContext(extraData,extraContext,{filename:'extra-data.js'});
+  const extra=extraContext.window.PORTFOLIO_EXTRA||{};
+  const footerDate=Date.parse(extra.lastUpdated||'');
+  const activityDates=(extra.latestUpdates||[]).map(item=>Date.parse(item.date||'')).filter(Number.isFinite);
+  assert(Number.isFinite(footerDate)&&activityDates.every(date=>date<=footerDate),
+    'Footer date must not precede the latest recorded portfolio activity');
   const allGallery=dataContext.window.PORTFOLIO_DATA.gallery||[];
   const scholarlyCertificates=allGallery.filter(g=>['bspc-reviewing-certificate-2026','data-in-brief-reviewing-certificate-2026','array-reviewing-certificate-2026','eaai-reviewing-certificate-2026'].includes(g.id));
   assert.equal(scholarlyCertificates.length,4,'All four Elsevier reviewing certificates must have gallery records');
