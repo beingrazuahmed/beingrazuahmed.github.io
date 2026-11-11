@@ -108,15 +108,15 @@
       ],
       relationship: {
         title: 'Primary research supervision',
-        detail: 'Supervisor for Razu’s B.Sc. Statistical Field Survey, B.Sc. Statistical Project and M.S. Project, with continuing mentorship and research collaboration beyond the degree programmes.'
-      },
+        detail: 'Prof. Dr. Md. Shamim Reza supervised Md. Razu Ahmed’s B.Sc. Statistical Field Survey, B.Sc. Statistical Project and M.S. Project at PUST. Their academic relationship continues through research mentorship and co-authorship.'
+      } ,
+      collaborationOverview: 'Their joint scholarship spans statistical audio source separation, CKD prediction, food-image data, clinical machine learning and survey analysis. The detailed outputs are categorized by publication and editorial status.',
       collaborationStats: [
         { value: '3', label: 'Published journal articles' },
         { value: '1', label: 'Accepted / forthcoming article' },
         { value: '1', label: 'Public research dataset' },
         { value: '7', label: 'Conference contributions' },
-        { value: '5', label: 'Manuscripts in editorial process' },
-        { value: '1', label: 'Project in preparation' }
+        { value: '6', label: 'Manuscripts in editorial process' }
       ],
       sharedPublications: [
         { title: 'Sophisticated Audio Source Separation: A Statistical Exploration of Clarity and Precision With FastICA', venue: 'Engineering Reports, 8(1), e70575 (2026)', doi: 'https://doi.org/10.1002/eng2.70575' },
@@ -164,18 +164,7 @@
         { title: 'Adaptive Probability Fusion of Lightweight Recurrent Networks for Cross-Domain Sentiment Classification', journal: 'Applied AI Letters', publisher: 'Wiley' },
         { title: 'Factors Associated with Undergraduates Academic Performance Among Public University Students: A Case Study', journal: 'International Journal of Educational Reform', publisher: 'SAGE' }
       ],
-      shared: [
-        'FastICA source separation',
-        'CKD prediction',
-        'AI-employment perceptions',
-        'Diabetic-retinopathy grading',
-        'HCV missing-data reconstruction',
-        'PUST Cafeteria Food Image Dataset',
-        'Cafeteria billing and food detection',
-        'Cross-domain sentiment classification',
-        'Undergraduate academic-performance research',
-        'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction — submitted to PLOS ONE (2 November 2026); Editor Invited (7 November 2026)'
-      ],
+      shared: [],
       email: 'shamim.reza@pust.ac.bd',
       additionalEmail: 'mshamim.pust@gmail.com',
       links: [
@@ -221,13 +210,18 @@
       externalAffiliations: [],
       relationship: {
         title: 'Research collaborator & co-author',
-        detail: 'Research collaborator and co-author with Razu on two conference papers presented at the International Conference on Emerging Frontiers in Advanced Sciences and Technologies 2026 (EFAST 2026).'
-      },
-      relationshipPath: ['Research collaboration', 'EFAST 2026', '2 conference contributions'],
+        detail: 'Prof. Dr. Sabba Ruhi and Md. Razu Ahmed are research co-authors in statistical modelling and interdisciplinary AI.'
+      } ,
+      collaborationOverview: 'Their collaboration includes agricultural image classification, cesarean-delivery inequalities and causal feature selection for interpretable heart disease prediction.',
+      relationshipPath: [
+        'Academic research collaboration',
+        'EFAST 2026 conference co-authorship',
+        'Causal feature-selection research'
+      ],
       collaborationStats: [
         { value: '1', label: 'Shared conference event' },
         { value: '2', label: 'Conference contributions' },
-        { value: '1', label: 'Project in preparation' }
+        { value: '1', label: 'Manuscript in editorial process' }
       ],
       sharedConferences: [
         {
@@ -242,11 +236,7 @@
       sharedEditorial: [
         { title: 'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction', journal: 'PLOS ONE', publisher: 'PLOS', detail: 'Submitted 2 November 2026 · Status: Editor Invited (7 November 2026) · Md. Razu Ahmed is second author; peer review not yet confirmed.' }
       ],
-      shared: [
-        'Sugarcane leaf disease detection — EFAST 2026',
-        'Cesarean-section determinants in Bangladesh — EFAST 2026',
-        'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction — submitted to PLOS ONE (2 November 2026); Editor Invited (7 November 2026)'
-      ],
+      shared: [],
       email: 'sabba.ruhi@pust.ac.bd',
       additionalEmail: 'sabba.ruhi@gmail.com',
       links: [
@@ -312,8 +302,9 @@
       ],
       relationship: {
         title: 'Senior academic guidance & research collaboration',
-        detail: 'Provides valuable guidance, encouragement and scholarly advice to Md. Razu Ahmed in statistical modelling, machine learning, bioinformatics and interdisciplinary research, and collaborates on the accepted AI-and-employment manuscript.'
-      },
+        detail: 'Prof. Dr. Md. Aminul Hoque provides academic guidance to Md. Razu Ahmed in statistical modelling, machine learning and bioinformatics, and is a research co-author.'
+      } ,
+      collaborationOverview: 'Their scholarly work includes analysis of perceptions of AI and employment as well as causal discovery for interpretable heart disease prediction.',
       relationshipPath: [
         'Academic Guest Teaching',
         'Statistical Modelling & Machine Learning Guidance',
@@ -322,7 +313,7 @@
       ],
       collaborationStats: [
         { value: '1', label: 'Accepted / forthcoming article' },
-        { value: '1', label: 'Project in preparation' }
+        { value: '1', label: 'Manuscript in editorial process' }
       ],
       sharedAccepted: [
         {
@@ -334,10 +325,7 @@
       sharedEditorial: [
         { title: 'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction', journal: 'PLOS ONE', publisher: 'PLOS', detail: 'Submitted 2 November 2026 · Status: Editor Invited (7 November 2026) · Md. Razu Ahmed is second author; peer review not yet confirmed.' }
       ],
-      shared: [
-        'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh — accepted / forthcoming',
-        'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction — submitted to PLOS ONE (2 November 2026); Editor Invited (7 November 2026)'
-      ],
+      shared: [],
       email: 'aminul@ru.ac.bd',
       additionalEmail: 'mdaminulh@gmail.com',
       links: [
@@ -431,7 +419,7 @@
       ],
       relationship: {
         title: 'M.S. academic guest teacher & continuing mentor',
-        detail: 'Dr. Md. Menhazul Abedin taught Advanced Multivariate Analysis during Md. Razu Ahmed’s M.S. programme and has continued to encourage and actively motivate him to pursue research. His constructive guidance, appreciation of Razu’s research efforts and enthusiasm for his development have been especially meaningful. He has shown particular appreciation for Razu’s FastICA-based audio source separation work, often affectionately referring to him as “ICA Razu”.'
+        detail: 'Dr. Md. Menhazul Abedin taught Advanced Multivariate Analysis during Md. Razu Ahmed’s M.S. programme at PUST and continues to provide academic encouragement and methodological guidance.'
       },
       relationshipPath: [
         'M.S. Advanced Multivariate Analysis',
@@ -523,12 +511,13 @@
       ],
       relationship: {
         title: 'Supportive mentor, research guide, co-author & corresponding author',
-        detail: 'Dr. Md. Feroz Ali has been highly helpful and supportive in Razu’s research development. He provides clear guidance, teaches practical research hacks and useful tools, and shares workflow strategies that help make research more efficient and methodologically focused. He is also a co-author and one of the corresponding authors of the nationwide dengue forecasting article published in BMC Public Health in 2026 (accepted 28 October 2026; DOI: 10.1186/s12889-026-30204-3).'
-      },
+        detail: 'Dr. Md. Feroz Ali is a research mentor and co-author of Md. Razu Ahmed, providing guidance on analytical methods, research tools and scientific workflows.'
+      } ,
+      collaborationOverview: 'Their published research compares district-informed bottom-up and direct national approaches to one-week-ahead dengue hospital-admission forecasting in Bangladesh.',
       relationshipPath: [
-        'Supportive senior guidance',
-        'Research tools & workflow strategies',
-        'Joint published dengue forecasting article',
+        'Senior academic research guidance',
+        'Statistical methods and research workflows',
+        'Joint dengue forecasting publication',
         'Continuing research collaboration'
       ],
       collaborationStats: [
@@ -543,9 +532,7 @@
           detail: 'Published in BMC Public Health (2026) · Article in Press · Corresponding author · Accepted 28 October 2026.'
         }
       ],
-      shared: [
-        'Nationwide dengue forecasting — corresponding author; published in BMC Public Health (2026), DOI: 10.1186/s12889-026-30204-3'
-      ],
+      shared: [],
       email: 'feroz.ali.eee@pust.ac.bd',
       additionalEmail: 'feroz071021@gmail.com',
       links: [
@@ -675,13 +662,14 @@
       ],
       "relationship": {
         "title": "External research guidance & ongoing collaboration",
-        "detail": "Md. Razu Ahmed and his senior collaborator Jannatul Mauya were introduced to Dr. Md. Ashad Alam through their senior collaborator Ruhul Amin. The introduction led to a scholarly meeting, research guidance and ongoing collaborative work. Dr. Alam provides external research guidance on causal inference, genomics, bioinformatics, statistical machine learning and emerging research directions. This collaboration includes a comprehensive review connecting the philosophical foundations of causal inference with modern adversarial deep-learning approaches."
+        "detail": "Dr. Md. Ashad Alam is an external research mentor and collaborator of Md. Razu Ahmed. Their academic connection developed through discussions of causal inference and statistical machine learning."
       },
+      "collaborationOverview": "Their joint review in preparation connects foundational questions in causal inference with modern statistical-learning and adversarial deep-learning approaches.",
       "relationshipPath": [
-        "Introduction through Ruhul Amin, together with Jannatul Mauya",
-        "Scholarly meeting and research discussion",
-        "External guidance on methods and emerging research directions",
-        "Joint causal-inference review in preparation"
+        "External academic research mentorship",
+        "Causal-inference research discussions",
+        "Statistical and machine-learning guidance",
+        "Joint review research in preparation"
       ],
       "collaborationStats": [
         {
@@ -695,9 +683,7 @@
           "detail": "Joint review with Md. Razu Ahmed connecting philosophical foundations of causal inference with modern adversarial deep-learning approaches."
         }
       ],
-      "shared": [
-        "A Comprehensive Review of Causal Inference: Philosophical Issues to Adversarial Deep Learning Issues — in preparation"
-      ],
+      "shared": [],
       "email": "malam@tulane.edu",
       "links": [
         {
@@ -811,8 +797,9 @@
       ],
       relationship: {
         title: 'Departmental senior & continuing research collaborator',
-        detail: 'Ruhul Amin is one of Razu’s departmental seniors from PUST and a continuing research collaborator. Their collaboration began through shared statistical and machine-learning research and has developed into recurring co-authorship across signal processing, sentiment analysis, academic-performance research and an emerging causal-inference review.'
-      },
+        detail: 'Ruhul Amin is a departmental senior from PUST and a continuing research collaborator and co-author of Md. Razu Ahmed.'
+      } ,
+      collaborationOverview: 'Their shared research spans statistical audio source separation, sentiment classification, academic-performance modelling and causal-inference methodology.',
       relationshipPath: [
         'Departmental senior at PUST',
         'DSLR Lab research connection',
@@ -852,12 +839,7 @@
           detail: 'Collaborative review in preparation with Md. Razu Ahmed, Dr. Md. Ashad Alam and Jannatul Mauya.'
         }
       ],
-      shared: [
-        'Sophisticated Audio Source Separation: A Statistical Exploration of Clarity and Precision With FastICA — published in Engineering Reports',
-        'Adaptive Probability Fusion of Lightweight Recurrent Networks for Cross-Domain Sentiment Classification — Under Revision',
-        'Factors Associated with Undergraduates Academic Performance Among Public University Students: A Case Study — Awaiting Admin Processing',
-        'A Comprehensive Review of Causal Inference: Philosophical Issues to Adversarial Deep Learning Issues — in preparation'
-      ],
+      shared: [],
       email: 'ruhul@metrouni.edu.bd',
       additionalEmail: 'ruhulstat6@gmail.com',
       links: [
@@ -976,8 +958,9 @@
       ],
       relationship: {
         title: 'Departmental senior & major research collaborator',
-        detail: 'Jannatul Mauya is one of Razu’s departmental seniors from PUST and a continuing research collaborator. Their shared research spans signal processing, medical imaging, missing-data research, food-computing datasets, agricultural deep learning, AI-employment research and academic-performance modelling.'
-      },
+        detail: 'Jannatul Mauya is a departmental senior at PUST and a continuing research collaborator and co-author of Md. Razu Ahmed.'
+      } ,
+      collaborationOverview: 'Their shared work spans statistical signal processing, biomedical AI, food-image datasets, survey modelling and agricultural machine learning.',
       relationshipPath: [
         'Departmental senior at PUST',
         'Former DSLR Lab research connection',
@@ -989,8 +972,7 @@
         { value: '1', label: 'Accepted / forthcoming' },
         { value: '1', label: 'Public research dataset' },
         { value: '3', label: 'Conference contributions' },
-        { value: '5', label: 'Manuscripts in editorial process' },
-        { value: '1', label: 'Project in preparation' }
+        { value: '6', label: 'Manuscripts in editorial process' }
       ],
       sharedPublications: [
         {
@@ -1063,15 +1045,7 @@
           detail: 'Awaiting Admin Processing.'
         }
       ],
-      shared: [
-        'Sophisticated Audio Source Separation: A Statistical Exploration of Clarity and Precision With FastICA — published in Engineering Reports',
-        'PUST Cafeteria Food Image Dataset — published in Data in Brief',
-        'Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh — accepted / forthcoming',
-        'PUST Cafeteria Food Image Dataset Version 2 — Mendeley Data',
-        'EFAST 2026 — three joint conference contributions',
-        'Manuscripts currently in the editorial process',
-        'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction — submitted to PLOS ONE (2 November 2026); Editor Invited (7 November 2026)'
-      ],
+      shared: [],
       email: 'jannatulmauya7711@gmail.com',
       links: [
         { label: 'ResearchGate', url: 'https://www.researchgate.net/profile/Jannatul-Mauya-4' },
@@ -1354,16 +1328,22 @@
   ],
 
   relationship: {
-    title: 'Batchmate, co-author & research collaborator',
-    detail: 'Muhammad Ziaul Haque is Razu’s batchmate from PUST and continuing research collaborator. Their collaboration includes machine learning and deep learning applications, nationwide dengue forecasting studies, and BazarBondhu AI (Team SocioNova), a jointly developed household-budgeting and grocery-planning prototype.'
-  },
+        title: 'Batchmate, co-author & research collaborator',
+        detail: 'Muhammad Ziaul Haque and Md. Razu Ahmed are PUST peers and collaborators in computational forecasting and applied AI projects.'
+      } ,
+      collaborationStats: [
+        { value: '1', label: 'Published journal article' },
+        { value: '1', label: 'Manuscript under review' },
+        { value: '1', label: 'Collaborative AI prototype' }
+      ],
+      collaborationOverview: 'They have worked on dengue hospital-admission forecasts, operational preparedness modelling and BazarBondhu AI, an applied household-budgeting and grocery-planning prototype.',
 
   relationshipPath: [
-    'Batchmates at PUST',
-    'Mathematics research collaboration',
-    'Joint manuscript development',
-    'Dengue forecasting collaboration'
-  ],
+        'Research peers at PUST',
+        'Interdisciplinary statistical and computational modelling',
+        'Dengue forecasting collaboration',
+        'Applied-AI prototype collaboration'
+      ],
 
   sharedPublications: [
     { title: 'Nationwide Evaluation of District-Informed Bottom-Up and Direct National Approaches for One-Week-Ahead Forecasting of Dengue Hospital Admissions in Bangladesh', journal: 'BMC Public Health', publisher: 'Springer Nature', doi: 'https://doi.org/10.1186/s12889-026-30204-3', detail: 'Published online in 2026 (Article in Press); accepted 28 October 2026.' }
@@ -1378,11 +1358,7 @@
     }
   ],
 
-  shared: [
-    'Nationwide dengue admission forecasting — published in BMC Public Health (2026), DOI: 10.1186/s12889-026-30204-3',
-    'Beyond Burden dengue preparedness study',
-    'BazarBondhu AI — Team SocioNova; applied AI household affordability prototype jointly developed with Md. Razu Ahmed'
-  ],
+  shared: ['BazarBondhu AI — Team SocioNova; household-budgeting and grocery-planning prototype jointly developed with Md. Razu Ahmed'],
 
   email: 'ziaulhaque3929@gmail.com',
 
@@ -1829,8 +1805,9 @@
 
       relationship: {
         title: 'Batchmate, co-author & research collaborator',
-        detail: 'Protiva Rani Kundu is Razu’s batchmate from PUST and a continuing research collaborator. Their shared work includes real-world food-image dataset development, a peer-reviewed Data in Brief publication, a public Mendeley Data release, and RT-DETR/GAN-based cafeteria automation research.'
-      },
+        detail: 'Protiva Rani Kundu and Md. Razu Ahmed are Statistics batchmates from PUST and research co-authors in food-image data and applied computer vision.'
+      } ,
+      collaborationOverview: 'Their work includes annotated Bangladeshi meal imagery, public dataset preparation, food detection and automated cafeteria-billing research.',
 
       relationshipPath: [
         'Batchmates at PUST',
@@ -1870,11 +1847,7 @@
         }
       ],
 
-      shared: [
-        'PUST Cafeteria Food Image Dataset — Data in Brief publication',
-        'PUST Cafeteria Food Image Dataset (Version 2) — Mendeley Data',
-        'Real-Time Food Detection for Automated Cafeteria Billing Using RT-DETR and GAN-Based Data Augmentation — under review'
-      ],
+      shared: [],
 
       email: 'protivakundu3@gmail.com',
 
@@ -2013,8 +1986,9 @@
 
       relationship: {
         title: 'Departmental junior, co-author, research collaborator & workshop partner',
-        detail: 'Mimosa Saha is Razu’s departmental junior at PUST and a continuing research collaborator. Their shared academic work includes the ICASDS 2025 multiclass diabetes study, two pre-conference methodological workshops, and nationwide dengue forecasting research.'
-      },
+        detail: 'Mimosa Saha is a departmental junior at PUST and research collaborator of Md. Razu Ahmed in applied statistics and public-health machine learning.'
+      } ,
+      collaborationOverview: 'Their collaborative research includes multiclass diabetes prediction and nationwide dengue forecasting; their academic activities also include pre-conference methodology workshops.',
 
       relationshipPath: [
         'Departmental junior at PUST',
@@ -2058,12 +2032,7 @@
         }
       ],
 
-      shared: [
-        'ICASDS 2025 Paper ID 315 — multi-class diabetes mellitus grading using machine learning',
-        'ICASDS 2025 pre-conference workshop — Causal Inference for Observational Data Analysis',
-        'ICASDS 2025 pre-conference workshop — From Business Challenge to Deployment',
-        'Nationwide dengue admission forecasting — published in BMC Public Health (2026), DOI: 10.1186/s12889-026-30204-3'
-      ],
+      shared: [],
 
       email: 'mimosaha06@gmail.com',
 
@@ -2197,8 +2166,9 @@
 
       relationship: {
         title: 'Departmental junior, co-author & research collaborator',
-        detail: 'Farzana Mehedi Moly is Razu’s departmental junior at PUST and a continuing research collaborator. Their shared work includes missing-data methodology, hybrid MICE–Median reconstruction, hepatitis-C prediction using machine learning, an EFAST 2026 conference contribution, and a related journal manuscript under review.'
-      },
+        detail: 'Farzana Mehedi Moly is a departmental junior at PUST and research collaborator of Md. Razu Ahmed in biomedical statistics and machine learning.'
+      } ,
+      collaborationOverview: 'Their work evaluates missing-value imputation and downstream hepatitis C prediction, developed through conference research and a journal manuscript.',
 
       relationshipPath: [
         'Departmental junior at PUST',
@@ -2231,10 +2201,7 @@
         }
       ],
 
-      shared: [
-        'EFAST 2026 Paper ID 115 — hybrid missing-value imputation and HCV prediction',
-        'Comparative Evaluation of Hybrid MICE–Median Missing-Value Reconstruction and Downstream Hepatitis C Prediction Using Machine Learning — under review'
-      ],
+      shared: [],
 
       email: 'farzanamoly009@gmail.com',
 
@@ -2347,8 +2314,9 @@
 
       relationship: {
         title: 'Departmental junior, co-author & research collaborator',
-        detail: 'Md. Obaidul Islam is Razu’s departmental junior at PUST and a continuing research collaborator. Their shared work includes survey-weighted statistical and explainable machine-learning analysis of socioeconomic determinants of cesarean delivery in Bangladesh, an EFAST 2026 conference contribution, and an explainable-AI crop disease project in preparation.'
-      },
+        detail: 'Md. Obaidul Islam is a departmental junior at PUST and research collaborator of Md. Razu Ahmed in applied statistics and explainable machine learning.'
+      } ,
+      collaborationOverview: 'Their research addresses socioeconomic determinants of cesarean delivery and a developing explainable-AI approach to crop-disease severity and intervention planning.',
 
       relationshipPath: [
         'Departmental junior at PUST',
@@ -2379,10 +2347,7 @@
         }
       ],
 
-      shared: [
-        'EFAST 2026 Paper ID 238 — socioeconomic determinants of cesarean section delivery in Bangladesh',
-        'AgroLifecycle-Net — explainable AI for crop disease severity estimation and dynamic intervention timelines'
-      ],
+      shared: [],
 
       email: 'obaidulislam0325@gmail.com',
 
@@ -2946,13 +2911,7 @@
       : /waiting list|waitlist/i.test(String(submission.decisionStatus||submission.status||''))
         ? 'On waiting list (not yet accepted)' : 'Decision pending';
     for (const submission of submissions) {
-      const sharedLabel = (submission.title || 'ICPS 2026 abstract') +
-        ' — ICPS 2026 (SUST) · Paper ID ' + submission.paperId +
-        ' · ' + outcome(submission);
-      if (!collaborator.shared.some(work =>
-        String(work).includes('ICPS 2026') &&
-        String(work).includes('Paper ID ' + submission.paperId)
-      )) collaborator.shared.unshift(sharedLabel);
+
     }
     const submissionGroup = {
       event: '2nd International Conference of Physical Sciences (ICPS 2026) — oral acceptances and waiting-list decisions',
