@@ -2673,6 +2673,10 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     const supervisionPath=x.relationshipPath||['B.Sc. Statistical Field Survey','B.Sc. Statistical Project','M.S. Project','Continuing Research Collaboration'];
     const hasSharedRecord=['sharedPublications','sharedAccepted','sharedDataset','sharedEditorial','sharedInPreparation','sharedFieldwork'].some(k=>(x[k]||[]).length);
     const hasTeachingLab=(x.taughtCourses||[]).length||x.labProfile;
+    const hasUpcomingAbstracts=(x.sharedConferences||[]).some(group=>/ICPS 2026/.test(group.event||''));
+    const hasWorkshops=(x.sharedConferences||[]).some(group=>/workshop/i.test(group.event||''));
+    const conferenceSectionTitle=hasUpcomingAbstracts?'Conference records & abstract decisions'
+      :hasWorkshops?'Conference contributions & workshops':'Shared conference contributions';
 
     return `${pageHero('Academic Network Profile','A detailed academic profile and relationship context within this research network.')}
       <section class="section network-profile-page">
@@ -2772,7 +2776,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
           </section>`:''}
 
           ${(x.sharedConferences||[]).length?`<section class="network-profile-section" id="conferences">
-            <div class="network-profile-section-head"><div><span class="section-kicker">Conference record</span><h2>Shared conference contributions</h2></div></div>
+            <div class="network-profile-section-head"><div><span class="section-kicker">Conference record</span><h2>${esc(conferenceSectionTitle)}</h2></div></div>
             <div class="mentor-conference-groups compact">${(x.sharedConferences||[]).map(g=>`<article><h3>${esc(g.event||'')}</h3><p>${esc(g.venue||'')}</p><ol>${(g.items||[]).map(i=>`<li>${highlightRazuName(i)}</li>`).join('')}</ol></article>`).join('')}</div>
           </section>`:''}
 
@@ -2794,21 +2798,27 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     const roles=x.roles||[];
     const leadRoles=roles.slice(0,2);
     const supportingRoles=roles.slice(2);
-    const reconciledIds=new Set(['abdur-rakib','abu-bakar-shiddik','marufa-yeasmin']);
-    const sharedSummary=reconciledIds.has(x.id)?[
-      ...(x.sharedPublications||[]).map(v=>v.title+' · Published journal article'),
-      ...(x.sharedAccepted||[]).map(v=>v.title+' · Accepted / forthcoming'),
-      ...(x.sharedDataset||[]).map(v=>v.title+' · Public dataset'),
-      ...(x.sharedEditorial||[]).map(v=>v.title+' · Manuscript under review'),
+    const conferenceSummary=(group,item)=>{
+      const itemText=String(item||'');
+      const event=String(group.event||'Conference');
+      const shortEvent=event.match(/\b(?:ICPS|EFAST|ICRAST|ICASDS)\s*20\d{2}/i)?.[0]||event;
+      const paperId=itemText.match(/Paper ID\s*(\d+)/i)?.[1];
+      const status=/waiting list|waitlist/i.test(itemText)?' · Waitlisted abstract (not accepted)'
+        :/accepted for oral presentation/i.test(itemText)?' · Accepted for oral presentation (not yet presented)':'';
+      if(paperId)return shortEvent+' · Paper '+paperId+status;
+      return /workshop/i.test(event)?shortEvent+' workshop · '+itemText.replace(/[.]$/,''):
+        shortEvent+' · '+itemText.replace(/[.]$/,'');
+    };
+    const sharedSummary=[
+      ...(x.sharedPublications||[]).map(w=>w.title+' · Published journal article'),
+      ...(x.sharedAccepted||[]).map(w=>w.title+' · Accepted / forthcoming'),
+      ...(x.sharedDataset||[]).map(w=>w.title+' · Public dataset'),
+      ...(x.sharedEditorial||[]).map(w=>w.title+' · Editorial process'),
+      ...(x.sharedInPreparation||[]).map(w=>w.title+' · In preparation'),
+      ...(x.sharedConferences||[]).flatMap(g=>(g.items||[]).map(item=>conferenceSummary(g,item))),
       ...(x.sharedFieldwork||[]),
-      ...(x.sharedConferences||[]).flatMap(g=>(g.items||[]).map(item=>{
-        const id=String(item).match(/Paper ID\s*(\d+)/i)?.[1];
-        if(id==='440')return 'ICRAST 2025 · Paper 440 — AI and employment perceptions';
-        if(id==='461')return 'ICRAST 2025 · Paper 461 — facial emotion recognition';
-        return g.event+' · '+item;
-      })),
       ...(x.shared||[])
-    ]:(x.shared||[]);
+    ];
     const uniqueSummary=[...new Set(sharedSummary)];
     return `<article class="network-person-card">
       <div class="network-person-media">
