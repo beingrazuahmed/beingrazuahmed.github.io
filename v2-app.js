@@ -2767,7 +2767,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
             </div>`:''}
             ${(x.sharedEditorial||[]).length?`<div class="network-profile-record-block"><div class="mentor-record-heading"><h3>Manuscripts in the editorial process</h3><span>${x.sharedEditorial.length}</span></div><p class="mentor-record-note">Shown for collaboration context only; these records are not presented as published outputs.</p>${mentorWorkList(x.sharedEditorial,'editorial')}</div>`:''}
             ${(x.sharedInPreparation||[]).length?`<div class="network-profile-record-block network-preparation-record"><div class="mentor-record-heading"><h3>In preparation</h3><span>${x.sharedInPreparation.length} ${x.sharedInPreparation.length===1?'paper':'papers'}</span></div>${mentorWorkList(x.sharedInPreparation,'preparation')}</div>`:''}
-            ${(x.shared||[]).length?`<div class="network-profile-record-block"><div class="mentor-record-heading"><h3>Other shared academic activities</h3><span>${x.shared.length}</span></div><ul class="mentor-clean-list">${x.shared.map(activity=>`<li>${highlightRazuName(activity)}</li>`).join('')}</ul></div>`:''}
+            ${['abdur-rakib','abu-bakar-shiddik','marufa-yeasmin'].includes(x.id)&&(x.shared||[]).length?`<div class="network-profile-record-block"><div class="mentor-record-heading"><h3>Other shared academic activities</h3><span>${x.shared.length}</span></div><ul class="mentor-clean-list">${x.shared.map(activity=>`<li>${highlightRazuName(activity)}</li>`).join('')}</ul></div>`:''}
           </section>`:''}
 
           ${(x.sharedConferences||[]).length?`<section class="network-profile-section" id="conferences">
@@ -2800,7 +2800,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
       ...(x.sharedDataset||[]).map(v=>v.title+' · Public dataset'),
       ...(x.sharedEditorial||[]).map(v=>v.title+' · Manuscript under review'),
       ...(x.sharedConferences||[]).flatMap(g=>(g.items||[]).map(item=>{
-        const id=String(item).match(/Paper ID\\s*(\\d+)/i)?.[1];
+        const id=String(item).match(/Paper ID\s*(\d+)/i)?.[1];
         if(id==='440')return 'ICRAST 2025 · Paper 440 — AI and employment perceptions';
         if(id==='461')return 'ICRAST 2025 · Paper 461 — facial emotion recognition';
         return g.event+' · '+item;
