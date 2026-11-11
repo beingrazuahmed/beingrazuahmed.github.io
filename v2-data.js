@@ -7,7 +7,7 @@
     'dengue-forecast': {
       primary: [{ label: 'DOI', url: 'https://doi.org/10.1186/s12889-026-30204-3' }, { label: 'Zenodo', url: 'https://doi.org/10.5281/zenodo.23928401' }, { label: 'Springer Medicine', url: 'https://www.springermedicine.com/nationwide-evaluation-of-district-informed-bottom-up-and-direct-/53959062', identifier: 'Publisher-affiliated article listing' }],
       discovery: [{ label: 'Draconitic Research', url: 'https://research.draconitic.com/paper/dgr1tq7hbjrpe', identifier: 'Research-discovery listing of BMC Public Health article; title, authors and 9 November 2026 publication date displayed' }],
-      social: []
+      social: [{ label: 'ResearchGate', url: 'https://www.researchgate.net/publication/417691860_Nationwide_evaluation_of_district-informed_bottom-up_and_direct_national_approaches_for_one-week-ahead_forecasting_of_dengue_hospital_admissions_in_Bangladesh', identifier: 'ResearchGate publication record · 417691860' }]
     },
     fastica: {
       primary: [
