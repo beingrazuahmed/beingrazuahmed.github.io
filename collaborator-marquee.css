@@ -76,3 +76,10 @@ body[data-page="home"] .mra-collab-touch-hint{display:none;font-size:11px;color:
   body[data-page="home"] .mra-collab-avatar{width:54px;height:54px;min-width:54px;flex-basis:54px}
   body[data-page="home"] .mra-collab-person-copy strong{font-size:14px}
 }
+
+/* Match the institutional ordering of the Network directory. */
+body[data-page="home"] .mra-collab-group-order{display:flex;align-items:center;flex-wrap:wrap;gap:5px 9px;margin-top:15px;color:var(--muted);font-size:10px;font-weight:680;line-height:1.55}
+body[data-page="home"] .mra-collab-group-order>span:not(.mra-collab-separator){padding:5px 9px;border:1px solid var(--line);border-radius:999px;background:color-mix(in srgb,var(--accent) 3%,var(--surface))}
+body[data-page="home"] .mra-collab-group-order .mra-collab-separator{color:var(--accent);font-weight:800}
+body[data-page="home"] .mra-collab-card-top>span:first-child{letter-spacing:.035em;line-height:1.5;font-size:9px;text-transform:uppercase;overflow-wrap:anywhere}
+@media(max-width:760px){body[data-page="home"] .mra-collab-group-order{gap:4px 6px;font-size:9.5px}body[data-page="home"] .mra-collab-group-order>span:not(.mra-collab-separator){padding:4px 8px}}
