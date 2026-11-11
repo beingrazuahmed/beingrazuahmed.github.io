@@ -766,6 +766,80 @@
     </a>`;
   }
 
+
+  function homeAcademicNetwork(){
+    // The canonical Network directory owns both ordering and relationship metadata.
+    const all=(D.people||[]).filter(p=>p&&p.id!=='rezwan-babu'&&String(p.name||'').trim().toLowerCase()!=='rezwan babu');
+    if(!all.length)return '';
+    const featured=all.slice(0,4);
+    const secondary=all.slice(4);
+    const groups=new Set(all.map(p=>p.group).filter(Boolean));
+    const shortGroup={
+      'Academic Guidance & Advisors':'Academic guidance',
+      'International Research Collaborators':'International collaboration',
+      'Departmental Seniors & Senior Collaborators':'Senior research collaborators',
+      'Peer & Batchmate Research Collaborators':'Peer research collaborators',
+      'Junior Collaborators & Mentees':'Junior collaborators'
+    };
+    const institution=affiliation=>{
+      const s=String(affiliation||'');
+      if(s.includes('Pabna University of Science and Technology'))return 'Pabna University of Science and Technology';
+      if(s.includes('University of Rajshahi'))return 'University of Rajshahi';
+      if(s.includes('Sunway University'))return 'Sunway University, Malaysia';
+      if(s.includes('Xavier University of Louisiana'))return 'Xavier University of Louisiana, USA';
+      if(s.includes('Metropolitan University'))return 'Metropolitan University';
+      if(s.includes('Khulna University'))return 'Khulna University';
+      return s.split(',').slice(0,2).join(',').trim()||'Academic research network';
+    };
+    const role=p=>{
+      const roles=p.roles||[];
+      const has=value=>roles.some(r=>String(r).toLowerCase().includes(value));
+      if(has('primary research supervisor'))return 'Primary research supervisor';
+      if(has('external research mentor'))return 'External research mentor';
+      if(has('co-author')&&has('research collaborator'))return 'Research collaborator · Co-author';
+      if(has('research mentor'))return 'Research mentor';
+      if(has('academic mentor'))return 'Academic mentor';
+      if(has('research collaborator'))return 'Research collaborator';
+      if(has('co-author'))return 'Co-author';
+      return roles[0]||'Academic collaborator';
+    };
+    const portrait=p=>{
+      const position=/^\d{1,3}%\s+\d{1,3}%$/.test(p.cardPortraitPosition||'')
+        ?' style="object-position:'+esc(p.cardPortraitPosition)+'"':'';
+      return '<span class="academic-network-photo">'+
+        '<img class="academic-network-photo-img safe-img" src="'+esc(p.portrait||'')+'" alt="'+esc(p.name||'Academic collaborator')+' portrait" loading="lazy" decoding="async"'+position+' data-safe-fallback="Portrait of '+esc(p.name||'research collaborator')+'"></span>';
+    };
+    const link=p=>/^network-[a-z0-9-]+\.html$/.test(p.profilePage||'')?p.profilePage:'network.html';
+    const card=(p,index,isFeatured)=>{
+      const href=esc(link(p));
+      const group=esc(shortGroup[p.group]||p.group||'Academic network');
+      const name=esc(p.name||'Research collaborator');
+      const institutionName=esc(institution(p.affiliation));
+      const profession=esc(role(p));
+      if(isFeatured)return '<a class="academic-network-feature-card" href="'+href+'" aria-label="View network profile of '+name+'">'+
+        '<div class="academic-network-feature-top"><span class="academic-network-eyebrow">'+group+'</span><span class="academic-network-number" aria-hidden="true">'+String(index+1).padStart(2,'0')+'</span></div>'+
+        '<div class="academic-network-feature-person">'+portrait(p)+'<div class="academic-network-feature-identity"><h4>'+name+'</h4><p>'+profession+'</p></div></div>'+
+        '<div class="academic-network-feature-foot"><span title="'+esc(p.affiliation||institutionName)+'">'+institutionName+'</span><span class="academic-network-arrow" aria-hidden="true">↗</span></div>'+
+        '</a>';
+      return '<a class="academic-network-compact-card" href="'+href+'" aria-label="View network profile of '+name+'">'+
+        portrait(p)+'<span class="academic-network-compact-copy"><span class="academic-network-compact-group">'+group+'</span><strong>'+name+'</strong>'+
+        '<span class="academic-network-compact-role">'+profession+'</span>'+
+        '<span class="academic-network-compact-institution" title="'+esc(p.affiliation||institutionName)+'">'+institutionName+'</span></span>'+
+        '<span class="academic-network-compact-arrow" aria-hidden="true">↗</span></a>';
+    };
+    return '<div class="academic-network-home" id="research-collaborators">'+
+      '<div class="academic-network-home-intro"><div><div class="academic-network-label">PEOPLE BEHIND THE RESEARCH</div>'+
+      '<p>Academic guidance, co-authorship and research partnerships—presented in the same order as the full Network directory.</p></div>'+
+      '<div class="academic-network-stats" aria-label="Academic network overview"><span><strong>'+all.length+'</strong> profiles</span><span><strong>'+groups.size+'</strong> groups</span></div></div>'+
+      '<div class="academic-network-tier-heading"><div><span class="academic-network-tier-mark"></span><h3>Featured academic guidance</h3></div><span>Mentors &amp; advisors</span></div>'+
+      '<div class="academic-network-featured-grid">'+featured.map((p,i)=>card(p,i,true)).join('')+'</div>'+
+      (secondary.length?'<div class="academic-network-tier-heading academic-network-secondary-heading"><div><span class="academic-network-tier-mark"></span><h3>Research connections</h3></div><span>Additional advisors, collaborators &amp; co-authors</span></div>'+
+      '<div class="academic-network-compact-grid">'+secondary.map((p,i)=>card(p,i+featured.length,false)).join('')+'</div>':'')+
+      '<div class="academic-network-footer"><span>Profiles and academic relationships are maintained in the complete Network directory.</span>'+
+      '<a class="academic-network-all-link" href="network.html">Explore the full research network <span aria-hidden="true">↗</span></a></div>'+
+      '</div>';
+  }
+
   function homeNetworkMiniCard(x){
     const roles=(x.roles||[]).slice(0,2);
     return `<a class="home-network-mini" href="network.html">
@@ -959,11 +1033,9 @@
       ${fieldSurveyCard()}
     </div></section>
 
-    <section class="section alt"><div class="container">
-      ${sectionHead('Academic network','Guidance, collaboration & mentorship','A selected view of the people connected to my academic development and research collaborations.')}
-      <div class="grid grid-4 home-network-preview">${(D.people||[]).slice(0,4).map(personCard).join('')}</div>
-      <div class="home-network-secondary">${(D.people||[]).slice(4,8).map(homeNetworkMiniCard).join('')}</div>
-      <div class="section-action"><a class="section-text-link" href="network.html">Explore full research network ↗</a></div>
+    <section class="section alt academic-network-section"><div class="container">
+      ${sectionHead('Academic network','Research guidance & collaboration','The people and academic relationships contributing to research, mentorship and interdisciplinary work.')}
+      ${homeAcademicNetwork()}
     </div></section>
 
     <section class="section alt knowledge-home-section" id="knowledge-studio"><div class="container">
