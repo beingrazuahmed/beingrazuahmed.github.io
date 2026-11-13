@@ -538,6 +538,7 @@
       links: [
         { label: 'PUST Profile', url: 'https://pust.ac.bd/academic/departments/dept_teachers/dept_teachers_profile/100025' },
         { label: 'Google Scholar', url: 'https://scholar.google.com/citations?user=4U27H6gAAAAJ&hl=en' },
+        { label: 'ResearchGate', url: 'https://www.researchgate.net/profile/Md-Ali-41' },
         { label: 'ORCID', url: 'https://orcid.org/0000-0003-2764-9371' },
         { label: 'Scopus', url: 'https://www.scopus.com/authid/detail.uri?authorId=57214142395' },
         { label: 'SciProfiles', url: 'https://sciprofiles.com/profile/3188758' },
