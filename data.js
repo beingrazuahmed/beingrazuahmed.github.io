@@ -978,7 +978,7 @@ window.PORTFOLIO_DATA = {
     { label: "Scopus", url: "https://www.scopus.com/authid/detail.uri?authorId=60265043700", type: "academic" },
     { label: "Web of Science", url: "https://www.webofscience.com/wos/author/record/PFQ-8088-2025", type: "academic" },
     { label: "ResearchGate", url: "https://www.researchgate.net/profile/Md-Razu-Ahmed-3", type: "academic" },
-    { label: "Semantic Scholar", url: "https://www.semanticscholar.org/author/Md.-Razu-Ahmed/2309296098", type: "academic" },
+    { label: "Semantic Scholar", url: "https://www.semanticscholar.org/author/Md.-Razu-Ahmed/2530350609", type: "academic" },
     { label: "SciProfiles", url: "https://sciprofiles.com/profile/4128960", type: "academic" },
     { label: "LinkedIn", url: "https://www.linkedin.com/in/beingrazuahmed/", type: "professional" },
     { label: "GitHub", url: "https://github.com/beingrazuahmed", type: "professional" },
