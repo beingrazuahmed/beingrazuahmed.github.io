@@ -33,10 +33,10 @@ jobs:
           fi
           pdfinfo "$pdf" | grep -E '^(Pages|Page size|File size):'
           pdftotext "$pdf" /tmp/bspc-certificate.txt
-          if grep -Eiq '(^|[^0-9])14([^0-9]|$)|fourteen' /tmp/bspc-certificate.txt; then
-            echo "Confirmed 14 reviews in extractable BSPC certificate text."
+          if grep -Eiq '(^|[^0-9])16([^0-9]|$)|sixteen' /tmp/bspc-certificate.txt; then
+            echo "Confirmed 16 reviews in extractable BSPC certificate text."
           else
-            echo "::warning::Count 14 is not extractable from the uploaded BSPC PDF. Please visually verify the original certificate."
+            echo "::warning::Count 16 is not extractable from the uploaded BSPC PDF. Please visually verify the original certificate."
           fi
           pdftoppm -f 1 -singlefile -r 165 -png "$pdf" /tmp/bspc-latest
           python3 -m venv /tmp/bspc-render
