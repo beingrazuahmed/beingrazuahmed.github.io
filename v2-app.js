@@ -2165,7 +2165,7 @@
       ${groups.map((g,gi)=>`<a href="#${esc(g.id||'conference-'+gi)}">${esc(g.event||g.full||'Conference '+(gi+1))}</a>`).join('')}
     </div></nav>
       ${upcomingSubmissions.length?`<section class="section conference-upcoming-section" id="conference-upcoming" aria-label="Upcoming conferences and submitted abstracts"><div class="container">
-        ${sectionHead('Upcoming & decisions','Upcoming conference abstracts & decisions','Accepted oral presentations and waitlisted abstracts are recorded here before the conference takes place. They are not counted as completed presentations or published proceedings.')}
+        ${sectionHead('Upcoming & decisions','Upcoming conference abstracts & decisions','Accepted oral abstracts are recorded here before the conference takes place. They are not counted as completed presentations or published proceedings.')}
         <div class="conference-submission-grid">
           ${upcomingConferenceGroups.map(submissions=>{
             const submission=submissions[0];
