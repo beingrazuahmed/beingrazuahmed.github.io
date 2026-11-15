@@ -2894,7 +2894,8 @@
   // Mirror reported ICPS 2026 abstract decisions in collaborator profiles.
   // An oral acceptance is upcoming, not a completed presentation or proceeding.
   const icps2026CoauthorsByPaper = {
-    '238': ['shamim-reza', 'sabba-ruhi', 'aminul-hoque', 'jannatul-mauya']
+    '238': ['shamim-reza', 'sabba-ruhi', 'aminul-hoque', 'jannatul-mauya'],
+    '454': ['shamim-reza', 'jannatul-mauya']
   };
   const icps2026Records = (base.upcomingConferenceSubmissions || [])
     .filter(submission => submission.event === 'ICPS 2026');
@@ -2910,7 +2911,7 @@
       : /waiting list|waitlist/i.test(String(submission.decisionStatus||submission.status||''))
         ? 'On waiting list (not yet accepted)' : 'Decision pending';
     const submissionGroup = {
-      event: '2nd International Conference of Physical Sciences (ICPS 2026) — accepted oral abstract',
+      event: '2nd International Conference of Physical Sciences (ICPS 2026) — accepted oral abstracts',
       venue: 'Shahjalal University of Science and Technology, Sylhet, Bangladesh · 10–12 December 2026 (upcoming)',
       items: submissions.map(submission =>
         (submission.title || 'ICPS 2026 abstract') + ' — ' +
