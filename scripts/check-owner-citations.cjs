@@ -102,6 +102,12 @@ async function main(){
     'Overview peer review metric must match the editorial service total');
   const service=dataContext.window.PORTFOLIO_DATA.service||[];
   const dibReview=service.find(x=>x.id==='data-in-brief');
+  const milestoneData=text('extra-data.js');
+  const milestoneRender=text('v2-app.js');
+  assert(milestoneData.includes('50 Completed Peer Reviews'), 'The 50-review milestone must be documented');
+  assert(milestoneData.includes('50 completed peer reviews — Scholarly Service Milestone'), 'The milestone must appear in the activity archive');
+  assert(milestoneRender.includes('id="peer-review-50-milestone"'), 'The milestone card is missing from portfolio rendering');
+  assert(milestoneRender.includes('Scholarly Service'), 'Scholarly service activity category is missing');
   const bspcReview=service.find(x=>x.id==='bspc');
   assert(dibReview&&bspcReview,'Data in Brief and BSPC reviewer records must both exist');
   assert.equal(dibReview.journal,'Data in Brief');

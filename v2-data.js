@@ -3185,6 +3185,7 @@
     gallery: base.gallery || [],
     ongoing: extra.ongoing || [],
     latestUpdates: extra.latestUpdates || [],
+    peerReviewMilestone: extra.peerReviewMilestone || null,
     impactMetrics: updatedImpact,
     coursework,
     fieldSurvey,

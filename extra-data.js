@@ -1,5 +1,5 @@
 window.PORTFOLIO_EXTRA = {
-  lastUpdated: "16 November 2026",
+  lastUpdated: "17 November 2026",
   impactMetrics: [
     { label: "Google Scholar citations", value: 2, source: "Google Scholar", date: "15 September 2026" },
     { label: "ResearchGate citations", value: 5, source: "ResearchGate", date: "15 September 2026" },
@@ -9,7 +9,20 @@ window.PORTFOLIO_EXTRA = {
     { label: "Views", value: 197, source: "Mendeley Data", date: "26 October 2026" },
     { label: "Downloads", value: 244, source: "Mendeley Data", date: "26 October 2026" }
   ],
+  peerReviewMilestone: {
+    achieved: "16 November 2026", date: "16 Nov 2026", count: 50, journalCount: 5,
+    title: "50 Completed Peer Reviews",
+    description: "A scholarly-service milestone reflecting 50 completed invited manuscript reviews across five international journals. This record recognizes sustained contributions to critical scientific assessment and research integrity.",
+    journals: [
+      { name: "PLOS ONE", reviews: 25 },
+      { name: "Biomedical Signal Processing and Control", reviews: 17 },
+      { name: "Engineering Applications of Artificial Intelligence", reviews: 4 },
+      { name: "Array", reviews: 3 },
+      { name: "Data in Brief", reviews: 1 }
+    ]
+  },
   latestUpdates: [
+    { date: "16 Nov 2026", type: "Scholarly Service", title: "50 completed peer reviews — Scholarly Service Milestone", detail: "Reached 50 completed invited manuscript reviews across five international journals: PLOS ONE (25), Biomedical Signal Processing and Control (17), Engineering Applications of Artificial Intelligence (4), Array (3) and Data in Brief (1). Journal-specific records and available reviewing certificates are linked.", href: "experience.html#editorial-peer-review", linkLabel: "Explore peer-review service and certificates" },
     { date: "16 Nov 2026", type: "Scholarly Service", title: "Biomedical Signal Processing and Control — 17 completed reviews", detail: "The BSPC reviewing record now reflects 17 completed manuscript reviews, bringing the total to 50 completed invited reviews across five journals. The Elsevier Certificate of Reviewing is linked to the credential gallery and reviewer record.", href: "gallery.html#bspc-reviewing-certificate-2026", linkLabel: "View BSPC reviewing certificate" },
     { date: "11 Nov 2026", type: "Research Discovery", title: "Dengue forecasting publication available on ResearchGate", detail: "ResearchGate publication record 417691860 is now available for the 9 November 2026 BMC Public Health article. This is a scholarly-network publication listing, not an additional paper, a citation, or confirmation of Scopus/PubMed indexing.", href: "https://www.researchgate.net/publication/417691860_Nationwide_evaluation_of_district-informed_bottom-up_and_direct_national_approaches_for_one-week-ahead_forecasting_of_dengue_hospital_admissions_in_Bangladesh", linkLabel: "Open ResearchGate publication record" },
     { date: "10 Nov 2026", type: "Academic Resources", title: "Project-linked research blog and academic notes library expanded", detail: "Expanded the educational library to 14 research blog articles and 16 academic notes, linked to ten detailed portfolio project cases with searchable project filters, source references, and printable study resources. These materials are educational and do not constitute additional peer-reviewed publications.", href: "resources.html#knowledge-library", linkLabel: "Browse research writing and notes" },

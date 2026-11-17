@@ -857,6 +857,7 @@
   // One public activity feed powers both the six-item homepage preview and the complete archive.
   function activityCategory(item){
     const type=String(item.type||'').toLowerCase();
+    if(type.includes('scholarly service')||type.includes('peer review'))return 'Scholarly Service';
     if(type.includes('conference'))return 'Conferences';
     if(type.includes('media coverage'))return 'Media Coverage';
     if(type.includes('publication'))return 'Publications';
@@ -884,13 +885,44 @@
       ${item.href?`<a class="timeline-milestone-link" href="${esc(item.href)}">${esc(item.linkLabel||'View related record')} <span aria-hidden="true">→</span></a>`:''}
     </article>`;
   }
+  // Historical snapshot: journal counts are those recorded when review 50 was reached.
+  function peerReviewMilestoneCard(){
+    const m=D.peerReviewMilestone;
+    if(!m||!Array.isArray(m.journals)||!m.journals.length)return "";
+    const total=m.journals.reduce((s,j)=>s+Number(j.reviews||0),0);
+    if(total!==Number(m.count)||m.journals.length!==Number(m.journalCount))return "";
+    return `<section class="section peer-review-milestone-section" id="peer-review-50-milestone" aria-labelledby="peer-review-milestone-heading">
+      <div class="container"><article class="peer-review-milestone-card">
+        <div class="peer-review-milestone-copy">
+          <p class="peer-review-milestone-eyebrow">Scholarly service milestone <span aria-hidden="true">·</span> ${esc(m.achieved)}</p>
+          <h2 id="peer-review-milestone-heading">${esc(m.title)}</h2>
+          <p class="peer-review-milestone-description">${esc(m.description)}</p>
+          <p class="peer-review-milestone-label">Journal-wise record at this milestone</p>
+          <ul class="peer-review-milestone-journals">${m.journals.map(j=>`<li><strong>${esc(j.reviews)}</strong><span>${esc(j.name)}</span></li>`).join("")}</ul>
+          <div class="peer-review-milestone-actions">
+            <a class="btn primary" href="experience.html#editorial-peer-review">View reviewing record <span aria-hidden="true">↗</span></a>
+            <a class="peer-review-milestone-text-link" href="gallery.html#bspc-reviewing-certificate-2026">BSPC reviewing certificate <span aria-hidden="true">↗</span></a>
+            <a class="peer-review-milestone-text-link" href="latest-activity.html#activity-16-nov-2026-50-completed-peer-reviews-scholarly-service-milestone">Milestone archive <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="peer-review-milestone-emblem" aria-label="${esc(m.count)} completed invited reviews across ${esc(m.journalCount)} international journals">
+          <span class="peer-review-milestone-emblem-top">SCHOLARLY SERVICE</span>
+          <strong>${esc(m.count)}</strong>
+          <span class="peer-review-milestone-emblem-caption">COMPLETED REVIEWS</span>
+          <span class="peer-review-milestone-emblem-bottom">${esc(m.journalCount)} international journals</span>
+        </div>
+      </article></div>
+    </section>`;
+  }
+
   function latestActivity(){
     const updates=activityFeed();
-    const kinds=['Publications','Media Coverage','Manuscripts','Conferences','Datasets','Other Updates'];
+    const kinds=['Publications','Media Coverage','Manuscripts','Conferences','Datasets','Scholarly Service','Other Updates'];
     const categories=[['All Activities',updates.length],...kinds.map(name=>[name,updates.filter(x=>activityCategory(x)===name).length]).filter(x=>x[1]>0)];
     const years=updates.map(x=>Number(String(x.date||'').match(/\d{4}/)?.[0]||0)).filter(Boolean);
     const yearRange=years.length?(Math.min(...years)===Math.max(...years)?String(years[0]):Math.min(...years)+'–'+Math.max(...years)):'—';
     return `${pageHero('Latest Activity','A complete public timeline of research milestones, publications, manuscript progress, conference participation, datasets and academic development.')}
+    ${peerReviewMilestoneCard()}
     <section class="section activity-directory"><div class="container">
       ${sectionHead('Research milestones','Recent research updates','Browse all recorded public milestones; the homepage highlights just the latest six.')}
       <div class="activity-overview">
@@ -965,6 +997,8 @@
         </div>
       </div>
     </section>
+
+    ${peerReviewMilestoneCard()}
 
     <section class="section home-metrics-section"><div class="container">
       ${sectionHead('Research profile','At a glance','A compact view of the current academic and scholarly record.')}
