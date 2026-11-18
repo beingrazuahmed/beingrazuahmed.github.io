@@ -18,7 +18,7 @@ function htmlFiles(){
 
 async function main(){
   const pages=htmlFiles();
-  assert.equal(pages.length,44,'Expected all 44 portfolio HTML pages');
+  assert.equal(pages.length,45,'Expected all 45 portfolio HTML pages');
   const version='20261105-owner-citations1';
   for(const file of pages){
     const markup=text(file);
