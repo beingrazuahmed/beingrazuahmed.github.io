@@ -1,10 +1,10 @@
 %PDF-1.4
-%%%%%
+%MRA-CV
 1 0 obj
-<< /Type /Catalog /Pages 2 0 R >>
+<< /Type /Catalog /Pages 2 0 R /PageLayout /OneColumn >>
 endobj
 2 0 obj
-<< /Type /Pages /Count 3 /Kids [ 6 0 R 8 0 R 10 0 R ] >>
+<< /Type /Pages /Count 3 /Kids [7 0 R 14 0 R 29 0 R] >>
 endobj
 3 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
@@ -16,163 +16,466 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique >>
 endobj
 6 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 7 0 R >>
+<< /Length 6503 >>
+stream
+0.07 0.16 0.28 rg 0.00 702.89 595.28 139.00 re f
+0.14 0.51 0.52 rg 0.00 699.89 595.28 3.00 re f
+1.00 1.00 1.00 rg BT /F2 25.00 Tf 1 0 0 1 46.00 803.00 Tm (MD. RAZU AHMED) Tj ET
+0.79 0.88 0.96 rg BT /F2 8.70 Tf 1 0 0 1 46.00 782.00 Tm (STATISTICIAN  /  DATA SCIENTIST  /  RESEARCHER  /  PEER REVIEWER) Tj ET
+1.00 1.00 1.00 rg BT /F1 8.90 Tf 1 0 0 1 46.00 757.00 Tm (Pabna University of Science and Technology  |  Bangladesh) Tj ET
+0.79 0.89 0.97 rg BT /F1 8.80 Tf 1 0 0 1 46.00 739.00 Tm (razuahmed038@gmail.com  |  beingrazuahmed.github.io) Tj ET
+0.92 0.95 0.98 rg 46.00 625.00 120.50 47.00 re f
+0.14 0.51 0.52 rg 46.00 625.00 120.50 2.00 re f
+0.07 0.16 0.28 rg BT /F2 17.20 Tf 1 0 0 1 58.00 648.00 Tm (4) Tj ET
+0.38 0.43 0.50 rg BT /F2 7.30 Tf 1 0 0 1 58.00 634.00 Tm (PUBLISHED ARTICLES) Tj ET
+0.92 0.95 0.98 rg 173.50 625.00 120.50 47.00 re f
+0.14 0.51 0.52 rg 173.50 625.00 120.50 2.00 re f
+0.07 0.16 0.28 rg BT /F2 17.20 Tf 1 0 0 1 185.50 648.00 Tm (1) Tj ET
+0.38 0.43 0.50 rg BT /F2 7.30 Tf 1 0 0 1 185.50 634.00 Tm (ACCEPTED ARTICLE) Tj ET
+0.92 0.95 0.98 rg 301.00 625.00 120.50 47.00 re f
+0.14 0.51 0.52 rg 301.00 625.00 120.50 2.00 re f
+0.07 0.16 0.28 rg BT /F2 17.20 Tf 1 0 0 1 313.00 648.00 Tm (50) Tj ET
+0.38 0.43 0.50 rg BT /F2 7.30 Tf 1 0 0 1 313.00 634.00 Tm (PEER REVIEWS) Tj ET
+0.92 0.95 0.98 rg 428.50 625.00 120.50 47.00 re f
+0.14 0.51 0.52 rg 428.50 625.00 120.50 2.00 re f
+0.07 0.16 0.28 rg BT /F2 17.20 Tf 1 0 0 1 440.50 648.00 Tm (8) Tj ET
+0.38 0.43 0.50 rg BT /F2 7.30 Tf 1 0 0 1 440.50 634.00 Tm (CONFERENCE WORK) Tj ET
+0.07 0.16 0.28 rg BT /F2 10.40 Tf 1 0 0 1 46.00 588.00 Tm (RESEARCH PROFILE) Tj ET
+0.79 0.84 0.88 RG 0.80 w 46.00 581.00 m 549.00 581.00 l S
+0.12 0.18 0.26 rg BT /F1 9.15 Tf 1 0 0 1 46.00 564.00 Tm (Statistician and interdisciplinary researcher integrating rigorous statistical analysis with machine learning, interpretable) Tj ET
+0.12 0.18 0.26 rg BT /F1 9.15 Tf 1 0 0 1 46.00 550.60 Tm (AI, public-health forecasting, medical imaging and reproducible computational research. Emphasis on leakage-aware) Tj ET
+0.12 0.18 0.26 rg BT /F1 9.15 Tf 1 0 0 1 46.00 537.20 Tm (validation, transparent reporting and research with practical decision value.) Tj ET
+0.07 0.16 0.28 rg BT /F2 10.40 Tf 1 0 0 1 46.00 510.80 Tm (EDUCATION) Tj ET
+0.79 0.84 0.88 RG 0.80 w 46.00 503.80 m 549.00 503.80 l S
+0.12 0.18 0.26 rg BT /F2 9.65 Tf 1 0 0 1 46.00 486.80 Tm (Master of Science \(M.S.\) in Statistics | Pabna University of Science and Technology \(PUST\), Pabna-6600,) Tj ET
+0.12 0.18 0.26 rg BT /F2 9.65 Tf 1 0 0 1 46.00 473.90 Tm (Bangladesh) Tj ET
+0.38 0.43 0.50 rg BT /F1 8.55 Tf 1 0 0 1 46.00 460.00 Tm (Exam Year 2022 | Examination held 2025) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.65 Tf 1 0 0 1 46.00 446.90 Tm (CGPA 3.49/4.00 | Ranked 5th in the project-based \(non-thesis\) track) Tj ET
+0.12 0.18 0.26 rg BT /F2 9.65 Tf 1 0 0 1 46.00 426.40 Tm (Bachelor of Science \(B.Sc. Hons.\) in Statistics | Pabna University of Science and Technology \(PUST\),) Tj ET
+0.12 0.18 0.26 rg BT /F2 9.65 Tf 1 0 0 1 46.00 413.50 Tm (Pabna-6600, Bangladesh) Tj ET
+0.38 0.43 0.50 rg BT /F1 8.55 Tf 1 0 0 1 46.00 399.60 Tm (Exam Year 2021 | Examination held 2024) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.65 Tf 1 0 0 1 46.00 386.50 Tm (CGPA 2.87/4.00) Tj ET
+0.07 0.16 0.28 rg BT /F2 10.40 Tf 1 0 0 1 46.00 357.00 Tm (RESEARCH APPOINTMENTS) Tj ET
+0.79 0.84 0.88 RG 0.80 w 46.00 350.00 m 549.00 350.00 l S
+0.12 0.18 0.26 rg BT /F2 9.65 Tf 1 0 0 1 46.00 333.00 Tm (Research Assistant | Deep Statistical Learning and Research \(DSLR\) Lab) Tj ET
+0.38 0.43 0.50 rg BT /F1 8.55 Tf 1 0 0 1 46.00 319.10 Tm (Pabna University of Science and Technology | May 2023 - Present) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.65 Tf 1 0 0 1 46.00 306.00 Tm (Interdisciplinary research in statistical learning, explainable AI, biomedical and public-health analytics, with contributions across) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.65 Tf 1 0 0 1 46.00 293.50 Tm (reproducible modelling, research collaboration, scientific communication, and prototype development.) Tj ET
+0.38 0.43 0.50 rg BT /F1 8.25 Tf 1 0 0 1 46.00 273.00 Tm (Research Assistant \(14 May 2026 - Present\); Graduate Research Assistant \(17 November 2024 - 13 May 2026\); Undergraduate Research) Tj ET
+0.38 0.43 0.50 rg BT /F1 8.25 Tf 1 0 0 1 46.00 261.30 Tm (Assistant \(13 May 2023 - 9 November 2024\)) Tj ET
+0.12 0.18 0.26 rg BT /F2 9.65 Tf 1 0 0 1 46.00 243.60 Tm (Research Assistant | International Research Collaboration Bangladesh) Tj ET
+0.38 0.43 0.50 rg BT /F1 8.55 Tf 1 0 0 1 46.00 229.70 Tm (20 April 2026 - 3 July 2026) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.65 Tf 1 0 0 1 46.00 216.60 Tm (Research coordination, methodological support, research data management and manuscript preparation.) Tj ET
+0.07 0.16 0.28 rg BT /F2 10.40 Tf 1 0 0 1 46.00 187.10 Tm (RESEARCH FOCUS) Tj ET
+0.79 0.84 0.88 RG 0.80 w 46.00 180.10 m 549.00 180.10 l S
+0.10 0.38 0.61 rg BT /F2 8.30 Tf 1 0 0 1 46.00 163.10 Tm (METHODS) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.50 Tf 1 0 0 1 46.00 146.10 Tm (Statistical learning; machine and deep learning; multivariate) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.50 Tf 1 0 0 1 46.00 134.10 Tm (analysis; time-series forecasting; explainable AI; causal) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.50 Tf 1 0 0 1 46.00 122.10 Tm (inference; leak-safe model evaluation.) Tj ET
+0.10 0.38 0.61 rg BT /F2 8.30 Tf 1 0 0 1 306.50 163.10 Tm (APPLICATIONS) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.50 Tf 1 0 0 1 306.50 146.10 Tm (Public health; biomedical data science; infectious-disease) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.50 Tf 1 0 0 1 306.50 134.10 Tm (surveillance; medical imaging; computer vision; bioinformatics;) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.50 Tf 1 0 0 1 306.50 122.10 Tm (intelligent food systems.) Tj ET
+0.07 0.16 0.28 rg BT /F2 10.40 Tf 1 0 0 1 46.00 99.10 Tm (COMPUTATIONAL SKILLS) Tj ET
+0.79 0.84 0.88 RG 0.80 w 46.00 92.10 m 549.00 92.10 l S
+0.10 0.38 0.61 rg BT /F2 8.30 Tf 1 0 0 1 46.00 75.10 Tm (PROGRAMMING & MODELLING) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.50 Tf 1 0 0 1 46.00 58.10 Tm (Python, R, pandas, NumPy, scikit-learn, XGBoost,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.50 Tf 1 0 0 1 46.00 46.10 Tm (TensorFlow/Keras, SHAP, Git, Jupyter.) Tj ET
+0.10 0.38 0.61 rg BT /F2 8.30 Tf 1 0 0 1 306.50 75.10 Tm (STATISTICS & COMMUNICATION) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.50 Tf 1 0 0 1 306.50 58.10 Tm (SPSS, Minitab, regression, sampling, study design, reproducible) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.50 Tf 1 0 0 1 306.50 46.10 Tm (analysis, publication-quality reporting.) Tj ET
+endstream
 endobj
 7 0 obj
-<< /Length 4893 >>
-stream
-0.06 0.16 0.28 rg 0.0 734.0 595.0 108.0 re f
-1 1 1 rg BT /F2 25 Tf 1 0 0 1 49.0 803.0 Tm (MD. RAZU AHMED) Tj ET
-0.80 0.88 0.98 rg BT /F1 10.1 Tf 1 0 0 1 49.0 783.0 Tm (Statistician  |  Data Scientist  |  Researcher  |  Peer Reviewer) Tj ET
-0.90 0.94 0.99 rg BT /F1 8.7 Tf 1 0 0 1 49.0 762.0 Tm (razuahmed038@gmail.com   |   beingrazuahmed.github.io   |   Bangladesh) Tj ET
-0.12 0.38 0.61 rg BT /F2 10.35 Tf 1 0 0 1 49.0 707.0 Tm (ACADEMIC PROFILE) Tj ET
-0.80 0.86 0.92 rg 49.0 700.0 497.0 0.7 re f
-0.36 0.43 0.52 rg BT /F1 9.4 Tf 1 0 0 1 49.0 684.0 Tm (Statistician and interdisciplinary researcher working at the intersection of statistical learning,) Tj ET
-0.36 0.43 0.52 rg BT /F1 9.4 Tf 1 0 0 1 49.0 670.0 Tm (machine learning, explainable AI, public-health analytics and biomedical data science. Research) Tj ET
-0.36 0.43 0.52 rg BT /F1 9.4 Tf 1 0 0 1 49.0 656.0 Tm (emphasizes reproducible, leakage-aware validation, scientific interpretability and decision-relevant) Tj ET
-0.36 0.43 0.52 rg BT /F1 9.4 Tf 1 0 0 1 49.0 642.0 Tm (evidence.) Tj ET
-0.12 0.38 0.61 rg BT /F2 10.35 Tf 1 0 0 1 49.0 610.0 Tm (CURRENT SCHOLARLY RECORD) Tj ET
-0.80 0.86 0.92 rg 49.0 603.0 497.0 0.7 re f
-0.36 0.43 0.52 rg BT /F1 9.05 Tf 1 0 0 1 49.0 587.0 Tm (4 published peer-reviewed journal articles | 1 accepted/forthcoming article | 8 manuscripts in the) Tj ET
-0.36 0.43 0.52 rg BT /F1 9.05 Tf 1 0 0 1 49.0 574.0 Tm (editorial process | 7 studies in preparation | 1 public dataset | 8 conference contributions | 50) Tj ET
-0.36 0.43 0.52 rg BT /F1 9.05 Tf 1 0 0 1 49.0 561.0 Tm (completed invited peer reviews across 5 journals.) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.4 Tf 1 0 0 1 49.0 543.0 Tm (ResearchGate Research Interest Score: 13.4 \(recorded 18 November 2026\). Source-specific profile metric, not a) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.4 Tf 1 0 0 1 49.0 531.0 Tm (citation count.) Tj ET
-0.12 0.38 0.61 rg BT /F2 10.35 Tf 1 0 0 1 49.0 502.0 Tm (EDUCATION) Tj ET
-0.80 0.86 0.92 rg 49.0 495.0 497.0 0.7 re f
-0.10 0.16 0.24 rg BT /F2 9.5 Tf 1 0 0 1 49.0 479.0 Tm (M.S. in Statistics | Pabna University of Science and Technology) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.6 Tf 1 0 0 1 49.0 466.2 Tm (Exam Year 2022; examination held 2025 | CGPA 3.49/4.00 | Ranked 5th in project-based \(non-thesis\) track) Tj ET
-0.10 0.16 0.24 rg BT /F2 9.5 Tf 1 0 0 1 49.0 445.9 Tm (B.Sc. \(Honours\) in Statistics | Pabna University of Science and Technology) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.6 Tf 1 0 0 1 49.0 433.1 Tm (Exam Year 2021; examination held 2024 | CGPA 2.87/4.00) Tj ET
-0.12 0.38 0.61 rg BT /F2 10.35 Tf 1 0 0 1 49.0 402.8 Tm (RESEARCH EXPERIENCE) Tj ET
-0.80 0.86 0.92 rg 49.0 395.8 497.0 0.7 re f
-0.10 0.16 0.24 rg BT /F2 9.5 Tf 1 0 0 1 49.0 379.8 Tm (Research Assistant | Deep Statistical Learning and Research \(DSLR\) Lab, PUST) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.6 Tf 1 0 0 1 49.0 367.0 Tm (14 May 2026 - Present | Statistical modelling, ML/DL, public-health data, reproducible research) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.6 Tf 1 0 0 1 49.0 346.7 Tm (Earlier DSLR Lab appointments: Graduate Research Assistant \(17 Nov 2024 - 13 May 2026\); Undergraduate Research) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.6 Tf 1 0 0 1 49.0 334.7 Tm (Assistant \(13 May 2023 - 9 Nov 2024\).) Tj ET
-0.10 0.16 0.24 rg BT /F2 9.5 Tf 1 0 0 1 49.0 315.7 Tm (Research Assistant | International Research Collaboration Bangladesh \(IRCB\)) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.6 Tf 1 0 0 1 49.0 302.9 Tm (20 April 2026 - 3 July 2026 | Research coordination, data management, methodological planning and manuscript) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.6 Tf 1 0 0 1 49.0 291.6 Tm (support) Tj ET
-0.12 0.38 0.61 rg BT /F2 10.35 Tf 1 0 0 1 49.0 261.3 Tm (PUBLISHED JOURNAL ARTICLES) Tj ET
-0.80 0.86 0.92 rg 49.0 254.3 497.0 0.7 re f
-0.10 0.16 0.24 rg BT /F2 9.5 Tf 1 0 0 1 49.0 238.3 Tm (1. Sophisticated Audio Source Separation: A Statistical Exploration of Clarity and Precision With) Tj ET
-0.10 0.16 0.24 rg BT /F2 9.5 Tf 1 0 0 1 49.0 225.5 Tm (FastICA) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.6 Tf 1 0 0 1 49.0 212.7 Tm (Engineering Reports \(2026\) | First Author) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.6 Tf 1 0 0 1 49.0 199.4 Tm (DOI: 10.1002/eng2.70575) Tj ET
-0.10 0.16 0.24 rg BT /F2 9.5 Tf 1 0 0 1 49.0 179.0 Tm (2. Identification of Predisposing Risk Factors for Chronic Kidney Disease and Optimizing Disease) Tj ET
-0.10 0.16 0.24 rg BT /F2 9.5 Tf 1 0 0 1 49.0 166.2 Tm (Prediction Using a Stacking Machine Learning Algorithm) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.6 Tf 1 0 0 1 49.0 153.4 Tm (International Journal of Statistical Sciences \(2025\) | First Author) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.6 Tf 1 0 0 1 49.0 140.1 Tm (DOI: 10.3329/ijss.v25i2.85732) Tj ET
-0.83 0.88 0.93 rg 49 48 497 0.6 re f
-0.42 0.49 0.58 rg BT /F1 7.8 Tf 1 0 0 1 49 35 Tm (Updated 18 November 2026  |  Public academic CV) Tj ET
-0.42 0.49 0.58 rg BT /F1 7.8 Tf 1 0 0 1 490 35 Tm (Page 1 / 3) Tj ET
-endstream
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 6 0 R  >>
 endobj
 8 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 9 0 R >>
+<< /Length 14879 >>
+stream
+0.07 0.16 0.28 rg 0.00 777.89 595.28 64.00 re f
+0.14 0.51 0.52 rg 0.00 774.89 595.28 3.00 re f
+1.00 1.00 1.00 rg BT /F2 16.00 Tf 1 0 0 1 46.00 804.00 Tm (MD. RAZU AHMED) Tj ET
+0.80 0.89 0.98 rg BT /F2 8.30 Tf 1 0 0 1 46.00 788.00 Tm (ACADEMIC CURRICULUM VITAE) Tj ET
+0.07 0.16 0.28 rg BT /F2 10.40 Tf 1 0 0 1 46.00 738.00 Tm (PEER-REVIEWED JOURNAL ARTICLES) Tj ET
+0.38 0.43 0.50 rg BT /F1 8.00 Tf 1 0 0 1 481.96 739.00 Tm (4 published / online) Tj ET
+0.79 0.84 0.88 RG 0.80 w 46.00 731.00 m 549.00 731.00 l S
+0.10 0.38 0.61 rg BT /F2 11.00 Tf 1 0 0 1 46.00 714.00 Tm (01) Tj ET
+0.12 0.18 0.26 rg BT /F2 8.86 Tf 1 0 0 1 74.00 714.00 Tm (Ahmed,) Tj ET
+0.12 0.18 0.26 rg BT /F2 8.86 Tf 1 0 0 1 103.33 714.00 Tm (M.) Tj ET
+0.12 0.18 0.26 rg BT /F2 8.86 Tf 1 0 0 1 114.76 714.00 Tm (R.) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 124.59 714.00 Tm (,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 129.02 714.00 Tm (Mauya,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 158.52 714.00 Tm (J.,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 169.69 714.00 Tm (Reza,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 193.08 714.00 Tm (M.) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 204.51 714.00 Tm (S.,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 216.56 714.00 Tm (&) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 223.29 714.00 Tm (Amin,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 244.38 714.00 Tm (R.) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 254.21 714.00 Tm (\(2026\).) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 285.75 714.00 Tm (Sophisticated) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 342.99 714.00 Tm (audio) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 365.49 714.00 Tm (source) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 394.82 714.00 Tm (separation:) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 442.13 714.00 Tm (A) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 449.75 714.00 Tm (statistical) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 494.76 714.00 Tm (exploration) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 74.00 701.00 Tm (of) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 85.25 701.00 Tm (clarity) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 114.49 701.00 Tm (and) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 130.26 701.00 Tm (precision) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 168.54 701.00 Tm (with) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 187.50 701.00 Tm (FastICA.) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 223.91 701.00 Tm (Engineering) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 272.11 701.00 Tm (Reports,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 309.06 701.00 Tm (8\(1\),) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 329.26 701.00 Tm (e70575.) Tj ET
+0.10 0.38 0.61 rg BT /F2 8.00 Tf 1 0 0 1 74.00 686.00 Tm (DOI: 10.1002/eng2.70575) Tj ET
+0.10 0.38 0.61 RG 0.45 w 74.00 684.00 m 159.44 684.00 l S
+0.38 0.43 0.50 rg BT /F3 7.80 Tf 1 0 0 1 74.00 669.00 Tm (Contribution: First Author) Tj ET
+0.79 0.84 0.88 RG 0.50 w 74.00 659.00 m 549.00 659.00 l S
+0.10 0.38 0.61 rg BT /F2 11.00 Tf 1 0 0 1 46.00 645.00 Tm (02) Tj ET
+0.12 0.18 0.26 rg BT /F2 8.86 Tf 1 0 0 1 74.00 645.00 Tm (Ahmed,) Tj ET
+0.12 0.18 0.26 rg BT /F2 8.86 Tf 1 0 0 1 103.33 645.00 Tm (M.) Tj ET
+0.12 0.18 0.26 rg BT /F2 8.86 Tf 1 0 0 1 114.76 645.00 Tm (R.) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 124.59 645.00 Tm (,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 129.02 645.00 Tm (Rakib,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 154.63 645.00 Tm (M.) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 166.06 645.00 Tm (A.,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 178.11 645.00 Tm (Shiddik,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 210.44 645.00 Tm (A.) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 220.28 645.00 Tm (B.,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 232.33 645.00 Tm (&) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 239.06 645.00 Tm (Reza,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 262.45 645.00 Tm (M.) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 273.88 645.00 Tm (S.) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 283.72 645.00 Tm (\(2025\).) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 315.26 645.00 Tm (Identification) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 371.52 645.00 Tm (of) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 382.77 645.00 Tm (predisposing) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 434.60 645.00 Tm (risk) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 452.59 645.00 Tm (factors) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 486.43 645.00 Tm (for) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 502.20 645.00 Tm (chronic) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 74.00 632.00 Tm (kidney) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 101.02 632.00 Tm (disease) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 132.56 632.00 Tm (and) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 148.34 632.00 Tm (optimizing) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 188.83 632.00 Tm (disease) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 220.37 632.00 Tm (prediction) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 263.16 632.00 Tm (using) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 285.67 632.00 Tm (a) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 292.40 632.00 Tm (stacking) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 328.46 632.00 Tm (machine) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 360.00 632.00 Tm (learning) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 393.76 632.00 Tm (algorithm.) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 434.25 632.00 Tm (International) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 488.29 632.00 Tm (Journal) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 519.84 632.00 Tm (of) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 74.00 619.00 Tm (Statistical) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 119.89 619.00 Tm (Sciences,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 159.06 619.00 Tm (25\(2\),) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 186.08 619.00 Tm (1-32.) Tj ET
+0.10 0.38 0.61 rg BT /F2 8.00 Tf 1 0 0 1 74.00 604.00 Tm (DOI: 10.3329/ijss.v25i2.85732) Tj ET
+0.10 0.38 0.61 RG 0.45 w 74.00 602.00 m 181.04 602.00 l S
+0.38 0.43 0.50 rg BT /F3 7.80 Tf 1 0 0 1 74.00 587.00 Tm (Contribution: First Author) Tj ET
+0.79 0.84 0.88 RG 0.50 w 74.00 577.00 m 549.00 577.00 l S
+0.10 0.38 0.61 rg BT /F2 11.00 Tf 1 0 0 1 46.00 563.00 Tm (03) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 74.00 563.00 Tm (Yeasmin,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 108.64 563.00 Tm (M.,) Tj ET
+0.12 0.18 0.26 rg BT /F2 8.86 Tf 1 0 0 1 122.29 563.00 Tm (Ahmed,) Tj ET
+0.12 0.18 0.26 rg BT /F2 8.86 Tf 1 0 0 1 151.61 563.00 Tm (M.) Tj ET
+0.12 0.18 0.26 rg BT /F2 8.86 Tf 1 0 0 1 163.04 563.00 Tm (R.) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 172.88 563.00 Tm (,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 177.31 563.00 Tm (Kundu,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 205.22 563.00 Tm (P.) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 215.05 563.00 Tm (R.,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 227.10 563.00 Tm (Mauya,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 256.60 563.00 Tm (J.,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 267.77 563.00 Tm (&) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 274.50 563.00 Tm (Reza,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 297.89 563.00 Tm (M.) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 309.32 563.00 Tm (S.) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 319.16 563.00 Tm (\(2026\).) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 350.70 563.00 Tm (PUST) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 374.53 563.00 Tm (cafeteria) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 415.11 563.00 Tm (food) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 435.40 563.00 Tm (image) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 457.90 563.00 Tm (dataset:) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 493.96 563.00 Tm (Real-world) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 74.00 550.00 Tm (Bangladeshi) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 122.20 550.00 Tm (meal-platter) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 174.03 550.00 Tm (images) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 201.05 550.00 Tm (with) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 220.01 550.00 Tm (bounding-box) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 274.15 550.00 Tm (and) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 289.92 550.00 Tm (polygon) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 321.46 550.00 Tm (annotations.) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 373.29 550.00 Tm (Data) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 394.47 550.00 Tm (in) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 403.41 550.00 Tm (Brief,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 429.02 550.00 Tm (69,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 442.49 550.00 Tm (113262.) Tj ET
+0.10 0.38 0.61 rg BT /F2 8.00 Tf 1 0 0 1 74.00 535.00 Tm (DOI: 10.1016/j.dib.2026.113262) Tj ET
+0.10 0.38 0.61 RG 0.45 w 74.00 533.00 m 175.84 533.00 l S
+0.38 0.43 0.50 rg BT /F3 7.80 Tf 1 0 0 1 74.00 518.00 Tm (Contribution: Second Author) Tj ET
+0.79 0.84 0.88 RG 0.50 w 74.00 508.00 m 549.00 508.00 l S
+0.10 0.38 0.61 rg BT /F2 11.00 Tf 1 0 0 1 46.00 494.00 Tm (04) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 74.00 494.00 Tm (Haque,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 101.91 494.00 Tm (M.) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 113.34 494.00 Tm (Z.,) Tj ET
+0.12 0.18 0.26 rg BT /F2 8.86 Tf 1 0 0 1 125.39 494.00 Tm (Ahmed,) Tj ET
+0.12 0.18 0.26 rg BT /F2 8.86 Tf 1 0 0 1 154.71 494.00 Tm (M.) Tj ET
+0.12 0.18 0.26 rg BT /F2 8.86 Tf 1 0 0 1 166.14 494.00 Tm (R.) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 175.98 494.00 Tm (,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 180.41 494.00 Tm (Saha,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 203.80 494.00 Tm (M.,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 217.44 494.00 Tm (Ali,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 231.71 494.00 Tm (M.) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 243.14 494.00 Tm (F.,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 255.19 494.00 Tm (Biswas,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 286.29 494.00 Tm (D.,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 298.34 494.00 Tm (Alam,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 319.42 494.00 Tm (M.) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 330.85 494.00 Tm (S.,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 342.90 494.00 Tm (Shakil,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 370.72 494.00 Tm (S.) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 380.56 494.00 Tm (M.,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 394.20 494.00 Tm (&) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 400.93 494.00 Tm (Obaidi,) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 428.84 494.00 Tm (O.) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 438.77 494.00 Tm (\(2026\).) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 470.31 494.00 Tm (Nationwide) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 74.00 481.00 Tm (evaluation) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 116.79 481.00 Tm (of) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 128.05 481.00 Tm (district-informed) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 200.17 481.00 Tm (bottom-up) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 243.05 481.00 Tm (and) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 258.82 481.00 Tm (direct) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 285.84 481.00 Tm (national) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 319.60 481.00 Tm (approaches) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 367.00 481.00 Tm (for) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 382.77 481.00 Tm (one-week-ahead) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 449.22 481.00 Tm (forecasting) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 498.84 481.00 Tm (of) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 510.09 481.00 Tm (dengue) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 74.00 468.00 Tm (hospital) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 107.76 468.00 Tm (admissions) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 150.55 468.00 Tm (in) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 159.50 468.00 Tm (Bangladesh.) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 207.70 468.00 Tm (BMC) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 227.72 468.00 Tm (Public) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.86 Tf 1 0 0 1 253.33 468.00 Tm (Health.) Tj ET
+0.10 0.38 0.61 rg BT /F2 8.00 Tf 1 0 0 1 74.00 453.00 Tm (DOI: 10.1186/s12889-026-30204-3) Tj ET
+0.10 0.38 0.61 RG 0.45 w 74.00 451.00 m 192.24 451.00 l S
+0.38 0.43 0.50 rg BT /F3 7.80 Tf 1 0 0 1 74.00 436.00 Tm (Contribution: Second Author) Tj ET
+0.79 0.84 0.88 RG 0.50 w 74.00 426.00 m 549.00 426.00 l S
+0.07 0.16 0.28 rg BT /F2 10.40 Tf 1 0 0 1 46.00 403.00 Tm (ACCEPTED / FORTHCOMING) Tj ET
+0.38 0.43 0.50 rg BT /F1 8.00 Tf 1 0 0 1 520.60 404.00 Tm (1 article) Tj ET
+0.79 0.84 0.88 RG 0.80 w 46.00 396.00 m 549.00 396.00 l S
+0.12 0.18 0.26 rg BT /F2 9.65 Tf 1 0 0 1 46.00 379.00 Tm (Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh) Tj ET
+0.38 0.43 0.50 rg BT /F1 8.55 Tf 1 0 0 1 46.00 365.10 Tm (International Journal of Statistical Sciences | Accepted / Forthcoming | First Author) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.65 Tf 1 0 0 1 46.00 352.00 Tm (Not counted among published articles until publication.) Tj ET
+0.07 0.16 0.28 rg BT /F2 10.40 Tf 1 0 0 1 46.00 322.50 Tm (OPEN RESEARCH DATASET) Tj ET
+0.79 0.84 0.88 RG 0.80 w 46.00 315.50 m 549.00 315.50 l S
+0.12 0.18 0.26 rg BT /F2 9.65 Tf 1 0 0 1 46.00 298.50 Tm (PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box and) Tj ET
+0.12 0.18 0.26 rg BT /F2 9.65 Tf 1 0 0 1 46.00 285.60 Tm (Polygon Annotations) Tj ET
+0.38 0.43 0.50 rg BT /F1 8.55 Tf 1 0 0 1 46.00 271.70 Tm (Mendeley Data | Version 2 | CC BY 4.0) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.65 Tf 1 0 0 1 46.00 258.60 Tm (720 original images; 1,728 processed images; 6,297 annotated instances; 16 food classes.) Tj ET
+0.10 0.38 0.61 rg BT /F2 8.30 Tf 1 0 0 1 46.00 238.10 Tm (Dataset DOI: 10.17632/fn6yhzjz83.2) Tj ET
+0.10 0.38 0.61 RG 0.45 w 46.00 236.10 m 182.87 236.10 l S
+0.07 0.16 0.28 rg BT /F2 10.40 Tf 1 0 0 1 46.00 207.10 Tm (RESEARCH IN PROGRESS) Tj ET
+0.79 0.84 0.88 RG 0.80 w 46.00 200.10 m 549.00 200.10 l S
+0.12 0.18 0.26 rg BT /F1 8.90 Tf 1 0 0 1 46.00 183.10 Tm (7 manuscripts are recorded in the portfolio's editorial-process category, and 7 studies are in preparation. Editorial-process) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.90 Tf 1 0 0 1 46.00 169.80 Tm (manuscripts are not represented as published or accepted research.) Tj ET
+endstream
 endobj
 9 0 obj
-<< /Length 5895 >>
-stream
-0.06 0.16 0.28 rg 0.0 776.0 595.0 66.0 re f
-1 1 1 rg BT /F2 15 Tf 1 0 0 1 49.0 804.0 Tm (MD. RAZU AHMED) Tj ET
-0.85 0.91 0.98 rg BT /F1 8.4 Tf 1 0 0 1 49.0 788.0 Tm (Academic Curriculum Vitae  |  18 November 2026) Tj ET
-0.10 0.16 0.24 rg BT /F2 9.5 Tf 1 0 0 1 49.0 758.0 Tm (3. PUST Cafeteria Food Image Dataset: Real-World Bangladeshi Meal-Platter Images with Bounding-Box) Tj ET
-0.10 0.16 0.24 rg BT /F2 9.5 Tf 1 0 0 1 49.0 745.2 Tm (and Polygon Annotations) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.6 Tf 1 0 0 1 49.0 732.4 Tm (Data in Brief, 69, 113262 \(2026\) | Second Author) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.6 Tf 1 0 0 1 49.0 719.1 Tm (DOI: 10.1016/j.dib.2026.113262) Tj ET
-0.10 0.16 0.24 rg BT /F2 9.5 Tf 1 0 0 1 49.0 698.7 Tm (4. Nationwide Evaluation of District-Informed Bottom-Up and Direct National Approaches for) Tj ET
-0.10 0.16 0.24 rg BT /F2 9.5 Tf 1 0 0 1 49.0 685.9 Tm (One-Week-Ahead Forecasting of Dengue Hospital Admissions in Bangladesh) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.6 Tf 1 0 0 1 49.0 673.1 Tm (BMC Public Health \(2026\) | Second Author) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.6 Tf 1 0 0 1 49.0 659.8 Tm (DOI: 10.1186/s12889-026-30204-3) Tj ET
-0.12 0.38 0.61 rg BT /F2 10.35 Tf 1 0 0 1 49.0 629.4 Tm (ACCEPTED / FORTHCOMING) Tj ET
-0.80 0.86 0.92 rg 49.0 622.4 497.0 0.7 re f
-0.10 0.16 0.24 rg BT /F2 9.5 Tf 1 0 0 1 49.0 606.4 Tm (Perceptions of Artificial Intelligence and Its Implications for Employment in Bangladesh) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.6 Tf 1 0 0 1 49.0 593.6 Tm (International Journal of Statistical Sciences, volume 26\(2\) \(forthcoming, 2026\) | First Author) Tj ET
-0.12 0.38 0.61 rg BT /F2 10.35 Tf 1 0 0 1 49.0 563.3 Tm (PUBLIC DATASET) Tj ET
-0.80 0.86 0.92 rg 49.0 556.3 497.0 0.7 re f
-0.10 0.16 0.24 rg BT /F2 9.5 Tf 1 0 0 1 49.0 540.3 Tm (PUST Cafeteria Food Image Dataset - Version 2) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.6 Tf 1 0 0 1 49.0 527.5 Tm (Mendeley Data \(2026\) | CC BY 4.0 | 720 original images, 1,728 processed images, 6,297 annotated instances, 16) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.6 Tf 1 0 0 1 49.0 516.2 Tm (classes) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.6 Tf 1 0 0 1 49.0 502.9 Tm (DOI: 10.17632/fn6yhzjz83.2) Tj ET
-0.12 0.38 0.61 rg BT /F2 10.35 Tf 1 0 0 1 49.0 472.5 Tm (SCHOLARLY PEER-REVIEW SERVICE) Tj ET
-0.80 0.86 0.92 rg 49.0 465.5 497.0 0.7 re f
-0.36 0.43 0.52 rg BT /F1 9.1 Tf 1 0 0 1 49.0 449.5 Tm (50 completed invited manuscript reviews across five journals \(milestone reached 16 November 2026\).) Tj ET
-0.12 0.38 0.61 rg BT /F2 9 Tf 1 0 0 1 50.0 432.5 Tm (-) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.9 Tf 1 0 0 1 62.0 432.5 Tm (PLOS ONE - 25 reviews) Tj ET
-0.12 0.38 0.61 rg BT /F2 9 Tf 1 0 0 1 50.0 416.2 Tm (-) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.9 Tf 1 0 0 1 62.0 416.2 Tm (Biomedical Signal Processing and Control \(Elsevier\) - 17 reviews) Tj ET
-0.12 0.38 0.61 rg BT /F2 9 Tf 1 0 0 1 50.0 399.9 Tm (-) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.9 Tf 1 0 0 1 62.0 399.9 Tm (Engineering Applications of Artificial Intelligence \(Elsevier\) - 4 reviews) Tj ET
-0.12 0.38 0.61 rg BT /F2 9 Tf 1 0 0 1 50.0 383.6 Tm (-) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.9 Tf 1 0 0 1 62.0 383.6 Tm (Array \(Elsevier\) - 3 reviews) Tj ET
-0.12 0.38 0.61 rg BT /F2 9 Tf 1 0 0 1 50.0 367.3 Tm (-) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.9 Tf 1 0 0 1 62.0 367.3 Tm (Data in Brief \(Elsevier\) - 1 review) Tj ET
-0.12 0.38 0.61 rg BT /F2 10.35 Tf 1 0 0 1 49.0 341.0 Tm (CONFERENCE ACTIVITY AND RECOGNITION) Tj ET
-0.80 0.86 0.92 rg 49.0 334.0 497.0 0.7 re f
-0.12 0.38 0.61 rg BT /F2 9 Tf 1 0 0 1 50.0 318.0 Tm (-) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.9 Tf 1 0 0 1 62.0 318.0 Tm (8 recorded conference contributions, including 3 presentations delivered.) Tj ET
-0.12 0.38 0.61 rg BT /F2 9 Tf 1 0 0 1 50.0 301.7 Tm (-) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.9 Tf 1 0 0 1 62.0 301.7 Tm (Journal of Statistical Research \(JSR\) Award for Poster Competition - ICASDS 2025, University of Dhaka.) Tj ET
-0.12 0.38 0.61 rg BT /F2 9 Tf 1 0 0 1 50.0 285.4 Tm (-) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.9 Tf 1 0 0 1 62.0 285.4 Tm (Accepted conference oral presentations scheduled in December 2026 are not counted as delivered) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.9 Tf 1 0 0 1 62.0 273.1 Tm (presentations.) Tj ET
-0.12 0.38 0.61 rg BT /F2 10.35 Tf 1 0 0 1 49.0 246.8 Tm (METHODS AND TECHNICAL EXPERTISE) Tj ET
-0.80 0.86 0.92 rg 49.0 239.8 497.0 0.7 re f
-0.36 0.43 0.52 rg BT /F1 8.9 Tf 1 0 0 1 49.0 223.8 Tm (Statistical analysis, regression, sampling and survey methods, multivariate modelling, time-series) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.9 Tf 1 0 0 1 49.0 211.3 Tm (forecasting, causal-inference methods, leakage-aware validation and cross-validation.) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.9 Tf 1 0 0 1 49.0 194.8 Tm (Python, R, SPSS, Minitab, scikit-learn, XGBoost, TensorFlow/Keras, SHAP, OpenCV, Jupyter Notebook,) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.9 Tf 1 0 0 1 49.0 182.3 Tm (Git/GitHub; machine learning, deep learning, computer vision and reproducible research workflows.) Tj ET
-0.12 0.38 0.61 rg BT /F2 10.35 Tf 1 0 0 1 49.0 154.8 Tm (SELECTED RESEARCH TRAINING) Tj ET
-0.80 0.86 0.92 rg 49.0 147.8 497.0 0.7 re f
-0.12 0.38 0.61 rg BT /F2 9 Tf 1 0 0 1 50.0 131.8 Tm (-) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.9 Tf 1 0 0 1 62.0 131.8 Tm (Research Integrity: Publication Ethics - Nature Masterclasses, August 2026 \(8 hours\).) Tj ET
-0.12 0.38 0.61 rg BT /F2 9 Tf 1 0 0 1 50.0 115.5 Tm (-) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.9 Tf 1 0 0 1 62.0 115.5 Tm (Focus on Peer Review - Nature Masterclasses, August 2026.) Tj ET
-0.12 0.38 0.61 rg BT /F2 9 Tf 1 0 0 1 50.0 99.2 Tm (-) Tj ET
-0.36 0.43 0.52 rg BT /F1 8.9 Tf 1 0 0 1 62.0 99.2 Tm (Certified Peer Reviewer Course - Elsevier Researcher Academy, October 2026.) Tj ET
-0.83 0.88 0.93 rg 49 48 497 0.6 re f
-0.42 0.49 0.58 rg BT /F1 7.8 Tf 1 0 0 1 49 35 Tm (Updated 18 November 2026  |  Public academic CV) Tj ET
-0.42 0.49 0.58 rg BT /F1 7.8 Tf 1 0 0 1 490 35 Tm (Page 2 / 3) Tj ET
-endstream
+<< /Type /Annot /Subtype /Link /Rect [73.00 683.00 161.44 697.00] /Border [0 0 0] /A << /S /URI /URI (https://doi.org/10.1002/eng2.70575) >> >>
 endobj
 10 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 11 0 R >>
+<< /Type /Annot /Subtype /Link /Rect [73.00 601.00 183.04 615.00] /Border [0 0 0] /A << /S /URI /URI (https://doi.org/10.3329/ijss.v25i2.85732) >> >>
 endobj
 11 0 obj
-<< /Length 1150 >>
+<< /Type /Annot /Subtype /Link /Rect [73.00 532.00 177.84 546.00] /Border [0 0 0] /A << /S /URI /URI (https://doi.org/10.1016/j.dib.2026.113262) >> >>
+endobj
+12 0 obj
+<< /Type /Annot /Subtype /Link /Rect [73.00 450.00 194.24 464.00] /Border [0 0 0] /A << /S /URI /URI (https://doi.org/10.1186/s12889-026-30204-3) >> >>
+endobj
+13 0 obj
+<< /Type /Annot /Subtype /Link /Rect [45.00 235.10 184.87 249.40] /Border [0 0 0] /A << /S /URI /URI (https://doi.org/10.17632/fn6yhzjz83.2) >> >>
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 8 0 R /Annots [9 0 R 10 0 R 11 0 R 12 0 R 13 0 R] >>
+endobj
+15 0 obj
+<< /Length 6646 >>
 stream
-0.06 0.16 0.28 rg 0.0 776.0 595.0 66.0 re f
-1 1 1 rg BT /F2 15 Tf 1 0 0 1 49.0 804.0 Tm (MD. RAZU AHMED) Tj ET
-0.85 0.91 0.98 rg BT /F1 8.4 Tf 1 0 0 1 49.0 788.0 Tm (Academic Curriculum Vitae  |  18 November 2026) Tj ET
-0.12 0.38 0.61 rg BT /F2 10.35 Tf 1 0 0 1 49.0 748.0 Tm (PROFESSIONAL AND ACADEMIC LINKS) Tj ET
-0.80 0.86 0.92 rg 49.0 741.0 497.0 0.7 re f
-0.12 0.38 0.61 rg BT /F1 9.1 Tf 1 0 0 1 49.0 725.0 Tm (Portfolio: https://beingrazuahmed.github.io/) Tj ET
-0.12 0.38 0.61 rg BT /F1 9.1 Tf 1 0 0 1 49.0 709.9 Tm (ORCID: https://orcid.org/0009-0001-8646-1881) Tj ET
-0.12 0.38 0.61 rg BT /F1 8.7 Tf 1 0 0 1 49.0 694.8 Tm (Google Scholar: https://scholar.google.com/citations?user=70z0eXEAAAAJ) Tj ET
-0.12 0.38 0.61 rg BT /F1 8.7 Tf 1 0 0 1 49.0 679.7 Tm (ResearchGate: https://www.researchgate.net/profile/Md-Razu-Ahmed-3) Tj ET
-0.12 0.38 0.61 rg BT /F1 9.1 Tf 1 0 0 1 49.0 664.6 Tm (GitHub: https://github.com/beingrazuahmed) Tj ET
-0.83 0.88 0.93 rg 49 48 497 0.6 re f
-0.42 0.49 0.58 rg BT /F1 7.8 Tf 1 0 0 1 49 35 Tm (Updated 18 November 2026  |  Public academic CV) Tj ET
-0.42 0.49 0.58 rg BT /F1 7.8 Tf 1 0 0 1 490 35 Tm (Page 3 / 3) Tj ET
+0.07 0.16 0.28 rg 0.00 777.89 595.28 64.00 re f
+0.14 0.51 0.52 rg 0.00 774.89 595.28 3.00 re f
+1.00 1.00 1.00 rg BT /F2 16.00 Tf 1 0 0 1 46.00 804.00 Tm (MD. RAZU AHMED) Tj ET
+0.80 0.89 0.98 rg BT /F2 8.30 Tf 1 0 0 1 46.00 788.00 Tm (ACADEMIC CURRICULUM VITAE) Tj ET
+0.07 0.16 0.28 rg BT /F2 10.40 Tf 1 0 0 1 46.00 738.00 Tm (INVITED PEER REVIEW & SCHOLARLY SERVICE) Tj ET
+0.38 0.43 0.50 rg BT /F1 8.00 Tf 1 0 0 1 474.84 739.00 Tm (50 completed reviews) Tj ET
+0.79 0.84 0.88 RG 0.80 w 46.00 731.00 m 549.00 731.00 l S
+0.10 0.38 0.61 rg BT /F2 13.50 Tf 1 0 0 1 46.00 714.00 Tm (25) Tj ET
+0.12 0.18 0.26 rg BT /F2 9.10 Tf 1 0 0 1 74.00 715.00 Tm (PLOS ONE) Tj ET
+0.38 0.43 0.50 rg BT /F1 8.15 Tf 1 0 0 1 74.00 699.00 Tm (Public Library of Science \(PLOS\)) Tj ET
+0.79 0.84 0.88 RG 0.50 w 46.00 688.00 m 549.00 688.00 l S
+0.10 0.38 0.61 rg BT /F2 13.50 Tf 1 0 0 1 46.00 679.00 Tm (17) Tj ET
+0.12 0.18 0.26 rg BT /F2 9.10 Tf 1 0 0 1 74.00 680.00 Tm (Biomedical Signal Processing and Control) Tj ET
+0.38 0.43 0.50 rg BT /F1 8.15 Tf 1 0 0 1 74.00 664.00 Tm (Elsevier) Tj ET
+0.10 0.38 0.61 rg BT /F2 8.00 Tf 1 0 0 1 478.36 664.00 Tm (Review certificate) Tj ET
+0.10 0.38 0.61 RG 0.45 w 478.36 662.00 m 549.00 662.00 l S
+0.79 0.84 0.88 RG 0.50 w 46.00 653.00 m 549.00 653.00 l S
+0.10 0.38 0.61 rg BT /F2 13.50 Tf 1 0 0 1 46.00 644.00 Tm (04) Tj ET
+0.12 0.18 0.26 rg BT /F2 9.10 Tf 1 0 0 1 74.00 645.00 Tm (Engineering Applications of Artificial Intelligence) Tj ET
+0.38 0.43 0.50 rg BT /F1 8.15 Tf 1 0 0 1 74.00 629.00 Tm (Elsevier) Tj ET
+0.10 0.38 0.61 rg BT /F2 8.00 Tf 1 0 0 1 478.36 629.00 Tm (Review certificate) Tj ET
+0.10 0.38 0.61 RG 0.45 w 478.36 627.00 m 549.00 627.00 l S
+0.79 0.84 0.88 RG 0.50 w 46.00 618.00 m 549.00 618.00 l S
+0.10 0.38 0.61 rg BT /F2 13.50 Tf 1 0 0 1 46.00 609.00 Tm (03) Tj ET
+0.12 0.18 0.26 rg BT /F2 9.10 Tf 1 0 0 1 74.00 610.00 Tm (Array) Tj ET
+0.38 0.43 0.50 rg BT /F1 8.15 Tf 1 0 0 1 74.00 594.00 Tm (Elsevier) Tj ET
+0.10 0.38 0.61 rg BT /F2 8.00 Tf 1 0 0 1 478.36 594.00 Tm (Review certificate) Tj ET
+0.10 0.38 0.61 RG 0.45 w 478.36 592.00 m 549.00 592.00 l S
+0.79 0.84 0.88 RG 0.50 w 46.00 583.00 m 549.00 583.00 l S
+0.10 0.38 0.61 rg BT /F2 13.50 Tf 1 0 0 1 46.00 574.00 Tm (01) Tj ET
+0.12 0.18 0.26 rg BT /F2 9.10 Tf 1 0 0 1 74.00 575.00 Tm (Data in Brief) Tj ET
+0.38 0.43 0.50 rg BT /F1 8.15 Tf 1 0 0 1 74.00 559.00 Tm (Elsevier) Tj ET
+0.10 0.38 0.61 rg BT /F2 8.00 Tf 1 0 0 1 478.36 559.00 Tm (Review certificate) Tj ET
+0.10 0.38 0.61 RG 0.45 w 478.36 557.00 m 549.00 557.00 l S
+0.79 0.84 0.88 RG 0.50 w 46.00 548.00 m 549.00 548.00 l S
+0.07 0.16 0.28 rg BT /F2 10.40 Tf 1 0 0 1 46.00 530.00 Tm (RESEARCH RECOGNITION) Tj ET
+0.79 0.84 0.88 RG 0.80 w 46.00 523.00 m 549.00 523.00 l S
+0.12 0.18 0.26 rg BT /F2 9.65 Tf 1 0 0 1 46.00 506.00 Tm (Journal of Statistical Research \(JSR\) Award for Poster Competition) Tj ET
+0.38 0.43 0.50 rg BT /F1 8.55 Tf 1 0 0 1 46.00 492.10 Tm (Journal of Statistical Research | ICASDS 2025 | University of Dhaka) Tj ET
+0.12 0.18 0.26 rg BT /F1 8.65 Tf 1 0 0 1 46.00 479.00 Tm (December 2025) Tj ET
+0.10 0.38 0.61 rg BT /F2 8.30 Tf 1 0 0 1 46.00 458.50 Tm (Award certificate) Tj ET
+0.10 0.38 0.61 RG 0.45 w 46.00 456.50 m 117.21 456.50 l S
+0.07 0.16 0.28 rg BT /F2 10.40 Tf 1 0 0 1 46.00 427.50 Tm (RESEARCH TRAINING AND SCHOLARLY PRACTICE) Tj ET
+0.79 0.84 0.88 RG 0.80 w 46.00 420.50 m 549.00 420.50 l S
+0.12 0.18 0.26 rg BT /F2 8.80 Tf 1 0 0 1 46.00 403.50 Tm (Becoming a Peer Reviewer) Tj ET
+0.38 0.43 0.50 rg BT /F1 8.10 Tf 1 0 0 1 46.00 390.50 Tm (Elsevier Researcher Academy | 9 October 2026) Tj ET
+0.12 0.18 0.26 rg BT /F2 8.80 Tf 1 0 0 1 46.00 375.40 Tm (Certified Peer Reviewer Course) Tj ET
+0.38 0.43 0.50 rg BT /F1 8.10 Tf 1 0 0 1 46.00 362.40 Tm (Elsevier Researcher Academy | 9 October 2026) Tj ET
+0.12 0.18 0.26 rg BT /F2 8.80 Tf 1 0 0 1 46.00 347.30 Tm (Research Integrity: Publication Ethics) Tj ET
+0.38 0.43 0.50 rg BT /F1 8.10 Tf 1 0 0 1 46.00 334.30 Tm (Nature Masterclasses | 12 August 2026) Tj ET
+0.12 0.18 0.26 rg BT /F2 8.80 Tf 1 0 0 1 46.00 319.20 Tm (Focus on Peer Review) Tj ET
+0.38 0.43 0.50 rg BT /F1 8.10 Tf 1 0 0 1 46.00 306.20 Tm (Nature Masterclasses | 12 August 2026) Tj ET
+0.07 0.16 0.28 rg BT /F2 10.40 Tf 1 0 0 1 46.00 282.10 Tm (PROFESSIONAL ACADEMIC PROFILES) Tj ET
+0.79 0.84 0.88 RG 0.80 w 46.00 275.10 m 549.00 275.10 l S
+0.10 0.38 0.61 rg BT /F2 8.90 Tf 1 0 0 1 46.00 258.10 Tm (ORCID) Tj ET
+0.10 0.38 0.61 RG 0.45 w 46.00 256.10 m 70.03 256.10 l S
+0.10 0.38 0.61 rg BT /F2 8.90 Tf 1 0 0 1 306.50 258.10 Tm (Google Scholar) Tj ET
+0.10 0.38 0.61 RG 0.45 w 306.50 256.10 m 368.09 256.10 l S
+0.10 0.38 0.61 rg BT /F2 8.90 Tf 1 0 0 1 46.00 236.10 Tm (Scopus) Tj ET
+0.10 0.38 0.61 RG 0.45 w 46.00 234.10 m 75.90 234.10 l S
+0.10 0.38 0.61 rg BT /F2 8.90 Tf 1 0 0 1 306.50 236.10 Tm (Web of Science) Tj ET
+0.10 0.38 0.61 RG 0.45 w 306.50 234.10 m 369.69 234.10 l S
+0.10 0.38 0.61 rg BT /F2 8.90 Tf 1 0 0 1 46.00 214.10 Tm (ResearchGate) Tj ET
+0.10 0.38 0.61 RG 0.45 w 46.00 212.10 m 105.81 212.10 l S
+0.10 0.38 0.61 rg BT /F2 8.90 Tf 1 0 0 1 306.50 214.10 Tm (GitHub) Tj ET
+0.10 0.38 0.61 RG 0.45 w 306.50 212.10 m 334.27 212.10 l S
+0.07 0.16 0.28 rg BT /F2 10.40 Tf 1 0 0 1 46.00 169.10 Tm (PORTFOLIO & CONTACT) Tj ET
+0.79 0.84 0.88 RG 0.80 w 46.00 162.10 m 549.00 162.10 l S
+0.10 0.38 0.61 rg BT /F2 9.10 Tf 1 0 0 1 46.00 145.10 Tm (beingrazuahmed.github.io) Tj ET
+0.10 0.38 0.61 RG 0.45 w 46.00 143.10 m 152.47 143.10 l S
+0.10 0.38 0.61 rg BT /F2 8.70 Tf 1 0 0 1 276.00 145.10 Tm (Email: razuahmed038@gmail.com) Tj ET
+0.10 0.38 0.61 RG 0.45 w 276.00 143.10 m 399.11 143.10 l S
+0.38 0.43 0.50 rg BT /F1 8.20 Tf 1 0 0 1 46.00 118.10 Tm (Prepared from the publicly documented portfolio record. Source dates and manuscript statuses reflect the latest verified portfolio) Tj ET
+0.38 0.43 0.50 rg BT /F1 8.20 Tf 1 0 0 1 46.00 105.90 Tm (update. Confidential reviewer reports, editorial correspondence and manuscript identifiers are excluded.) Tj ET
+0.79 0.84 0.88 rg 46.00 47.00 503.00 0.55 re f
+0.38 0.43 0.50 rg BT /F1 7.65 Tf 1 0 0 1 46.00 34.00 Tm (MD. RAZU AHMED  |  ACADEMIC CV  |  18 November 2026) Tj ET
+0.38 0.43 0.50 rg BT /F2 7.65 Tf 1 0 0 1 535.46 34.00 Tm (1 / 3) Tj ET
+0.79 0.84 0.88 rg 46.00 47.00 503.00 0.55 re f
+0.38 0.43 0.50 rg BT /F1 7.65 Tf 1 0 0 1 46.00 34.00 Tm (MD. RAZU AHMED  |  ACADEMIC CV  |  18 November 2026) Tj ET
+0.38 0.43 0.50 rg BT /F2 7.65 Tf 1 0 0 1 533.47 34.00 Tm (2 / 3) Tj ET
+0.79 0.84 0.88 rg 46.00 47.00 503.00 0.55 re f
+0.38 0.43 0.50 rg BT /F1 7.65 Tf 1 0 0 1 46.00 34.00 Tm (MD. RAZU AHMED  |  ACADEMIC CV  |  18 November 2026) Tj ET
+0.38 0.43 0.50 rg BT /F2 7.65 Tf 1 0 0 1 533.47 34.00 Tm (3 / 3) Tj ET
 endstream
 endobj
+16 0 obj
+<< /Type /Annot /Subtype /Link /Rect [477.36 661.00 551.00 675.00] /Border [0 0 0] /A << /S /URI /URI (https://beingrazuahmed.github.io/gallery.html#bspc-reviewing-certificate-2026) >> >>
+endobj
+17 0 obj
+<< /Type /Annot /Subtype /Link /Rect [477.36 626.00 551.00 640.00] /Border [0 0 0] /A << /S /URI /URI (https://beingrazuahmed.github.io/gallery.html#eaai-reviewing-certificate-2026) >> >>
+endobj
+18 0 obj
+<< /Type /Annot /Subtype /Link /Rect [477.36 591.00 551.00 605.00] /Border [0 0 0] /A << /S /URI /URI (https://beingrazuahmed.github.io/gallery.html#array-reviewing-certificate-2026) >> >>
+endobj
+19 0 obj
+<< /Type /Annot /Subtype /Link /Rect [477.36 556.00 551.00 570.00] /Border [0 0 0] /A << /S /URI /URI (https://beingrazuahmed.github.io/gallery.html#data-in-brief-reviewing-certificate-2026) >> >>
+endobj
+20 0 obj
+<< /Type /Annot /Subtype /Link /Rect [45.00 455.50 119.21 469.80] /Border [0 0 0] /A << /S /URI /URI (https://beingrazuahmed.github.io/gallery.html#icasds-2025-jsr-award-certificate) >> >>
+endobj
+21 0 obj
+<< /Type /Annot /Subtype /Link /Rect [45.00 255.10 72.03 270.00] /Border [0 0 0] /A << /S /URI /URI (https://orcid.org/0009-0001-8646-1881) >> >>
+endobj
+22 0 obj
+<< /Type /Annot /Subtype /Link /Rect [305.50 255.10 370.09 270.00] /Border [0 0 0] /A << /S /URI /URI (https://scholar.google.com/citations?hl=en&user=70z0eXEAAAAJ) >> >>
+endobj
+23 0 obj
+<< /Type /Annot /Subtype /Link /Rect [45.00 233.10 77.90 248.00] /Border [0 0 0] /A << /S /URI /URI (https://www.scopus.com/authid/detail.uri?authorId=60265043700) >> >>
+endobj
+24 0 obj
+<< /Type /Annot /Subtype /Link /Rect [305.50 233.10 371.69 248.00] /Border [0 0 0] /A << /S /URI /URI (https://www.webofscience.com/wos/author/record/PFQ-8088-2025) >> >>
+endobj
+25 0 obj
+<< /Type /Annot /Subtype /Link /Rect [45.00 211.10 107.81 226.00] /Border [0 0 0] /A << /S /URI /URI (https://www.researchgate.net/profile/Md-Razu-Ahmed-3) >> >>
+endobj
+26 0 obj
+<< /Type /Annot /Subtype /Link /Rect [305.50 211.10 336.27 226.00] /Border [0 0 0] /A << /S /URI /URI (https://github.com/beingrazuahmed) >> >>
+endobj
+27 0 obj
+<< /Type /Annot /Subtype /Link /Rect [45.00 142.10 154.47 157.20] /Border [0 0 0] /A << /S /URI /URI (https://beingrazuahmed.github.io/) >> >>
+endobj
+28 0 obj
+<< /Type /Annot /Subtype /Link /Rect [275.00 142.10 401.11 156.80] /Border [0 0 0] /A << /S /URI /URI (mailto:razuahmed038@gmail.com) >> >>
+endobj
+29 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 15 0 R /Annots [16 0 R 17 0 R 18 0 R 19 0 R 20 0 R 21 0 R 22 0 R 23 0 R 24 0 R 25 0 R 26 0 R 27 0 R 28 0 R] >>
+endobj
+30 0 obj
+<< /Title (Academic Curriculum Vitae - Md. Razu Ahmed) /Author (Md. Razu Ahmed) /Subject (Research academic CV - published portfolio record) /Creator (MRA Portfolio CV Generator) >>
+endobj
 xref
-0 12
+0 31
 0000000000 65535 f 
-0000000015 00000 n 
-0000000064 00000 n 
-0000000136 00000 n 
-0000000206 00000 n 
-0000000281 00000 n 
-0000000359 00000 n 
-0000000505 00000 n 
-0000005450 00000 n 
-0000005596 00000 n 
-0000011543 00000 n 
-0000011691 00000 n 
+0000000017 00000 n 
+0000000089 00000 n 
+0000000160 00000 n 
+0000000230 00000 n 
+0000000305 00000 n 
+0000000383 00000 n 
+0000006937 00000 n 
+0000007090 00000 n 
+0000022021 00000 n 
+0000022180 00000 n 
+0000022346 00000 n 
+0000022513 00000 n 
+0000022681 00000 n 
+0000022844 00000 n 
+0000023041 00000 n 
+0000029739 00000 n 
+0000029943 00000 n 
+0000030147 00000 n 
+0000030352 00000 n 
+0000030565 00000 n 
+0000030770 00000 n 
+0000030932 00000 n 
+0000031119 00000 n 
+0000031305 00000 n 
+0000031492 00000 n 
+0000031670 00000 n 
+0000031830 00000 n 
+0000031989 00000 n 
+0000032145 00000 n 
+0000032400 00000 n 
 trailer
-<< /Size 12 /Root 1 0 R >>
+<< /Size 31 /Root 1 0 R /Info 30 0 R >>
 startxref
-12894
+32598
 %%EOF
