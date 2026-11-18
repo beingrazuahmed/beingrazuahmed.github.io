@@ -15,92 +15,142 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
 endobj
 6 0 obj
-<< /Length 5027 >>
+<< /Length 6378 >>
 stream
-0.12 0.17 0.23 rg
-BT /F2 17 Tf 49 795.0 Td (MD. RAZU AHMED) Tj ET
-BT /F2 9.8 Tf 49 769.0 Td (Statistician | Data Analyst | Researcher | University Lecturer) Tj ET
-BT /F1 9 Tf 49 754.8 Td (Bangladesh | +880 1737-356693 | razuahmed038@gmail.com) Tj ET
-BT /F1 9 Tf 49 739.4 Td (Portfolio: https://beingrazuahmed.github.io/ | LinkedIn: https://www.linkedin.com/in/beingrazuahmed/) Tj ET
-BT /F1 9 Tf 49 724.0 Td (Google Scholar: https://scholar.google.com/citations?user=70z0eXEAAAAJ | ORCID:) Tj ET
-BT /F1 9 Tf 49 710.6 Td (https://orcid.org/0009-0001-8646-1881) Tj ET
-BT /F2 10.6 Tf 49 688.2 Td (PROFESSIONAL SUMMARY) Tj ET
-BT /F1 9 Tf 49 671.6 Td (Statistician, university mathematics lecturer and interdisciplinary researcher with B.Sc. \(Hons.\) and M.S.) Tj ET
-BT /F1 9 Tf 49 658.2 Td (degrees in Statistics. Experienced in applied statistics, machine learning, explainable AI, public-health) Tj ET
-BT /F1 9 Tf 49 644.8 Td (forecasting, biomedical analytics, research design, manuscript development and reproducible Python and R) Tj ET
-BT /F1 9 Tf 49 631.4 Td (research workflows. Four published peer-reviewed journal articles, one accepted/forthcoming article, eight) Tj ET
-BT /F1 9 Tf 49 618.0 Td (conference contributions, one public research dataset and 50 completed invited reviews across five) Tj ET
-BT /F1 9 Tf 49 604.6 Td (journals.) Tj ET
-BT /F2 10.6 Tf 49 582.2 Td (CORE SKILLS) Tj ET
-BT /F1 9 Tf 49 565.6 Td (- Statistical modelling: regression, hypothesis testing, sampling and survey methods,) Tj ET
-BT /F1 9 Tf 60 552.2 Td (multivariate analysis, missing-data imputation, time-series forecasting, cross-validation and) Tj ET
-BT /F1 9 Tf 60 538.8 Td (calibration.) Tj ET
-BT /F1 9 Tf 49 525.4 Td (- Programming and analytics: Python, R, Jupyter, Git, GitHub, Flask, Pandas, NumPy, SciPy,) Tj ET
-BT /F1 9 Tf 60 512.0 Td (scikit-learn, Statsmodels, XGBoost and SHAP.) Tj ET
-BT /F1 9 Tf 49 498.6 Td (- Machine learning and AI: classification, regression, tree-based ensembles, feature selection,) Tj ET
-BT /F1 9 Tf 60 485.2 Td (deep learning, medical image analysis, YOLO, RT-DETR and Grad-CAM++.) Tj ET
-BT /F1 9 Tf 49 471.8 Td (- Visualization and software: Matplotlib, Seaborn, OpenCV, SPSS, Minitab, Microsoft Excel,) Tj ET
-BT /F1 9 Tf 60 458.4 Td (Microsoft Office and Google Workspace.) Tj ET
-BT /F2 10.6 Tf 49 438.0 Td (PROFESSIONAL EXPERIENCE) Tj ET
-BT /F2 9.5 Tf 49 418.4 Td (Part-Time Lecturer \(Mathematics\) | Lalon University of Science and Arts \(LUSA\), Bangladesh | Current) Tj ET
-BT /F1 9 Tf 49 404.5 Td (- Teach Probability and Statistics, Differential and Integral Calculus and Coordinate Geometry;) Tj ET
-BT /F1 9 Tf 60 391.1 Td (develop course materials and support undergraduate learning.) Tj ET
-BT /F1 9 Tf 49 377.7 Td (- Prepare Algebra question papers, assess scripts and explain mathematical and statistical) Tj ET
-BT /F1 9 Tf 60 364.3 Td (methods.) Tj ET
-BT /F2 9.5 Tf 49 347.9 Td (Research Assistant | Deep Statistical Learning and Research \(DSLR\) Lab, PUST | May 2023 - Present) Tj ET
-BT /F1 9 Tf 49 334.0 Td (- Develop reproducible workflows for data preparation, imputation, statistical analysis,) Tj ET
-BT /F1 9 Tf 60 320.6 Td (machine-learning model development, leakage-safe validation and scientific reporting.) Tj ET
-BT /F1 9 Tf 49 307.2 Td (- Contribute to projects spanning dengue forecasting, biomedical imaging, chronic disease, signal) Tj ET
-BT /F1 9 Tf 60 293.8 Td (processing and AI-enabled food computing.) Tj ET
-BT /F1 9 Tf 49 280.4 Td (- Appointments: Undergraduate Research Assistant \(May 2023-Nov 2024\); Graduate Research Assistant) Tj ET
-BT /F1 9 Tf 60 267.0 Td (\(Nov 2024-May 2026\); Research Assistant \(May 2026-present\).) Tj ET
-BT /F2 9.5 Tf 49 250.6 Td (Research Assistant | International Research Collaboration Bangladesh | Apr 2026 - Jul 2026) Tj ET
-BT /F1 9 Tf 49 236.7 Td (- Supported research coordination, data validation, statistical analysis, literature review,) Tj ET
-BT /F1 9 Tf 60 223.3 Td (scientific documentation and manuscripts.) Tj ET
-BT /F2 9.5 Tf 49 206.9 Td (Part-Time Mathematics Instructor | Pabna Cadet College, Bangladesh | Previous appointment) Tj ET
-BT /F1 9 Tf 49 193.0 Td (- Taught mathematics, assisted students and prepared academic assessments.) Tj ET
-BT /F2 10.6 Tf 49 172.6 Td (SELECTED RESEARCH PROJECTS) Tj ET
-BT /F1 9 Tf 49 156.0 Td (- Nationwide dengue forecasting: Co-authored BMC Public Health research comparing one-week-ahead) Tj ET
-BT /F1 9 Tf 60 142.6 Td (hospital admission forecasts across all 64 districts of Bangladesh \(2022-2025\).) Tj ET
-BT /F1 9 Tf 49 129.2 Td (- Diabetic retinopathy: Combined deep learning and handcrafted features with explainable AI and) Tj ET
-BT /F1 9 Tf 60 115.8 Td (leakage-safe evaluation.) Tj ET
-BT /F1 9 Tf 49 102.4 Td (- CKD prediction and FastICA audio separation: Authored peer-reviewed statistical) Tj ET
-BT /F1 9 Tf 60 89.0 Td (machine-learning and signal-processing research.) Tj ET
-0.42 0.47 0.52 rg
-BT /F1 7.5 Tf 49 34 Td (Md. Razu Ahmed | 18 Nov 2026 | Page 1 of 2) Tj ET
+0.08 0.23 0.37 rg
+BT /F2 17.5 Tf 44 793.00 Td (Md. Razu Ahmed) Tj ET
+0.13 0.2 0.3 rg
+BT /F2 9.8 Tf 44 769.80 Td (Statistician | Data Scientist | Researcher | Peer Reviewer) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 8.6 Tf 44 756.30 Td (Bangladesh | +880 1737-356693 | razuahmed038@gmail.com) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 8.6 Tf 44 742.60 Td (Portfolio: https://beingrazuahmed.github.io/ | ORCID: https://orcid.org/0009-0001-8646-1881) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 8.6 Tf 44 728.90 Td (Google Scholar: https://scholar.google.com/citations?user=70z0eXEAAAAJ | LinkedIn:) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 8.6 Tf 44 716.60 Td (https://www.linkedin.com/in/beingrazuahmed/) Tj ET
+0.08 0.23 0.37 rg
+BT /F2 10.5 Tf 44 693.90 Td (PROFESSIONAL SUMMARY) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 676.70 Td (Statistician, data scientist and interdisciplinary researcher holding B.Sc. \(Honours\) and M.S. degrees in) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 663.85 Td (Statistics from Pabna University of Science and Technology \(PUST\), Bangladesh. Research experience spans) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 651.00 Td (statistical modelling, machine learning, explainable AI, public-health analytics, biomedical data science,) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 638.15 Td (and reproducible validation. Co-author of four published journal articles, one accepted/forthcoming article,) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 625.30 Td (eight conference contributions and a public research dataset. Completed 50 invited manuscript reviews across) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 612.45 Td (five journals.) Tj ET
+0.08 0.23 0.37 rg
+BT /F2 10.5 Tf 44 589.20 Td (CORE ANALYTICAL AND TECHNICAL SKILLS) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 572.00 Td (- Statistics and research: regression, hypothesis testing, multivariate analysis, survey methods,) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 56 559.15 Td (sampling, survey-weighted modelling, time-series forecasting and missing-data handling.) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 544.90 Td (- Machine learning and validation: classification, regression, ensemble and stacking models,) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 56 532.05 Td (XGBoost, model calibration, feature selection, leakage-aware cross-validation and SHAP.) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 517.80 Td (- Programming and software: Python, R, Jupyter Notebook, Git/GitHub, Pandas, NumPy, SciPy,) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 56 504.95 Td (scikit-learn, Statsmodels, SPSS, Minitab, Microsoft Excel, Flask and scientific visualization.) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 490.70 Td (- Applied AI: deep learning, medical-image analysis, feature fusion, computer vision, YOLO,) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 56 477.85 Td (RT-DETR, Grad-CAM++, FastICA and natural-language processing.) Tj ET
+0.08 0.23 0.37 rg
+BT /F2 10.5 Tf 44 454.60 Td (RESEARCH EXPERIENCE) Tj ET
+0.13 0.18 0.24 rg
+BT /F2 9.2 Tf 44 433.40 Td (Research Assistant | Deep Statistical Learning and Research \(DSLR\) Lab, PUST | 13 May 2023 - Present) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 418.50 Td (- Current Research Assistant since 14 May 2026; previously Graduate Research Assistant \(17) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 56 405.65 Td (November 2024 - 13 May 2026\) and Undergraduate Research Assistant \(13 May 2023 - 9 November 2024\).) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 391.40 Td (- Develop statistical and machine-learning workflows, including data cleaning, feature) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 56 378.55 Td (engineering, modelling, leak-safe validation, interpretation, reproducible code and) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 56 365.70 Td (publication-quality reporting.) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 351.45 Td (- Contribute to public-health forecasting, biomedical research, medical-image analysis, signal) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 56 338.60 Td (processing and AI-driven computer vision.) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 324.35 Td (- Collaborate on manuscripts, scientific figures, datasets, conference contributions and an) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 56 311.50 Td (interactive Flask-based diabetic-retinopathy research prototype.) Tj ET
+0.13 0.18 0.24 rg
+BT /F2 9.2 Tf 44 293.25 Td (Research Assistant | International Research Collaboration Bangladesh \(IRCB\) | 20 April - 3 July 2026) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 278.35 Td (- Supported collaborative research planning, data organization and validation, methodological) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 56 265.50 Td (discussions, project coordination, manuscript development and stakeholder communication.) Tj ET
+0.08 0.23 0.37 rg
+BT /F2 10.5 Tf 44 242.25 Td (EDUCATION) Tj ET
+0.13 0.18 0.24 rg
+BT /F2 9.2 Tf 44 221.05 Td (M.S. in Statistics | Pabna University of Science and Technology | CGPA 3.49/4.00) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 206.15 Td (Exam year 2022 \(examination held in 2025\); fifth in the M.S. project-based track. Graduate project: deep) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 193.30 Td (learning and handcrafted feature fusion for diabetic-retinopathy grading.) Tj ET
+0.13 0.18 0.24 rg
+BT /F2 9.2 Tf 44 175.05 Td (B.Sc. \(Honours\) in Statistics | Pabna University of Science and Technology | CGPA 2.87/4.00) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 160.15 Td (Exam year 2021 \(examination held in 2024\). Undergraduate project: statistical audio-source separation with) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 147.30 Td (FastICA; completed statistical field survey on AI and employment.) Tj ET
+0.08 0.23 0.37 rg
+BT /F2 10.5 Tf 44 124.05 Td (SELECTED PUBLICATIONS AND RESEARCH OUTPUT) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 106.85 Td (- Haque, M. Z., Ahmed, M. R., et al. \(2026\). Nationwide one-week-ahead dengue hospital-admission) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 56 94.00 Td (forecasting in Bangladesh. BMC Public Health. doi:10.1186/s12889-026-30204-3.) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 79.75 Td (- Ahmed, M. R., Mauya, J., Reza, M. S., and Amin, R. \(2026\). Sophisticated Audio Source Separation) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 56 66.90 Td (with FastICA. Engineering Reports, 8\(1\), e70575. doi:10.1002/eng2.70575.) Tj ET
+0.34 0.40 0.44 rg
+BT /F1 7.5 Tf 44 35 Td (Md. Razu Ahmed - 18 November 2026 - Page 1 of 2) Tj ET
 endstream
 endobj
 7 0 obj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
 endobj
 8 0 obj
-<< /Length 2460 >>
+<< /Length 1787 >>
 stream
-0.12 0.17 0.23 rg
-BT /F2 10.6 Tf 49 795.0 Td (EDUCATION) Tj ET
-BT /F1 9 Tf 49 778.4 Td (M.S. in Statistics | Pabna University of Science and Technology \(PUST\), Bangladesh | CGPA 3.49/4.00 |) Tj ET
-BT /F1 9 Tf 49 765.0 Td (Examination held 2025.) Tj ET
-BT /F1 9 Tf 49 749.6 Td (B.Sc. \(Hons.\) in Statistics | PUST, Bangladesh | CGPA 2.87/4.00 | Examination held 2024.) Tj ET
-BT /F2 10.6 Tf 49 727.2 Td (SELECTED PUBLICATIONS) Tj ET
-BT /F1 9 Tf 49 710.6 Td (- Haque, M. Z., Ahmed, M. R., et al. \(2026\). Nationwide dengue forecasting across Bangladesh. BMC) Tj ET
-BT /F1 9 Tf 60 697.2 Td (Public Health. https://doi.org/10.1186/s12889-026-30204-3) Tj ET
-BT /F1 9 Tf 49 683.8 Td (- Ahmed, M. R., et al. \(2026\). Sophisticated Audio Source Separation with FastICA. Engineering) Tj ET
-BT /F1 9 Tf 60 670.4 Td (Reports, 8\(1\), e70575. https://doi.org/10.1002/eng2.70575) Tj ET
-BT /F1 9 Tf 49 657.0 Td (- Yeasmin, M., Ahmed, M. R., et al. \(2026\). PUST Cafeteria Food Image Dataset. Data in Brief, 69,) Tj ET
-BT /F1 9 Tf 60 643.6 Td (113262. https://doi.org/10.1016/j.dib.2026.113262) Tj ET
-BT /F1 9 Tf 49 630.2 Td (- Ahmed, M. R., et al. \(2025\). CKD prediction using a stacking machine-learning algorithm.) Tj ET
-BT /F1 9 Tf 60 616.8 Td (International Journal of Statistical Sciences, 25\(2\), 1-32.) Tj ET
-BT /F1 9 Tf 60 603.4 Td (https://doi.org/10.3329/ijss.v25i2.85732) Tj ET
-BT /F1 9 Tf 49 590.0 Td (Accepted/forthcoming: Perceptions of Artificial Intelligence and Its Implications for Employment in) Tj ET
-BT /F1 9 Tf 49 576.6 Td (Bangladesh. International Journal of Statistical Sciences \(accepted 2026\).) Tj ET
-BT /F1 9 Tf 49 561.2 Td (Public dataset: PUST Cafeteria Food Image Dataset, Mendeley Data V2. https://doi.org/10.17632/fn6yhzjz83.2) Tj ET
-BT /F2 10.6 Tf 49 538.8 Td (SCHOLARLY SERVICE AND RECOGNITION) Tj ET
-BT /F1 9 Tf 49 522.2 Td (50 completed invited manuscript reviews \(18 Nov 2026\): PLOS ONE 25; Biomedical Signal Processing and) Tj ET
-BT /F1 9 Tf 49 508.8 Td (Control 17; Engineering Applications of Artificial Intelligence 4; Array 3; Data in Brief 1.) Tj ET
-BT /F1 9 Tf 49 493.4 Td (Eight conference contributions; three delivered presentations; Journal of Statistical Research Award for) Tj ET
-BT /F1 9 Tf 49 480.0 Td (Poster Competition \(2025\); Nature Masterclasses training in peer review and publication ethics \(2026\).) Tj ET
-0.42 0.47 0.52 rg
-BT /F1 7.5 Tf 49 34 Td (Md. Razu Ahmed | 18 Nov 2026 | Page 2 of 2) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 793.00 Td (- Ahmed, M. R., Rakib, M. A., Shiddik, A. B., and Reza, M. S. \(2025\). Chronic kidney disease risk) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 56 780.15 Td (factors and stacking ML prediction. International Journal of Statistical Sciences, 25\(2\), 1-32.) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 56 767.30 Td (doi:10.3329/ijss.v25i2.85732.) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 753.05 Td (- Yeasmin, M., Ahmed, M. R., et al. \(2026\). PUST Cafeteria Food Image Dataset. Data in Brief, 69,) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 56 740.20 Td (113262. doi:10.1016/j.dib.2026.113262.) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 725.95 Td (Additional output: accepted/forthcoming article on AI and employment in Bangladesh \(International Journal of) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 713.10 Td (Statistical Sciences, 2026\); 8 conference contributions and Mendeley Data V2 food-image dataset) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 700.25 Td (\(doi:10.17632/fn6yhzjz83.2\).) Tj ET
+0.08 0.23 0.37 rg
+BT /F2 10.5 Tf 44 677.00 Td (SCHOLARLY SERVICE AND RECOGNITION) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 659.80 Td (50 completed invited manuscript reviews: PLOS ONE \(25\); Biomedical Signal Processing and Control \(17\);) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 646.95 Td (Engineering Applications of Artificial Intelligence \(4\); Array \(3\); Data in Brief \(1\). Journal of Statistical) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 634.10 Td (Research Award for Poster Competition \(2025\); Nature Masterclasses training in peer review and research) Tj ET
+0.13 0.18 0.24 rg
+BT /F1 9.15 Tf 44 621.25 Td (integrity \(2026\).) Tj ET
+0.34 0.40 0.44 rg
+BT /F1 7.5 Tf 44 35 Td (Md. Razu Ahmed - 18 November 2026 - Page 2 of 2) Tj ET
 endstream
 endobj
 xref
@@ -112,10 +162,10 @@ xref
 0000000191 00000 n 
 0000000266 00000 n 
 0000000402 00000 n 
-0000005480 00000 n 
-0000005616 00000 n 
+0000006831 00000 n 
+0000006967 00000 n 
 trailer
 << /Size 9 /Root 1 0 R >>
 startxref
-8127
+8805
 %%EOF
