@@ -49,8 +49,8 @@ module.exports = function buildAcademicCvPdf(D){
  if(ircb)row("Research Assistant | International Research Collaboration Bangladesh",ircb.period||"20 April - 3 July 2026","Research coordination, methodological support, research data management and manuscript preparation.");
  section("Research focus");
  twoCols("Methods","Statistical learning; machine and deep learning; multivariate analysis; time-series forecasting; explainable AI; causal inference; leak-safe model evaluation.","Applications","Public health; biomedical data science; infectious-disease surveillance; medical imaging; computer vision; bioinformatics; intelligent food systems.");
- section("Computational skills");
- twoCols("Programming & modelling","Python, R, pandas, NumPy, scikit-learn, XGBoost, TensorFlow/Keras, SHAP, Git, Jupyter.","Statistics & communication","SPSS, Minitab, regression, sampling, study design, reproducible analysis, publication-quality reporting.");
+ space(9);
+ drawWrapped("Computational toolkit: Python, R, pandas, NumPy, scikit-learn, XGBoost, TensorFlow/Keras, SHAP, Git, Jupyter, SPSS and Minitab. Statistical modelling, sampling, reproducible analysis and scientific reporting.",{size:8.65,leading:12.15,color:C.muted,gap:3});
  // Page 2: bibliographic output
  newPage(false);
  section("Peer-reviewed journal articles",`${published.length} published / online`);
