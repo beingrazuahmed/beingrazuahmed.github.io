@@ -1,73 +1,11 @@
 name: Refresh EAAI Certificate Preview
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/refresh-eaai-preview.yml'
-      - 'assets/recognition/eaai-reviewing-certificate-2026.pdf'
   workflow_dispatch:
 
 permissions:
-  contents: write
-
+  contents: read
 jobs:
-  render-certificate:
+  certificate-refresh:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Validate portfolio JavaScript
-        run: |
-          node --check data.js
-          node --check v2-data.js
-          node --check v2-app.js
-          node --check script.js
-      - name: Render updated PDF certificate
-        shell: bash
-        run: |
-          set -euo pipefail
-          if ! command -v pdftoppm >/dev/null; then
-            sudo apt-get update -qq
-            sudo apt-get install -y poppler-utils
-          fi
-          pdfinfo assets/recognition/eaai-reviewing-certificate-2026.pdf | grep -E '^(Pages|Page size|File size):'
-          pdftotext assets/recognition/eaai-reviewing-certificate-2026.pdf /tmp/eaai-text.txt
-          if grep -Eiq '(^|[^0-9])4([^0-9]|$)|four' /tmp/eaai-text.txt; then
-            echo "Updated PDF includes the value 4 / four."
-          else
-            echo "::warning::4 was not found in extracted text; visually inspect the certificate if necessary."
-          fi
-          pdftoppm -f 1 -singlefile -r 165 -png assets/recognition/eaai-reviewing-certificate-2026.pdf /tmp/eaai-latest
-          python3 -m venv /tmp/eaai-render-venv
-          /tmp/eaai-render-venv/bin/pip install -q pillow
-          /tmp/eaai-render-venv/bin/python - <<'PY'
-          from PIL import Image
-          from pathlib import Path
-          source = Path('/tmp/eaai-latest.png')
-          target = Path('assets/gallery/eaai-reviewing-certificate-2026.webp')
-          im = Image.open(source).convert('RGB')
-          im.save(target, 'WEBP', quality=91, method=6)
-          assert target.stat().st_size > 10000
-          print('EAAI certificate preview updated:', im.size, target.stat().st_size, 'bytes')
-          PY
-      - name: Verify certificate assets are registered
-        shell: bash
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          manifest = Path('asset-manifest.json').read_text(encoding='utf-8')
-          for path in ('assets/gallery/eaai-reviewing-certificate-2026.webp',
-                       'assets/recognition/eaai-reviewing-certificate-2026.pdf'):
-              assert Path(path).is_file(), f'Missing EAAI asset: {path}'
-              assert '"'+path+'"' in manifest, f'Missing EAAI asset manifest entry: {path}'
-          print('Replacement certificate PDF and refreshed WebP are registered.')
-          PY
-      - name: Commit authentic preview generated from the replacement PDF
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add 'assets/gallery/eaai-reviewing-certificate-2026.webp'
-          if ! git diff --cached --quiet; then
-            git diff --cached --check
-            git commit -m "Refresh EAAI 4-review certificate preview"
-            git push origin HEAD:main
-          fi
+      - run: echo "Both BSPC and EAAI previews are refreshed together by the Refresh BSPC Certificate Preview workflow when either source PDF changes. Run that workflow for a manual refresh."

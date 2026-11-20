@@ -6,63 +6,74 @@ on:
     paths:
       - '.github/workflows/refresh-bspc-preview.yml'
       - 'assets/recognition/bspc-reviewing-certificate-2026.pdf'
+      - 'assets/recognition/eaai-reviewing-certificate-2026.pdf'
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: bspc-preview-main
+  group: review-certificate-previews-main
   cancel-in-progress: false
 
 jobs:
-  refresh-preview:
+  refresh-previews:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Validate source certificate and prepare preview
+        with:
+          fetch-depth: 0
+      - name: Verify replacement certificates and render both previews
         shell: bash
         run: |
           set -euo pipefail
-          pdf=assets/recognition/bspc-reviewing-certificate-2026.pdf
-          test -s "$pdf"
-          if ! command -v pdfinfo >/dev/null || ! command -v pdftoppm >/dev/null; then
+          if ! command -v pdftoppm >/dev/null; then
             sudo apt-get update -qq
             sudo apt-get install -y poppler-utils
           fi
-          pdfinfo "$pdf" | grep -E '^(Pages|Page size|File size):'
-          pdftotext "$pdf" /tmp/bspc-certificate.txt
-          if grep -Eiq '(^|[^0-9])17([^0-9]|$)|seventeen' /tmp/bspc-certificate.txt; then
-            echo "Confirmed 17 reviews in extractable BSPC certificate text."
-          else
-            echo "::warning::Count 17 is not extractable from the uploaded BSPC PDF. Please visually verify the original certificate."
-          fi
-          pdftoppm -f 1 -singlefile -r 165 -png "$pdf" /tmp/bspc-latest
-          python3 -m venv /tmp/bspc-render
-          /tmp/bspc-render/bin/python -m pip install -q pillow
-          /tmp/bspc-render/bin/python - <<'PY'
+          python3 -m venv /tmp/review-preview
+          /tmp/review-preview/bin/pip install -q pillow
+          for journal in bspc eaai; do
+            pdf="assets/recognition/${journal}-reviewing-certificate-2026.pdf"
+            test -s "$pdf"
+            pdfinfo "$pdf" | grep -E '^(Pages|Page size|File size):'
+            pdftotext -layout "$pdf" "/tmp/${journal}-certificate.txt"
+            cat "/tmp/${journal}-certificate.txt"
+            pdftoppm -f 1 -singlefile -r 165 -png "$pdf" "/tmp/${journal}-certificate"
+          done
+          /tmp/review-preview/bin/python - <<'PY'
           from pathlib import Path
+          import re
           from PIL import Image
-          image=Image.open('/tmp/bspc-latest.png').convert('RGB')
-          output=Path('assets/gallery/bspc-reviewing-certificate-2026.webp')
-          image.save(output,'WEBP',quality=91,method=6)
-          assert output.stat().st_size > 10000, "Rendered certificate is unexpectedly small"
-          print('BSPC certificate preview:',image.size,output.stat().st_size,'bytes')
+          for journal, count, word in [('bspc',18,'eighteen'),('eaai',6,'six')]:
+              txt=Path(f'/tmp/{journal}-certificate.txt').read_text()
+              assert re.search(r'Razu\s+Ahmed',txt,re.I), f'{journal}: recipient not found'
+              assert re.search(rf'\b(?:{count}|{word})\b',txt,re.I), f'{journal}: expected {count} not found'
+              output=Path(f'assets/gallery/{journal}-reviewing-certificate-2026.webp')
+              Image.open(f'/tmp/{journal}-certificate.png').convert('RGB').save(output,'WEBP',quality=91,method=6)
+              assert output.stat().st_size > 10000
+              print(f'{journal.upper()}: verified {count} reviews; preview {output.stat().st_size} bytes')
           PY
-
-      - name: Publish updated visual certificate without rewriting site content
+      - name: Publish the two previews and refresh cache references
         shell: bash
         run: |
           set -euo pipefail
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          for p in Path('.').glob('*.html'):
+              s=p.read_text(encoding='utf-8')
+              n=re.sub(r'(?<![\w-])(data|extra-data)\.js\?v=[\w.-]+',r'\1.js?v=20261120-certificates18-6',s)
+              if n!=s: p.write_text(n,encoding='utf-8')
+          PY
+          node scripts/portfolio.mjs check
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/gallery/bspc-reviewing-certificate-2026.webp
+          git add assets/gallery/bspc-reviewing-certificate-2026.webp assets/gallery/eaai-reviewing-certificate-2026.webp
+          git add -- '*.html'
           if ! git diff --cached --quiet; then
             git diff --cached --check
-            git commit -m 'Refresh preview of BSPC Certificate of Reviewing'
+            git commit -m 'Refresh verified BSPC 18 and EAAI 6 certificate previews'
             git pull --rebase origin main
             git push origin HEAD:main
-          else
-            echo 'BSPC certificate preview is already up to date.'
           fi

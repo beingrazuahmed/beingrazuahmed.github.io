@@ -121,9 +121,12 @@ async function main(){
   const eaaiReview=service.find(r=>r.id==="eaai");
   assert(eaaiReview,"EAAI reviewer record must exist");
   assert.equal(eaaiReview.reviews,6,"EAAI must show 6 reviews");
-  assert(eaaiReview.recognition.includes("4 completed reviews"));
-  assert(eaaiReview.evidencePdf.includes("20261108-eaai4-certificate"));
-  assert(eaaiReview.evidenceAsset.includes("20261108-eaai4-certificate"));
+  assert(eaaiReview.recognition.includes("6 completed reviews"));
+  assert(bspcReview.recognition.includes('18 completed reviews'));
+  assert(bspcReview.evidencePdf.includes('bspc-20261120-review18'));
+  assert(bspcReview.evidenceAsset.includes('bspc-20261120-review18'));
+  assert(eaaiReview.evidencePdf.includes("20261120-eaai6-certificate"));
+  assert(eaaiReview.evidenceAsset.includes("20261120-eaai6-certificate"));
   assert.equal(service.reduce((total,r)=>total+Number(r.reviews||0),0),53,
     'The total number of invited peer reviews must be 53');
   assert.equal(service.length,5,'Exactly five journals have review records');
@@ -142,8 +145,8 @@ async function main(){
   const dibGallery=(dataContext.window.PORTFOLIO_DATA.gallery||[]).find(x=>x.id==='data-in-brief-reviewing-certificate-2026');
   const bspcGallery=(dataContext.window.PORTFOLIO_DATA.gallery||[]).find(x=>x.id==='bspc-reviewing-certificate-2026');
   assert(dibGallery?.verified && dibGallery.href.includes('data-in-brief-reviewing-certificate-2026.pdf'));
-  assert(bspcGallery?.verified && /17 completed manuscript reviews/.test(bspcGallery.caption),
-    'BSPC certificate must accurately recognize 17 completed manuscript reviews');
+  assert(bspcGallery?.verified && /18 completed manuscript reviews/.test(bspcGallery.caption),
+    'BSPC certificate must accurately recognize 18 completed manuscript reviews');
   const reviewFolder='assets/academic/journals/data-in-brief/README.md';
   assert(fs.existsSync(reviewFolder) && text(reviewFolder).includes('3 November 2026'));
     for(const [id,doi] of [
@@ -183,7 +186,7 @@ async function main(){
     'Publication page must refresh cached GitHub brand icons');
   assert(!v2DataSource.includes("{ value: '44', label: 'Completed Peer Reviews' }"),
     'At-a-glance metric must derive from the current editorial records');
-  assert(app.includes('17 for Biomedical Signal Processing and Control'),'BSPC assistant text must say 17');
+  assert(app.includes('18 for Biomedical Signal Processing and Control'),'BSPC assistant text must say 18');
   assert(app.includes('data-in-brief-reviewing-certificate-2026.pdf'),
     'DIB certificate PDF must be connected in the public gallery');
 
