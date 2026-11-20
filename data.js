@@ -17,7 +17,7 @@ window.PORTFOLIO_DATA = {
     { label: "Accepted / Forthcoming", value: 1, note: "Peer-reviewed journal article" },
     { label: "Conference Contributions", value: 8, note: "3 presentations delivered" },
     { label: "Public Dataset", value: 1, note: "Mendeley Data" },
-    { label: "Completed Peer Reviews", value: 50, note: "Across 5 journals" }
+    { label: "Completed Peer Reviews", value: 53, note: "Across 5 journals" }
   ],
 
   interests: {
@@ -795,10 +795,10 @@ window.PORTFOLIO_DATA = {
     },
     {
       id: "bspc", journal: "Biomedical Signal Processing and Control", publisher: "Elsevier",
-      label: "BSPC", initials: "BSPC", artwork: "assets/academic/journals/bspc/bspc-cover.jpeg", artworkType: "cover", publisherLogo: "assets/academic/journals/publishers/elsevier-logo-color.png", reviews: 17, since: "July 2026",
+      label: "BSPC", initials: "BSPC", artwork: "assets/academic/journals/bspc/bspc-cover.jpeg", artworkType: "cover", publisherLogo: "assets/academic/journals/publishers/elsevier-logo-color.png", reviews: 18, since: "July 2026",
       startDate: "2026-07-22", startLabel: "22 July 2026", role: "Peer Reviewer",
       journalUrl: "https://www.sciencedirect.com/journal/biomedical-signal-processing-and-control", issn: "1746-8094",
-      scope: "Completed 17 invited manuscript reviews, assessing biomedical signal-processing and machine-learning methods, validation strategies, interpretation of results, and scientific reporting.",
+      scope: "Completed 18 invited manuscript reviews, assessing biomedical signal-processing and machine-learning methods, validation strategies, interpretation of results, and scientific reporting.",
       recognition: "Elsevier Certificate of Reviewing recognizing 17 completed reviews.",
       evidenceAsset: "assets/gallery/bspc-reviewing-certificate-2026.webp?v=bspc-20261116-review17",
       evidenceHref: "gallery.html#bspc-reviewing-certificate-2026",
@@ -807,10 +807,10 @@ window.PORTFOLIO_DATA = {
     },
     {
       id: "eaai", journal: "Engineering Applications of Artificial Intelligence", publisher: "Elsevier",
-      label: "EAAI", initials: "EAAI", artwork: "assets/academic/journals/eaai/eaai-cover.jpg", artworkType: "cover", publisherLogo: "assets/academic/journals/publishers/elsevier-logo-color.png", reviews: 4, since: "September 2026",
+      label: "EAAI", initials: "EAAI", artwork: "assets/academic/journals/eaai/eaai-cover.jpg", artworkType: "cover", publisherLogo: "assets/academic/journals/publishers/elsevier-logo-color.png", reviews: 6, since: "September 2026",
       startDate: "2026-09-14", startLabel: "14 September 2026", role: "Peer Reviewer",
       journalUrl: "https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence", issn: "0952-1976",
-      scope: "Completed 4 invited manuscript reviews, assessing machine-learning and biomedical signal-processing methods, validation strategies, interpretation of results, and scientific reporting.",
+      scope: "Completed 6 invited manuscript reviews, assessing machine-learning and biomedical signal-processing methods, validation strategies, interpretation of results, and scientific reporting.",
       recognition: "Elsevier Certificate of Reviewing recognizing 4 completed reviews.",
       evidenceAsset: "assets/gallery/eaai-reviewing-certificate-2026.webp?v=20261108-eaai4-certificate",
       evidenceHref: "gallery.html#eaai-reviewing-certificate-2026",

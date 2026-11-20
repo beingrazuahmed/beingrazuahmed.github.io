@@ -98,7 +98,7 @@ async function main(){
       'Gallery certificate caption contains website-maintenance wording: '+g.id);
     assert(g.caption.includes('Certificate of Reviewing'),'Gallery caption must identify the credential: '+g.id);
   });
-  assert.equal((dataContext.window.PORTFOLIO_DATA.metrics||[]).find(m=>m.label==='Completed Peer Reviews')?.value,50,
+  assert.equal((dataContext.window.PORTFOLIO_DATA.metrics||[]).find(m=>m.label==='Completed Peer Reviews')?.value,53,
     'Overview peer review metric must match the editorial service total');
   const service=dataContext.window.PORTFOLIO_DATA.service||[];
   const dibReview=service.find(x=>x.id==='data-in-brief');
@@ -117,15 +117,15 @@ async function main(){
   assert.equal(dibReview.startDate,'2026-11-03');
   assert.equal(dibReview.startLabel,'3 November 2026');
   assert.equal(dibReview.ongoing,true,'Data in Brief peer reviewer service is ongoing');
-  assert.equal(bspcReview.reviews,17);
+  assert.equal(bspcReview.reviews,18);
   const eaaiReview=service.find(r=>r.id==="eaai");
   assert(eaaiReview,"EAAI reviewer record must exist");
-  assert.equal(eaaiReview.reviews,4,"EAAI must show 4 reviews");
+  assert.equal(eaaiReview.reviews,6,"EAAI must show 6 reviews");
   assert(eaaiReview.recognition.includes("4 completed reviews"));
   assert(eaaiReview.evidencePdf.includes("20261108-eaai4-certificate"));
   assert(eaaiReview.evidenceAsset.includes("20261108-eaai4-certificate"));
-  assert.equal(service.reduce((total,r)=>total+Number(r.reviews||0),0),50,
-    'The total number of invited peer reviews must be 50');
+  assert.equal(service.reduce((total,r)=>total+Number(r.reviews||0),0),53,
+    'The total number of invited peer reviews must be 53');
   assert.equal(service.length,5,'Exactly five journals have review records');
   assert(dibReview.artwork.endsWith('/data-in-brief-cover.jpg'));
   assert(dibReview.evidencePdf.includes('data-in-brief-reviewing-certificate-2026.pdf'));
@@ -163,7 +163,7 @@ async function main(){
     'Completed DIB review must be labelled accurately');
   assert(app.includes('editorial-journal-grid--five'),
     'Five editorial-service cards should use balanced grid styling');
-  assert(app.includes('50 completed invited reviews'), 'The public overview must show 50 total reviews');
+  assert(app.includes('53 completed invited reviews'), 'The public overview must show 53 total reviews');
   assert(!app.includes('<strong>44</strong><span>Peer Reviews</span>'),'Homepage may not display the stale 44-review count');
   assert(!app.includes('Source file ·'),'Gallery cards must not expose raw source filenames as editorial copy');
   assert(app.includes('View certificate ↗'),'Certificate gallery actions must be credential-oriented');
