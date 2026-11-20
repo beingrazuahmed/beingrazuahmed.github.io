@@ -107,7 +107,7 @@ window.PORTFOLIO_DATA = {
       publicationAuthors: [
         {"name":"Marufa Yeasmin","affiliation":1,"orcid":"https://orcid.org/0009-0001-4685-1033"},
         {"name":"Md. Razu Ahmed","affiliation":1,"orcid":"https://orcid.org/0009-0001-8646-1881"},
-        {"name":"Protiva Rani Kundu","affiliation":1,"orcid":"https://orcid.org/0009-0003-8210-5569"},
+        {"name":"Protiva Rani Kundu","affiliation":1,"orcid":"https://orcid.org/0009-0000-0463-1107"},
         {"name":"Jannatul Mauya","affiliation":1,"orcid":"https://orcid.org/0009-0005-7294-1306","corresponding":true},
         {"name":"Md. Shamim Reza","affiliation":1,"orcid":"https://orcid.org/0000-0002-3699-0494","corresponding":true,"otherAffiliations":[2]}
       ],
@@ -258,7 +258,7 @@ window.PORTFOLIO_DATA = {
       publicationAuthors: [
         {"name":"Marufa Yeasmin","affiliation":1,"orcid":"https://orcid.org/0009-0001-4685-1033"},
         {"name":"Md. Razu Ahmed","affiliation":1,"orcid":"https://orcid.org/0009-0001-8646-1881"},
-        {"name":"Protiva Rani Kundu","affiliation":1,"orcid":"https://orcid.org/0009-0003-8210-5569"},
+        {"name":"Protiva Rani Kundu","affiliation":1,"orcid":"https://orcid.org/0009-0000-0463-1107"},
         {"name":"Jannatul Mauya","affiliation":1,"orcid":"https://orcid.org/0009-0005-7294-1306","corresponding":true},
         {"name":"Md. Shamim Reza","affiliation":1,"orcid":"https://orcid.org/0000-0002-3699-0494","corresponding":true,"otherAffiliations":[2]}
       ],
