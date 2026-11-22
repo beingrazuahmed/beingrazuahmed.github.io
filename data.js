@@ -947,6 +947,7 @@ window.PORTFOLIO_DATA = {
     { label: "ResearchGate", url: "https://www.researchgate.net/profile/Md-Razu-Ahmed-3", type: "academic" },
     { label: "Semantic Scholar", url: "https://www.semanticscholar.org/author/Md.-Razu-Ahmed/2530350609", type: "academic" },
     { label: "SciProfiles", url: "https://sciprofiles.com/profile/4128960", type: "academic" },
+    { label: "Scilit", url: "https://www.scilit.com/scholars/019f2a498b3c70119857fcd95a90f16e", type: "academic" },
     { label: "LinkedIn", url: "https://www.linkedin.com/in/beingrazuahmed/", type: "professional" },
     { label: "GitHub", url: "https://github.com/beingrazuahmed", type: "professional" },
     { label: "Kaggle", url: "https://www.kaggle.com/razuahmedpust", type: "professional" },
