@@ -340,10 +340,10 @@ window.PORTFOLIO_DATA = {
       visual: "assets/manuscripts/cafeteria-billing/workflow.png"
     },
     {
-      id: "sentiment", status: "Under Revision", role: "Third Author",
-      title: "Adaptive Probability Fusion of Lightweight Recurrent Networks for Cross-Domain Sentiment Classification",
+      id: "sentiment", status: "Under Revision", role: "Second Author",
+      title: "Recurrent Probability Fusion for Sentiment Classification: A Comparative Evaluation of Predictive Performance and Computational Trade-Offs",
       venue: "Applied AI Letters", publisher: "Wiley", tags: ["NLP", "Sentiment Analysis", "RNN", "BiLSTM"],
-      summary: "A lightweight cross-domain sentiment-classification framework using RNN and BiLSTM probability fusion across social-media and movie-review datasets.",
+      summary: "A comparative evaluation of recurrent neural network, bidirectional LSTM and probability-fusion approaches to sentiment classification, examining predictive performance alongside computational requirements across IMDb, Twitter Airline and TweetEval datasets.",
       highlight: "The ensemble reached 77.36% accuracy on Twitter Airline Sentiment; standalone BiLSTM reached 85% on IMDb.",
       visual: "assets/manuscripts/sentiment/workflow.png"
     },
