@@ -860,7 +860,7 @@
         { label: 'ORCID', url: 'https://orcid.org/0000-0002-1145-3385' },
         { label: 'ResearchGate', url: 'https://www.researchgate.net/profile/Ruhul-Amin-64' },
         { label: 'SciProfiles', url: 'https://sciprofiles.com/profile/2937238' },
-        { label: 'Portfolio', url: 'https://ruhul256.github.io/' },
+        { label: 'Portfolio', url: 'https://ruhul256.github.io/', icon: 'assets/academic/logos/contact/ruhul-portfolio.svg' },
         { label: 'LinkedIn', url: 'https://www.linkedin.com/in/ruhul-amin-803104157' },
         { label: 'Scopus', url: 'https://www.scopus.com/authid/detail.uri?authorId=59070517800' },
         { label: 'AD Scientific Index', url: 'https://adscientificindex.com/scientist/ruhul-amin/5739933/' }
