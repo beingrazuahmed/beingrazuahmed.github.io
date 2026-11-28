@@ -363,7 +363,7 @@
       'zenodo': {src:favicon('zenodo.org'), cls:'is-zenodo'},
       'draconitic research': {src:'assets/academic/logos/vendor/draconitic-research-custom.svg', cls:'is-draconitic'},
       'github': {src:'assets/academic/logos/contact/github.svg', cls:'is-github'},
-      'sciprofiles': {src:'assets/academic/logos/contact/sciprofiles-2026-mark-v3.svg', cls:'is-sciprofiles'},
+      'sciprofiles': {src:'assets/academic/logos/contact/sciprofiles-logo.jpg', cls:'is-sciprofiles'},
       'researchgate': {src:'assets/academic/logos/contact/researchgate-teal-brand-v2.svg', cls:'is-researchgate'},
       'sciencedirect': {src:favicon('sciencedirect.com'), cls:'is-sciencedirect'},
       'dataset': {src:favicon('data.mendeley.com'), cls:'is-mendeley'},
@@ -2582,7 +2582,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
     'scopus':'assets/academic/logos/scopus-circle.png',
     'researchgate':'assets/academic/logos/contact/researchgate-teal-brand-v2.svg',
     'linkedin':'assets/academic/logos/contact/linkedin.svg',
-    'sciprofiles':'assets/academic/logos/contact/sciprofiles-2026-mark-v3.svg',
+    'sciprofiles':'assets/academic/logos/contact/sciprofiles-logo.jpg',
     'semantic scholar':'assets/academic/logos/contact/semantic-scholar.svg',
     'github':'assets/academic/logos/contact/github.svg',
     'academia.edu':'assets/academic/logos/contact/academia.svg',
@@ -3582,7 +3582,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
   // Match Academic and Network profile logos. Prefer shared local assets and
   // the same brand favicons already used by the portfolio's scholarly profiles.
   // Use crisp local brand vectors. Shared academic assets stay consistent.
-  const academicShared={'Scopus':'assets/academic/logos/scopus-circle.png','Web of Science':'assets/academic/journals/engineering-reports/web-of-science.webp','SciProfiles':'assets/academic/logos/contact/sciprofiles-2026-mark-v3.svg','Scilit':'https://cdn.brandfetch.io/idB-yNw5GN/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1755858646981','ResearchGate':'assets/academic/logos/contact/researchgate-teal-brand-v2.svg'};
+  const academicShared={'Scopus':'assets/academic/logos/scopus-circle.png','Web of Science':'assets/academic/journals/engineering-reports/web-of-science.webp','SciProfiles':'assets/academic/logos/contact/sciprofiles-logo.jpg','Scilit':'https://cdn.brandfetch.io/idB-yNw5GN/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1755858646981','ResearchGate':'assets/academic/logos/contact/researchgate-teal-brand-v2.svg'};
   const icon=name=>{
     const id=brands[name];
     const brandSrc=academicShared[name]||(id?'assets/academic/logos/contact/'+id+'.svg':'');
