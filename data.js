@@ -333,7 +333,7 @@ window.PORTFOLIO_DATA = {
     },
     {
       id: "food-billing", status: "Under Review", role: "Third Author",
-      title: "Real-Time Food Detection for Automated Cafeteria Billing Using RT-DETR and GAN-Based Data Augmentation",
+      title: "Food Detection for Automated Cafeteria Billing: A Comparative Evaluation of RT-DETR, YOLO, and Faster R-CNN with a Controlled Pix2Pix GAN Augmentation Experiment",
       venue: "Discover Artificial Intelligence", publisher: "Springer Nature", tags: ["RT-DETR", "GAN", "Food Detection", "Automated Billing"],
       summary: "A real-time cafeteria billing framework benchmarking RT-DETR-L, YOLO and Faster R-CNN and evaluating Pix2Pix GAN augmentation.",
       highlight: "RT-DETR-L achieved 76.55% Exact Bill Accuracy with MAE 3.41 BDT on 145 untouched test platters.",

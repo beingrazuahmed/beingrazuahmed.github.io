@@ -172,7 +172,7 @@
         { title: 'BS-CCFS: Bootstrap-Stable Consensus Feature Selection Across Multiple Causal Discovery Algorithms for Interpretable Heart Disease Prediction', journal: 'PLOS ONE', publisher: 'PLOS', detail: 'Submitted 2 November 2026 · Status: Editor Invited (7 November 2026) · Md. Razu Ahmed is second author; peer review not yet confirmed.' },
         { title: 'A Deep Learning and Handcrafted Feature Fusion Framework for Automated Diabetic Retinopathy Grading from Retinal Fundus Images', journal: 'Measurement', publisher: 'Elsevier', detail: 'Under Review.' },
         { title: 'Comparative Evaluation of Hybrid MICE–Median Missing-Value Reconstruction and Downstream Hepatitis C Prediction Using Machine Learning', journal: 'BMC Medical Informatics and Decision Making', publisher: 'BMC · Springer Nature', detail: 'Under Review.' },
-        { title: 'Real-Time Food Detection for Automated Cafeteria Billing Using RT-DETR and GAN-Based Data Augmentation', journal: 'Discover Artificial Intelligence', publisher: 'Springer Nature' },
+        { title: 'Food Detection for Automated Cafeteria Billing: A Comparative Evaluation of RT-DETR, YOLO, and Faster R-CNN with a Controlled Pix2Pix GAN Augmentation Experiment', journal: 'Discover Artificial Intelligence', publisher: 'Springer Nature' },
         { title: 'Recurrent Probability Fusion for Sentiment Classification: A Comparative Evaluation of Predictive Performance and Computational Trade-Offs', journal: 'Applied AI Letters', publisher: 'Wiley' },
         { title: 'Factors Associated with Undergraduates Academic Performance Among Public University Students: A Case Study', journal: 'International Journal of Educational Reform', publisher: 'SAGE' }
       ],
@@ -1045,7 +1045,7 @@
           detail: 'Under Review.'
         },
         {
-          title: 'Real-Time Food Detection for Automated Cafeteria Billing Using RT-DETR and GAN-Based Data Augmentation',
+          title: 'Food Detection for Automated Cafeteria Billing: A Comparative Evaluation of RT-DETR, YOLO, and Faster R-CNN with a Controlled Pix2Pix GAN Augmentation Experiment',
           journal: 'Discover Artificial Intelligence',
           publisher: 'Springer Nature',
           detail: 'Under Review.'
@@ -1676,7 +1676,7 @@
 
   sharedEditorial: [
     {
-      title: 'Real-Time Food Detection for Automated Cafeteria Billing Using RT-DETR and GAN-Based Data Augmentation',
+      title: 'Food Detection for Automated Cafeteria Billing: A Comparative Evaluation of RT-DETR, YOLO, and Faster R-CNN with a Controlled Pix2Pix GAN Augmentation Experiment',
       journal: 'Discover Artificial Intelligence',
       publisher: 'Springer Nature',
       detail: 'Under Review.'
@@ -1858,7 +1858,7 @@
 
       sharedEditorial: [
         {
-          title: 'Real-Time Food Detection for Automated Cafeteria Billing Using RT-DETR and GAN-Based Data Augmentation',
+          title: 'Food Detection for Automated Cafeteria Billing: A Comparative Evaluation of RT-DETR, YOLO, and Faster R-CNN with a Controlled Pix2Pix GAN Augmentation Experiment',
           journal: 'Discover Artificial Intelligence',
           publisher: 'Springer',
           detail: 'Under Review · Q1 · SJR 2025 1.184 · H-Index 27 · CiteScore 6.2 · SNIP 2025 2.661 · ISSN / eISSN 2731-0809.'
