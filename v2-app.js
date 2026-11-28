@@ -3845,7 +3845,7 @@ ${g.id==='icrast-2025'?`<section class="conference-source-hub" aria-label="ICRAS
       {id:'elsevier-becoming-peer-reviewer-2026',url:'assets/recognition/elsevier-becoming-peer-reviewer-2026.pdf',name:'Becoming a Peer Reviewer'},
       {id:'bspc-reviewing-certificate-2026',url:'assets/recognition/bspc-reviewing-certificate-2026.pdf?v=bspc-20261116-review17',name:'Biomedical Signal Processing and Control Certificate of Reviewing'},
       {id:'data-in-brief-reviewing-certificate-2026',url:'assets/academic/journals/data-in-brief/data-in-brief-reviewing-certificate-2026.pdf?v=dib-20261106-review1',name:'Data in Brief Certificate of Reviewing'},
-      {id:'array-reviewing-certificate-2026',url:'assets/recognition/array-reviewing-certificate-2026.pdf?v=array-2b4ab82b2d32',name:'Array Certificate of Reviewing'},
+      {id:'array-reviewing-certificate-2026',url:'assets/recognition/array-reviewing-certificate-2026.pdf?v=array-8e42f5fc4c61',name:'Array Certificate of Reviewing'},
       {id:'eaai-reviewing-certificate-2026',url:'assets/recognition/eaai-reviewing-certificate-2026.pdf?v=20261108-eaai4-certificate',name:'Engineering Applications of Artificial Intelligence Certificate of Reviewing'},
       {id:'elsevier-research-design-2026',url:'assets/recognition/elsevier-research-design-certificate-2026.pdf?v=rd-c7664bf6a341',name:'Research Design'}
     ];
