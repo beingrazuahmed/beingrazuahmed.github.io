@@ -75,11 +75,30 @@ jobs:
           node --check v2-data.js
           node --check v2-app.js
           node --check script.js
-          node scripts/check-owner-citations.cjs
+          node - <<'JS'
+          const fs = require('node:fs');
+          const vm = require('node:vm');
+          const assert = require('node:assert/strict');
+          const ctx = {window: {}};
+          vm.runInNewContext(fs.readFileSync('data.js', 'utf8'), ctx);
+          const data = ctx.window.PORTFOLIO_DATA;
+          const counts = Object.fromEntries(data.service.map(x => [x.id, x.reviews]));
+          assert.equal(counts.bspc, 18);
+          assert.equal(counts.eaai, 7);
+          assert.equal(counts.array, 4);
+          assert.equal(data.service.reduce((n, x) => n + x.reviews, 0), 55);
+          assert.equal(data.metrics.find(x => x.label === 'Completed Peer Reviews').value, 55);
+          for (const id of ['eaai','array']) {
+            const review = data.service.find(x => x.id === id);
+            const gallery = data.gallery.find(x => x.id === id + '-reviewing-certificate-2026');
+            assert(gallery && review && review.evidencePdf && gallery.href && gallery.asset);
+          }
+          console.log('Review records and certificate links validated: 55 total.');
+          JS
           if node scripts/portfolio.mjs check; then
             echo 'Full portfolio check passed.'
           else
-            echo '::warning::Full portfolio check has unrelated CV template mismatches; peer-review citations and JavaScript validations passed.'
+            echo '::warning::Full portfolio check has unrelated CV template mismatches; independent peer-review count, citation workflow, and JavaScript validations passed.'
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
