@@ -1,5 +1,5 @@
 window.PORTFOLIO_EXTRA = {
-  lastUpdated: "25 November 2026",
+  lastUpdated: "28 November 2026",
   impactMetrics: [
     { label: "Google Scholar citations", value: 2, source: "Google Scholar", date: "15 September 2026" },
     { label: "ResearchGate citations", value: 5, source: "ResearchGate", date: "15 September 2026" },
@@ -22,6 +22,7 @@ window.PORTFOLIO_EXTRA = {
     ]
   },
   latestUpdates: [
+    { date: "28 Nov 2026", type: "Scholarly Service", title: "55 completed peer reviews — EAAI and Array records expanded", detail: "The record reaches 55 completed invited peer reviews across five journals: PLOS ONE (25), Biomedical Signal Processing and Control (18), Engineering Applications of Artificial Intelligence (7), Array (4) and Data in Brief (1). Updated Elsevier Certificates of Reviewing for EAAI and Array are linked in the journal-specific reviewer records and credential gallery.", href: "experience.html#editorial-peer-review", linkLabel: "View updated peer-review service and certificates" },
     { date: "20 Nov 2026", type: "Scholarly Service", title: "53 completed peer reviews — BSPC and EAAI records expanded", detail: "The current record reaches 53 completed invited reviews across five journals: PLOS ONE (25), Biomedical Signal Processing and Control (18), Engineering Applications of Artificial Intelligence (6), Array (3) and Data in Brief (1). The replacement Elsevier Certificates of Reviewing for BSPC (18) and EAAI (6) are linked to the credential gallery and journal-specific records.", href: "experience.html#editorial-peer-review", linkLabel: "Explore current peer-review service" },
     { date: "16 Nov 2026", type: "Scholarly Service", title: "50 completed peer reviews — Scholarly Service Milestone", detail: "Reached 50 completed invited manuscript reviews across five international journals: PLOS ONE (25), Biomedical Signal Processing and Control (17), Engineering Applications of Artificial Intelligence (4), Array (3) and Data in Brief (1). Journal-specific records and available reviewing certificates are linked.", href: "experience.html#editorial-peer-review", linkLabel: "Explore peer-review service and certificates" },
     { date: "16 Nov 2026", type: "Scholarly Service", title: "Biomedical Signal Processing and Control — 17 completed reviews", detail: "The BSPC reviewing record now reflects 17 completed manuscript reviews, bringing the total to 50 completed invited reviews across five journals. The Elsevier Certificate of Reviewing is linked to the credential gallery and reviewer record.", href: "gallery.html#bspc-reviewing-certificate-2026", linkLabel: "View BSPC reviewing certificate" },

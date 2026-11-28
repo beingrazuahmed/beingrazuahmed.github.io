@@ -1,4 +1,4 @@
-name: Refresh BSPC Certificate Preview
+name: Refresh Peer Review Certificate Previews
 
 on:
   push:
@@ -7,6 +7,7 @@ on:
       - '.github/workflows/refresh-bspc-preview.yml'
       - 'assets/recognition/bspc-reviewing-certificate-2026.pdf'
       - 'assets/recognition/eaai-reviewing-certificate-2026.pdf'
+      - 'assets/recognition/array-reviewing-certificate-2026.pdf'
   workflow_dispatch:
 
 permissions:
@@ -23,7 +24,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Verify replacement certificates and render both previews
+
+      - name: Validate all three certificates and render previews
         shell: bash
         run: |
           set -euo pipefail
@@ -33,7 +35,7 @@ jobs:
           fi
           python3 -m venv /tmp/review-preview
           /tmp/review-preview/bin/pip install -q pillow
-          for journal in bspc eaai; do
+          for journal in bspc eaai array; do
             pdf="assets/recognition/${journal}-reviewing-certificate-2026.pdf"
             test -s "$pdf"
             pdfinfo "$pdf" | grep -E '^(Pages|Page size|File size):'
@@ -45,35 +47,43 @@ jobs:
           from pathlib import Path
           import re
           from PIL import Image
-          for journal, count, word in [('bspc',18,'eighteen'),('eaai',6,'six')]:
-              txt=Path(f'/tmp/{journal}-certificate.txt').read_text()
-              assert re.search(r'Razu\s+Ahmed',txt,re.I), f'{journal}: recipient not found'
-              assert re.search(rf'\b(?:{count}|{word})\b',txt,re.I), f'{journal}: expected {count} not found'
-              output=Path(f'assets/gallery/{journal}-reviewing-certificate-2026.webp')
-              Image.open(f'/tmp/{journal}-certificate.png').convert('RGB').save(output,'WEBP',quality=91,method=6)
+
+          expected = [
+              ('bspc', 18, 'Biomedical Signal Processing and Control'),
+              ('eaai', 7, 'Engineering Applications of Artificial Intelligence'),
+              ('array', 4, 'Array')
+          ]
+          for journal, count, title in expected:
+              txt = Path(f'/tmp/{journal}-certificate.txt').read_text(encoding='utf-8')
+              assert re.search(r'Razu\s+Ahmed', txt, re.I), f'{journal}: recipient not found'
+              assert re.search(r'\s+'.join(map(re.escape, title.split())), txt, re.I), f'{journal}: journal name not found'
+              assert re.search(rf'\b{count}\s+reviews?\b', txt, re.I), f'{journal}: expected {count} reviews not found'
+              output = Path(f'assets/gallery/{journal}-reviewing-certificate-2026.webp')
+              Image.open(f'/tmp/{journal}-certificate.png').convert('RGB').save(
+                  output, 'WEBP', quality=91, method=6
+              )
               assert output.stat().st_size > 10000
-              print(f'{journal.upper()}: verified {count} reviews; preview {output.stat().st_size} bytes')
+              print(f'{journal.upper()}: certificate confirms {count} reviews; preview {output.stat().st_size} bytes')
           PY
-      - name: Publish the two previews and refresh cache references
+
+      - name: Validate updated portfolio and publish certificate previews
         shell: bash
         run: |
           set -euo pipefail
-          python3 - <<'PY'
-          import re
-          from pathlib import Path
-          for p in Path('.').glob('*.html'):
-              s=p.read_text(encoding='utf-8')
-              n=re.sub(r'(?<![\w-])(data|extra-data)\.js\?v=[\w.-]+',r'\1.js?v=20261120-certificates18-6',s)
-              if n!=s: p.write_text(n,encoding='utf-8')
-          PY
+          node --check data.js
+          node --check extra-data.js
+          node --check v2-data.js
+          node --check v2-app.js
+          node --check script.js
           node scripts/portfolio.mjs check
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/gallery/bspc-reviewing-certificate-2026.webp assets/gallery/eaai-reviewing-certificate-2026.webp
-          git add -- '*.html'
+          git add assets/gallery/bspc-reviewing-certificate-2026.webp assets/gallery/eaai-reviewing-certificate-2026.webp assets/gallery/array-reviewing-certificate-2026.webp
           if ! git diff --cached --quiet; then
             git diff --cached --check
-            git commit -m 'Refresh verified BSPC 18 and EAAI 6 certificate previews'
+            git commit -m 'Refresh verified BSPC 18, EAAI 7 and Array 4 certificate previews'
             git pull --rebase origin main
             git push origin HEAD:main
+          else
+            echo 'All certificate previews already match uploaded PDFs.'
           fi
